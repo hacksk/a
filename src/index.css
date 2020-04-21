@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App{
+  background-color:rgba(0, 0, 0, 0.986)!important;
+  height: auto;
+  min-height: 100vh;
+}
+.cart h5{
+  color: white;
+}
+.cart ul{
+  color: white;
+}
+.collection{
+  background-color: black;
+}
+.collection-item.avatar{
+  background-color: black;
+}
+.collection .collection-item{
+  background-color: black;
+}
+.waves-effect{
+  background: rgb(255, 102, 0)!important;
+}
+.waves-effect span{
+  background-image: none!important;
+  box-shadow: none!important;
+}
+.waves-effect:hover{
+  background-color: rgb(255, 126, 41)!important;
+}
+.collection li{
+  color:white;
+}
+
+.box{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap
+}
+.material-icons{
+  font-size: 2.4em;
+  cursor: pointer;
+}
+.card{
+  width: 20vw!important;
+  background-color: #252525!important;
+  margin:1em;
+}
+.card .card-image .card-title{
+  color: black!important;
+  font-weight: 400!important
+}
+.card-image img{
+  width: 100%!important;
+}
+.card-content p{
+  color:white;
+}
+.cart{
+  padding:40px;
+}
+.collection .collection-item{
+  display: flex;
+}
+.collection-item.avatar .title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #ee6e73;
+  display: block;
+  margin-bottom: 20px;
+  
+}
+.collection .collection-item img{
+  width: 150px;
+  margin-right: 25px;
+}
+.item-desc{
+  align-self:center;
+}

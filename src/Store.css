@@ -1,0 +1,93 @@
+.store-home{
+    padding:6em;
+    padding-top:4em;
+    
+}
+.store-home h1{
+    color:white;
+    font-family: Praktika;
+}
+.store-home-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.store-home-buttons{
+    width: 70%;
+}
+.store-home-buttons button{
+    width: 27vw;
+    height: 20vh;
+    margin-left: 2em;
+    margin-top: 2em;
+    font-size: 15px;
+    border-radius: 8px;
+    background: linear-gradient(233.47deg, #FC5C2E 0%, #FCAA2E 100%);
+    border:none;
+    color:white;
+    font-family: Montserrat;
+}
+
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+  }
+  
+  .App-header {
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+  }
+  
+  .App-title {
+    font-size: 1.5em;
+  }
+  
+  .App-intro {
+    font-size: large;
+  }
+  
+  @keyframes App-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  .brand-logo {
+    text-align: left !important;
+  }
+  
+  .navBG{
+      background-color: lightgreen;
+      color: white !important;
+  }
+
+
+
+  .vendorlist{
+    padding:5em;
+  }
+  .vendorlist-content {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    color:white;
+  }
+  
+  .vendorlist-content td, th {
+    /* border: 1px solid #dddddd; */
+    text-align: left;
+    padding: 8px;
+    height:8vh;
+  }
+  .vendorlist-content th{
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.16)), #121212;
+    height: 10vh;
+  }
+  
+  .vendorlist-content tr:nth-child(even) {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)), #121212;
+  } 
+  .vendorlist-content tr:nth-last-child(odd){
+    background:linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), #121212;
+  }

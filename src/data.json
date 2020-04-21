@@ -1,0 +1,58 @@
+{
+  "service": [
+    {
+      "image": "https://images.pexels.com/photos/574205/pexels-photo-574205.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "imagetwo": "https://images.pexels.com/photos/515674/pexels-photo-515674.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      "imagethree": "https://images.pexels.com/photos/3076820/pexels-photo-3076820.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "imagefour": "https://images.pexels.com/photos/2127022/pexels-photo-2127022.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "imagefive": "https://images.pexels.com/photos/3354648/pexels-photo-3354648.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "imagesix": "https://images.pexels.com/photos/2127037/pexels-photo-2127037.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "texttwo": "ECU REMAPPING",
+      "textthree": "LUBRICATION MANAGEMENT",
+      "textfour": "STEAM"
+    }
+  ],
+  "serviceCards": [
+    {
+      "head": "STEAM EXTERIOR",
+      "image": 
+    },
+    {
+      "head": "STEAM LOGO"
+    },
+    {
+      "head": "STEAM RADIATOR"
+    },
+    {
+      "head": "STEAM BRAKES"
+    },
+    {
+      "head": "DESALT"
+    },
+    {
+      "head": "STEAM ENGINEBAY"
+    },
+    {
+      "head": "STEAM ROOFKLEEN"
+    },
+    {
+      "head": "360 DEEP CLENSE"
+    },
+    {
+      "head": "STEAM MAT"
+    },
+    {
+      "head": "AUTOMOTO-PRESALE"
+    },
+    {
+      "head": "LIGHT RESTORE"
+    },
+    {
+      "head": "WHEEL RESTORE"
+    },
+    {
+      "head": "STEAM MOTO"
+    },
+    {}
+  ]
+}

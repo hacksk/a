@@ -1,0 +1,131 @@
+@font-face {
+    font-family: Praktika;
+    src: url('assets/Fonts/praktika-light-webfont.woff') format('woff');
+  }
+
+
+.emplyhome {
+  padding: 5em;
+}
+.emplyhome-firstsection {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  overflow: hidden;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.04)
+  );
+  border-radius: 8px;
+  margin-top:-42vh ;
+}
+.emplyhome-firstsectiontab{
+    display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+}
+.status-employee {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  padding-bottom: 2em;
+}
+.employee-status {
+  padding-top: 2em;
+}
+.ant-steps-item-finish
+  > .ant-steps-item-container
+  > .ant-steps-item-tail::after {
+  background-color: #fc5c2e !important;
+}
+.ant-steps-item-finish
+  .ant-steps-item-icon
+  > .ant-steps-icon
+  .ant-steps-icon-dot,
+.ant-steps-item-process
+  .ant-steps-item-icon
+  > .ant-steps-icon
+  .ant-steps-icon-dot {
+  background: unset !important;
+}
+.employee-status svg {
+  color: #fc5c2e;
+}
+.ant-steps-item-process
+  > .ant-steps-item-container
+  > .ant-steps-item-tail::after,
+.ant-steps-item-wait > .ant-steps-item-container > .ant-steps-item-tail::after {
+  background: #cc380e83 !important;
+}
+.employee-jobcard {
+  width: 100%;
+}
+.ant-tabs .ant-tabs-left-bar {
+  width: 50% !important;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.04)
+  );
+  margin-top: 2em;
+}
+.ant-tabs .ant-tabs-left-bar .ant-tabs-tab {
+  text-align: center !important;
+}
+.ant-tabs .ant-tabs-left-bar .ant-tabs-ink-bar {
+  display: none !important;
+  border-right: unset!important;
+}
+.ant-tabs .ant-tabs-left-content {
+  color: White !important;
+  border-left: unset!important;
+}
+
+.ant-tabs .ant-tabs-left-bar{
+    border-right: 1px solid transparent!important;
+    margin-top: 0!important;
+}
+.ant-tabs-nav .ant-tabs-tab-active {
+  background: rgba(255, 255, 255, 0.08);
+}
+.ant-tabs .ant-tabs-left-bar{
+    border-radius: 8px;
+    margin-right: unset!important;
+}
+
+.jobcard {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  padding:3em;
+}
+.jobcard-service{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* ////////////////////////////////////////////////////////////////////////// */
+
+.employeesettings{
+    padding:6em;
+    padding-top: 4em;
+    background: linear-gradient(180deg, rgba(252, 92, 46, 0.08) 0%, rgba(255, 255, 255, 0) 100%), #121212;
+}
+.ant-tabs-nav .ant-tabs-tab-active{
+    background: transparent!important;
+}
+.prof-detail h5{
+    font-size: 1rem!important;
+}
+.table-content tr,td{
+    padding-left: 5em!important;
+}
+.edit-accnt{
+    text-align: right!important;
+}
