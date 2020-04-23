@@ -39,10 +39,12 @@ import InventoryLists from "./StoreComponents/InventoryLists";
 import ServiceLists from "./StoreComponents/ServiceLists"
 import EmployeeHome from "./EmployeeComponents/EmployeeHome";
 import EmployeeSettings from "./EmployeeComponents/EmployeeSettings";
+import Header from "./HeaderCustomer";
 
 function App() {
   return (
     <div className="App">
+      <Header/>
         <Navbarnew />
       <BrowserRouter>
         <Switch>
@@ -75,11 +77,6 @@ function App() {
           <Route exact path="/service/ceramic" component={CeramicCoating} />
           <Route exact path="/service/connected" component={Connected} />
           <Route exact path="/inventory" component={Inventory} />
-          <Route exact path="./storehome" component={StoreHome}/>
-          <Route exact path="./storeproduct" component={ProductLists}/>
-          <Route exact path="./storevendor" component={VendorLists}/>
-          <Route exact path="./storeinventory" component={InventoryLists}/>
-          <Route exact path="./storeservice" component={ServiceLists}/>
         </Switch>
       </BrowserRouter>
       {/* <SignupTest/> */}

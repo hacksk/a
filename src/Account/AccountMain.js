@@ -15,7 +15,6 @@ class AccountMain extends Component {
   render() {
     return (
       <div>
-        <Navbar/>
         {/* <h1>Status: {this.props.loggedInStatus}</h1> */}
         <h2 className="account-head" style={{ color: "white",paddingLeft:"6em",paddingTop:"2em"}}>ACCOUNT</h2>
         <div className="account-main">
