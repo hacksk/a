@@ -9,12 +9,12 @@ import Breadcrumb from 'react-bootstrap/Breadcrumb';
 class Accesories extends Component {
   render() {
     return (
-      <div>
-        <Navbar />
+      <div className="accessories-moto" style={{minHeight:"100vh"}}>
+        {/* <Navbar /> */}
         <Breadcrumb separator=">">
           <Breadcrumb.Item>Home</Breadcrumb.Item>
-          <Breadcrumb.Item href="">Inventory</Breadcrumb.Item>
-          <Breadcrumb.Item>Alloy Wheel</Breadcrumb.Item>
+          <Breadcrumb.Item href="">Accesories</Breadcrumb.Item>
+          <Breadcrumb.Item>Exhaust</Breadcrumb.Item>
         </Breadcrumb>
         <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
           <Tab eventKey="home" title="DETAILS">

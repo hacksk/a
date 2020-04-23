@@ -43,7 +43,7 @@ import EmployeeSettings from "./EmployeeComponents/EmployeeSettings";
 function App() {
   return (
     <div className="App">
-      <Navbarnew />
+        <Navbarnew />
       <BrowserRouter>
         <Switch>
           <Route exact path="/signin" component={Signin} />

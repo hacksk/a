@@ -281,12 +281,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   cursor: pointer;
 }
 .breadcrumb {
-  background: linear-gradient(
-      0deg,
-      rgba(240, 92, 45, 0.08),
-      rgba(240, 92, 45, 0.08)
-    ),
-    #121212 !important;
+ background-color: rgb(18,18,18)!important;
   margin-left: 4em;
   padding: 1.75rem 1rem !important;
   padding-bottom: 0 !important;
@@ -354,21 +349,18 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .accesories-detail {
   width: 50%;
 }
-.height-define {
-  position: relative;
-}
 .price {
   padding-top: 0.5em;
   position: absolute;
   width: 100%;
-  background-color: #fc5c2e;
-  color: white;
+  background-color: rgb(37,24,20);
+  color: white!important;
   bottom: 0;
   display: flex;
   flex-direction: row;
   align-items: baseline;
   justify-content: space-between;
-  box-shadow: 0px 0px 20px rgba(252, 92, 46, 0.25);
+  padding-bottom: 2vh;
 }
 
 .rs {
@@ -377,16 +369,27 @@ Note: Beware of modifying this element as it can break the animations - you shou
   flex-direction: row;
   justify-content: space-evenly;
   align-items: baseline;
+  color: white!important;
+
 }
 .rs h3 {
   font-weight: bold;
+  color: white!important;
+
 }
 .estimate {
   padding-right: 1em;
   font-weight: lighter;
+  color: white!important;
+
 }
 .shipping {
   text-decoration: underline;
+  color: white!important;
+
+}
+.cost{
+  color: white!important;
 }
 .map-sos {
   display: flex;
@@ -453,10 +456,21 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 @media screen and (max-width: 786px) {
-  .accesories {
+  .height-define{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .accesories-main{
     flex-direction: column;
     align-content: center;
     align-items: center;
+  }
+  .accesories-carousel{
+    width: 100vw ;
+  }
+  .carousel .thumbs {
+    padding-left: 0!important;
   }
   .rs {
     flex-direction: column;
@@ -469,8 +483,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
     top: 8em;
   }
   .carousel .slider-wrapper {
-    width: 100vw !important;
+    width: 90vw !important;
   }
+
 }
 
 /* STYLES FOR ACCESOIRES */
@@ -1136,7 +1151,7 @@ body {
   text-align: start !important;
 }
 .carousel .thumbs {
-  display: none !important;
+  /* display: none !important; */
 }
 .home-content-wrap {
   margin: 6em;
@@ -1715,7 +1730,7 @@ body {
     bottom:80px;
     left:100px;
   }
-  .carousel-head{
+  .el-head{
     left:80px;
     bottom:50px;
     font-size:25px;
@@ -1752,8 +1767,8 @@ body {
   .banner{
     padding:0;
   }
-  .carousel.carousel-slider{
-    width:100vw!important;
+  .carousel .carousel-status{
+    display: none;
   }
   .content-home{
     height: auto;

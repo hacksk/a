@@ -9,7 +9,7 @@ class AccMain extends Component {
     return (
       <div className="height-define">
         
-        <div className="accesories">
+        <div className="accesories-main">
           <div className="accesories-carousel">
             <AccCarousel />
           </div>
