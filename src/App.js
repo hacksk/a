@@ -44,8 +44,8 @@ import Header from "./HeaderCustomer";
 function App() {
   return (
     <div className="App">
-      <Header/>
-        <Navbarnew />
+      {/* <Header/> */}
+        {/* <Navbarnew /> */}
       <BrowserRouter>
         <Switch>
           <Route exact path="/signin" component={Signin} />

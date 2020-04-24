@@ -63,32 +63,24 @@ export default class SignIn extends Component {
         <h5 htmlFor="email"></h5>
         <form className="login-form" onSubmit={this.handleSubmit}>
           <input
-            type="email"
+            type="text"
             name="email"
             value={this.state.email}
             placeholder="Phone Number"
             onChange={this.handleChange}
             required
           />
-          <h5 htmlFor="email"></h5>
 
-          <input
-            type="password"
-            name="password"
-            value={this.state.password}
-            placeholder="Password"
-            onChange={this.handleChange}
-            required
-          />
+          
           <div className="login-btns">
               <button className="signin-btn" type="submit">
                 SIGN IN
               </button>
-            <Link to="/signup">
+            {/* <Link to="/signup">
               <button className="signup-btn" type="submit">
                 SIGN UP
               </button>
-            </Link>
+            </Link> */}
             {/* <a className="forgot-signin">Forgot password ?</a> */}
           </div>
         </form>

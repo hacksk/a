@@ -6,9 +6,7 @@
 /* html {
   overflow: auto;
 } */
-.App {
-  position: absolute;
-}
+
 
 ::-webkit-scrollbar {
   width: 3px;
@@ -2051,21 +2049,3 @@ body {
 
 
 /* ////////////////////////////////////////HEADER/////////////////////////////////// */
-.headerstore{
-  position: absolute;
-  z-index: 1000!important;
-  height:10vh;
-  width: 100%;
-  background: linear-gradient(0deg, rgba(240, 92, 45, 0.08), rgba(240, 92, 45, 0.08)), #121212;
-}
-.headerstore-content{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
-  padding:1em 3em 0 3em;
-}
-.headerstore-content img{
-  width: 5vw;
-}
