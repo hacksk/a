@@ -2108,6 +2108,7 @@ button.StripeCheckout {
   background-image:url("./vector-icons/hexagon.png") ;
   background-repeat: no-repeat;
   background-size: 63vw 112vh;
+  background-color: #121212;
 }
 .forum-home-firstpart{
   justify-content: space-around;
@@ -2115,7 +2116,7 @@ button.StripeCheckout {
   border-bottom: 2px solid rgba(255, 255, 255, 0.08);
   position: relative;
 }
-.forum-home-firstpart a{
+.seeall-forum{
   position: absolute;
   bottom:1em;
   right:2em;
@@ -2137,4 +2138,43 @@ button.StripeCheckout {
   font-size: 12px;
   font-weight: bold;
   font-family: Montserrat;
+}
+.forum-home-thread{
+  display: flex;
+  flex-direction: row;
+  padding-top: 3em;
+  width:60%;
+}
+.forum-threadtwo{
+  justify-content: space-between;
+  align-items: center;
+}
+.forum-home-thread img{
+  width:15em; 
+  border-radius: 8px;
+}
+.forum-home-thread-square{
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.08) ;
+  width:29%;
+  position: relative;
+
+}
+.forum-home-thread-square img{
+  max-width: 100%;
+  border-radius: 8px;
+  
+}
+.trending-thread{
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+  justify-content: space-between;
+  padding: 2em 0 ;
+}
+.trending-thread img{
+  width: 4em;
+  height: 4em;
+  border-radius: 50%  ;
+  border:1px solid #fc5c2d;
 }
