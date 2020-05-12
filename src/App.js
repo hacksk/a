@@ -29,6 +29,8 @@ import CeramicCoating from './Services/CeramicCoating';
 import Connected from './Services/ConnectedSolutions';
 import Inventory from './Inventory';
 import Home from './Home';
+import Payment from "./Payment/Payment"
+import AccesoriesExpanded from "./AccesoriesExpanded";
 import SignupTest from './SignupTest';
 import Navbarnew from './NavbarNew';
 import StoreHome from "./StoreComponents/StoreHome";
@@ -40,12 +42,13 @@ import ServiceLists from "./StoreComponents/ServiceLists"
 import EmployeeHome from "./EmployeeComponents/EmployeeHome";
 import EmployeeSettings from "./EmployeeComponents/EmployeeSettings";
 import Header from "./HeaderCustomer";
+import ForumHome from "./Forum/ForumHome";
 
 function App() {
   return (
     <div className="App">
-      {/* <Header/> */}
-        {/* <Navbarnew /> */}
+      <Header/>
+        <Navbarnew />
       <BrowserRouter>
         <Switch>
           <Route exact path="/signin" component={Signin} />
@@ -53,6 +56,7 @@ function App() {
           <Route exact path="/map" component={Location} />
           <Route exact path="/service" component={CustomerService} />
           <Route exact path="/accesories" component={Accesories} />
+          <Route exact path="/accesoriesexpanded" component={AccesoriesExpanded}/>
           <Route
             exact
             path="/service/steamcleaning"
@@ -77,6 +81,8 @@ function App() {
           <Route exact path="/service/ceramic" component={CeramicCoating} />
           <Route exact path="/service/connected" component={Connected} />
           <Route exact path="/inventory" component={Inventory} />
+          <Route exact path="/bill/payment" component={Payment}/>
+          <Route exact path="/forum" component={ForumHome}/>
         </Switch>
       </BrowserRouter>
       {/* <SignupTest/> */}

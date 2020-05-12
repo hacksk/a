@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Rate } from "antd";
-import Navbar from "./Navbar";
 import { TiTick } from "react-icons/ti";
 import { Popconfirm, message } from "antd";
 
@@ -18,9 +17,9 @@ const desc = ["terrible", "bad", "normal", "good", "wonderful"];
 
 class FeedBack extends Component {
   state = {
-    value: 3
+    value: 3,
   };
-  handleChange = value => {
+  handleChange = (value) => {
     this.setState({ value });
   };
   render() {
@@ -28,7 +27,6 @@ class FeedBack extends Component {
 
     return (
       <div>
-        <Navbar />
         <div className="rating">
           <h3>FEEDBACK</h3>
           <span className="feedback">
@@ -45,18 +43,18 @@ here"
               cols="4"
               onkeyup="Allow()"
             ></textarea>
+            <Popconfirm
+          title="Sure you want to continue?"
+          onConfirm={confirm}
+          onCancel={cancel}
+          okText="Confirm"
+          cancelText="Cancel"
+        >
+          <a href="#" className="feedback-btn">
+            UPLOAD
+          </a>
+        </Popconfirm>
           </div>
-          <Popconfirm
-            title="Sure you want to continue?"
-            onConfirm={confirm}
-            onCancel={cancel}
-            okText="Confirm"
-            cancelText="Cancel"
-          >
-            <a href="#" className="feedback-btn">
-              <TiTick />
-            </a>
-          </Popconfirm>
         </div>
       </div>
     );

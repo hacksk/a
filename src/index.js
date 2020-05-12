@@ -4,7 +4,6 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import 'leaflet/dist/leaflet-src.esm';
-import './index.css'
 import cartReducer from './Services/Steam/components/reducers/cartReducer';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';

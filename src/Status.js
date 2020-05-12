@@ -10,7 +10,7 @@
 import React, { Component } from "react";
 import "antd/dist/antd.css";
 import "./index.css";
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 import { Steps } from "antd";
 
 const { Step } = Steps;
@@ -18,8 +18,9 @@ const { Step } = Steps;
 class Status extends Component {
   render() {
     return (
-      <div>
-        <Navbar />  
+      <div style={{padding:"10em",paddingTop:"4em",maxHeight:"100vh",overflow:"hidden"}}>
+        {/* <Navbar />   */}
+        <h3 style={{color:"white"}}>STATUS</h3>
         <div className="status-bar">
           <Steps
             className="status-component"
