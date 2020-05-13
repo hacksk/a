@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import Forumcontentone from "./ForumContentOne";
 import Forumcontenttwo from "./ForumContentTwo";
 import { Tabs } from "antd";
-import ForumTrendingThread from "./ForumTrendingThread";
 import ForumTrending from "./ForumTrendingThread";
+import { Link } from "react-router-dom";
 
 const { TabPane } = Tabs;
 
@@ -12,6 +12,7 @@ function callback(key) {
 }
 
 export default class ForumHome extends Component {
+  
   render() {
     return (
       <div className="forum-home">
@@ -60,7 +61,19 @@ export default class ForumHome extends Component {
               style={{ width: "40em", borderRadius: "10px" }}
               src="https://images.pexels.com/photos/119435/pexels-photo-119435.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
             ></img>
-            <h3 style={{position:"absolute",top:"2.3em",fontWeight:"900",fontFamily:"Montserrat",paddingLeft:"2em",color:"white"}}>1 year with a jeep <br/>compass</h3>
+            <h3
+              style={{
+                position: "absolute",
+                top: "2.3em",
+                fontWeight: "900",
+                fontFamily: "Montserrat",
+                paddingLeft: "2em",
+                color: "white",
+              }}
+            >
+              1 year with a jeep <br />
+              compass
+            </h3>
           </div>
           <a className="seeall-forum">SEE ALL</a>
         </div>
@@ -108,7 +121,7 @@ export default class ForumHome extends Component {
             threadimagetwo="https://images.pexels.com/photos/88628/pexels-photo-88628.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
             threadheadtwo="Long term ownership review - My Honda City VX CVT  "
             threadcontenttwo="First things first – let me eat that frog and address the elephant in the room - YES! I’m a big time.... "
-          />{" "}
+          />
           <Forumcontenttwo
             threadimagetwo="https://images.pexels.com/photos/2091351/pexels-photo-2091351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
             threadheadtwo="An impromptu planned trip to Jim Corbett  "
@@ -122,36 +135,46 @@ export default class ForumHome extends Component {
               Content of Tab Pane 1
             </TabPane>
             <TabPane tab="TRENDING" key="2">
-              <ForumTrending
-                threadprof="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
-                trendinghead="The Automotive Memes Thread"
-                trendingcontent="Big thanks to Devesh Gosavi for suggesting this thread! "
-                timethread="3 mins ago"
-              />
-              <ForumTrending
-                threadprof="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                trendinghead="The Automotive Memes Thread"
-                trendingcontent="Big thanks to Devesh Gosavi for suggesting this thread! "
-                timethread="2 hours ago"
-              />
-              <ForumTrending
-                threadprof="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                trendinghead="The Automotive Memes Thread"
-                trendingcontent="Big thanks to Devesh Gosavi for suggesting this thread! "
-                timethread="02/04/2020"
-              />
-              <ForumTrending
-                threadprof="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                trendinghead="The Automotive Memes Thread"
-                trendingcontent="Big thanks to Devesh Gosavi for suggesting this thread! "
-                timethread="21/03/2020"
-              />
-              <ForumTrending
-                threadprof="https://images.pexels.com/photos/2635534/pexels-photo-2635534.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                trendinghead="The Automotive Memes Thread"
-                trendingcontent="Big thanks to Devesh Gosavi for suggesting this thread! "
-                timethread="19/03/2020"
-              />
+              <Link to="/forum/thread">
+                <ForumTrending
+                  threadprof="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+                  trendinghead="The Automotive Memes Thread"
+                  trendingcontent="Big thanks to Devesh Gosavi for suggesting this thread! "
+                  timethread="3 mins ago"
+                />
+              </Link>
+              <Link to="/forum/thread">
+                <ForumTrending
+                  threadprof="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                  trendinghead="The Automotive Memes Thread"
+                  trendingcontent="Big thanks to Devesh Gosavi for suggesting this thread! "
+                  timethread="2 hours ago"
+                />
+              </Link>
+              <Link to="/forum/thread">
+                <ForumTrending
+                  threadprof="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                  trendinghead="The Automotive Memes Thread"
+                  trendingcontent="Big thanks to Devesh Gosavi for suggesting this thread! "
+                  timethread="02/04/2020"
+                />
+              </Link>
+              <Link to="/forum/thread">
+                <ForumTrending
+                  threadprof="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                  trendinghead="The Automotive Memes Thread"
+                  trendingcontent="Big thanks to Devesh Gosavi for suggesting this thread! "
+                  timethread="21/03/2020"
+                />
+              </Link>
+              <Link to="/forum/thread">
+                <ForumTrending
+                  threadprof="https://images.pexels.com/photos/2635534/pexels-photo-2635534.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                  trendinghead="The Automotive Memes Thread"
+                  trendingcontent="Big thanks to Devesh Gosavi for suggesting this thread! "
+                  timethread="19/03/2020"
+                />
+              </Link>
             </TabPane>
           </Tabs>
         </div>

@@ -2171,10 +2171,87 @@ button.StripeCheckout {
   border-bottom: 2px solid rgba(255, 255, 255, 0.08);
   justify-content: space-between;
   padding: 2em 0 ;
+  cursor: pointer;
 }
 .trending-thread img{
   width: 4em;
   height: 4em;
   border-radius: 50%  ;
   border:1px solid #fc5c2d;
+}
+
+
+/* ////////////THREAD EXPANDED////////////////////// */
+.threadexpand{
+  padding:5em;
+}
+.threadexpand-content{
+  display: flex;
+  flex-direction: column;
+  color:white;
+  background-color:  rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  width:70%;
+  padding:3em;
+  margin-top: 2em;
+  font-family: Montserrat;
+  justify-content: space-between;
+}
+.threadexpand-content p{
+  font-size: 13px;
+  font-weight: 600;
+  padding-top: 1em;
+}
+.threadexpand-content h5{
+  font-size: 21px;
+  color:white;
+  font-family: Montserrat;
+  font-weight: 600;
+}
+.threadexpand-content img{
+  width:25em;
+  border-radius: 8px;
+}
+.ant-comment-actions > li > span, a:not([href]):not([tabindex]){
+  color:white!important;
+}
+.ant-comment-content-author-name{
+  color:#F05C2D!important;
+}
+.ant-comment-content-detail {
+  color:white!important;
+}
+.ant-btn.ant-btn-primary{
+  background-color: rgba(255, 255, 255, 0.08)!important;
+}
+.ant-form-item .ant-mentions, .ant-form-item textarea.ant-input{
+  background-color:rgba(255, 255, 255, 0.08);
+  color:white;
+}
+.ant-form-item .ant-mentions, .ant-form-item textarea.ant-input:hover{
+  border-color: unset;
+}
+.ant-form-item .ant-mentions, .ant-form-item textarea.ant-input:active{
+  border-color: #fc5c2d;
+}
+.ant-list-header{
+  color:white;
+}
+.thread-profile-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 2em;
+}
+.thread-profile-header img{
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+}
+
+.thread-profile-header p{
+  color: #fc5c2d;
+  font-weight: 600;
+  font-family: Montserrat;
+  padding-left: 1em;
 }
