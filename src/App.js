@@ -44,6 +44,7 @@ import EmployeeSettings from "./EmployeeComponents/EmployeeSettings";
 import Header from "./HeaderCustomer";
 import ForumHome from "./Forum/ForumHome";
 import Threadexpand from "./Forum/ThreadExpand";
+import ForumCreate from "./Forum/ForumCreate";
 
 function App() {
   return (
@@ -89,6 +90,7 @@ function App() {
           <Route exact path="/bill/payment" component={Payment} />
           <Route exact path="/forum" component={ForumHome} />
           <Route exact path="/forum/thread" component={Threadexpand} />
+          <Route exact path="/forum/create" component={ForumCreate}></Route>
         </Switch>
       </BrowserRouter>
     </div>
