@@ -45,6 +45,7 @@ import Header from "./HeaderCustomer";
 import ForumHome from "./Forum/ForumHome";
 import Threadexpand from "./Forum/ThreadExpand";
 import ForumCreate from "./Forum/ForumCreate";
+import ForumClub from "./Forum/ForumClubHome";
 
 function App() {
   return (
@@ -90,7 +91,8 @@ function App() {
           <Route exact path="/bill/payment" component={Payment} />
           <Route exact path="/forum" component={ForumHome} />
           <Route exact path="/forum/thread" component={Threadexpand} />
-          <Route exact path="/forum/create" component={ForumCreate}></Route>
+          <Route exact path="/forum/create" component={ForumCreate}/>
+          <Route exact path="/forum/clubhome" component={ForumClub}/>
         </Switch>
       </BrowserRouter>
     </div>

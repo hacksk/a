@@ -2309,3 +2309,51 @@ a:not([href]):not([tabindex]) {
   color:black;
   height: 3em;
 }
+
+/* ////////////////////////////////////CLUB HOME FORUM//////////////////////////////////////// */
+
+.ant-timeline-item{
+  padding-bottom: 15vh!important;
+  color:white!important;
+}
+.ant-timeline-item-tail{
+  border-color: rgba(255, 255, 255, 0.08)!important;
+}
+.ant-timeline-item-head-blue{
+  border-color:  #FC5C2E!important;
+  border-width: 1px!important;
+}
+.timeline-image{
+  width: 15em;
+  border-radius: 8px;
+}
+.timeline-content{
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  width: 80%;
+  padding:4em;
+}
+.timeline-content h6{
+  color:white!important;
+  font-family: Montserrat;
+}
+.timeline-content-images{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.timeline-content-images img{
+  width:12em;
+  border-radius: 8px;
+}
+.ant-timeline-item-content{
+  margin-left: 50px!important;
+  margin-top:15px!important;
+}
+.timeline-account-detail{
+  padding-top: 2em;
+  width: 35%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
