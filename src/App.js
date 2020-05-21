@@ -38,6 +38,8 @@ import ForumHome from "./Forum/ForumHome";
 import Threadexpand from "./Forum/ThreadExpand";
 import ForumCreate from "./Forum/ForumCreate";
 import ForumClub from "./Forum/ForumClubHome";
+import NewsExpanded from "./Forum/NewsExpanded";
+import NewsExpanded1 from "./Forum/NewsExpand1";
 
 function App() {
   return (
@@ -88,6 +90,8 @@ function App() {
           <Route exact path="/forum/thread" component={Threadexpand} />
           <Route exact path="/forum/create" component={ForumCreate}/>
           <Route exact path="/forum/clubhome" component={ForumClub}/>
+          <Route exact path="/forum/thread/news" component={NewsExpanded}/>
+          <Route exact path="/forum/thread/news1" component={NewsExpanded1}/>
         </Switch>
         <BottomNavbar/>
       </BrowserRouter>

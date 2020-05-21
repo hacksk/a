@@ -25,20 +25,23 @@ import Item24 from '../../images/serviceicons/service(26).svg'
 import Item25 from '../../images/serviceicons/service(27).svg'
 import Item26 from '../../images/serviceicons/service(28).svg'
 import Item27 from '../../images/serviceicons/service(29).svg'
-import Item28 from '../../images/serviceicons/service(3).svg'
-import Item29 from '../../images/serviceicons/service(3).svg'
-import Item30 from '../../images/serviceicons/service(3).svg'
-import Item31 from '../../images/serviceicons/service(3).svg'
-import Item32 from '../../images/serviceicons/service(3).svg'
-import Item33 from '../../images/serviceicons/service(3).svg'
-import Item34 from '../../images/serviceicons/service(3).svg'
-import Item35 from '../../images/serviceicons/service(3).svg'
-import Item36 from '../../images/serviceicons/service(3).svg'
-import Item37 from '../../images/serviceicons/service(3).svg'
-import Item38 from '../../images/serviceicons/service(3).svg'
-import Item39 from '../../images/serviceicons/service(3).svg'
-import Item40 from '../../images/serviceicons/service(3).svg'
-import Item41 from '../../images/serviceicons/service(3).svg'
+import Item28 from '../../images/serviceicons/service(30).svg'
+import Item29 from '../../images/serviceicons/service(31).svg'
+import Item30 from '../../images/serviceicons/service(32).svg'
+import Item31 from '../../images/serviceicons/service(33).svg'
+import Item32 from '../../images/serviceicons/service(34).svg'
+import Item33 from '../../images/serviceicons/service(35).svg'
+import Item34 from '../../images/serviceicons/service(36).svg'
+import Item35 from '../../images/serviceicons/service(37).svg'
+import Item36 from '../../images/serviceicons/service(38).svg'
+import Item37 from '../../images/serviceicons/service(39).svg'
+import Item38 from '../../images/serviceicons/service(40).svg'
+import Item39 from '../../images/serviceicons/service(41).svg'
+import Item40 from '../../images/serviceicons/service(42).svg'
+import Item41 from '../../images/serviceicons/service(1).svg'
+import Item42 from '../../images/serviceicons/service(2).svg'
+
+
 
 
 
@@ -88,6 +91,8 @@ const initState = {
         {id:39,title:'Blues', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",price:90,img: Item39},
         {id:40,title:'Blues', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",price:90,img: Item40},
         {id:41,title:'Blues', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",price:90,img: Item41},
+        {id:42,title:'Blues', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",price:90,img: Item42},
+
 
     ],
     addedItems:[],
