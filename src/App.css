@@ -262,6 +262,23 @@ Note: Beware of modifying this element as it can break the animations - you shou
   left: 6em;
   font-size: 15px;
 }
+.card:hover{
+  cursor: pointer;
+}
+.card{
+  background-color:transparent!important ;
+  width:17vw!important;
+}
+.ant-btn{
+  height: 3em!important;
+}
+.ant-btn:hover{
+  background: rgba(255, 255, 255, 0.08)!important ;
+}
+.ant-btn svg:hover{
+  color:rgba(240, 92, 45, 0.87)!important;
+}
+.card-content{display: none;}
 .steamcleaning-cards a {
   color: white !important;
   font-size: 20px;
@@ -1162,7 +1179,7 @@ body {
 .home-content {
   width: 100% !important;
   height: 220vh;
-  background-image: url("./vector-icons/main-page-lines.svg");
+  /* background-image: url("./vector-icons/main-page-lines.svg"); */
   background-repeat: no-repeat;
   background-size: 85vw auto;
   position: relative;
@@ -1661,6 +1678,7 @@ body {
   padding-right: 2em;
   position: relative;
   padding-top: 2em;
+  margin-left: 2em;
 }
 .carousel .slide .testcar {
   bottom: 30px !important;
@@ -1766,6 +1784,7 @@ body {
   }
   .banner {
     padding: 0;
+    padding-top: 7em;
   }
   .carousel .carousel-status {
     display: none;
@@ -1887,6 +1906,7 @@ body {
 /* STYLES FOR NEW NAVBAR AND HEADER */
 
 .newnav {
+  position: absolute;
   width: 9%;
   background: linear-gradient(
     0deg,
@@ -1894,6 +1914,7 @@ body {
     rgba(255, 255, 255, 0.08)
   );
   text-align: center;
+  z-index: 1000!important;
 }
 
 .navmenu svg {
@@ -1949,7 +1970,7 @@ body {
 }
 .headerstore {
   position: absolute;
-  z-index: 1000 !important;
+  z-index: 500 !important;
   height: 10vh;
   width: 100%;
   background: linear-gradient(
@@ -2032,6 +2053,7 @@ body {
   align-items: center;
   height: 8vh;
   display: none;
+  z-index: 1000;
 }
 .bottommenu ul {
   list-style-type: none;
@@ -2078,6 +2100,31 @@ body {
   justify-content: space-around;
   padding: 6em;
   padding-top: 1em;
+}
+@media screen and (max-width: 786px) {
+  .payment-content{
+    flex-direction: column!important;
+    padding:1em 1em;
+  }
+  .payment-method,.payment-objects{
+    width: 100%!important;
+  }
+  .payment-method img{
+    width:23em!important;
+  }
+  .card{
+    width:40vw!important  ;
+  }
+  .container{
+    padding-left: 0!important;
+    padding-right: 0!important;
+  }
+  .height-define{
+    padding:0!important;
+  }
+  .box{
+    flex-direction: row;
+  }
 }
 .payment-method {
   height: 100vh;
@@ -2184,6 +2231,112 @@ button.StripeCheckout {
   border-radius: 50%;
   border: 1px solid #fc5c2d;
 }
+.clubhomemain{
+  position: relative;
+}
+.clubhome-posters{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 3em;
+  padding-bottom: 5em;
+}
+.clubhome-posters img{
+  width: 15em!important;
+  border-radius: 8px;
+}
+.forum-create{
+  position: absolute;
+  right:6em;
+  border:none;
+  background: linear-gradient(103.03deg, #F05C2D 8.02%, #FCAA2E 96.06%);
+  font-family: Montserrat;
+  height:3em;
+  border-radius: 8px;
+  width: 14em;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
+  color: #000000; 
+}
+.continue{
+  border:none;
+  width:10em;
+  text-decoration: underline;
+  background: transparent;
+  color:white;
+  font-weight: bold;
+  font-size: 16px;
+}
+@media screen and (max-width: 786px) {
+
+  .clubhome-posters{
+    flex-direction: column;
+    align-items: center;
+  }
+  .forum-threadtwo{
+    flex-direction: column!important;
+  }
+  .forum-home-thread-square{
+    width: 100%;
+  }
+  .forum-home-thread img{
+    width: 10em;
+    height: 7em!important;
+  }
+  .forum-home-thread p{
+    font-size: 10px;
+  }
+  .forum-home-thread h6{
+    font-size: 15px;
+  }
+  .forumcontentone{
+    padding:unset!important;
+    padding-bottom: 5em!important;
+  }
+  .forum-home-thread{
+    width:unset!important;
+  }
+  .forum-head-image{
+    width:100%!important;
+  }
+  .forum-home-firstpart{
+    flex-direction: column!important;
+    padding:0!important;
+    padding-top: 5em!important;
+    padding-bottom: 5em!important;
+  }
+  .clubhomemain{
+    padding:unset!important;
+  }
+  
+  .timeline-content-images{
+    flex-direction: column!important;
+  }
+  .timeline-account-detail{
+    width:unset!important;
+  }
+  .forum-service-now{
+    width: 10em;
+  }
+  .seeall-forum{
+    padding-top: 3em;
+  }
+  .forum-threads{
+    padding:2em!important;
+  }
+  .trending-thread p{
+    font-size: 10px!important;
+  }
+  .trending-thread h6{
+    font-size: 15px!important;
+  }
+}
+
 
 /* ////////////THREAD EXPANDED////////////////////// */
 .threadexpand {
@@ -2356,4 +2509,11 @@ a:not([href]):not([tabindex]) {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.ant-picker{
+  color:white!important;
+background-color: black!important;
+}
+.ant-picker-input > input{
+  color:white!important;
 }

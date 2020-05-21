@@ -11,6 +11,46 @@ import Navbarnew from "./NavbarNew";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import BottomNavbar from "./BottomNavbar";
+import moment from "moment";
+import { DatePicker } from "antd";
+
+const { RangePicker } = DatePicker;
+
+function range(start, end) {
+  const result = [];
+  for (let i = start; i < end; i++) {
+    result.push(i);
+  }
+  return result;
+}
+
+function disabledDate(current) {
+  // Can not select days before today and today
+  return current && current < moment().endOf("day");
+}
+
+function disabledDateTime() {
+  return {
+    disabledHours: () => range(0, 24).splice(4, 20),
+    disabledMinutes: () => range(30, 60),
+    disabledSeconds: () => [55, 56],
+  };
+}
+
+function disabledRangeTime(_, type) {
+  if (type === "start") {
+    return {
+      disabledHours: () => range(0, 60).splice(4, 20),
+      disabledMinutes: () => range(30, 60),
+      disabledSeconds: () => [55, 56],
+    };
+  }
+  return {
+    disabledHours: () => range(0, 60).splice(20, 4),
+    disabledMinutes: () => range(0, 31),
+    disabledSeconds: () => [55, 56],
+  };
+}
 
 export default class Home extends Component {
   render() {
@@ -52,7 +92,7 @@ export default class Home extends Component {
                       fontStyle: "italic",
                       fontWeight: "bold",
                       fontSize: "86px",
-                      marginBottom: "0"
+                      marginBottom: "0",
                     }}
                   >
                     35
@@ -61,33 +101,47 @@ export default class Home extends Component {
                     Days without service
                   </p>
                 </div>
-                <button
-                  className="hvr-float-shadow"
-                  style={{
-                    color: "black",
-                    border: "none",
-                    borderRadius: "8px",
-                    backgroundImage:
-                      " linear-gradient(105.62deg, #F05C2D 0%, #FCAA2E 120.94%)",
-                    height: "34px",
-                    width: "126px",
-                    fontWeight: "900",
-                    fontSize: "12px"
-                  }}
-                >
-                  SERVICE NOW
-                </button>
+                <Link to="/steamhome">
+                  <button
+                    className="hvr-float-shadow"
+                    style={{
+                      color: "black",
+                      border: "none",
+                      borderRadius: "8px",
+                      backgroundImage:
+                        " linear-gradient(105.62deg, #F05C2D 0%, #FCAA2E 120.94%)",
+                      height: "34px",
+                      width: "126px",
+                      fontWeight: "900",
+                      fontSize: "12px",
+                    }}
+                  >
+                    SERVICE NOW
+                  </button>
+                </Link>
               </div>
               <div className="home-second-second">
                 {/* <img src={require("./assets/timer-24px.svg")}/> */}
-                <p
-                  style={{
-                    color: "rgba(252, 170, 46, 0.87)",
-                    cursor: "pointer"
-                  }}
-                >
-                  SET REMAINDER
-                </p>
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <p
+                    style={{
+                      color: "rgba(252, 170, 46, 0.87)",
+                      cursor: "pointer",
+                    }}
+                  >
+                    SET REMAINDER
+                  </p>
+                  <div>
+                    <DatePicker
+                      format="YYYY-MM-DD HH:mm:ss"
+                      disabledDate={disabledDate}
+                      disabledTime={disabledDateTime}
+                      showTime={{
+                        defaultValue: moment("00:00:00", "HH:mm:ss"),
+                      }}
+                    />
+                  </div>
+                </div>
                 <img
                   style={{ width: "20em" }}
                   src={require("./assets/hyundai.png")}
@@ -95,12 +149,12 @@ export default class Home extends Component {
               </div>
             </div>
           </div>
-          <div className="home-icons-wrap">
+          {/* <div className="home-icons-wrap">
             <h5
               style={{
                 color: "white",
                 paddingLeft: "4em",
-                fontFamily: "Praktika"
+                fontFamily: "Praktika",
               }}
             >
               FEATURED SERVICES
@@ -127,7 +181,7 @@ export default class Home extends Component {
                 ></img>
               </figure>
             </div>
-          </div>
+          </div> */}
 
           <div className="home-content-wrap">
             <h5>RECOMMENDED SERVICES</h5>
@@ -166,10 +220,12 @@ export default class Home extends Component {
                   src={require("./vector-icons/steam service cards/Group 89steam.svg")}
                 ></img>
               </div>
-              <a className="explore-link hvr-pulse-grow">
-                EXPLORE
-                <FaLongArrowAltRight />
-              </a>
+              <Link to="/steamhome">
+                <a className="explore-link hvr-pulse-grow">
+                  EXPLORE
+                  <FaLongArrowAltRight />
+                </a>
+              </Link>
               <h5>RECOMMENDED ACCESSORIES</h5>
               <div className="home-content-part2">
                 <div className="home-accessories hvr-float-shadow">
@@ -181,7 +237,7 @@ export default class Home extends Component {
                       textAlign: "center",
                       fontFamily: "Montserrat",
                       fontWeight: "600",
-                      fontSize: "14px"
+                      fontSize: "14px",
                     }}
                   >
                     PHONE HOLDER
@@ -193,7 +249,7 @@ export default class Home extends Component {
                     style={{
                       color: "white",
                       paddingTop: "2em",
-                      textAlign: "center"
+                      textAlign: "center",
                     }}
                   >
                     RIMS 22"
@@ -205,7 +261,7 @@ export default class Home extends Component {
                     style={{
                       color: "white",
                       paddingTop: "2em",
-                      textAlign: "center"
+                      textAlign: "center",
                     }}
                   >
                     AIR FRESHNER
@@ -217,7 +273,7 @@ export default class Home extends Component {
                     style={{
                       color: "white",
                       paddingTop: "2em",
-                      textAlign: "center"
+                      textAlign: "center",
                     }}
                   >
                     GPS
@@ -229,7 +285,7 @@ export default class Home extends Component {
                     style={{
                       color: "white",
                       paddingTop: "2em",
-                      textAlign: "center"
+                      textAlign: "center",
                     }}
                   >
                     TYRES
@@ -241,7 +297,7 @@ export default class Home extends Component {
                     style={{
                       color: "white",
                       paddingTop: "2em",
-                      textAlign: "center"
+                      textAlign: "center",
                     }}
                   >
                     GPS
@@ -253,7 +309,7 @@ export default class Home extends Component {
                     style={{
                       color: "white",
                       paddingTop: "2em",
-                      textAlign: "center"
+                      textAlign: "center",
                     }}
                   >
                     5" SPEAKER
@@ -265,7 +321,7 @@ export default class Home extends Component {
                     style={{
                       color: "white",
                       paddingTop: "2em",
-                      textAlign: "center"
+                      textAlign: "center",
                     }}
                   >
                     RIMS 22"
@@ -379,7 +435,7 @@ export default class Home extends Component {
             </a>
           </div>
         </div>
-        <BottomNavbar/>
+        <BottomNavbar />
       </div>
     );
   }

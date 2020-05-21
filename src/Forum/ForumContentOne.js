@@ -6,7 +6,7 @@ export default class ForumContentOne extends Component {
   }
   render() {
     return (
-      <div className="forum-home-thread">
+      <div style={{cursor:"pointer"}} className="forum-home-thread">
         <img src={this.props.threadimage}></img>
         <div style={{ paddingLeft: "2em",display:"flex",flexDirection:"column",justifyContent:"center" }}>
           <h6 style={{ color: "white" }}>{this.props.threadhead}</h6>

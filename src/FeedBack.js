@@ -27,7 +27,7 @@ class FeedBack extends Component {
 
     return (
       <div>
-        <div className="rating">
+        <div style={{paddingTop:"2em"}} className="rating">
           <h3>FEEDBACK</h3>
           <span className="feedback">
             <Rate tooltips={desc} onChange={this.handleChange} value={value} />

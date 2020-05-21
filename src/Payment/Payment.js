@@ -3,7 +3,8 @@ import Breadcrumb from "react-bootstrap/Breadcrumb";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Tabs, Select } from "antd";
 import Stripe from "../StripeBtn";
-
+import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const { TabPane } = Tabs;
 const { Option } = Select;
@@ -14,7 +15,7 @@ function callback(key) {
 export default class Payment extends Component {
   render() {
     return (
-      <div>
+      <div style={{ maxHeight: "auto" }}>
         <Breadcrumb separator=">">
           <Breadcrumb.Item>Home</Breadcrumb.Item>
           <Breadcrumb.Item href="">Bill</Breadcrumb.Item>
@@ -22,16 +23,31 @@ export default class Payment extends Component {
         </Breadcrumb>
         <div className="payment-content">
           <div className="payment-method">
-          {/* <h5 style={{ color: "white" }}>PAYMENT METHODS </h5> */}
+            {/* <h5 style={{ color: "white" }}>PAYMENT METHODS </h5> */}
             <Tabs defaultActiveKey="1" onChange={callback}>
               <TabPane tab="CREDIT/DEBIT CARD" key="1">
-                <div style={{display:"flex",flexDirection:"column"}}>
+                <div style={{ display: "flex", flexDirection: "column" }}>
                   <img
                     style={{ width: "30em" }}
                     src="https://cdn.hsbc.co.in/content/dam/hsbc/in/images/hsbc-premier-mastercard.png/_jcr_content/renditions/cq5dam.web.1280.1280.png"
                   ></img>
-                  <div  className="payment-estimate"><Stripe/></div>
-                  
+                  <div className="payment-estimate">
+                    <Stripe />
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      paddingTop: "2em",
+                    }}
+                  >
+                    <Link to="/payment/feedback">
+                      <button className="continue">
+                        Continue
+                        <FaArrowRight />
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               </TabPane>
               <TabPane tab="PAYMENT PARTNERS" key="2">

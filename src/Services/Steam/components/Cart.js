@@ -50,7 +50,7 @@ class Cart extends Component{
             ):
 
              (
-                <p>Nothing.</p>
+                <p>You Have Selected Nothing.</p>
              )
        return(
             <div className="container">
@@ -60,7 +60,7 @@ class Cart extends Component{
                         {addedItems}
                     </ul>
                 </div> 
-                <Recipe />          
+                <Recipe /> 
             </div>
        )
     }

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import L, { map } from "leaflet";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import carImg from "./assets/Car-icon.png";
-import Navbar from "./Navbar";
+import Navbarnew from "./NavbarNew";
 import { Modal, Button } from 'antd';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 
@@ -55,7 +55,7 @@ class Location extends Component {
 
     return (
       <div className="main">
-        <Navbar />
+        <Navbarnew/>
         <div className="map-sos">
           <Map
             className="map transform"

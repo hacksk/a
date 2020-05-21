@@ -12,7 +12,9 @@ function callback(key) {
 }
 
 export default class ForumHome extends Component {
-  
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   render() {
     return (
       <div className="forum-home">
@@ -54,9 +56,21 @@ export default class ForumHome extends Component {
                 Days without service
               </h6>
             </div>
-            <button className="forum-service-now">SERVICE NOW</button>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <Link to="/steamhome">
+                <button className="forum-service-now">SERVICE NOW</button>
+              </Link>
+              <Link to="/forum/clubhome">
+                <button
+                  style={{ marginTop: "2em" }}
+                  className="forum-service-now"
+                >
+                  MOTO CLUB
+                </button>
+              </Link>
+            </div>
           </div>
-          <div style={{ position: "relative" }}>
+          <div className="forum-head-image" style={{ position: "relative" }}>
             <img
               style={{ width: "40em", borderRadius: "10px" }}
               src="https://images.pexels.com/photos/119435/pexels-photo-119435.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
@@ -78,6 +92,7 @@ export default class ForumHome extends Component {
           <a className="seeall-forum">SEE ALL</a>
         </div>
         <div
+          className="forumcontentone"
           style={{
             padding: "5em",
             position: "relative",
@@ -129,7 +144,10 @@ export default class ForumHome extends Component {
           />
           <a className="seeall-forum">SEE ALL</a>
         </div>
-        <div style={{ padding: "6em", paddingTop: "0" }}>
+        <div
+          className="forum-threads"
+          style={{ padding: "6em", paddingTop: "0" }}
+        >
           <Tabs defaultActiveKey="2" onChange={callback}>
             <TabPane tab="LATEST" key="1">
               Content of Tab Pane 1

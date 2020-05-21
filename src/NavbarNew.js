@@ -1,46 +1,86 @@
-import React, { Component } from 'react';
-import { MdLocationOn, MdShoppingCart, MdAccountCircle } from 'react-icons/md';
-import { AiTwotoneHome } from 'react-icons/ai';
-import { IoMdSearch, IoMdMenu } from 'react-icons/io';
-// import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import {
+  MdLocationOn,
+  MdShoppingCart,
+  MdAccountCircle,
+  MdForum,
+} from "react-icons/md";
+import { AiTwotoneHome } from "react-icons/ai";
+import { IoMdSearch, IoMdMenu } from "react-icons/io";
+import { Link } from "react-router-dom";
+import { Tooltip, Button } from "antd";
+
+const settings = <span>Settings</span>;
+const text = <span>Home</span>;
+const text1 = <span>Search</span>;
+const text2 = <span>Location</span>;
+const text3 = <span>Cart</span>;
+const text4 = <span>Forum</span>;
+
+const buttonWidth = 70;
 
 export default class NavbarNew extends Component {
   render() {
     return (
-      <div className="newnav">
+      <div className="newnav" style={{ zIndex: "1000" }}>
         <ul>
           <li>
             <a className="navmenu">
-              <IoMdMenu />
+              <Tooltip placement="top" title={settings}>
+                <IoMdMenu />
+              </Tooltip>
             </a>
           </li>
+          <Link to="/">
+            <li>
+              <Tooltip placement="top" title={text}>
+                <Button>
+                  <AiTwotoneHome />
+                </Button>
+              </Tooltip>
+            </li>
+          </Link>
           <li>
-            <a className="active" href="#home">
-              <AiTwotoneHome />
-            </a>
+            <Tooltip placement="top" title={text1}>
+              <Button>
+                <IoMdSearch />
+              </Button>
+            </Tooltip>
           </li>
-          <li>
-            <a href="#home">
-              <IoMdSearch />
-            </a>
-          </li>
-          {/* <Link to="/map"> */}
-          <li>
-            <a href="#map">
-              <MdLocationOn />
-            </a>
-          </li>
-          {/* </Link> */}
-          <li>
-            <a href="#home">
-              <MdShoppingCart />
-            </a>
-          </li>
-          <li>
-            <a href="#home">
-              <MdAccountCircle />
-            </a>
-          </li>
+          <Link to="./map">
+            <li>
+              <Tooltip placement="top" title={text2}>
+                <Button>
+                  <MdLocationOn />
+                </Button>
+              </Tooltip>
+            </li>
+          </Link>
+          <Link to="/steamcart">
+            <li>
+              <Tooltip placement="top" title={text3}>
+                <Button>
+                  <MdShoppingCart />{" "}
+                </Button>
+              </Tooltip>
+            </li>
+          </Link>
+          <Link to="/forum">
+            <li>
+              <Tooltip placement="top" title={text4}>
+                <Button>
+                  <MdForum />{" "}
+                </Button>
+              </Tooltip>
+            </li>
+          </Link>
+          <Link to="/account">
+            <li>
+              <a href="#home">
+                <MdAccountCircle />
+              </a>
+            </li>
+          </Link>
         </ul>
       </div>
     );

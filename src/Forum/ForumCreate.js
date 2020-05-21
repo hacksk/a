@@ -1,5 +1,10 @@
 import React, { Component } from "react";
 import { Radio } from "antd";
+import { message, Button } from 'antd';
+
+const info = () => {
+  message.info('Couldnt Connect');
+};
 
 export default class ForumCreate extends Component {
   render() {
@@ -23,7 +28,7 @@ export default class ForumCreate extends Component {
             <input
               style={{
                 backgroundColor: "rgba(255, 255, 255, 0.08)",
-                color: "rgba(255, 255, 255, 0.14)",
+                color: "white",
                 border: "none",
                 padding: "1em",
                 borderRadius: "8px",
@@ -61,7 +66,7 @@ export default class ForumCreate extends Component {
               <Radio.Button value="a">India</Radio.Button>
             </Radio.Group>
           </div>
-          <button className="create-forum-button">CREATE FORUM</button>
+          <button type="primary" onClick={info} className="create-forum-button">CREATE FORUM</button>
         </div>
       </div>
     );

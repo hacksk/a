@@ -3,6 +3,8 @@ import { Tabs } from "antd";
 import { Timeline } from "antd";
 import { Avatar } from "antd";
 import { UserOutlined } from "@ant-design/icons";
+import { FaPlus } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const { TabPane } = Tabs;
 
@@ -13,7 +15,32 @@ function callback(key) {
 export default class ForumClubHome extends Component {
   render() {
     return (
-      <div style={{ padding: "8em" }}>
+      <div className="clubhomemain" style={{ padding: "8em" }}>
+        <Link to="/forum/create">
+          <button className="forum-create">
+            <FaPlus />
+            CREATE EVENT
+          </button>
+        </Link>
+        <div style={{ marginTop: "7em" }}>
+          <h6 style={{ color: "white", fontFamily: "Montserrat" }}>
+            UPCOMING CLUB EVENTS
+          </h6>
+          <div className="clubhome-posters">
+            <div className="clubhome-image">
+              <img src={require("../assets/poster1(1).jpg")}></img>
+            </div>
+            <div>
+              <img src={require("../assets/poster1(2).jpg")}></img>
+            </div>
+            <div>
+              <img src={require("../assets/poster1(4).jpg")}></img>
+            </div>
+            <div>
+              <img src={require("../assets/poster1(3).jpg")}></img>
+            </div>
+          </div>
+        </div>
         <Tabs defaultActiveKey="1" onChange={callback}>
           <TabPane tab="UPDATES" key="1">
             <Timeline>

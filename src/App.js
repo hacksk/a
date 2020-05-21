@@ -31,16 +31,8 @@ import Inventory from "./Inventory";
 import Home from "./Home";
 import Payment from "./Payment/Payment";
 import AccesoriesExpanded from "./AccesoriesExpanded";
-import SignupTest from "./SignupTest";
 import Navbarnew from "./NavbarNew";
-import StoreHome from "./StoreComponents/StoreHome";
-import Addemployee from "./StoreComponents/AddEmployee";
-import VendorLists from "./StoreComponents/VendorLists";
-import ProductLists from "./StoreComponents/ProductLists";
-import InventoryLists from "./StoreComponents/InventoryLists";
-import ServiceLists from "./StoreComponents/ServiceLists";
-import EmployeeHome from "./EmployeeComponents/EmployeeHome";
-import EmployeeSettings from "./EmployeeComponents/EmployeeSettings";
+import BottomNavbar from "./BottomNavbar";
 import Header from "./HeaderCustomer";
 import ForumHome from "./Forum/ForumHome";
 import Threadexpand from "./Forum/ThreadExpand";
@@ -51,9 +43,12 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Navbarnew />
       <BrowserRouter>
+      <Navbarnew />
+
         <Switch>
+
+          <Route exact path="/navbarnew" component={Navbarnew}/>
           <Route exact path="/signin" component={Signin} />
           <Route exact path="/signup" component={SignupForm} />
           <Route exact path="/map" component={Location} />
@@ -94,6 +89,7 @@ function App() {
           <Route exact path="/forum/create" component={ForumCreate}/>
           <Route exact path="/forum/clubhome" component={ForumClub}/>
         </Switch>
+        <BottomNavbar/>
       </BrowserRouter>
     </div>
   );
