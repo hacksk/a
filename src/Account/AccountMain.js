@@ -16,7 +16,7 @@ class AccountMain extends Component {
     return (
       <div>
         {/* <h1>Status: {this.props.loggedInStatus}</h1> */}
-        <h2 className="account-head" style={{ color: "white",paddingLeft:"6em",paddingTop:"2em"}}>ACCOUNT</h2>
+        <h2 className="account-head" style={{ color: "white",paddingLeft:"6em",paddingTop:"4em"}}>ACCOUNT</h2>
         <div className="account-main">
           <Tabs defaultActiveKey="1" onChange={callback}>
             <TabPane tab="GENERAL" key="1">

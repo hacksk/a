@@ -221,10 +221,11 @@ export default class Home extends Component {
                 ></img>
               </div>
               <Link to="/steamhome">
-                <a className="explore-link hvr-pulse-grow">
-                  EXPLORE
-                  <FaLongArrowAltRight />
-                </a>
+
+              <a className="explore-link hvr-pulse-grow">
+                EXPLORE
+                <FaLongArrowAltRight />
+              </a>
               </Link>
               <h5>RECOMMENDED ACCESSORIES</h5>
               <div className="home-content-part2">
