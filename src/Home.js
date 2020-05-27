@@ -115,7 +115,6 @@ export default class Home extends Component {
                     style={{
                       color: "white",
                       fontFamily: "Montserrat",
-                      fontStyle: "italic",
                       fontWeight: "bold",
                       fontSize: "86px",
                       marginBottom: "0",

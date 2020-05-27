@@ -1748,6 +1748,9 @@ body {
   font-weight: 300;
   font-size: 48px;
 }
+.carousel .thumbs-wrapper{
+  display: none!important;
+}
 
 @media screen and (max-width: 786px) {
   .header {
