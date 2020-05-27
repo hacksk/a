@@ -133,6 +133,12 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 @media screen and (max-width: 786px) {
+  .cart{
+    padding:0!important;
+  }
+  .collection .collection-item{
+    margin-top: 1em;
+  }
   .bm-menu-wrap {
     width: 100vw !important;
   }

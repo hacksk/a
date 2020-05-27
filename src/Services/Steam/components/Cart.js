@@ -53,10 +53,10 @@ class Cart extends Component{
                 <p style={{fontWeight:"bold"}}>You Have Selected Nothing.</p>
              )
        return(
-            <div style={{paddingTop:"6em"}} className="container">
+            <div style={{paddingTop:"6em",paddingBottom:"5em"}} className="container">
                 <div className="cart">
-                    {/* <h5>You have selected:</h5> */}
-                    <ul className="collection">
+                    <h5>You have selected:</h5>
+                    <ul style={{paddingLeft:"1em"}} className="collection">
                         {addedItems}
                     </ul>
                 </div> 
