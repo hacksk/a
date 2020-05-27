@@ -40,8 +40,8 @@ class Home extends Component {
     });
 
     return (
-      <div className="container">
-        <div className="box">{itemList}</div>
+      <div  className="container">
+        <div style={{paddingBottom:"7em"}} className="box">{itemList}</div>
       </div>
     );
   }

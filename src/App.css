@@ -2143,7 +2143,7 @@ body {
 }
 .bottommenu ul li svg {
   /* color:rgba(240, 92, 45, 0.87); */
-  font-size: 25px;
+  font-size: 29px;
   color: rgb(129, 127, 127);
 }
 
@@ -2242,6 +2242,7 @@ button.StripeCheckout {
 @media screen and (max-width: 786px) {
   .forum-home {
     background-size: contain;
+    padding-bottom: 7em;
   }
   .payment-content {
     padding-top: 4em !important;
@@ -2394,6 +2395,7 @@ button.StripeCheckout {
     align-items: center;
   }
   .home-thread{
+    margin-top:8em!important;
    margin-bottom: 0!important;
    margin-left: 1em!important;
    margin-right: 0!important;
@@ -2473,6 +2475,7 @@ button.StripeCheckout {
 @media screen and (max-width: 786px) {
   .threadexpand {
     padding: 0;
+    padding-bottom: 5em;
   }
   .threadexpand-content {
     justify-content: center;
