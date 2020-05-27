@@ -121,7 +121,6 @@ export default class ForumHome extends Component {
         <div
           className="forum-threadtwo"
           style={{
-            padding: "5em",
             position: "relative",
             display: "flex",
             flexDirection: "row",

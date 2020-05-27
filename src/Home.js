@@ -15,7 +15,7 @@ import Forumcontenttwo from "./Forum/ForumContentTwo";
 import moment from "moment";
 import { Tabs } from "antd";
 import { DatePicker } from "antd";
-import ForumTrending from "./Forum/ForumTrendingThread"
+import ForumTrending from "./Forum/ForumTrendingThread";
 
 const { TabPane } = Tabs;
 
@@ -90,6 +90,7 @@ export default class Home extends Component {
               flexDirection: "row",
             }}
           >
+            
             <Forumcontenttwo
               threadimagetwo="https://images.pexels.com/photos/257988/pexels-photo-257988.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
               threadheadtwo="BMW and the Kidney grille - Is a radical design change needed? "

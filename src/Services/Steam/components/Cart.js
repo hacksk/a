@@ -24,7 +24,7 @@ class Cart extends Component{
                 this.props.items.map(item=>{
                     return(
                        
-                        <li style={{paddingTop:"4em"}} className="collection-item avatar" key={item.id}>
+                        <li className="collection-item avatar" key={item.id}>
                                     <div className="item-img"> 
                                         <img src={item.img} alt={item.img} className=""/>
                                     </div>
@@ -50,12 +50,12 @@ class Cart extends Component{
             ):
 
              (
-                <p>You Have Selected Nothing.</p>
+                <p style={{fontWeight:"bold"}}>You Have Selected Nothing.</p>
              )
        return(
-            <div className="container">
+            <div style={{paddingTop:"6em"}} className="container">
                 <div className="cart">
-                    <h5>You have selected:</h5>
+                    {/* <h5>You have selected:</h5> */}
                     <ul className="collection">
                         {addedItems}
                     </ul>

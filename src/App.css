@@ -1338,6 +1338,7 @@ body {
   list-style-type: none;
   color: white;
   cursor: pointer;
+  padding-top: 1em;
 }
 .footer-logo {
   width: 60%;
@@ -1983,7 +1984,7 @@ body {
 .newnav ul li svg {
   /* color:rgba(240, 92, 45, 0.87); */
   font-size: 20px;
-  color: rgb(129, 127, 127);
+  color: white;
 }
 .newnav ul li .svg :hover {
   color: rgb(179, 176, 176);
@@ -2261,12 +2262,14 @@ button.StripeCheckout {
 .forum-threadtwo {
   justify-content: space-around;
   align-items: center;
+  padding:5em;
 }
 .home-thread{
   border-bottom: 1px solid #1E1E1E;
   color: white;
   margin:8em!important;
   margin-bottom: 0!important;
+  margin-top: 5em!important;
   display: flex;
   justify-content: space-between;
 }
@@ -2352,6 +2355,13 @@ button.StripeCheckout {
   .clubhome-posters {
     flex-direction: column;
     align-items: center;
+  }
+  .home-thread{
+   margin-bottom: 0!important;
+   margin-left: 1em!important;
+  }
+  .forum-threadtwo{
+    padding-top: 0!important;
   }
   .forum-threadtwo {
     flex-direction: column !important;
