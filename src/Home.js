@@ -298,7 +298,7 @@ export default class Home extends Component {
                   src={require("./Services/Steam/images/serviceicons/service(42).png")}
                 ></img>
               </div>
-              <Link to="/steamhome">
+              <Link to="/services">
                 <a className="explore-link hvr-pulse-grow">
                   EXPLORE
                   <FaLongArrowAltRight />
