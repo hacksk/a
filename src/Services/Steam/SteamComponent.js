@@ -11,7 +11,7 @@ class SteamComponent extends Component {
   }
   render() {
     return (
-      <div className="height-define">
+      <div style={{paddingTop:"8em"}} className="height-define">
         <Home />
       </div>
     );

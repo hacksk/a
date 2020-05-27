@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 import { connect } from 'react-redux'
-import { render } from "enzyme";
 
 const publishableKey = "pk_test_UAHsd0FgK8CJC6PXgoZ6cIeO00y9JJDBn5";
 

@@ -15,7 +15,7 @@ function callback(key) {
 export default class Payment extends Component {
   render() {
     return (
-      <div style={{ maxHeight: "auto" }}>
+      <div  style={{ maxHeight: "auto" }}>
         <Breadcrumb separator=">">
           <Breadcrumb.Item>Home</Breadcrumb.Item>
           <Breadcrumb.Item href="">Bill</Breadcrumb.Item>

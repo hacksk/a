@@ -124,7 +124,7 @@
     font-size: 1rem!important;
 }
 .table-content tr,td{
-    padding-left: 5em!important;
+    padding-left: 5em;
 }
 .edit-accnt{
     text-align: right!important;

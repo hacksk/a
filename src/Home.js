@@ -11,8 +11,17 @@ import Navbarnew from "./NavbarNew";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import BottomNavbar from "./BottomNavbar";
+import Forumcontenttwo from "./Forum/ForumContentTwo";
 import moment from "moment";
+import { Tabs } from "antd";
 import { DatePicker } from "antd";
+import ForumTrending from "./Forum/ForumTrendingThread"
+
+const { TabPane } = Tabs;
+
+function callback(key) {
+  console.log(key);
+}
 
 const { RangePicker } = DatePicker;
 
@@ -68,18 +77,34 @@ export default class Home extends Component {
               ></img>
             </div>
           </div>
-          <div className="banner">
-            <Carousel infiniteLoop="true" autoPlay="true">
-              <div>
-                <img src={require("./assets/Rectangle 227.png")} />
-                <h1 className="carousel-subhead">CAR DETAILING OFFER</h1>
-                <h1 className="carousel-head">USE CODE 'MOTO365'</h1>
-              </div>
-              <div>
-                <img src={require("./assets/Rectangle 228.png")} />
-                <h1 className="carousel-head1">SPECIAL OFFERS</h1>
-              </div>
-            </Carousel>
+          <div className="home-thread">
+            <h6>THREADS</h6>
+            {/* <a style={{color:"red"}}> SEE ALL</a> */}
+          </div>
+          <div
+            className="forum-threadtwo"
+            style={{
+              padding: "5em",
+              position: "relative",
+              display: "flex",
+              flexDirection: "row",
+            }}
+          >
+            <Forumcontenttwo
+              threadimagetwo="https://images.pexels.com/photos/257988/pexels-photo-257988.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              threadheadtwo="BMW and the Kidney grille - Is a radical design change needed? "
+              threadcontenttwo="BMW Kidney grilles - is an iconic grille design which has been .... "
+            />
+            <Forumcontenttwo
+              threadimagetwo="https://images.pexels.com/photos/88628/pexels-photo-88628.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              threadheadtwo="Long term ownership review - My Honda City VX CVT  "
+              threadcontenttwo="First things first – let me eat that frog and address the elephant in the room - YES! I’m a big time.... "
+            />
+            <Forumcontenttwo
+              threadimagetwo="https://images.pexels.com/photos/2091351/pexels-photo-2091351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              threadheadtwo="An impromptu planned trip to Jim Corbett  "
+              threadcontenttwo="Hello all, I would like to thank the mods for accepting my membership request and this is my... "
+            />
           </div>
           <div className="home-second">
             <div className="home-second-content-wrap">
@@ -149,6 +174,58 @@ export default class Home extends Component {
               </div>
             </div>
           </div>
+          <div className="news">
+            <Carousel infiniteLoop="true" autoPlay="true">
+              <div>
+                <img src={require("./assets/news banner 2.png")} />
+                <div className="testcar">
+                  <p style={{ color: "rgba(240, 92, 45, 0.08)" }}>NEWS</p>
+                  <h3 style={{ color: "white" }}>
+                    2020 BMW X5 M Competition review,
+                    <br /> test drive
+                  </h3>
+                  <p style={{ color: "white", fontSize: "13px" }}>
+                    We’ve driven the latest iteration of the BMW X5 M
+                    Competition to find out what to expect
+                    <br /> when this 625hp performance SUV arrives in the Indian
+                    market.
+                  </p>
+                </div>
+              </div>
+              <div>
+                <img src={require("./assets/Group 324.png")} />
+                <div className="testcar">
+                  <p style={{ color: "rgba(240, 92, 45, 0.08)" }}>NEWS</p>
+                  <h3 style={{ color: "white" }}>
+                    2020 BMW X5 M Competition review,
+                    <br /> test drive
+                  </h3>
+                  <p style={{ color: "white", fontSize: "13px" }}>
+                    We’ve driven the latest iteration of the BMW X5 M
+                    Competition to find out what to expect
+                    <br /> when this 625hp performance SUV arrives in the Indian
+                    market.
+                  </p>
+                </div>
+              </div>
+              <div>
+                <img src={require("./assets/Group 325.png")} />
+                <div className="testcar">
+                  <p style={{ color: "rgba(240, 92, 45, 0.08)" }}>NEWS</p>
+                  <h3 style={{ color: "white" }}>
+                    2020 BMW X5 M Competition review,
+                    <br /> test drive
+                  </h3>
+                  <p style={{ color: "white", fontSize: "13px" }}>
+                    We’ve driven the latest iteration of the BMW X5 M
+                    Competition to find out what to expect
+                    <br /> when this 625hp performance SUV arrives in the Indian
+                    market.
+                  </p>
+                </div>
+              </div>
+            </Carousel>
+          </div>
           {/* <div className="home-icons-wrap">
             <h5
               style={{
@@ -189,43 +266,42 @@ export default class Home extends Component {
               <div className="home-content-part1">
                 <img
                   className="hvr-float-shadow"
-                  src={require("./vector-icons/steam service cards/Group 65steam.svg")}
+                  src={require("./Services/Steam/images/serviceicons/service(1).png")}
                 ></img>
                 <img
                   className="hvr-float-shadow"
-                  src={require("./vector-icons/steam service cards/Group 82steam.svg")}
+                  src={require("./Services/Steam/images/serviceicons/service(2).png")}
                 ></img>
                 <img
                   className="hvr-float-shadow"
-                  src={require("./vector-icons/steam service cards/Group 84steam.svg")}
+                  src={require("./Services/Steam/images/serviceicons/service(4).png")}
                 ></img>
                 <img
                   className="hvr-float-shadow"
-                  src={require("./vector-icons/steam service cards/Group 85steam.svg")}
+                  src={require("./Services/Steam/images/serviceicons/service(20).png")}
                 ></img>
                 <img
                   className="hvr-float-shadow"
-                  src={require("./vector-icons/steam service cards/Group 86steam.svg")}
+                  src={require("./Services/Steam/images/serviceicons/service(22).png")}
                 ></img>
                 <img
                   className="hvr-float-shadow"
-                  src={require("./vector-icons/steam service cards/Group 87steam.svg")}
+                  src={require("./Services/Steam/images/serviceicons/service(35).png")}
                 ></img>
                 <img
                   className="hvr-float-shadow"
-                  src={require("./vector-icons/steam service cards/Group 88steam.svg")}
+                  src={require("./Services/Steam/images/serviceicons/service(40).png")}
                 ></img>
                 <img
                   className="hvr-float-shadow"
-                  src={require("./vector-icons/steam service cards/Group 89steam.svg")}
+                  src={require("./Services/Steam/images/serviceicons/service(42).png")}
                 ></img>
               </div>
               <Link to="/steamhome">
-
-              <a className="explore-link hvr-pulse-grow">
-                EXPLORE
-                <FaLongArrowAltRight />
-              </a>
+                <a className="explore-link hvr-pulse-grow">
+                  EXPLORE
+                  <FaLongArrowAltRight />
+                </a>
               </Link>
               <h5>RECOMMENDED ACCESSORIES</h5>
               <div className="home-content-part2">
@@ -335,60 +411,10 @@ export default class Home extends Component {
               </a>
             </div>
           </div>
-          <div className="news">
-            <Carousel infiniteLoop="true" autoPlay="true">
-              <div>
-                <img src={require("./assets/news banner 2.png")} />
-                <div className="testcar">
-                  <p style={{ color: "rgba(240, 92, 45, 0.08)" }}>NEWS</p>
-                  <h3 style={{ color: "white" }}>
-                    2020 BMW X5 M Competition review,
-                    <br /> test drive
-                  </h3>
-                  <p style={{ color: "white", fontSize: "13px" }}>
-                    We’ve driven the latest iteration of the BMW X5 M
-                    Competition to find out what to expect
-                    <br /> when this 625hp performance SUV arrives in the Indian
-                    market.
-                  </p>
-                </div>
-              </div>
-              <div>
-                <img src={require("./assets/Group 324.png")} />
-                <div className="testcar">
-                  <p style={{ color: "rgba(240, 92, 45, 0.08)" }}>NEWS</p>
-                  <h3 style={{ color: "white" }}>
-                    2020 BMW X5 M Competition review,
-                    <br /> test drive
-                  </h3>
-                  <p style={{ color: "white", fontSize: "13px" }}>
-                    We’ve driven the latest iteration of the BMW X5 M
-                    Competition to find out what to expect
-                    <br /> when this 625hp performance SUV arrives in the Indian
-                    market.
-                  </p>
-                </div>
-              </div>
-              <div>
-                <img src={require("./assets/Group 325.png")} />
-                <div className="testcar">
-                  <p style={{ color: "rgba(240, 92, 45, 0.08)" }}>NEWS</p>
-                  <h3 style={{ color: "white" }}>
-                    2020 BMW X5 M Competition review,
-                    <br /> test drive
-                  </h3>
-                  <p style={{ color: "white", fontSize: "13px" }}>
-                    We’ve driven the latest iteration of the BMW X5 M
-                    Competition to find out what to expect
-                    <br /> when this 625hp performance SUV arrives in the Indian
-                    market.
-                  </p>
-                </div>
-              </div>
-            </Carousel>
-          </div>
-          <div className="home-facebook">
-            <div className="home-facebook-content">
+
+          {/* <div className="home-facebook">
+          
+        <div className="home-facebook-content">
               <h6>
                 LIKE US ON FACEBOOK FOR FREE LOYALITY POINTS <AiFillLike />{" "}
               </h6>
@@ -400,6 +426,58 @@ export default class Home extends Component {
             <img src={require("./assets/amlogo.svg")}></img>
             <img src={require("./assets/fortador.png")}></img>
             <img src={require("./assets/sonax.png")}></img>
+          </div> */}
+          <div
+            className="forum-threads"
+            style={{ padding: "10em", paddingTop: "0" }}
+          >
+            <Tabs defaultActiveKey="2" onChange={callback}>
+              <TabPane tab="LATEST" key="1">
+                Content of Tab Pane 1
+              </TabPane>
+              <TabPane tab="TRENDING" key="2">
+                <Link to="/forum/thread">
+                  <ForumTrending
+                    threadprof="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+                    trendinghead="The Automotive Memes Thread"
+                    trendingcontent="Big thanks to Devesh Gosavi for suggesting this thread! "
+                    timethread="3 mins ago"
+                  />
+                </Link>
+                <Link to="/forum/thread">
+                  <ForumTrending
+                    threadprof="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                    trendinghead="The Automotive Memes Thread"
+                    trendingcontent="Big thanks to Devesh Gosavi for suggesting this thread! "
+                    timethread="2 hours ago"
+                  />
+                </Link>
+                <Link to="/forum/thread">
+                  <ForumTrending
+                    threadprof="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                    trendinghead="The Automotive Memes Thread"
+                    trendingcontent="Big thanks to Devesh Gosavi for suggesting this thread! "
+                    timethread="02/04/2020"
+                  />
+                </Link>
+                <Link to="/forum/thread">
+                  <ForumTrending
+                    threadprof="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                    trendinghead="The Automotive Memes Thread"
+                    trendingcontent="Big thanks to Devesh Gosavi for suggesting this thread! "
+                    timethread="21/03/2020"
+                  />
+                </Link>
+                <Link to="/forum/thread">
+                  <ForumTrending
+                    threadprof="https://images.pexels.com/photos/2635534/pexels-photo-2635534.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                    trendinghead="The Automotive Memes Thread"
+                    trendingcontent="Big thanks to Devesh Gosavi for suggesting this thread! "
+                    timethread="19/03/2020"
+                  />
+                </Link>
+              </TabPane>
+            </Tabs>
           </div>
         </div>
 

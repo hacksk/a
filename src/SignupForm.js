@@ -7,8 +7,8 @@ import * as Yup from 'yup';
 import { IoIosCamera, IoIosAddCircle } from 'react-icons/io';
 
 class SignupForm extends Component {
-  constructor(props) {
-    super(props);
+    constructor(props) {
+      super(props);
 
     this.state = {
       name: '',

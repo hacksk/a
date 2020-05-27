@@ -24,7 +24,7 @@ class Cart extends Component{
                 this.props.items.map(item=>{
                     return(
                        
-                        <li className="collection-item avatar" key={item.id}>
+                        <li style={{paddingTop:"4em"}} className="collection-item avatar" key={item.id}>
                                     <div className="item-img"> 
                                         <img src={item.img} alt={item.img} className=""/>
                                     </div>

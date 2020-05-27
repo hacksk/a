@@ -61,14 +61,7 @@ export default class ForumHome extends Component {
               <Link to="/steamhome">
                 <button className="forum-service-now">SERVICE NOW</button>
               </Link>
-              <Link to="/forum/clubhome">
-                <button
-                  style={{ marginTop: "2em", fontWeight: "bold" }}
-                  className="forum-service-now"
-                >
-                  MOTO CLUB
-                </button>
-              </Link>
+
             </div>
           </div>
           <div className="forum-head-image" style={{ position: "relative" }}>
@@ -116,7 +109,7 @@ export default class ForumHome extends Component {
           </Link>
           <Link to="/forum/thread/news">
             <Forumcontentone
-              threadimage="https://images.pexels.com/photos/173286/pexels-photo-173286.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              threadimage="https://images.pexels.com/photos/1288491/pexels-photo-1288491.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
               threadhead="DIY: iPHCAR Bi-Xenon Projector Foglamp installation on my Cedia  "
               threadcontent="Oh well, hello there! I am back after a long time away. How long if you ask?
             Precisely 2 posts in May 2018 & a completely active status until 2013 I would say.

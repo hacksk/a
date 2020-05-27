@@ -33,11 +33,13 @@ export default class BottomNavbar extends Component {
               </a>
             </li>
           </Link>
-          <li>
-            <a href="#about">
-              <MdShoppingCart />
-            </a>
-          </li>
+          <Link to="/steamcart">
+            <li>
+              <a href="#about">
+                <MdShoppingCart />
+              </a>
+            </li>
+          </Link>
           <Link to="/forum">
             <li>
               <a>

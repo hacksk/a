@@ -1,7 +1,39 @@
 import React, { Component } from "react";
 import Accountupload from "./PicturesWall";
+import axios from "axios";
 
 class AccountGeneral extends Component {
+  state = {
+    name: "",
+  };
+
+  handleChange = (event) => {
+    this.setState({ name: event.target.value });
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    const user = {
+      name: this.state.name,
+    };
+
+    axios
+      .post(
+        `http://159.89.165.118:4000/api/v1/customer/`,
+        {
+          headers: {
+            Authorization:
+              "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk4OTQ4MjQ5LCJqdGkiOiI1OTIzODU5MzgzM2Y0Y2RhYTY5ZThlMGZkNzAzOWRmMiIsInVzZXJfaWQiOjMsInVzZXIiOnsiaWQiOjMsImxhc3RfbG9naW4iOiIyMDIwLTAzLTE2VDA2OjQ5OjMwWiIsImVtYWlsIjoidmlzaG51NjI4MkB5YW5kZXguY29tIiwiZmlyc3RfbmFtZSI6InZpc2hudSIsImxhc3RfbmFtZSI6InVyIiwidXNlcm5hbWUiOiJ2aXNobnU2MjgyIiwicGhvbmUiOiIrOTE2MjgyNDQzNzY0IiwiZGF0ZV9qb2luZWQiOiIyMDIwLTAzLTE2VDA2OjUwOjA3Ljg3ODUxN1oiLCJncm91cHMiOltdLCJ1c2VyX3Blcm1pc3Npb25zIjpbNjBdfX0.emvq3LRVCGrcsKLMI2aHpkgWMHnfNT3tULkOQ9Ijl4Q ",
+          },
+        },
+        { user }
+      )
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+      });
+  };
   render() {
     return (
       <div className="accnt-gnrl">

@@ -36,8 +36,6 @@ import BottomNavbar from "./BottomNavbar";
 import Header from "./HeaderCustomer";
 import ForumHome from "./Forum/ForumHome";
 import Threadexpand from "./Forum/ThreadExpand";
-import ForumCreate from "./Forum/ForumCreate";
-import ForumClub from "./Forum/ForumClubHome";
 import NewsExpanded from "./Forum/NewsExpanded";
 import NewsExpanded1 from "./Forum/NewsExpand1";
 
@@ -46,11 +44,10 @@ function App() {
     <div className="App">
       <Header />
       <BrowserRouter>
-      <Navbarnew />
+        <Navbarnew />
 
         <Switch>
-
-          <Route exact path="/navbarnew" component={Navbarnew}/>
+          <Route exact path="/navbarnew" component={Navbarnew} />
           <Route exact path="/signin" component={Signin} />
           <Route exact path="/signup" component={SignupForm} />
           <Route exact path="/map" component={Location} />
@@ -58,15 +55,9 @@ function App() {
           <Route exact path="/accesories" component={Accesories} />
           <Route
             exact
-            path="/accesoriesexpanded"
+            path="/services/:detail"
             component={AccesoriesExpanded}
           />
-          <Route
-            exact
-            path="/service/steamcleaning"
-            component={Steamcleaning}
-          />
-          <Route exact path="/service/ecuremapping" component={Ecuremapping} />
           <Route
             exact
             path="/service/serviceoffering"
@@ -75,25 +66,21 @@ function App() {
           <Route exact path="/payment/feedback" component={Feedback} />
           <Route exact path="/payment/status" component={Status} />
           <Route exact path="/account" component={Account} />
-          <Route exact path="/steamhome" component={SteamComponent} />
+          <Route exact path="/services" component={SteamComponent} />
           <Route exact path="/ecuhome" component={EcuComponent} />
           <Route exact path="/offerhome" component={OfferComponent} />
           <Route path="/steamcart" component={SteamCart} />
           <Route path="/ecucart" component={EcuCart} />
           <Route path="/offercart" component={OfferCart} />
           <Route exact path="/" component={Home} />
-          <Route exact path="/service/ceramic" component={CeramicCoating} />
-          <Route exact path="/service/connected" component={Connected} />
           <Route exact path="/inventory" component={Inventory} />
           <Route exact path="/bill/payment" component={Payment} />
           <Route exact path="/forum" component={ForumHome} />
           <Route exact path="/forum/thread" component={Threadexpand} />
-          <Route exact path="/forum/create" component={ForumCreate}/>
-          <Route exact path="/forum/clubhome" component={ForumClub}/>
-          <Route exact path="/forum/thread/news" component={NewsExpanded}/>
-          <Route exact path="/forum/thread/news1" component={NewsExpanded1}/>
+          <Route exact path="/forum/thread/news" component={NewsExpanded} />
+          <Route exact path="/forum/thread/news1" component={NewsExpanded1} />
         </Switch>
-        <BottomNavbar/>
+        <BottomNavbar />
       </BrowserRouter>
     </div>
   );
