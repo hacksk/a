@@ -80,34 +80,34 @@ export default class Home extends Component {
           <div className="home-thread">
             <h6>THREADS</h6>
             <Link to="/forum">
-              <a > SEE ALL</a>
+              <a> SEE ALL</a>
             </Link>
           </div>
-          <div
-            className="forum-threadtwo"
-            style={{
-              padding: "5em",
-              position: "relative",
-              display: "flex",
-              flexDirection: "row",
-            }}
-          >
-            <Forumcontenttwo
-              threadimagetwo="https://images.pexels.com/photos/257988/pexels-photo-257988.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              threadheadtwo="BMW and the Kidney grille - Is a radical design change needed? "
-              threadcontenttwo="BMW Kidney grilles - is an iconic grille design which has been .... "
-            />
-            <Forumcontenttwo
-              threadimagetwo="https://images.pexels.com/photos/88628/pexels-photo-88628.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              threadheadtwo="Long term ownership review - My Honda City VX CVT  "
-              threadcontenttwo="First things first – let me eat that frog and address the elephant in the room - YES! I’m a big time.... "
-            />
-            <Forumcontenttwo
-              threadimagetwo="https://images.pexels.com/photos/2091351/pexels-photo-2091351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              threadheadtwo="An impromptu planned trip to Jim Corbett  "
-              threadcontenttwo="Hello all, I would like to thank the mods for accepting my membership request and this is my... "
-            />
-          </div>
+            <div
+              className="forum-threadtwo"
+              style={{
+                padding: "5em",
+                position: "relative",
+                display: "flex",
+                flexDirection: "row",
+              }}
+            >
+              <Forumcontenttwo
+                threadimagetwo="https://images.pexels.com/photos/257988/pexels-photo-257988.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                threadheadtwo="BMW and the Kidney grille - Is a radical design change needed? "
+                threadcontenttwo="BMW Kidney grilles - is an iconic grille design which has been .... "
+              />
+              <Forumcontenttwo
+                threadimagetwo="https://images.pexels.com/photos/88628/pexels-photo-88628.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                threadheadtwo="Long term ownership review - My Honda City VX CVT  "
+                threadcontenttwo="First things first – let me eat that frog and address the elephant in the room - YES! I’m a big time.... "
+              />
+              <Forumcontenttwo
+                threadimagetwo="https://images.pexels.com/photos/2091351/pexels-photo-2091351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                threadheadtwo="An impromptu planned trip to Jim Corbett  "
+                threadcontenttwo="Hello all, I would like to thank the mods for accepting my membership request and this is my... "
+              />
+            </div>
           <div className="home-second">
             <div className="home-second-content-wrap">
               <div className="home-second-content">
@@ -469,7 +469,6 @@ export default class Home extends Component {
                     timethread="21/03/2020"
                   />
                 </Link>
-               
               </TabPane>
             </Tabs>
           </div>
@@ -480,7 +479,7 @@ export default class Home extends Component {
             <div className="footer-sub">
               <ul>
                 <li>
-                  <a style={{ textDecoration: "underline" }}>QUICK LINKS</a>
+                  <a style={{ textDecoration: "underline",color:"white" }}>QUICK LINKS</a>
                 </li>
                 <li>HOME</li>
                 <li>ACCESSORIES</li>

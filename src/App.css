@@ -1113,6 +1113,7 @@ body {
   align-items: center;
   flex-direction: column;
   position: relative;
+  background-color: #121212;
 }
 .header {
   display: flex;
@@ -1333,6 +1334,12 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 6em;
+  position: relative;
+}
+.footer-sub{
+  position: absolute;
+  left:10em;
+  top:2em;
 }
 .footer-sub ul li {
   list-style-type: none;
@@ -1341,10 +1348,12 @@ body {
   padding-top: 1em;
 }
 .footer-logo {
-  width: 60%;
+  width: 45vw;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  position: absolute;
+  right: 10em;
 }
 .footer-logo img {
   width: 10em;
@@ -1396,6 +1405,7 @@ body {
     rgba(0, 0, 0, 0.35) 0%,
     rgba(0, 0, 0, 0) 80%
   );
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), #121212;
   /* W3C */
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
@@ -1482,6 +1492,11 @@ body {
 .hvr-underline-from-center:active:before {
   left: 0;
   right: 0;
+}
+.home-news-forum{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @-webkit-keyframes hvr-buzz-out {
@@ -1753,6 +1768,9 @@ body {
 }
 
 @media screen and (max-width: 786px) {
+  .footer-secondary{
+    padding-bottom: 4em;
+  }
   .header {
     width: 100% !important;
     max-width: 100vw;
@@ -1923,7 +1941,7 @@ body {
     justify-content: space-evenly;
   }
   .footer-logo img {
-    width: 8em;
+    width: 7em;
   }
   .news {
     padding: 0;
@@ -2263,9 +2281,9 @@ button.StripeCheckout {
   width: 60%;
 }
 .forum-threadtwo {
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  padding:5em;
+  padding:7em!important;
 }
 .home-thread{
   border-bottom: 1px solid #1E1E1E;
@@ -2277,7 +2295,7 @@ button.StripeCheckout {
   justify-content: space-between;
 }
 .ant-comment-actions > li > span, a:not([href]):not([tabindex]){
-  color:red!important
+  color:#f05c2d!important
 }
 .home-thread a{
   color: #fc5c2d!important;
@@ -2297,7 +2315,8 @@ button.StripeCheckout {
 .forum-home-thread-square {
   border-radius: 8px;
   background-color: rgba(255, 255, 255, 0.08);
-  width: 29%;
+  width: 32%;
+  min-height: 55vh;
   position: relative;
 }
 .forum-home-thread-square img {
@@ -2360,6 +2379,10 @@ button.StripeCheckout {
   font-size: 16px;
 }
 @media screen and (max-width: 786px) {
+  .ant-comment-actions > li > span, a:not([href]):not([tabindex]){
+    font-size: 10px;
+    padding-right: 1em;
+  }
   .clubhome-posters {
     flex-direction: column;
     align-items: center;
@@ -2367,6 +2390,7 @@ button.StripeCheckout {
   .home-thread{
    margin-bottom: 0!important;
    margin-left: 1em!important;
+   margin-right: 0!important;
   }
   .forum-threadtwo{
     padding-top: 0!important;
