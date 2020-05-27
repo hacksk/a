@@ -2269,15 +2269,20 @@ button.StripeCheckout {
 }
 .home-thread{
   border-bottom: 1px solid #1E1E1E;
-  color: white;
+  color: #f05c2d!important;
   margin:8em!important;
   margin-bottom: 0!important;
   margin-top: 5em!important;
   display: flex;
   justify-content: space-between;
 }
+.ant-comment-actions > li > span, a:not([href]):not([tabindex]){
+  color:red!important
+}
 .home-thread a{
   color: #fc5c2d!important;
+  font-weight: 600;
+  font-family: Montserrat;
 
 }
 .home-thread h6{
@@ -2474,10 +2479,10 @@ button.StripeCheckout {
   width: 25em;
   border-radius: 8px;
 }
-.ant-comment-actions > li > span,
+/* .ant-comment-actions > li > span,
 a:not([href]):not([tabindex]) {
   color: white !important;
-}
+} */
 .ant-comment-content-author-name {
   color: #f05c2d !important;
 }

@@ -21,11 +21,13 @@ export default class BottomNavbar extends Component {
               </a>
             </li>
           </Link>
-          <li>
-            <a href="#news">
-              <IoMdSearch />
-            </a>
-          </li>
+          <Link to="/services">
+            <li>
+              <a href="#news">
+                <IoMdSearch />
+              </a>
+            </li>
+          </Link>
           <Link to="/map">
             <li>
               <a href="#map">
@@ -35,7 +37,7 @@ export default class BottomNavbar extends Component {
           </Link>
           <Link to="/steamcart">
             <li>
-              <a href="#about">
+              <a href="#cart">
                 <MdShoppingCart />
               </a>
             </li>
@@ -49,7 +51,7 @@ export default class BottomNavbar extends Component {
           </Link>
           <Link to="/account">
             <li>
-              <a href="#about">
+              <a href="#account">
                 <MdAccountCircle />
               </a>
             </li>

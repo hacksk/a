@@ -58,10 +58,9 @@ export default class ForumHome extends Component {
               </h6>
             </div>
             <div style={{ display: "flex", flexDirection: "column" }}>
-              <Link to="/steamhome">
+              <Link to="/services">
                 <button className="forum-service-now">SERVICE NOW</button>
               </Link>
-
             </div>
           </div>
           <div className="forum-head-image" style={{ position: "relative" }}>
@@ -155,41 +154,33 @@ export default class ForumHome extends Component {
               <Link to="/forum/thread">
                 <ForumTrending
                   threadprof="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
-                  trendinghead="The Automotive Memes Thread"
-                  trendingcontent="Big thanks to Devesh Gosavi for suggesting this thread! "
+                  trendinghead=" Why you must practice the 'Idling Rule' with Turbo-Charged Cars"
+                  trendingcontent="Small displacement turbocharged engines are getting increasingly popular on our roads. With tougher emission norms & fuel-economy concerns worldwide, the trend is only expected to grow. Nearly every diesel car in the market is turbocharged now. Turbo-petrols will also be commonplace soon.  "
                   timethread="3 mins ago"
                 />
               </Link>
               <Link to="/forum/thread">
                 <ForumTrending
                   threadprof="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                  trendinghead="The Automotive Memes Thread"
-                  trendingcontent="Big thanks to Devesh Gosavi for suggesting this thread! "
+                  trendinghead="Best Practices : Maintain your Car in Top Shape"
+                  trendingcontent="There are no shortcuts to maintaining a car well and the exercise does require a little effort. But I can assure you, every rupee & minute spent on your car's upkeep will be recovered through a superior driving, owning & resale experience. A well-kept car will serve you better and prove more reliable in the long run. A healthy car is a safer car too. You'll retain it longer, thus saving you big bucks in depreciation losses. Whatever way you look at it, there's tremendous return-on-investment in keeping your car tidy. "
                   timethread="2 hours ago"
                 />
               </Link>
               <Link to="/forum/thread">
                 <ForumTrending
                   threadprof="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                  trendinghead="The Automotive Memes Thread"
-                  trendingcontent="Big thanks to Devesh Gosavi for suggesting this thread! "
+                  trendinghead="Pictorial Guide: How to change a flat tyre!"
+                  trendingcontent=" In the case of a flat tyre which needs immediate replacing to avoid damage to the tyre/tube, here is what you need to do. "
                   timethread="02/04/2020"
                 />
               </Link>
               <Link to="/forum/thread">
                 <ForumTrending
                   threadprof="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                  trendinghead="The Automotive Memes Thread"
-                  trendingcontent="Big thanks to Devesh Gosavi for suggesting this thread! "
+                  trendinghead="'My Car Won't Start' | What To Do"
+                  trendingcontent="A driver's worst nightmare is that time when his car won't start. Or, the engine dies exactly when he is negotiating a tricky crossing. It's even more worrisome if the driver is a lady (especially in India) and the sun has already set, or if the location is a lonely highway instead of the city. This is the time when one regrets not knowing a little more about how cars work.  "
                   timethread="21/03/2020"
-                />
-              </Link>
-              <Link to="/forum/thread">
-                <ForumTrending
-                  threadprof="https://images.pexels.com/photos/2635534/pexels-photo-2635534.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                  trendinghead="The Automotive Memes Thread"
-                  trendingcontent="Big thanks to Devesh Gosavi for suggesting this thread! "
-                  timethread="19/03/2020"
                 />
               </Link>
             </TabPane>

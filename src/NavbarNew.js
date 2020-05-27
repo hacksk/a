@@ -40,13 +40,15 @@ export default class NavbarNew extends Component {
               </Tooltip>
             </li>
           </Link>
-          <li>
-            <Tooltip placement="top" title={text1}>
-              <Button>
-                <IoMdSearch />
-              </Button>
-            </Tooltip>
-          </li>
+          <Link to="/services">
+            <li>
+              <Tooltip placement="top" title={text1}>
+                <Button>
+                  <IoMdSearch />
+                </Button>
+              </Tooltip>
+            </li>
+          </Link>
           <Link to="./map">
             <li>
               <Tooltip placement="top" title={text2}>
