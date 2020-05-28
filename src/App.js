@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./App.css";
 import "./Store.css";
 import "./Employee.css";
-import Navbar from "./Navbar.js";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Location from "./Location.js";
 import CustomerService from "./CustomerService.js";
@@ -11,22 +10,12 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import SignupForm from "./SignupForm";
 import Signin from "./SignIn";
 import Stripe from "./StripeBtn";
-import Steamcleaning from "./Services/SteamCleaning";
-import Ecuremapping from "./Services/EcuRemapping";
-import Serviceoffer from "./Services/ServiceOffer";
-import ServiceMain from "./Services/ServiceMain";
 import ServiceOffer from "./Services/ServiceOffer";
 import Feedback from "./FeedBack";
 import Status from "./Status";
 import Account from "./Account/AccountMain";
-import EcuCart from "./Services/ECU/components/Cart";
 import SteamCart from "./Services/Steam/components/Cart";
-import OfferCart from "./Services/Offer/components/Cart";
 import SteamComponent from "./Services/Steam/SteamComponent";
-import EcuComponent from "./Services/ECU/EcuComponent";
-import OfferComponent from "./Services/Offer/OfferComponent";
-import CeramicCoating from "./Services/CeramicCoating";
-import Connected from "./Services/ConnectedSolutions";
 import Inventory from "./Inventory";
 import Home from "./Home";
 import Payment from "./Payment/Payment";
@@ -67,11 +56,7 @@ function App() {
           <Route exact path="/payment/status" component={Status} />
           <Route exact path="/account" component={Account} />
           <Route exact path="/services" component={SteamComponent} />
-          <Route exact path="/ecuhome" component={EcuComponent} />
-          <Route exact path="/offerhome" component={OfferComponent} />
           <Route path="/steamcart" component={SteamCart} />
-          <Route path="/ecucart" component={EcuCart} />
-          <Route path="/offercart" component={OfferCart} />
           <Route exact path="/" component={Home} />
           <Route exact path="/inventory" component={Inventory} />
           <Route exact path="/bill/payment" component={Payment} />
