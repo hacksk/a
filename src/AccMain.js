@@ -6,7 +6,7 @@ import axios from "axios";
 
 class AccMain extends Component {
   state = {
-    persons: [],
+    persons: []
   };
 
   componentDidMount() {
@@ -14,10 +14,10 @@ class AccMain extends Component {
       .get(`https://automoto.techbyheart.in/api/v1/customer/`, {
         headers: {
           Authorization:
-            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk5MTEwNzI5LCJqdGkiOiJjYjc3MjBiZDUzZDQ0ZWQwYTFmNzNjYTRlNzMwNzg3ZCIsInVzZXJfaWQiOjIsInVzZXIiOnsiaWQiOjIsImxhc3RfbG9naW4iOm51bGwsImVtYWlsIjoidmlzaG51dXJAdGVjaGJ5aGVhcnQuaW4iLCJmaXJzdF9uYW1lIjoiIiwibGFzdF9uYW1lIjoiIiwidXNlcm5hbWUiOiJ2aXNobnU2MjgyIiwicGhvbmUiOiIrOTE2MjgyNDQzNzY0IiwiZGF0ZV9qb2luZWQiOiIyMDIwLTA1LTI2VDA1OjI0OjU0Ljc3MDIyNVoiLCJncm91cHMiOltdLCJ1c2VyX3Blcm1pc3Npb25zIjpbXX19.60Xb8T8_p6TXvtF13oJU8kD3l8gYUVHyYkFm-WxCH8w",
-        },
+            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk5MTEwNzI5LCJqdGkiOiJjYjc3MjBiZDUzZDQ0ZWQwYTFmNzNjYTRlNzMwNzg3ZCIsInVzZXJfaWQiOjIsInVzZXIiOnsiaWQiOjIsImxhc3RfbG9naW4iOm51bGwsImVtYWlsIjoidmlzaG51dXJAdGVjaGJ5aGVhcnQuaW4iLCJmaXJzdF9uYW1lIjoiIiwibGFzdF9uYW1lIjoiIiwidXNlcm5hbWUiOiJ2aXNobnU2MjgyIiwicGhvbmUiOiIrOTE2MjgyNDQzNzY0IiwiZGF0ZV9qb2luZWQiOiIyMDIwLTA1LTI2VDA1OjI0OjU0Ljc3MDIyNVoiLCJncm91cHMiOltdLCJ1c2VyX3Blcm1pc3Npb25zIjpbXX19.60Xb8T8_p6TXvtF13oJU8kD3l8gYUVHyYkFm-WxCH8w"
+        }
       })
-      .then((res) => {
+      .then(res => {
         const persons = res.data;
         this.setState({ persons });
       });
@@ -33,7 +33,7 @@ class AccMain extends Component {
             <div className="accesories-detail"></div>
           </div>
           <div style={{ width: "30%" }}>
-            <h2 style={{ color: "white" }}>Steam Exterior</h2>
+            <h2 style={{ color: "white" }}>{this.props.item.title}</h2>
             <p style={{ color: "white" }}>
               Over a period of time ,the emblems or badges on a car get affected
               by salt deposits which result in decolouration and dirt deposits
@@ -49,7 +49,7 @@ class AccMain extends Component {
             <h3>Rs 15,000</h3>
             <h5 className="cost">
               <ul>
-                {this.state.persons.map((person) => (
+                {this.state.persons.map(person => (
                   <li>{person.name}</li>
                 ))}
               </ul>
