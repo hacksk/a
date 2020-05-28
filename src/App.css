@@ -376,6 +376,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
   align-items: baseline;
   justify-content: space-around;
   padding-bottom: 2vh;
+  position: absolute;
+}
+.accesories-moto{
+  position: relative;
 }
 
 .rs {
@@ -1242,6 +1246,7 @@ body {
   background-size: contain;
   background-position: center;
 }
+
 .home-accessories {
   display: flex;
   justify-content: center;
@@ -2198,10 +2203,15 @@ body {
     flex-direction: row;
   }
   .ant-comment-avatar img {
-    width: 20px !important;
-    height: 20px !important;
+    width: 4vh !important;
+    height: 4vh !important;
     overflow: hidden;
   }
+}
+.ant-comment-avatar img {
+  width: 4vh !important;
+  height: 4vh !important;
+  overflow: hidden;
 }
 .payment-method {
   width: 50%;

@@ -16,7 +16,6 @@ export default class ForumTrendingThread extends Component {
             <div style={{ display: "flex", flexDirection: "row" }}>
               <AiOutlineLike />
               <MdInsertComment />
-              <AiOutlineEye />
             </div>
           </div>
         </div>

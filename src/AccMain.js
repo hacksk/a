@@ -3,10 +3,15 @@ import AccCarousel from "./AccCarousel";
 import Stripe from "./StripeBtn";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import axios from "axios";
+import { message, Button } from "antd";
+
+const info = () => {
+  message.info("Added To The Cart");
+};
 
 class AccMain extends Component {
   state = {
-    persons: []
+    persons: [],
   };
 
   componentDidMount() {
@@ -14,10 +19,10 @@ class AccMain extends Component {
       .get(`https://automoto.techbyheart.in/api/v1/customer/`, {
         headers: {
           Authorization:
-            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk5MTEwNzI5LCJqdGkiOiJjYjc3MjBiZDUzZDQ0ZWQwYTFmNzNjYTRlNzMwNzg3ZCIsInVzZXJfaWQiOjIsInVzZXIiOnsiaWQiOjIsImxhc3RfbG9naW4iOm51bGwsImVtYWlsIjoidmlzaG51dXJAdGVjaGJ5aGVhcnQuaW4iLCJmaXJzdF9uYW1lIjoiIiwibGFzdF9uYW1lIjoiIiwidXNlcm5hbWUiOiJ2aXNobnU2MjgyIiwicGhvbmUiOiIrOTE2MjgyNDQzNzY0IiwiZGF0ZV9qb2luZWQiOiIyMDIwLTA1LTI2VDA1OjI0OjU0Ljc3MDIyNVoiLCJncm91cHMiOltdLCJ1c2VyX3Blcm1pc3Npb25zIjpbXX19.60Xb8T8_p6TXvtF13oJU8kD3l8gYUVHyYkFm-WxCH8w"
-        }
+            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk5MzA5MjcyLCJqdGkiOiI0MjkzZjE3ZGY1OWQ0ZWJhOGFhMmRhNWZlMjBiNTg3YyIsInVzZXJfaWQiOjIsInVzZXIiOnsiaWQiOjIsImxhc3RfbG9naW4iOm51bGwsImVtYWlsIjoidmlzaG51dXJAdGVjaGJ5aGVhcnQuaW4iLCJmaXJzdF9uYW1lIjoiIiwibGFzdF9uYW1lIjoiIiwidXNlcm5hbWUiOiJ2aXNobnU2MjgyIiwicGhvbmUiOiIrOTE2MjgyNDQzNzY0IiwiZGF0ZV9qb2luZWQiOiIyMDIwLTA1LTI2VDA1OjI0OjU0Ljc3MDAwMFoiLCJncm91cHMiOltdLCJ1c2VyX3Blcm1pc3Npb25zIjpbXX19.CzUtlZseJ6iDwvPyaCZ1UqzH_NwVsVN_jy1cVIL5-1Y",
+        },
       })
-      .then(res => {
+      .then((res) => {
         const persons = res.data;
         this.setState({ persons });
       });
@@ -46,17 +51,23 @@ class AccMain extends Component {
 
         <div className="price">
           <div className="rs">
-            <h3>Rs 15,000</h3>
+            <h3>{this.props.item.price}</h3>
             <h5 className="cost">
-              <ul>
-                {this.state.persons.map(person => (
-                  <li>{person.name}</li>
-                ))}
-              </ul>
+
               incl.20% vat,excl. <span className="shipping">shipping cost</span>
             </h5>
           </div>
-          <Stripe className="estimate" />
+
+          <button
+            onClick={info}
+            style={{
+              color: "white",
+              border: "none",
+              background: "transparent",
+            }}
+          >
+            Add to cart
+          </button>
         </div>
       </div>
     );

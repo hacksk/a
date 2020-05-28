@@ -15,13 +15,8 @@ class AccesoriesExpanded extends Component {
       x => x.id == this.props.match.params.detail
     );
     return (
-      <div className="accessories-moto" style={{ minHeight: "100vh" }}>
+      <div className="accessories-moto" style={{paddingTop:"14vh" }}>
         {/* <Navbar /> */}
-        <Breadcrumb separator=">">
-          <Breadcrumb.Item>Home</Breadcrumb.Item>
-          <Breadcrumb.Item href="">Accesories</Breadcrumb.Item>
-          <Breadcrumb.Item>Exhaust</Breadcrumb.Item>
-        </Breadcrumb>
         <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
           <Tab eventKey="home" title="DETAILS">
             <AccMain item={currentItem} />

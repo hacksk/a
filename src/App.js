@@ -4,13 +4,11 @@ import "./Store.css";
 import "./Employee.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Location from "./Location.js";
-import CustomerService from "./CustomerService.js";
 import Accesories from "./Accesories";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import SignupForm from "./SignupForm";
 import Signin from "./SignIn";
 import Stripe from "./StripeBtn";
-import ServiceOffer from "./Services/ServiceOffer";
 import Feedback from "./FeedBack";
 import Status from "./Status";
 import Account from "./Account/AccountMain";
@@ -40,17 +38,11 @@ function App() {
           <Route exact path="/signin" component={Signin} />
           <Route exact path="/signup" component={SignupForm} />
           <Route exact path="/map" component={Location} />
-          <Route exact path="/service" component={CustomerService} />
           <Route exact path="/accesories" component={Accesories} />
           <Route
             exact
             path="/services/:detail"
             component={AccesoriesExpanded}
-          />
-          <Route
-            exact
-            path="/service/serviceoffering"
-            component={ServiceOffer}
           />
           <Route exact path="/payment/feedback" component={Feedback} />
           <Route exact path="/payment/status" component={Status} />
