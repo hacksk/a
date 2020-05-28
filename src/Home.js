@@ -306,7 +306,7 @@ export default class Home extends Component {
               </Link>
               <h5>RECOMMENDED ACCESSORIES</h5>
               <div className="home-content-part2">
-                <div className="home-accessories hvr-float-shadow">
+                <div className="home-accessories ">
                   <img src={require("./vector-icons/carphoneholder.png")} />
                   <p
                     style={{
@@ -321,7 +321,7 @@ export default class Home extends Component {
                     PHONE HOLDER
                   </p>
                 </div>
-                <div className="home-accessories hvr-float-shadow">
+                <div className="home-accessories ">
                   <img src={require("./vector-icons/wheelalloy.png")} />
                   <p
                     style={{
@@ -333,7 +333,7 @@ export default class Home extends Component {
                     RIMS 22"
                   </p>
                 </div>
-                <div className="home-accessories hvr-float-shadow">
+                <div className="home-accessories ">
                   <img src={require("./vector-icons/freshner.png")} />
                   <p
                     style={{
@@ -345,7 +345,7 @@ export default class Home extends Component {
                     AIR FRESHNER
                   </p>
                 </div>
-                <div className="home-accessories hvr-float-shadow">
+                <div className="home-accessories ">
                   <img src={require("./vector-icons/camera.png")} />
                   <p
                     style={{
@@ -357,7 +357,7 @@ export default class Home extends Component {
                     GPS
                   </p>
                 </div>
-                <div className="home-accessories hvr-float-shadow">
+                <div className="home-accessories ">
                   <img src={require("./vector-icons/tire.png")} />
                   <p
                     style={{
@@ -369,7 +369,7 @@ export default class Home extends Component {
                     TYRES
                   </p>
                 </div>
-                <div className="home-accessories hvr-float-shadow">
+                <div className="home-accessories ">
                   <img src={require("./vector-icons/camera.png")} />
                   <p
                     style={{
@@ -381,7 +381,7 @@ export default class Home extends Component {
                     GPS
                   </p>
                 </div>
-                <div className="home-accessories hvr-float-shadow">
+                <div className="home-accessories ">
                   <img src={require("./vector-icons/speaker.png")} />
                   <p
                     style={{
@@ -393,7 +393,7 @@ export default class Home extends Component {
                     5" SPEAKER
                   </p>
                 </div>
-                <div className="home-accessories hvr-float-shadow">
+                <div className="home-accessories ">
                   <img src={require("./vector-icons/wheelalloy.png")} />
                   <p
                     style={{
