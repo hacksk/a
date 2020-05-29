@@ -11,7 +11,7 @@ const info = () => {
 
 class AccMain extends Component {
   state = {
-    persons: [],
+    persons: []
   };
 
   componentDidMount() {
@@ -19,14 +19,19 @@ class AccMain extends Component {
       .get(`https://automoto.techbyheart.in/api/v1/customer/`, {
         headers: {
           Authorization:
-            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk5MzA5MjcyLCJqdGkiOiI0MjkzZjE3ZGY1OWQ0ZWJhOGFhMmRhNWZlMjBiNTg3YyIsInVzZXJfaWQiOjIsInVzZXIiOnsiaWQiOjIsImxhc3RfbG9naW4iOm51bGwsImVtYWlsIjoidmlzaG51dXJAdGVjaGJ5aGVhcnQuaW4iLCJmaXJzdF9uYW1lIjoiIiwibGFzdF9uYW1lIjoiIiwidXNlcm5hbWUiOiJ2aXNobnU2MjgyIiwicGhvbmUiOiIrOTE2MjgyNDQzNzY0IiwiZGF0ZV9qb2luZWQiOiIyMDIwLTA1LTI2VDA1OjI0OjU0Ljc3MDAwMFoiLCJncm91cHMiOltdLCJ1c2VyX3Blcm1pc3Npb25zIjpbXX19.CzUtlZseJ6iDwvPyaCZ1UqzH_NwVsVN_jy1cVIL5-1Y",
-        },
+            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk5MzA5MjcyLCJqdGkiOiI0MjkzZjE3ZGY1OWQ0ZWJhOGFhMmRhNWZlMjBiNTg3YyIsInVzZXJfaWQiOjIsInVzZXIiOnsiaWQiOjIsImxhc3RfbG9naW4iOm51bGwsImVtYWlsIjoidmlzaG51dXJAdGVjaGJ5aGVhcnQuaW4iLCJmaXJzdF9uYW1lIjoiIiwibGFzdF9uYW1lIjoiIiwidXNlcm5hbWUiOiJ2aXNobnU2MjgyIiwicGhvbmUiOiIrOTE2MjgyNDQzNzY0IiwiZGF0ZV9qb2luZWQiOiIyMDIwLTA1LTI2VDA1OjI0OjU0Ljc3MDAwMFoiLCJncm91cHMiOltdLCJ1c2VyX3Blcm1pc3Npb25zIjpbXX19.CzUtlZseJ6iDwvPyaCZ1UqzH_NwVsVN_jy1cVIL5-1Y"
+        }
       })
-      .then((res) => {
+      .then(res => {
         const persons = res.data;
         this.setState({ persons });
       });
   }
+
+  handleClick = id => {
+    this.props.addToCartFunction(id);
+  };
+
   render() {
     return (
       <div>
@@ -53,17 +58,18 @@ class AccMain extends Component {
           <div className="rs">
             <h3>{this.props.item.price}</h3>
             <h5 className="cost">
-
               incl.20% vat,excl. <span className="shipping">shipping cost</span>
             </h5>
           </div>
 
           <button
-            onClick={info}
+            onClick={() => {
+              this.handleClick(this.props.item.id);
+            }}
             style={{
               color: "white",
               border: "none",
-              background: "transparent",
+              background: "transparent"
             }}
           >
             Add to cart

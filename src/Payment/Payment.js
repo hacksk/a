@@ -7,7 +7,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const { TabPane } = Tabs;
-const { Option } = Select;
+// const { Option } = Select;
 
 function callback(key) {
   console.log(key);
@@ -15,7 +15,7 @@ function callback(key) {
 export default class Payment extends Component {
   render() {
     return (
-      <div  style={{ maxHeight: "auto" }}>
+      <div style={{ maxHeight: "auto" }}>
         <Breadcrumb separator=">">
           <Breadcrumb.Item>Home</Breadcrumb.Item>
           <Breadcrumb.Item href="">Bill</Breadcrumb.Item>
@@ -38,7 +38,7 @@ export default class Payment extends Component {
                     style={{
                       display: "flex",
                       justifyContent: "center",
-                      paddingTop: "2em",
+                      paddingTop: "2em"
                     }}
                   >
                     <Link to="/payment/feedback">

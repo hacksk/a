@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.css";
 import "./Store.css";
 import "./Employee.css";
@@ -8,7 +8,6 @@ import Accesories from "./Accesories";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import SignupForm from "./SignupForm";
 import Signin from "./SignIn";
-import Stripe from "./StripeBtn";
 import Feedback from "./FeedBack";
 import Status from "./Status";
 import Account from "./Account/AccountMain";

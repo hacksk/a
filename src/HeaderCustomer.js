@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 
-
 export default class HeaderCustomer extends Component {
   render() {
     return (
@@ -10,7 +9,7 @@ export default class HeaderCustomer extends Component {
           <Breadcrumb separator=">">
             <Breadcrumb.Item>Home</Breadcrumb.Item>
           </Breadcrumb>
-          <img src={require("./assets/moto365logo.svg")}></img>
+          <img alt="logo" src={require("./assets/moto365logo.svg")}></img>
         </div>
       </div>
     );

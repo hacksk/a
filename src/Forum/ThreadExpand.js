@@ -1,18 +1,20 @@
 import React, { Component } from "react";
-import ForumTrending from "./ForumTrendingThread";
 import Demo from "./Demo";
 
 export default class ThreadExpand extends Component {
-    componentDidMount() {
-        window.scrollTo(0, 0);
-    }
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   render() {
     return (
       <div className="threadexpand">
         <div className="threadexpand-content">
           <div className="thread-profile-header">
-            <div style={{display:"flex",flexDirection:"row"}}>
-              <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"></img>
+            <div style={{ display: "flex", flexDirection: "row" }}>
+              <img
+                alt="Thread"
+                src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              ></img>
               <p>u/carlover</p>
             </div>
             <p style={{ color: "rgba(255, 255, 255, 0.38)" }}>1 hour ago</p>
@@ -21,7 +23,10 @@ export default class ThreadExpand extends Component {
             Toyota RAV4 Fuel Economy: What Kind of MPG Does it Get in the Real
             World?
           </h5>
-          <img src="https://images.pexels.com/photos/1149137/pexels-photo-1149137.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"></img>
+          <img
+            alt="Thread"
+            src="https://images.pexels.com/photos/1149137/pexels-photo-1149137.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+          ></img>
           <p>
             The Toyota RAV4 achieves competitive fuel economy in its segment—if
             you look at the EPA numbers. But as we know, these figures don't
@@ -38,7 +43,10 @@ export default class ThreadExpand extends Component {
             CR-V Touring AWD, which scored 21.9/34.2/26.1 mpg. Pretty
             impressive.
           </p>
-          <img src="https://images.pexels.com/photos/1149140/pexels-photo-1149140.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"></img>
+          <img
+            alt="Thread"
+            src="https://images.pexels.com/photos/1149140/pexels-photo-1149140.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+          ></img>
           <p>
             "[In] Sport mode with traction control and stability control off
             (and truly off, by the way), it doesn't mind blending the braking

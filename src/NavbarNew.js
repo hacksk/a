@@ -3,7 +3,7 @@ import {
   MdLocationOn,
   MdShoppingCart,
   MdAccountCircle,
-  MdForum,
+  MdForum
 } from "react-icons/md";
 import { AiTwotoneHome } from "react-icons/ai";
 import { IoMdSearch, IoMdMenu } from "react-icons/io";
@@ -17,7 +17,7 @@ const text2 = <span>Location</span>;
 const text3 = <span>Cart</span>;
 const text4 = <span>Forum</span>;
 
-const buttonWidth = 70;
+// const buttonWidth = 70;
 
 export default class NavbarNew extends Component {
   render() {
@@ -25,11 +25,14 @@ export default class NavbarNew extends Component {
       <div className="newnav" style={{ zIndex: "1000" }}>
         <ul>
           <li>
-            <a className="navmenu">
+            <button
+              className="navmenu"
+              style={{ backgroundColor: "transparent", border: "none" }}
+            >
               <Tooltip placement="top" title={settings}>
                 <IoMdMenu />
               </Tooltip>
-            </a>
+            </button>
           </li>
           <Link to="/">
             <li>
