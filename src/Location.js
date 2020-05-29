@@ -1,28 +1,26 @@
 import React, { Component } from "react";
-import L, { map } from "leaflet";
+import L from "leaflet";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import carImg from "./assets/Car-icon.png";
 import Navbarnew from "./NavbarNew";
-import { Modal, Button } from 'antd';
-import { ExclamationCircleOutlined } from '@ant-design/icons';
+import { Modal } from "antd";
+import { ExclamationCircleOutlined } from "@ant-design/icons";
 
 const { confirm } = Modal;
 
 function showConfirm() {
   confirm({
-    title: 'Confirm SOS',
+    title: "Confirm SOS",
     icon: <ExclamationCircleOutlined />,
-    content: 'By confirming you are  confirming to our terms of service',
+    content: "By confirming you are  confirming to our terms of service",
     onOk() {
-      console.log('CONFIRM');
+      console.log("CONFIRM");
     },
     onCancel() {
-      console.log('CANCEL');
-    },
+      console.log("CANCEL");
+    }
   });
 }
-
-
 
 class Location extends Component {
   state = {
@@ -55,7 +53,7 @@ class Location extends Component {
 
     return (
       <div className="main">
-        <Navbarnew/>
+        <Navbarnew />
         <div className="map-sos">
           <Map
             className="map transform"
@@ -104,7 +102,9 @@ class Location extends Component {
             <div className="sos-content3">
               <h4>THEVARA</h4>
               <p>15KM AWAY</p>
-              <button onClick={showConfirm} className="sos-btn">SOS</button>
+              <button onClick={showConfirm} className="sos-btn">
+                SOS
+              </button>
             </div>
           </div>
         </div>

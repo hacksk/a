@@ -1,17 +1,16 @@
-import React, { Fragment } from "react";
+import React from "react";
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 
-
 const stripeBtn = () => {
   const publishableKey = "pk_test_UAHsd0FgK8CJC6PXgoZ6cIeO00y9JJDBn5";
-  
-   
+
   const onToken = token => {
     const body = {
       amount: "",
       token: token
-  };  axios
+    };
+    axios
       .post("http://localhost:8000/payment", body)
       .then(response => {
         console.log(response);
@@ -21,14 +20,15 @@ const stripeBtn = () => {
         console.log("Payment Error: ", error);
         alert("Payment Error");
       });
-  };  return (
+  };
+  return (
     <StripeCheckout
       label="Buy Now" //Component button text
       name="Auto Moto" //Modal Header
       description="Upgrade to a premium account today."
       panelLabel="Buy " //Submit button in modal
       amount={1500000} //Amount in cents $9.99
-      currency={'INR'}
+      currency={"INR"}
       token={onToken}
       stripeKey={publishableKey}
       shippingAddress={false}
@@ -37,4 +37,5 @@ const stripeBtn = () => {
       allowRememberMe={true}
     />
   );
-};export default stripeBtn;
+};
+export default stripeBtn;

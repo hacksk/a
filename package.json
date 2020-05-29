@@ -43,6 +43,8 @@
     "react-stripe-checkout": "^2.6.3",
     "react-stripe-elements": "^6.0.1",
     "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
     "simple-react-comments": "^1.1.0",
     "stripe": "^8.26.0",
     "sweetalert": "^2.1.2",
@@ -75,7 +77,7 @@
     ]
   },
   "devDependencies": {
-    "start-server-and-test": "^1.10.8",
-    "gh-pages": "^1.2.0"
+    "gh-pages": "^1.2.0",
+    "start-server-and-test": "^1.10.8"
   }
 }

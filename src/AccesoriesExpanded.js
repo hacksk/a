@@ -15,11 +15,14 @@ class AccesoriesExpanded extends Component {
       x => x.id == this.props.match.params.detail
     );
     return (
-      <div className="accessories-moto" style={{paddingTop:"14vh" }}>
+      <div className="accessories-moto" style={{ paddingTop: "14vh" }}>
         {/* <Navbar /> */}
         <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
           <Tab eventKey="home" title="DETAILS">
-            <AccMain item={currentItem} />
+            <AccMain
+              item={currentItem}
+              addToCartFunction={this.props.addToCart}
+            />
           </Tab>
           <Tab eventKey="profile" title="SPECS">
             <h3>lorem ipsum</h3>

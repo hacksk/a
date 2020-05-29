@@ -1,15 +1,11 @@
 import React, { Component } from "react";
-import Navbar from "./Navbar";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import { AiFillLike } from "react-icons/ai";
 import { MdCopyright } from "react-icons/md";
-import Navbarnew from "./NavbarNew";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Button from "react-bootstrap/Button";
 import BottomNavbar from "./BottomNavbar";
 import Forumcontenttwo from "./Forum/ForumContentTwo";
 import moment from "moment";
@@ -23,7 +19,7 @@ function callback(key) {
   console.log(key);
 }
 
-const { RangePicker } = DatePicker;
+// const { RangePicker } = DatePicker;
 
 function range(start, end) {
   const result = [];
@@ -42,7 +38,7 @@ function disabledDateTime() {
   return {
     disabledHours: () => range(0, 24).splice(4, 20),
     disabledMinutes: () => range(30, 60),
-    disabledSeconds: () => [55, 56],
+    disabledSeconds: () => [55, 56]
   };
 }
 
@@ -51,13 +47,13 @@ function disabledRangeTime(_, type) {
     return {
       disabledHours: () => range(0, 60).splice(4, 20),
       disabledMinutes: () => range(30, 60),
-      disabledSeconds: () => [55, 56],
+      disabledSeconds: () => [55, 56]
     };
   }
   return {
     disabledHours: () => range(0, 60).splice(20, 4),
     disabledMinutes: () => range(0, 31),
-    disabledSeconds: () => [55, 56],
+    disabledSeconds: () => [55, 56]
   };
 }
 
@@ -83,31 +79,31 @@ export default class Home extends Component {
               <a> SEE ALL</a>
             </Link>
           </div>
-            <div
-              className="forum-threadtwo"
-              style={{
-                padding: "5em",
-                position: "relative",
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
-              <Forumcontenttwo
-                threadimagetwo="https://images.pexels.com/photos/257988/pexels-photo-257988.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                threadheadtwo="BMW and the Kidney grille - Is a radical design change needed? "
-                threadcontenttwo="BMW Kidney grilles - is an iconic grille design which has been .... "
-              />
-              <Forumcontenttwo
-                threadimagetwo="https://images.pexels.com/photos/88628/pexels-photo-88628.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                threadheadtwo="Long term ownership review - My Honda City VX CVT  "
-                threadcontenttwo="First things first – let me eat that frog and address the elephant in the room - YES! I’m a big time.... "
-              />
-              <Forumcontenttwo
-                threadimagetwo="https://images.pexels.com/photos/2091351/pexels-photo-2091351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                threadheadtwo="An impromptu planned trip to Jim Corbett  "
-                threadcontenttwo="Hello all, I would like to thank the mods for accepting my membership request and this is my... "
-              />
-            </div>
+          <div
+            className="forum-threadtwo"
+            style={{
+              padding: "5em",
+              position: "relative",
+              display: "flex",
+              flexDirection: "row"
+            }}
+          >
+            <Forumcontenttwo
+              threadimagetwo="https://images.pexels.com/photos/257988/pexels-photo-257988.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              threadheadtwo="BMW and the Kidney grille - Is a radical design change needed? "
+              threadcontenttwo="BMW Kidney grilles - is an iconic grille design which has been .... "
+            />
+            <Forumcontenttwo
+              threadimagetwo="https://images.pexels.com/photos/88628/pexels-photo-88628.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              threadheadtwo="Long term ownership review - My Honda City VX CVT  "
+              threadcontenttwo="First things first – let me eat that frog and address the elephant in the room - YES! I’m a big time.... "
+            />
+            <Forumcontenttwo
+              threadimagetwo="https://images.pexels.com/photos/2091351/pexels-photo-2091351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              threadheadtwo="An impromptu planned trip to Jim Corbett  "
+              threadcontenttwo="Hello all, I would like to thank the mods for accepting my membership request and this is my... "
+            />
+          </div>
           <div className="home-second">
             <div className="home-second-content-wrap">
               <div className="home-second-content">
@@ -118,7 +114,7 @@ export default class Home extends Component {
                       fontFamily: "Montserrat",
                       fontWeight: "bold",
                       fontSize: "86px",
-                      marginBottom: "0",
+                      marginBottom: "0"
                     }}
                   >
                     35
@@ -139,7 +135,7 @@ export default class Home extends Component {
                       height: "34px",
                       width: "126px",
                       fontWeight: "900",
-                      fontSize: "12px",
+                      fontSize: "12px"
                     }}
                   >
                     SERVICE NOW
@@ -152,7 +148,7 @@ export default class Home extends Component {
                   <p
                     style={{
                       color: "rgba(252, 170, 46, 0.87)",
-                      cursor: "pointer",
+                      cursor: "pointer"
                     }}
                   >
                     SET REMAINDER
@@ -163,7 +159,7 @@ export default class Home extends Component {
                       disabledDate={disabledDate}
                       disabledTime={disabledDateTime}
                       showTime={{
-                        defaultValue: moment("00:00:00", "HH:mm:ss"),
+                        defaultValue: moment("00:00:00", "HH:mm:ss")
                       }}
                     />
                   </div>
@@ -315,7 +311,7 @@ export default class Home extends Component {
                       textAlign: "center",
                       fontFamily: "Montserrat",
                       fontWeight: "600",
-                      fontSize: "14px",
+                      fontSize: "14px"
                     }}
                   >
                     PHONE HOLDER
@@ -327,7 +323,7 @@ export default class Home extends Component {
                     style={{
                       color: "white",
                       paddingTop: "2em",
-                      textAlign: "center",
+                      textAlign: "center"
                     }}
                   >
                     RIMS 22"
@@ -339,7 +335,7 @@ export default class Home extends Component {
                     style={{
                       color: "white",
                       paddingTop: "2em",
-                      textAlign: "center",
+                      textAlign: "center"
                     }}
                   >
                     AIR FRESHNER
@@ -351,7 +347,7 @@ export default class Home extends Component {
                     style={{
                       color: "white",
                       paddingTop: "2em",
-                      textAlign: "center",
+                      textAlign: "center"
                     }}
                   >
                     GPS
@@ -363,7 +359,7 @@ export default class Home extends Component {
                     style={{
                       color: "white",
                       paddingTop: "2em",
-                      textAlign: "center",
+                      textAlign: "center"
                     }}
                   >
                     TYRES
@@ -375,7 +371,7 @@ export default class Home extends Component {
                     style={{
                       color: "white",
                       paddingTop: "2em",
-                      textAlign: "center",
+                      textAlign: "center"
                     }}
                   >
                     GPS
@@ -387,7 +383,7 @@ export default class Home extends Component {
                     style={{
                       color: "white",
                       paddingTop: "2em",
-                      textAlign: "center",
+                      textAlign: "center"
                     }}
                   >
                     5" SPEAKER
@@ -399,7 +395,7 @@ export default class Home extends Component {
                     style={{
                       color: "white",
                       paddingTop: "2em",
-                      textAlign: "center",
+                      textAlign: "center"
                     }}
                   >
                     RIMS 22"
@@ -479,7 +475,9 @@ export default class Home extends Component {
             <div className="footer-sub">
               <ul>
                 <li>
-                  <a style={{ textDecoration: "underline",color:"white" }}>QUICK LINKS</a>
+                  <a style={{ textDecoration: "underline", color: "white" }}>
+                    QUICK LINKS
+                  </a>
                 </li>
                 <li>HOME</li>
                 <li>ACCESSORIES</li>

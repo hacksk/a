@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import ForumTrending from "./ForumTrendingThread";
-import Demo from "./Demo";
 
 export default class NewsExpanded extends Component {
   componentDidMount() {
@@ -12,13 +10,19 @@ export default class NewsExpanded extends Component {
         <div className="threadexpand-content">
           <div className="thread-profile-header">
             <div style={{ display: "flex", flexDirection: "row" }}>
-              <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"></img>
+              <img
+                alt="News"
+                src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              ></img>
               <p>u/carlover</p>
             </div>
             <p style={{ color: "rgba(255, 255, 255, 0.38)" }}>1 hour ago</p>
           </div>
           <h5>My pre-worshipped Mercedes A-Class (A180)</h5>
-          <img src="https://images.pexels.com/photos/93632/pexels-photo-93632.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"></img>
+          <img
+            alt="News 1"
+            src="https://images.pexels.com/photos/93632/pexels-photo-93632.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+          ></img>
           <p>
             I am a self-confessed petrolhead. I truly believe that cars are a
             heady mix of art and engineering, and no other man-made machine can
@@ -40,7 +44,10 @@ export default class NewsExpanded extends Component {
             undying urge to change my ride. And that is where the story of my
             pre-worshiped Mercedes A Class begins.
           </p>
-          <img src="https://images.pexels.com/photos/195636/pexels-photo-195636.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></img>
+          <img
+            alt="News 2"
+            src="https://images.pexels.com/photos/195636/pexels-photo-195636.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+          ></img>
           <p>
             The third generation Mercedes A Class (W176) was launched
             internationally in 2012 and was brought to India in 2013 via the CBU

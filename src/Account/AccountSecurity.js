@@ -4,8 +4,8 @@ class AccountSecurity extends Component {
   render() {
     return (
       <div className="accnt-scrty">
-         <h6>Email Change</h6>
-         {/*
+        <h6>Email Change</h6>
+        {/*
         <input placeholder="current password"></input>
         <input type="password" placeholder="new password"></input>
         <input type="password" placeholder="confirm password"></input>
@@ -19,9 +19,16 @@ class AccountSecurity extends Component {
           </td>
           <td>
             <tr>
-              <a className="edit-accnt" style={{ paddingLeft: "1em" }}>
+              <button
+                className="edit-accnt"
+                style={{
+                  border: "none",
+                  backgroundColor: "transparent",
+                  paddingLeft: "1em"
+                }}
+              >
                 Edit
-              </a>
+              </button>
             </tr>
           </td>
         </table>
