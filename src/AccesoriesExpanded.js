@@ -3,11 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import AccMain from "./AccMain";
-import Navbar from "./Navbar";
 import { connect } from "react-redux";
 import { addToCart } from "./Services/Steam/components/actions/cartActions";
 
-import Breadcrumb from "react-bootstrap/Breadcrumb";
 
 class AccesoriesExpanded extends Component {
   render() {

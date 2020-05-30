@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import ForumTrending from "./ForumTrendingThread";
-import Demo from "./Demo";
+// import ForumTrending from "./ForumTrendingThread";
+// import Demo from "./Demo";
 
 export default class NewsExpanded extends Component {
   componentDidMount() {
@@ -12,13 +12,13 @@ export default class NewsExpanded extends Component {
         <div className="threadexpand-content">
           <div className="thread-profile-header">
             <div style={{ display: "flex", flexDirection: "row" }}>
-              <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"></img>
+              <img alt="" src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"></img>
               <p>u/carlover</p>
             </div>
             <p style={{ color: "rgba(255, 255, 255, 0.38)" }}>1 hour ago</p>
           </div>
           <h5>Default My Ford Figo 1.5L DCT (Automatic)</h5>
-          <img src="https://images.pexels.com/photos/1007410/pexels-photo-1007410.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"></img>
+          <img alt="" src="https://images.pexels.com/photos/1007410/pexels-photo-1007410.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"></img>
           <p>
             So it all started out of a premonition! And I booked Grandi10. But
             then Hyundai dealer Cartel happened. And then Figo happened. While
@@ -42,7 +42,7 @@ export default class NewsExpanded extends Component {
             use, easy maneuverability • Pocket friendly maintenance • OTR budget
             8L
           </p>
-          <img src="https://images.pexels.com/photos/386025/pexels-photo-386025.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></img>
+          <img alt="" src="https://images.pexels.com/photos/386025/pexels-photo-386025.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></img>
           <p>
             I am talking about sometime in Jan 2017. Papa is not into cars and
             new to the world of automatic cars. We started the search. I was

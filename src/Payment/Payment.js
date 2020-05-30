@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Tabs, Select } from "antd";
+import { Tabs} from "antd";
 import Stripe from "../StripeBtn";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -28,6 +28,7 @@ export default class Payment extends Component {
               <TabPane tab="CREDIT/DEBIT CARD" key="1">
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <img
+                  alt=""
                     style={{ width: "30em" }}
                     src="https://cdn.hsbc.co.in/content/dam/hsbc/in/images/hsbc-premier-mastercard.png/_jcr_content/renditions/cq5dam.web.1280.1280.png"
                   ></img>

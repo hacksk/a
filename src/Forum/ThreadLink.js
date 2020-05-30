@@ -44,7 +44,7 @@ import { DislikeOutlined, LikeOutlined, DislikeFilled, LikeFilled } from '@ant-d
       <div>
         <Comment
       actions={actions}
-      author={<a>Han Solo</a>}
+      author={<a href="author">Han Solo</a>}
       avatar={
         <Avatar
           src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"

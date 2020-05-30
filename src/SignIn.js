@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "./login.json";
 
 export default class SignIn extends Component {
@@ -53,14 +53,13 @@ export default class SignIn extends Component {
     return (
       <div className="signin">
         <div className="signin-logos">
-          <img style={{height:"15vh"}} src={require("./assets/automotologo.svg")}></img>
+          <img alt="" style={{height:"15vh"}} src={require("./assets/automotologo.svg")}></img>
           <div className="signin-logos-line">
-          <img style={{height:"7vh"}} src={require("./assets/moto365logo.svg")}></img>
-          <img style={{height:"5.7vh"}} src={require("./assets/amlogo.svg")}></img>
+          <img alt="" style={{height:"7vh"}} src={require("./assets/moto365logo.svg")}></img>
+          <img alt="" style={{height:"5.7vh"}} src={require("./assets/amlogo.svg")}></img>
 
           </div>
         </div>
-        <h5 htmlFor="email"></h5>
         <form className="login-form" onSubmit={this.handleSubmit}>
           <input
             type="text"

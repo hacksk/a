@@ -1,13 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { addToCart, loadToCart } from "./actions/cartActions";
+import {  loadToCart } from "./actions/cartActions";
 import "../../../index.css";
-import { message } from "antd";
+import { Spin, Space } from "antd";
 
-const info = () => {
-  message.info("Added To The Cart");
-};
 
 class Home extends Component {
   constructor(props) {
@@ -17,12 +14,15 @@ class Home extends Component {
   componentDidMount() {
     this.props.loadToCart();
   }
+  
+  
 
   render() {
+    
     let items = this.props.items;
     let itemList = [];
     if (items != null)
-      itemList = items.map(item => {
+      itemList = items.map((item) => {
         return (
           <Link to={`/services/${item.id}`}>
             <div className="card" key={item.id}>
@@ -43,8 +43,11 @@ class Home extends Component {
         );
       });
 
+
     return itemList.length == 0 ? (
-      <div style={{ color: "red" }}>Loading</div>
+      <Space size="middle">
+        <Spin size="large" />
+      </Space>
     ) : (
       <div className="container">
         <div style={{ paddingBottom: "7em" }} className="box">
@@ -54,16 +57,16 @@ class Home extends Component {
     );
   }
 }
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    items: state.items
+    items: state.items,
   };
 };
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     loadToCart: () => {
       dispatch(loadToCart());
-    }
+    },
   };
 };
 

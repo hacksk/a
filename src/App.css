@@ -1417,7 +1417,7 @@ body {
     rgba(0, 0, 0, 0.35) 0%,
     rgba(0, 0, 0, 0) 80%
   );
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), #121212;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.08)),  black;
   /* W3C */
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
@@ -2350,8 +2350,8 @@ button.StripeCheckout {
   cursor: pointer;
 }
 .trending-thread img {
-  width: 4em;
-  height: 4em;
+  width: 6vh;
+  height: 6vh;
   border-radius: 50%;
   border: 1px solid #fc5c2d;
 }
@@ -2671,4 +2671,7 @@ a:not([href]):not([tabindex]) {
 }
 .ant-picker-input > input {
   color: white !important;
+}
+.ant-spin-dot-item {
+  background-color: #fc5c2d!important;
 }

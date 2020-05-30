@@ -6,7 +6,7 @@ import {
   MdForum,
 } from "react-icons/md";
 import { AiTwotoneHome } from "react-icons/ai";
-import { IoMdSearch, IoMdMenu } from "react-icons/io";
+import { IoMdSearch } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 export default class BottomNavbar extends Component {
@@ -16,7 +16,7 @@ export default class BottomNavbar extends Component {
         <ul>
           <Link to="/">
             <li>
-              <a class="active" href="#home">
+              <a className="active" href="#home">
                 <AiTwotoneHome />
               </a>
             </li>
@@ -44,14 +44,14 @@ export default class BottomNavbar extends Component {
           </Link>
           <Link to="/forum">
             <li>
-              <a>
+              <a href="#icon">
                 <MdForum />
               </a>
             </li>
           </Link>
           <Link to="/account">
             <li>
-              <a href="#account">
+              <a href="#icon">
                 <MdAccountCircle />
               </a>
             </li>

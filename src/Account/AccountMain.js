@@ -3,7 +3,6 @@ import { Tabs } from "antd";
 import Accountgeneral from "./AccountGeneral";
 import Accountsecurity from "./AccountSecurity";
 import Accounthelp from "./AccountHelp";
-import Navbar from "../Navbar";
 
 const { TabPane } = Tabs;
 

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Rate } from "antd";
-import { TiTick } from "react-icons/ti";
 import { Popconfirm, message } from "antd";
 
 function confirm(e) {
@@ -50,7 +49,7 @@ here"
           okText="Confirm"
           cancelText="Cancel"
         >
-          <a href="#" className="feedback-btn">
+          <a href="#upload" className="feedback-btn">
             UPLOAD
           </a>
         </Popconfirm>

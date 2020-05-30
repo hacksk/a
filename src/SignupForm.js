@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import axios from 'axios';
-import { Formik } from 'formik';
-import * as Yup from 'yup';
+
 import { IoIosCamera, IoIosAddCircle } from 'react-icons/io';
 
 class SignupForm extends Component {
@@ -83,7 +82,7 @@ class SignupForm extends Component {
               <h1>PROFILE DETAILS</h1>
 
               <form onSubmit={this.handleSubmit}>
-                <h5 htmlFor="name"></h5>
+               
                 <input
                   name="name"
                   type="text"
@@ -91,7 +90,6 @@ class SignupForm extends Component {
                   placeholder="Name"
                 />
 
-                <h5 htmlFor="text"></h5>
                 <input
                   name="password"
                   type="password"
@@ -105,28 +103,24 @@ class SignupForm extends Component {
             <div className="forms-signup" onDragStart={handleOnDragStart}>
               <h1>VEHICLE DETAILS</h1>
               <form onSubmit={this.handleSubmit}>
-                <h5 htmlFor="name"></h5>
                 <input
                   name="model_year"
                   type="text"
                   onChange={this.handleChange}
                   placeholder="Model Year"
                 />
-                <h5 htmlFor="name"></h5>
                 <input
                   name="chasis_number"
                   type="text"
                   onChange={this.handleChange}
                   placeholder="Chasis Number"
                 />
-                <h5 htmlFor="name"></h5>
                 <input
                   name="engine_number"
                   type="text"
                   onChange={this.handleChange}
                   placeholder="Engine Number"
                 />
-                <h5 htmlFor="name"></h5>
                 <input
                   name="vehicle_model"
                   type="text"
@@ -134,13 +128,11 @@ class SignupForm extends Component {
                   placeholder="Vehicle Model"
                 />
 
-                <h5 htmlFor="name"></h5>
                 <input
                   name="vehicle_number"
                   type="text"
                   placeholder="KL-XXX-XXXX"
                   onChange={this.handleChange}
-                  placeholder="Vehicle number"
                 />
                 <div className="input-feedback"></div>
                 <button type="submit">Register</button>
@@ -150,7 +142,7 @@ class SignupForm extends Component {
               <h1>UPLOAD PICTURE</h1>
               <div className="signup-upload">
                 <IoIosCamera className="upload-icon" />
-                <a>
+                <a href="#upload">
                   <IoIosAddCircle className="upload-ic" />
                 </a>
               </div>

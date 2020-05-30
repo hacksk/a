@@ -58,16 +58,16 @@ class AccountGeneral extends Component {
               </td>
               <td>
                 <tr>
-                  <a className="edit-accnt">Edit</a>
+                  <a href="#accnt" className="edit-accnt">Edit</a>
                 </tr>
                 <tr>
-                  <a className="edit-accnt">Edit</a>
+                  <a href="#accnt" className="edit-accnt">Edit</a>
                 </tr>
                 <tr>
-                  <a className="edit-accnt">Edit</a>
+                  <a href="#accnt" className="edit-accnt">Edit</a>
                 </tr>
                 <tr>
-                  <a className="edit-accnt">Edit</a>
+                  <a href="#accnt" className="edit-accnt">Edit</a>
                 </tr>
               </td>
             </table>
@@ -100,25 +100,25 @@ class AccountGeneral extends Component {
               </td>
               <td>
                 <tr>
-                  <a className="edit-accnt">Edit</a>
+                  <a href="#accnt" className="edit-accnt">Edit</a>
                 </tr>
                 <tr>
-                  <a className="edit-accnt">Edit</a>
+                  <a href="#accnt" className="edit-accnt">Edit</a>
                 </tr>
                 <tr>
-                  <a className="edit-accnt">Edit</a>
+                  <a href="#accnt" className="edit-accnt">Edit</a>
                 </tr>
                 <tr>
-                  <a className="edit-accnt">Edit</a>
+                  <a href="#accnt" className="edit-accnt">Edit</a>
                 </tr>
                 <tr>
-                  <a className="edit-accnt">Edit</a>
+                  <a href="#accnt" className="edit-accnt">Edit</a>
                 </tr>
                 <tr>
-                  <a className="edit-accnt">Edit</a>
+                  <a href="#accnt" className="edit-accnt">Edit</a>
                 </tr>
                 <tr>
-                  <a className="edit-accnt">Edit</a>
+                  <a href="#accnt" className="edit-accnt">Edit</a>
                 </tr>
               </td>
             </table>
@@ -136,7 +136,7 @@ class AccountGeneral extends Component {
               </td>
               <td>
                 <tr>
-                  <a className="edit-accnt">Edit</a>
+                  <a href="#accnt" className="edit-accnt">Edit</a>
                 </tr>
               </td>
             </table>

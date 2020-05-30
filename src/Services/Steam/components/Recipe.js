@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 import { FaRupeeSign } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -8,7 +7,6 @@ import { Link } from "react-router-dom";
 // import { render } from 'enzyme';
 
 // import { addShipping } from './actions/cartActions'
-const publishableKey = "pk_test_UAHsd0FgK8CJC6PXgoZ6cIeO00y9JJDBn5";
 
 const onToken = (token) => {
   const body = {

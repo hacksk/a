@@ -1,7 +1,6 @@
 import { Upload, Modal } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
-import React, { Component } from "react";
-import ReactDOM from 'react-dom';
+import React from "react";
 
 
 function getBase64(file) {

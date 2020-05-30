@@ -4,7 +4,6 @@ import Forumcontenttwo from "./ForumContentTwo";
 import { Tabs } from "antd";
 import ForumTrending from "./ForumTrendingThread";
 import { Link } from "react-router-dom";
-import ThreadLink from "./ThreadLink";
 
 const { TabPane } = Tabs;
 
@@ -64,7 +63,7 @@ export default class ForumHome extends Component {
             </div>
           </div>
           <div className="forum-head-image" style={{ position: "relative" }}>
-            <img
+            <img alt="imageexample"
               style={{ width: "40em", borderRadius: "10px" }}
               src="https://images.pexels.com/photos/119435/pexels-photo-119435.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
             ></img>
@@ -82,7 +81,7 @@ export default class ForumHome extends Component {
               compass
             </h3>
           </div>
-          <a className="seeall-forum">SEE ALL</a>
+          <a href="#seeall" className="seeall-forum">SEE ALL</a>
         </div>
         <div
           className="forumcontentone"
@@ -115,7 +114,7 @@ export default class ForumHome extends Component {
             Penning down my recent DIY ..."
             />
           </Link>
-          <a className="seeall-forum">SEE ALL</a>
+          <a href="#seeall" className="seeall-forum">SEE ALL</a>
         </div>
         <div
           className="forum-threadtwo"
@@ -140,7 +139,7 @@ export default class ForumHome extends Component {
             threadheadtwo="An impromptu planned trip to Jim Corbett  "
             threadcontenttwo="Hello all, I would like to thank the mods for accepting my membership request and this is my... "
           />
-          <a className="seeall-forum">SEE ALL</a>
+          <a href="#seeall" className="seeall-forum">SEE ALL</a>
         </div>
         <div
           className="forum-threads"

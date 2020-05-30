@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 import AccMain from './AccMain';
-import Navbar from './Navbar';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 
 class Accesories extends Component {

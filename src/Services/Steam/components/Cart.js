@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import {
   removeItem,
   addQuantity,
@@ -20,6 +19,10 @@ class Cart extends Component {
   handleSubtractQuantity = id => {
     this.props.subtractQuantity(id);
   };
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem('items')
+  }
+  
   render() {
     let addedItems = this.props.items.length ? (
       this.props.items.map(item => {

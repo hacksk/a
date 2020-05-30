@@ -42,20 +42,20 @@ function disabledDateTime() {
   };
 }
 
-function disabledRangeTime(_, type) {
-  if (type === "start") {
-    return {
-      disabledHours: () => range(0, 60).splice(4, 20),
-      disabledMinutes: () => range(30, 60),
-      disabledSeconds: () => [55, 56]
-    };
-  }
-  return {
-    disabledHours: () => range(0, 60).splice(20, 4),
-    disabledMinutes: () => range(0, 31),
-    disabledSeconds: () => [55, 56]
-  };
-}
+// function disabledRangeTime(_, type) {
+//   if (type === "start") {
+//     return {
+//       disabledHours: () => range(0, 60).splice(4, 20),
+//       disabledMinutes: () => range(30, 60),
+//       disabledSeconds: () => [55, 56]
+//     };
+//   }
+//   return {
+//     disabledHours: () => range(0, 60).splice(20, 4),
+//     disabledMinutes: () => range(0, 31),
+//     disabledSeconds: () => [55, 56]
+//   };
+// }
 
 export default class Home extends Component {
   render() {
@@ -67,7 +67,7 @@ export default class Home extends Component {
               <Breadcrumb>
                 <Breadcrumb.Item active>Home</Breadcrumb.Item>
               </Breadcrumb>
-              <img
+              <img alt=""
                 className="header-logo"
                 src={require("./assets/moto365logo.svg")}
               ></img>
@@ -76,7 +76,7 @@ export default class Home extends Component {
           <div className="home-thread">
             <h6>THREADS</h6>
             <Link to="/forum">
-              <a> SEE ALL</a>
+              <a href="#seeall"> SEE ALL</a>
             </Link>
           </div>
           <div
@@ -143,7 +143,7 @@ export default class Home extends Component {
                 </Link>
               </div>
               <div className="home-second-second">
-                {/* <img src={require("./assets/timer-24px.svg")}/> */}
+                {/* <img alt="" src={require("./assets/timer-24px.svg")}/> */}
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <p
                     style={{
@@ -164,7 +164,7 @@ export default class Home extends Component {
                     />
                   </div>
                 </div>
-                <img
+                <img alt=""
                   style={{ width: "20em" }}
                   src={require("./assets/hyundai.png")}
                 ></img>
@@ -174,7 +174,7 @@ export default class Home extends Component {
           <div className="news">
             <Carousel infiniteLoop="true" autoPlay="true">
               <div>
-                <img src={require("./assets/news banner 2.png")} />
+                <img alt="" src={require("./assets/news banner 2.png")} />
                 <div className="testcar">
                   <p style={{ color: "rgba(240, 92, 45, 0.08)" }}>NEWS</p>
                   <h3 style={{ color: "white" }}>
@@ -190,7 +190,7 @@ export default class Home extends Component {
                 </div>
               </div>
               <div>
-                <img src={require("./assets/Group 324.png")} />
+                <img alt="" src={require("./assets/Group 324.png")} />
                 <div className="testcar">
                   <p style={{ color: "rgba(240, 92, 45, 0.08)" }}>NEWS</p>
                   <h3 style={{ color: "white" }}>
@@ -206,7 +206,7 @@ export default class Home extends Component {
                 </div>
               </div>
               <div>
-                <img src={require("./assets/Group 325.png")} />
+                <img alt="" src={require("./assets/Group 325.png")} />
                 <div className="testcar">
                   <p style={{ color: "rgba(240, 92, 45, 0.08)" }}>NEWS</p>
                   <h3 style={{ color: "white" }}>
@@ -235,22 +235,22 @@ export default class Home extends Component {
             </h5>
             <div className="head-icons">
               <figure>
-                <img
+                <img alt=""
                   src={require("./vector-icons/featured-services/steam.png")}
                 ></img>
               </figure>
               <figure>
-                <img
+                <img alt=""
                   src={require("./vector-icons/featured-services/ecuremapp.png")}
                 ></img>
               </figure>
               <figure>
-                <img
+                <img alt=""
                   src={require("./vector-icons/featured-services/connected.png")}
                 ></img>
               </figure>
               <figure>
-                <img
+                <img alt=""
                   src={require("./vector-icons/featured-services/ceramic.png")}
                 ></img>
               </figure>
@@ -261,41 +261,41 @@ export default class Home extends Component {
             <h5>RECOMMENDED SERVICES</h5>
             <div className="home-content">
               <div className="home-content-part1">
-                <img
+                <img alt=""
                   className="hvr-float-shadow"
                   src={require("./Services/Steam/images/serviceicons/service(1).png")}
                 ></img>
-                <img
+                <img alt=""
                   className="hvr-float-shadow"
                   src={require("./Services/Steam/images/serviceicons/service(2).png")}
                 ></img>
-                <img
+                <img alt=""
                   className="hvr-float-shadow"
                   src={require("./Services/Steam/images/serviceicons/service(4).png")}
                 ></img>
-                <img
+                <img alt=""
                   className="hvr-float-shadow"
                   src={require("./Services/Steam/images/serviceicons/service(20).png")}
                 ></img>
-                <img
+                <img alt=""
                   className="hvr-float-shadow"
                   src={require("./Services/Steam/images/serviceicons/service(22).png")}
                 ></img>
-                <img
+                <img alt=""
                   className="hvr-float-shadow"
                   src={require("./Services/Steam/images/serviceicons/service(35).png")}
                 ></img>
-                <img
+                <img alt=""
                   className="hvr-float-shadow"
                   src={require("./Services/Steam/images/serviceicons/service(40).png")}
                 ></img>
-                <img
+                <img alt=""
                   className="hvr-float-shadow"
                   src={require("./Services/Steam/images/serviceicons/service(42).png")}
                 ></img>
               </div>
               <Link to="/services">
-                <a className="explore-link hvr-pulse-grow">
+                <a href="#explore" className="explore-link hvr-pulse-grow">
                   EXPLORE
                   <FaLongArrowAltRight />
                 </a>
@@ -303,7 +303,7 @@ export default class Home extends Component {
               <h5>RECOMMENDED ACCESSORIES</h5>
               <div className="home-content-part2">
                 <div className="home-accessories ">
-                  <img src={require("./vector-icons/carphoneholder.png")} />
+                  <img alt="" src={require("./vector-icons/carphoneholder.png")} />
                   <p
                     style={{
                       color: "white",
@@ -318,7 +318,7 @@ export default class Home extends Component {
                   </p>
                 </div>
                 <div className="home-accessories ">
-                  <img src={require("./vector-icons/wheelalloy.png")} />
+                  <img alt="" src={require("./vector-icons/wheelalloy.png")} />
                   <p
                     style={{
                       color: "white",
@@ -330,7 +330,7 @@ export default class Home extends Component {
                   </p>
                 </div>
                 <div className="home-accessories ">
-                  <img src={require("./vector-icons/freshner.png")} />
+                  <img alt="" src={require("./vector-icons/freshner.png")} />
                   <p
                     style={{
                       color: "white",
@@ -342,7 +342,7 @@ export default class Home extends Component {
                   </p>
                 </div>
                 <div className="home-accessories ">
-                  <img src={require("./vector-icons/camera.png")} />
+                  <img alt="" src={require("./vector-icons/camera.png")} />
                   <p
                     style={{
                       color: "white",
@@ -354,7 +354,7 @@ export default class Home extends Component {
                   </p>
                 </div>
                 <div className="home-accessories ">
-                  <img src={require("./vector-icons/tire.png")} />
+                  <img alt="" src={require("./vector-icons/tire.png")} />
                   <p
                     style={{
                       color: "white",
@@ -366,7 +366,7 @@ export default class Home extends Component {
                   </p>
                 </div>
                 <div className="home-accessories ">
-                  <img src={require("./vector-icons/camera.png")} />
+                  <img alt="" src={require("./vector-icons/camera.png")} />
                   <p
                     style={{
                       color: "white",
@@ -378,7 +378,7 @@ export default class Home extends Component {
                   </p>
                 </div>
                 <div className="home-accessories ">
-                  <img src={require("./vector-icons/speaker.png")} />
+                  <img alt="" src={require("./vector-icons/speaker.png")} />
                   <p
                     style={{
                       color: "white",
@@ -390,7 +390,7 @@ export default class Home extends Component {
                   </p>
                 </div>
                 <div className="home-accessories ">
-                  <img src={require("./vector-icons/wheelalloy.png")} />
+                  <img alt="" src={require("./vector-icons/wheelalloy.png")} />
                   <p
                     style={{
                       color: "white",
@@ -402,7 +402,7 @@ export default class Home extends Component {
                   </p>
                 </div>
               </div>
-              <a className="explore-link hvr-pulse-grow">
+              <a href="#explore" className="explore-link hvr-pulse-grow">
                 EXPLORE
                 <FaLongArrowAltRight />
               </a>
@@ -418,11 +418,11 @@ export default class Home extends Component {
             </div>
           </div>
           <div className="home-icons">
-            <img src={require("./assets/automotologo.svg")}></img>
-            <img src={require("./assets/moto365logo.svg")}></img>
-            <img src={require("./assets/amlogo.svg")}></img>
-            <img src={require("./assets/fortador.png")}></img>
-            <img src={require("./assets/sonax.png")}></img>
+            <img alt="" src={require("./assets/automotologo.svg")}></img>
+            <img alt="" src={require("./assets/moto365logo.svg")}></img>
+            <img alt="" src={require("./assets/amlogo.svg")}></img>
+            <img alt="" src={require("./assets/fortador.png")}></img>
+            <img alt="" src={require("./assets/sonax.png")}></img>
           </div> */}
           <div
             className="forum-threads"
@@ -475,7 +475,7 @@ export default class Home extends Component {
             <div className="footer-sub">
               <ul>
                 <li>
-                  <a style={{ textDecoration: "underline", color: "white" }}>
+                  <a href="#qiucklinks" style={{ textDecoration: "underline", color: "white" }}>
                     QUICK LINKS
                   </a>
                 </li>
@@ -486,9 +486,9 @@ export default class Home extends Component {
               </ul>
             </div>
             <div className="footer-logo">
-              <img src={require("./assets/automotologo.svg")} />
-              <img src={require("./assets/moto365logo.svg")} />
-              <img src={require("./assets/amlogo.svg")} />
+              <img alt="" src={require("./assets/automotologo.svg")} />
+              <img alt="" src={require("./assets/moto365logo.svg")} />
+              <img alt="" src={require("./assets/amlogo.svg")} />
             </div>
           </div>
           <div className="footer-secondary">
@@ -499,6 +499,7 @@ export default class Home extends Component {
             <a
               href="https://www.techbyheart.in/"
               target="_blank"
+              rel="noopener noreferrer"
               style={{ color: "rgba(255, 255, 255, 0.87)" }}
             >
               SITE BY TECHBYHEART

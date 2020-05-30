@@ -1,13 +1,9 @@
 import React, { Component } from "react";
 import AccCarousel from "./AccCarousel";
-import Stripe from "./StripeBtn";
-import Breadcrumb from "react-bootstrap/Breadcrumb";
 import axios from "axios";
-import { message, Button } from "antd";
+import { message } from "antd";
 
-const info = () => {
-  message.info("Added To The Cart");
-};
+
 
 class AccMain extends Component {
   state = {
@@ -29,8 +25,13 @@ class AccMain extends Component {
   }
 
   handleClick = id => {
+    message.info("Added To The Cart");
     this.props.addToCartFunction(id);
   };
+  componentWillUpdate(nextProps, nextState) {
+    
+  }
+  
 
   render() {
     return (

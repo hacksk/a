@@ -4,7 +4,7 @@ import {
   REMOVE_ITEM,
   SUB_QUANTITY,
   ADD_QUANTITY,
-  ADD_SHIPPING
+  // ADD_SHIPPING
 } from "./action-types/cart-actions";
 import axios from "axios";
 
@@ -34,13 +34,15 @@ export const loadToCart = () => dispatch => {
   }
 };
 //add cart action
-export const addToCart = id => (dispatch, getState) => {
+export const addToCart = (id) => (dispatch, getState) => {
   let currentState = getState();
   try {
     return axios
       .post(
         `${APP_URL}/cart/add_to_cart/`,
-        { id: id },
+        { 
+          id: id 
+        },
         {
           headers: {
             Authorization: `Bearer ${currentState.userToken}`
@@ -55,7 +57,7 @@ export const addToCart = id => (dispatch, getState) => {
         });
       });
   } catch (e) {
-    console.log(e);
+    console.log("here");
   }
 };
 
