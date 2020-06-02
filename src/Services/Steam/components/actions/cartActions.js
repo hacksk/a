@@ -33,6 +33,31 @@ export const loadToCart = () => dispatch => {
     console.log(e);
   }
 };
+//Load product to cart
+export const loadProductToCart = () => dispatch => {
+  try {
+    return axios.get(`${APP_URL}/product/`).then(res => {
+      let itemList = res.data.map(item => {
+        console.log("hello")
+
+        return {
+          id: item.id,
+          title: item.name,
+          desc: item.description,
+          price: item.price,
+          img: item.images[0].image
+        };
+      });
+
+      dispatch({
+        type: LOAD_ITEMS,
+        itemList
+      });
+    });
+  } catch (e) {
+    console.log(e);
+  }
+};
 //add cart action
 export const addToCart = (id) => (dispatch, getState) => {
   let currentState = getState();
@@ -40,8 +65,13 @@ export const addToCart = (id) => (dispatch, getState) => {
     return axios
       .post(
         `${APP_URL}/cart/add_to_cart/`,
-        { 
-          id: id 
+        {
+          "service":[
+            {
+              "service": id
+            }
+            ]
+          
         },
         {
           headers: {

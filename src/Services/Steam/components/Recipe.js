@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import axios from "axios";
 import { FaRupeeSign } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -13,16 +12,7 @@ const onToken = (token) => {
     amount: "",
     token: token,
   };
-  axios
-    .post("http://localhost:8000/payment", body)
-    .then((response) => {
-      console.log(response);
-      alert("Payment Success");
-    })
-    .catch((error) => {
-      console.log("Payment Error: ", error);
-      alert("Payment Error");
-    });
+ 
 };
 
 class Recipe extends Component {

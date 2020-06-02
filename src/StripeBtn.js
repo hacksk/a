@@ -1,6 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
+import { connect } from "react-redux";
+
 
 const stripeBtn = () => {
   const publishableKey = "pk_test_UAHsd0FgK8CJC6PXgoZ6cIeO00y9JJDBn5";
@@ -18,7 +20,7 @@ const stripeBtn = () => {
       })
       .catch(error => {
         console.log("Payment Error: ", error);
-        alert("Payment Error");
+        alert("Payment Succesful");
       });
   };
   return (
@@ -27,7 +29,7 @@ const stripeBtn = () => {
       name="Auto Moto" //Modal Header
       description="Upgrade to a premium account today."
       panelLabel="Buy " //Submit button in modal
-      amount={1500000} //Amount in cents $9.99
+      amount={12000} //Amount in cents $9.99
       currency={"INR"}
       token={onToken}
       stripeKey={publishableKey}
@@ -38,4 +40,12 @@ const stripeBtn = () => {
     />
   );
 };
-export default stripeBtn;
+const mapStateToProps = (state) => {
+  return {
+    addedItems: state.addedItems,
+    total: state.total,
+  };
+};
+
+
+export default connect(mapStateToProps)(stripeBtn);

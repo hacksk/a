@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import AccCarousel from "./AccCarousel";
 import axios from "axios";
 import { message } from "antd";
+import { FaRupeeSign } from "react-icons/fa";
 
 
 
@@ -28,49 +29,49 @@ class AccMain extends Component {
     message.info("Added To The Cart");
     this.props.addToCartFunction(id);
   };
-  componentWillUpdate(nextProps, nextState) {
-    
-  }
+ 
   
 
   render() {
     return (
-      <div>
+      <div style={{position:"relative"}}>
         <div className="height-define">
           <div className="accesories-main">
+          <img src={this.props.item.img}></img>
             <div className="accesories-carousel">
-              <AccCarousel />
+              {/* <AccCarousel /> */}
             </div>
             <div className="accesories-detail"></div>
           </div>
-          <div style={{ width: "30%" }}>
+          <div className="acc-main" style={{ width: "30%" }}>
+            <p style={{fontStyle:"underline",color:"white",fontWeight:"500"}}>MOTO 365</p>
             <h2 style={{ color: "white" }}>{this.props.item.title}</h2>
             <p style={{ color: "white" }}>
-              Over a period of time ,the emblems or badges on a car get affected
-              by salt deposits which result in decolouration and dirt deposits
-              etc. Steam Logo service ensures your badges are in new condition
-              by washing away all kinds of dirt and salts in minute gaps to give
-              it a refreshed look
+             {this.props.item.desc}
             </p>
           </div>
         </div>
 
         <div className="price">
           <div className="rs">
-            <h3>{this.props.item.price}</h3>
+            <h3><FaRupeeSign />{this.props.item.price}</h3>
             <h5 className="cost">
-              incl.20% vat,excl. <span className="shipping">shipping cost</span>
+              incl.20% tax 
             </h5>
           </div>
 
           <button
+           className="addtocart"
             onClick={() => {
               this.handleClick(this.props.item.id);
             }}
             style={{
               color: "white",
               border: "none",
-              background: "transparent"
+              background: "transparent",
+              fontSize:"20px",
+              fontFamily:"Montserrat"
+              
             }}
           >
             Add to cart

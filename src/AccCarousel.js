@@ -9,7 +9,7 @@ export default () => (
     <div>
       {/* <Accessory/> */}
 
-      <img className="img" alt="#" src="https://images.pexels.com/photos/1191109/pexels-photo-1191109.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+      <img className="img" alt="#" src={"https://images.pexels.com/photos/1191109/pexels-photo-1191109.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"} />
       <p className="legend">Legend 1</p>
     </div>
     <div>

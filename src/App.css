@@ -90,6 +90,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   fill: #373a47;
 }
 
+
 /* Wrapper for item list */
 .bm-item-list {
   color: #b8b7ad;
@@ -271,9 +272,18 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .card:hover {
   cursor: pointer;
 }
+.collection .collection-item {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08));
+}
+.accesories-main img{
+  width: 32vw;
+}
+.accesories-moto{
+  height: 100vh!important;
+}
 .card {
   background-color: transparent !important ;
-  width: 17vw !important;
+  width: 14vw !important;
 }
 .ant-btn {
   height: 3em !important;
@@ -386,13 +396,15 @@ Note: Beware of modifying this element as it can break the animations - you shou
   width: 40%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
   align-items: baseline;
   color: white !important;
 }
 .rs h3 {
-  font-weight: bold;
+  font-weight: 900;
+  font-family: Montserrat;
   color: white !important;
+  font-style: normal;
+  font-size: 30px;
 }
 .estimate {
   padding-right: 1em;
@@ -405,6 +417,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 .cost {
   color: white !important;
+  font-weight: 900;
+  font-family: Montserrat;
+  padding-left: 1em;
 }
 .map-sos {
   display: flex;
@@ -477,14 +492,15 @@ Note: Beware of modifying this element as it can break the animations - you shou
   justify-content: space-evenly;
   padding: 6em;
   padding-top: 2em;
+  background-color: linear-gradient(144.37deg, rgba(240, 92, 45, 0.08) 0%, rgba(255, 255, 255, 0) 60.15%), #121212!important;
 }
 .accesories-main {
   width: 50%;
 }
+
 @media screen and (max-width: 786px) {
   .height-define {
     display: flex;
-    align-items: center;
     justify-content: center;
   }
   .leaflet-left {
@@ -1114,6 +1130,9 @@ body {
 /* STYLES FOR ACCOUNT */
 
 /* STYLES FOR HOME */
+.accessories-moto{
+  
+}
 
 .home {
   width: 100%;
@@ -2140,7 +2159,7 @@ body {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 14px;
   text-decoration: none;
 }
 
@@ -2154,6 +2173,12 @@ body {
 }
 
 @media screen and (max-width: 786px) {
+  .height-define{
+    height:auto;
+  }
+  .acc-main{
+    width: 40%!important;
+  }
   .bottommenu {
     display: flex;
   }
@@ -2199,6 +2224,7 @@ body {
   .height-define {
     padding: 0 !important;
     padding-top: 4em !important;
+    padding-bottom: 20vh!important;
   }
   .box {
     flex-direction: row;
@@ -2251,6 +2277,21 @@ button.StripeCheckout {
   background-color: #121212;
 }
 @media screen and (max-width: 786px) {
+  .price{
+    padding-bottom: 8vh;
+  }
+  .addtocart{
+    font-size: 15px!important;
+  }
+  .rs{
+    width:60%!important;
+  }
+  .rs h3{
+    font-size: 20px;
+  }
+  .cost{
+    font-size: 15px;
+  }
   .forum-home {
     background-size: contain;
     padding-bottom: 7em;

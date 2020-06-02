@@ -38,7 +38,7 @@ function disabledDateTime() {
   return {
     disabledHours: () => range(0, 24).splice(4, 20),
     disabledMinutes: () => range(30, 60),
-    disabledSeconds: () => [55, 56]
+    disabledSeconds: () => [55, 56],
   };
 }
 
@@ -67,7 +67,8 @@ export default class Home extends Component {
               <Breadcrumb>
                 <Breadcrumb.Item active>Home</Breadcrumb.Item>
               </Breadcrumb>
-              <img alt=""
+              <img
+                alt=""
                 className="header-logo"
                 src={require("./assets/moto365logo.svg")}
               ></img>
@@ -85,7 +86,7 @@ export default class Home extends Component {
               padding: "5em",
               position: "relative",
               display: "flex",
-              flexDirection: "row"
+              flexDirection: "row",
             }}
           >
             <Forumcontenttwo
@@ -114,7 +115,7 @@ export default class Home extends Component {
                       fontFamily: "Montserrat",
                       fontWeight: "bold",
                       fontSize: "86px",
-                      marginBottom: "0"
+                      marginBottom: "0",
                     }}
                   >
                     35
@@ -135,7 +136,7 @@ export default class Home extends Component {
                       height: "34px",
                       width: "126px",
                       fontWeight: "900",
-                      fontSize: "12px"
+                      fontSize: "12px",
                     }}
                   >
                     SERVICE NOW
@@ -148,7 +149,7 @@ export default class Home extends Component {
                   <p
                     style={{
                       color: "rgba(252, 170, 46, 0.87)",
-                      cursor: "pointer"
+                      cursor: "pointer",
                     }}
                   >
                     SET REMAINDER
@@ -159,12 +160,13 @@ export default class Home extends Component {
                       disabledDate={disabledDate}
                       disabledTime={disabledDateTime}
                       showTime={{
-                        defaultValue: moment("00:00:00", "HH:mm:ss")
+                        defaultValue: moment("00:00:00", "HH:mm:ss"),
                       }}
                     />
                   </div>
                 </div>
-                <img alt=""
+                <img
+                  alt=""
                   style={{ width: "20em" }}
                   src={require("./assets/hyundai.png")}
                 ></img>
@@ -223,7 +225,7 @@ export default class Home extends Component {
               </div>
             </Carousel>
           </div>
-          {/* <div className="home-icons-wrap">
+          <div className="home-icons-wrap">
             <h5
               style={{
                 color: "white",
@@ -255,46 +257,56 @@ export default class Home extends Component {
                 ></img>
               </figure>
             </div>
-          </div> */}
+          </div>
 
           <div className="home-content-wrap">
             <h5>RECOMMENDED SERVICES</h5>
-            <div className="home-content">
-              <div className="home-content-part1">
-                <img alt=""
-                  className="hvr-float-shadow"
-                  src={require("./Services/Steam/images/serviceicons/service(1).png")}
-                ></img>
-                <img alt=""
-                  className="hvr-float-shadow"
-                  src={require("./Services/Steam/images/serviceicons/service(2).png")}
-                ></img>
-                <img alt=""
-                  className="hvr-float-shadow"
-                  src={require("./Services/Steam/images/serviceicons/service(4).png")}
-                ></img>
-                <img alt=""
-                  className="hvr-float-shadow"
-                  src={require("./Services/Steam/images/serviceicons/service(20).png")}
-                ></img>
-                <img alt=""
-                  className="hvr-float-shadow"
-                  src={require("./Services/Steam/images/serviceicons/service(22).png")}
-                ></img>
-                <img alt=""
-                  className="hvr-float-shadow"
-                  src={require("./Services/Steam/images/serviceicons/service(35).png")}
-                ></img>
-                <img alt=""
-                  className="hvr-float-shadow"
-                  src={require("./Services/Steam/images/serviceicons/service(40).png")}
-                ></img>
-                <img alt=""
-                  className="hvr-float-shadow"
-                  src={require("./Services/Steam/images/serviceicons/service(42).png")}
-                ></img>
-              </div>
+            
+              <div className="home-content">
               <Link to="/services">
+                <div className="home-content-part1">
+                  <img
+                    alt=""
+                    className="hvr-float-shadow"
+                    src={require("./Services/Steam/images/serviceicons/service(1).png")}
+                  ></img>
+                  <img
+                    alt=""
+                    className="hvr-float-shadow"
+                    src={require("./Services/Steam/images/serviceicons/service(2).png")}
+                  ></img>
+                  <img
+                    alt=""
+                    className="hvr-float-shadow"
+                    src={require("./Services/Steam/images/serviceicons/service(4).png")}
+                  ></img>
+                  <img
+                    alt=""
+                    className="hvr-float-shadow"
+                    src={require("./Services/Steam/images/serviceicons/service(20).png")}
+                  ></img>
+                  <img
+                    alt=""
+                    className="hvr-float-shadow"
+                    src={require("./Services/Steam/images/serviceicons/service(22).png")}
+                  ></img>
+                  <img
+                    alt=""
+                    className="hvr-float-shadow"
+                    src={require("./Services/Steam/images/serviceicons/service(35).png")}
+                  ></img>
+                  <img
+                    alt=""
+                    className="hvr-float-shadow"
+                    src={require("./Services/Steam/images/serviceicons/service(40).png")}
+                  ></img>
+                  <img
+                    alt=""
+                    className="hvr-float-shadow"
+                    src={require("./Services/Steam/images/serviceicons/service(42).png")}
+                  ></img>
+                </div>
+              
                 <a href="#explore" className="explore-link hvr-pulse-grow">
                   EXPLORE
                   <FaLongArrowAltRight />
@@ -303,7 +315,10 @@ export default class Home extends Component {
               <h5>RECOMMENDED ACCESSORIES</h5>
               <div className="home-content-part2">
                 <div className="home-accessories ">
-                  <img alt="" src={require("./vector-icons/carphoneholder.png")} />
+                  <img
+                    alt=""
+                    src={require("./vector-icons/carphoneholder.png")}
+                  />
                   <p
                     style={{
                       color: "white",
@@ -311,7 +326,7 @@ export default class Home extends Component {
                       textAlign: "center",
                       fontFamily: "Montserrat",
                       fontWeight: "600",
-                      fontSize: "14px"
+                      fontSize: "14px",
                     }}
                   >
                     PHONE HOLDER
@@ -323,7 +338,7 @@ export default class Home extends Component {
                     style={{
                       color: "white",
                       paddingTop: "2em",
-                      textAlign: "center"
+                      textAlign: "center",
                     }}
                   >
                     RIMS 22"
@@ -335,7 +350,7 @@ export default class Home extends Component {
                     style={{
                       color: "white",
                       paddingTop: "2em",
-                      textAlign: "center"
+                      textAlign: "center",
                     }}
                   >
                     AIR FRESHNER
@@ -347,7 +362,7 @@ export default class Home extends Component {
                     style={{
                       color: "white",
                       paddingTop: "2em",
-                      textAlign: "center"
+                      textAlign: "center",
                     }}
                   >
                     GPS
@@ -359,7 +374,7 @@ export default class Home extends Component {
                     style={{
                       color: "white",
                       paddingTop: "2em",
-                      textAlign: "center"
+                      textAlign: "center",
                     }}
                   >
                     TYRES
@@ -371,7 +386,7 @@ export default class Home extends Component {
                     style={{
                       color: "white",
                       paddingTop: "2em",
-                      textAlign: "center"
+                      textAlign: "center",
                     }}
                   >
                     GPS
@@ -383,7 +398,7 @@ export default class Home extends Component {
                     style={{
                       color: "white",
                       paddingTop: "2em",
-                      textAlign: "center"
+                      textAlign: "center",
                     }}
                   >
                     5" SPEAKER
@@ -395,7 +410,7 @@ export default class Home extends Component {
                     style={{
                       color: "white",
                       paddingTop: "2em",
-                      textAlign: "center"
+                      textAlign: "center",
                     }}
                   >
                     RIMS 22"
@@ -475,7 +490,10 @@ export default class Home extends Component {
             <div className="footer-sub">
               <ul>
                 <li>
-                  <a href="#qiucklinks" style={{ textDecoration: "underline", color: "white" }}>
+                  <a
+                    href="#qiucklinks"
+                    style={{ textDecoration: "underline", color: "white" }}
+                  >
                     QUICK LINKS
                   </a>
                 </li>

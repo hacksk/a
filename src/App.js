@@ -24,10 +24,11 @@ import ForumHome from "./Forum/ForumHome";
 import Threadexpand from "./Forum/ThreadExpand";
 import NewsExpanded from "./Forum/NewsExpanded";
 import NewsExpanded1 from "./Forum/NewsExpand1";
+import ProductHome from "./Services/Steam/components/ProductHome";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{backgroundColor:"linear-gradient(144.37deg, rgba(240, 92, 45, 0.08) 0%, rgba(255, 255, 255, 0) 60.15%), #121212"}}>
       <Header />
       <BrowserRouter>
         <Navbarnew />
@@ -55,6 +56,7 @@ function App() {
           <Route exact path="/forum/thread" component={Threadexpand} />
           <Route exact path="/forum/thread/news" component={NewsExpanded} />
           <Route exact path="/forum/thread/news1" component={NewsExpanded1} />
+          <Route exact path="/products" component={ProductHome}/>
         </Switch>
         <BottomNavbar />
       </BrowserRouter>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { FaRupeeSign } from "react-icons/fa";
 import {
   removeItem,
   addQuantity,
@@ -19,9 +20,7 @@ class Cart extends Component {
   handleSubtractQuantity = id => {
     this.props.subtractQuantity(id);
   };
-  componentWillUpdate(nextProps, nextState) {
-    localStorage.setItem('items')
-  }
+  
   
   render() {
     let addedItems = this.props.items.length ? (
@@ -36,7 +35,7 @@ class Cart extends Component {
               <span className="title">{item.title}</span>
               <p>{item.desc}</p>
               <p>
-                <b>Price: {item.price}$</b>
+                <b>Price: {item.price}<FaRupeeSign /></b>
               </p>
               {/* <p>
                                             <b>Quantity: {item.quantity}</b> 
