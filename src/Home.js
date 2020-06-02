@@ -236,26 +236,37 @@ export default class Home extends Component {
               FEATURED SERVICES
             </h5>
             <div className="head-icons">
+            <Link to="/services">
+
               <figure>
                 <img alt=""
                   src={require("./vector-icons/featured-services/steam.png")}
                 ></img>
               </figure>
+              </Link>              <Link to="/services">
+
               <figure>
                 <img alt=""
                   src={require("./vector-icons/featured-services/ecuremapp.png")}
                 ></img>
               </figure>
+              </Link>
+              <Link to="/services">
+
               <figure>
                 <img alt=""
                   src={require("./vector-icons/featured-services/connected.png")}
                 ></img>
               </figure>
+              </Link>
+              <Link to="/services">
+
               <figure>
                 <img alt=""
                   src={require("./vector-icons/featured-services/ceramic.png")}
                 ></img>
               </figure>
+              </Link>
             </div>
           </div>
 
