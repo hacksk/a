@@ -5,16 +5,17 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "leaflet/dist/leaflet-src.esm";
 import "./index.css";
-import cartReducer from "./Services/Steam/components/reducers/cartReducer";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import thunkMiddleware from "redux-thunk";
 import { createLogger } from "redux-logger";
+import rootReducer from "./reducers";
+
 
 const loggerMiddleware = createLogger();
 
 const store = createStore(
-  cartReducer,
+  rootReducer,
   applyMiddleware(
     thunkMiddleware, // lets us dispatch() functions
     loggerMiddleware // neat middleware that logs actions

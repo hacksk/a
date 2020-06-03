@@ -79,7 +79,7 @@ export default class NavbarNew extends Component {
               </Tooltip>
             </li>
           </Link>
-          <Link to="/account">
+          <Link to="/signin">
             <li>
               <a href="#home">
                 <MdAccountCircle />

@@ -1,53 +1,36 @@
 import React, { Component } from "react";
-import axios from "axios";
 // import { Link } from "react-router-dom";
-import "./login.json";
+import { connect } from "react-redux";
+import { signIn } from "./actions/authActions";
 
-export default class SignIn extends Component {
+ class SignIn extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      email: "",
-      password: "",
-      loginErrors: ""
+      phone: ""
     };
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(event) {
+  // static getDerivedStateFromProps(nextProps) {
+  //   if (nextProps.isAuthenticated) nextProps.history.push("/account");
+   
+  // }
+
+  handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value
     });
-  }
+  };
 
-  handleSubmit(event) {
-    const { email, password } = this.state;
-
-    axios
-      .post(
-        "https://jsonplaceholder.typicode.com/users",
-        {
-          user: {
-            email: email,
-            name: password
-          }
-        },
-        { withCredentials: true }
-      )
-      .then(response => {
-        console.log("sign in res",response)
-        if (response.data.logged_in) {
-          this.props.handleSuccessfulAuth(response.data);
-        }
-      })
-      .catch(error => {
-        console.log("login error", error);
-      });
+  handleSubmit = event => {
     event.preventDefault();
-  }
+    const { phone } = this.state;
+    this.props.onSignIn({ phone });
+  };
+
+
+
 
   render() {
     return (
@@ -63,8 +46,8 @@ export default class SignIn extends Component {
         <form className="login-form" onSubmit={this.handleSubmit}>
           <input
             type="text"
-            name="email"
-            value={this.state.email}
+            name="phone"
+            value={this.state.phone}
             placeholder="Phone Number"
             onChange={this.handleChange}
             required
@@ -75,15 +58,24 @@ export default class SignIn extends Component {
               <button className="signin-btn" type="submit">
                 SIGN IN
               </button>
-            {/* <Link to="/signup">
-              <button className="signup-btn" type="submit">
-                SIGN UP
-              </button>
-            </Link> */}
-            {/* <a className="forgot-signin">Forgot password ?</a> */}
           </div>
         </form>
       </div>
     );
   }
 }
+// const mapStateToProps = state => {
+//   return {
+//     isAuthenticated: state.auth.isAuthenticated
+//   };
+// };
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onSignIn: userData => {
+      dispatch(signIn(userData));
+    }
+  };
+};
+
+export default connect(mapDispatchToProps)(SignIn);

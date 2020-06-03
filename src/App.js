@@ -6,7 +6,6 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Location from "./Location.js";
 import Accesories from "./Accesories";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import SignupForm from "./SignupForm";
 import Signin from "./SignIn";
 import Feedback from "./FeedBack";
 import Status from "./Status";
@@ -36,7 +35,6 @@ function App() {
         <Switch>
           <Route exact path="/navbarnew" component={Navbarnew} />
           <Route exact path="/signin" component={Signin} />
-          <Route exact path="/signup" component={SignupForm} />
           <Route exact path="/map" component={Location} />
           <Route exact path="/accesories" component={Accesories} />
           <Route
