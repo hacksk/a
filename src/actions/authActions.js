@@ -4,41 +4,41 @@ import { SET_ERRORS } from "./commonActionType";
 export const SET_CURRENT_USER_DATA = "SET_CURRENT_USER_DATA";
 
 // Login - Get User Token
-export const signIn = (phone) => (dispatch,getState) => {
-
+export const signIn = userData => dispatch => {
   axios
-    .post("https://automoto.techbyheart.in/api/v1/user/get_otp/", {
-      "phone": phone,
-    })
-    .then((res) => {
+    .post(
+      "https://automoto.techbyheart.in/api/v1/user/get_otp/",
+      userData
+    )
+    .then(res => {
       // Save to localStorage
-      const { phone } = res.data;
+      const { token } = res.data;
       // Set token to ls
-      localStorage.setItem("automotoCustomerNumber", phone);
+      localStorage.setItem("automotoEmployeeToken", token);
       // Set token to Auth header
       // setAuthToken(token);
 
       // Set user
       dispatch(setCurrentUser(res.data.user));
     })
-    .catch((err) =>
+    .catch(err =>
       dispatch({
         type: SET_ERRORS,
-        payload: err.response.data,
+        payload: err.response.data
       })
     );
 };
 
 // Set logged in user
-export const setCurrentUser = (decoded) => {
+export const setCurrentUser = decoded => {
   return {
     type: SET_CURRENT_USER_DATA,
-    payload: decoded,
+    payload: decoded
   };
 };
 
 // Log user out
-// export const signOut = () => dispatch => {
-//   // Set current user to {} which will set isAuthenticated to false
-//   dispatch(setCurrentUser({}));
-// };
+export const signOut = () => dispatch => {
+  // Set current user to {} which will set isAuthenticated to false
+  dispatch(setCurrentUser({}));
+};

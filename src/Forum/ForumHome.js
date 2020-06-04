@@ -4,6 +4,8 @@ import Forumcontenttwo from "./ForumContentTwo";
 import { Tabs } from "antd";
 import ForumTrending from "./ForumTrendingThread";
 import { Link } from "react-router-dom";
+import axios from 'axios';
+
 
 const { TabPane } = Tabs;
 
@@ -12,6 +14,17 @@ function callback(key) {
 }
 
 export default class ForumHome extends Component {
+  state = {
+    subthread: []
+  }
+
+  componentDidMount() {
+    axios.get(`https://automoto.techbyheart.in/api/v1/forum/subforum-thread-list/1/`)
+      .then(res => {
+        this.setState({data: res.data});
+
+      })
+  }
   componentDidMount() {
     window.scrollTo(0, 0);
   }
@@ -54,6 +67,7 @@ export default class ForumHome extends Component {
                 style={{ color: "rgba(255, 255, 255, 0.6)", fontWeight: "600" }}
               >
                 Days without service
+                {this.state.title}
               </h6>
             </div>
             <div style={{ display: "flex", flexDirection: "column" }}>
@@ -98,6 +112,7 @@ export default class ForumHome extends Component {
             />
           </Link>
           <Link to="/forum/thread/news1">
+            
             <Forumcontentone
               threadimage="https://images.pexels.com/photos/1007410/pexels-photo-1007410.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
               threadhead="My Ford Figo 1.5L DCT (Automatic) "

@@ -225,55 +225,46 @@ export default class Home extends Component {
               </div>
             </Carousel>
           </div>
-          <div className="home-icons-wrap">
-            <h5
-              style={{
-                color: "white",
-                paddingLeft: "4em",
-                fontFamily: "Praktika",
-              }}
-            >
-              FEATURED SERVICES
-            </h5>
-            <div className="head-icons">
-            <Link to="/services">
-
-              <figure>
-                <img alt=""
-                  src={require("./vector-icons/featured-services/steam.png")}
-                ></img>
-              </figure>
-              </Link>              <Link to="/services">
-
-              <figure>
-                <img alt=""
-                  src={require("./vector-icons/featured-services/ecuremapp.png")}
-                ></img>
-              </figure>
-              </Link>
-              <Link to="/services">
-
-              <figure>
-                <img alt=""
-                  src={require("./vector-icons/featured-services/connected.png")}
-                ></img>
-              </figure>
-              </Link>
-              <Link to="/services">
-
-              <figure>
-                <img alt=""
-                  src={require("./vector-icons/featured-services/ceramic.png")}
-                ></img>
-              </figure>
-              </Link>
-            </div>
-          </div>
 
           <div className="home-content-wrap">
+            <h5>FEATURED SERVICES</h5>
+            <div className="head-icons">
+              <Link to="/services">
+                <figure>
+                  <img
+                    alt=""
+                    src={require("./vector-icons/featured-services/steam.png")}
+                  ></img>
+                </figure>
+              </Link>{" "}
+              <Link to="/services">
+                <figure>
+                  <img
+                    alt=""
+                    src={require("./vector-icons/featured-services/ecuremapp.png")}
+                  ></img>
+                </figure>
+              </Link>
+              <Link to="/services">
+                <figure>
+                  <img
+                    alt=""
+                    src={require("./vector-icons/featured-services/connected.png")}
+                  ></img>
+                </figure>
+              </Link>
+              <Link to="/services">
+                <figure>
+                  <img
+                    alt=""
+                    src={require("./vector-icons/featured-services/ceramic.png")}
+                  ></img>
+                </figure>
+              </Link>
+            </div>
             <h5>RECOMMENDED SERVICES</h5>
-            
-              <div className="home-content">
+
+            <div className="home-content">
               <Link to="/services">
                 <div className="home-content-part1">
                   <img
@@ -317,117 +308,56 @@ export default class Home extends Component {
                     src={require("./Services/Steam/images/serviceicons/service(42).png")}
                   ></img>
                 </div>
-              
+
                 <a href="#explore" className="explore-link hvr-pulse-grow">
                   EXPLORE
                   <FaLongArrowAltRight />
                 </a>
               </Link>
               <h5>RECOMMENDED ACCESSORIES</h5>
-              <div className="home-content-part2">
-                <div className="home-accessories ">
-                  <img
-                    alt=""
-                    src={require("./vector-icons/carphoneholder.png")}
-                  />
-                  <p
-                    style={{
-                      color: "white",
-                      paddingTop: "2em",
-                      textAlign: "center",
-                      fontFamily: "Montserrat",
-                      fontWeight: "600",
-                      fontSize: "14px",
-                    }}
-                  >
-                    PHONE HOLDER
-                  </p>
-                </div>
-                <div className="home-accessories ">
-                  <img alt="" src={require("./vector-icons/wheelalloy.png")} />
-                  <p
-                    style={{
-                      color: "white",
-                      paddingTop: "2em",
-                      textAlign: "center",
-                    }}
-                  >
-                    RIMS 22"
-                  </p>
-                </div>
-                <div className="home-accessories ">
-                  <img alt="" src={require("./vector-icons/freshner.png")} />
-                  <p
-                    style={{
-                      color: "white",
-                      paddingTop: "2em",
-                      textAlign: "center",
-                    }}
-                  >
-                    AIR FRESHNER
-                  </p>
-                </div>
-                <div className="home-accessories ">
-                  <img alt="" src={require("./vector-icons/camera.png")} />
-                  <p
-                    style={{
-                      color: "white",
-                      paddingTop: "2em",
-                      textAlign: "center",
-                    }}
-                  >
-                    GPS
-                  </p>
-                </div>
-                <div className="home-accessories ">
-                  <img alt="" src={require("./vector-icons/tire.png")} />
-                  <p
-                    style={{
-                      color: "white",
-                      paddingTop: "2em",
-                      textAlign: "center",
-                    }}
-                  >
-                    TYRES
-                  </p>
-                </div>
-                <div className="home-accessories ">
-                  <img alt="" src={require("./vector-icons/camera.png")} />
-                  <p
-                    style={{
-                      color: "white",
-                      paddingTop: "2em",
-                      textAlign: "center",
-                    }}
-                  >
-                    GPS
-                  </p>
-                </div>
-                <div className="home-accessories ">
-                  <img alt="" src={require("./vector-icons/speaker.png")} />
-                  <p
-                    style={{
-                      color: "white",
-                      paddingTop: "2em",
-                      textAlign: "center",
-                    }}
-                  >
-                    5" SPEAKER
-                  </p>
-                </div>
-                <div className="home-accessories ">
-                  <img alt="" src={require("./vector-icons/wheelalloy.png")} />
-                  <p
-                    style={{
-                      color: "white",
-                      paddingTop: "2em",
-                      textAlign: "center",
-                    }}
-                  >
-                    RIMS 22"
-                  </p>
-                </div>
+              <div className="home-content-part1">
+                <img
+                  alt=""
+                  className="hvr-float-shadow"
+                  src={require("./assets/products/products (1).png")}
+                ></img>
+                <img
+                  alt=""
+                  className="hvr-float-shadow"
+                  src={require("./assets/products/products (2).png")}
+                ></img>
+                <img
+                  alt=""
+                  className="hvr-float-shadow"
+                  src={require("./assets/products/products (3).png")}
+                ></img>
+                <img
+                  alt=""
+                  className="hvr-float-shadow"
+                  src={require("./assets/products/products (4).png")}
+                ></img>
+                <img
+                  alt=""
+                  className="hvr-float-shadow"
+                  src={require("./assets/products/products (5).png")}
+                ></img>
+                <img
+                  alt=""
+                  className="hvr-float-shadow"
+                  src={require("./assets/products/products (6).png")}
+                ></img>
+                <img
+                  alt=""
+                  className="hvr-float-shadow"
+                  src={require("./assets/products/products (7).png")}
+                ></img>
+                <img
+                  alt=""
+                  className="hvr-float-shadow"
+                  src={require("./assets/products/products (8).png")}
+                ></img>
               </div>
+
               <a href="#explore" className="explore-link hvr-pulse-grow">
                 EXPLORE
                 <FaLongArrowAltRight />
@@ -529,9 +459,9 @@ export default class Home extends Component {
               href="https://www.techbyheart.in/"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "rgba(255, 255, 255, 0.87)" }}
+              style={{ color: "rgba(255, 255, 255, 0.87)",overflow:"visible" }}
             >
-              SITE BY TECHBYHEART
+              POWERED BY TECHBYHEART
             </a>
           </div>
         </div>

@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Location from "./Location.js";
 import Accesories from "./Accesories";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import Signin from "./SignIn";
+import Signin from "./Auth/SignIn";
 import Feedback from "./FeedBack";
 import Status from "./Status";
 import Account from "./Account/AccountMain";
@@ -24,6 +24,7 @@ import Threadexpand from "./Forum/ThreadExpand";
 import NewsExpanded from "./Forum/NewsExpanded";
 import NewsExpanded1 from "./Forum/NewsExpand1";
 import ProductHome from "./Services/Steam/components/ProductHome";
+import otp from "./otpVerify";
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
           <Route exact path="/forum/thread/news" component={NewsExpanded} />
           <Route exact path="/forum/thread/news1" component={NewsExpanded1} />
           <Route exact path="/products" component={ProductHome}/>
+          <Route exact path="/signin/verify" component={otp}/>
         </Switch>
         <BottomNavbar />
       </BrowserRouter>
