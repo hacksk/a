@@ -4,8 +4,7 @@ import Forumcontenttwo from "./ForumContentTwo";
 import { Tabs } from "antd";
 import ForumTrending from "./ForumTrendingThread";
 import { Link } from "react-router-dom";
-import axios from 'axios';
-
+import axios from "axios";
 
 const { TabPane } = Tabs;
 
@@ -14,20 +13,35 @@ function callback(key) {
 }
 
 export default class ForumHome extends Component {
-  state = {
-    subthread: []
+  constructor() {
+    super();
+    this.state = {
+      persons: [],
+      subthread: []
+    };
   }
 
   componentDidMount() {
-    axios.get(`https://automoto.techbyheart.in/api/v1/forum/subforum-thread-list/1/`)
-      .then(res => {
-        this.setState({data: res.data});
+    axios
+      .get(
+        `https://automoto.techbyheart.in/api/v1/forum/subforum-thread-list/1/`,
+        {
+          headers: {
+            Authorization:
+              "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjAwMDAyMTAxLCJqdGkiOiI3MGFlYTg3ZTc2NjM0NTY1YjNmNTZlZTI4ODE0NjE5OCIsInVzZXJfaWQiOjF9.80cPGM13SKrlxgARazfGLN8TbeJks8FB0Bg8f9961hE",
+          },
+        }
+      )
+      .then((res) => {
+        const persons = res.data.data;
+        console.log(persons);
 
-      })
+        this.setState({ persons });
+      });
   }
-  componentDidMount() {
-    window.scrollTo(0, 0);
-  }
+  // componentDidMount() {
+  //   window.scrollTo(0, 0);
+  // }
   render() {
     return (
       <div className="forum-home">
@@ -77,7 +91,8 @@ export default class ForumHome extends Component {
             </div>
           </div>
           <div className="forum-head-image" style={{ position: "relative" }}>
-            <img alt="imageexample"
+            <img
+              alt="imageexample"
               style={{ width: "40em", borderRadius: "10px" }}
               src="https://images.pexels.com/photos/119435/pexels-photo-119435.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
             ></img>
@@ -95,12 +110,16 @@ export default class ForumHome extends Component {
               compass
             </h3>
           </div>
-          <a href="#seeall" className="seeall-forum">SEE ALL</a>
+          <a href="#seeall" className="seeall-forum">
+            SEE ALL
+          </a>
         </div>
         <div
           className="forumcontentone"
           style={{
-            padding: "5em",
+            padding: "9em",
+            paddingTop: "4em",
+            paddingBottom: "4em",
             position: "relative",
             borderBottom: "2px solid rgba(255, 255, 255, 0.08)",
           }}
@@ -112,13 +131,19 @@ export default class ForumHome extends Component {
             />
           </Link>
           <Link to="/forum/thread/news1">
-            
-            <Forumcontentone
-              threadimage="https://images.pexels.com/photos/1007410/pexels-photo-1007410.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              threadhead="My Ford Figo 1.5L DCT (Automatic) "
-              threadcontent="So it all started out of a premonition! And I booked Grandi10. But then Hyundai dealer Cartel happened. And then Figo happened.
-            While Papa’s 5.5 yrs old WagonR Vxi was spic ..."
-            />
+            {this.state.persons.map((person) => (
+              <Forumcontentone
+                threadimage="https://images.pexels.com/photos/1288491/pexels-photo-1288491.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                threadhead={person.title}
+                threadcontent={person.content}
+              />
+            ))}
+            <ul>
+            {this.state.persons.map((person)=>(
+              <li>{person.content}</li>
+            )
+            )}
+            </ul>
           </Link>
           <Link to="/forum/thread/news">
             <Forumcontentone
@@ -129,7 +154,9 @@ export default class ForumHome extends Component {
             Penning down my recent DIY ..."
             />
           </Link>
-          <a href="#seeall" className="seeall-forum">SEE ALL</a>
+          <a href="#seeall" className="seeall-forum">
+            SEE ALL
+          </a>
         </div>
         <div
           className="forum-threadtwo"
@@ -154,7 +181,9 @@ export default class ForumHome extends Component {
             threadheadtwo="An impromptu planned trip to Jim Corbett  "
             threadcontenttwo="Hello all, I would like to thank the mods for accepting my membership request and this is my... "
           />
-          <a href="#seeall" className="seeall-forum">SEE ALL</a>
+          <a href="#seeall" className="seeall-forum">
+            SEE ALL
+          </a>
         </div>
         <div
           className="forum-threads"

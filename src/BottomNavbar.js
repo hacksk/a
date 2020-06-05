@@ -5,9 +5,11 @@ import {
   MdAccountCircle,
   MdForum,
 } from "react-icons/md";
-import { AiTwotoneHome } from "react-icons/ai";
+import { AiTwotoneHome,AiOutlineShoppingCart } from "react-icons/ai";
 import { IoMdSearch } from "react-icons/io";
 import { Link } from "react-router-dom";
+import { GoLocation } from "react-icons/go";
+
 
 export default class BottomNavbar extends Component {
   render() {
@@ -31,14 +33,14 @@ export default class BottomNavbar extends Component {
           <Link to="/map">
             <li>
               <a href="#map">
-                <MdLocationOn />
+                <GoLocation />
               </a>
             </li>
           </Link>
           <Link to="/steamcart">
             <li>
               <a href="#cart">
-                <MdShoppingCart />
+                <AiOutlineShoppingCart />
               </a>
             </li>
           </Link>

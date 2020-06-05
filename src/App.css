@@ -133,6 +133,14 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 @media screen and (max-width: 786px) {
+  .home{
+    padding-left: unset!important;
+    padding-right: unset!important;
+  }
+  .head-icons{
+    justify-content: center!important;
+  }
+  
   .cart {
     padding: 0 !important;
   }
@@ -1152,8 +1160,7 @@ body {
 /* STYLES FOR ACCOUNT */
 
 /* STYLES FOR HOME */
-.accessories-moto {
-}
+
 
 .home {
   width: 100%;
@@ -1164,6 +1171,9 @@ body {
   flex-direction: column;
   position: relative;
   background-color: #121212;
+  padding-left: 20vh;
+  padding-right: 15vh;
+  overflow: hidden;
 }
 .header {
   display: flex;
@@ -1222,14 +1232,16 @@ body {
 .head-icons {
   display: flex;
   align-items: center;
-  justify-content: space-evenly !important;
+  justify-content: space-between !important;
   /* padding: 0 5em 0 5em; */
   margin-bottom: 10vh;
   padding-top: 10vh;
 }
   
 .head-icons img {
-  width: 12em !important;
+  width: 28.8vh !important;
+  padding-left: 2.5vh;
+  padding-right: 2.5vh;
 }
 .news {
   display: flex;
@@ -1249,7 +1261,7 @@ body {
   /* display: none !important; */
 }
 .home-content-wrap {
-  margin: 15em;
+  margin: 8em;
   margin-top: 0;
 }
 .home-content-wrap h5 {
@@ -1267,8 +1279,6 @@ body {
 }
 .home-content-part1 {
   padding-top: 1em;
-  padding-left: 5em;
-  padding-right: 5em;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -1313,15 +1323,15 @@ body {
 
 .home-content-part1 img {
   padding-top: 10vh;
-  padding-left: 5vh;
-  width: 27.86vh;
+  padding-left: 2.5vh;
+  padding-right: 2.5vh;
+  width: 28.86vh;
   cursor: pointer;
 }
 
 .home-content-wrap h5 {
   color: white;
   font-family: Montserrat;
-  padding-left: 4em;
 }
 .explore-link {
   color: white !important;
@@ -1938,9 +1948,10 @@ body {
     flex-wrap: wrap;
     flex-direction: row;
     padding-bottom: 3em;
+    justify-content: space-around!important;
   }
   .head-icons img {
-    width: 14em !important;
+    width: 13em !important;
   }
   .home-content-part1 {
     padding-top: 0;
@@ -1948,6 +1959,7 @@ body {
     padding-left: 0;
     background-repeat: unset;
     background-repeat: repeat-y;
+    justify-content: space-around;
   }
   .home-content {
     height: auto;
@@ -2100,7 +2112,8 @@ body {
   padding: 0 3em 0 3em;
 }
 .headerstore-content img {
-  width: 5vw;
+  width: 6vw;
+  height:10vh;
 }
 @media screen and (max-width: 786px) {
   .headerstore-content img {
@@ -2203,7 +2216,7 @@ body {
 .bottommenu ul li svg {
   /* color:rgba(240, 92, 45, 0.87); */
   font-size: 29px;
-  color: rgb(129, 127, 127);
+  color: rgba(255, 255, 255, 0.87);
 }
 
 @media screen and (max-width: 786px) {
@@ -2309,6 +2322,9 @@ button.StripeCheckout {
   background-repeat: no-repeat;
   background-size: 63vw 112vh;
   background-color: #121212;
+  padding-left: 20vh;
+  padding-right: 15vh;
+  overflow: hidden;
 }
 @media screen and (max-width: 786px) {
   .price {
@@ -2329,6 +2345,9 @@ button.StripeCheckout {
   .forum-home {
     background-size: contain;
     padding-bottom: 7em;
+    padding-right: unset;
+    padding-left: unset;
+    padding:2em;
   }
   .payment-content {
     padding-top: 4em !important;
@@ -2408,14 +2427,19 @@ a:not([href]):not([tabindex]) {
 .forum-home-thread-square {
   border-radius: 8px;
   background-color: rgba(255, 255, 255, 0.08);
-  width: 32%;
-  min-height:70vh;
+  width: 30%;
+  min-height:45vh;
+  height:50vh;
   position: relative;
+  overflow: hidden;
+}
+.forum-home-thread-square p{
+  overflow: hidden;
 }
 .forum-home-thread-square img {
   max-width: 100%;
   border-radius: 8px;
-  min-height:40vh;
+  min-height:30vh;
 }
 .trending-thread {
   display: flex;
@@ -2501,8 +2525,8 @@ a:not([href]):not([tabindex]) {
     min-height: unset;
   }
   .forum-home-thread img {
-    width: 200px;
-    height: 130px;
+    width: 50vw;
+    height:15vh;
   }
   .forum-home-thread p {
     font-size: 10px;
@@ -2522,7 +2546,7 @@ a:not([href]):not([tabindex]) {
   }
   @media screen and (max-width: 786px) {
     .forum-head-image img {
-      width: 100vw !important;
+      width: 87vw !important;
     }
   }
   .forum-home-firstpart {
@@ -2746,6 +2770,9 @@ a:not([href]):not([tabindex]) {
 .ant-picker {
   color: white !important;
   background-color: black !important;
+}
+.ant-picker-dropdown {
+  width:90%!important;
 }
 .ant-picker-input > input {
   color: white !important;

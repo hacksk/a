@@ -21,7 +21,7 @@ class ProductHome extends Component {
       itemList = items.map(item => {
         return (
           <Link to={`/services/${item.id}`}>
-            <div className="card" key={item.id}>
+            <div className="card" style={{padding:"10em"}} key={item.id}>
               <div type="primary" className="card-image">
                 <img src={item.img} alt={item.title} />
                 {/* <span className="card-title">{item.title}</span> */}
@@ -30,7 +30,7 @@ class ProductHome extends Component {
 
               <div className="card-content">
                 {/* <p>{item.desc}</p> */}
-                <p>
+                <p style={{color:"white"}}>
                   <b>Price: {item.price}$</b>
                 </p>
               </div>

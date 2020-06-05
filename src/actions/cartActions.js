@@ -37,14 +37,11 @@ export const loadProductToCart = () => dispatch => {
   try {
     return axios.get(`${APP_URL}/product/`).then(res => {
       let itemList = res.data.map(item => {
-        console.log("hello");
+        console.log("itemList");
 
         return {
           id: item.id,
-          title: item.name,
-          desc: item.description,
           price: item.price,
-          img: item.images[0].image
         };
       });
 

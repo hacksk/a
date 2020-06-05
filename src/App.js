@@ -25,6 +25,7 @@ import NewsExpanded from "./Forum/NewsExpanded";
 import NewsExpanded1 from "./Forum/NewsExpand1";
 import ProductHome from "./Services/Steam/components/ProductHome";
 import otp from "./otpVerify";
+import Forumcreate from "./Forum/ForumCreate"
 
 function App() {
   return (
@@ -57,6 +58,7 @@ function App() {
           <Route exact path="/forum/thread/news1" component={NewsExpanded1} />
           <Route exact path="/products" component={ProductHome}/>
           <Route exact path="/signin/verify" component={otp}/>
+          <Route exact path="/forumcreate" component={Forumcreate}/>
         </Switch>
         <BottomNavbar />
       </BrowserRouter>
