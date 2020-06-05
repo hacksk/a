@@ -3,7 +3,6 @@ import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 import { connect } from "react-redux";
 
-
 const stripeBtn = () => {
   const publishableKey = "pk_test_UAHsd0FgK8CJC6PXgoZ6cIeO00y9JJDBn5";
 
@@ -40,12 +39,11 @@ const stripeBtn = () => {
     />
   );
 };
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    addedItems: state.addedItems,
-    total: state.total,
+    addedItems: state.cart.addedItems,
+    total: state.total
   };
 };
-
 
 export default connect(mapStateToProps)(stripeBtn);

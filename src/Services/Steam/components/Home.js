@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import {  loadToCart } from "./actions/cartActions";
+import { loadToCart } from "../../../actions/cartActions";
 import "../../../index.css";
 import { Spin, Space } from "antd";
-
 
 class Home extends Component {
   constructor(props) {
@@ -14,15 +13,12 @@ class Home extends Component {
   componentDidMount() {
     this.props.loadToCart();
   }
-  
-  
 
   render() {
-    
     let items = this.props.items;
     let itemList = [];
     if (items != null)
-      itemList = items.map((item) => {
+      itemList = items.map(item => {
         return (
           <Link to={`/services/${item.id}`}>
             <div className="card" key={item.id}>
@@ -43,7 +39,6 @@ class Home extends Component {
         );
       });
 
-
     return itemList.length == 0 ? (
       <Space size="middle">
         <Spin size="large" />
@@ -57,16 +52,16 @@ class Home extends Component {
     );
   }
 }
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    items: state.items,
+    items: state.cart.items
   };
 };
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     loadToCart: () => {
       dispatch(loadToCart());
-    },
+    }
   };
 };
 

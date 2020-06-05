@@ -5,7 +5,7 @@ import {
   removeItem,
   addQuantity,
   subtractQuantity
-} from "./actions/cartActions";
+} from "../../../actions/cartActions";
 import Recipe from "./Recipe";
 class Cart extends Component {
   //to remove the item completely
@@ -20,8 +20,7 @@ class Cart extends Component {
   handleSubtractQuantity = id => {
     this.props.subtractQuantity(id);
   };
-  
-  
+
   render() {
     let addedItems = this.props.items.length ? (
       this.props.items.map(item => {
@@ -35,7 +34,10 @@ class Cart extends Component {
               <span className="title">{item.title}</span>
               <p>{item.desc}</p>
               <p>
-                <b>Price: {item.price}<FaRupeeSign /></b>
+                <b>
+                  Price: {item.price}
+                  <FaRupeeSign />
+                </b>
               </p>
               {/* <p>
                                             <b>Quantity: {item.quantity}</b> 
@@ -78,8 +80,7 @@ class Cart extends Component {
 
 const mapStateToProps = state => {
   return {
-    items: state.addedItems
-    //addedItems: state.addedItems
+    items: state.cart.addedItems
   };
 };
 const mapDispatchToProps = dispatch => {

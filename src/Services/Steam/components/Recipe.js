@@ -7,12 +7,11 @@ import { Link } from "react-router-dom";
 
 // import { addShipping } from './actions/cartActions'
 
-const onToken = (token) => {
+const onToken = token => {
   const body = {
     amount: "",
-    token: token,
+    token: token
   };
- 
 };
 
 class Recipe extends Component {
@@ -20,7 +19,7 @@ class Recipe extends Component {
     if (this.refs.shipping.checked) this.props.substractShipping();
   }
 
-  handleChecked = (e) => {
+  handleChecked = e => {
     if (e.target.checked) {
       this.props.addShipping();
     } else {
@@ -60,7 +59,7 @@ class Recipe extends Component {
               color: "white",
               height: "5vh",
               width: "15vh",
-              fontWeight: "bold",
+              fontWeight: "bold"
             }}
           >
             Buy Now
@@ -71,21 +70,21 @@ class Recipe extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    addedItems: state.addedItems,
-    total: state.total,
+    addedItems: state.cart.addedItems,
+    total: state.total
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     addShipping: () => {
       dispatch({ type: "ADD_SHIPPING" });
     },
     substractShipping: () => {
       dispatch({ type: "SUB_SHIPPING" });
-    },
+    }
   };
 };
 

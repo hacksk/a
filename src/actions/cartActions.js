@@ -1,12 +1,11 @@
-import {
-  LOAD_ITEMS,
-  ADD_TO_CART,
-  REMOVE_ITEM,
-  SUB_QUANTITY,
-  ADD_QUANTITY,
-  // ADD_SHIPPING
-} from "./action-types/cart-actions";
 import axios from "axios";
+
+export const LOAD_ITEMS = "LOAD_ITEMS";
+export const ADD_TO_CART = "ADD_TO_CART";
+export const REMOVE_ITEM = "REMOVE_ITEM";
+export const SUB_QUANTITY = "SUB_QUANTITY";
+export const ADD_QUANTITY = "ADD_QUANTITY";
+export const ADD_SHIPPING = "ADD_SHIPPING";
 
 const APP_URL = "https://automoto.techbyheart.in/api/v1";
 
@@ -38,7 +37,7 @@ export const loadProductToCart = () => dispatch => {
   try {
     return axios.get(`${APP_URL}/product/`).then(res => {
       let itemList = res.data.map(item => {
-        console.log("hello")
+        console.log("hello");
 
         return {
           id: item.id,
@@ -59,19 +58,18 @@ export const loadProductToCart = () => dispatch => {
   }
 };
 //add cart action
-export const addToCart = (id) => (dispatch, getState) => {
+export const addToCart = id => (dispatch, getState) => {
   let currentState = getState();
   try {
     return axios
       .post(
         `${APP_URL}/cart/add_to_cart/`,
         {
-          "service":[
+          service: [
             {
-              "service": id
+              service: id
             }
-            ]
-          
+          ]
         },
         {
           headers: {

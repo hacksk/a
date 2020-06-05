@@ -4,8 +4,7 @@ import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import AccMain from "./AccMain";
 import { connect } from "react-redux";
-import { addToCart } from "./Services/Steam/components/actions/cartActions";
-
+import { addToCart } from "./actions/cartActions";
 
 class AccesoriesExpanded extends Component {
   render() {
@@ -13,7 +12,14 @@ class AccesoriesExpanded extends Component {
       x => x.id == this.props.match.params.detail
     );
     return (
-      <div className="accessories-moto" style={{ paddingTop: "14vh",background:"linear-gradient(144.37deg, rgba(240, 92, 45, 0.08) 0%, rgba(255, 255, 255, 0) 60.15%), #121212" }}>
+      <div
+        className="accessories-moto"
+        style={{
+          paddingTop: "14vh",
+          background:
+            "linear-gradient(144.37deg, rgba(240, 92, 45, 0.08) 0%, rgba(255, 255, 255, 0) 60.15%), #121212"
+        }}
+      >
         {/* <Navbar /> */}
         <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
           <Tab eventKey="home" title="DETAILS">
@@ -36,7 +42,7 @@ class AccesoriesExpanded extends Component {
 
 const mapStateToProps = state => {
   return {
-    items: state.items
+    items: state.cart.items
   };
 };
 const mapDispatchToProps = dispatch => {
