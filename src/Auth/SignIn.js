@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { signIn } from "../actions/authActions";
-import { Link } from "react-router-dom"
-
+import { sendOtp } from "../actions/authActions";
 
 class SignIn extends Component {
   constructor(props) {
@@ -11,29 +8,27 @@ class SignIn extends Component {
 
     this.state = {
       loginErrors: "",
-      phone: "",
+      phone: ""
     };
   }
 
   static getDerivedStateFromProps(nextProps) {
-    if (nextProps.isAuthenticated) nextProps.history.push("/home");
+    if (nextProps.userData != null && nextProps.userData.phone) {
+      nextProps.history.push("/signin/verify");
+    }
   }
 
-  handleChange = (event) => {
+  handleChange = event => {
     this.setState({
-      [event.target.name]: event.target.value,
+      [event.target.name]: event.target.value
     });
   };
 
-  handleFormSubmit = (event) => {
+  handleFormSubmit = event => {
     event.preventDefault();
     const { phone } = this.state;
-    localStorage.setItem("phoneNumber",phone)
-    this.props.onSignIn({ phone });
-    console.log(phone)
-    
+    this.props.sendOtp({ phone });
   };
-  
 
   render() {
     return (
@@ -68,7 +63,11 @@ class SignIn extends Component {
           />
 
           <div className="login-btns">
-            <button style={{width:"21.31vh",height:"5.90"}} className="signin-btn" type="submit" >
+            <button
+              style={{ width: "21.31vh", height: "5.90" }}
+              className="signin-btn"
+              type="submit"
+            >
               SIGN IN
             </button>
           </div>
@@ -79,16 +78,16 @@ class SignIn extends Component {
 }
 const mapStateToProps = state => {
   return {
-    isAuthenticated: state.auth.isAuthenticated
+    userData: state.auth.userData
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    onSignIn: userData => {
-      dispatch(signIn(userData));
-    },
+    sendOtp: phone => {
+      dispatch(sendOtp(phone));
+    }
   };
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(SignIn);
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

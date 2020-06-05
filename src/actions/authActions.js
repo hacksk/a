@@ -1,20 +1,45 @@
 import axios from "axios";
 import { SET_ERRORS } from "./commonActionType";
+import { API_URL } from "./urlConfig";
 
-export const SET_CURRENT_USER_DATA = "SET_CURRENT_USER_DATA";
+export const SEND_OTP_SET_NUMBER = "SEND_OTP_SET_NUMBER";
+export const VERIFY_OTP_SET_USERDATA = "VERIFY_OTP_SET_USERDATA";
 
-// Login - Get User Token
-export const signIn = userData => dispatch => {
+// OTP - Send OTP
+export const sendOtp = phone => dispatch => {
   axios
-    .post(
-      "https://automoto.techbyheart.in/api/v1/user/get_otp/",
-      userData
-    )
+    .post(`${API_URL}/user/get_otp/`, phone)
     .then(res => {
+      dispatch({
+        type: SEND_OTP_SET_NUMBER,
+        payload: phone
+      });
+    })
+    .catch(err =>
+      dispatch({
+        type: SET_ERRORS,
+        payload: err.response.data
+      })
+    );
+};
+
+// OTP - Verify OTP
+export const verifyOtp = otp => (dispatch, getState) => {
+  const prevState = getState();
+
+  const payload = {
+    username: prevState.auth.userData.phone,
+    password: otp
+  };
+
+  axios
+    .post(`${API_URL}/user/get_access_token/`, payload)
+    .then(res => {
+      console.log(res.data);
       // Save to localStorage
       const { token } = res.data;
       // Set token to ls
-      localStorage.setItem("automotoEmployeeToken", token);
+      localStorage.setItem("userToken", token);
       // Set token to Auth header
       // setAuthToken(token);
 
@@ -32,7 +57,7 @@ export const signIn = userData => dispatch => {
 // Set logged in user
 export const setCurrentUser = decoded => {
   return {
-    type: SET_CURRENT_USER_DATA,
+    type: VERIFY_OTP_SET_USERDATA,
     payload: decoded
   };
 };

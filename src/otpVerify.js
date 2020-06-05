@@ -1,16 +1,35 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import OtpInput from "react-otp-input";
+import { connect } from "react-redux";
+import { verifyOtp } from "./actions/authActions";
 
 class otpVerify extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      otp: ""
+    };
   }
-  componentDidMount() {
-    const phone = localStorage.getItem( "phone" ) ;
-    console.log(phone)
-    this.setState(phone);
-}
+
+  static getDerivedStateFromProps(nextProps) {
+    if (nextProps.userData === null) {
+      nextProps.history.push("/signin/");
+    }
+  }
+
+  onOtpChange = otp => {
+    this.setState({
+      otp: otp
+    });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    const { otp } = this.state;
+    this.props.verifyOtp(otp);
+  };
 
   render() {
     return (
@@ -34,10 +53,11 @@ class otpVerify extends Component {
             ></img>
           </div>
         </div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleFormSubmit}>
           <div className="otp-input">
             <OtpInput
-              onChange={(otp) => console.log(otp)}
+              onChange={this.onOtpChange}
+              value={this.state.otp}
               numInputs={6}
               separator={<span>-</span>}
             />
@@ -47,17 +67,17 @@ class otpVerify extends Component {
             <button className="signin-btn" type="submit">
               VERIFY OTP
             </button>
-            <Link to="/signin">
+            {/* <Link to="/signin">
               <button
                 style={{
                   border: "none",
                   background: "transparent",
-                  color: "rgba(255, 255, 255, 0.87)",
+                  color: "rgba(255, 255, 255, 0.87)"
                 }}
               >
                 RESEND OTP
               </button>
-            </Link>
+            </Link> */}
           </div>
         </form>
       </div>
@@ -65,4 +85,18 @@ class otpVerify extends Component {
   }
 }
 
-export default otpVerify;
+const mapStateToProps = state => {
+  return {
+    userData: state.auth.userData
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    verifyOtp: otp => {
+      dispatch(verifyOtp(otp));
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(otpVerify);
