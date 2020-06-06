@@ -12,8 +12,10 @@ import moment from "moment";
 import { Tabs } from "antd";
 import { DatePicker } from "antd";
 import ForumTrending from "./Forum/ForumTrendingThread";
+import axios from "axios"
 
 const { TabPane } = Tabs;
+
 
 function callback(key) {
   console.log(key);
@@ -57,7 +59,33 @@ function disabledDateTime() {
 //   };
 // }
 
+
 export default class Home extends Component {
+  constructor() {
+    super();
+    this.state = {
+      persons: [],
+      subthread: [],
+    };
+  }
+  componentDidMount() {
+    axios
+      .get(
+        `https://automoto.techbyheart.in/api/v1/forum/^latest-threads/`,
+        {
+          headers: {
+            Authorization:
+              "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjAwMDYzMDU3LCJqdGkiOiI4Mzc5YmRkMWQzNjU0YjA2YWRjNjk1OWY3MDdmZmJkZSIsInVzZXJfaWQiOjExLCJ1c2VyIjp7ImlkIjoxMSwibGFzdF9sb2dpbiI6bnVsbCwiZW1haWwiOiJ2aXNobnV1ckB0ZWNoYnloZWFydC5pbiIsImZpcnN0X25hbWUiOiIiLCJsYXN0X25hbWUiOiIiLCJ1c2VybmFtZSI6InZpc2hudTYyODIiLCJwaG9uZSI6Iis5MTYyODI0NDM3NjQiLCJkYXRlX2pvaW5lZCI6IjIwMjAtMDYtMDVUMTU6MDU6NTEuMjQzMDAwWiIsImdyb3VwcyI6W10sInVzZXJfcGVybWlzc2lvbnMiOltdfX0.cNGYIScBCDckwTSifG6a1Sm-Oh4VOx8O6rWiU8wKdYs",
+          },
+        }
+      )
+      .then((res) => {
+        const persons = res.data.data;
+        console.log(persons);
+
+        this.setState({ persons });
+      });
+  }
   render() {
     return (
       <div className="home">
@@ -227,7 +255,7 @@ export default class Home extends Component {
           </div>
 
           <div className="home-content-wrap">
-            <h5>FEATURED SERVICES</h5>
+            <h5 style={{paddingBottom:"2em"}}>FEATURED SERVICES</h5>
             <div className="head-icons">
               <Link to="/services">
                 <figure>
@@ -389,38 +417,19 @@ export default class Home extends Component {
                 Content of Tab Pane 1
               </TabPane>
               <TabPane tab="TRENDING" key="2">
+              {this.state.persons.map((person) => (
+
                 <Link to="/forum/thread">
                   <ForumTrending
                     threadprof="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
-                    trendinghead=" Why you must practice the 'Idling Rule' with Turbo-Charged Cars"
-                    trendingcontent="Small displacement turbocharged engines are getting increasingly popular on our roads. With tougher emission norms & fuel-economy concerns worldwide, the trend is only expected to grow. Nearly every diesel car in the market is turbocharged now. Turbo-petrols will also be commonplace soon.  "
-                    timethread="3 mins ago"
+                    trendinghead= {person.title}
+                    trendingcontent={person.content}
+                    timethread={person.thread_date}
                   />
+                 
                 </Link>
-                <Link to="/forum/thread">
-                  <ForumTrending
-                    threadprof="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                    trendinghead="Best Practices : Maintain your Car in Top Shape"
-                    trendingcontent="There are no shortcuts to maintaining a car well and the exercise does require a little effort. But I can assure you, every rupee & minute spent on your car's upkeep will be recovered through a superior driving, owning & resale experience. A well-kept car will serve you better and prove more reliable in the long run. A healthy car is a safer car too. You'll retain it longer, thus saving you big bucks in depreciation losses. Whatever way you look at it, there's tremendous return-on-investment in keeping your car tidy. "
-                    timethread="2 hours ago"
-                  />
-                </Link>
-                <Link to="/forum/thread">
-                  <ForumTrending
-                    threadprof="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                    trendinghead="Pictorial Guide: How to change a flat tyre!"
-                    trendingcontent=" In the case of a flat tyre which needs immediate replacing to avoid damage to the tyre/tube, here is what you need to do. "
-                    timethread="02/04/2020"
-                  />
-                </Link>
-                <Link to="/forum/thread">
-                  <ForumTrending
-                    threadprof="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                    trendinghead="'My Car Won't Start' | What To Do"
-                    trendingcontent="A driver's worst nightmare is that time when his car won't start. Or, the engine dies exactly when he is negotiating a tricky crossing. It's even more worrisome if the driver is a lady (especially in India) and the sun has already set, or if the location is a lonely highway instead of the city. This is the time when one regrets not knowing a little more about how cars work.  "
-                    timethread="21/03/2020"
-                  />
-                </Link>
+                 ))}
+                
               </TabPane>
             </Tabs>
           </div>

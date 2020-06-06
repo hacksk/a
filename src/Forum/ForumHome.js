@@ -6,6 +6,8 @@ import ForumTrending from "./ForumTrendingThread";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+
+
 const { TabPane } = Tabs;
 
 function callback(key) {
@@ -177,14 +179,16 @@ export default class ForumHome extends Component {
             </TabPane>
             <TabPane tab="TRENDING" key="2">
               <Link to="/forum/thread">
+              {this.state.persons.map((person) => (
                 <ForumTrending
                   threadprof="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
-                  trendinghead=" Why you must practice the 'Idling Rule' with Turbo-Charged Cars"
-                  trendingcontent="Small displacement turbocharged engines are getting increasingly popular on our roads. With tougher emission norms & fuel-economy concerns worldwide, the trend is only expected to grow. Nearly every diesel car in the market is turbocharged now. Turbo-petrols will also be commonplace soon.  "
-                  timethread="3 mins ago"
+                  trendinghead={person.title}
+                  trendingcontent={person.content}
+                  timethread={person.thread_date}
                 />
+              ))}
               </Link>
-              <Link to="/forum/thread">
+              {/* <Link to="/forum/thread">
                 <ForumTrending
                   threadprof="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                   trendinghead="Best Practices : Maintain your Car in Top Shape"
@@ -207,7 +211,7 @@ export default class ForumHome extends Component {
                   trendingcontent="A driver's worst nightmare is that time when his car won't start. Or, the engine dies exactly when he is negotiating a tricky crossing. It's even more worrisome if the driver is a lady (especially in India) and the sun has already set, or if the location is a lonely highway instead of the city. This is the time when one regrets not knowing a little more about how cars work.  "
                   timethread="21/03/2020"
                 />
-              </Link>
+              </Link> */}
             </TabPane>
           </Tabs>
         </div>
