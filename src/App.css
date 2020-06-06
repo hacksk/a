@@ -1121,7 +1121,19 @@ body {
   color: white !important;
   text-decoration: underline !important;
 }
+.ant-tabs-top{
+  padding:3em!important;
+}
+.explore-link{
+  color:#fc5c2d!important;
+}
 @media screen and (max-width: 786px) {
+  .ant-tabs-top{
+    padding:0!important;
+  }
+  .explore-link{
+    right:1.1em!important;
+  }
   .account-main {
     padding: unset;
     padding: 1em;
@@ -1333,7 +1345,7 @@ body {
 }
 
 .home-content-part1 img {
-  padding-top: 10vh;
+  padding-top: 4vh;
   padding-left: 2.5vh;
   padding-right: 2.5vh;
   width: 29.86vh;
@@ -1862,6 +1874,9 @@ body {
 }
 
 @media screen and (max-width: 786px) {
+  .head-icons{
+    margin-bottom: 1vh;
+  }
   .footer-secondary {
     padding-bottom: 4em;
   }
@@ -1980,6 +1995,7 @@ body {
     background-repeat: unset;
     background-repeat: repeat-y;
     justify-content: space-around;
+    padding:14px;
   }
   .home-content {
     height: auto;

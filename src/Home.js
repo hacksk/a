@@ -255,7 +255,7 @@ export default class Home extends Component {
           </div>
 
           <div className="home-content-wrap">
-            <h5 style={{paddingBottom:"2em"}}>FEATURED SERVICES</h5>
+            <h5>FEATURED SERVICES</h5>
             <div className="head-icons">
               <Link to="/services">
                 <figure>
