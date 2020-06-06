@@ -1326,7 +1326,7 @@ body {
   padding-top: 10vh;
   padding-left: 2.5vh;
   padding-right: 2.5vh;
-  width: 28.86vh;
+  width: 29.86vh;
   cursor: pointer;
 }
 
@@ -2327,7 +2327,31 @@ button.StripeCheckout {
   padding-right: 15vh;
   overflow: hidden;
 }
+.forum-home-thread img{
+  height: 22vh;
+  width: 30vh!important;
+}
+.forum-home-thread{
+  width:100%!important;
+}
+.forum-home-thread p{
+  height:18vh;
+  overflow: hidden;
+  line-height: 30px;
+}
 @media screen and (max-width: 786px) {
+  .forum-home-thread p{
+    height:9vh;
+    overflow: hidden;
+    line-height: 10px;
+  }
+  .forum-home-thread h5{
+    font-size: 15px!important;
+  }
+  .forum-home-thread img{
+    height: 16vh!important;
+    width: 19vh!important;
+  }
   .price {
     padding-bottom: 8vh;
   }
@@ -2392,6 +2416,9 @@ button.StripeCheckout {
   flex-direction: row;
   padding-top: 3em;
   width: 60%;
+}
+.ant-upload-list-picture .ant-upload-list-item, .ant-upload-list-picture-card .ant-upload-list-item{
+  border:solid 1px #fc5c2d;
 }
 .forum-threadtwo {
   justify-content: space-evenly;

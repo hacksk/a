@@ -7,7 +7,7 @@ export default class ForumContentOne extends Component {
       <div style={{cursor:"pointer"}} className="forum-home-thread">
         <img alt="" src={this.props.threadimage}></img>
         <div style={{ paddingLeft: "2em",display:"flex",flexDirection:"column",justifyContent:"center" }}>
-          <h6 style={{ color: "white" }}>{this.props.threadhead}</h6>
+          <h5 style={{ color: "white" }}>{this.props.threadhead}</h5>
           <p style={{ color: "white",fontFamily:"Montserrat" }}>{this.props.threadcontent}</p>
         </div>
       </div>

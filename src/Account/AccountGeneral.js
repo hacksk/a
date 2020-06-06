@@ -36,7 +36,7 @@ class AccountGeneral extends Component {
   };
   render() {
     return (
-      <div className="accnt-gnrl">
+      <div style={{paddingBottom:"5em"}} className="accnt-gnrl">
         <div className="prof-detail">
           <h5>Profile Details</h5>
           <div className="table">

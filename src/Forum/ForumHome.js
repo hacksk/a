@@ -24,11 +24,11 @@ export default class ForumHome extends Component {
   componentDidMount() {
     axios
       .get(
-        `https://automoto.techbyheart.in/api/v1/forum/subforum-thread-list/1/`,
+        `https://automoto.techbyheart.in/api/v1/forum/^latest-threads/`,
         {
           headers: {
             Authorization:
-              "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjAwMDAyMTAxLCJqdGkiOiI3MGFlYTg3ZTc2NjM0NTY1YjNmNTZlZTI4ODE0NjE5OCIsInVzZXJfaWQiOjF9.80cPGM13SKrlxgARazfGLN8TbeJks8FB0Bg8f9961hE",
+              "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjAwMDYzMDU3LCJqdGkiOiI4Mzc5YmRkMWQzNjU0YjA2YWRjNjk1OWY3MDdmZmJkZSIsInVzZXJfaWQiOjExLCJ1c2VyIjp7ImlkIjoxMSwibGFzdF9sb2dpbiI6bnVsbCwiZW1haWwiOiJ2aXNobnV1ckB0ZWNoYnloZWFydC5pbiIsImZpcnN0X25hbWUiOiIiLCJsYXN0X25hbWUiOiIiLCJ1c2VybmFtZSI6InZpc2hudTYyODIiLCJwaG9uZSI6Iis5MTYyODI0NDM3NjQiLCJkYXRlX2pvaW5lZCI6IjIwMjAtMDYtMDVUMTU6MDU6NTEuMjQzMDAwWiIsImdyb3VwcyI6W10sInVzZXJfcGVybWlzc2lvbnMiOltdfX0.cNGYIScBCDckwTSifG6a1Sm-Oh4VOx8O6rWiU8wKdYs",
           },
         }
       )
@@ -128,7 +128,7 @@ export default class ForumHome extends Component {
           {this.state.persons.map((person) => (
             <Link to={`/forum/thread/${person.id}`}>
               <Forumcontentone
-                threadimage="https://images.pexels.com/photos/1288491/pexels-photo-1288491.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                threadimage={person.header_image}
                 threadhead={person.title}
                 threadcontent={person.content}
               />
