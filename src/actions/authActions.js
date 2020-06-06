@@ -32,6 +32,8 @@ export const verifyOtp = otp => (dispatch, getState) => {
     password: otp
   };
 
+  console.log(payload);
+
   axios
     .post(`${API_URL}/user/get_access_token/`, payload)
     .then(res => {

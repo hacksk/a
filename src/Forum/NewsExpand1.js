@@ -7,7 +7,7 @@ export default class NewsExpanded extends Component {
   constructor() {
     super();
     this.state = {
-      persons: [],
+      persons: []
     };
   }
   componentDidMount() {
@@ -17,24 +17,22 @@ export default class NewsExpanded extends Component {
         {
           headers: {
             Authorization:
-              "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjAwMDAyMTAxLCJqdGkiOiI3MGFlYTg3ZTc2NjM0NTY1YjNmNTZlZTI4ODE0NjE5OCIsInVzZXJfaWQiOjF9.80cPGM13SKrlxgARazfGLN8TbeJks8FB0Bg8f9961hE",
-          },
+              "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjAwMDAyMTAxLCJqdGkiOiI3MGFlYTg3ZTc2NjM0NTY1YjNmNTZlZTI4ODE0NjE5OCIsInVzZXJfaWQiOjF9.80cPGM13SKrlxgARazfGLN8TbeJks8FB0Bg8f9961hE"
+          }
         }
       )
-      .then((res) => {
+      .then(res => {
         const persons = res.data.data;
-        console.log(persons);
 
         this.setState({ persons });
       });
-    window.scrollTo(0, 0);
   }
   render() {
-    let currentItem = this.props.items.find(
+    let currentPerson = this.state.persons.find(
       x => x.id == this.props.match.params.content
     );
     return (
-      <div item={currentItem} className="threadexpand">
+      <div item={currentPerson} className="threadexpand">
         <div className="threadexpand-content">
           <div className="thread-profile-header">
             <div style={{ display: "flex", flexDirection: "row" }}>
@@ -46,14 +44,14 @@ export default class NewsExpanded extends Component {
             </div>
             <p style={{ color: "rgba(255, 255, 255, 0.38)" }}>1 hour ago</p>
           </div>
-          {this.state.persons.map((person) => (
+          {this.state.persons.map(person => (
             <h5>{person.title}</h5>
           ))}
-          {this.state.persons.map((person) => (
+          {this.state.persons.map(person => (
             <img alt="" src={person.header_image}></img>
           ))}
 
-          {this.state.persons.map((person) => (
+          {this.state.persons.map(person => (
             <p>{person.content}</p>
           ))}
 
