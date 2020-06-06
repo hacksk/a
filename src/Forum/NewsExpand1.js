@@ -38,7 +38,7 @@ export default class NewsExpanded extends Component {
                 <p>u/carlover</p>
               </div>
               <p style={{ color: "rgba(255, 255, 255, 0.38)" }}>
-                {this.state.person.thread_time}
+                {this.state.person.thread_date}
               </p>
             </div>
             <h5>{this.state.person.title}</h5>
