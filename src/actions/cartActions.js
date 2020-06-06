@@ -6,8 +6,32 @@ export const REMOVE_ITEM = "REMOVE_ITEM";
 export const SUB_QUANTITY = "SUB_QUANTITY";
 export const ADD_QUANTITY = "ADD_QUANTITY";
 export const ADD_SHIPPING = "ADD_SHIPPING";
+// export const LOAD_FORUM = "LOAD_FORUM";
 
 const APP_URL = "https://automoto.techbyheart.in/api/v1";
+
+// // load items to forum thread
+// export const loadToForum = () => dispatch => {
+//   try {
+//     return axios.get(`${APP_URL}/forum/subforum-thread-list/1/`).then(res => {
+//       let itemList = res.data.map(item => {
+//         return {
+//           title: item.data.title,
+//           content: item.data.content,
+//           image: item.data.header_image,
+          
+//         };
+//       });
+
+//       dispatch({
+//         type: LOAD_FORUM,
+//         itemList
+//       });
+//     });
+//   } catch (e) {
+//     console.log(e);
+//   }
+// };
 
 //load items to cart
 export const loadToCart = () => dispatch => {

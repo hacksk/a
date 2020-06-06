@@ -9,6 +9,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Signin from "./Auth/SignIn";
 import Feedback from "./FeedBack";
 import Status from "./Status";
+import Signup from "./SignupForm";
 import Account from "./Account/AccountMain";
 import SteamCart from "./Services/Steam/components/Cart";
 import SteamComponent from "./Services/Steam/SteamComponent";
@@ -54,11 +55,12 @@ function App() {
           <Route exact path="/bill/payment" component={Payment} />
           <Route exact path="/forum" component={ForumHome} />
           <Route exact path="/forum/thread" component={Threadexpand} />
-          <Route exact path="/forum/thread/news" component={NewsExpanded} />
-          <Route exact path="/forum/thread/news1" component={NewsExpanded1} />
+          {/* <Route exact path="/forum/thread/:news" component={NewsExpanded} /> */}
+          <Route exact path="/forum/thread/:content" component={NewsExpanded1} />
           <Route exact path="/products" component={ProductHome}/>
           <Route exact path="/signin/verify" component={otp}/>
           <Route exact path="/forumcreate" component={Forumcreate}/>
+          <Route exact path="/signup" component={Signup}/>
         </Switch>
         <BottomNavbar />
       </BrowserRouter>

@@ -48,6 +48,7 @@
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
+    "serve": "^11.3.2",
     "simple-react-comments": "^1.1.0",
     "stripe": "^8.26.0",
     "sweetalert": "^2.1.2",

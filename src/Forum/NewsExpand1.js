@@ -1,40 +1,62 @@
 import React, { Component } from "react";
+import axios from "axios";
 // import ForumTrending from "./ForumTrendingThread";
 // import Demo from "./Demo";
 
 export default class NewsExpanded extends Component {
+  constructor() {
+    super();
+    this.state = {
+      persons: [],
+    };
+  }
   componentDidMount() {
+    axios
+      .get(
+        `https://automoto.techbyheart.in/api/v1/forum/subforum-thread-list/1/`,
+        {
+          headers: {
+            Authorization:
+              "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjAwMDAyMTAxLCJqdGkiOiI3MGFlYTg3ZTc2NjM0NTY1YjNmNTZlZTI4ODE0NjE5OCIsInVzZXJfaWQiOjF9.80cPGM13SKrlxgARazfGLN8TbeJks8FB0Bg8f9961hE",
+          },
+        }
+      )
+      .then((res) => {
+        const persons = res.data.data;
+        console.log(persons);
+
+        this.setState({ persons });
+      });
     window.scrollTo(0, 0);
   }
   render() {
+    let currentItem = this.props.items.find(
+      x => x.id == this.props.match.params.content
+    );
     return (
-      <div className="threadexpand">
+      <div item={currentItem} className="threadexpand">
         <div className="threadexpand-content">
           <div className="thread-profile-header">
             <div style={{ display: "flex", flexDirection: "row" }}>
-              <img alt="" src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"></img>
+              <img
+                alt=""
+                src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              ></img>
               <p>u/carlover</p>
             </div>
             <p style={{ color: "rgba(255, 255, 255, 0.38)" }}>1 hour ago</p>
           </div>
-          <h5>Default My Ford Figo 1.5L DCT (Automatic)</h5>
-          <img alt="" src="https://images.pexels.com/photos/1007410/pexels-photo-1007410.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"></img>
-          <p>
-            So it all started out of a premonition! And I booked Grandi10. But
-            then Hyundai dealer Cartel happened. And then Figo happened. While
-            Papa’s 5.5 yrs old WagonR Vxi was spic and span, had only 25000 kms
-            on odo, I could see the hesitation to take out the car in maddening
-            Pune’s traffic. He is 61 now, retired recently and prefers to travel
-            by scooter (read Access 125) over driving his car. Well I do agree
-            scooter offers impeccable convenience in traffic but, his safety was
-            bothering me. Again WagonR lacked basic safety features - ABS and
-            airbags. It is not at all safe now a days for an elderly person to
-            travel on a two wheeler. Then this thought clicked me, why not
-            replace it with automatic hatch? It will serve him as well as my
-            wife who is equally reluctant to slot gears. Decided then. While he
-            didn’t agree to let go his WagonR which was as good as new, he
-            finally gave in to my persistence.
-          </p>
+          {this.state.persons.map((person) => (
+            <h5>{person.title}</h5>
+          ))}
+          {this.state.persons.map((person) => (
+            <img alt="" src={person.header_image}></img>
+          ))}
+
+          {this.state.persons.map((person) => (
+            <p>{person.content}</p>
+          ))}
+
           <br />
           <p>
             My requirements were as below not in particular order: • Petrol
@@ -42,7 +64,10 @@ export default class NewsExpanded extends Component {
             use, easy maneuverability • Pocket friendly maintenance • OTR budget
             8L
           </p>
-          <img alt="" src="https://images.pexels.com/photos/386025/pexels-photo-386025.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></img>
+          <img
+            alt=""
+            src="https://images.pexels.com/photos/386025/pexels-photo-386025.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+          ></img>
           <p>
             I am talking about sometime in Jan 2017. Papa is not into cars and
             new to the world of automatic cars. We started the search. I was

@@ -4,7 +4,8 @@ import {
   SUB_QUANTITY,
   ADD_QUANTITY,
   ADD_SHIPPING,
-  LOAD_ITEMS
+  LOAD_ITEMS,
+  LOAD_FORUM
 } from "../actions/cartActions";
 
 const initState = {
@@ -19,6 +20,7 @@ const cartReducer = (state = initState, action) => {
       items: action.itemList
     };
   }
+  
 
   //INSIDE HOME COMPONENT
   if (action.type === ADD_TO_CART) {

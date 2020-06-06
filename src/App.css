@@ -573,6 +573,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 .signup {
   height: 100vh;
+  padding-top:5em;
 }
 .alice-carousel {
   height: 80vh;

@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
-import AliceCarousel from 'react-alice-carousel';
-import 'react-alice-carousel/lib/alice-carousel.css';
-import axios from 'axios';
+import React, { Component } from "react";
+import axios from "axios";
 
-import { IoIosCamera, IoIosAddCircle } from 'react-icons/io';
 
 class SignupForm extends Component {
-    constructor(props) {
-      super(props);
+  constructor(props) {
+    super(props);
 
     this.state = {
-      name: '',
-      password: '',
-      vehicle_model: '',
-      vehicle_number: ''
+      first_name: "",
+      last_name: "",
+      email: "",
+      phone:"",
+      username:""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,133 +20,101 @@ class SignupForm extends Component {
 
   handleChange(event) {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   }
 
   handleSubmit(event) {
     const {
-      name,
-      password,
-      model_year,
-      chasis_number,
-      engine_number,
-      vehicle_model,
-      vehicle_number
+      first_name,
+      last_name,
+      email,
+      username,
+      phone
     } = this.state;
 
     axios
-      .post(
-        'http://register.mgukalolsavam.in/api.php',
-        {
-          user: {
-            Name: name,
-            password: password,
-            model_year: model_year,
-            chasis_number: chasis_number,
-            engine_number: engine_number,
-            vehicle_number: vehicle_number,
-            vehicle_model: vehicle_model
-          }
-        },
-        { withCredentials: true }
-      )
-      .then(response => {
-        console.log('sign up res', response);
-        if (response.status === '200') {
-          this.props.handleSuccessfulAuth(response.data);
-          console.log("response check", response.status)
+    .post(
+      `https://automoto.techbyheart.in/api/v1/user/`,
+      {
+        first_name:first_name,
+        last_name:last_name,
+        email:email,
+        phone:phone,
+        username:username
+      
+      },
+      {
+        headers: {
+          Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjAwMDAyMTAxLCJqdGkiOiI3MGFlYTg3ZTc2NjM0NTY1YjNmNTZlZTI4ODE0NjE5OCIsInVzZXJfaWQiOjF9.80cPGM13SKrlxgARazfGLN8TbeJks8FB0Bg8f9961hE`
         }
+      }
+    )
+      .then((res) => {
+        console.log("sign up res", res);
+        console.log(res.data)
       })
-      .catch(error => {
-        console.log('registration error', error);
+      .catch((error) => {
+        console.log("registration error", error);
       });
     event.preventDefault();
   }
 
   render() {
-    const handleOnDragStart = e => e.preventDefault();
+    const handleOnDragStart = (e) => e.preventDefault();
 
     return (
       <div className="signup">
         <div className="signupform">
-          <AliceCarousel
+          {/* <AliceCarousel
             mouseTrackingEnabled
             autoPlay={false}
             disableAutoPlayOnAction={true}
             infinite={false}
-          >
+          > */}
             <div className="forms-signup" onDragStart={handleOnDragStart}>
               <h1>PROFILE DETAILS</h1>
 
-              <form onSubmit={this.handleSubmit}>
-               
+              <form
+                style={{ display: "flex", flexDirection: "column" }}
+                onSubmit={this.handleSubmit}
+              >
                 <input
-                  name="name"
+                  name="first_name"
                   type="text"
                   onChange={this.handleChange}
-                  placeholder="Name"
+                  placeholder="First Name"
+                />
+                <input
+                  name="last_name"
+                  type="text"
+                  onChange={this.handleChange}
+                  placeholder="Last Name"
                 />
 
                 <input
-                  name="password"
-                  type="password"
+                  name="email"
+                  type="email"
                   onChange={this.handleChange}
-                  placeholder="Password"
-                  // className={errors.password && .password && "error"}
+                  placeholder="Email"
                 />
-                <div className="input-feedback"></div>
+                <input
+                  name="username"
+                  type="text"
+                  onChange={this.handleChange}
+                  placeholder="Username"
+                />
+                <input
+                  name="phone"
+                  type="text"
+                  onChange={this.handleChange}
+                  placeholder="Phone"
+                />
+                <button style={{color:"black",background:"grey",marginTop:"2em",borderRadius:"8px",height:"6vh"}}>Submit</button>
               </form>
             </div>
-            <div className="forms-signup" onDragStart={handleOnDragStart}>
-              <h1>VEHICLE DETAILS</h1>
-              <form onSubmit={this.handleSubmit}>
-                <input
-                  name="model_year"
-                  type="text"
-                  onChange={this.handleChange}
-                  placeholder="Model Year"
-                />
-                <input
-                  name="chasis_number"
-                  type="text"
-                  onChange={this.handleChange}
-                  placeholder="Chasis Number"
-                />
-                <input
-                  name="engine_number"
-                  type="text"
-                  onChange={this.handleChange}
-                  placeholder="Engine Number"
-                />
-                <input
-                  name="vehicle_model"
-                  type="text"
-                  onChange={this.handleChange}
-                  placeholder="Vehicle Model"
-                />
-
-                <input
-                  name="vehicle_number"
-                  type="text"
-                  placeholder="KL-XXX-XXXX"
-                  onChange={this.handleChange}
-                />
-                <div className="input-feedback"></div>
-                <button type="submit">Register</button>
-              </form>
-            </div>
-            <div className="uploadform">
-              <h1>UPLOAD PICTURE</h1>
-              <div className="signup-upload">
-                <IoIosCamera className="upload-icon" />
-                <a href="#upload">
-                  <IoIosAddCircle className="upload-ic" />
-                </a>
-              </div>
-              <button className="upload-submit">UPLOAD</button>
-            </div>
-          </AliceCarousel>
+            
+          {/* </AliceCarousel> */}
         </div>
         ); }}
       </div>

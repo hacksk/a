@@ -17,7 +17,7 @@ export default class ForumHome extends Component {
     super();
     this.state = {
       persons: [],
-      subthread: []
+      subthread: [],
     };
   }
 
@@ -124,36 +124,18 @@ export default class ForumHome extends Component {
             borderBottom: "2px solid rgba(255, 255, 255, 0.08)",
           }}
         >
-          <Link to="/forum/thread/news">
-            <Forumcontentone
-              threadimage="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-              threadhead="My pre-worshipped Mercedes A-Class (A180) "
-            />
-          </Link>
-          <Link to="/forum/thread/news1">
-            {this.state.persons.map((person) => (
+          
+          {this.state.persons.map((person) => (
+            <Link to={`/forum/thread/${person.id}`}>
               <Forumcontentone
                 threadimage="https://images.pexels.com/photos/1288491/pexels-photo-1288491.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                 threadhead={person.title}
                 threadcontent={person.content}
               />
-            ))}
-            <ul>
-            {this.state.persons.map((person)=>(
-              <li>{person.content}</li>
-            )
-            )}
-            </ul>
-          </Link>
-          <Link to="/forum/thread/news">
-            <Forumcontentone
-              threadimage="https://images.pexels.com/photos/1288491/pexels-photo-1288491.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              threadhead="DIY: iPHCAR Bi-Xenon Projector Foglamp installation on my Cedia  "
-              threadcontent="Oh well, hello there! I am back after a long time away. How long if you ask?
-            Precisely 2 posts in May 2018 & a completely active status until 2013 I would say.
-            Penning down my recent DIY ..."
-            />
-          </Link>
+             </Link>
+          ))}
+
+         
           <a href="#seeall" className="seeall-forum">
             SEE ALL
           </a>
