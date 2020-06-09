@@ -25,11 +25,17 @@ import Threadexpand from "./Forum/ThreadExpand";
 import NewsExpanded1 from "./Forum/NewsExpand1";
 import ProductHome from "./Services/Steam/components/ProductHome";
 import otp from "./otpVerify";
-import Forumcreate from "./Forum/ForumCreate"
+import Forumcreate from "./Forum/ForumCreate";
 
 function App() {
   return (
-    <div className="App" style={{backgroundColor:"linear-gradient(144.37deg, rgba(240, 92, 45, 0.08) 0%, rgba(255, 255, 255, 0) 60.15%), #121212"}}>
+    <div
+      className="App"
+      style={{
+        backgroundColor:
+          "linear-gradient(144.37deg, rgba(240, 92, 45, 0.08) 0%, rgba(255, 255, 255, 0) 60.15%), #121212"
+      }}
+    >
       <Header />
       <BrowserRouter>
         <Navbarnew />
@@ -54,11 +60,15 @@ function App() {
           <Route exact path="/bill/payment" component={Payment} />
           <Route exact path="/forum" component={ForumHome} />
           <Route exact path="/forum/thread" component={Threadexpand} />
-          <Route exact path="/forum/thread/:content" component={NewsExpanded1} />
-          <Route exact path="/products" component={ProductHome}/>
-          <Route exact path="/signin/verify" component={otp}/>
-          <Route exact path="/forumcreate" component={Forumcreate}/>
-          <Route exact path="/signup" component={Signup}/>
+          <Route
+            exact
+            path="/forum/thread/:content"
+            component={NewsExpanded1}
+          />
+          <Route exact path="/products" component={ProductHome} />
+          <Route exact path="/signin/verify" component={otp} />
+          <Route exact path="/forumcreate" component={Forumcreate} />
+          <Route exact path="/signup" component={Signup} />
         </Switch>
         <BottomNavbar />
       </BrowserRouter>

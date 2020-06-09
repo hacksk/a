@@ -1,6 +1,7 @@
 import axios from "axios";
 import { SET_ERRORS } from "./commonActionType";
 import { API_URL } from "./urlConfig";
+import setAuthToken from "./utils/setAuthToken";
 
 export const SEND_OTP_SET_NUMBER = "SEND_OTP_SET_NUMBER";
 export const VERIFY_OTP_SET_USERDATA = "VERIFY_OTP_SET_USERDATA";
@@ -32,18 +33,15 @@ export const verifyOtp = otp => (dispatch, getState) => {
     password: otp
   };
 
-  console.log(payload);
-
   axios
     .post(`${API_URL}/user/get_access_token/`, payload)
     .then(res => {
-      console.log(res.data);
       // Save to localStorage
-      const { token } = res.data;
-      // Set token to ls
-      localStorage.setItem("userToken", token);
+      localStorage.setItem("automotoUserData", JSON.stringify(res.data));
+
       // Set token to Auth header
-      // setAuthToken(token);
+      const { token } = res.data.access;
+      setAuthToken(token);
 
       // Set user
       dispatch(setCurrentUser(res.data.user));
@@ -57,10 +55,10 @@ export const verifyOtp = otp => (dispatch, getState) => {
 };
 
 // Set logged in user
-export const setCurrentUser = decoded => {
+export const setCurrentUser = userData => {
   return {
     type: VERIFY_OTP_SET_USERDATA,
-    payload: decoded
+    payload: userData
   };
 };
 

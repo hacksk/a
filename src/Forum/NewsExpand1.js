@@ -6,22 +6,16 @@ import { Spin, Space } from "antd";
 
 export default class NewsExpanded extends Component {
   state = {
-    person: null,
+    person: null
   };
 
   componentDidMount() {
     axios
-      .get(`https://automoto.techbyheart.in/api/v1/forum/^latest-threads/`, {
-        headers: {
-          Authorization:
-            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjAwMjQzMTE3LCJqdGkiOiJmNjA2ZmJhOGI4M2Y0ZTgwOWU2MjhjOWQ2NjhjMTBmNyIsInVzZXJfaWQiOjF9.Hxx-FSTKHcmB63uSgm40_S84v1J5IHZKBmCQ8VhB-8A",
-        },
-      })
-      .then((res) => {
+      .get(`https://automoto.techbyheart.in/api/v1/forum/^latest-threads/`)
+      .then(res => {
         const persons = res.data.data;
-        console.log(persons)
         const person = persons.find(
-          (x) => x.id === this.props.match.params.content
+          x => x.id.toString() === this.props.match.params.content
         );
         this.setState({ person });
       });

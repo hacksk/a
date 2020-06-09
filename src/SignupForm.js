@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
-import Accountupload from "./Account/PicturesWall"
+import Accountupload from "./Account/PicturesWall";
 
 class SignupForm extends Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class SignupForm extends Component {
       last_name: "",
       email: "",
       phone: "",
-      username: "",
+      username: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,7 +22,7 @@ class SignupForm extends Component {
 
   handleChange(event) {
     this.setState({
-      [event.target.name]: event.target.value,
+      [event.target.name]: event.target.value
     });
   }
 
@@ -30,33 +30,25 @@ class SignupForm extends Component {
     const { first_name, last_name, email, username, phone } = this.state;
 
     axios
-      .post(
-        `https://automoto.techbyheart.in/api/v1/user/`,
-        {
-          first_name: first_name,
-          last_name: last_name,
-          email: email,
-          phone: phone,
-          username: username,
-        },
-        {
-          headers: {
-            Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjAwMDAyMTAxLCJqdGkiOiI3MGFlYTg3ZTc2NjM0NTY1YjNmNTZlZTI4ODE0NjE5OCIsInVzZXJfaWQiOjF9.80cPGM13SKrlxgARazfGLN8TbeJks8FB0Bg8f9961hE`,
-          },
-        }
-      )
-      .then((res) => {
+      .post(`https://automoto.techbyheart.in/api/v1/user/`, {
+        first_name: first_name,
+        last_name: last_name,
+        email: email,
+        phone: phone,
+        username: username
+      })
+      .then(res => {
         console.log("sign up res", res);
         console.log(res.data);
       })
-      .catch((error) => {
+      .catch(error => {
         console.log("registration error", error);
       });
     event.preventDefault();
   }
 
   render() {
-    const handleOnDragStart = (e) => e.preventDefault();
+    const handleOnDragStart = e => e.preventDefault();
 
     return (
       <div className="signup">
@@ -107,12 +99,12 @@ class SignupForm extends Component {
                 />
               </div>
               <div className="forms-signup" onDragStart={handleOnDragStart}>
-              <h1>UPLOAD PICTURE</h1>
+                <h1>UPLOAD PICTURE</h1>
 
-                  <Accountupload />
+                <Accountupload />
               </div>
               <div className="forms-signup" onDragStart={handleOnDragStart}>
-              <h1>VEHICLE DETAILS</h1>
+                <h1>VEHICLE DETAILS</h1>
 
                 <input
                   name="first_name"
@@ -151,7 +143,7 @@ class SignupForm extends Component {
                     background: "grey",
                     marginTop: "2em",
                     borderRadius: "8px",
-                    height: "6vh",
+                    height: "6vh"
                   }}
                 >
                   Submit

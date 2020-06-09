@@ -1,10 +1,13 @@
-import { SEND_OTP_SET_NUMBER } from "../actions/authActions";
+import {
+  SEND_OTP_SET_NUMBER,
+  VERIFY_OTP_SET_USERDATA
+} from "../actions/authActions";
+import isEmpty from "../validation/isEmpty";
 // import isEmpty from "../validation/isEmpty";
 
 const initialState = {
   isAuthenticated: false,
-  userData: null,
-  accessToken: null
+  userData: null
 };
 
 export default function(state = initialState, action) {
@@ -13,6 +16,13 @@ export default function(state = initialState, action) {
       return {
         ...state,
         userData: { phone: action.payload.phone }
+      };
+
+    case VERIFY_OTP_SET_USERDATA:
+      return {
+        ...state,
+        isAuthenticated: !isEmpty(action.payload),
+        userData: action.payload
       };
 
     default:

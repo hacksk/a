@@ -10,7 +10,8 @@ import { createStore, applyMiddleware } from "redux";
 import thunkMiddleware from "redux-thunk";
 import { createLogger } from "redux-logger";
 import rootReducer from "./reducers";
-
+import { setCurrentUser } from "./actions/authActions";
+import setAuthToken from "./actions/utils/setAuthToken";
 
 const loggerMiddleware = createLogger();
 
@@ -21,6 +22,14 @@ const store = createStore(
     loggerMiddleware // neat middleware that logs actions
   )
 );
+
+if (localStorage.automotoUserData) {
+  let userData = JSON.parse(localStorage.automotoUserData);
+  // Set auth token header auth
+  setAuthToken(userData.access);
+  // Set user and isAuthenticated
+  store.dispatch(setCurrentUser(userData.user));
+}
 
 ReactDOM.render(
   <Provider store={store}>

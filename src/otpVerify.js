@@ -8,23 +8,25 @@ class otpVerify extends Component {
     super(props);
 
     this.state = {
-      otp: "",
+      otp: ""
     };
   }
 
   static getDerivedStateFromProps(nextProps) {
-    if (nextProps.userData === null) {
+    if (nextProps.isAuthenticated) {
+      nextProps.history.push("/account");
+    } else if (nextProps.userData === null) {
       nextProps.history.push("/signin/");
     }
   }
 
-  onOtpChange = (otp) => {
+  onOtpChange = otp => {
     this.setState({
-      otp: otp,
+      otp: otp
     });
   };
 
-  handleFormSubmit = (event) => {
+  handleFormSubmit = event => {
     event.preventDefault();
     const { otp } = this.state;
     this.props.verifyOtp(otp);
@@ -63,9 +65,9 @@ class otpVerify extends Component {
           </div>
 
           <div className="login-btns">
-              <button className="signin-btn" type="submit">
-                VERIFY OTP
-              </button>
+            <button className="signin-btn" type="submit">
+              VERIFY OTP
+            </button>
             {/* <Link to="/signin">
               <button
                 style={{
@@ -84,17 +86,18 @@ class otpVerify extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    userData: state.auth.userData,
+    isAuthenticated: state.auth.isAuthenticated,
+    userData: state.auth.userData
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    verifyOtp: (otp) => {
+    verifyOtp: otp => {
       dispatch(verifyOtp(otp));
-    },
+    }
   };
 };
 
