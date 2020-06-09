@@ -335,7 +335,7 @@ export default class Home extends Component {
                   ></img>
                 </div>
 
-                <a href="#explore" className="explore-link hvr-pulse-grow">
+                <a href="#explore" className="explore-link ">
                   EXPLORE
                   <FaLongArrowAltRight />
                 </a>
@@ -384,7 +384,7 @@ export default class Home extends Component {
                 ></img>
               </div>
 
-              <a href="#explore" className="explore-link hvr-pulse-grow">
+              <a href="#explore" className="explore-link ">
                 EXPLORE
                 <FaLongArrowAltRight />
               </a>

@@ -136,6 +136,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 @media screen and (max-width: 786px) {
+  .forum-home-link-forum{
+    padding:8em 0 0 10em!important;
+  }
   .home {
     padding-left: unset !important;
     padding-right: unset !important;
@@ -1146,7 +1149,7 @@ body {
 .ant-tabs-top {
   padding: 3em !important;
 }
-.explore-link {
+.explore-link svg {
   color: #fc5c2d !important;
 }
 @media screen and (max-width: 786px) {
@@ -1379,10 +1382,10 @@ body {
   font-family: Montserrat;
 }
 .explore-link {
-  color: white !important;
+  color: #fc5c2d !important;
   text-decoration: underline !important;
   position: absolute;
-  right: 6em;
+  right: 2em;
   padding-top: 2em;
 }
 .home-facebook {
@@ -2429,7 +2432,7 @@ button.StripeCheckout {
     width: 19vh !important;
   }
   .price {
-    padding-bottom: 8vh;
+    padding-bottom: 2vh;
   }
   .addtocart {
     font-size: 15px !important;
@@ -2645,7 +2648,7 @@ a:not([href]):not([tabindex]) {
   }
   .forum-threadtwo {
     flex-direction: column !important;
-    padding: 5em 1em !important;
+    padding: 1em 1em !important;
   }
   .forum-home-thread-square {
     width: 100%;

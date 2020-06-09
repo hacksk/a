@@ -38,7 +38,7 @@ export default class ForumHome extends Component {
   render() {
     return (
       <div className="forum-home">
-        <div
+        <div className="forum-home-link-forum"
           style={{
             padding: "10em",
             paddingBottom: "0",

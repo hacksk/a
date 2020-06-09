@@ -6,7 +6,7 @@ import { FaRupeeSign } from "react-icons/fa";
 
 
 
-class AccMain extends Component {
+class ProductMain extends Component {
   state = {
     persons: []
   };
@@ -77,4 +77,4 @@ class AccMain extends Component {
   }
 }
 
-export default AccMain;
+export default ProductMain;

@@ -7,7 +7,7 @@ export default class HeaderCustomer extends Component {
       <div className="headerstore">
         <div className="headerstore-content">
           <Breadcrumb separator=">">
-            <Breadcrumb.Item>Home</Breadcrumb.Item>
+            <Breadcrumb.Item></Breadcrumb.Item>
           </Breadcrumb>
           <img alt="logo" src={require("./assets/moto365logo.svg")}></img>
         </div>

@@ -3,12 +3,13 @@ import {
   MdLocationOn,
   MdShoppingCart,
   MdAccountCircle,
-  MdForum
+  MdForum,
 } from "react-icons/md";
 import { AiTwotoneHome } from "react-icons/ai";
 import { IoMdSearch, IoMdMenu } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { Tooltip, Button } from "antd";
+import { FiLogOut } from "react-icons/fi";
 
 const settings = <span>Settings</span>;
 const text = <span>Home</span>;
@@ -24,7 +25,7 @@ export default class NavbarNew extends Component {
     return (
       <div className="newnav" style={{ zIndex: "1000" }}>
         <ul>
-          <li>
+          {/* <li>
             <button
               className="navmenu"
               style={{ backgroundColor: "transparent", border: "none" }}
@@ -33,7 +34,7 @@ export default class NavbarNew extends Component {
                 <IoMdMenu />
               </Tooltip>
             </button>
-          </li>
+          </li> */}
           <Link to="/">
             <li>
               <Tooltip placement="top" title={text}>
@@ -83,6 +84,13 @@ export default class NavbarNew extends Component {
             <li>
               <Button>
                 <MdAccountCircle />
+              </Button>
+            </li>
+          </Link>
+          <Link to="/signin">
+            <li>
+              <Button>
+                <FiLogOut />
               </Button>
             </li>
           </Link>
