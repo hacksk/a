@@ -15,7 +15,7 @@ export default class NewsExpanded extends Component {
       .then(res => {
         const persons = res.data.data;
         const person = persons.find(
-          x => x.id.toString() === this.props.match.params.content
+          x => x.id == this.props.match.params.content
         );
         this.setState({ person });
       });

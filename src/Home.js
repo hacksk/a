@@ -136,8 +136,8 @@ export default class Home extends Component {
           <div className="home-second">
             <div className="home-second-content-wrap">
               <div className="home-second-content">
-                <div className="home-second-part1">
-                  <h1
+                {/* <div className="home-second-part1"> */}
+                  {/* <h1
                     style={{
                       color: "white",
                       fontFamily: "Montserrat",
@@ -169,10 +169,10 @@ export default class Home extends Component {
                   >
                     SERVICE NOW
                   </button>
-                </Link>
+                </Link> */}
               </div>
                 {/* <img alt="" src={require("./assets/timer-24px.svg")}/> */}
-                <div style={{ display: "flex", flexDirection: "column",justifyContent:"center",alignItems:"center" }}>
+                {/* <div style={{ display: "flex", flexDirection: "column",justifyContent:"center",alignItems:"center" }}>
                   <p
                     style={{
                       color: "rgba(252, 170, 46, 0.87)",
@@ -191,12 +191,12 @@ export default class Home extends Component {
                       }}
                     />
                   </div>
-                {/* <img
+                <img
                   alt=""
                   style={{ width: "20em" }}
                   src={require("./assets/hyundai.png")}
-                ></img> */}
-              </div>
+                ></img>
+              </div> */}
             </div>
           </div>
           <div className="news">

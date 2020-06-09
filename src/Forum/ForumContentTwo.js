@@ -5,7 +5,7 @@ export default class ForumContentTwo extends Component {
     return (
       <div className="forum-home-thread-square">
         <img alt="#threadimage" src={this.props.threadimagetwo}></img>
-        <div style={{padding:"1em"}}>
+        <div style={{ padding: "1em" }}>
           <h6 style={{ color: "white" }}>{this.props.threadheadtwo}</h6>
           <p style={{ color: " rgba(255, 255, 255, 0.6)" }}>
             {this.props.threadcontenttwo}

@@ -577,7 +577,12 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .signup {
   height: 100vh;
   padding-top: 5em;
-  background: linear-gradient(180deg, rgba(252, 92, 46, 0.08) 0%, rgba(255, 255, 255, 0) 100%), #121212;
+  background: linear-gradient(
+      180deg,
+      rgba(252, 92, 46, 0.08) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    #121212;
 }
 .alice-carousel {
   height: 80vh;
@@ -600,6 +605,17 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 .alice-carousel__wrapper {
   padding-top: 1em;
+}
+.ant-btn > .anticon + span,
+.ant-btn > span + .anticon,
+.anticon svg {
+  color: #f05c2d;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 13px;
+  letter-spacing: 0.75px;
 }
 
 .forms-signup input {
@@ -2377,6 +2393,7 @@ button.StripeCheckout {
 }
 .forum-home-thread {
   width: 100% !important;
+
 }
 .forum-home-thread p {
   height: 18vh;
@@ -2384,21 +2401,21 @@ button.StripeCheckout {
   line-height: 30px;
 }
 .ant-picker-dropdown {
-  z-index: 100!important;
+  z-index: 100 !important;
 }
-.ant-picker-panel-container{
-  width:18%!important;
-  margin-left:140vh!important;
+.ant-picker-panel-container {
+  width: 18% !important;
+  margin-left: 140vh !important;
 }
 @media screen and (max-width: 786px) {
   .ant-space-align-center {
-  margin-top: 10vh;
+    margin-top: 10vh;
   }
-  .ant-picker-panel-container{
-    margin-left: 2vh!important;
-    width:60%!important;
+  .ant-picker-panel-container {
+    margin-left: 2vh !important;
+    width: 60% !important;
   }
-  
+
   .forum-home-thread p {
     height: 9vh;
     overflow: hidden;
@@ -2439,6 +2456,16 @@ button.StripeCheckout {
   .payment-method {
     padding-bottom: 4em;
   }
+  .threadlist{
+    padding:0!important;
+    padding-top: 10em!important;
+  }
+  .threadlist .forum-threadtwo{
+    padding-top: 0!important;
+  }
+  .threadlist-head{
+    padding-left: 1.3em!important;
+  }
 }
 
 .forum-home-firstpart {
@@ -2473,8 +2500,14 @@ button.StripeCheckout {
 .forum-home-thread {
   display: flex;
   flex-direction: row;
-  padding-top: 3em;
+  margin-top: 3em;
   width: 60%;
+  border-radius: 8px;
+  padding:1em;
+}
+.forum-home-thread:hover{
+  background-color: #1b1b1b;
+
 }
 .ant-upload-list-picture .ant-upload-list-item,
 .ant-upload-list-picture-card .ant-upload-list-item {
@@ -2484,6 +2517,8 @@ button.StripeCheckout {
   justify-content: space-evenly;
   align-items: center;
   padding: 7em !important;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+
 }
 .home-thread {
   border-bottom: 1px solid #1e1e1e;
@@ -2514,7 +2549,7 @@ a:not([href]):not([tabindex]) {
 }
 .forum-home-thread-square {
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color:#1b1b1b;
   width: 30%;
   min-height: 45vh;
   height: 50vh;
@@ -2536,6 +2571,11 @@ a:not([href]):not([tabindex]) {
   justify-content: space-between;
   padding: 2em 0;
   cursor: pointer;
+}
+.trending-thread:hover{
+  background-color: #1b1b1b;
+  border-radius: 8px;
+  padding:1em;
 }
 .trending-thread img {
   width: 6vh;
@@ -2676,6 +2716,36 @@ a:not([href]):not([tabindex]) {
   padding: 5em;
 }
 @media screen and (max-width: 786px) {
+  .thread-create{
+    padding:2vh!important;
+    padding-bottom:10vh!important;
+    padding-top: 14vh!important;
+  }
+  .thread-create-field{
+    display: flex!important;
+    justify-content: center!important;
+    flex-direction: column!important;
+    align-items: center!important;
+    padding-top: 0!important;
+  }
+  .thread-create-imagefield{
+    display: flex!important;
+    align-items: center!important;
+    width: 100%!important;
+    justify-self: space-between!important;
+  }
+  .thread-create-upload{
+    width: 50%!important;
+  }
+  .thread-create-title{
+    width:100%!important;
+  }
+  .thread-create-textfield{
+    width: 100%!important;
+  }
+  .thread-create-content{
+    width:100%!important;
+  }
   .threadexpand {
     padding: 0;
     padding-bottom: 5em;
@@ -2802,11 +2872,14 @@ a:not([href]):not([tabindex]) {
   background: linear-gradient(108.01deg, #f05c2d 0%, #fcaa2e 120.94%);
   border-radius: 8px;
   border: none;
-  font-family: Montserrat;
-  font-weight: bold;
-  width: 15em;
+  width: 13em;
   color: black;
   height: 3em;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 16px;
 }
 
 /* ////////////////////////////////////CLUB HOME FORUM//////////////////////////////////////// */
@@ -2815,6 +2888,7 @@ a:not([href]):not([tabindex]) {
   padding-bottom: 15vh !important;
   color: white !important;
 }
+
 .ant-timeline-item-tail {
   border-color: rgba(255, 255, 255, 0.08) !important;
 }

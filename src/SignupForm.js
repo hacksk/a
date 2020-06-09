@@ -44,7 +44,7 @@ class SignupForm extends Component {
       .catch(error => {
         console.log("registration error", error);
       });
-    event.preventDefault();
+    // event.preventDefault();
   }
 
   render() {

@@ -9,7 +9,7 @@ import { addToCart } from "./actions/cartActions";
 class AccesoriesExpanded extends Component {
   render() {
     let currentItem = this.props.items.find(
-      x => x.id === this.props.match.params.detail
+      x => x.id == this.props.match.params.detail
     );
     return (
       <div

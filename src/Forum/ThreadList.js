@@ -12,7 +12,7 @@ function callback(key) {
   console.log(key);
 }
 
-export default class ForumHome extends Component {
+export default class ThreadList extends Component {
   constructor() {
     super();
     this.state = {
@@ -27,102 +27,15 @@ export default class ForumHome extends Component {
       .then((res) => {
         const persons = res.data.data;
         console.log(persons);
-        persons.splice(3, 4);
-        console.log("sliced", persons);
         this.setState({ persons });
       });
   }
-  // componentDidMount() {
-  //   window.scrollTo(0, 0);
-  // }
   render() {
     return (
-      <div className="forum-home">
-        <div
-          style={{
-            padding: "10em",
-            paddingBottom: "0",
-            display: "flex",
-            justifyContent: "flex-end",
-            paddingRight: "5em",
-          }}
-        >
-          <Link to="/forum/forumlist">
-            <button className="forum-service-now">FORUM LIST</button>
-          </Link>
+      <div className="threadlist" style={{ padding: "8em" }}>
+        <div className="threadlist-head" style={{borderBottom:"2px solid rgba(255, 255, 255, 0.08)",color:"rgba(255, 255, 255, 0.87)",fontFamily:"Montserrat",fontWeight:"600",paddingLeft:"9em"}}>
+          <p>THREADS</p>
         </div>
-
-        {/* <div
-          className="forum-home-firstpart"
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            height: "80vh",
-            padding: "5em",
-            paddingTop: "0",
-            justifyContent: "space-between",
-          }}
-        >
-          <div
-            className="forum-home-service"
-            style={{ display: "flex", flexDirection: "row" }}
-          >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "SpaceAround",
-              }}
-            >
-              <h1
-                style={{
-                  color: "white",
-                  fontStyle: "italic",
-                  fontFamily: "Montserrat",
-                  fontWeight: "bold",
-                  fontSize: "80px",
-                  marginBottom: "0",
-                }}
-              >
-                35
-              </h1>
-              <h6
-                style={{ color: "rgba(255, 255, 255, 0.6)", fontWeight: "600" }}
-              >
-                Days without service
-                {this.state.title}
-              </h6>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column" }}>
-              <Link to="/services">
-                <button className="forum-service-now">SERVICE NOW</button>
-              </Link>
-            </div>
-          </div>
-          <div className="forum-head-image" style={{ position: "relative" }}>
-            <img
-              alt="imageexample"
-              style={{ width: "40em", borderRadius: "10px" }}
-              src="https://images.pexels.com/photos/119435/pexels-photo-119435.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-            ></img>
-            <h3
-              style={{
-                position: "absolute",
-                top: "2.3em",
-                fontWeight: "900",
-                fontFamily: "Montserrat",
-                paddingLeft: "2em",
-                color: "white",
-              }}
-            >
-              1 year with a jeep <br />
-              compass
-            </h3>
-          </div>
-          <a href="#seeall" className="seeall-forum">
-            SEE ALL
-          </a>
-        </div> */}
         <div
           className="forum-threadtwo"
           style={{
@@ -146,11 +59,9 @@ export default class ForumHome extends Component {
             threadheadtwo="An impromptu planned trip to Jim Corbett  "
             threadcontenttwo="Hello all, I would like to thank the mods for accepting my membership request and this is my... "
           />
-          <Link to="/forum/forumthreadlist">
-            <a href="#seeall" className="seeall-forum">
-              SEE ALL
-            </a>
-          </Link>
+          <a href="#seeall" className="seeall-forum">
+            SEE ALL
+          </a>
         </div>
         <div
           className="forumcontentone"
@@ -171,11 +82,10 @@ export default class ForumHome extends Component {
               />
             </Link>
           ))}
-          <Link to="/forum/forumthreadlist">
-            <a href="#seeall" className="seeall-forum">
-              SEE ALL
-            </a>
-          </Link>
+
+          <a href="#seeall" className="seeall-forum">
+            SEE ALL
+          </a>
         </div>
 
         <div

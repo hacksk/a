@@ -13,12 +13,7 @@ class AccMain extends Component {
 
   componentDidMount() {
     axios
-      .get(`https://automoto.techbyheart.in/api/v1/customer/`, {
-        headers: {
-          Authorization:
-            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk5MzA5MjcyLCJqdGkiOiI0MjkzZjE3ZGY1OWQ0ZWJhOGFhMmRhNWZlMjBiNTg3YyIsInVzZXJfaWQiOjIsInVzZXIiOnsiaWQiOjIsImxhc3RfbG9naW4iOm51bGwsImVtYWlsIjoidmlzaG51dXJAdGVjaGJ5aGVhcnQuaW4iLCJmaXJzdF9uYW1lIjoiIiwibGFzdF9uYW1lIjoiIiwidXNlcm5hbWUiOiJ2aXNobnU2MjgyIiwicGhvbmUiOiIrOTE2MjgyNDQzNzY0IiwiZGF0ZV9qb2luZWQiOiIyMDIwLTA1LTI2VDA1OjI0OjU0Ljc3MDAwMFoiLCJncm91cHMiOltdLCJ1c2VyX3Blcm1pc3Npb25zIjpbXX19.CzUtlZseJ6iDwvPyaCZ1UqzH_NwVsVN_jy1cVIL5-1Y"
-        }
-      })
+      .get(`https://automoto.techbyheart.in/api/v1/customer/`)
       .then(res => {
         const persons = res.data;
         this.setState({ persons });

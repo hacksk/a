@@ -26,6 +26,8 @@ import NewsExpanded1 from "./Forum/NewsExpand1";
 import ProductHome from "./Services/Steam/components/ProductHome";
 import otp from "./otpVerify";
 import Forumcreate from "./Forum/ForumCreate";
+import ForumList from "./Forum/ForumList";
+import ThreadList from "./Forum/ThreadList";
 
 function App() {
   return (
@@ -33,7 +35,7 @@ function App() {
       className="App"
       style={{
         backgroundColor:
-          "linear-gradient(144.37deg, rgba(240, 92, 45, 0.08) 0%, rgba(255, 255, 255, 0) 60.15%), #121212"
+          "linear-gradient(144.37deg, rgba(240, 92, 45, 0.08) 0%, rgba(255, 255, 255, 0) 60.15%), #121212",
       }}
     >
       <Header />
@@ -69,6 +71,8 @@ function App() {
           <Route exact path="/signin/verify" component={otp} />
           <Route exact path="/forumcreate" component={Forumcreate} />
           <Route exact path="/signup" component={Signup} />
+          <Route exact path="/forum/forumlist" component={ForumList} />
+          <Route exact path="/forum/forumthreadlist" component={ThreadList}/>
         </Switch>
         <BottomNavbar />
       </BrowserRouter>

@@ -79,8 +79,7 @@ export const loadProductToCart = () => dispatch => {
   }
 };
 //add cart action
-export const addToCart = id => (dispatch, getState) => {
-  let currentState = getState();
+export const addToCart = id => dispatch  => {
   try {
     return axios
       .post(
@@ -91,12 +90,8 @@ export const addToCart = id => (dispatch, getState) => {
               service: id
             }
           ]
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${currentState.userToken}`
-          }
         }
+        
       )
       .then(res => {
         console.log(res);

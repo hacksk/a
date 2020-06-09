@@ -25,6 +25,7 @@
     "leaflet": "^1.6.0",
     "merge": "^1.2.1",
     "moment": "^2.25.3",
+    "qs": "^6.9.4",
     "react": "^16.13.1",
     "react-alice-carousel": "^1.17.3",
     "react-bootstrap": "^1.0.0-beta.16",

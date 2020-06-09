@@ -4,36 +4,16 @@ import axios from "axios";
 
 class AccountGeneral extends Component {
   state = {
-    name: "",
-  };
+    persons: []
+  }
 
-  handleChange = (event) => {
-    this.setState({ name: event.target.value });
-  };
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-
-    const user = {
-      name: this.state.name,
-    };
-
-    axios
-      .post(
-        `http://159.89.165.118:4000/api/v1/customer/`,
-        {
-          headers: {
-            Authorization:
-              "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk4OTQ4MjQ5LCJqdGkiOiI1OTIzODU5MzgzM2Y0Y2RhYTY5ZThlMGZkNzAzOWRmMiIsInVzZXJfaWQiOjMsInVzZXIiOnsiaWQiOjMsImxhc3RfbG9naW4iOiIyMDIwLTAzLTE2VDA2OjQ5OjMwWiIsImVtYWlsIjoidmlzaG51NjI4MkB5YW5kZXguY29tIiwiZmlyc3RfbmFtZSI6InZpc2hudSIsImxhc3RfbmFtZSI6InVyIiwidXNlcm5hbWUiOiJ2aXNobnU2MjgyIiwicGhvbmUiOiIrOTE2MjgyNDQzNzY0IiwiZGF0ZV9qb2luZWQiOiIyMDIwLTAzLTE2VDA2OjUwOjA3Ljg3ODUxN1oiLCJncm91cHMiOltdLCJ1c2VyX3Blcm1pc3Npb25zIjpbNjBdfX0.emvq3LRVCGrcsKLMI2aHpkgWMHnfNT3tULkOQ9Ijl4Q ",
-          },
-        },
-        { user }
-      )
-      .then((res) => {
-        console.log(res);
-        console.log(res.data);
-      });
-  };
+  componentDidMount() {
+    axios.get(`https://automoto.techbyheart.in/api/v1/customer`)
+      .then(res => {
+        const persons = res.data;
+        this.setState({ persons });
+      })
+  }
   render() {
     return (
       <div style={{paddingBottom:"5em"}} className="accnt-gnrl">
@@ -48,7 +28,10 @@ class AccountGeneral extends Component {
                 <tr>Phone</tr>
               </td>
               <td>
-                <tr>John Doe</tr>
+              { this.state.persons.map(person =>
+
+                <tr>{person.name}</tr>
+                )}
                 <tr>15/01/1985 </tr>
                 <tr>
                   House Name, House no 123 Lane,Landmark, Place,District,State
