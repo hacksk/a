@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AccCarousel from "./AccCarousel";
+// import AccCarousel from "./AccCarousel";
 import axios from "axios";
 import { message } from "antd";
 import { FaRupeeSign } from "react-icons/fa";
@@ -37,7 +37,7 @@ class AccMain extends Component {
       <div style={{position:"relative"}}>
         <div className="height-define">
           <div className="accesories-main">
-          <img src={this.props.item.img}></img>
+          <img alt="" src={this.props.item.img}></img>
             <div className="accesories-carousel">
               {/* <AccCarousel /> */}
             </div>

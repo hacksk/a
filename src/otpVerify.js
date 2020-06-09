@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import OtpInput from "react-otp-input";
 import { connect } from "react-redux";
 import { verifyOtp } from "./actions/authActions";
@@ -64,11 +63,9 @@ class otpVerify extends Component {
           </div>
 
           <div className="login-btns">
-            <Link to="/account">
               <button className="signin-btn" type="submit">
                 VERIFY OTP
               </button>
-            </Link>
             {/* <Link to="/signin">
               <button
                 style={{

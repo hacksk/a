@@ -171,9 +171,8 @@ export default class Home extends Component {
                   </button>
                 </Link>
               </div>
-              <div className="home-second-second">
                 {/* <img alt="" src={require("./assets/timer-24px.svg")}/> */}
-                <div style={{ display: "flex", flexDirection: "column" }}>
+                <div style={{ display: "flex", flexDirection: "column",justifyContent:"center",alignItems:"center" }}>
                   <p
                     style={{
                       color: "rgba(252, 170, 46, 0.87)",
@@ -192,12 +191,11 @@ export default class Home extends Component {
                       }}
                     />
                   </div>
-                </div>
-                <img
+                {/* <img
                   alt=""
                   style={{ width: "20em" }}
                   src={require("./assets/hyundai.png")}
-                ></img>
+                ></img> */}
               </div>
             </div>
           </div>

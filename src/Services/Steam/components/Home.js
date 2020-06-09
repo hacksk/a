@@ -5,10 +5,11 @@ import { loadToCart } from "../../../actions/cartActions";
 import "../../../index.css";
 import { Spin, Space } from "antd";
 
+
 class Home extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   componentDidMount() {
     this.props.loadToCart();
@@ -39,7 +40,7 @@ class Home extends Component {
         );
       });
 
-    return itemList.length == 0 ? (
+    return itemList.length === 0 ? (
       <Space size="middle">
         <Spin size="large" />
       </Space>

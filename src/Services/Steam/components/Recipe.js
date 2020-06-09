@@ -7,12 +7,12 @@ import { Link } from "react-router-dom";
 
 // import { addShipping } from './actions/cartActions'
 
-const onToken = token => {
-  const body = {
-    amount: "",
-    token: token
-  };
-};
+// const onToken = token => {
+//   const body = {
+//     amount: "",
+//     token: token
+//   };
+// };
 
 class Recipe extends Component {
   componentWillUnmount() {

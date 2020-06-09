@@ -81,9 +81,9 @@ export default class NavbarNew extends Component {
           </Link>
           <Link to="/signin">
             <li>
-              <a href="#home">
+              <Button>
                 <MdAccountCircle />
-              </a>
+              </Button>
             </li>
           </Link>
         </ul>

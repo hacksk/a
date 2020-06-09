@@ -4,8 +4,7 @@ import {
   SUB_QUANTITY,
   ADD_QUANTITY,
   ADD_SHIPPING,
-  LOAD_ITEMS,
-  LOAD_FORUM
+  LOAD_ITEMS
 } from "../actions/cartActions";
 
 const initState = {

@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import {
-  MdLocationOn,
-  MdShoppingCart,
   MdAccountCircle,
   MdForum,
 } from "react-icons/md";

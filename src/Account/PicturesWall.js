@@ -21,7 +21,7 @@ class PicturesWall extends React.Component {
         uid: '-1',
         name: 'image.png',
         status: 'done',
-        url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+        url: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       }
     ],
   };

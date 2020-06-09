@@ -1,12 +1,39 @@
 import React, { Component } from "react";
 import { Radio } from "antd";
-import { message, Button } from 'antd';
+import { message } from 'antd';
+import axios from "axios";
+
 
 const info = () => {
   message.info('Couldnt Connect');
 };
 
+
 export default class ForumCreate extends Component {
+
+  state = {
+    name: '',
+  }
+
+  handleChange = event => {
+    this.setState({ name: event.target.value });
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+
+    const user = {
+      name: this.state.name
+    };
+
+    axios.post(`https://automoto.techbyheart.in/api/v1/forum/thread/create/id`, { 
+      user
+     })
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      })
+  }
   render() {
     return (
       <div style={{ padding: "8em" }}>

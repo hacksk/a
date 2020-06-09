@@ -13,8 +13,8 @@
   width: 3px;
   background-color: black;
 }
-body{
-  font-family: Montserrat!important;
+body {
+  font-family: Montserrat !important;
 }
 
 ::-webkit-scrollbar-track {
@@ -136,14 +136,14 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 @media screen and (max-width: 786px) {
-  .home{
-    padding-left: unset!important;
-    padding-right: unset!important;
+  .home {
+    padding-left: unset !important;
+    padding-right: unset !important;
   }
-  .head-icons{
-    justify-content: center!important;
+  .head-icons {
+    justify-content: center !important;
   }
-  
+
   .cart {
     padding: 0 !important;
   }
@@ -299,10 +299,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
   width: 3em !important;
   height: 4em !important;
   color: white !important;
-  padding-left:none!important;
+  padding-left: none !important;
   background-color: rgba(255, 255, 255, 0.08);
   border-radius: 8px;
-  border:none;  
+  border: none;
 }
 .otp-input {
   margin-top: 5vh;
@@ -576,7 +576,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 .signup {
   height: 100vh;
-  padding-top:5em;
+  padding-top: 5em;
+  background: linear-gradient(180deg, rgba(252, 92, 46, 0.08) 0%, rgba(255, 255, 255, 0) 100%), #121212;
 }
 .alice-carousel {
   height: 80vh;
@@ -684,7 +685,12 @@ Note: Beware of modifying this element as it can break the animations - you shou
   justify-content: center;
   align-content: center;
   align-items: center;
-  background: linear-gradient(180deg, rgba(252, 92, 46, 0.08) 0%, rgba(255, 255, 255, 0) 100%), #121212;
+  background: linear-gradient(
+      180deg,
+      rgba(252, 92, 46, 0.08) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    #121212;
 }
 
 .signin-logos-line {
@@ -805,8 +811,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
   width: 3.4em;
 }
 @media screen and (max-width: 786px) {
-  .footer-logo{
-    width:50vw!important;
+  .footer-logo {
+    width: 50vw !important;
   }
   .rating {
     padding-top: 4em !important;
@@ -1121,18 +1127,18 @@ body {
   color: white !important;
   text-decoration: underline !important;
 }
-.ant-tabs-top{
-  padding:3em!important;
+.ant-tabs-top {
+  padding: 3em !important;
 }
-.explore-link{
-  color:#fc5c2d!important;
+.explore-link {
+  color: #fc5c2d !important;
 }
 @media screen and (max-width: 786px) {
-  .ant-tabs-top{
-    padding:0!important;
+  .ant-tabs-top {
+    padding: 0 !important;
   }
-  .explore-link{
-    right:1.1em!important;
+  .explore-link {
+    right: 1.1em !important;
   }
   .account-main {
     padding: unset;
@@ -1141,7 +1147,7 @@ body {
   .prof-detail {
     width: 100%;
   }
-  
+
   .table-content tr,
   td {
     padding-left: unset !important;
@@ -1183,7 +1189,7 @@ body {
 /* STYLES FOR HOME */
 
 .ant-picker-panel-container .ant-picker-panel {
-  width:90%!important;
+  width: 90% !important;
 }
 .home {
   width: 100%;
@@ -1260,7 +1266,7 @@ body {
   margin-bottom: 10vh;
   padding-top: 10vh;
 }
-  
+
 .head-icons img {
   width: 28.8vh !important;
   padding-left: 2.5vh;
@@ -1863,18 +1869,20 @@ body {
 .carousel .thumbs-wrapper {
   display: none !important;
 }
-.trending-thread p{
-  height:9vh;
-  overflow: hidden;
+.trending-thread p {
+  height: 9vh;
   line-height: 20px;
   width: 90%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
-.forum-timing{
+.forum-timing {
   text-align: right;
 }
 
 @media screen and (max-width: 786px) {
-  .head-icons{
+  .head-icons {
     margin-bottom: 1vh;
   }
   .footer-secondary {
@@ -1983,7 +1991,7 @@ body {
     flex-wrap: wrap;
     flex-direction: row;
     padding-bottom: 3em;
-    justify-content: space-around!important;
+    justify-content: space-around !important;
   }
   .head-icons img {
     width: 13em !important;
@@ -1995,7 +2003,7 @@ body {
     background-repeat: unset;
     background-repeat: repeat-y;
     justify-content: space-around;
-    padding:14px;
+    padding: 14px;
   }
   .home-content {
     height: auto;
@@ -2052,7 +2060,7 @@ body {
   }
   .footer-primary {
     justify-content: space-evenly;
-    padding:7em 0 7em 0;
+    padding: 7em 0 7em 0;
   }
   .footer-logo img {
     width: 7em;
@@ -2150,7 +2158,7 @@ body {
 }
 .headerstore-content img {
   width: 6vw;
-  height:10vh;
+  height: 10vh;
 }
 @media screen and (max-width: 786px) {
   .headerstore-content img {
@@ -2363,30 +2371,45 @@ button.StripeCheckout {
   padding-right: 15vh;
   overflow: hidden;
 }
-.forum-home-thread img{
+.forum-home-thread img {
   height: 22vh;
-  width: 30vh!important;
+  width: 30vh !important;
 }
-.forum-home-thread{
-  width:100%!important;
+.forum-home-thread {
+  width: 100% !important;
 }
-.forum-home-thread p{
-  height:18vh;
+.forum-home-thread p {
+  height: 18vh;
   overflow: hidden;
   line-height: 30px;
 }
+.ant-picker-dropdown {
+  z-index: 100!important;
+}
+.ant-picker-panel-container{
+  width:18%!important;
+  margin-left:140vh!important;
+}
 @media screen and (max-width: 786px) {
-  .forum-home-thread p{
-    height:9vh;
+  .ant-space-align-center {
+  margin-top: 10vh;
+  }
+  .ant-picker-panel-container{
+    margin-left: 2vh!important;
+    width:60%!important;
+  }
+  
+  .forum-home-thread p {
+    height: 9vh;
     overflow: hidden;
     line-height: 10px;
   }
-  .forum-home-thread h5{
-    font-size: 15px!important;
+  .forum-home-thread h5 {
+    font-size: 15px !important;
   }
-  .forum-home-thread img{
-    height: 16vh!important;
-    width: 19vh!important;
+  .forum-home-thread img {
+    height: 16vh !important;
+    width: 19vh !important;
   }
   .price {
     padding-bottom: 8vh;
@@ -2408,7 +2431,7 @@ button.StripeCheckout {
     padding-bottom: 7em;
     padding-right: unset;
     padding-left: unset;
-    padding:2em;
+    padding: 2em;
   }
   .payment-content {
     padding-top: 4em !important;
@@ -2453,8 +2476,9 @@ button.StripeCheckout {
   padding-top: 3em;
   width: 60%;
 }
-.ant-upload-list-picture .ant-upload-list-item, .ant-upload-list-picture-card .ant-upload-list-item{
-  border:solid 1px #fc5c2d;
+.ant-upload-list-picture .ant-upload-list-item,
+.ant-upload-list-picture-card .ant-upload-list-item {
+  border: solid 1px #fc5c2d;
 }
 .forum-threadtwo {
   justify-content: space-evenly;
@@ -2492,18 +2516,18 @@ a:not([href]):not([tabindex]) {
   border-radius: 8px;
   background-color: rgba(255, 255, 255, 0.08);
   width: 30%;
-  min-height:45vh;
-  height:50vh;
+  min-height: 45vh;
+  height: 50vh;
   position: relative;
   overflow: hidden;
 }
-.forum-home-thread-square p{
+.forum-home-thread-square p {
   overflow: hidden;
 }
 .forum-home-thread-square img {
   max-width: 100%;
   border-radius: 8px;
-  min-height:30vh;
+  min-height: 30vh;
 }
 .trending-thread {
   display: flex;
@@ -2590,7 +2614,7 @@ a:not([href]):not([tabindex]) {
   }
   .forum-home-thread img {
     width: 50vw;
-    height:15vh;
+    height: 15vh;
   }
   .forum-home-thread p {
     font-size: 10px;
@@ -2636,8 +2660,8 @@ a:not([href]):not([tabindex]) {
     padding-top: 3em;
   }
   .forum-threads {
-    padding: 1em     !important;
-    margin-bottom: 10vh!important;
+    padding: 1em !important;
+    margin-bottom: 10vh !important;
   }
   .trending-thread p {
     font-size: 10px !important;
@@ -2836,9 +2860,9 @@ a:not([href]):not([tabindex]) {
   color: white !important;
   background-color: black !important;
 }
-.ant-picker-dropdown {
-  width:90%!important;
-}
+/* .ant-picker-dropdown {
+  width: 90% !important;
+} */
 .ant-picker-input > input {
   color: white !important;
 }
