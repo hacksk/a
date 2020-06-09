@@ -1,15 +1,17 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import {
   MdLocationOn,
   MdShoppingCart,
   MdAccountCircle,
-  MdForum,
+  MdForum
 } from "react-icons/md";
 import { AiTwotoneHome } from "react-icons/ai";
 import { IoMdSearch, IoMdMenu } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { Tooltip, Button } from "antd";
 import { FiLogOut } from "react-icons/fi";
+import { signOut } from "./actions/authActions";
 
 const settings = <span>Settings</span>;
 const text = <span>Home</span>;
@@ -20,7 +22,7 @@ const text4 = <span>Forum</span>;
 
 // const buttonWidth = 70;
 
-export default class NavbarNew extends Component {
+class NavbarNew extends Component {
   render() {
     return (
       <div className="newnav" style={{ zIndex: "1000" }}>
@@ -87,15 +89,30 @@ export default class NavbarNew extends Component {
               </Button>
             </li>
           </Link>
-          <Link to="/signin">
+
+          {this.props.isAuthenticated ? (
             <li>
-              <Button>
+              <Button onClick={this.props.signOut}>
                 <FiLogOut />
               </Button>
             </li>
-          </Link>
+          ) : null}
         </ul>
       </div>
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    isAuthenticated: state.auth.isAuthenticated
+  };
+};
+const mapDispatchToProps = dispatch => {
+  return {
+    signOut: () => {
+      dispatch(signOut());
+    }
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(NavbarNew);

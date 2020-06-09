@@ -4,7 +4,7 @@ import { API_URL } from "./urlConfig";
 import setAuthToken from "./utils/setAuthToken";
 
 export const SEND_OTP_SET_NUMBER = "SEND_OTP_SET_NUMBER";
-export const VERIFY_OTP_SET_USERDATA = "VERIFY_OTP_SET_USERDATA";
+export const SET_USERDATA = "SET_USERDATA";
 
 // OTP - Send OTP
 export const sendOtp = phone => dispatch => {
@@ -57,13 +57,19 @@ export const verifyOtp = otp => (dispatch, getState) => {
 // Set logged in user
 export const setCurrentUser = userData => {
   return {
-    type: VERIFY_OTP_SET_USERDATA,
+    type: SET_USERDATA,
     payload: userData
   };
 };
 
 // Log user out
 export const signOut = () => dispatch => {
+  // Clear localStorage
+  localStorage.clear();
+
+  // Remove token from axios
+  setAuthToken();
+
   // Set current user to {} which will set isAuthenticated to false
   dispatch(setCurrentUser({}));
 };

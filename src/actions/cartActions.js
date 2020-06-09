@@ -1,4 +1,6 @@
 import axios from "axios";
+import { API_URL } from "./urlConfig";
+import { SET_ERRORS } from "./commonActionType";
 
 export const LOAD_ITEMS = "LOAD_ITEMS";
 export const ADD_TO_CART = "ADD_TO_CART";
@@ -7,8 +9,6 @@ export const SUB_QUANTITY = "SUB_QUANTITY";
 export const ADD_QUANTITY = "ADD_QUANTITY";
 export const ADD_SHIPPING = "ADD_SHIPPING";
 // export const LOAD_FORUM = "LOAD_FORUM";
-
-const APP_URL = "https://automoto.techbyheart.in/api/v1";
 
 // // load items to forum thread
 // export const loadToForum = () => dispatch => {
@@ -19,7 +19,7 @@ const APP_URL = "https://automoto.techbyheart.in/api/v1";
 //           title: item.data.title,
 //           content: item.data.content,
 //           image: item.data.header_image,
-          
+
 //         };
 //       });
 
@@ -36,7 +36,7 @@ const APP_URL = "https://automoto.techbyheart.in/api/v1";
 //load items to cart
 export const loadToCart = () => dispatch => {
   try {
-    return axios.get(`${APP_URL}/service/`).then(res => {
+    return axios.get(`${API_URL}/service/`).then(res => {
       let itemList = res.data.map(item => {
         return {
           id: item.id,
@@ -59,13 +59,13 @@ export const loadToCart = () => dispatch => {
 //Load product to cart
 export const loadProductToCart = () => dispatch => {
   try {
-    return axios.get(`${APP_URL}/product/`).then(res => {
+    return axios.get(`${API_URL}/product/`).then(res => {
       let itemList = res.data.map(item => {
         console.log("itemList");
 
         return {
           id: item.id,
-          price: item.price,
+          price: item.price
         };
       });
 
@@ -79,29 +79,27 @@ export const loadProductToCart = () => dispatch => {
   }
 };
 //add cart action
-export const addToCart = id => dispatch  => {
+export const addToCart = id => dispatch => {
   try {
     return axios
-      .post(
-        `${APP_URL}/cart/add_to_cart/`,
-        {
-          service: [
-            {
-              service: id
-            }
-          ]
-        }
-        
-      )
+      .post(`${API_URL}/cart/add_to_cart/`, {
+        service: [
+          {
+            service: id
+          }
+        ]
+      })
       .then(res => {
-        console.log(res);
         dispatch({
           type: ADD_TO_CART,
           id
         });
       });
-  } catch (e) {
-    console.log("here");
+  } catch (err) {
+    dispatch({
+      type: SET_ERRORS,
+      payload: err.response.data
+    });
   }
 };
 

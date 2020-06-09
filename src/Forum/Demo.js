@@ -1,5 +1,5 @@
-import { Comment, Avatar, Form, Button, List, Input } from 'antd';
-import moment from 'moment';
+import { Comment, Avatar, Form, Button, List, Input } from "antd";
+import moment from "moment";
 import React from "react";
 
 const { TextArea } = Input;
@@ -7,7 +7,7 @@ const { TextArea } = Input;
 const CommentList = ({ comments }) => (
   <List
     dataSource={comments}
-    header={`${comments.length} ${comments.length > 1 ? 'replies' : 'reply'}`}
+    header={`${comments.length} ${comments.length > 1 ? "replies" : "reply"}`}
     itemLayout="horizontal"
     renderItem={props => <Comment {...props} />}
   />
@@ -19,7 +19,12 @@ const Editor = ({ onChange, onSubmit, submitting, value }) => (
       <TextArea rows={4} onChange={onChange} value={value} />
     </Form.Item>
     <Form.Item>
-      <Button htmlType="submit" loading={submitting} onClick={onSubmit} type="primary">
+      <Button
+        htmlType="submit"
+        loading={submitting}
+        onClick={onSubmit}
+        type="primary"
+      >
         Add Comment
       </Button>
     </Form.Item>
@@ -30,7 +35,7 @@ class Demo extends React.Component {
   state = {
     comments: [],
     submitting: false,
-    value: '',
+    value: ""
   };
 
   handleSubmit = () => {
@@ -39,29 +44,30 @@ class Demo extends React.Component {
     }
 
     this.setState({
-      submitting: true,
+      submitting: true
     });
 
     setTimeout(() => {
       this.setState({
         submitting: false,
-        value: '',
+        value: "",
         comments: [
           {
-            author: 'Han Solo',
-            avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            author: "Han Solo",
+            avatar:
+              "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
             content: <p>{this.state.value}</p>,
-            datetime: moment().fromNow(),
+            datetime: moment().fromNow()
           },
-          ...this.state.comments,
-        ],
+          ...this.state.comments
+        ]
       });
     }, 1000);
   };
 
   handleChange = e => {
     this.setState({
-      value: e.target.value,
+      value: e.target.value
     });
   };
 
@@ -92,4 +98,4 @@ class Demo extends React.Component {
   }
 }
 
-export default Demo
+export default Demo;

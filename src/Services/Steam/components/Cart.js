@@ -21,6 +21,12 @@ class Cart extends Component {
     this.props.subtractQuantity(id);
   };
 
+  static getDerivedStateFromProps(nextProps) {
+    if (!nextProps.isAuthenticated) {
+      nextProps.history.push("/signIn");
+    }
+  }
+
   render() {
     let addedItems = this.props.items.length ? (
       this.props.items.map(item => {
@@ -80,7 +86,8 @@ class Cart extends Component {
 
 const mapStateToProps = state => {
   return {
-    items: state.cart.addedItems
+    items: state.cart.addedItems,
+    isAuthenticated: state.auth.isAuthenticated
   };
 };
 const mapDispatchToProps = dispatch => {

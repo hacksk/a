@@ -1,7 +1,4 @@
-import {
-  SEND_OTP_SET_NUMBER,
-  VERIFY_OTP_SET_USERDATA
-} from "../actions/authActions";
+import { SEND_OTP_SET_NUMBER, SET_USERDATA } from "../actions/authActions";
 import isEmpty from "../validation/isEmpty";
 // import isEmpty from "../validation/isEmpty";
 
@@ -18,7 +15,7 @@ export default function(state = initialState, action) {
         userData: { phone: action.payload.phone }
       };
 
-    case VERIFY_OTP_SET_USERDATA:
+    case SET_USERDATA:
       return {
         ...state,
         isAuthenticated: !isEmpty(action.payload),

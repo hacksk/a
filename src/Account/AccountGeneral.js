@@ -1,22 +1,23 @@
 import React, { Component } from "react";
 import Accountupload from "./PicturesWall";
+import { connect } from "react-redux";
 import axios from "axios";
 
 class AccountGeneral extends Component {
   state = {
-    persons: []
-  }
+    person: null
+  };
 
   componentDidMount() {
-    axios.get(`https://automoto.techbyheart.in/api/v1/customer`)
-      .then(res => {
-        const persons = res.data;
-        this.setState({ persons });
-      })
+    axios.get(`https://automoto.techbyheart.in/api/v1/customer`).then(res => {
+      const persons = res.data;
+      const person = persons.find(x => x.id == this.props.userData.id);
+      this.setState({ person });
+    });
   }
   render() {
-    return (
-      <div style={{paddingBottom:"5em"}} className="accnt-gnrl">
+    return this.state.person != null ? (
+      <div style={{ paddingBottom: "5em" }} className="accnt-gnrl">
         <div className="prof-detail">
           <h5>Profile Details</h5>
           <div className="table">
@@ -28,10 +29,8 @@ class AccountGeneral extends Component {
                 <tr>Phone</tr>
               </td>
               <td>
-              { this.state.persons.map(person =>
+                <tr>{this.state.person.name}</tr>
 
-                <tr>{person.name}</tr>
-                )}
                 <tr>15/01/1985 </tr>
                 <tr>
                   House Name, House no 123 Lane,Landmark, Place,District,State
@@ -41,16 +40,24 @@ class AccountGeneral extends Component {
               </td>
               <td>
                 <tr>
-                  <a href="#accnt" className="edit-accnt">Edit</a>
+                  <a href="#accnt" className="edit-accnt">
+                    Edit
+                  </a>
                 </tr>
                 <tr>
-                  <a href="#accnt" className="edit-accnt">Edit</a>
+                  <a href="#accnt" className="edit-accnt">
+                    Edit
+                  </a>
                 </tr>
                 <tr>
-                  <a href="#accnt" className="edit-accnt">Edit</a>
+                  <a href="#accnt" className="edit-accnt">
+                    Edit
+                  </a>
                 </tr>
                 <tr>
-                  <a href="#accnt" className="edit-accnt">Edit</a>
+                  <a href="#accnt" className="edit-accnt">
+                    Edit
+                  </a>
                 </tr>
               </td>
             </table>
@@ -83,25 +90,39 @@ class AccountGeneral extends Component {
               </td>
               <td>
                 <tr>
-                  <a href="#accnt" className="edit-accnt">Edit</a>
+                  <a href="#accnt" className="edit-accnt">
+                    Edit
+                  </a>
                 </tr>
                 <tr>
-                  <a href="#accnt" className="edit-accnt">Edit</a>
+                  <a href="#accnt" className="edit-accnt">
+                    Edit
+                  </a>
                 </tr>
                 <tr>
-                  <a href="#accnt" className="edit-accnt">Edit</a>
+                  <a href="#accnt" className="edit-accnt">
+                    Edit
+                  </a>
                 </tr>
                 <tr>
-                  <a href="#accnt" className="edit-accnt">Edit</a>
+                  <a href="#accnt" className="edit-accnt">
+                    Edit
+                  </a>
                 </tr>
                 <tr>
-                  <a href="#accnt" className="edit-accnt">Edit</a>
+                  <a href="#accnt" className="edit-accnt">
+                    Edit
+                  </a>
                 </tr>
                 <tr>
-                  <a href="#accnt" className="edit-accnt">Edit</a>
+                  <a href="#accnt" className="edit-accnt">
+                    Edit
+                  </a>
                 </tr>
                 <tr>
-                  <a href="#accnt" className="edit-accnt">Edit</a>
+                  <a href="#accnt" className="edit-accnt">
+                    Edit
+                  </a>
                 </tr>
               </td>
             </table>
@@ -119,15 +140,26 @@ class AccountGeneral extends Component {
               </td>
               <td>
                 <tr>
-                  <a href="#accnt" className="edit-accnt">Edit</a>
+                  <a href="#accnt" className="edit-accnt">
+                    Edit
+                  </a>
                 </tr>
               </td>
             </table>
           </div>
         </div>
       </div>
+    ) : (
+      <div>Loadin...</div>
     );
   }
 }
 
-export default AccountGeneral;
+const mapStateToProps = state => {
+  return {
+    isAuthenticated: state.auth.isAuthenticated,
+    userData: state.auth.userData
+  };
+};
+
+export default connect(mapStateToProps, {})(AccountGeneral);

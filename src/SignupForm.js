@@ -3,6 +3,7 @@ import axios from "axios";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import Accountupload from "./Account/PicturesWall";
+import { API_URL } from "./actions/urlConfig";
 
 class SignupForm extends Component {
   constructor(props) {
@@ -27,24 +28,45 @@ class SignupForm extends Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
     const { first_name, last_name, email, username, phone } = this.state;
-
     axios
-      .post(`https://automoto.techbyheart.in/api/v1/user/`, {
-        first_name: first_name,
-        last_name: last_name,
-        email: email,
+      .post(`${API_URL}/customer/`, {
+        user_data: {
+          email: email,
+          first_name: first_name,
+          last_name: last_name,
+          username: username,
+          phone: phone,
+          is_active: "True",
+          date_joined: "2020-09-18"
+        },
+        address: {
+          address_line1: "rrrr",
+          address_line2: "lllnnngl",
+          address_line3: "ggg",
+          state: "kerala",
+          district: "kozhikode",
+          city: "kozhikode",
+          pin_code: "678964"
+        },
+        photo: 1,
+        name: "dsa",
+        age: "21",
+        gender: "male",
         phone: phone,
-        username: username
+        latitude: 23.0625,
+        longitude: -98.677068,
+        vehicle: 1,
+        dob: "1990-09-09"
       })
       .then(res => {
         console.log("sign up res", res);
         console.log(res.data);
       })
       .catch(error => {
-        console.log("registration error", error);
+        console.log("registration error", error.response.data);
       });
-    // event.preventDefault();
   }
 
   render() {
