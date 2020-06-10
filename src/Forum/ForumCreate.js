@@ -9,7 +9,7 @@ export default class ForumCreate extends Component {
     this.state = {
       title: "",
       content: "",
-      header_image: "",
+      header_image: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,11 +18,11 @@ export default class ForumCreate extends Component {
 
   handleChange(event) {
     this.setState({
-      [event.target.name]: event.target.value,
+      [event.target.name]: event.target.value
     });
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
 
     const { title, content, header_image } = this.state;
@@ -30,28 +30,22 @@ export default class ForumCreate extends Component {
     axios
       .post(
         `https://automoto.techbyheart.in/api/v1/forum/thread/create/2/`,
-        {
-          headers: {
-            Authorization:
-              "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjAwNDE4NDcxLCJqdGkiOiJhNWIyOGEzMjFlZmM0OTAzYTIzNzhmMzIzMWQxYzdkZSIsInVzZXJfaWQiOjQsInVzZXIiOnsiaWQiOjQsImxhc3RfbG9naW4iOm51bGwsImVtYWlsIjoidmlzaG51dXJAdGVjaGJ5aGVhcnQuaW4iLCJmaXJzdF9uYW1lIjoidmlzaG51IiwibGFzdF9uYW1lIjoidXIiLCJ1c2VybmFtZSI6InZpc2hudTYyODIiLCJwaG9uZSI6Iis5MTYyODI0NDM3NjQiLCJkYXRlX2pvaW5lZCI6IjIwMjAtMDYtMDlUMTE6NDI6NDcuMzU3ODIwWiIsImdyb3VwcyI6W10sInVzZXJfcGVybWlzc2lvbnMiOltdfX0.q-YzGwC1dZ96fz_juxRkJ4jnXvTxkg6jQFfB_Su0jGM",
-          },
-        },
+
         {
           title: title,
           content: content,
-          header_image: header_image,
+          header_image: header_image
         }
       )
-      .then((res) => {
+      .then(res => {
         console.log(res);
         console.log(res.data);
       })
-      .catch((error) => {
+      .catch(error => {
         console.log("adding error", error.response.data);
       });
   };
   render() {
-
     return (
       <div className="thread-create" style={{ padding: "8em" }}>
         <form onSubmit={this.handleSubmit}>
@@ -59,7 +53,7 @@ export default class ForumCreate extends Component {
             style={{
               display: "flex",
               flexDirection: "column",
-              color: "rgba(255, 255, 255, 0.87)",
+              color: "rgba(255, 255, 255, 0.87)"
             }}
           >
             <p>Give a short thread title</p>
@@ -69,7 +63,7 @@ export default class ForumCreate extends Component {
               style={{
                 borderBottom: "1px solid rgba(255, 255, 255, 0.08",
                 paddingBottom: "3em",
-                paddingTop: "3em",
+                paddingTop: "3em"
               }}
             >
               <input
@@ -80,7 +74,7 @@ export default class ForumCreate extends Component {
                   border: "none",
                   padding: "1em",
                   borderRadius: "8px",
-                  width: "40em",
+                  width: "40em"
                 }}
                 placeholder="Add title"
                 onChange={this.handleChange}
@@ -94,7 +88,7 @@ export default class ForumCreate extends Component {
                   flexDirection: "row",
                   justifyContent: "Space-between",
                   width: "40%",
-                  marginTop: "3em",
+                  marginTop: "3em"
                 }}
               >
                 {" "}
@@ -111,7 +105,7 @@ export default class ForumCreate extends Component {
               style={{
                 borderBottom: "1px solid rgba(255, 255, 255, 0.08",
                 paddingBottom: "3em",
-                paddingTop: "3em",
+                paddingTop: "3em"
               }}
             >
               <p>Write something</p>
@@ -126,7 +120,7 @@ export default class ForumCreate extends Component {
                     height: "30vh",
                     width: "100%",
                     border: "none",
-                    padding: "2em",
+                    padding: "2em"
                   }}
                   name="content"
                   rows="4"

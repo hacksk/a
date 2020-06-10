@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { loadToCart } from "../../../actions/cartActions";
+import { loadAllItems } from "../../../actions/cartActions";
 import "../../../index.css";
 import { Spin, Space } from "antd";
-
 
 class Home extends Component {
   // constructor(props) {
@@ -12,7 +11,7 @@ class Home extends Component {
   // }
 
   componentDidMount() {
-    this.props.loadToCart();
+    this.props.loadAllItems();
   }
 
   render() {
@@ -60,8 +59,8 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-    loadToCart: () => {
-      dispatch(loadToCart());
+    loadAllItems: () => {
+      dispatch(loadAllItems());
     }
   };
 };

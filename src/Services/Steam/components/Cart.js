@@ -5,21 +5,26 @@ import {
   removeItem,
   addQuantity,
   subtractQuantity,
+  loadAddedItems
 } from "../../../actions/cartActions";
 import Recipe from "./Recipe";
 class Cart extends Component {
   //to remove the item completely
-  handleRemove = (id) => {
+  handleRemove = id => {
     this.props.removeItem(id);
   };
   //to add the quantity
-  handleAddQuantity = (id) => {
+  handleAddQuantity = id => {
     this.props.addQuantity(id);
   };
   //to substruct from the quantity
-  handleSubtractQuantity = (id) => {
+  handleSubtractQuantity = id => {
     this.props.subtractQuantity(id);
   };
+
+  componentDidMount() {
+    this.props.loadAddedItems();
+  }
 
   static getDerivedStateFromProps(nextProps) {
     if (!nextProps.isAuthenticated) {
@@ -28,49 +33,51 @@ class Cart extends Component {
   }
 
   render() {
-    let addedItems = this.props.items.length ? (
-      this.props.items.map((item) => {
-        return (
-          <li className="collection-item avatar" key={item.id}>
-            <div className="item-img">
-              <img src={item.img} alt={item.img} className="" />
-            </div>
+    let addedItems =
+      this.props.addedItems != null ? (
+        this.props.addedItems.map(item => {
+          console.log(item);
+          return (
+            <li className="collection-item avatar" key={item.id}>
+              <div className="item-img">
+                <img src={item.img} alt={item.img} className="" />
+              </div>
 
-            <div className="item-desc">
-              <span className="title">{item.title}</span>
-              {/* <p>{item.desc}</p> */}
-              <p>
-                <b>
-                  Price: {item.price}
-                  <FaRupeeSign />
-                </b>
-              </p>
-              {/* <p>
+              <div className="item-desc">
+                <span className="title">{item.title}</span>
+                {/* <p>{item.desc}</p> */}
+                <p>
+                  <b>
+                    Price: {item.price}
+                    <FaRupeeSign />
+                  </b>
+                </p>
+                {/* <p>
                                             <b>Quantity: {item.quantity}</b> 
                                         </p> */}
-              {/* <div className="add-remove">
+                {/* <div className="add-remove">
                                             <Link to="/cart"><i className="material-icons" onClick={()=>{this.handleAddQuantity(item.id)}}>arrow_drop_up</i></Link>
                                             <Link to="/cart"><i className="material-icons" onClick={()=>{this.handleSubtractQuantity(item.id)}}>arrow_drop_down</i></Link>
                                         </div> */}
-              <button
-                className="waves-effect waves-light btn pink remove"
-                style={{
-                  background:
-                    "linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), linear-gradient(98.86deg, #F05C2D 8.02%, #FCAA2E 96.06%)",
-                }}
-                onClick={() => {
-                  this.handleRemove(item.id);
-                }}
-              >
-                Remove
-              </button>
-            </div>
-          </li>
-        );
-      })
-    ) : (
-      <p style={{ fontWeight: "bold" }}>You Have Selected Nothing.</p>
-    );
+                <button
+                  className="waves-effect waves-light btn pink remove"
+                  style={{
+                    background:
+                      "linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), linear-gradient(98.86deg, #F05C2D 8.02%, #FCAA2E 96.06%)"
+                  }}
+                  onClick={() => {
+                    this.handleRemove(item.id);
+                  }}
+                >
+                  Remove
+                </button>
+              </div>
+            </li>
+          );
+        })
+      ) : (
+        <p style={{ fontWeight: "bold" }}>You Have Selected Nothing.</p>
+      );
     return (
       <div
         style={{ paddingTop: "6em", paddingBottom: "5em" }}
@@ -88,23 +95,26 @@ class Cart extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    items: state.cart.addedItems,
-    isAuthenticated: state.auth.isAuthenticated,
+    addedItems: state.cart.addedItems,
+    isAuthenticated: state.auth.isAuthenticated
   };
 };
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    removeItem: (id) => {
+    loadAddedItems: () => {
+      dispatch(loadAddedItems());
+    },
+    removeItem: id => {
       dispatch(removeItem(id));
     },
-    addQuantity: (id) => {
+    addQuantity: id => {
       dispatch(addQuantity(id));
     },
-    subtractQuantity: (id) => {
+    subtractQuantity: id => {
       dispatch(subtractQuantity(id));
-    },
+    }
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);

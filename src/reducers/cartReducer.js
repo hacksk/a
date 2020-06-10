@@ -4,22 +4,29 @@ import {
   SUB_QUANTITY,
   ADD_QUANTITY,
   ADD_SHIPPING,
-  LOAD_ITEMS
+  LOAD_ALL_ITEMS,
+  LOAD_ADDED_ITEMS
 } from "../actions/cartActions";
 
 const initState = {
   items: null,
-  addedItems: [],
+  addedItems: null,
   total: 0
 };
 const cartReducer = (state = initState, action) => {
-  if (action.type === LOAD_ITEMS) {
+  if (action.type === LOAD_ALL_ITEMS) {
     return {
       ...state,
       items: action.itemList
     };
   }
-  
+
+  if (action.type === LOAD_ADDED_ITEMS) {
+    return {
+      ...state,
+      addedItems: action.itemList
+    };
+  }
 
   //INSIDE HOME COMPONENT
   if (action.type === ADD_TO_CART) {

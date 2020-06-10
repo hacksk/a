@@ -12,10 +12,9 @@ import Forumcontenttwo from "./Forum/ForumContentTwo";
 import { Tabs } from "antd";
 // import { DatePicker } from "antd";
 import ForumTrending from "./Forum/ForumTrendingThread";
-import axios from "axios"
+import axios from "axios";
 
 const { TabPane } = Tabs;
-
 
 function callback(key) {
   console.log(key);
@@ -59,27 +58,18 @@ function callback(key) {
 //   };
 // }
 
-
 export default class Home extends Component {
   constructor() {
     super();
     this.state = {
       persons: [],
-      subthread: [],
+      subthread: []
     };
   }
   componentDidMount() {
     axios
-      .get(
-        `https://automoto.techbyheart.in/api/v1/forum/^latest-threads/`,
-        {
-          headers: {
-            Authorization:
-              "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjAwMDYzMDU3LCJqdGkiOiI4Mzc5YmRkMWQzNjU0YjA2YWRjNjk1OWY3MDdmZmJkZSIsInVzZXJfaWQiOjExLCJ1c2VyIjp7ImlkIjoxMSwibGFzdF9sb2dpbiI6bnVsbCwiZW1haWwiOiJ2aXNobnV1ckB0ZWNoYnloZWFydC5pbiIsImZpcnN0X25hbWUiOiIiLCJsYXN0X25hbWUiOiIiLCJ1c2VybmFtZSI6InZpc2hudTYyODIiLCJwaG9uZSI6Iis5MTYyODI0NDM3NjQiLCJkYXRlX2pvaW5lZCI6IjIwMjAtMDYtMDVUMTU6MDU6NTEuMjQzMDAwWiIsImdyb3VwcyI6W10sInVzZXJfcGVybWlzc2lvbnMiOltdfX0.cNGYIScBCDckwTSifG6a1Sm-Oh4VOx8O6rWiU8wKdYs",
-          },
-        }
-      )
-      .then((res) => {
+      .get(`https://automoto.techbyheart.in/api/v1/forum/^latest-threads/`)
+      .then(res => {
         const persons = res.data.data;
         console.log(persons);
 
@@ -105,7 +95,13 @@ export default class Home extends Component {
           <div className="home-thread">
             <h6>THREADS</h6>
             <Link to="/forum">
-              <button style={{border:"none",background:"transparent"}} href="#seeall"> SEE ALL</button>
+              <button
+                style={{ border: "none", background: "transparent" }}
+                href="#seeall"
+              >
+                {" "}
+                SEE ALL
+              </button>
             </Link>
           </div>
           <div
@@ -114,7 +110,7 @@ export default class Home extends Component {
               padding: "5em",
               position: "relative",
               display: "flex",
-              flexDirection: "row",
+              flexDirection: "row"
             }}
           >
             <Forumcontenttwo
@@ -137,7 +133,7 @@ export default class Home extends Component {
             <div className="home-second-content-wrap">
               <div className="home-second-content">
                 {/* <div className="home-second-part1"> */}
-                  {/* <h1
+                {/* <h1
                     style={{
                       color: "white",
                       fontFamily: "Montserrat",
@@ -171,8 +167,8 @@ export default class Home extends Component {
                   </button>
                 </Link> */}
               </div>
-                {/* <img alt="" src={require("./assets/timer-24px.svg")}/> */}
-                {/* <div style={{ display: "flex", flexDirection: "column",justifyContent:"center",alignItems:"center" }}>
+              {/* <img alt="" src={require("./assets/timer-24px.svg")}/> */}
+              {/* <div style={{ display: "flex", flexDirection: "column",justifyContent:"center",alignItems:"center" }}>
                   <p
                     style={{
                       color: "rgba(252, 170, 46, 0.87)",
@@ -335,7 +331,11 @@ export default class Home extends Component {
                   ></img>
                 </div>
 
-                <button style={{border:"none",background:"transparent"}} href="#explore" className="explore-link ">
+                <button
+                  style={{ border: "none", background: "transparent" }}
+                  href="#explore"
+                  className="explore-link "
+                >
                   EXPLORE
                   <FaLongArrowAltRight />
                 </button>
@@ -415,19 +415,16 @@ export default class Home extends Component {
                 Content of Tab Pane 1
               </TabPane>
               <TabPane tab="TRENDING" key="2">
-              {this.state.persons.map((person) => (
-
-                <Link to="/forum/thread">
-                  <ForumTrending
-                    threadprof="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
-                    trendinghead= {person.title}
-                    trendingcontent={person.content}
-                    timethread={person.thread_date}
-                  />
-                 
-                </Link>
-                 ))}
-                
+                {this.state.persons.map(person => (
+                  <Link to="/forum/thread">
+                    <ForumTrending
+                      threadprof="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+                      trendinghead={person.title}
+                      trendingcontent={person.content}
+                      timethread={person.thread_date}
+                    />
+                  </Link>
+                ))}
               </TabPane>
             </Tabs>
           </div>
@@ -466,7 +463,10 @@ export default class Home extends Component {
               href="https://www.techbyheart.in/"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "rgba(255, 255, 255, 0.87)",overflow:"visible" }}
+              style={{
+                color: "rgba(255, 255, 255, 0.87)",
+                overflow: "visible"
+              }}
             >
               POWERED BY TECHBYHEART
             </a>
