@@ -11,8 +11,8 @@ class AccountGeneral extends Component {
   componentDidMount() {
     axios.get(`https://automoto.techbyheart.in/api/v1/customer`).then(res => {
       const persons = res.data;
-      console.log("data",persons)
-      const person = persons.find(x => x.id == this.props.userData.id);
+      console.log("data", persons);
+      const person = persons.find(x => x.user.id == this.props.userData.id);
       this.setState({ person });
     });
   }
@@ -63,7 +63,7 @@ class AccountGeneral extends Component {
               </td>
             </table>
             <div className="accnt-upload">
-              <Accountupload/>
+              <Accountupload />
             </div>
           </div>
         </div>

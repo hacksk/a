@@ -13,7 +13,7 @@ export default class ForumCreate extends Component {
     this.state = {
       title: "",
       content: "",
-      header_image: "",
+      header_image: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,11 +22,11 @@ export default class ForumCreate extends Component {
 
   handleChange(event) {
     this.setState({
-      [event.target.name]: event.target.value,
+      [event.target.name]: event.target.value
     });
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
     const formData = new FormData();
     formData.append("title", this.state.title);
@@ -42,11 +42,11 @@ export default class ForumCreate extends Component {
         `https://automoto.techbyheart.in/api/v1/forum/thread/create/2/`,
         formData
       )
-      .then((res) => {
+      .then(res => {
         console.log(res);
         console.log(res.data);
       })
-      .catch((error) => {
+      .catch(error => {
         console.log("adding error", error.response.data);
       });
   };
@@ -58,7 +58,7 @@ export default class ForumCreate extends Component {
             style={{
               display: "flex",
               flexDirection: "column",
-              color: "rgba(255, 255, 255, 0.87)",
+              color: "rgba(255, 255, 255, 0.87)"
             }}
           >
             <p>Give a short thread title</p>
@@ -68,7 +68,7 @@ export default class ForumCreate extends Component {
               style={{
                 borderBottom: "1px solid rgba(255, 255, 255, 0.08",
                 paddingBottom: "3em",
-                paddingTop: "3em",
+                paddingTop: "3em"
               }}
             >
               <input
@@ -79,7 +79,7 @@ export default class ForumCreate extends Component {
                   border: "none",
                   padding: "1em",
                   borderRadius: "8px",
-                  width: "40em",
+                  width: "40em"
                 }}
                 placeholder="Add title"
                 onChange={this.handleChange}
@@ -93,7 +93,7 @@ export default class ForumCreate extends Component {
                   flexDirection: "row",
                   justifyContent: "Space-between",
                   width: "40%",
-                  marginTop: "3em",
+                  marginTop: "3em"
                 }}
               >
                 {" "}
@@ -103,7 +103,7 @@ export default class ForumCreate extends Component {
                   type="file"
                   name="header_image"
                   on
-                  onChange={(e) => {
+                  onChange={e => {
                     this.setState({ header_image: e.target.files[0] });
                   }}
                 />
@@ -113,7 +113,7 @@ export default class ForumCreate extends Component {
               style={{
                 borderBottom: "1px solid rgba(255, 255, 255, 0.08",
                 paddingBottom: "3em",
-                paddingTop: "3em",
+                paddingTop: "3em"
               }}
             >
               <p>Write something</p>
@@ -128,7 +128,7 @@ export default class ForumCreate extends Component {
                     height: "30vh",
                     width: "100%",
                     border: "none",
-                    padding: "2em",
+                    padding: "2em"
                   }}
                   name="content"
                   rows="4"
@@ -137,9 +137,9 @@ export default class ForumCreate extends Component {
                 ></textarea>
               </div>
             </div>
-              <button type="submit" className="create-forum-button">
-                CREATE THREAD
-              </button>
+            <button type="submit" className="create-forum-button">
+              CREATE THREAD
+            </button>
           </div>
         </form>
       </div>

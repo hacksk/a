@@ -4,7 +4,7 @@ import {
   MdLocationOn,
   MdShoppingCart,
   MdAccountCircle,
-  MdForum,
+  MdForum
 } from "react-icons/md";
 import { AiTwotoneHome } from "react-icons/ai";
 import { IoMdSearch } from "react-icons/io";
@@ -82,13 +82,24 @@ class NavbarNew extends Component {
               </Tooltip>
             </li>
           </Link>
-          <Link to="/signup">
+
+          {this.props.isAuthenticated ? (
+            <Link to="/account">
               <li>
                 <Button>
                   <MdAccountCircle />
                 </Button>
               </li>
-          </Link>
+            </Link>
+          ) : (
+            <Link to="/signup">
+              <li>
+                <Button>
+                  <MdAccountCircle />
+                </Button>
+              </li>
+            </Link>
+          )}
 
           {this.props.isAuthenticated ? (
             <li>
@@ -103,16 +114,16 @@ class NavbarNew extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    isAuthenticated: state.auth.isAuthenticated,
+    isAuthenticated: state.auth.isAuthenticated
   };
 };
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     signOut: () => {
       dispatch(signOut());
-    },
+    }
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(NavbarNew);
