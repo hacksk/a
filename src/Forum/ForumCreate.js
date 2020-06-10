@@ -24,18 +24,19 @@ export default class ForumCreate extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-
-    const { title, content, header_image } = this.state;
+    const formData = new FormData();
+    formData.append("title", this.state.title);
+    formData.append("content", this.state.content);
+    formData.append(
+      "header_image",
+      this.state.header_image,
+      this.state.header_image.name
+    );
 
     axios
       .post(
         `https://automoto.techbyheart.in/api/v1/forum/thread/create/2/`,
-
-        {
-          title: title,
-          content: content,
-          header_image: header_image
-        }
+        formData
       )
       .then(res => {
         console.log(res);
@@ -97,7 +98,10 @@ export default class ForumCreate extends Component {
                   className="thread-create-upload"
                   type="file"
                   name="header_image"
-                  onChange={this.onChange}
+                  on
+                  onChange={e => {
+                    this.setState({ header_image: e.target.files[0] });
+                  }}
                 />
               </div>
             </div>

@@ -6,19 +6,17 @@ export default class ForumList extends Component {
   constructor() {
     super();
     this.state = {
-      forums: [],
-      subthread: [],
+      forums: []
     };
   }
 
   componentDidMount() {
     axios
       .get(`https://automoto.techbyheart.in/api/v1/forum/^list`)
-      .then((res) => {
+      .then(res => {
         const forums = res.data.data;
         this.setState({ forums });
-        console.log("forumlist", forums);
-
+        console.log(forums);
       });
   }
   render() {
@@ -27,33 +25,33 @@ export default class ForumList extends Component {
         className="subforum-list"
         style={{ paddingTop: "12vh", paddingLeft: "4em" }}
       >
-        {this.state.forums.map((forum) => (
+        {this.state.forums.map(forum => (
           <p
             style={{
               color: "white",
               background: "rgba(255, 255, 255, 0.08)",
               padding: "1em",
-              paddingLeft: "4em",
+              paddingLeft: "4em"
             }}
           >
             {forum.name}
+            <ul>
+              {forum.sub_forums.map(sub_forum => (
+                <Link to="/forumcreate">
+                  <li
+                    style={{
+                      color: "white",
+                      padding: "1em",
+                      paddingLeft: "4em"
+                    }}
+                  >
+                    {sub_forum.title}
+                  </li>
+                </Link>
+              ))}
+            </ul>
           </p>
         ))}
-        <ul>
-          {this.state.forums.map((forum) => (
-            <Link to="/forumcreate">
-              <li
-                style={{
-                  color: "white",
-                  padding: "1em",
-                  paddingLeft: "4em",
-                }}
-              >
-                {forum.sub_forums[0].title}
-              </li>
-            </Link>
-          ))}
-        </ul>
       </div>
     );
   }
