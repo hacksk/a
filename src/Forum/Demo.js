@@ -75,7 +75,7 @@ class Demo extends React.Component {
     const { comments, submitting, value } = this.state;
 
     return (
-      <div>
+      <div className="commenting-forum">
         {comments.length > 0 && <CommentList comments={comments} />}
         <Comment
           avatar={

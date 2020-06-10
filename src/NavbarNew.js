@@ -7,13 +7,13 @@ import {
   MdForum
 } from "react-icons/md";
 import { AiTwotoneHome } from "react-icons/ai";
-import { IoMdSearch, IoMdMenu } from "react-icons/io";
+import { IoMdSearch } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { Tooltip, Button } from "antd";
 import { FiLogOut } from "react-icons/fi";
 import { signOut } from "./actions/authActions";
 
-const settings = <span>Settings</span>;
+// const settings = <span>Settings</span>;
 const text = <span>Home</span>;
 const text1 = <span>Search</span>;
 const text2 = <span>Location</span>;

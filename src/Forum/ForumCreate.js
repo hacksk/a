@@ -28,23 +28,30 @@ export default class ForumCreate extends Component {
     const { title, content, header_image } = this.state;
 
     axios
-      .post(`https://automoto.techbyheart.in/api/v1/forum/^thread/create/1`, {
-        title: title,
-        content: content,
-        header_image: header_image,
-      })
+      .post(
+        `https://automoto.techbyheart.in/api/v1/forum/thread/create/2/`,
+        {
+          headers: {
+            Authorization:
+              "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjAwNDE4NDcxLCJqdGkiOiJhNWIyOGEzMjFlZmM0OTAzYTIzNzhmMzIzMWQxYzdkZSIsInVzZXJfaWQiOjQsInVzZXIiOnsiaWQiOjQsImxhc3RfbG9naW4iOm51bGwsImVtYWlsIjoidmlzaG51dXJAdGVjaGJ5aGVhcnQuaW4iLCJmaXJzdF9uYW1lIjoidmlzaG51IiwibGFzdF9uYW1lIjoidXIiLCJ1c2VybmFtZSI6InZpc2hudTYyODIiLCJwaG9uZSI6Iis5MTYyODI0NDM3NjQiLCJkYXRlX2pvaW5lZCI6IjIwMjAtMDYtMDlUMTE6NDI6NDcuMzU3ODIwWiIsImdyb3VwcyI6W10sInVzZXJfcGVybWlzc2lvbnMiOltdfX0.q-YzGwC1dZ96fz_juxRkJ4jnXvTxkg6jQFfB_Su0jGM",
+          },
+        },
+        {
+          title: title,
+          content: content,
+          header_image: header_image,
+        }
+      )
       .then((res) => {
         console.log(res);
         console.log(res.data);
+      })
+      .catch((error) => {
+        console.log("adding error", error.response.data);
       });
   };
-  componentDidMount() {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      console.log("Latitude is :", position.coords.latitude);
-      console.log("Longitude is :", position.coords.longitude);
-    });
-  }
   render() {
+
     return (
       <div className="thread-create" style={{ padding: "8em" }}>
         <form onSubmit={this.handleSubmit}>
@@ -78,6 +85,7 @@ export default class ForumCreate extends Component {
                 placeholder="Add title"
                 onChange={this.handleChange}
                 name="title"
+                type="text"
               ></input>
               <div
                 className="thread-create-imagefield"
@@ -110,6 +118,7 @@ export default class ForumCreate extends Component {
 
               <div className="thread-create-textfield" style={{ width: "45%" }}>
                 <textarea
+                  type="text"
                   className="thread-create-content"
                   style={{
                     color: "white",

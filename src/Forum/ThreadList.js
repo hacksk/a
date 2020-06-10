@@ -26,14 +26,38 @@ export default class ThreadList extends Component {
       .get(`https://automoto.techbyheart.in/api/v1/forum/^latest-threads/`)
       .then((res) => {
         const persons = res.data.data;
-        console.log(persons);
+        console.log("data",persons);
         this.setState({ persons });
       });
   }
   render() {
     return (
       <div className="threadlist" style={{ padding: "8em" }}>
-        <div className="threadlist-head" style={{borderBottom:"2px solid rgba(255, 255, 255, 0.08)",color:"rgba(255, 255, 255, 0.87)",fontFamily:"Montserrat",fontWeight:"600",paddingLeft:"9em"}}>
+        <div
+          className="forum-home-link-forum"
+          style={{
+            padding: "10em",
+            paddingBottom: "0",
+            display: "flex",
+            justifyContent: "flex-end",
+            paddingRight: "5em",
+            paddingTop:"0"
+          }}
+        >
+          <Link to="/forumcreate">
+            <button className="forum-service-now">CREATE THREAD</button>
+          </Link>
+        </div>
+        <div
+          className="threadlist-head"
+          style={{
+            borderBottom: "2px solid rgba(255, 255, 255, 0.08)",
+            color: "rgba(255, 255, 255, 0.87)",
+            fontFamily: "Montserrat",
+            fontWeight: "600",
+            paddingLeft: "9em",
+          }}
+        >
           <p>THREADS</p>
         </div>
         <div

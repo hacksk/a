@@ -19,7 +19,7 @@ class Recipe extends Component {
     if (this.refs.shipping.checked) this.props.substractShipping();
   }
 
-  handleChecked = e => {
+  handleChecked = (e) => {
     if (e.target.checked) {
       this.props.addShipping();
     } else {
@@ -29,8 +29,18 @@ class Recipe extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="collection">
+      <div
+        style={{
+          position: "absolute",
+          bottom: "0",
+          width: "100%",
+          background:
+            "linear-gradient(0deg, rgba(240, 92, 45, 0.08), rgba(240, 92, 45, 0.08))",
+          padding: "1.5em",
+        }}
+        className="container"
+      >
+        <div style={{ display: "none" }} className="collection">
           <li className="collection-item">
             <label>
               <input
@@ -55,14 +65,17 @@ class Recipe extends Component {
             style={{
               border: "none",
               borderRadius: "3px",
-              background: "#ff6600",
-              color: "white",
+              background:
+                "linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), linear-gradient(98.86deg, #F05C2D 8.02%, #FCAA2E 96.06%)",
+              color: "black",
               height: "5vh",
               width: "15vh",
-              fontWeight: "bold"
+              fontWeight: "bold",
+              position:"absolute",
+              right:"2em"
             }}
           >
-            Buy Now
+            CHECKOUT
           </button>
         </Link>
       </div>
@@ -70,21 +83,21 @@ class Recipe extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     addedItems: state.cart.addedItems,
-    total: state.total
+    total: state.total,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     addShipping: () => {
       dispatch({ type: "ADD_SHIPPING" });
     },
     substractShipping: () => {
       dispatch({ type: "SUB_SHIPPING" });
-    }
+    },
   };
 };
 

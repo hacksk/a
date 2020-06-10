@@ -14,10 +14,13 @@ export default class ForumTrendingThread extends Component {
               flexDirection: "column",
               color: "rgba(255, 255, 255, 0.6)",
               paddingLeft: "2em",
+              textOverflow:"ellipsis",
+              overflow:"hidden",
+              whiteSpace:"nowrap"
             }}
           >
             <h6 style={{ color: "white" }}>{this.props.trendinghead}</h6>
-            <p>{this.props.trendingcontent}</p>
+            <p className="forum-trending-content">{this.props.trendingcontent}</p>
             <div style={{ display: "flex", flexDirection: "row" }}>
                 <AiOutlineLike />
                 <MdInsertComment />

@@ -136,8 +136,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 @media screen and (max-width: 786px) {
-  .forum-home-link-forum{
-    padding:8em 0 0 10em!important;
+  .forum-home-link-forum {
+    padding: 8em 0 0 10em !important;
   }
   .home {
     padding-left: unset !important;
@@ -156,8 +156,26 @@ Note: Beware of modifying this element as it can break the animations - you shou
   .bm-menu-wrap {
     width: 100vw !important;
   }
+  .subforum-list{
+    padding-left: 0!important;
+  }
+  .subforum-list li{
+    padding:2vh 0 0 0!important;
+  }
 }
 /* STYLES FOR NAVIGATION */
+
+.collection .collection-item{
+  position: relative;
+}
+.btn{
+  position: absolute;
+  right:2em;
+}
+.item-desc p{
+  position: absolute;
+  right:50%;
+}
 
 /* STYLES FOR MAP */
 .map {
@@ -2266,7 +2284,7 @@ body {
   float: left;
 }
 
-.bottommenu li a {
+.bottommenu li button {
   display: block;
   color: white;
   text-align: center;
@@ -2274,7 +2292,7 @@ body {
   text-decoration: none;
 }
 
-.bottommenu li a:hover {
+.bottommenu li button:hover {
   background-color: #111;
 }
 .bottommenu ul li svg {
@@ -2396,7 +2414,6 @@ button.StripeCheckout {
 }
 .forum-home-thread {
   width: 100% !important;
-
 }
 .forum-home-thread p {
   height: 18vh;
@@ -2459,15 +2476,15 @@ button.StripeCheckout {
   .payment-method {
     padding-bottom: 4em;
   }
-  .threadlist{
-    padding:0!important;
-    padding-top: 10em!important;
+  .threadlist {
+    padding: 0 !important;
+    padding-top: 10em !important;
   }
-  .threadlist .forum-threadtwo{
-    padding-top: 0!important;
+  .threadlist .forum-threadtwo {
+    padding-top: 0 !important;
   }
-  .threadlist-head{
-    padding-left: 1.3em!important;
+  .threadlist-head {
+    padding-left: 1.3em !important;
   }
 }
 
@@ -2506,11 +2523,10 @@ button.StripeCheckout {
   margin-top: 3em;
   width: 60%;
   border-radius: 8px;
-  padding:1em;
+  padding: 1em;
 }
-.forum-home-thread:hover{
+.forum-home-thread:hover {
   background-color: #1b1b1b;
-
 }
 .ant-upload-list-picture .ant-upload-list-item,
 .ant-upload-list-picture-card .ant-upload-list-item {
@@ -2521,7 +2537,6 @@ button.StripeCheckout {
   align-items: center;
   padding: 7em !important;
   border-bottom: 2px solid rgba(255, 255, 255, 0.08);
-
 }
 .home-thread {
   border-bottom: 1px solid #1e1e1e;
@@ -2552,7 +2567,7 @@ a:not([href]):not([tabindex]) {
 }
 .forum-home-thread-square {
   border-radius: 8px;
-  background-color:#1b1b1b;
+  background-color: #1b1b1b;
   width: 30%;
   min-height: 45vh;
   height: 50vh;
@@ -2575,10 +2590,10 @@ a:not([href]):not([tabindex]) {
   padding: 2em 0;
   cursor: pointer;
 }
-.trending-thread:hover{
+.trending-thread:hover {
   background-color: #1b1b1b;
   border-radius: 8px;
-  padding:1em;
+  padding: 1em;
 }
 .trending-thread img {
   width: 6vh;
@@ -2716,38 +2731,61 @@ a:not([href]):not([tabindex]) {
 
 /* ////////////THREAD EXPANDED////////////////////// */
 .threadexpand {
-  padding: 5em;
+  padding: 7em;
+}
+@media (min-width: 1200px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width:80vw!important;
+    height: 10vh!important;
+  }
+}
+.item-desc{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.forum-trending-content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.commenting-forum {
+  width: 70%;
 }
 @media screen and (max-width: 786px) {
-  .thread-create{
-    padding:2vh!important;
-    padding-bottom:10vh!important;
-    padding-top: 14vh!important;
+  .thread-create {
+    padding: 2vh !important;
+    padding-bottom: 10vh !important;
+    padding-top: 14vh !important;
   }
-  .thread-create-field{
-    display: flex!important;
-    justify-content: center!important;
-    flex-direction: column!important;
-    align-items: center!important;
-    padding-top: 0!important;
+  .thread-create-field {
+    display: flex !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding-top: 0 !important;
   }
-  .thread-create-imagefield{
-    display: flex!important;
-    align-items: center!important;
-    width: 100%!important;
-    justify-self: space-between!important;
+  .thread-create-imagefield {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    justify-self: space-between !important;
   }
-  .thread-create-upload{
-    width: 50%!important;
+  .thread-create-upload {
+    width: 50% !important;
   }
-  .thread-create-title{
-    width:100%!important;
+  .thread-create-title {
+    width: 100% !important;
   }
-  .thread-create-textfield{
-    width: 100%!important;
+  .thread-create-textfield {
+    width: 100% !important;
   }
-  .thread-create-content{
-    width:100%!important;
+  .thread-create-content {
+    width: 100% !important;
   }
   .threadexpand {
     padding: 0;

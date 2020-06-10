@@ -8,9 +8,9 @@ import { MdCopyright } from "react-icons/md";
 import "bootstrap/dist/css/bootstrap.min.css";
 import BottomNavbar from "./BottomNavbar";
 import Forumcontenttwo from "./Forum/ForumContentTwo";
-import moment from "moment";
+// import moment from "moment";
 import { Tabs } from "antd";
-import { DatePicker } from "antd";
+// import { DatePicker } from "antd";
 import ForumTrending from "./Forum/ForumTrendingThread";
 import axios from "axios"
 
@@ -23,26 +23,26 @@ function callback(key) {
 
 // const { RangePicker } = DatePicker;
 
-function range(start, end) {
-  const result = [];
-  for (let i = start; i < end; i++) {
-    result.push(i);
-  }
-  return result;
-}
+// function range(start, end) {
+//   const result = [];
+//   for (let i = start; i < end; i++) {
+//     result.push(i);
+//   }
+//   return result;
+// }
 
-function disabledDate(current) {
-  // Can not select days before today and today
-  return current && current < moment().endOf("day");
-}
+// function disabledDate(current) {
+//   // Can not select days before today and today
+//   return current && current < moment().endOf("day");
+// }
 
-function disabledDateTime() {
-  return {
-    disabledHours: () => range(0, 24).splice(4, 20),
-    disabledMinutes: () => range(30, 60),
-    disabledSeconds: () => [55, 56],
-  };
-}
+// function disabledDateTime() {
+//   return {
+//     disabledHours: () => range(0, 24).splice(4, 20),
+//     disabledMinutes: () => range(30, 60),
+//     disabledSeconds: () => [55, 56],
+//   };
+// }
 
 // function disabledRangeTime(_, type) {
 //   if (type === "start") {
@@ -105,7 +105,7 @@ export default class Home extends Component {
           <div className="home-thread">
             <h6>THREADS</h6>
             <Link to="/forum">
-              <a href="#seeall"> SEE ALL</a>
+              <button style={{border:"none",background:"transparent"}} href="#seeall"> SEE ALL</button>
             </Link>
           </div>
           <div
@@ -335,10 +335,10 @@ export default class Home extends Component {
                   ></img>
                 </div>
 
-                <a href="#explore" className="explore-link ">
+                <button style={{border:"none",background:"transparent"}} href="#explore" className="explore-link ">
                   EXPLORE
                   <FaLongArrowAltRight />
-                </a>
+                </button>
               </Link>
               <h5>RECOMMENDED ACCESSORIES</h5>
               <div className="home-content-part1">

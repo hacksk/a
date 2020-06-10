@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default class ForumList extends Component {
   constructor() {
     super();
     this.state = {
-      persons: [],
+      forums: [],
       subthread: [],
     };
   }
@@ -14,16 +15,19 @@ export default class ForumList extends Component {
     axios
       .get(`https://automoto.techbyheart.in/api/v1/forum/^list`)
       .then((res) => {
-        const persons = res.data.data;
-        console.log(persons);
+        const forums = res.data.data;
+        this.setState({ forums });
+        console.log("forumlist", forums);
 
-        this.setState({ persons });
       });
   }
   render() {
     return (
-      <div style={{ paddingTop: "8em", paddingLeft: "4em" }}>
-        {this.state.persons.map((person) => (
+      <div
+        className="subforum-list"
+        style={{ paddingTop: "12vh", paddingLeft: "4em" }}
+      >
+        {this.state.forums.map((forum) => (
           <p
             style={{
               color: "white",
@@ -32,20 +36,24 @@ export default class ForumList extends Component {
               paddingLeft: "4em",
             }}
           >
-            {person.name}
+            {forum.name}
           </p>
         ))}
-        {this.state.persons.map((person) => (
-          <p
-            style={{
-              color: "white",
-              padding: "1em",
-              paddingLeft: "4em",
-            }}
-          >
-            {person.sub_forums.title}
-          </p>
-        ))}
+        <ul>
+          {this.state.forums.map((forum) => (
+            <Link to="/forumcreate">
+              <li
+                style={{
+                  color: "white",
+                  padding: "1em",
+                  paddingLeft: "4em",
+                }}
+              >
+                {forum.sub_forums[0].title}
+              </li>
+            </Link>
+          ))}
+        </ul>
       </div>
     );
   }

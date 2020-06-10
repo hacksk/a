@@ -23,7 +23,8 @@ export default class ForumHome extends Component {
 
   componentDidMount() {
     axios
-      .get(`https://automoto.techbyheart.in/api/v1/forum/^latest-threads/`)
+      .get(`https://automoto.techbyheart.in/api/v1/forum/^latest-threads/`
+      )
       .then((res) => {
         const persons = res.data.data;
         console.log(persons);
@@ -38,7 +39,8 @@ export default class ForumHome extends Component {
   render() {
     return (
       <div className="forum-home">
-        <div className="forum-home-link-forum"
+        <div
+          className="forum-home-link-forum"
           style={{
             padding: "10em",
             paddingBottom: "0",
@@ -147,9 +149,9 @@ export default class ForumHome extends Component {
             threadcontenttwo="Hello all, I would like to thank the mods for accepting my membership request and this is my... "
           />
           <Link to="/forum/forumthreadlist">
-            <a href="#seeall" className="seeall-forum">
+            <button style={{border:"none",background:"transparent"}} href="#seeall" className="seeall-forum">
               SEE ALL
-            </a>
+            </button>
           </Link>
         </div>
         <div
@@ -172,9 +174,9 @@ export default class ForumHome extends Component {
             </Link>
           ))}
           <Link to="/forum/forumthreadlist">
-            <a href="#seeall" className="seeall-forum">
+            <button style={{border:"none",background:"transparent"}} href="#seeall" className="seeall-forum">
               SEE ALL
-            </a>
+            </button>
           </Link>
         </div>
 
@@ -187,16 +189,17 @@ export default class ForumHome extends Component {
               Content of Tab Pane 1
             </TabPane>
             <TabPane tab="TRENDING" key="2">
-              <Link to="/forum/thread">
-                {this.state.persons.map((person) => (
+              {this.state.persons.map((person) => (
+                <Link to="/forum/thread">
                   <ForumTrending
                     threadprof="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
                     trendinghead={person.title}
                     trendingcontent={person.content}
                     timethread={person.thread_date}
                   />
-                ))}
-              </Link>
+                </Link>
+              ))}
+
               {/* <Link to="/forum/thread">
                 <ForumTrending
                   threadprof="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
