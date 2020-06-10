@@ -1,6 +1,11 @@
 import { Comment, Avatar, Form, Button, List, Input } from "antd";
 import moment from "moment";
 import React from "react";
+import axios from "axios";
+import Forumcontentone from "./ForumContentOne"
+import {Link } from "react-router-dom"
+import { DomEvent } from "leaflet";
+import ForumComent from "./ForumComment";
 
 const { TextArea } = Input;
 
@@ -9,7 +14,7 @@ const CommentList = ({ comments }) => (
     dataSource={comments}
     header={`${comments.length} ${comments.length > 1 ? "replies" : "reply"}`}
     itemLayout="horizontal"
-    renderItem={props => <Comment {...props} />}
+    renderItem={(props) => <Comment {...props} />}
   />
 );
 
@@ -32,19 +37,54 @@ const Editor = ({ onChange, onSubmit, submitting, value }) => (
 );
 
 class Demo extends React.Component {
-  state = {
-    comments: [],
-    submitting: false,
-    value: ""
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      comments: [],
+      submitting: false,
+      value: "",
+      content: "",
+      comments: [],
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+  // componentDidMount() {
+  //   axios
+  //     .get(`https://automoto.techbyheart.in/api/v1/forum/^latest-threads/`)
+  //     .then((res) => {
+  //       const comments = res.data.data;
+  //       console.log("data",comments);
+  //       this.setState({ comments });
+  //     });
+  // }
+  handleChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  }
 
   handleSubmit = () => {
+    const { content } = this.state;
+    axios
+      .post(`https://automoto.techbyheart.in/api/v1/forum/comment/13/`, {
+        content: this.state.value,
+      })
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+      })
+      .catch((error) => {
+        console.log("adding error", error.response.data);
+      });
+
     if (!this.state.value) {
       return;
     }
 
     this.setState({
-      submitting: true
+      submitting: true,
     });
 
     setTimeout(() => {
@@ -57,17 +97,17 @@ class Demo extends React.Component {
             avatar:
               "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
             content: <p>{this.state.value}</p>,
-            datetime: moment().fromNow()
+            datetime: moment().fromNow(),
           },
-          ...this.state.comments
-        ]
+          ...this.state.comments,
+        ],
       });
     }, 1000);
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({
-      value: e.target.value
+      value: e.target.value,
     });
   };
 
@@ -93,6 +133,10 @@ class Demo extends React.Component {
             />
           }
         />
+        {/* <ForumComent/> */}
+       {/* {this.state.comments.map((comment) => (
+         <h3>{comment.comment.content}</h3>
+          ))} */}
       </div>
     );
   }

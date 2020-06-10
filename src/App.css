@@ -156,25 +156,25 @@ Note: Beware of modifying this element as it can break the animations - you shou
   .bm-menu-wrap {
     width: 100vw !important;
   }
-  .subforum-list{
-    padding-left: 0!important;
+  .subforum-list {
+    padding-left: 0 !important;
   }
-  .subforum-list li{
-    padding:2vh 0 0 0!important;
+  .subforum-list li {
+    padding: 2vh 0 0 0 !important;
   }
 }
 /* STYLES FOR NAVIGATION */
 
-.collection .collection-item{
+.collection .collection-item {
   position: relative;
 }
-.btn{
+.btn {
   position: absolute;
-  right:2em;
+  right: 2em;
 }
-.item-desc p{
+.item-desc p {
   position: absolute;
-  right:50%;
+  right: 50%;
 }
 
 /* STYLES FOR MAP */
@@ -2561,6 +2561,9 @@ a:not([href]):not([tabindex]) {
   font-family: Montserrat;
   font-weight: bold;
 }
+.create-forum-button:hover{
+  color:white;
+}
 .forum-home-thread img {
   width: 15em;
   border-radius: 8px;
@@ -2589,11 +2592,19 @@ a:not([href]):not([tabindex]) {
   justify-content: space-between;
   padding: 2em 0;
   cursor: pointer;
+  padding: 1em;
+}
+.forum-thread-create .ant-btn,
+.ant-btn:active,
+.ant-btn:focus {
+  background: linear-gradient(108.01deg, #f05c2d 0%, #fcaa2e 120.94%);
+  color: black !important;
+  border-radius: 8px !important;
+  font-weight: 900 !important;
 }
 .trending-thread:hover {
   background-color: #1b1b1b;
   border-radius: 8px;
-  padding: 1em;
 }
 .trending-thread img {
   width: 6vh;
@@ -2739,11 +2750,11 @@ a:not([href]):not([tabindex]) {
   .container-md,
   .container-sm,
   .container-xl {
-    max-width:80vw!important;
-    height: 10vh!important;
+    max-width: 80vw !important;
+    height: 10vh !important;
   }
 }
-.item-desc{
+.item-desc {
   display: flex;
   flex-direction: row;
   justify-content: space-around;

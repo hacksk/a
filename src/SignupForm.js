@@ -4,6 +4,7 @@ import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import Accountupload from "./Account/PicturesWall";
 import { API_URL } from "./actions/urlConfig";
+import { Link } from "react-router-dom";
 
 class SignupForm extends Component {
   constructor(props) {
@@ -14,7 +15,8 @@ class SignupForm extends Component {
       last_name: "",
       email: "",
       phone: "",
-      username: ""
+      username: "",
+      date_joined: "",
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,13 +25,20 @@ class SignupForm extends Component {
 
   handleChange(event) {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    const { first_name, last_name, email, username, phone } = this.state;
+    const {
+      first_name,
+      last_name,
+      email,
+      username,
+      phone,
+      date_joined,
+    } = this.state;
     axios
       .post(`${API_URL}/customer/`, {
         user_data: {
@@ -39,7 +48,7 @@ class SignupForm extends Component {
           username: username,
           phone: phone,
           is_active: "True",
-          date_joined: "2020-09-18"
+          date_joined: date_joined,
         },
         address: {
           address_line1: "rrrr",
@@ -48,7 +57,7 @@ class SignupForm extends Component {
           state: "kerala",
           district: "kozhikode",
           city: "kozhikode",
-          pin_code: "678964"
+          pin_code: "678964",
         },
         photo: 1,
         name: "dsa",
@@ -58,19 +67,19 @@ class SignupForm extends Component {
         latitude: 23.0625,
         longitude: -98.677068,
         vehicle: 1,
-        dob: "1990-09-09"
+        dob: "1990-09-09",
       })
-      .then(res => {
+      .then((res) => {
         console.log("sign up res", res);
         console.log(res.data);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log("registration error", error.response.data);
       });
   }
 
   render() {
-    const handleOnDragStart = e => e.preventDefault();
+    const handleOnDragStart = (e) => e.preventDefault();
 
     return (
       <div className="signup">
@@ -132,44 +141,57 @@ class SignupForm extends Component {
                   name="first_name"
                   type="text"
                   onChange={this.handleChange}
-                  placeholder="First Name"
+                  placeholder="Model Name"
                 />
                 <input
                   name="last_name"
                   type="text"
                   onChange={this.handleChange}
-                  placeholder="Last Name"
+                  placeholder="Engine Number"
                 />
 
                 <input
                   name="email"
-                  type="email"
+                  type="text"
                   onChange={this.handleChange}
-                  placeholder="Email"
+                  placeholder="Chasis Number"
                 />
                 <input
                   name="username"
                   type="text"
                   onChange={this.handleChange}
-                  placeholder="Username"
-                />
-                <input
-                  name="phone"
-                  type="text"
-                  onChange={this.handleChange}
-                  placeholder="Phone"
+                  placeholder="Model Year"
                 />
                 <button
                   style={{
                     color: "black",
-                    background: "grey",
+                    background:
+                      "linear-gradient(108.01deg, #F05C2D 0%, #FCAA2E 120.94%)",
                     marginTop: "2em",
                     borderRadius: "8px",
-                    height: "6vh"
+                    height: "6vh",
+                    border: "none",
+                    width:"15vh"
                   }}
                 >
                   Submit
                 </button>
+                <Link to="/signin">
+                  <button
+                    style={{
+                      color: "white",
+                      background:
+                        "transparent",
+                      marginTop: "2em",
+                      borderBottom:"white 1px solid",
+                      height: "6vh",
+                      border: "none",
+                      width:"15vh"
+                    }}
+                  >
+                    Continue
+                  </button>
+                </Link>
               </div>
             </AliceCarousel>
           </form>
