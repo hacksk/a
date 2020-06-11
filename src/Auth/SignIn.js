@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { sendOtp } from "../actions/authActions";
+import {Link} from "react-router-dom";
 
 class SignIn extends Component {
   constructor(props) {
@@ -70,6 +71,15 @@ class SignIn extends Component {
             >
               SIGN IN
             </button>
+            <Link to="/signup">
+            <button
+              style={{ width: "21.31vh", height: "5.90" }}
+              className="signin-btn"
+              type="submit"
+            >
+              SIGN UP
+            </button>
+            </Link>
           </div>
         </form>
       </div>

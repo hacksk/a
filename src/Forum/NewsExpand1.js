@@ -39,7 +39,7 @@ export default class NewsExpanded extends Component {
               </p>
             </div>
             <h5>{this.state.person.title}</h5>
-            <img alt="" src={this.state.person.header_image}></img>
+            <img className="thread-expanded-image" alt="" src={this.state.person.header_image}></img>
             <p>{this.state.person.content}</p>
             <br />
             <Demo />

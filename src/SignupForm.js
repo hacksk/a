@@ -5,6 +5,8 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import Accountupload from "./Account/PicturesWall";
 import { API_URL } from "./actions/urlConfig";
 import { Link } from "react-router-dom";
+import { message, Button } from 'antd';
+
 
 class SignupForm extends Component {
   constructor(props) {
@@ -17,6 +19,15 @@ class SignupForm extends Component {
       phone: "",
       username: "",
       date_joined: "",
+      name:"",
+      age:"",
+      address_line1:"",
+      address_line2:"",
+      dob:"",
+      state:"",
+      district:"",
+      city:"",
+      pincode:"",
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -38,6 +49,15 @@ class SignupForm extends Component {
       username,
       phone,
       date_joined,
+      name,
+      age,
+      address_line1,
+      address_line2,
+      dob,
+      state,
+      city,
+      pincode,
+      district
     } = this.state;
     axios
       .post(`${API_URL}/customer/`, {
@@ -51,23 +71,23 @@ class SignupForm extends Component {
           date_joined: date_joined,
         },
         address: {
-          address_line1: "rrrr",
-          address_line2: "lllnnngl",
+          address_line1: address_line1,
+          address_line2: address_line2,
           address_line3: "ggg",
-          state: "kerala",
-          district: "kozhikode",
-          city: "kozhikode",
-          pin_code: "678964",
+          state: state,
+          district: district,
+          city: city,
+          pin_code: pincode,
         },
         photo: 1,
-        name: "dsa",
-        age: "21",
+        name: name,
+        age: age,
         gender: "male",
         phone: phone,
         latitude: 23.0625,
         longitude: -98.677068,
         vehicle: 1,
-        dob: "1990-09-09",
+        dob: dob,
       })
       .then((res) => {
         console.log("sign up res", res);
@@ -76,6 +96,8 @@ class SignupForm extends Component {
       .catch((error) => {
         console.log("registration error", error.response.data);
       });
+      message.info('Please Click Continue to Sign In');
+
   }
 
   render() {
@@ -101,13 +123,13 @@ class SignupForm extends Component {
                   name="first_name"
                   type="text"
                   onChange={this.handleChange}
-                  placeholder="First Name"
+                  placeholder="Name"
                 />
                 <input
-                  name="last_name"
+                  name="dob"
                   type="text"
                   onChange={this.handleChange}
-                  placeholder="Last Name"
+                  placeholder="Date Of Birth (2020-10-18)"
                 />
 
                 <input
@@ -129,40 +151,42 @@ class SignupForm extends Component {
                   placeholder="Phone"
                 />
               </div>
-              <div className="forms-signup" onDragStart={handleOnDragStart}>
+              
+              {/* <div className="forms-signup" onDragStart={handleOnDragStart}>
                 <h1>UPLOAD PICTURE</h1>
 
                 <Accountupload />
-              </div>
+              </div> */}
               <div className="forms-signup" onDragStart={handleOnDragStart}>
                 <h1>VEHICLE DETAILS</h1>
 
                 <input
-                  name="first_name"
+                  name="name"
                   type="text"
                   onChange={this.handleChange}
-                  placeholder="Model Name"
+                  placeholder="Full Name"
                 />
                 <input
-                  name="last_name"
+                  name="address_line1"
                   type="text"
                   onChange={this.handleChange}
-                  placeholder="Engine Number"
+                  placeholder="Address"
                 />
 
                 <input
-                  name="email"
+                  name="address_line2"
                   type="text"
                   onChange={this.handleChange}
-                  placeholder="Chasis Number"
+                  placeholder="Address"
                 />
                 <input
-                  name="username"
+                  name="age"
                   type="text"
                   onChange={this.handleChange}
-                  placeholder="Model Year"
+                  placeholder="Age  "
                 />
                 <button
+                type="submit"
                   style={{
                     color: "black",
                     background:
@@ -192,8 +216,8 @@ class SignupForm extends Component {
                     Continue
                   </button>
                 </Link>
-              </div>
-            </AliceCarousel>
+              </div> 
+             </AliceCarousel>
           </form>
         </div>
       </div>

@@ -22,6 +22,9 @@ body {
   -webkit-border-radius: 10px;
   border-radius: 10px;
 }
+.ant-col-12{
+  max-width: unset!important;
+}
 
 ::-webkit-scrollbar-thumb {
   -webkit-border-radius: 10px;
@@ -2715,6 +2718,9 @@ a:not([href]):not([tabindex]) {
   .clubhomemain {
     padding: unset !important;
   }
+  .ant-drawer-right.ant-drawer-open .ant-drawer-content-wrapper {
+    width:375px!important;
+  }
 
   .timeline-content-images {
     flex-direction: column !important;
@@ -2724,6 +2730,18 @@ a:not([href]):not([tabindex]) {
   }
   .forum-service-now {
     width: 10em;
+  }
+  .threadexpand-content{
+    padding:2vh!important;
+  }
+  .thread-expanded-image{
+    width:24em!important;
+  }
+  .ant-btn > .anticon + span, .ant-btn > span + .anticon, .anticon svg{
+    font-size: 12px!important ;
+  }
+  .commenting-forum{
+    width: 90%!important;
   }
   .seeall-forum {
     padding-top: 3em;
@@ -2753,6 +2771,10 @@ a:not([href]):not([tabindex]) {
     max-width: 80vw !important;
     height: 10vh !important;
   }
+  
+}
+.ant-btn > .anticon + span, .ant-btn > span + .anticon, .anticon svg{
+  font-size: 14px!important ;
 }
 .item-desc {
   display: flex;
@@ -2766,6 +2788,24 @@ a:not([href]):not([tabindex]) {
 }
 .commenting-forum {
   width: 70%;
+}
+.ant-drawer-header{
+  background: #383838!important;
+  border-bottom: unset!important;
+  box-shadow: rgba(255, 255, 255, 0.267);
+}
+.ant-btn > .anticon + span, .ant-btn > span + .anticon, .anticon svg {
+  font-size: 50px;
+}
+.ant-form-item{
+  color:black!important;
+}
+.ant-drawer-body,.ant-drawer-footer{
+  background: #333333!important;
+  border-top: unset!important;
+}
+.ant-drawer-title,.ant-form-item .ant-form-item-label > label{
+  color:white!important;
 }
 @media screen and (max-width: 786px) {
   .thread-create {
@@ -2804,7 +2844,7 @@ a:not([href]):not([tabindex]) {
   }
   .threadexpand-content {
     justify-content: center;
-    align-items: center;
+    align-items: left!important;
     width: unset !important;
     padding-top: 8em !important;
     margin-top: 0 !important;

@@ -2,17 +2,18 @@ import React, { Component } from "react";
 import Accountupload from "./PicturesWall";
 import { connect } from "react-redux";
 import axios from "axios";
+import AccountCustomer from "./AccountCustomer";
 
 class AccountGeneral extends Component {
   state = {
-    person: null
+    person: null,
   };
 
   componentDidMount() {
-    axios.get(`https://automoto.techbyheart.in/api/v1/customer`).then(res => {
+    axios.get(`https://automoto.techbyheart.in/api/v1/customer`).then((res) => {
       const persons = res.data;
       console.log("data", persons);
-      const person = persons.find(x => x.user.id == this.props.userData.id);
+      const person = persons.find((x) => x.user.id == this.props.userData.id);
       this.setState({ person });
     });
   }
@@ -26,18 +27,19 @@ class AccountGeneral extends Component {
               <td>
                 <tr>Name</tr>
                 <tr>DOB</tr>
-                <tr>Address</tr>
+                {/* <tr>Address</tr> */}
+                {/* <br /> */}
                 <tr>Phone</tr>
+                <tr>Age</tr>
               </td>
               <td>
                 <tr>{this.state.person.name}</tr>
 
                 <tr>{this.state.person.dob} </tr>
-                <tr>
-                  House Name, House no 123 Lane,Landmark, Place,District,State
-                  Pin 612345
-                </tr>
+                {/* <tr>{this.state.address.address_line1}</tr>
+                <tr>{this.state.address.address_line2}</tr> */}
                 <tr>{this.state.person.phone}</tr>
+              <tr>{this.state.person.age}</tr>
               </td>
               <td>
                 <tr>
@@ -55,6 +57,7 @@ class AccountGeneral extends Component {
                     Edit
                   </a>
                 </tr>
+                {/* <br/> */}
                 <tr>
                   <a href="#accnt" className="edit-accnt">
                     Edit
@@ -69,7 +72,7 @@ class AccountGeneral extends Component {
         </div>
         <div className="prof-detail">
           <h5>Vehicle Details</h5>
-          <div className="table">
+          {/* <div className="table">
             <table className="table-content">
               <td>
                 <tr>Brand</tr>
@@ -126,11 +129,12 @@ class AccountGeneral extends Component {
                   </a>
                 </tr>
               </td>
-            </table>
-          </div>
+            </table> */}
+          {/* </div> */}
+          <AccountCustomer/>
         </div>
         <div className="prof-detail">
-          <h5>Vehicle Details</h5>
+          <h5>Language Preferance</h5>
           <div className="table">
             <table className="table-content">
               <td>
@@ -156,10 +160,10 @@ class AccountGeneral extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     isAuthenticated: state.auth.isAuthenticated,
-    userData: state.auth.userData
+    userData: state.auth.userData,
   };
 };
 

@@ -68,7 +68,7 @@ class Demo extends React.Component {
   handleSubmit = () => {
     const { content } = this.state;
     axios
-      .post(`https://automoto.techbyheart.in/api/v1/forum/comment/13/`, {
+      .post(`https://automoto.techbyheart.in/api/v1/forum/comment/3/`, {
         content: this.state.value,
       })
       .then((res) => {
@@ -93,9 +93,9 @@ class Demo extends React.Component {
         value: "",
         comments: [
           {
-            author: "Han Solo",
+            author: "User12",
             avatar:
-              "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+              "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
             content: <p>{this.state.value}</p>,
             datetime: moment().fromNow(),
           },

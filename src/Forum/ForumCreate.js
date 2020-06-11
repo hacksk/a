@@ -49,6 +49,7 @@ export default class ForumCreate extends Component {
       .catch(error => {
         console.log("adding error", error.response.data);
       });
+  
   };
   render() {
     return (
