@@ -52,7 +52,7 @@ export default class ForumCreate extends Component {
   };
   render() {
     return (
-      <div className="thread-create" style={{ padding: "8em" }}>
+      <div className="thread-create" style={{ padding: "8em",height:"auto" }}>
         <form onSubmit={this.handleSubmit}>
           <div
             style={{
@@ -120,7 +120,7 @@ export default class ForumCreate extends Component {
                   border: "none",
                   padding: "1em",
                   borderRadius: "8px",
-                  width: "40em",
+                  width: "24em",
                 }}
                 placeholder="Video Link"
                 onChange={this.handleChange}

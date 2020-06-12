@@ -2409,7 +2409,6 @@ body {
   .height-define {
     padding: 0 !important;
     padding-top: 4em !important;
-    padding-bottom: 20vh !important;
   }
   .box {
     flex-direction: row;
@@ -2543,6 +2542,9 @@ button.StripeCheckout {
   }
 }
 
+.threadlist{
+  background-color: #121212;
+}
 .forum-home-firstpart {
   justify-content: space-around;
   align-items: center;
@@ -2640,6 +2642,9 @@ a:not([href]):not([tabindex]) {
 .forum-home-thread img {
   width: 15em;
   border-radius: 8px;
+}
+.forum-home-thread{
+  margin-top: 0!important;
 }
 .forum-home-thread-square {
   border-radius: 8px;
@@ -2806,7 +2811,6 @@ a:not([href]):not([tabindex]) {
   }
   .forumcontentone {
     padding: unset !important;
-    padding-bottom: 7em !important;
   }
   .forum-home-thread {
     width: unset !important;

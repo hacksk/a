@@ -10,15 +10,15 @@ import axios from "axios";
 //       onClick={e => {
 //         e.stopPropagation();
 //         console.log(id);
-//         axios
-//           .post(
-//             `https://automoto.techbyheart.in/api/v1/forum/delete-thread/${id}/`
-//           )
-//           .then(res => {
-//             console.log(res.data);
-//           })
-//           .catch(e => console.log(e));
-//       }}
+        // axios
+        //   .post(
+        //     `https://automoto.techbyheart.in/api/v1/forum/delete-thread/${id}/`
+        //   )
+        //   .then(res => {
+        //     console.log(res.data);
+        //   })
+        //   .catch(e => console.log(e));
+      
 //       style={{ cursor: "pointer", border: "none", color: "red" }}
 //     >
 //       Delete

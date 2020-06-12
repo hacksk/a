@@ -97,13 +97,9 @@ export default class ThreadList extends Component {
             borderBottom: "2px solid rgba(255, 255, 255, 0.08)",
           }}
         >
-          {this.state.persons.map((person) => (
+           {this.state.persons.map((person) => (
             <Link to={`/forum/thread/${person.id}`}>
-              <Forumcontentone
-                threadimage={person.header_image}
-                threadhead={person.title}
-                threadcontent={person.content}
-              />
+              <Forumcontentone thread={person} />
             </Link>
           ))}
 
