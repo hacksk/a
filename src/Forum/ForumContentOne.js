@@ -3,38 +3,38 @@ import { MdMoreVert } from "react-icons/md";
 import { Popover, Button } from "antd";
 import axios from "axios";
 
-const text = <span></span>;
-const content = id => (
-  <div>
-    <button
-      onClick={e => {
-        e.stopPropagation();
-        console.log(id);
-        axios
-          .post(
-            `https://automoto.techbyheart.in/api/v1/forum/delete-thread/${id}/`
-          )
-          .then(res => {
-            console.log(res.data);
-          })
-          .catch(e => console.log(e));
-      }}
-      style={{ cursor: "pointer", border: "none", color: "red" }}
-    >
-      Delete
-    </button>
-    <button
-      onClick={e => {
-        e.stopPropagation();
-        console.log("edit");
-        // Do the delet operation
-      }}
-      style={{ cursor: "pointer", border: "none", color: "red" }}
-    >
-      Edit
-    </button>
-  </div>
-);
+// const text = <span></span>;
+// const content = id => (
+//   <div>
+//     <button
+//       onClick={e => {
+//         e.stopPropagation();
+//         console.log(id);
+//         axios
+//           .post(
+//             `https://automoto.techbyheart.in/api/v1/forum/delete-thread/${id}/`
+//           )
+//           .then(res => {
+//             console.log(res.data);
+//           })
+//           .catch(e => console.log(e));
+//       }}
+//       style={{ cursor: "pointer", border: "none", color: "red" }}
+//     >
+//       Delete
+//     </button>
+//     <button
+//       onClick={e => {
+//         e.stopPropagation();
+//         console.log("edit");
+//         // Do the delet operation
+//       }}
+//       style={{ cursor: "pointer", border: "none", color: "red" }}
+//     >
+//       Edit
+//     </button>
+//   </div>
+// );
 
 const buttonWidth = 70;
 
@@ -73,14 +73,14 @@ export default class ForumContentOne extends Component {
             alignItems: "center"
           }}
         >
-          <Popover
+          {/* <Popover
             placement="leftTop"
             title={text}
             content={() => content(this.props.thread.id)}
             trigger="click"
           >
             <MdMoreVert />
-          </Popover>
+          </Popover> */}
         </div>
       </div>
     );

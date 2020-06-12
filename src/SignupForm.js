@@ -148,7 +148,7 @@ class SignupForm extends Component {
                   name="phone"
                   type="text"
                   onChange={this.handleChange}
-                  placeholder="Phone"
+                  placeholder="+91xxxxxxxx"
                 />
               </div>
               

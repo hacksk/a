@@ -10,7 +10,8 @@ export default class ForumCreate extends Component {
     this.state = {
       title: "",
       content: "",
-      header_image: ""
+      header_image: "",
+      video_url:""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,17 +20,19 @@ export default class ForumCreate extends Component {
 
   handleChange(event) {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   }
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
     const threadId = this.props.match.params.create;
 
     const formData = new FormData();
     formData.append("title", this.state.title);
     formData.append("content", this.state.content);
+    formData.append("video_url", this.state.video_url);
+
     formData.append(
       "header_image",
       this.state.header_image,
@@ -41,11 +44,11 @@ export default class ForumCreate extends Component {
         `https://automoto.techbyheart.in/api/v1/forum/thread/create/${threadId}/`,
         formData
       )
-      .then(res => {
+      .then((res) => {
         console.log(res);
         this.props.history.push("/forum");
       })
-      .catch(e => console.log(e));
+      .catch((e) => console.log(e));
   };
   render() {
     return (
@@ -55,7 +58,7 @@ export default class ForumCreate extends Component {
             style={{
               display: "flex",
               flexDirection: "column",
-              color: "rgba(255, 255, 255, 0.87)"
+              color: "rgba(255, 255, 255, 0.87)",
             }}
           >
             <p>Give a short thread title</p>
@@ -65,7 +68,7 @@ export default class ForumCreate extends Component {
               style={{
                 borderBottom: "1px solid rgba(255, 255, 255, 0.08",
                 paddingBottom: "3em",
-                paddingTop: "3em"
+                paddingTop: "3em",
               }}
             >
               <input
@@ -76,7 +79,7 @@ export default class ForumCreate extends Component {
                   border: "none",
                   padding: "1em",
                   borderRadius: "8px",
-                  width: "40em"
+                  width: "40em",
                 }}
                 placeholder="Add title"
                 onChange={this.handleChange}
@@ -90,7 +93,7 @@ export default class ForumCreate extends Component {
                   flexDirection: "row",
                   justifyContent: "Space-between",
                   width: "40%",
-                  marginTop: "3em"
+                  marginTop: "3em",
                 }}
               >
                 {" "}
@@ -100,7 +103,7 @@ export default class ForumCreate extends Component {
                   type="file"
                   name="header_image"
                   on
-                  onChange={e => {
+                  onChange={(e) => {
                     this.setState({ header_image: e.target.files[0] });
                   }}
                 />
@@ -108,13 +111,27 @@ export default class ForumCreate extends Component {
             </div>
             <div>
               <p>Share Video URL</p>
-              <input></input>
+              <input
+               name="video_url"
+                type="link"
+                style={{
+                  backgroundColor: "rgba(255, 255, 255, 0.08)",
+                  color: "white",
+                  border: "none",
+                  padding: "1em",
+                  borderRadius: "8px",
+                  width: "40em",
+                }}
+                placeholder="Video Link"
+                onChange={this.handleChange}
+               
+              ></input>
             </div>
             <div
               style={{
                 borderBottom: "1px solid rgba(255, 255, 255, 0.08",
                 paddingBottom: "3em",
-                paddingTop: "3em"
+                paddingTop: "3em",
               }}
             >
               <p>Write something</p>
@@ -129,7 +146,7 @@ export default class ForumCreate extends Component {
                     height: "30vh",
                     width: "100%",
                     border: "none",
-                    padding: "2em"
+                    padding: "2em",
                   }}
                   name="content"
                   rows="4"

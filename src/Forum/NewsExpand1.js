@@ -58,11 +58,11 @@ export default class NewsExpanded extends Component {
             <p>{this.state.thread.content}</p>
             <ReactPlayer
               className="forum-video"
-              url="https://www.youtube.com/watch?v=ktb46A5-rhU&list=RDktb46A5-rhU&index=1"
+              url={this.state.thread.video_url}
             />
-            <button className="like-button-forum">
+            {/* <button className="like-button-forum">
               <AiOutlineLike />
-            </button>
+            </button> */}
             {/* <button style={{color:"black"}} onClick={this.incrementLike}>Likes:{this.state.count}</button> */}
             <br />
             <Demo

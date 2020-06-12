@@ -17,14 +17,14 @@ export default class ForumHome extends Component {
     super();
     this.state = {
       persons: [],
-      subthread: []
+      subthread: [],
     };
   }
 
   componentDidMount() {
     axios
       .get(`https://automoto.techbyheart.in/api/v1/forum/^latest-threads/`)
-      .then(res => {
+      .then((res) => {
         const persons = res.data.data;
         console.log(persons);
         persons.splice(3, 4);
@@ -45,7 +45,7 @@ export default class ForumHome extends Component {
             paddingBottom: "0",
             display: "flex",
             justifyContent: "flex-end",
-            paddingRight: "5em"
+            paddingRight: "5em",
           }}
         >
           <Link to="/forum/forumlist">
@@ -130,7 +130,7 @@ export default class ForumHome extends Component {
           style={{
             position: "relative",
             display: "flex",
-            flexDirection: "row"
+            flexDirection: "row",
           }}
         >
           <Forumcontenttwo
@@ -164,10 +164,10 @@ export default class ForumHome extends Component {
             paddingTop: "4em",
             paddingBottom: "4em",
             position: "relative",
-            borderTop: "2px solid rgba(255, 255, 255, 0.08)"
+            borderTop: "2px solid rgba(255, 255, 255, 0.08)",
           }}
         >
-          {this.state.persons.map(person => (
+          {this.state.persons.map((person) => (
             <Link to={`/forum/thread/${person.id}`}>
               <Forumcontentone thread={person} />
             </Link>
@@ -187,7 +187,7 @@ export default class ForumHome extends Component {
           className="forum-threads"
           style={{
             paddingTop: "0",
-            borderTop: "2px solid rgba(255, 255, 255, 0.08)"
+            borderTop: "2px solid rgba(255, 255, 255, 0.08)",
           }}
         >
           <Tabs defaultActiveKey="2" onChange={callback}>
@@ -195,8 +195,8 @@ export default class ForumHome extends Component {
               Content of Tab Pane 1
             </TabPane>
             <TabPane tab="TRENDING" key="2">
-              {this.state.persons.map(person => (
-                <Link to="/forum/thread">
+              {this.state.persons.map((person) => (
+                <Link to={`/forum/thread/${person.id}`}>
                   <ForumTrending
                     threadprof="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
                     trendinghead={person.title}

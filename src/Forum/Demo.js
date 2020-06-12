@@ -1,7 +1,6 @@
 import { Comment, Avatar, Form, Button, List, Input } from "antd";
 import React from "react";
 import axios from "axios";
-import { AiOutlineLike } from "react-icons/ai";
 
 const { TextArea } = Input;
 
@@ -84,8 +83,7 @@ class Demo extends React.Component {
               content: comment.content,
               time: comment.time,
               avatar:
-                "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
-              like: <AiOutlineLike />
+                "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
             }
           ]
         });
