@@ -18,10 +18,10 @@ class ProductHome extends Component {
     let items = this.props.items;
     let itemList = [];
     if (items != null)
-      itemList = items.map(item => {
+      itemList = items.map((item, index) => {
         return (
-          <Link to={`/product/${item.id}`}>
-            <div className="card" style={{padding:"10em"}} key={item.id}>
+          <Link key={index} to={`/product/${item.id}`}>
+            <div className="card" key={item.id}>
               <div type="primary" className="card-image">
                 <img src={item.img} alt={item.title} />
                 {/* <span className="card-title">{item.title}</span> */}
@@ -30,7 +30,7 @@ class ProductHome extends Component {
 
               <div className="card-content">
                 {/* <p>{item.desc}</p> */}
-                <p style={{color:"white"}}>
+                <p style={{ color: "white" }}>
                   <b>Price: {item.price}$</b>
                 </p>
               </div>

@@ -17,15 +17,14 @@ export default class ForumHome extends Component {
     super();
     this.state = {
       persons: [],
-      subthread: [],
+      subthread: []
     };
   }
 
   componentDidMount() {
     axios
-      .get(`https://automoto.techbyheart.in/api/v1/forum/^latest-threads/`
-      )
-      .then((res) => {
+      .get(`https://automoto.techbyheart.in/api/v1/forum/^latest-threads/`)
+      .then(res => {
         const persons = res.data.data;
         console.log(persons);
         persons.splice(3, 4);
@@ -46,13 +45,12 @@ export default class ForumHome extends Component {
             paddingBottom: "0",
             display: "flex",
             justifyContent: "flex-end",
-            paddingRight: "5em",
+            paddingRight: "5em"
           }}
         >
           <Link to="/forum/forumlist">
             <button className="forum-service-now">FORUM LIST</button>
           </Link>
-          
         </div>
 
         {/* <div
@@ -126,13 +124,13 @@ export default class ForumHome extends Component {
             SEE ALL
           </a>
         </div> */}
-        
+
         <div
           className="forum-threadtwo"
           style={{
             position: "relative",
             display: "flex",
-            flexDirection: "row",
+            flexDirection: "row"
           }}
         >
           <Forumcontenttwo
@@ -151,7 +149,11 @@ export default class ForumHome extends Component {
             threadcontenttwo="Hello all, I would like to thank the mods for accepting my membership request and this is my... "
           />
           <Link to="/forum/forumthreadlist">
-            <button style={{border:"none",background:"transparent"}} href="#seeall" className="seeall-forum">
+            <button
+              style={{ border: "none", background: "transparent" }}
+              href="#seeall"
+              className="seeall-forum"
+            >
               SEE ALL
             </button>
           </Link>
@@ -162,10 +164,10 @@ export default class ForumHome extends Component {
             paddingTop: "4em",
             paddingBottom: "4em",
             position: "relative",
-            borderTop: "2px solid rgba(255, 255, 255, 0.08)",
+            borderTop: "2px solid rgba(255, 255, 255, 0.08)"
           }}
         >
-          {this.state.persons.map((person) => (
+          {this.state.persons.map(person => (
             <Link to={`/forum/thread/${person.id}`}>
               <Forumcontentone
                 threadimage={person.header_image}
@@ -175,7 +177,11 @@ export default class ForumHome extends Component {
             </Link>
           ))}
           <Link to="/forum/forumthreadlist">
-            <button style={{border:"none",background:"transparent"}} href="#seeall" className="seeall-forum">
+            <button
+              style={{ border: "none", background: "transparent" }}
+              href="#seeall"
+              className="seeall-forum"
+            >
               SEE ALL
             </button>
           </Link>
@@ -183,15 +189,17 @@ export default class ForumHome extends Component {
 
         <div
           className="forum-threads"
-          style={{paddingTop: "0",            borderTop: "2px solid rgba(255, 255, 255, 0.08)",
-        }}
+          style={{
+            paddingTop: "0",
+            borderTop: "2px solid rgba(255, 255, 255, 0.08)"
+          }}
         >
           <Tabs defaultActiveKey="2" onChange={callback}>
             <TabPane tab="LATEST" key="1">
               Content of Tab Pane 1
             </TabPane>
             <TabPane tab="TRENDING" key="2">
-              {this.state.persons.map((person) => (
+              {this.state.persons.map(person => (
                 <Link to="/forum/thread">
                   <ForumTrending
                     threadprof="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"

@@ -7,22 +7,23 @@ import Demo from "./Demo";
 
 export default class NewsExpanded extends Component {
   state = {
-    person: null
+    thread: null
   };
 
   componentDidMount() {
     axios
       .get(`https://automoto.techbyheart.in/api/v1/forum/^latest-threads/`)
       .then(res => {
-        const persons = res.data.data;
-        const person = persons.find(
+        const threads = res.data.data;
+        const thread = threads.find(
           x => x.id == this.props.match.params.content
         );
-        this.setState({ person });
+        console.log(thread);
+        this.setState({ thread });
       });
   }
   render() {
-    if (this.state.person != null) {
+    if (this.state.thread != null) {
       return (
         <div className="threadexpand">
           <div className="threadexpand-content">
@@ -35,14 +36,18 @@ export default class NewsExpanded extends Component {
                 <p>u/carlover</p>
               </div>
               <p style={{ color: "rgba(255, 255, 255, 0.38)" }}>
-                {this.state.person.thread_date}
+                {this.state.thread.thread_date}
               </p>
             </div>
-            <h5>{this.state.person.title}</h5>
-            <img className="thread-expanded-image" alt="" src={this.state.person.header_image}></img>
-            <p>{this.state.person.content}</p>
+            <h5>{this.state.thread.title}</h5>
+            <img
+              className="thread-expanded-image"
+              alt=""
+              src={this.state.thread.header_image}
+            ></img>
+            <p>{this.state.thread.content}</p>
             <br />
-            <Demo />
+            <Demo comments={this.state.thread.comment} />
           </div>
         </div>
       );

@@ -2,14 +2,23 @@ import React, { Component } from "react";
 import { MdMoreVert } from "react-icons/md";
 import { Popover, Button } from "antd";
 
-const text = <span ></span>;
+const text = <span></span>;
 const content = (
   <div>
-    <a style={{cursor:"pointer"}}>Delete</a>
+    <button
+      onClick={e => {
+        e.stopPropagation();
+        console.log("delete");
+        // Do the delet operation
+      }}
+      style={{ cursor: "pointer", border: "none", color: "red" }}
+    >
+      Delete
+    </button>
   </div>
 );
 
-const buttonWidth = 70 ;
+const buttonWidth = 70;
 
 export default class ForumContentOne extends Component {
   render() {
@@ -22,7 +31,7 @@ export default class ForumContentOne extends Component {
               paddingLeft: "2em",
               display: "flex",
               flexDirection: "column",
-              justifyContent: "center",
+              justifyContent: "center"
             }}
           >
             <h5 style={{ color: "white" }}>{this.props.threadhead}</h5>
@@ -31,7 +40,7 @@ export default class ForumContentOne extends Component {
                 color: "white",
                 fontFamily: "Montserrat",
                 overflow: "hidden",
-                textOverflow: "ellipsis",
+                textOverflow: "ellipsis"
               }}
             >
               {this.props.threadcontent}
@@ -43,7 +52,7 @@ export default class ForumContentOne extends Component {
           style={{
             display: "flex",
             justifyContent: "center",
-            alignItems: "center",
+            alignItems: "center"
           }}
         >
           <Popover
