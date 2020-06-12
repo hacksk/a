@@ -107,6 +107,7 @@ export const loadProductToCart = () => dispatch => {
     console.log(e);
   }
 };
+
 //add cart action
 export const addToCart = id => dispatch => {
   try {

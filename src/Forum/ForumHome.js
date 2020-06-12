@@ -169,11 +169,7 @@ export default class ForumHome extends Component {
         >
           {this.state.persons.map(person => (
             <Link to={`/forum/thread/${person.id}`}>
-              <Forumcontentone
-                threadimage={person.header_image}
-                threadhead={person.title}
-                threadcontent={person.content}
-              />
+              <Forumcontentone thread={person} />
             </Link>
           ))}
           <Link to="/forum/forumthreadlist">

@@ -3,7 +3,7 @@ import axios from "axios";
 import { Spin, Space } from "antd";
 import Demo from "./Demo";
 import ReactPlayer from "react-player";
-import { AiOutlineLike} from "react-icons/ai";
+import { AiOutlineLike } from "react-icons/ai";
 
 // import ForumTrending from "./ForumTrendingThread";
 // import Demo from "./Demo";
@@ -11,22 +11,22 @@ import { AiOutlineLike} from "react-icons/ai";
 export default class NewsExpanded extends Component {
   state = {
     thread: null,
-    count: 0,
+    count: 0
   };
-  incrementLike=()=> {
-    let newCount = this.state.count +1
+  incrementLike = () => {
+    let newCount = this.state.count + 1;
     this.setState({
-      count:newCount
-    })
-  }
+      count: newCount
+    });
+  };
 
   componentDidMount() {
     axios
       .get(`https://automoto.techbyheart.in/api/v1/forum/^latest-threads/`)
-      .then((res) => {
+      .then(res => {
         const threads = res.data.data;
         const thread = threads.find(
-          (x) => x.id == this.props.match.params.content
+          x => x.id == this.props.match.params.content
         );
         console.log(thread);
         this.setState({ thread });
@@ -60,10 +60,15 @@ export default class NewsExpanded extends Component {
               className="forum-video"
               url="https://www.youtube.com/watch?v=ktb46A5-rhU&list=RDktb46A5-rhU&index=1"
             />
-            <button className="like-button-forum"><AiOutlineLike/></button>
+            <button className="like-button-forum">
+              <AiOutlineLike />
+            </button>
             {/* <button style={{color:"black"}} onClick={this.incrementLike}>Likes:{this.state.count}</button> */}
             <br />
-            <Demo comments={this.state.thread.comment} />
+            <Demo
+              thresdId={this.state.thread.id}
+              comments={this.state.thread.comment}
+            />
           </div>
         </div>
       );

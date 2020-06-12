@@ -1,9 +1,7 @@
 import { Comment, Avatar, Form, Button, List, Input } from "antd";
 import React from "react";
 import axios from "axios";
-import { AiOutlineLike} from "react-icons/ai";
-
-
+import { AiOutlineLike } from "react-icons/ai";
 
 const { TextArea } = Input;
 
@@ -66,13 +64,14 @@ class Demo extends React.Component {
     this.setState({
       submitting: true
     });
-    let thread = this.props.items.find(
-      x => x.id == this.props.match.params.create
-    );
+
     axios
-      .post(`https://automoto.techbyheart.in/api/v1/forum/comment/${this.thread.id}/`, {
-        content: this.state.value
-      })
+      .post(
+        `https://automoto.techbyheart.in/api/v1/forum/comment/${this.props.thresdId}/`,
+        {
+          content: this.state.value
+        }
+      )
       .then(res => {
         const comment = res.data.data;
         this.setState({
@@ -84,9 +83,9 @@ class Demo extends React.Component {
               username: comment.username,
               content: comment.content,
               time: comment.time,
-              avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-              like:<AiOutlineLike/>
-
+              avatar:
+                "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+              like: <AiOutlineLike />
             }
           ]
         });
