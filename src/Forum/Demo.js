@@ -15,7 +15,6 @@ const CommentList = ({ comments }) => (
         author={props.username}
         datetime={props.time}
         avatar={props.avatar}
-        like={props.like}
       />
     )}
   />

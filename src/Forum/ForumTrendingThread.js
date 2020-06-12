@@ -21,10 +21,7 @@ export default class ForumTrendingThread extends Component {
           >
             <h6 style={{ color: "white" }}>{this.props.trendinghead}</h6>
             <p className="forum-trending-content">{this.props.trendingcontent}</p>
-            <div style={{ display: "flex", flexDirection: "row" }}>
-                <AiOutlineLike />
-                <MdInsertComment />
-            </div>
+           
           </div>
         </div>
         <p

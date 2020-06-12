@@ -46,7 +46,7 @@ export default class NewsExpanded extends Component {
                 <p>{this.state.thread.username}</p>
               </div>
               <p style={{ color: "rgba(255, 255, 255, 0.38)" }}>
-                {this.state.thread.thread_time}
+                {this.state.thread.thread_date}
               </p>
             </div>
             <h5>{this.state.thread.title}</h5>
