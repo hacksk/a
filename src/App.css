@@ -383,6 +383,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
   color: white;
 }
 @media screen and (max-width: 786px) {
+  .item-desc{
+    display: block;
+  }
   .service {
     padding-bottom: 3em;
   }
