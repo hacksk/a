@@ -28,6 +28,7 @@ import otp from "./otpVerify";
 import Forumcreate from "./Forum/ForumCreate";
 import ForumList from "./Forum/ForumList";
 import ThreadList from "./Forum/ThreadList";
+import Products from "./Services/Steam/components/ProductHome"
 
 function App() {
   return (
@@ -73,6 +74,7 @@ function App() {
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/forum/forumlist" component={ForumList} />
           <Route exact path="/forum/forumthreadlist" component={ThreadList}/>
+          <Route exact path="/products" component={Products}/>
         </Switch>
         <BottomNavbar />
       </BrowserRouter>

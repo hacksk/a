@@ -52,6 +52,7 @@ export default class ForumHome extends Component {
           <Link to="/forum/forumlist">
             <button className="forum-service-now">FORUM LIST</button>
           </Link>
+          
         </div>
 
         {/* <div
@@ -125,6 +126,7 @@ export default class ForumHome extends Component {
             SEE ALL
           </a>
         </div> */}
+        
         <div
           className="forum-threadtwo"
           style={{
@@ -157,11 +159,10 @@ export default class ForumHome extends Component {
         <div
           className="forumcontentone"
           style={{
-            padding: "9em",
             paddingTop: "4em",
             paddingBottom: "4em",
             position: "relative",
-            borderBottom: "2px solid rgba(255, 255, 255, 0.08)",
+            borderTop: "2px solid rgba(255, 255, 255, 0.08)",
           }}
         >
           {this.state.persons.map((person) => (
@@ -182,7 +183,8 @@ export default class ForumHome extends Component {
 
         <div
           className="forum-threads"
-          style={{ padding: "6em", paddingTop: "0" }}
+          style={{paddingTop: "0",            borderTop: "2px solid rgba(255, 255, 255, 0.08)",
+        }}
         >
           <Tabs defaultActiveKey="2" onChange={callback}>
             <TabPane tab="LATEST" key="1">

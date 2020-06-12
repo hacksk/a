@@ -20,7 +20,7 @@ class ProductHome extends Component {
     if (items != null)
       itemList = items.map(item => {
         return (
-          <Link to={`/services/${item.id}`}>
+          <Link to={`/product/${item.id}`}>
             <div className="card" style={{padding:"10em"}} key={item.id}>
               <div type="primary" className="card-image">
                 <img src={item.img} alt={item.title} />

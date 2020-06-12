@@ -2407,8 +2407,8 @@ button.StripeCheckout {
   background-repeat: no-repeat;
   background-size: 63vw 112vh;
   background-color: #121212;
-  padding-left: 20vh;
-  padding-right: 15vh;
+  padding-left: 28vh;
+  padding-right: 21vh;
   overflow: hidden;
 }
 .forum-home-thread img {
@@ -2510,8 +2510,8 @@ button.StripeCheckout {
   align-items: center;
 }
 .forum-service-now {
-  width: 9vw;
-  height: 2.5em;
+  width: 12.37vh;
+  height: 3.8vh;
   background: linear-gradient(105.62deg, #f05c2d 0%, #fcaa2e 120.94%);
   color: black;
   border-radius: 8px;
@@ -2538,8 +2538,14 @@ button.StripeCheckout {
 .forum-threadtwo {
   justify-content: space-evenly;
   align-items: center;
-  padding: 7em !important;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+  border-top: 2px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 7em;
+  padding-top: 3em;
+}
+.content-home .forum-threadtwo{
+  border-top: unset!important;
+  margin: 5em!important;
+  margin-top: 0!important;
 }
 .home-thread {
   border-bottom: 1px solid #1e1e1e;
@@ -2576,7 +2582,7 @@ a:not([href]):not([tabindex]) {
   background-color: #1b1b1b;
   width: 30%;
   min-height: 45vh;
-  height: 50vh;
+  height: 45vh;
   position: relative;
   overflow: hidden;
 }
@@ -2656,11 +2662,43 @@ a:not([href]):not([tabindex]) {
   font-weight: bold;
   font-size: 16px;
 }
+.forum-more{
+  font-size: 30px;
+  color:#7d7d7d;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  border-radius:50%;
+}
+.ant-popover-inner {
+  width:15vh;
+  height: 8vh;
+  background: #333333!important;
+  color: white!important;
+  box-shadow: 0px 9px 46px rgba(0, 0, 0, 0.12), 0px 24px 38px rgba(0, 0, 0, 0.14), 0px 4px 4px rgba(0, 0, 0, 0.25)
+}
+.ant-popover-inner-content {
+  height: 6vh;
+}
+.ant-popover-title{
+  border-bottom: unset!important;
+}
+.ant-popover-inner-content a{
+  color:white!important;
+  font-size: 15px;
+}
+.forum-more:hover{
+  color:#e4e4e4;
+  background-color: rgba(255, 255, 255, 0.1);
+}
 @media screen and (max-width: 786px) {
   .ant-comment-actions > li > span,
   a:not([href]):not([tabindex]) {
     font-size: 10px;
     padding-right: 1em;
+  }
+  .content-home .forum-threadtwo{
+    margin:0!important;
   }
   .clubhome-posters {
     flex-direction: column;
@@ -2858,7 +2896,8 @@ a:not([href]):not([tabindex]) {
   border-radius: 8px;
   width: 70%;
   padding: 3em;
-  margin-top: 2em;
+  margin-top: 5em;
+  margin-left: 3em;
   font-family: Montserrat;
   justify-content: space-between;
 }

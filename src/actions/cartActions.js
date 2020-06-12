@@ -91,7 +91,10 @@ export const loadProductToCart = () => dispatch => {
 
         return {
           id: item.id,
-          price: item.price
+          title: item.product,
+          desc: item.mfg_date,
+          price: item.price,
+          img: item.image[0].image
         };
       });
 

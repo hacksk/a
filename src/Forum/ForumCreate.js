@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { message, Button } from "antd";
+import {Redirect} from "react-router-dom"
 
 const info = () => {
   message.info("This is a normal message");
@@ -39,16 +40,14 @@ export default class ForumCreate extends Component {
 
     axios
       .post(
-        `https://automoto.techbyheart.in/api/v1/forum/thread/create/2/`,
+        `https://automoto.techbyheart.in/api/v1/forum/thread/create/1/`,
         formData
       )
       .then(res => {
-        console.log(res);
-        console.log(res.data);
+        console.log(res)
+        this.props.history.push("/forum")
       })
-      .catch(error => {
-        console.log("adding error", error.response.data);
-      });
+      
   
   };
   render() {
