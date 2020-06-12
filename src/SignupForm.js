@@ -186,6 +186,7 @@ class SignupForm extends Component {
                   placeholder="Age  "
                 />
                 <button
+                className="signin-btn"
                 type="submit"
                   style={{
                     color: "black",

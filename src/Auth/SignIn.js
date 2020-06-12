@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { sendOtp } from "../actions/authActions";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class SignIn extends Component {
   constructor(props) {
@@ -9,7 +9,7 @@ class SignIn extends Component {
 
     this.state = {
       loginErrors: "",
-      phone: ""
+      phone: "",
     };
   }
 
@@ -19,13 +19,13 @@ class SignIn extends Component {
     }
   }
 
-  handleChange = event => {
+  handleChange = (event) => {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   };
 
-  handleFormSubmit = event => {
+  handleFormSubmit = (event) => {
     event.preventDefault();
     const { phone } = this.state;
     this.props.sendOtp({ phone });
@@ -64,21 +64,13 @@ class SignIn extends Component {
           />
 
           <div className="login-btns">
-            <button
-              style={{ width: "21.31vh", height: "5.90" }}
-              className="signin-btn"
-              type="submit"
-            >
+            <button className="signin-btn" type="submit">
               SIGN IN
             </button>
             <Link to="/signup">
-            <button
-              style={{ width: "21.31vh", height: "5.90" }}
-              className="signin-btn"
-              type="submit"
-            >
-              SIGN UP
-            </button>
+              <button className="signin-btn" type="submit">
+                SIGN UP
+              </button>
             </Link>
           </div>
         </form>
@@ -86,17 +78,17 @@ class SignIn extends Component {
     );
   }
 }
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    userData: state.auth.userData
+    userData: state.auth.userData,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    sendOtp: phone => {
+    sendOtp: (phone) => {
       dispatch(sendOtp(phone));
-    }
+    },
   };
 };
 

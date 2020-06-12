@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 @font-face {
   font-family: Praktika;
   src: url("assets/Fonts/praktika-light-webfont.woff") format("woff");
@@ -22,8 +23,8 @@ body {
   -webkit-border-radius: 10px;
   border-radius: 10px;
 }
-.ant-col-12{
-  max-width: unset!important;
+.ant-col-12 {
+  max-width: unset !important;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -145,6 +146,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   .home {
     padding-left: unset !important;
     padding-right: unset !important;
+    padding-top: 15vh;
   }
   .head-icons {
     justify-content: center !important;
@@ -677,6 +679,19 @@ Note: Beware of modifying this element as it can break the animations - you shou
   letter-spacing: -0.5px;
   font-feature-settings: "kern" off;
 }
+.threadexpand-content{
+  position: relative;
+}
+.like-button-forum svg{
+  position: absolute;
+  top:38%;
+  right: 34%;
+  font-size: 30px;
+  cursor: pointer!important;
+}
+.like-button-forum svg:hover{
+  cursor: pointer;
+}
 .signup-upload {
   border-radius: 160px;
   background-color: #c4c4c4;
@@ -732,6 +747,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
     ),
     #121212;
 }
+.signin-logos{
+  padding-bottom: 52px;
+}
 
 .signin-logos-line {
   padding-top: 1em;
@@ -739,6 +757,33 @@ Note: Beware of modifying this element as it can break the animations - you shou
   flex-direction: row;
   align-items: flex-end;
   justify-content: flex-end;
+}
+.signin-btn {
+  padding:8px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 0;
+  height: 10px;
+  width:16px;
+  outline: 0;
+  font-family: monospace;
+  box-shadow: 0px 5px 10px black;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+  border-radius: 5px;
+  border-bottom: 4px solid #d9d9d9;
+}
+.signin-btn:hover{
+  box-shadow: 0px 15px 25px -5px black;
+  -webkit-transform: scale(1.03);
+  transform: scale(1.03);
+  color:black!important;
+}
+.signin-btn:active{
+  box-shadow: 0px 4px 8px black;
+  -webkit-transform: scale(0.98);
+  transform: scale(0.98);
 }
 .login-form input {
   background-color: rgba(255, 255, 255, 0.08);
@@ -751,11 +796,13 @@ Note: Beware of modifying this element as it can break the animations - you shou
   margin-top: 1em;
   font-family: Montserrat;
 }
+
 .login-btns {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  padding-top: 52px;
 }
 .login-btns button {
   background-image: linear-gradient(102.99deg, #fc5c2e 0%, #fcaa2e 100%);
@@ -1168,7 +1215,7 @@ body {
   text-decoration: underline !important;
 }
 .ant-tabs-top {
-  padding: 3em !important;
+  padding-top: 52px!important;
 }
 .explore-link svg {
   color: #fc5c2d !important;
@@ -1303,8 +1350,8 @@ body {
   align-items: center;
   justify-content: space-between !important;
   /* padding: 0 5em 0 5em; */
-  margin-bottom: 10vh;
-  padding-top: 10vh;
+  margin-bottom: 52px;
+  padding-top: 24px;
 }
 
 .head-icons img {
@@ -1317,7 +1364,8 @@ body {
   align-items: center;
   justify-content: center;
   padding: 8em;
-  padding-top: 3em;
+  padding-top: 52px;
+  padding-bottom: 0;
   position: relative;
 }
 .legend {
@@ -1331,10 +1379,13 @@ body {
 }
 .home-content-wrap {
   margin: 8em;
+  margin-bottom: 52px;
   margin-top: 0;
 }
 .home-content-wrap h5 {
-  font-family: Praktika !important;
+  font-family: Montserrat !important;
+  font-weight: 600;
+  font-size: 14px;
 }
 .home-content {
   width: 100% !important;
@@ -1347,7 +1398,6 @@ body {
   padding-top: 4em;
 }
 .home-content-part1 {
-  padding-top: 1em;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -2049,7 +2099,7 @@ body {
     height: auto;
   }
   .home-content h5 {
-    padding-top: 5em;
+    padding-top: 52px;
   }
   .home-content-part1 img {
     width: 12em;
@@ -2072,7 +2122,7 @@ body {
     width: 5em;
   }
   .home-content-wrap {
-    padding-bottom: 10em;
+    padding-bottom: 52px;
     margin: 0;
   }
   .home-icons-wrap h5 {
@@ -2471,7 +2521,6 @@ button.StripeCheckout {
     padding-bottom: 7em;
     padding-right: unset;
     padding-left: unset;
-    padding: 2em;
   }
   .payment-content {
     padding-top: 4em !important;
@@ -2481,7 +2530,7 @@ button.StripeCheckout {
   }
   .threadlist {
     padding: 0 !important;
-    padding-top: 10em !important;
+    padding-top: 8em !important;
   }
   .threadlist .forum-threadtwo {
     padding-top: 0 !important;
@@ -2510,8 +2559,8 @@ button.StripeCheckout {
   align-items: center;
 }
 .forum-service-now {
-  width: 12.37vh;
-  height: 3.8vh;
+  width: 15.37vh;
+  height: 4.8vh;
   background: linear-gradient(105.62deg, #f05c2d 0%, #fcaa2e 120.94%);
   color: black;
   border-radius: 8px;
@@ -2519,6 +2568,17 @@ button.StripeCheckout {
   font-size: 12px;
   font-weight: bold;
   font-family: Montserrat;
+}
+.forum-service-now:hover{
+  box-shadow: 0px 15px 25px -5px black;
+  -webkit-transform: scale(1.03);
+  transform: scale(1.03);
+  color:black!important;
+}
+.forum-service-now:active{
+  box-shadow: 0px 4px 8px black;
+  -webkit-transform: scale(0.98);
+  transform: scale(0.98);
 }
 .forum-home-thread {
   display: flex;
@@ -2539,20 +2599,21 @@ button.StripeCheckout {
   justify-content: space-evenly;
   align-items: center;
   border-top: 2px solid rgba(255, 255, 255, 0.08);
-  padding-bottom: 7em;
+  padding-bottom: 52px;
   padding-top: 3em;
 }
-.content-home .forum-threadtwo{
-  border-top: unset!important;
-  margin: 5em!important;
-  margin-top: 0!important;
+.content-home .forum-threadtwo {
+  border-top: unset !important;
+  margin: 5em !important;
+  margin-top: 0 !important;
+  margin-bottom: 0!important;
 }
 .home-thread {
   border-bottom: 1px solid #1e1e1e;
   color: #f05c2d !important;
   margin: 8em !important;
   margin-bottom: 0 !important;
-  margin-top: 5em !important;
+  margin-top: 52px !important;
   display: flex;
   justify-content: space-between;
 }
@@ -2570,8 +2631,8 @@ a:not([href]):not([tabindex]) {
   font-family: Montserrat;
   font-weight: bold;
 }
-.create-forum-button:hover{
-  color:white;
+.create-forum-button:hover {
+  color: white;
 }
 .forum-home-thread img {
   width: 15em;
@@ -2662,33 +2723,37 @@ a:not([href]):not([tabindex]) {
   font-weight: bold;
   font-size: 16px;
 }
-.forum-more{
+.forum-more {
   font-size: 30px;
-  color:#7d7d7d;
+  color: #7d7d7d;
   cursor: pointer;
   height: 40px;
   width: 40px;
-  border-radius:50%;
+  border-radius: 50%;
 }
 .ant-popover-inner {
-  width:15vh;
+  width: 15vh;
   height: 8vh;
-  background: #333333!important;
-  color: white!important;
-  box-shadow: 0px 9px 46px rgba(0, 0, 0, 0.12), 0px 24px 38px rgba(0, 0, 0, 0.14), 0px 4px 4px rgba(0, 0, 0, 0.25)
+  background: #333333 !important;
+  color: white !important;
+  box-shadow: 0px 9px 46px rgba(0, 0, 0, 0.12),
+    0px 24px 38px rgba(0, 0, 0, 0.14), 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .ant-popover-inner-content {
   height: 6vh;
 }
-.ant-popover-title{
-  border-bottom: unset!important;
+.forum-video iframe {
+  border-radius: 8px;
 }
-.ant-popover-inner-content a{
-  color:white!important;
+.ant-popover-title {
+  border-bottom: unset !important;
+}
+.ant-popover-inner-content a {
+  color: white !important;
   font-size: 15px;
 }
-.forum-more:hover{
-  color:#e4e4e4;
+.forum-more:hover {
+  color: #e4e4e4;
   background-color: rgba(255, 255, 255, 0.1);
 }
 @media screen and (max-width: 786px) {
@@ -2697,18 +2762,22 @@ a:not([href]):not([tabindex]) {
     font-size: 10px;
     padding-right: 1em;
   }
-  .content-home .forum-threadtwo{
-    margin:0!important;
+  .forum-video {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .content-home .forum-threadtwo {
+    margin: 0 !important;
   }
   .clubhome-posters {
     flex-direction: column;
     align-items: center;
   }
   .home-thread {
-    margin-top: 8em !important;
     margin-bottom: 0 !important;
     margin-left: 1em !important;
     margin-right: 0 !important;
+    margin-top: 0!important;
   }
   .forum-threadtwo {
     padding-top: 0 !important;
@@ -2757,7 +2826,7 @@ a:not([href]):not([tabindex]) {
     padding: unset !important;
   }
   .ant-drawer-right.ant-drawer-open .ant-drawer-content-wrapper {
-    width:375px!important;
+    width: 375px !important;
   }
 
   .timeline-content-images {
@@ -2769,30 +2838,39 @@ a:not([href]):not([tabindex]) {
   .forum-service-now {
     width: 10em;
   }
-  .threadexpand-content{
-    padding:2vh!important;
+  .threadexpand-content {
+    padding: 2vh !important;
   }
-  .thread-expanded-image{
-    width:24em!important;
+  .thread-expanded-image {
+    width: 24em !important;
   }
-  .ant-btn > .anticon + span, .ant-btn > span + .anticon, .anticon svg{
-    font-size: 12px!important ;
+  .ant-btn > .anticon + span,
+  .ant-btn > span + .anticon,
+  .anticon svg {
+    font-size: 12px !important ;
   }
-  .commenting-forum{
-    width: 90%!important;
+  .commenting-forum {
+    width: 90% !important;
   }
   .seeall-forum {
     padding-top: 3em;
   }
   .forum-threads {
     padding: 1em !important;
-    margin-bottom: 10vh !important;
+    margin-bottom: 52px !important;
   }
   .trending-thread p {
     font-size: 10px !important;
   }
   .trending-thread h6 {
     font-size: 15px !important;
+  }
+  .forum-home .forum-threadtwo{
+    margin-bottom: 10vh;
+  }
+  .seeall-forum{
+    bottom: -4em;
+    right:1em;
   }
 }
 
@@ -2809,10 +2887,18 @@ a:not([href]):not([tabindex]) {
     max-width: 80vw !important;
     height: 10vh !important;
   }
-  
 }
-.ant-btn > .anticon + span, .ant-btn > span + .anticon, .anticon svg{
-  font-size: 14px!important ;
+/* .ant-comment-content-author{
+  display: flex!important;
+  justify-content: space-b!important;
+} */
+.ant-btn > .anticon + span,
+.ant-btn > span + .anticon,
+.anticon svg {
+  font-size: 14px !important ;
+}
+.ant-comment {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.08);
 }
 .item-desc {
   display: flex;
@@ -2827,23 +2913,27 @@ a:not([href]):not([tabindex]) {
 .commenting-forum {
   width: 70%;
 }
-.ant-drawer-header{
-  background: #383838!important;
-  border-bottom: unset!important;
+.ant-drawer-header {
+  background: #383838 !important;
+  border-bottom: unset !important;
   box-shadow: rgba(255, 255, 255, 0.267);
 }
-.ant-btn > .anticon + span, .ant-btn > span + .anticon, .anticon svg {
+.ant-btn > .anticon + span,
+.ant-btn > span + .anticon,
+.anticon svg {
   font-size: 50px;
 }
-.ant-form-item{
-  color:black!important;
+.ant-form-item {
+  color: black !important;
 }
-.ant-drawer-body,.ant-drawer-footer{
-  background: #333333!important;
-  border-top: unset!important;
+.ant-drawer-body,
+.ant-drawer-footer {
+  background: #333333 !important;
+  border-top: unset !important;
 }
-.ant-drawer-title,.ant-form-item .ant-form-item-label > label{
-  color:white!important;
+.ant-drawer-title,
+.ant-form-item .ant-form-item-label > label {
+  color: white !important;
 }
 @media screen and (max-width: 786px) {
   .thread-create {
@@ -2882,10 +2972,11 @@ a:not([href]):not([tabindex]) {
   }
   .threadexpand-content {
     justify-content: center;
-    align-items: left!important;
+    align-items: left !important;
     width: unset !important;
     padding-top: 8em !important;
     margin-top: 0 !important;
+    margin-left: 0 !important;
   }
 }
 .threadexpand-content {

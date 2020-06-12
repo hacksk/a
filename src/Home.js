@@ -63,13 +63,13 @@ export default class Home extends Component {
     super();
     this.state = {
       persons: [],
-      subthread: []
+      subthread: [],
     };
   }
   componentDidMount() {
     axios
       .get(`https://automoto.techbyheart.in/api/v1/forum/^latest-threads/`)
-      .then(res => {
+      .then((res) => {
         const persons = res.data.data;
         console.log(persons);
 
@@ -92,6 +92,58 @@ export default class Home extends Component {
               ></img>
             </div>
           </div>
+          <div className="news">
+            <Carousel infiniteLoop="true" autoPlay="true">
+              <div>
+                <img alt="" src={require("./assets/news banner 2.png")} />
+                <div className="testcar">
+                  <p style={{ color: "rgba(240, 92, 45, 0.08)" }}>NEWS</p>
+                  <h3 style={{ color: "white" }}>
+                    2020 BMW X5 M Competition review,
+                    <br /> test drive
+                  </h3>
+                  <p style={{ color: "white", fontSize: "13px" }}>
+                    We’ve driven the latest iteration of the BMW X5 M
+                    Competition to find out what to expect
+                    <br /> when this 625hp performance SUV arrives in the Indian
+                    market.
+                  </p>
+                </div>
+              </div>
+              <div>
+                <img alt="" src={require("./assets/Group 324.png")} />
+                <div className="testcar">
+                  <p style={{ color: "rgba(240, 92, 45, 0.08)" }}>NEWS</p>
+                  <h3 style={{ color: "white" }}>
+                    2020 BMW X5 M Competition review,
+                    <br /> test drive
+                  </h3>
+                  <p style={{ color: "white", fontSize: "13px" }}>
+                    We’ve driven the latest iteration of the BMW X5 M
+                    Competition to find out what to expect
+                    <br /> when this 625hp performance SUV arrives in the Indian
+                    market.
+                  </p>
+                </div>
+              </div>
+              <div>
+                <img alt="" src={require("./assets/Group 325.png")} />
+                <div className="testcar">
+                  <p style={{ color: "rgba(240, 92, 45, 0.08)" }}>NEWS</p>
+                  <h3 style={{ color: "white" }}>
+                    2020 BMW X5 M Competition review,
+                    <br /> test drive
+                  </h3>
+                  <p style={{ color: "white", fontSize: "13px" }}>
+                    We’ve driven the latest iteration of the BMW X5 M
+                    Competition to find out what to expect
+                    <br /> when this 625hp performance SUV arrives in the Indian
+                    market.
+                  </p>
+                </div>
+              </div>
+            </Carousel>
+          </div>
           <div className="home-thread">
             <h6>THREADS</h6>
             <Link to="/forum">
@@ -104,12 +156,13 @@ export default class Home extends Component {
               </button>
             </Link>
           </div>
+
           <div
             className="forum-threadtwo"
             style={{
               position: "relative",
               display: "flex",
-              flexDirection: "row"
+              flexDirection: "row",
             }}
           >
             <Forumcontenttwo
@@ -193,58 +246,6 @@ export default class Home extends Component {
                 ></img>
               </div> */}
             </div>
-          </div>
-          <div className="news">
-            <Carousel infiniteLoop="true" autoPlay="true">
-              <div>
-                <img alt="" src={require("./assets/news banner 2.png")} />
-                <div className="testcar">
-                  <p style={{ color: "rgba(240, 92, 45, 0.08)" }}>NEWS</p>
-                  <h3 style={{ color: "white" }}>
-                    2020 BMW X5 M Competition review,
-                    <br /> test drive
-                  </h3>
-                  <p style={{ color: "white", fontSize: "13px" }}>
-                    We’ve driven the latest iteration of the BMW X5 M
-                    Competition to find out what to expect
-                    <br /> when this 625hp performance SUV arrives in the Indian
-                    market.
-                  </p>
-                </div>
-              </div>
-              <div>
-                <img alt="" src={require("./assets/Group 324.png")} />
-                <div className="testcar">
-                  <p style={{ color: "rgba(240, 92, 45, 0.08)" }}>NEWS</p>
-                  <h3 style={{ color: "white" }}>
-                    2020 BMW X5 M Competition review,
-                    <br /> test drive
-                  </h3>
-                  <p style={{ color: "white", fontSize: "13px" }}>
-                    We’ve driven the latest iteration of the BMW X5 M
-                    Competition to find out what to expect
-                    <br /> when this 625hp performance SUV arrives in the Indian
-                    market.
-                  </p>
-                </div>
-              </div>
-              <div>
-                <img alt="" src={require("./assets/Group 325.png")} />
-                <div className="testcar">
-                  <p style={{ color: "rgba(240, 92, 45, 0.08)" }}>NEWS</p>
-                  <h3 style={{ color: "white" }}>
-                    2020 BMW X5 M Competition review,
-                    <br /> test drive
-                  </h3>
-                  <p style={{ color: "white", fontSize: "13px" }}>
-                    We’ve driven the latest iteration of the BMW X5 M
-                    Competition to find out what to expect
-                    <br /> when this 625hp performance SUV arrives in the Indian
-                    market.
-                  </p>
-                </div>
-              </div>
-            </Carousel>
           </div>
 
           <div className="home-content-wrap">
@@ -382,11 +383,16 @@ export default class Home extends Component {
                   src={require("./assets/products/products (8).png")}
                 ></img>
               </div>
-
-              <a href="#explore" className="explore-link ">
-                EXPLORE
-                <FaLongArrowAltRight />
-              </a>
+              <Link to="/products">
+                <button
+                  style={{ border: "none", backgroundColor: "transparent" }}
+                  href="#explore"
+                  className="explore-link "
+                >
+                  EXPLORE
+                  <FaLongArrowAltRight />
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -414,7 +420,7 @@ export default class Home extends Component {
                 Content of Tab Pane 1
               </TabPane>
               <TabPane tab="TRENDING" key="2">
-                {this.state.persons.map(person => (
+                {this.state.persons.map((person) => (
                   <Link to="/forum/thread">
                     <ForumTrending
                       threadprof="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
@@ -464,7 +470,7 @@ export default class Home extends Component {
               rel="noopener noreferrer"
               style={{
                 color: "rgba(255, 255, 255, 0.87)",
-                overflow: "visible"
+                overflow: "visible",
               }}
             >
               POWERED BY TECHBYHEART

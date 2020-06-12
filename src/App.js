@@ -28,7 +28,7 @@ import otp from "./otpVerify";
 import Forumcreate from "./Forum/ForumCreate";
 import ForumList from "./Forum/ForumList";
 import ThreadList from "./Forum/ThreadList";
-import Products from "./Services/Steam/components/ProductHome";
+import ProductExpanded from "./ProductExpanded"
 
 function App() {
   return (
@@ -69,8 +69,9 @@ function App() {
             component={NewsExpanded1}
           />
           <Route exact path="/products" component={ProductHome} />
+          <Route exact path="/products/:product" component={ProductExpanded}/>
           <Route exact path="/signin/verify" component={otp} />
-          <Route exact path="/forumcreate" component={Forumcreate} />
+          <Route exact path="/forum/forumlist/:create" component={Forumcreate} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/forum/forumlist" component={ForumList} />
           <Route exact path="/forum/forumthreadlist" component={ThreadList} />

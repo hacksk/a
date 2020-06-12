@@ -20,8 +20,8 @@ class ProductHome extends Component {
     if (items != null)
       itemList = items.map((item, index) => {
         return (
-          <Link key={index} to={`/product/${item.id}`}>
-            <div className="card" key={item.id}>
+          <Link key={index} to={`/products/${item.id}`}>
+            <div className="card" style={{marginTop:"20vh"}} key={item.id}>
               <div type="primary" className="card-image">
                 <img src={item.img} alt={item.title} />
                 {/* <span className="card-title">{item.title}</span> */}
