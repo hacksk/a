@@ -54,7 +54,7 @@ export const loadAllItems = () => dispatch => {
       });
     });
   } catch (e) {
-    console.log(e);
+    // console.log(e);
   }
 };
 
@@ -78,7 +78,7 @@ export const loadAddedItems = () => dispatch => {
       });
     });
   } catch (e) {
-    console.log(e);
+    // console.log(e);
   }
 };
 
@@ -87,7 +87,7 @@ export const loadProductToCart = () => dispatch => {
   try {
     return axios.get(`${API_URL}/product/`).then(res => {
       let itemList = res.data.map(item => {
-        console.log("itemList");
+        // console.log("itemList");
 
         return {
           id: item.id,
@@ -104,7 +104,7 @@ export const loadProductToCart = () => dispatch => {
       });
     });
   } catch (e) {
-    console.log(e);
+    // console.log(e);
   }
 };
 

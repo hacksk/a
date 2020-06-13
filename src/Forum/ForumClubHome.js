@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const { TabPane } = Tabs;
 
 function callback(key) {
-  console.log(key);
+  // console.log(key);
 }
 
 export default class ForumClubHome extends Component {

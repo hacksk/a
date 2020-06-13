@@ -36,7 +36,7 @@ class Cart extends Component {
     let addedItems =
       this.props.addedItems != null ? (
         this.props.addedItems.map(item => {
-          console.log(item);
+          // console.log(item);
           return (
             <li className="collection-item avatar" key={item.id}>
               <div className="item-img">

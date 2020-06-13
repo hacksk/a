@@ -3,12 +3,10 @@ import { Rate } from "antd";
 import { Popconfirm, message } from "antd";
 
 function confirm(e) {
-  console.log(e);
   message.success("Feedback Submitted");
 }
 
 function cancel(e) {
-  console.log(e);
   message.error("Cancelled");
 }
 

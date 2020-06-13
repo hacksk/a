@@ -9,7 +9,7 @@ import axios from "axios";
 const { TabPane } = Tabs;
 
 function callback(key) {
-  console.log(key);
+  // console.log(key);
 }
 
 export default class ThreadList extends Component {
@@ -26,13 +26,14 @@ export default class ThreadList extends Component {
       .get(`https://automoto.techbyheart.in/api/v1/forum/^latest-threads/`)
       .then((res) => {
         const persons = res.data.data;
-        console.log("data",persons);
+        // console.log("data",persons);
         this.setState({ persons });
       });
   }
   render() {
     return (
       <div className="threadlist" style={{ padding: "8em" }}>
+        <div className="thread-forum-list">
         <div
           className="forum-home-link-forum"
           style={{
@@ -41,7 +42,7 @@ export default class ThreadList extends Component {
             display: "flex",
             justifyContent: "flex-end",
             paddingRight: "5em",
-            paddingTop:"0"
+            paddingTop: "0",
           }}
         >
           <Link to="/forumcreate">
@@ -68,21 +69,27 @@ export default class ThreadList extends Component {
             flexDirection: "row",
           }}
         >
-          <Forumcontenttwo
-            threadimagetwo="https://images.pexels.com/photos/257988/pexels-photo-257988.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-            threadheadtwo="BMW and the Kidney grille - Is a radical design change needed? "
-            threadcontenttwo="BMW Kidney grilles - is an iconic grille design which has been .... "
-          />
-          <Forumcontenttwo
-            threadimagetwo="https://images.pexels.com/photos/88628/pexels-photo-88628.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-            threadheadtwo="Long term ownership review - My Honda City VX CVT  "
-            threadcontenttwo="First things first – let me eat that frog and address the elephant in the room - YES! I’m a big time.... "
-          />
-          <Forumcontenttwo
-            threadimagetwo="https://images.pexels.com/photos/2091351/pexels-photo-2091351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-            threadheadtwo="An impromptu planned trip to Jim Corbett  "
-            threadcontenttwo="Hello all, I would like to thank the mods for accepting my membership request and this is my... "
-          />
+          <Link to="/forum/thread4">
+            <Forumcontenttwo
+              threadimagetwo="https://images.pexels.com/photos/257988/pexels-photo-257988.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              threadheadtwo="BMW and the Kidney grille - Is a radical design change needed? "
+              threadcontenttwo="BMW Kidney grilles - is an iconic grille design which has been .... "
+            />
+          </Link>
+          <Link to="/forum/thread5">
+            <Forumcontenttwo
+              threadimagetwo="https://images.pexels.com/photos/88628/pexels-photo-88628.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              threadheadtwo="Long term ownership review - My Honda City VX CVT  "
+              threadcontenttwo="First things first – let me eat that frog and address the elephant in the room - YES! I’m a big time.... "
+            />
+          </Link>
+          <Link to="/forum/thread6">
+            <Forumcontenttwo
+              threadimagetwo="https://images.pexels.com/photos/2091351/pexels-photo-2091351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              threadheadtwo="An impromptu planned trip to Jim Corbett  "
+              threadcontenttwo="Hello all, I would like to thank the mods for accepting my membership request and this is my... "
+            />
+          </Link>
           <a href="#seeall" className="seeall-forum">
             SEE ALL
           </a>
@@ -97,7 +104,7 @@ export default class ThreadList extends Component {
             borderBottom: "2px solid rgba(255, 255, 255, 0.08)",
           }}
         >
-           {this.state.persons.map((person) => (
+          {this.state.persons.map((person) => (
             <Link to={`/forum/thread/${person.id}`}>
               <Forumcontentone thread={person} />
             </Link>
@@ -153,6 +160,7 @@ export default class ThreadList extends Component {
               </Link> */}
             </TabPane>
           </Tabs>
+        </div>
         </div>
       </div>
     );

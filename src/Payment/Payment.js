@@ -10,7 +10,7 @@ const { TabPane } = Tabs;
 // const { Option } = Select;
 
 function callback(key) {
-  console.log(key);
+  // console.log(key);
 }
 export default class Payment extends Component {
   render() {

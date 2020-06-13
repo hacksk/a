@@ -24,6 +24,9 @@ import ForumHome from "./Forum/ForumHome";
 import Threadexpand from "./Forum/ThreadExpand";
 import Threadtwo from "./Forum/Threadtwo";
 import Threadthree from "./Forum/Threadthree";
+import Threadfour from "./Forum/Threadfour";
+import Threadfive from "./Forum/Threadfive";
+import Threadsix from "./Forum/Threadsix";
 import NewsExpanded1 from "./Forum/NewsExpand1";
 import ProductHome from "./Services/Steam/components/ProductHome";
 import otp from "./otpVerify";
@@ -67,6 +70,10 @@ function App() {
           <Route exact path="/forum/thread1" component={Threadexpand} />
           <Route exact path="/forum/thread2" component={Threadtwo} />
           <Route exact path="/forum/thread3" component={Threadthree} />
+          <Route exact path="/forum/thread4" component={Threadfour} />
+          <Route exact path="/forum/thread5" component={Threadfive} />
+          <Route exact path="/forum/thread6" component={Threadsix} />
+
 
           
           <Route

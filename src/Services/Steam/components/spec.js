@@ -72,7 +72,7 @@ describe('<ReactStripeCheckout />', () => {
       <ReactStripeCheckout {...props} />
     )
     renderedComponent.instance().onScriptLoaded()
-    console.log(configureSpy.calls.length)
+    // console.log(configureSpy.calls.length)
     expect(configureSpy).toHaveBeenCalledWith({key: props.stripeKey})
   })
   it('should pass the `token` function to Stripe', () => {

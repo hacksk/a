@@ -14,10 +14,10 @@ function showConfirm() {
     icon: <ExclamationCircleOutlined />,
     content: "By confirming you are  confirming to our terms of service",
     onOk() {
-      console.log("CONFIRM");
+      // console.log("CONFIRM");
     },
     onCancel() {
-      console.log("CANCEL");
+      // console.log("CANCEL");
     }
   });
 }

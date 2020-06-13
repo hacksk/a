@@ -17,7 +17,6 @@ import axios from "axios";
 const { TabPane } = Tabs;
 
 function callback(key) {
-  console.log(key);
 }
 
 // const { RangePicker } = DatePicker;
@@ -71,7 +70,6 @@ export default class Home extends Component {
       .get(`https://automoto.techbyheart.in/api/v1/forum/^latest-threads/`)
       .then((res) => {
         const persons = res.data.data;
-        console.log(persons);
 
         this.setState({ persons });
       });
@@ -172,21 +170,27 @@ export default class Home extends Component {
               flexDirection: "row",
             }}
           >
-            <Forumcontenttwo
-              threadimagetwo="https://images.pexels.com/photos/257988/pexels-photo-257988.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              threadheadtwo="BMW and the Kidney grille - Is a radical design change needed? "
-              threadcontenttwo="BMW Kidney grilles - is an iconic grille design which has been .... "
-            />
-            <Forumcontenttwo
-              threadimagetwo="https://images.pexels.com/photos/88628/pexels-photo-88628.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              threadheadtwo="Long term ownership review - My Honda City VX CVT  "
-              threadcontenttwo="First things first – let me eat that frog and address the elephant in the room - YES! I’m a big time.... "
-            />
-            <Forumcontenttwo
-              threadimagetwo="https://images.pexels.com/photos/2091351/pexels-photo-2091351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              threadheadtwo="An impromptu planned trip to Jim Corbett  "
-              threadcontenttwo="Hello all, I would like to thank the mods for accepting my membership request and this is my... "
-            />
+            <Link to="/forum/thread4">
+              <Forumcontenttwo
+                threadimagetwo="https://images.pexels.com/photos/257988/pexels-photo-257988.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                threadheadtwo="BMW and the Kidney grille - Is a radical design change needed? "
+                threadcontenttwo="BMW Kidney grilles - is an iconic grille design which has been .... "
+              />
+            </Link>
+            <Link to="/forum/thread5">
+              <Forumcontenttwo
+                threadimagetwo="https://images.pexels.com/photos/88628/pexels-photo-88628.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                threadheadtwo="Long term ownership review - My Honda City VX CVT  "
+                threadcontenttwo="First things first – let me eat that frog and address the elephant in the room - YES! I’m a big time.... "
+              />
+            </Link>
+            <Link to="/forum/thread6">
+              <Forumcontenttwo
+                threadimagetwo="https://images.pexels.com/photos/2091351/pexels-photo-2091351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                threadheadtwo="An impromptu planned trip to Jim Corbett  "
+                threadcontenttwo="Hello all, I would like to thank the mods for accepting my membership request and this is my... "
+              />
+            </Link>
           </div>
           <div className="home-second">
             <div className="home-second-content-wrap">

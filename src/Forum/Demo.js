@@ -88,7 +88,7 @@ class Demo extends React.Component {
         });
       })
       .catch(error => {
-        console.log("adding error", error.response.data);
+        // console.log("adding error", error.response.data);
       })
       .finally(() => {
         this.setState({

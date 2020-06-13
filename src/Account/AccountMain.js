@@ -8,7 +8,7 @@ import AccountRewards from "./AccountReward";
 const { TabPane } = Tabs;
 
 function callback(key) {
-  console.log(key);
+  // console.log(key);
 }
 
 class AccountMain extends Component {

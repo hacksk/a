@@ -90,11 +90,11 @@ class SignupForm extends Component {
         dob: dob,
       })
       .then((res) => {
-        console.log("sign up res", res);
-        console.log(res.data);
+        // console.log("sign up res", res);
+        // console.log(res.data);
       })
       .catch((error) => {
-        console.log("registration error", error.response.data);
+        // console.log("registration error", error.response.data);
       });
       message.info('Please Click Continue to Sign In');
 

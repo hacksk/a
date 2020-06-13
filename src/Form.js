@@ -24,7 +24,7 @@ export default class Home extends Component {
         this.props.handleLogout();
       })
       .catch(error => {
-        console.log("logout error", error);
+        // console.log("logout error", error);
       });
   }
 

@@ -48,7 +48,8 @@ export default class ForumCreate extends Component {
         console.log(res);
         this.props.history.push("/forum");
       })
-      .catch((e) => console.log(e));
+      // .catch((e) =>
+      //  console.log(e));
   };
   render() {
     return (

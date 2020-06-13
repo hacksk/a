@@ -28,7 +28,7 @@ export default class NewsExpanded extends Component {
         const thread = threads.find(
           x => x.id == this.props.match.params.content
         );
-        console.log(thread);
+        // console.log(thread);
         this.setState({ thread });
       });
   }

@@ -16,7 +16,7 @@ export default class ForumList extends Component {
       .then(res => {
         const forums = res.data.data;
         this.setState({ forums });
-        console.log(forums);
+        // console.log(forums);
       });
   }
   render() {
