@@ -19,41 +19,56 @@ export default class ThreadExpand extends Component {
             </div>
             <p style={{ color: "rgba(255, 255, 255, 0.38)" }}>1 hour ago</p>
           </div>
-          <h5>
-            Toyota RAV4 Fuel Economy: What Kind of MPG Does it Get in the Real
-            World?
-          </h5>
+          <h5>2020 BMW X5 M Competition review</h5>
           <img
             alt="Thread"
-            src="https://images.pexels.com/photos/1149137/pexels-photo-1149137.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            src={require("../assets/news banner 2.png")}
           ></img>
           <p>
-            The Toyota RAV4 achieves competitive fuel economy in its segment—if
-            you look at the EPA numbers. But as we know, these figures don't
-            always reflect real-world driving. So how efficient is the RAV4
-            really? We conducted our own fuel economy test to find out.
+            The BMW X5 M Competition has so much going for it, it’s a bit like a
+            car designed via a focus group. It’s spacious, practical, has a
+            lovely cabin, great infotainment and is fast yet comfy. Oh, this
+            focus group all live in Monaco, by the way. Yep, the X5 M
+            Competition is watery-eye expensive. More than £100,000 expensive.
+            It isn’t alone, however, because it competes with other blisteringly
+            quick large SUVs such as the Mercedes-AMG GLE 63 and Porsche
+            Cayenne, which aren’t exactly budget cars. You can’t be the shy and
+            retiring type to own an X5 M Competition, with its gaping black
+            grille, huge air intakes, huge wheels, large exhausts and vivid
+            unique paint colours helping it stand out over the standard X5. And,
+            if by some miracle you’d missed the exterior, the X5 M Competition’s
+            interior is every bit as in-your-face. Think seriously
+            figure-hugging seats with quilted stitching, aluminium trim, sports
+            pedals and ambient lighting. Of course, there’s the chance to up the
+            ante with BMW’s options list, but a superb fit and finish are
+            standard.
           </p>
           <br />
           <p>
-            The 2019 Toyota RAV4 AWD in our long-term fleet is EPA-rated at
-            25/33/28 mpg city/highway/combined. But we recorded a much better
-            highway number, which bumped up the RAV4's combined rating by a
-            considerable margin. Our Real MPG results came in at 24.2/39.1/29.2
-            mpg, making the RAV4 more efficient than our long-term 2017 Honda
-            CR-V Touring AWD, which scored 21.9/34.2/26.1 mpg. Pretty
-            impressive.
+            One thing that stays the same versus stand X5s is the infotainment
+            system, although it’s one of the best in the business. It’s BMW’s
+            top-end Professional system, which gets a 12-inch screen that can be
+            controlled by touch, a rotary dial between the front seats or even a
+            very good voice control system. It also gets Apple CarPlay as
+            standard (with Android Auto to follow in time), although you’ll have
+            to pay for it beyond year one and Mercedes’ digital dials are more
+            visually impressive and configurable than the ones you get as
+            standard in the BMW.
           </p>
           <img
             alt="Thread"
-            src="https://images.pexels.com/photos/1149140/pexels-photo-1149140.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            src="https://images.pexels.com/photos/707046/pexels-photo-707046.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
           ></img>
           <p>
-            "[In] Sport mode with traction control and stability control off
-            (and truly off, by the way), it doesn't mind blending the braking
-            into cornering, even sliding a bit, with good yaw control," he
-            noted. "The steering isn't very talkative, but it does make the RAV4
-            go where it's asked to. Overall, it's a fun little Run About
-            Vehicle."
+            As such, in town, this big SUV doesn’t feel quite so nimble, but on
+            the motorway it’ll breeze down slip roads and overtake faster-moving
+            traffic with a simple twitch of the right foot, all the while
+            remaining more comfortable and quiet than it has any right to be
+            given its sporty intentions. It all sounds great, but it’s worth
+            bearing in mind that the also-V8 BMW X5 M 50i model does 90% of what
+            this M Competition model can do while being vastly cheaper. However,
+            if you have the budget and the need for the pinnacle of BMW SUVs,
+            then the X5 M Competition will satisfy and then some.
             <br /> <br />
             Although it's engaging around the figure eight, we have a few
             reservations about the RAV4's overall driving dynamics. The
@@ -62,7 +77,6 @@ export default class ThreadExpand extends Component {
             the engine. We also prefer the CR-V's smoother ride, which is one of
             the reasons the Honda won our recent compact SUV comparison.
           </p>
-          <Demo />
         </div>
       </div>
     );

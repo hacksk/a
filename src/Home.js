@@ -94,54 +94,61 @@ export default class Home extends Component {
           </div>
           <div className="news">
             <Carousel infiniteLoop="true" autoPlay="true">
-              <div>
-                <img alt="" src={require("./assets/news banner 2.png")} />
-                <div className="testcar">
-                  <p style={{ color: "rgba(240, 92, 45, 0.08)" }}>NEWS</p>
-                  <h3 style={{ color: "white" }}>
-                    2020 BMW X5 M Competition review,
-                    <br /> test drive
-                  </h3>
-                  <p style={{ color: "white", fontSize: "13px" }}>
-                    We’ve driven the latest iteration of the BMW X5 M
-                    Competition to find out what to expect
-                    <br /> when this 625hp performance SUV arrives in the Indian
-                    market.
-                  </p>
+              <Link to="/forum/thread1">
+                <div>
+                  <img alt="" src={require("./assets/news banner 2.png")} />
+                  <div className="testcar">
+                    <p style={{ color: "rgba(240, 92, 45, 0.08)" }}>NEWS</p>
+                    <h3 style={{ color: "white" }}>
+                      2020 BMW X5 M Competition review,
+                      <br /> test drive
+                    </h3>
+                    <p style={{ color: "white", fontSize: "13px" }}>
+                      We’ve driven the latest iteration of the BMW X5 M
+                      Competition to find out what to expect
+                      <br /> when this 625hp performance SUV arrives in the
+                      Indian market.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div>
-                <img alt="" src={require("./assets/Group 324.png")} />
-                <div className="testcar">
-                  <p style={{ color: "rgba(240, 92, 45, 0.08)" }}>NEWS</p>
-                  <h3 style={{ color: "white" }}>
-                    2020 BMW X5 M Competition review,
-                    <br /> test drive
-                  </h3>
-                  <p style={{ color: "white", fontSize: "13px" }}>
-                    We’ve driven the latest iteration of the BMW X5 M
-                    Competition to find out what to expect
-                    <br /> when this 625hp performance SUV arrives in the Indian
-                    market.
-                  </p>
+              </Link>
+              <Link to="/forum/thread2">
+                <div>
+                  <img alt="" src={require("./assets/Group 324.png")} />
+                  <div className="testcar">
+                    <p style={{ color: "rgba(240, 92, 45, 0.08)" }}>NEWS</p>
+                    <h3 style={{ color: "white" }}>
+                      Skoda Octavia VRS Review,
+                      <br /> test drive
+                    </h3>
+                    <p style={{ color: "white", fontSize: "13px" }}>
+                      The Skoda Octavia vRS blends the standard Octavia’s
+                      practical, well-built interior with a powerful engine and
+                      sportier driving characteristics
+                      <br /> That said, other hot hatches are more exciting .
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div>
-                <img alt="" src={require("./assets/Group 325.png")} />
-                <div className="testcar">
-                  <p style={{ color: "rgba(240, 92, 45, 0.08)" }}>NEWS</p>
-                  <h3 style={{ color: "white" }}>
-                    2020 BMW X5 M Competition review,
-                    <br /> test drive
-                  </h3>
-                  <p style={{ color: "white", fontSize: "13px" }}>
-                    We’ve driven the latest iteration of the BMW X5 M
-                    Competition to find out what to expect
-                    <br /> when this 625hp performance SUV arrives in the Indian
-                    market.
-                  </p>
+              </Link>
+              <Link to="/forum/thread3">
+                <div>
+                  <img alt="" src={require("./assets/Group 325.png")} />
+                  <div className="testcar">
+                    <p style={{ color: "rgba(240, 92, 45, 0.08)" }}>NEWS</p>
+                    <h3 style={{ color: "white" }}>
+                      Dacia Duster Review ,
+                      <br /> test drive
+                    </h3>
+                    <p style={{ color: "white", fontSize: "13px" }}>
+                      The Dacia Duster is an exceptionally affordable SUV that’s
+                      more spacious than most alternatives but entry-level
+                      models come with barely any equipment at all
+                      <br /> when this 625hp performance SUV arrives in the
+                      Indian market.
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </Carousel>
           </div>
           <div className="home-thread">
@@ -420,8 +427,8 @@ export default class Home extends Component {
                 Content of Tab Pane 1
               </TabPane>
               <TabPane tab="TRENDING" key="2">
-              {this.state.persons.map((person) => (
-                <Link to={`/forum/thread/${person.id}`}>
+                {this.state.persons.map((person) => (
+                  <Link to={`/forum/thread/${person.id}`}>
                     <ForumTrending
                       threadprof="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
                       trendinghead={person.title}

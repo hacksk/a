@@ -22,6 +22,8 @@ import BottomNavbar from "./BottomNavbar";
 import Header from "./HeaderCustomer";
 import ForumHome from "./Forum/ForumHome";
 import Threadexpand from "./Forum/ThreadExpand";
+import Threadtwo from "./Forum/Threadtwo";
+import Threadthree from "./Forum/Threadthree";
 import NewsExpanded1 from "./Forum/NewsExpand1";
 import ProductHome from "./Services/Steam/components/ProductHome";
 import otp from "./otpVerify";
@@ -62,7 +64,11 @@ function App() {
           <Route exact path="/inventory" component={Inventory} />
           <Route exact path="/bill/payment" component={Payment} />
           <Route exact path="/forum" component={ForumHome} />
-          <Route exact path="/forum/thread" component={Threadexpand} />
+          <Route exact path="/forum/thread1" component={Threadexpand} />
+          <Route exact path="/forum/thread2" component={Threadtwo} />
+          <Route exact path="/forum/thread3" component={Threadthree} />
+
+          
           <Route
             exact
             path="/forum/thread/:content"
