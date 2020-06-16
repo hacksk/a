@@ -12,7 +12,7 @@ export default class ForumList extends Component {
 
   componentDidMount() {
     axios
-      .get(`https://automoto.techbyheart.in/api/v1/forum/^list`)
+      .get(`https://automoto.techbyheart.in/api/v1/forum/list/`)
       .then(res => {
         const forums = res.data.data;
         this.setState({ forums });

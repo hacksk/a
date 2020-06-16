@@ -1,34 +1,60 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Spin, Space } from "antd";
-import Demo from "./Demo";
+import { Spin, Space,Popover } from "antd";
+import ForumComment from "./ForumComment";
 import ReactPlayer from "react-player";
-import { AiOutlineLike } from "react-icons/ai";
+import { MdMoreVert } from "react-icons/md";
+import { Link } from "react-router-dom";
 
-// import ForumTrending from "./ForumTrendingThread";
-// import Demo from "./Demo";
+const URL = "https://automoto.techbyheart.in/api/v1/forum";
+const content = (id) => (
+  <div>
+    <button
+      onClick={(e) => {
+        e.stopPropagation();
+        axios
+          .post(`${URL}/delete-thread/${id}/`)
+          .then((res) => {
+            console.log(res.data);
+            console.log(id);
+          })
+          .catch((e) => console.log(e));
+      }}
+    >
+      Delete
+    </button>
+    <Link to={`/forum/content/${id}`}>
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          console.log("edit");
+          // Do the edit operation
+        }}
+      >
+        Edit
+      </button>
+    </Link>
+  </div>
+);
+
 
 export default class NewsExpanded extends Component {
-  state = {
-    thread: null,
-    count: 0
-  };
-  incrementLike = () => {
-    let newCount = this.state.count + 1;
-    this.setState({
-      count: newCount
-    });
-  };
+ 
+    state = {
+      thread: null,
+      count: 0,
+    };
+
+
 
   componentDidMount() {
     axios
-      .get(`https://automoto.techbyheart.in/api/v1/forum/^latest-threads/`)
-      .then(res => {
+      .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
+      .then((res) => {
         const threads = res.data.data;
         const thread = threads.find(
-          x => x.id == this.props.match.params.content
+          (x) => x.id == this.props.match.params.content
         );
-        // console.log(thread);
         this.setState({ thread });
       });
   }
@@ -36,7 +62,24 @@ export default class NewsExpanded extends Component {
     if (this.state.thread != null) {
       return (
         <div className="threadexpand">
-          <div className="threadexpand-content">
+          <div className="threadexpand-content" style={{position:"relative"}}>
+            <div className="forum-more-container">
+                <div
+                  className="forum-more"
+                  style={{
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Popover
+                    placement="bottomRight"
+                    content={() => content(this.state.thread.id)}
+                    trigger="click"
+                  >
+                    <MdMoreVert />
+                  </Popover>
+                </div>
+            </div>
             <div className="thread-profile-header">
               <div style={{ display: "flex", flexDirection: "row" }}>
                 <img
@@ -65,7 +108,7 @@ export default class NewsExpanded extends Component {
             </button> */}
             {/* <button style={{color:"black"}} onClick={this.incrementLike}>Likes:{this.state.count}</button> */}
             <br />
-            <Demo
+            <ForumComment
               thresdId={this.state.thread.id}
               comments={this.state.thread.comment}
             />
@@ -74,7 +117,14 @@ export default class NewsExpanded extends Component {
       );
     } else
       return (
-        <div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            paddingTop: "10vh",
+          }}
+        >
           <Space size="middle">
             <Spin size="large" />
           </Space>

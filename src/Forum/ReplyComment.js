@@ -6,6 +6,7 @@ const { TextArea } = Input;
 
 const CommentList = ({ comments }) => (
   <List
+  
     dataSource={comments}
     header={`${comments.length} ${comments.length > 1 ? "replies" : "reply"}`}
     itemLayout="horizontal"
@@ -38,7 +39,7 @@ const Editor = ({ onChange, onSubmit, submitting, value }) => (
   </div>
 );
 
-class Demo extends React.Component {
+class ReplyComment extends React.Component {
   constructor(props) {
     super(props);
 
@@ -65,7 +66,7 @@ class Demo extends React.Component {
 
     axios
       .post(
-        `https://automoto.techbyheart.in/api/v1/forum/comment/${this.props.thresdId}/`,
+        `https://automoto.techbyheart.in/api/v1/forum/reply/${this.props.thresdId}/`,
         {
           content: this.state.value
         }
@@ -88,7 +89,7 @@ class Demo extends React.Component {
         });
       })
       .catch(error => {
-        // console.log("adding error", error.response.data);
+        console.log("adding error", error.response.data);
       })
       .finally(() => {
         this.setState({
@@ -112,7 +113,7 @@ class Demo extends React.Component {
 
     return (
       <div className="commenting-forum">
-        {comments.length > 0 && <CommentList comments={comments} />}
+        {/* {comments.length > 0 && <CommentList comments={comments} />} */}
         <Comment
           avatar={
             <Avatar
@@ -138,4 +139,4 @@ class Demo extends React.Component {
   }
 }
 
-export default Demo;
+export default ReplyComment;

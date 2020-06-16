@@ -58,7 +58,7 @@ class SignIn extends Component {
             type="text"
             name="phone"
             value={this.state.phone}
-            placeholder="Mobile Number"
+            placeholder="Mobile Number(+91)"
             onChange={this.handleChange}
             required
           />

@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Spin, Space,Popover } from "antd";
 
 
-export default class ForumCreate extends Component {
+export default class EditThread extends Component {
   constructor(props) {
     super(props);
 
@@ -10,7 +11,8 @@ export default class ForumCreate extends Component {
       title: "",
       content: "",
       header_image: "",
-      video_url:""
+      video_url: "",
+      thread:null
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,7 +27,8 @@ export default class ForumCreate extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const threadId = this.props.match.params.create;
+    const threadId = this.props.match.params.edit;
+    console.log(threadId);
 
     const formData = new FormData();
     formData.append("title", this.state.title);
@@ -40,18 +43,32 @@ export default class ForumCreate extends Component {
 
     axios
       .post(
-        `https://automoto.techbyheart.in/api/v1/forum/thread/create/${threadId}/`,
+        `https://automoto.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
         formData
       )
       .then((res) => {
         this.props.history.push("/forum");
-      })
-      // .catch((e) =>
-      //  console.log(e));
+      });
+    // .catch((e) =>
+    //  console.log(e));
   };
+  componentDidMount() {
+    axios
+      .get(`https://automoto.techbyheart.in/api/v1/forum/thread-list/`)
+      .then((res) => {
+        const threads = res.data.data;
+        const thread = threads.find(
+          (x) => x.id == this.props.match.params.edit
+        );
+        this.setState({ thread });
+        console.log(thread)
+      });
+  }
   render() {
+    if (this.state.thread != null) {
+
     return (
-      <div className="thread-create" style={{ padding: "8em",height:"auto" }}>
+      <div className="thread-create" style={{ padding: "8em", height: "auto" }}>
         <form onSubmit={this.handleSubmit}>
           <div
             style={{
@@ -60,21 +77,20 @@ export default class ForumCreate extends Component {
               color: "rgba(255, 255, 255, 0.87)",
             }}
           >
-            <p>Give a short thread title</p>
-
+            <p>Change the thread title</p>
             <div
               className="thread-create-field"
               style={{
                 borderBottom: "1px solid rgba(255, 255, 255, 0.08",
                 paddingBottom: "3em",
-                paddingTop: "3em",
               }}
             >
-              <input
+              <textarea
                 className="thread-create-title"
                 style={{
                   backgroundColor: "rgba(255, 255, 255, 0.08)",
                   color: "white",
+                  height:"7vh",
                   border: "none",
                   padding: "1em",
                   borderRadius: "8px",
@@ -84,7 +100,9 @@ export default class ForumCreate extends Component {
                 onChange={this.handleChange}
                 name="title"
                 type="text"
-              ></input>
+              >
+                {this.state.thread.title}
+              </textarea>
               <div
                 className="thread-create-imagefield"
                 style={{
@@ -95,8 +113,8 @@ export default class ForumCreate extends Component {
                   marginTop: "3em",
                 }}
               >
-                {" "}
-                <p>Upload header image*</p>
+                
+                <p>Change header image*</p>
                 <input
                   className="thread-create-upload"
                   type="file"
@@ -110,8 +128,8 @@ export default class ForumCreate extends Component {
             </div>
             <div>
               <p>Share Video URL</p>
-              <input
-               name="video_url"
+              <textarea
+                name="video_url"
                 type="link"
                 style={{
                   backgroundColor: "rgba(255, 255, 255, 0.08)",
@@ -120,11 +138,13 @@ export default class ForumCreate extends Component {
                   padding: "1em",
                   borderRadius: "8px",
                   width: "24em",
+                  height:"7vh"
                 }}
                 placeholder="Video Link"
                 onChange={this.handleChange}
-               
-              ></input>
+              >
+                {this.state.thread.video_url}
+              </textarea>
             </div>
             <div
               style={{
@@ -151,15 +171,30 @@ export default class ForumCreate extends Component {
                   rows="4"
                   cols="50"
                   onChange={this.handleChange}
-                ></textarea>
+                >{this.state.thread.content}</textarea>
               </div>
             </div>
             <button type="submit" className="create-forum-button">
-              CREATE THREAD
+              EDIT THREAD
             </button>
           </div>
         </form>
       </div>
-    );
+      );
+      } else
+      return (
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            paddingTop: "10vh",
+          }}
+        >
+          <Space size="middle">
+            <Spin size="large" />
+          </Space>
+        </div>
+      );
   }
 }

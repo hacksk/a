@@ -734,7 +734,22 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 /* STYLES FOR SIGNUP */
+.ant-collapse-borderless {
+  background: transparent !important;
+}
+.ant-collapse-borderless > .ant-collapse-item:last-child,
+.ant-collapse-borderless > .ant-collapse-item:last-child .ant-collapse-header {
+  color: #f05c2d !important;
+  border: none !important;
+}
+.ant-comment {
+}
 
+.ant-form-item .ant-mentions,
+.ant-form-item textarea.ant-input {
+  border-radius: 8px !important;
+  border-color: transparent;
+}
 /* STYLES FOR SIGNIN */
 
 .signin {
@@ -1021,7 +1036,18 @@ body {
 }
 .ant-popover-inner-content {
   color: white !important;
-  height: 30vh;
+  height: 40vh;
+  padding: 1vh 0 0 0 !important;
+}
+.ant-popover-inner-content button {
+  width: 100% !important;
+  cursor: pointer;
+  border: none;
+  color: white;
+  background: transparent;
+}
+.ant-popover-inner-content button:hover {
+  background: rgba(240, 92, 45, 0.8) !important;
 }
 .ant-popover-inner {
   border-radius: 10px !important;
@@ -1379,9 +1405,7 @@ body {
   margin-left: unset !important;
   text-align: start !important;
 }
-.carousel .thumbs {
-  /* display: none !important; */
-}
+
 .home-content-wrap {
   margin: 8em;
   margin-bottom: 52px;
@@ -1449,7 +1473,7 @@ body {
   padding-top: 4vh;
   padding-left: 2.5vh;
   padding-right: 2.5vh;
-  width: 29.86vh;
+  width: 31.86vh;
   cursor: pointer;
 }
 
@@ -1964,19 +1988,25 @@ body {
 .carousel .thumbs-wrapper {
   display: none !important;
 }
+.trending-thread-content {
+  text-overflow: ellipsis;
+  white-space: wrap;
+  overflow: hidden;
+  max-width: 90vh;
+}
 .trending-thread p {
   height: 9vh;
   line-height: 20px;
   width: 90%;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
 }
 .forum-timing {
   text-align: right;
 }
 
 @media screen and (max-width: 786px) {
+  .trending-thread-content{
+    width:30vh!important;
+  }
   .head-icons {
     margin-bottom: 1vh;
   }
@@ -2089,7 +2119,7 @@ body {
     justify-content: space-around !important;
   }
   .head-icons img {
-    width: 13em !important;
+    width: 12em !important;
   }
   .home-content-part1 {
     padding-top: 0;
@@ -2107,7 +2137,7 @@ body {
     padding-top: 52px;
   }
   .home-content-part1 img {
-    width: 12em;
+    width: 10em;
     padding-left: 0.5em;
     padding-right: 0.5em;
   }
@@ -2484,19 +2514,37 @@ button.StripeCheckout {
   width: 18% !important;
   margin-left: 140vh !important;
 }
+.forum-more-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 @media screen and (max-width: 786px) {
   .ant-space-align-center {
     margin-top: 10vh;
+  }
+  .forum-more-container {
+    top: 10vh;
+    right: 0vh;
+  }
+  .ant-popover-inner {
+    height: 9vh !important;
   }
   .ant-picker-panel-container {
     margin-left: 2vh !important;
     width: 60% !important;
   }
-
+  .forum-home {
+    padding-top: 16vh;
+  }
+  .forum-home-thread {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: wrap;
+  }
   .forum-home-thread p {
     height: 9vh;
-    overflow: hidden;
-    line-height: 10px;
+    line-height: 1.8;
   }
   .forum-home-thread h5 {
     font-size: 15px !important;
@@ -2555,8 +2603,8 @@ button.StripeCheckout {
 }
 .seeall-forum {
   position: absolute;
-  bottom: 1em;
-  right: 2em;
+  bottom: 0!important;
+  right: 0!important;
   color: #f05c2d !important;
   font-family: Montserrat;
   font-weight: 600;
@@ -2598,6 +2646,18 @@ button.StripeCheckout {
 .forum-home-thread:hover {
   background-color: #1b1b1b;
 }
+
+.forum-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: #7d7d7d;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
 .ant-upload-list-picture .ant-upload-list-item,
 .ant-upload-list-picture-card .ant-upload-list-item {
   border: solid 1px #fc5c2d;
@@ -2608,15 +2668,25 @@ button.StripeCheckout {
   border-top: 2px solid rgba(255, 255, 255, 0.08);
   padding-bottom: 52px;
   padding-top: 3em;
-  margin-left: 10em;
 }
+.forum-home-thread-square {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
+}
+.forum-home-thread-square:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+  cursor: pointer !important;
+}
+
 .content-home .forum-threadtwo {
   border-top: unset !important;
   margin: 5em !important;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
-  margin-left: 8em !important;
-  margin-right: 2em !important;
+  margin-right: 5em !important;
 }
 .home-thread {
   border-bottom: 1px solid #1e1e1e;
@@ -2654,18 +2724,24 @@ a:not([href]):not([tabindex]) {
 .forum-home-thread-square {
   border-radius: 8px;
   background-color: #1b1b1b;
-  width: 80%;
+  min-width: 30vh;
+  width: 45vh;
   min-height: 45vh;
   height: 45vh;
   position: relative;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.forum-home-thread-square p {
+.forum-home-thread-square-textbox p {
+  white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 .forum-home-thread-square img {
-  max-width: 100%;
-  border-radius: 8px;
+  max-width: 45vh;
+  border-radius: 8px 0 0 0;
   min-height: 30vh;
 }
 .trending-thread {
@@ -2736,18 +2812,11 @@ a:not([href]):not([tabindex]) {
   font-weight: bold;
   font-size: 16px;
 }
-.forum-more {
-  font-size: 30px;
-  color: #7d7d7d;
-  cursor: pointer;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-}
+
 .ant-popover-inner {
   width: 15vh;
   height: 8vh;
-  background: #333333 !important;
+  background: #383838 !important;
   color: white !important;
   box-shadow: 0px 9px 46px rgba(0, 0, 0, 0.12),
     0px 24px 38px rgba(0, 0, 0, 0.14), 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -2757,6 +2826,11 @@ a:not([href]):not([tabindex]) {
 }
 .forum-video iframe {
   border-radius: 8px;
+  height: 45vh;
+}
+.forum-video {
+  height: auto !important;
+  object-fit: cover !important;
 }
 .ant-popover-title {
   border-bottom: unset !important;
@@ -2767,7 +2841,9 @@ a:not([href]):not([tabindex]) {
 }
 .forum-more:hover {
   color: #e4e4e4;
-  background-color: rgba(255, 255, 255, 0.1);
+}
+.forumcontentone{
+  position: relative;
 }
 @media screen and (max-width: 786px) {
   .ant-comment-actions > li > span,
@@ -2792,8 +2868,11 @@ a:not([href]):not([tabindex]) {
     margin-right: 0 !important;
     margin-top: 0 !important;
   }
-   .forum-threadtwo {
+
+  .forum-threadtwo {
     padding-top: 0 !important;
+    margin: 2vh !important;
+    margin-left: 2vh;
   }
   .forum-threadtwo {
     flex-direction: column !important;
@@ -2804,7 +2883,7 @@ a:not([href]):not([tabindex]) {
     padding-top: 0 !important;
   }
   .forum-home-thread-square {
-    width: 100%;
+    width: 44vh;
     margin-top: 1em;
     min-height: unset;
   }
@@ -2905,6 +2984,18 @@ a:not([href]):not([tabindex]) {
     height: 10vh !important;
   }
 }
+.banner-image {
+  height: auto;
+  width: 100%;
+  max-height: 50vh;
+  object-fit: cover;
+}
+.home-banner {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 /* .ant-comment-content-author{
   display: flex!important;
   justify-content: space-b!important;
@@ -3181,4 +3272,7 @@ a:not([href]):not([tabindex]) {
 }
 .ant-spin-dot-item {
   background-color: #fc5c2d !important;
+}
+.carousel.carousel-slider {
+  border-radius: 8px;
 }

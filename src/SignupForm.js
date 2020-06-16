@@ -2,10 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
-import Accountupload from "./Account/PicturesWall";
+// import Accountupload from "./Account/PicturesWall";
 import { API_URL } from "./actions/urlConfig";
-import { Link } from "react-router-dom";
-import { message, Button } from 'antd';
 
 
 class SignupForm extends Component {
@@ -90,13 +88,11 @@ class SignupForm extends Component {
         dob: dob,
       })
       .then((res) => {
-        // console.log("sign up res", res);
-        // console.log(res.data);
+          this.props.history.push("/signin");
       })
       .catch((error) => {
         // console.log("registration error", error.response.data);
       });
-      message.info('Please Click Continue to Sign In');
 
   }
 
@@ -201,22 +197,6 @@ class SignupForm extends Component {
                 >
                   Submit
                 </button>
-                <Link to="/signin">
-                  <button
-                    style={{
-                      color: "white",
-                      background:
-                        "transparent",
-                      marginTop: "2em",
-                      borderBottom:"white 1px solid",
-                      height: "6vh",
-                      border: "none",
-                      width:"15vh"
-                    }}
-                  >
-                    Continue
-                  </button>
-                </Link>
               </div> 
              </AliceCarousel>
           </form>

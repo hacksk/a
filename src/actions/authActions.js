@@ -2,7 +2,7 @@ import axios from "axios";
 import { SET_ERRORS } from "./commonActionType";
 import { API_URL } from "./urlConfig";
 import setAuthToken from "./utils/setAuthToken";
-import { message, Button } from "antd";
+import { message } from "antd";
 
 export const SEND_OTP_SET_NUMBER = "SEND_OTP_SET_NUMBER";
 export const SET_USERDATA = "SET_USERDATA";
@@ -23,6 +23,7 @@ export const sendOtp = (phone) => (dispatch) => {
         payload: err.response.data,
       })
     );
+    message.info('Make sure you have added +91');
 };
 
 // OTP - Verify OTP
@@ -53,6 +54,7 @@ export const verifyOtp = (otp) => (dispatch, getState) => {
         payload: err.response.data,
       })
     );
+
 };
 
 // Set logged in user
@@ -73,5 +75,4 @@ export const signOut = () => (dispatch) => {
 
   // Set current user to {} which will set isAuthenticated to false
   dispatch(setCurrentUser({}));
-  message.info("You have been Logged Out");
 };

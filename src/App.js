@@ -22,18 +22,15 @@ import BottomNavbar from "./BottomNavbar";
 import Header from "./HeaderCustomer";
 import ForumHome from "./Forum/ForumHome";
 import Threadexpand from "./Forum/ThreadExpand";
-import Threadtwo from "./Forum/Threadtwo";
-import Threadthree from "./Forum/Threadthree";
-import Threadfour from "./Forum/Threadfour";
-import Threadfive from "./Forum/Threadfive";
-import Threadsix from "./Forum/Threadsix";
 import NewsExpanded1 from "./Forum/NewsExpand1";
 import ProductHome from "./Services/Steam/components/ProductHome";
 import otp from "./otpVerify";
 import Forumcreate from "./Forum/ForumCreate";
 import ForumList from "./Forum/ForumList";
 import ThreadList from "./Forum/ThreadList";
-import ProductExpanded from "./ProductExpanded"
+import ProductExpanded from "./ProductExpanded";
+import EditThread from "./Forum/EditThread";
+import Avatar from "./Forum/Avatar"
 
 function App() {
   return (
@@ -67,15 +64,7 @@ function App() {
           <Route exact path="/inventory" component={Inventory} />
           <Route exact path="/bill/payment" component={Payment} />
           <Route exact path="/forum" component={ForumHome} />
-          <Route exact path="/forum/thread1" component={Threadexpand} />
-          <Route exact path="/forum/thread2" component={Threadtwo} />
-          <Route exact path="/forum/thread3" component={Threadthree} />
-          <Route exact path="/forum/thread4" component={Threadfour} />
-          <Route exact path="/forum/thread5" component={Threadfive} />
-          <Route exact path="/forum/thread6" component={Threadsix} />
-
-
-          
+          <Route exact path="/forum/thread1" component={Threadexpand} />   
           <Route
             exact
             path="/forum/thread/:content"
@@ -88,6 +77,8 @@ function App() {
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/forum/forumlist" component={ForumList} />
           <Route exact path="/forum/forumthreadlist" component={ThreadList} />
+          <Route exact path="/forum/content/:edit" component={EditThread}/>
+          <Route exact path="/antdcheck" component={Avatar}/>
         </Switch>
         <BottomNavbar />
       </BrowserRouter>

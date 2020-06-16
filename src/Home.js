@@ -12,12 +12,12 @@ import Forumcontenttwo from "./Forum/ForumContentTwo";
 import { Tabs } from "antd";
 // import { DatePicker } from "antd";
 import ForumTrending from "./Forum/ForumTrendingThread";
+import Banner from "./Forum/Banner";
 import axios from "axios";
 
 const { TabPane } = Tabs;
 
-function callback(key) {
-}
+function callback(key) {}
 
 // const { RangePicker } = DatePicker;
 
@@ -67,12 +67,14 @@ export default class Home extends Component {
   }
   componentDidMount() {
     axios
-      .get(`https://automoto.techbyheart.in/api/v1/forum/^latest-threads/`)
+      .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
       .then((res) => {
-        const persons = res.data.data;
-
+        const persons = res.data.data.slice(1, 4);
+        const subthread = res.data.data.slice(1, 4);
         this.setState({ persons });
+        this.setState({ subthread });
       });
+    window.scrollTo(0, 0);
   }
   render() {
     return (
@@ -92,61 +94,11 @@ export default class Home extends Component {
           </div>
           <div className="news">
             <Carousel infiniteLoop="true" autoPlay="true">
-              <Link to="/forum/thread1">
-                <div>
-                  <img alt="" src={require("./assets/news banner 2.png")} />
-                  <div className="testcar">
-                    <p style={{ color: "rgba(240, 92, 45, 0.08)" }}>NEWS</p>
-                    <h3 style={{ color: "white" }}>
-                      2020 BMW X5 M Competition review,
-                      <br /> test drive
-                    </h3>
-                    <p style={{ color: "white", fontSize: "13px" }}>
-                      We’ve driven the latest iteration of the BMW X5 M
-                      Competition to find out what to expect
-                      <br /> when this 625hp performance SUV arrives in the
-                      Indian market.
-                    </p>
-                  </div>
-                </div>
-              </Link>
-              <Link to="/forum/thread2">
-                <div>
-                  <img alt="" src={require("./assets/Group 324.png")} />
-                  <div className="testcar">
-                    <p style={{ color: "rgba(240, 92, 45, 0.08)" }}>NEWS</p>
-                    <h3 style={{ color: "white" }}>
-                      Skoda Octavia VRS Review,
-                      <br /> test drive
-                    </h3>
-                    <p style={{ color: "white", fontSize: "13px" }}>
-                      The Skoda Octavia vRS blends the standard Octavia’s
-                      practical, well-built interior with a powerful engine and
-                      sportier driving characteristics
-                      <br /> That said, other hot hatches are more exciting .
-                    </p>
-                  </div>
-                </div>
-              </Link>
-              <Link to="/forum/thread3">
-                <div>
-                  <img alt="" src={require("./assets/Group 325.png")} />
-                  <div className="testcar">
-                    <p style={{ color: "rgba(240, 92, 45, 0.08)" }}>NEWS</p>
-                    <h3 style={{ color: "white" }}>
-                      Dacia Duster Review ,
-                      <br /> test drive
-                    </h3>
-                    <p style={{ color: "white", fontSize: "13px" }}>
-                      The Dacia Duster is an exceptionally affordable SUV that’s
-                      more spacious than most alternatives but entry-level
-                      models come with barely any equipment at all
-                      <br /> when this 625hp performance SUV arrives in the
-                      Indian market.
-                    </p>
-                  </div>
-                </div>
-              </Link>
+              {this.state.persons.map((person) => (
+                <Link to={`/forum/thread/${person.id}`}>
+                  <Banner thread={person} />
+                </Link>
+              ))}
             </Carousel>
           </div>
           <div className="home-thread">
@@ -168,29 +120,14 @@ export default class Home extends Component {
               position: "relative",
               display: "flex",
               flexDirection: "row",
+              marginLeft: "0",
             }}
           >
-            <Link to="/forum/thread4">
-              <Forumcontenttwo
-                threadimagetwo="https://images.pexels.com/photos/257988/pexels-photo-257988.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                threadheadtwo="BMW and the Kidney grille - Is a radical design change needed? "
-                threadcontenttwo="BMW Kidney grilles - is an iconic grille design which has been .... "
-              />
-            </Link>
-            <Link to="/forum/thread5">
-              <Forumcontenttwo
-                threadimagetwo="https://images.pexels.com/photos/88628/pexels-photo-88628.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                threadheadtwo="Long term ownership review - My Honda City VX CVT  "
-                threadcontenttwo="First things first – let me eat that frog and address the elephant in the room - YES! I’m a big time.... "
-              />
-            </Link>
-            <Link to="/forum/thread6">
-              <Forumcontenttwo
-                threadimagetwo="https://images.pexels.com/photos/2091351/pexels-photo-2091351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                threadheadtwo="An impromptu planned trip to Jim Corbett  "
-                threadcontenttwo="Hello all, I would like to thank the mods for accepting my membership request and this is my... "
-              />
-            </Link>
+            {this.state.subthread.map((person) => (
+              <Link to={`/forum/thread/${person.id}`}>
+                <Forumcontenttwo thread={person} />
+              </Link>
+            ))}
           </div>
           <div className="home-second">
             <div className="home-second-content-wrap">

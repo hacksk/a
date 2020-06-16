@@ -8,7 +8,7 @@ export default class ForumTrendingThread extends Component {
       <div className="trending-thread">
         <div style={{ display: "flex", flexDirection: "row" }}>
           <img alt="threadprof" src={this.props.threadprof}></img>
-          <div
+          <div className="trending-thread-content"
             style={{
               display: "flex",
               flexDirection: "column",
