@@ -1,10 +1,52 @@
-import { Comment, Avatar, Form, Button, List, Input,Popover,Collapse } from "antd";
+import {
+  Comment,
+  Avatar,
+  Form,
+  Button,
+  List,
+  Input,
+  Popover,
+  Collapse,
+  Alert,
+} from "antd";
 import React from "react";
 import axios from "axios";
 import ReplyComment from "./ReplyComment";
 import { MdMoreVert } from "react-icons/md";
+import { Link } from "react-router-dom";
+import { signOut } from "../actions/authActions";
+import { connect } from "react-redux";
 
-
+const URL = "https://automoto.techbyheart.in/api/v1/forum";
+const content = (id) => (
+  <div>
+    <button
+      onClick={(e) => {
+        e.stopPropagation();
+        axios
+          .post(`${URL}/delete/${id}/`)
+          .then((res) => {
+            console.log(res.data);
+            console.log(id);
+          })
+          .catch((e) => console.log(e));
+      }}
+    >
+      Delete
+    </button>
+    <Link to={`/forum/content/${id}`}>
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          console.log("edit");
+          // Do the edit operation
+        }}
+      >
+        Edit
+      </button>
+    </Link>
+  </div>
+);
 const { Panel } = Collapse;
 const { TextArea } = Input;
 const text = <ReplyComment />;
@@ -30,7 +72,7 @@ const CommentList = ({ comments }) => (
           >
             <Popover
               placement="leftTop"
-              // content= content(this.state.thread.id)}
+              // content={() => content(this.state.thread.id)}
               trigger="click"
             >
               <MdMoreVert />
@@ -140,29 +182,47 @@ class ForumComment extends React.Component {
     return (
       <div className="commenting-forum">
         {comments.length > 0 && <CommentList comments={comments} />}
-        <Comment
-          avatar={
-            <Avatar
-              src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              alt="Han Solo"
-            />
-          }
-          content={
-            <Editor
-              onChange={this.handleChange}
-              onSubmit={this.handleSubmit}
-              submitting={submitting}
-              value={value}
-            />
-          }
-        />
-        {/* <ForumComent/> */}
-        {/* {this.state.comments.map((comment) => (
-         <h3>{comment.comment.content}</h3>
-          ))} */}
+        {this.props.isAuthenticated ? (
+          <Comment
+            avatar={
+              <Avatar
+                src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt="Han Solo"
+              />
+            }
+            content={
+              <Editor
+                onChange={this.handleChange}
+                onSubmit={this.handleSubmit}
+                submitting={submitting}
+                value={value}
+              />
+            }
+          />
+        ) : (
+          <Alert
+            message="Warning"
+            description="You need to sign in to comment."
+            type="warning"
+            showIcon
+            closable
+          />
+        )}
       </div>
     );
   }
 }
 
-export default ForumComment;
+const mapStateToProps = (state) => {
+  return {
+    isAuthenticated: state.auth.isAuthenticated,
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => {
+      dispatch(signOut());
+    },
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(ForumComment);

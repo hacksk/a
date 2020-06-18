@@ -30,7 +30,7 @@ import ForumList from "./Forum/ForumList";
 import ThreadList from "./Forum/ThreadList";
 import ProductExpanded from "./ProductExpanded";
 import EditThread from "./Forum/EditThread";
-import Avatar from "./Forum/Avatar"
+import Avatar from "./Forum/Avatar";
 
 function App() {
   return (
@@ -38,11 +38,12 @@ function App() {
       className="App"
       style={{
         backgroundColor:
-          "linear-gradient(144.37deg, rgba(240, 92, 45, 0.08) 0%, rgba(255, 255, 255, 0) 60.15%), #121212"
+          "linear-gradient(144.37deg, rgba(240, 92, 45, 0.08) 0%, rgba(255, 255, 255, 0) 60.15%), #121212",
       }}
     >
-      <Header />
       <BrowserRouter>
+        <Header />
+
         <Navbarnew />
 
         <Switch>
@@ -64,21 +65,25 @@ function App() {
           <Route exact path="/inventory" component={Inventory} />
           <Route exact path="/bill/payment" component={Payment} />
           <Route exact path="/forum" component={ForumHome} />
-          <Route exact path="/forum/thread1" component={Threadexpand} />   
+          <Route exact path="/forum/thread1" component={Threadexpand} />
           <Route
             exact
             path="/forum/thread/:content"
             component={NewsExpanded1}
           />
           <Route exact path="/products" component={ProductHome} />
-          <Route exact path="/products/:product" component={ProductExpanded}/>
+          <Route exact path="/products/:product" component={ProductExpanded} />
           <Route exact path="/signin/verify" component={otp} />
-          <Route exact path="/forum/forumlist/:create" component={Forumcreate} />
+          <Route
+            exact
+            path="/forum/forumlist/:create"
+            component={Forumcreate}
+          />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/forum/forumlist" component={ForumList} />
           <Route exact path="/forum/forumthreadlist" component={ThreadList} />
-          <Route exact path="/forum/content/:edit" component={EditThread}/>
-          <Route exact path="/antdcheck" component={Avatar}/>
+          <Route exact path="/forum/content/:edit" component={EditThread} />
+          <Route exact path="/antdcheck" component={Avatar} />
         </Switch>
         <BottomNavbar />
       </BrowserRouter>

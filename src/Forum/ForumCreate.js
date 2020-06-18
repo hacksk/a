@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-
+import { Button, notification } from 'antd';
 
 export default class ForumCreate extends Component {
   constructor(props) {
@@ -10,7 +10,7 @@ export default class ForumCreate extends Component {
       title: "",
       content: "",
       header_image: "",
-      video_url:""
+      video_url: "",
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -46,12 +46,13 @@ export default class ForumCreate extends Component {
       .then((res) => {
         this.props.history.push("/forum");
       })
-      // .catch((e) =>
-      //  console.log(e));
+      .catch((error) => {
+        window.location.replace("/signin");
+      });
   };
   render() {
     return (
-      <div className="thread-create" style={{ padding: "8em",height:"auto" }}>
+      <div className="thread-create" style={{ padding: "8em", height: "auto" }}>
         <form onSubmit={this.handleSubmit}>
           <div
             style={{
@@ -111,7 +112,7 @@ export default class ForumCreate extends Component {
             <div>
               <p>Share Video URL</p>
               <input
-               name="video_url"
+                name="video_url"
                 type="link"
                 style={{
                   backgroundColor: "rgba(255, 255, 255, 0.08)",
@@ -123,7 +124,6 @@ export default class ForumCreate extends Component {
                 }}
                 placeholder="Video Link"
                 onChange={this.handleChange}
-               
               ></input>
             </div>
             <div

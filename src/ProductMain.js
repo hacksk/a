@@ -20,7 +20,7 @@ class ProductMain extends Component {
 
   handleClick = (id) => {
     message.info("Added To The Cart");
-    this.props.addToCartFunction(id);
+    this.props.addProductToCartFunction(id);
   };
 
   render() {

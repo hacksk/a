@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { MdMoreVert } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { Popover, Button } from "antd";
+import { Popover, Button, notification } from "antd";
 import axios from "axios";
 
 
@@ -16,12 +16,20 @@ const content = (id) => (
           .then((res) => {
             console.log(res.data);
           })
-          .catch((e) => console.log(e));
+          .catch((error) => {
+            notification.open({
+              message: 'Warning',
+              description:
+                'You are not authorized perform this action.',
+              onClick: () => {
+                console.log('Notification Clicked!');
+              },  
+            });
+          });
       }}
     >
       Delete
     </button>
-    {/* {this.state.subthread.map((person) => ( */}
     <Link to={`/forum/content/${id}`}>
       <button
         onClick={(e) => {
@@ -33,7 +41,6 @@ const content = (id) => (
         Edit
       </button>
     </Link>
-    {/* ))} */}
   </div>
 );
 

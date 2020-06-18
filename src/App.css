@@ -173,9 +173,32 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .collection .collection-item {
   position: relative;
 }
+.collection {
+  background: transparent !important;
+}
+.cart-price {
+  height: 10vh;
+  position: fixed;
+  bottom: 0;
+  width: 80%;
+  background: #241814;
+  padding: 1.5em;
+}
 .btn {
   position: absolute;
   right: 2em;
+}
+.ant-notification-notice{
+  background: #333333!important;
+  color:white!important;
+  border-radius: 8px!important;
+}
+.ant-notification-notice-closable .ant-notification-notice-message{
+  color:#fc5c2d!important;
+}
+.ant-alert.ant-alert-closable {
+  border-radius: 8px;
+  margin-top: 3vh;
 }
 .item-desc p {
   position: absolute;
@@ -314,6 +337,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
     rgba(255, 255, 255, 0.08),
     rgba(255, 255, 255, 0.08)
   );
+  border-radius: 8px;
+  margin-top: 12px;
 }
 .accesories-main img {
   width: 32vw;
@@ -1056,6 +1081,10 @@ body {
 }
 .ant-popover-buttons {
   padding-top: 5em;
+}
+.container {
+  height: auto !important;
+  position: relative !important;
 }
 .ant-popover-buttons button {
   color: black;
@@ -2004,8 +2033,8 @@ body {
 }
 
 @media screen and (max-width: 786px) {
-  .trending-thread-content{
-    width:30vh!important;
+  .trending-thread-content {
+    width: 30vh !important;
   }
   .head-icons {
     margin-bottom: 1vh;
@@ -2603,8 +2632,8 @@ button.StripeCheckout {
 }
 .seeall-forum {
   position: absolute;
-  bottom: 0!important;
-  right: 0!important;
+  bottom: 0 !important;
+  right: 0 !important;
   color: #f05c2d !important;
   font-family: Montserrat;
   font-weight: 600;
@@ -2842,7 +2871,7 @@ a:not([href]):not([tabindex]) {
 .forum-more:hover {
   color: #e4e4e4;
 }
-.forumcontentone{
+.forumcontentone {
   position: relative;
 }
 @media screen and (max-width: 786px) {
@@ -2981,7 +3010,7 @@ a:not([href]):not([tabindex]) {
   .container-sm,
   .container-xl {
     max-width: 80vw !important;
-    height: 10vh !important;
+    height: auto !important;
   }
 }
 .banner-image {

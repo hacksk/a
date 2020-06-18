@@ -30,15 +30,7 @@ class Recipe extends Component {
   render() {
     return (
       <div
-        style={{
-          position: "absolute",
-          bottom: "0",
-          width: "100%",
-          background:
-            "linear-gradient(0deg, rgba(240, 92, 45, 0.08), rgba(240, 92, 45, 0.08))",
-          padding: "1.5em",
-        }}
-        className="container"
+        className="cart-price"
       >
         <div style={{ display: "none" }} className="collection">
           <li className="collection-item">
@@ -64,14 +56,15 @@ class Recipe extends Component {
           <button
             style={{
               border: "none",
-              borderRadius: "3px",
+              borderRadius: "8px",
               background:
                 "linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), linear-gradient(98.86deg, #F05C2D 8.02%, #FCAA2E 96.06%)",
               color: "black",
               height: "5vh",
               width: "15vh",
-              fontWeight: "bold",
+              fontWeight: "600",
               position:"absolute",
+              fontFamily:"Montserrat",
               right:"2em"
             }}
           >

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
+import { Link } from "react-router-dom";
 
 export default class HeaderCustomer extends Component {
   render() {
@@ -9,7 +10,9 @@ export default class HeaderCustomer extends Component {
           <Breadcrumb separator=">">
             <Breadcrumb.Item></Breadcrumb.Item>
           </Breadcrumb>
-          <img alt="logo" src={require("./assets/moto365logo.svg")}></img>
+          <Link to="/">
+            <img alt="logo" src={require("./assets/moto365logo.svg")}></img>
+          </Link>
         </div>
       </div>
     );

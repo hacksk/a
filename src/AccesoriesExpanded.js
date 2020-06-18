@@ -7,6 +7,9 @@ import { connect } from "react-redux";
 import { addToCart } from "./actions/cartActions";
 
 class AccesoriesExpanded extends Component {
+  state={
+    currentItem:null
+  }
   render() {
     let currentItem = this.props.items.find(
       x => x.id == this.props.match.params.detail

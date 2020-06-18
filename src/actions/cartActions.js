@@ -82,6 +82,7 @@ export const loadAddedItems = () => dispatch => {
   }
 };
 
+
 //Load product to cart
 export const loadProductToCart = () => dispatch => {
   try {
@@ -132,7 +133,31 @@ export const addToCart = id => dispatch => {
     });
   }
 };
-
+// add products to cart
+export const addProductToCart = id => dispatch => {
+  try {
+    return axios
+      .post(`${API_URL}/cart/add_to_cart/`, {
+        product: [
+          {
+            product: id,
+            quantity:1
+          }
+        ]
+      })
+      .then(res => {
+        dispatch({
+          type: ADD_TO_CART,
+          id
+        });
+      });
+  } catch (err) {
+    dispatch({
+      type: SET_ERRORS,
+      payload: err.response.data
+    });
+  }
+};
 //remove item action
 export const removeItem = id => {
   return {

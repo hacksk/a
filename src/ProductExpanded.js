@@ -4,7 +4,7 @@ import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import ProductMain from "./ProductMain";
 import { connect } from "react-redux";
-import { addToCart } from "./actions/cartActions";
+import { addProductToCart } from "./actions/cartActions";
 
 class ProductExpanded extends Component {
   render() {
@@ -25,7 +25,7 @@ class ProductExpanded extends Component {
           <Tab eventKey="home" title="DETAILS">
             <ProductMain
               item={currentItem}
-              addToCartFunction={this.props.addToCart}
+              addProductToCartFunction={this.props.addProductToCart}
             />
           </Tab>
           <Tab eventKey="profile" title="SPECS">
@@ -47,8 +47,8 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-    addToCart: id => {
-      dispatch(addToCart(id));
+    addProductToCart: id => {
+      dispatch(addProductToCart(id));
     }
   };
 };
