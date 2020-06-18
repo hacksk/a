@@ -35,22 +35,22 @@ export const ADD_SHIPPING = "ADD_SHIPPING";
 // };
 
 //load items to cart
-export const loadAllItems = () => dispatch => {
+export const loadAllItems = () => (dispatch) => {
   try {
-    return axios.get(`${API_URL}/service/`).then(res => {
-      let itemList = res.data.map(item => {
+    return axios.get(`${API_URL}/service/`).then((res) => {
+      let itemList = res.data.map((item) => {
         return {
           id: item.id,
           title: item.name,
           desc: item.description,
           price: item.price,
-          img: item.images[0].image
+          img: item.images[0].image,
         };
       });
 
       dispatch({
         type: LOAD_ALL_ITEMS,
-        itemList
+        itemList,
       });
     });
   } catch (e) {
@@ -59,22 +59,22 @@ export const loadAllItems = () => dispatch => {
 };
 
 //load items to cart
-export const loadAddedItems = () => dispatch => {
+export const loadAddedItems = () => (dispatch) => {
   try {
-    return axios.get(`${API_URL}/cart/`).then(res => {
-      let itemList = res.data[0].service.map(item => {
+    return axios.get(`${API_URL}/cart/`).then((res) => {
+      let itemList = res.data[0].service.map((item) => {
         return {
           id: item.service.id,
           title: item.service.name,
           desc: item.service.description,
           price: item.service.price,
-          img: item.service.images[0].image
+          img: item.service.images[0].image,
         };
       });
 
       dispatch({
         type: LOAD_ADDED_ITEMS,
-        itemList
+        itemList,
       });
     });
   } catch (e) {
@@ -82,12 +82,11 @@ export const loadAddedItems = () => dispatch => {
   }
 };
 
-
 //Load product to cart
-export const loadProductToCart = () => dispatch => {
+export const loadProductToCart = () => (dispatch) => {
   try {
-    return axios.get(`${API_URL}/product/`).then(res => {
-      let itemList = res.data.map(item => {
+    return axios.get(`${API_URL}/product/`).then((res) => {
+      let itemList = res.data.map((item) => {
         // console.log("itemList");
 
         return {
@@ -95,13 +94,13 @@ export const loadProductToCart = () => dispatch => {
           title: item.product,
           desc: item.mfg_date,
           price: item.price,
-          img: item.image[0].image
+          img: item.image[0].image,
         };
       });
 
       dispatch({
         type: LOAD_ALL_ITEMS,
-        itemList
+        itemList,
       });
     });
   } catch (e) {
@@ -110,72 +109,72 @@ export const loadProductToCart = () => dispatch => {
 };
 
 //add cart action
-export const addToCart = id => dispatch => {
+export const addToCart = (id) => (dispatch) => {
   try {
     return axios
       .post(`${API_URL}/cart/add_to_cart/`, {
         service: [
           {
-            service: id
-          }
-        ]
+            service: id,
+          },
+        ],
       })
-      .then(res => {
+      .then((res) => {
         dispatch({
           type: ADD_TO_CART,
-          id
+          id,
         });
       });
   } catch (err) {
     dispatch({
       type: SET_ERRORS,
-      payload: err.response.data
+      payload: err.response.data,
     });
   }
 };
 // add products to cart
-export const addProductToCart = id => dispatch => {
+export const addProductToCart = (id) => (dispatch) => {
   try {
     return axios
       .post(`${API_URL}/cart/add_to_cart/`, {
         product: [
           {
             product: id,
-            quantity:1
-          }
-        ]
+            quantity: 1,
+          },
+        ],
       })
-      .then(res => {
+      .then((res) => {
         dispatch({
           type: ADD_TO_CART,
-          id
+          id,
         });
       });
   } catch (err) {
     dispatch({
       type: SET_ERRORS,
-      payload: err.response.data
+      payload: err.response.data,
     });
   }
 };
 //remove item action
-export const removeItem = id => {
+export const removeItem = (id) => {
   return {
     type: REMOVE_ITEM,
-    id
+    id,
   };
 };
 //subtract qt action
-export const subtractQuantity = id => {
+export const subtractQuantity = (id) => {
   return {
     type: SUB_QUANTITY,
-    id
+    id,
   };
 };
 //add qt action
-export const addQuantity = id => {
+export const addQuantity = (id) => {
   return {
     type: ADD_QUANTITY,
-    id
+    id,
   };
 };

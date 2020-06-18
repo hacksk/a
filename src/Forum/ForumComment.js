@@ -24,7 +24,7 @@ const content = (id) => (
       onClick={(e) => {
         e.stopPropagation();
         axios
-          .post(`${URL}/delete/${id}/`)
+          .delete(`${URL}/delete/${id}/`)
           .then((res) => {
             console.log(res.data);
             console.log(id);
@@ -50,10 +50,25 @@ const content = (id) => (
 const { Panel } = Collapse;
 const { TextArea } = Input;
 const text = <ReplyComment />;
-const CommentList = ({ comments }) => (
+const CommentList = ({ comments, likeCount, isLiked, threadId }) => (
   <List
     dataSource={comments}
-    header={`${comments.length} ${comments.length > 1 ? "replies" : "reply"}`}
+    header={
+      <div>
+        <span>
+          {`${comments.length} ${comments.length > 1 ? "replies" : "reply"}`}
+        </span>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            // isLiked?unlike():likeCount();
+          }}
+          style={{ color: "black" }}
+        >
+          Like {likeCount}
+        </button>
+      </div>
+    }
     itemLayout="horizontal"
     renderItem={(props) => (
       <Comment
@@ -72,7 +87,7 @@ const CommentList = ({ comments }) => (
           >
             <Popover
               placement="leftTop"
-              // content={() => content(this.state.thread.id)}
+              content={() => content(threadId)}
               trigger="click"
             >
               <MdMoreVert />
@@ -110,9 +125,11 @@ const Editor = ({ onChange, onSubmit, submitting, value }) => (
 class ForumComment extends React.Component {
   constructor(props) {
     super(props);
-
+    console.log(this.props.thread);
     this.state = {
-      comments: this.props.comments,
+      comments: this.props.thread.comment,
+      likeCount: this.props.thread.like_count,
+      threadId: this.props.thread.id,
       submitting: false,
       value: "",
       content: "",
@@ -134,7 +151,7 @@ class ForumComment extends React.Component {
 
     axios
       .post(
-        `https://automoto.techbyheart.in/api/v1/forum/comment/${this.props.thresdId}/`,
+        `https://automoto.techbyheart.in/api/v1/forum/comment/${this.props.thread.id}/`,
         {
           content: this.state.value,
         }
@@ -177,11 +194,17 @@ class ForumComment extends React.Component {
   };
 
   render() {
-    const { comments, submitting, value } = this.state;
+    const { comments, submitting, value, likeCount, threadId } = this.state;
 
     return (
       <div className="commenting-forum">
-        {comments.length > 0 && <CommentList comments={comments} />}
+        {comments.length > 0 && (
+          <CommentList
+            comments={comments}
+            likeCount={likeCount}
+            threadId={threadId}
+          />
+        )}
         {this.props.isAuthenticated ? (
           <Comment
             avatar={

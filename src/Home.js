@@ -19,8 +19,6 @@ const { TabPane } = Tabs;
 
 function callback(key) {}
 
-
-
 export default class Home extends Component {
   constructor() {
     super();
@@ -35,8 +33,7 @@ export default class Home extends Component {
       .then((res) => {
         const persons = res.data.data.slice(0, 3);
         const subthread = res.data.data.slice(1, 4);
-        this.setState({ persons });
-        this.setState({ subthread });
+        this.setState({ persons, subthread });
       });
     window.scrollTo(0, 0);
   }
@@ -57,13 +54,13 @@ export default class Home extends Component {
             </div>
           </div>
           <div className="news">
-            <Carousel infiniteLoop="true" autoPlay="true">
+            {/* <Carousel infiniteLoop="true" autoPlay="true">
               {this.state.persons.map((person) => (
                 <Link to={`/forum/thread/${person.id}`}>
                   <Banner thread={person} />
                 </Link>
               ))}
-            </Carousel>
+            </Carousel> */}
           </div>
           <div className="home-thread">
             <h6>THREADS</h6>

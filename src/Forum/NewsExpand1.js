@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Spin, Space,Popover } from "antd";
+import { Spin, Space, Popover } from "antd";
 import ForumComment from "./ForumComment";
 import ReactPlayer from "react-player";
 import { MdMoreVert } from "react-icons/md";
@@ -37,15 +37,11 @@ const content = (id) => (
   </div>
 );
 
-
 export default class NewsExpanded extends Component {
- 
-    state = {
-      thread: null,
-      count: 0,
-    };
-
-
+  state = {
+    thread: null,
+    count: 0,
+  };
 
   componentDidMount() {
     axios
@@ -62,23 +58,26 @@ export default class NewsExpanded extends Component {
     if (this.state.thread != null) {
       return (
         <div className="threadexpand">
-          <div className="threadexpand-content" style={{position:"relative"}}>
+          <div
+            className="threadexpand-content"
+            style={{ position: "relative" }}
+          >
             <div className="forum-more-container">
-                <div
-                  className="forum-more"
-                  style={{
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
+              <div
+                className="forum-more"
+                style={{
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Popover
+                  placement="bottomRight"
+                  content={() => content(this.state.thread.id)}
+                  trigger="click"
                 >
-                  <Popover
-                    placement="bottomRight"
-                    content={() => content(this.state.thread.id)}
-                    trigger="click"
-                  >
-                    <MdMoreVert />
-                  </Popover>
-                </div>
+                  <MdMoreVert />
+                </Popover>
+              </div>
             </div>
             <div className="thread-profile-header">
               <div style={{ display: "flex", flexDirection: "row" }}>
@@ -108,10 +107,7 @@ export default class NewsExpanded extends Component {
             </button> */}
             {/* <button style={{color:"black"}} onClick={this.incrementLike}>Likes:{this.state.count}</button> */}
             <br />
-            <ForumComment
-              thresdId={this.state.thread.id}
-              comments={this.state.thread.comment}
-            />
+            <ForumComment thread={this.state.thread} />
           </div>
         </div>
       );
