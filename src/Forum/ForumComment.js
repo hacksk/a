@@ -50,7 +50,7 @@ const content = (id) => (
 );
 const { Panel } = Collapse;
 const { TextArea } = Input;
-const text = <ReplyComment />;
+// const text = <ReplyComment />;
 const CommentList = ({ comments }) => (
   <List
     dataSource={comments}
@@ -82,11 +82,11 @@ const CommentList = ({ comments }) => (
             </div>
           </div>
         {/* ) : null} */}
-        <Collapse bordered={false}>
+        {/* <Collapse bordered={false}>
           <Panel header="Reply" key="1">
             {text}
           </Panel>
-        </Collapse>
+        </Collapse> */}
       </Comment>
     )}
   />
