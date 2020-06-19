@@ -5,31 +5,43 @@ import { Tabs } from "antd";
 import ForumTrending from "./ForumTrendingThread";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Moment from "react-moment"
+import Moment from "react-moment";
+import { connect } from "react-redux";
+
 
 const { TabPane } = Tabs;
 
 function callback(key) {
   // console.log(key);
 }
-
-export default class ThreadList extends Component {
+class SubForumList extends Component {
   constructor() {
     super();
     this.state = {
       persons: [],
       subthread: [],
+      sub_forums: [],
     };
   }
 
   componentDidMount() {
+    const threadId = this.props.match.params.list;
+
     axios
-      .get(`https://automoto.techbyheart.in/api/v1/forum/thread-list/`)
+      .get(
+        `https://automoto.techbyheart.in/api/v1/forum/subforum-thread-list/${threadId}`
+      )
       .then((res) => {
         const persons = res.data.data;
         const subthread = res.data.data.slice(3, 6);
-        this.setState({ persons });
-        this.setState({ subthread });
+        this.setState({ persons, subthread });
+      });
+    axios
+      .get(`https://automoto.techbyheart.in/api/v1/forum/list/`)
+      .then((res) => {
+        const sub_forums = res.data.data;
+        this.setState({ sub_forums });
+        console.log(sub_forums);
       });
     window.scrollTo(0, 0);
   }
@@ -37,7 +49,28 @@ export default class ThreadList extends Component {
     return (
       <div className="threadlist" style={{ padding: "8em" }}>
         <div className="thread-forum-list">
-         
+          <div
+            className="forum-home-link-forum"
+            style={{
+              padding: "10em",
+              paddingBottom: "0",
+              display: "flex",
+              justifyContent: "flex-end",
+              paddingRight: "5em",
+              paddingTop: "0",
+            }}
+          >
+            {" "}
+            {this.props.isAuthenticated ? (
+              <Link to={`/forum/forumlist/${this.state.id}`}>
+                <button className="forum-service-now">CREATE THREAD</button>
+              </Link>
+            ) : (
+              <Link to="/signin">
+              <button className="forum-service-now">CREATE THREAD</button>
+            </Link>
+            )}
+          </div>
           <div
             className="threadlist-head"
             style={{
@@ -96,3 +129,10 @@ export default class ThreadList extends Component {
     );
   }
 }
+const mapStateToProps = (state) => {
+  return {
+    isAuthenticated: state.auth.isAuthenticated,
+  };
+};
+
+export default connect(mapStateToProps)(SubForumList);

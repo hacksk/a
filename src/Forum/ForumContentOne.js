@@ -3,6 +3,7 @@ import { MdMoreVert } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { Popover, Button, notification } from "antd";
 import axios from "axios";
+import { connect } from "react-redux";
 
 
 const URL = "https://automoto.techbyheart.in/api/v1/forum";
@@ -45,7 +46,7 @@ const content = (id) => (
 );
 
 
-export default class ForumContentOne extends Component {
+class ForumContentOne extends Component {
   constructor(props) {
     super(props);
     this.handleMouseHover = this.handleMouseHover.bind(this);
@@ -102,6 +103,7 @@ export default class ForumContentOne extends Component {
             alignItems: "center",
           }}
         >
+           {this.props.isAuthenticated ? (
           <Popover
             placement="bottomRight"
             content={() => content(this.props.thread.id)}
@@ -109,9 +111,18 @@ export default class ForumContentOne extends Component {
           >
             <MdMoreVert />
           </Popover>
+          ) : (
+           null
+          )}
         </div>
         )}
       </div>
     );
   }
 }
+const mapStateToProps = (state) => {
+  return {
+    isAuthenticated: state.auth.isAuthenticated,
+  };
+};
+export default connect(mapStateToProps)(ForumContentOne);

@@ -37,7 +37,7 @@ export default class ForumList extends Component {
             {forum.name}
             <ul>
               {forum.sub_forums.map(sub_forum => (
-                <Link to={`/forum/forumlist/${sub_forum.id}`}>
+                <Link to={`/forum/subforum/${sub_forum.id}`}>
                   <li
                     style={{
                       color: "white",

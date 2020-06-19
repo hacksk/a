@@ -8,7 +8,7 @@ import { addProductToCart } from "./actions/cartActions";
 
 class ProductExpanded extends Component {
   render() {
-    let currentItem = this.props.items.find(
+    let currentPItem = this.props.items.find(
       x => x.id == this.props.match.params.product
     );
     return (
@@ -24,16 +24,11 @@ class ProductExpanded extends Component {
         <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
           <Tab eventKey="home" title="DETAILS">
             <ProductMain
-              item={currentItem}
+              item={currentPItem}
               addProductToCartFunction={this.props.addProductToCart}
             />
           </Tab>
-          <Tab eventKey="profile" title="SPECS">
-            <h3>lorem ipsum</h3>
-          </Tab>
-          <Tab eventKey="contact" title="DEMO">
-            <h4>yjrhgfmjhgk jvkhjhgk, gljkh</h4>
-          </Tab>
+         
         </Tabs>
       </div>
     );

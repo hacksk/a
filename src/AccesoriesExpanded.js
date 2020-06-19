@@ -31,12 +31,7 @@ class AccesoriesExpanded extends Component {
               addToCartFunction={this.props.addToCart}
             />
           </Tab>
-          <Tab eventKey="profile" title="SPECS">
-            <h3>lorem ipsum</h3>
-          </Tab>
-          <Tab eventKey="contact" title="DEMO">
-            <h4>yjrhgfmjhgk jvkhjhgk, gljkh</h4>
-          </Tab>
+         
         </Tabs>
       </div>
     );

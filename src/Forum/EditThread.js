@@ -42,15 +42,13 @@ export default class EditThread extends Component {
     );
 
     axios
-      .post(
+      .patch(
         `https://automoto.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
         formData
       )
       .then((res) => {
         this.props.history.push("/forum");
       });
-    // .catch((e) =>
-    //  console.log(e));
   };
   componentDidMount() {
     axios

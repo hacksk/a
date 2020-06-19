@@ -29,7 +29,7 @@ class AccMain extends Component {
 
   render() {
     return (
-      <div className="service-expanded" style={{position:"relative",minHeight:"75vh",paddingBottom:"10vh"}}>
+      <div className="service-expanded" style={{minHeight:"75vh",paddingBottom:"10vh"}}>
         <div className="height-define">
           <div className="accesories-main">
           <img alt="" src={this.props.item.img}></img>

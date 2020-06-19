@@ -4,7 +4,10 @@ import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 // import Accountupload from "./Account/PicturesWall";
 import { API_URL } from "./actions/urlConfig";
+import { notification } from "antd";
+import { DatePicker } from "antd";
 
+const { RangePicker } = DatePicker;
 
 class SignupForm extends Component {
   constructor(props) {
@@ -17,15 +20,15 @@ class SignupForm extends Component {
       phone: "",
       username: "",
       date_joined: "",
-      name:"",
-      age:"",
-      address_line1:"",
-      address_line2:"",
-      dob:"",
-      state:"",
-      district:"",
-      city:"",
-      pincode:"",
+      name: "",
+      age: "",
+      address_line1: "",
+      address_line2: "",
+      dob: "",
+      state: "",
+      district: "",
+      city: "",
+      pincode: "",
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -55,7 +58,7 @@ class SignupForm extends Component {
       state,
       city,
       pincode,
-      district
+      district,
     } = this.state;
     axios
       .post(`${API_URL}/customer/`, {
@@ -88,12 +91,17 @@ class SignupForm extends Component {
         dob: dob,
       })
       .then((res) => {
-          this.props.history.push("/signin");
+        this.props.history.push("/signin");
       })
-      .catch((error) => {
-        // console.log("registration error", error.response.data);
+      .catch(() => {
+        notification.open({
+          message: "Sign Up Error",
+          description: "There was an error in Signing up, Please Try again",
+          onClick: () => {
+            console.log("Notification Clicked!");
+          },
+        });
       });
-
   }
 
   render() {
@@ -123,7 +131,7 @@ class SignupForm extends Component {
                 />
                 <input
                   name="dob"
-                  type="text"
+                  type="date"
                   onChange={this.handleChange}
                   placeholder="Date Of Birth (2020-10-18)"
                 />
@@ -142,19 +150,19 @@ class SignupForm extends Component {
                 />
                 <input
                   name="phone"
-                  type="text"
+                  type="number"
                   onChange={this.handleChange}
                   placeholder="+91xxxxxxxx"
                 />
               </div>
-              
+
               {/* <div className="forms-signup" onDragStart={handleOnDragStart}>
                 <h1>UPLOAD PICTURE</h1>
 
                 <Accountupload />
               </div> */}
               <div className="forms-signup" onDragStart={handleOnDragStart}>
-                <h1>VEHICLE DETAILS</h1>
+                <h1>PROFILE DETAILS</h1>
 
                 <input
                   name="name"
@@ -173,17 +181,17 @@ class SignupForm extends Component {
                   name="address_line2"
                   type="text"
                   onChange={this.handleChange}
-                  placeholder="Address"
+                  placeholder="Address line two"
                 />
                 <input
                   name="age"
-                  type="text"
+                  type="number"
                   onChange={this.handleChange}
                   placeholder="Age  "
                 />
                 <button
-                className="signin-btn"
-                type="submit"
+                  className="signin-btn"
+                  type="submit"
                   style={{
                     color: "black",
                     background:
@@ -192,13 +200,13 @@ class SignupForm extends Component {
                     borderRadius: "8px",
                     height: "6vh",
                     border: "none",
-                    width:"15vh"
+                    width: "15vh",
                   }}
                 >
                   Submit
                 </button>
-              </div> 
-             </AliceCarousel>
+              </div>
+            </AliceCarousel>
           </form>
         </div>
       </div>

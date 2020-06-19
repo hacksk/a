@@ -31,6 +31,7 @@ import ThreadList from "./Forum/ThreadList";
 import ProductExpanded from "./ProductExpanded";
 import EditThread from "./Forum/EditThread";
 import Avatar from "./Forum/Avatar";
+import SubforumList from "./Forum/SubForumList"
 
 function App() {
   return (
@@ -84,6 +85,7 @@ function App() {
           <Route exact path="/forum/forumthreadlist" component={ThreadList} />
           <Route exact path="/forum/content/:edit" component={EditThread} />
           <Route exact path="/antdcheck" component={Avatar} />
+          <Route exact path="/forum/subforum/:list" component={SubforumList}/>
         </Switch>
         <BottomNavbar />
       </BrowserRouter>

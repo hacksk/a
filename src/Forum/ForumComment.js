@@ -16,6 +16,7 @@ import { MdMoreVert } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { signOut } from "../actions/authActions";
 import { connect } from "react-redux";
+import Moment from "react-moment";
 
 const URL = "https://automoto.techbyheart.in/api/v1/forum";
 const content = (id) => (
@@ -24,7 +25,7 @@ const content = (id) => (
       onClick={(e) => {
         e.stopPropagation();
         axios
-          .delete(`${URL}/delete/${id}/`)
+          .post(`${URL}/delete/${id}/`)
           .then((res) => {
             console.log(res.data);
             console.log(id);
@@ -50,50 +51,37 @@ const content = (id) => (
 const { Panel } = Collapse;
 const { TextArea } = Input;
 const text = <ReplyComment />;
-const CommentList = ({ comments, likeCount, isLiked, threadId }) => (
+const CommentList = ({ comments }) => (
   <List
     dataSource={comments}
-    header={
-      <div>
-        <span>
-          {`${comments.length} ${comments.length > 1 ? "replies" : "reply"}`}
-        </span>
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            // isLiked?unlike():likeCount();
-          }}
-          style={{ color: "black" }}
-        >
-          Like {likeCount}
-        </button>
-      </div>
-    }
+    header={`${comments.length} ${comments.length > 1 ? "replies" : "reply"}`}
     itemLayout="horizontal"
     renderItem={(props) => (
       <Comment
         content={props.content}
         author={props.username}
-        datetime={props.time}
+        datetime={<Moment fromNow>{props.date}</Moment>}
         avatar={props.avatar}
       >
-        <div style={{ position: "absolute", right: "0", top: "0" }}>
-          <div
-            className="forum-more"
-            style={{
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Popover
-              placement="leftTop"
-              content={() => content(threadId)}
-              trigger="click"
+        {/* {this.props.isAuthenticated ? ( */}
+          <div style={{ position: "absolute", right: "0", top: "0" }}>
+            <div
+              className="forum-more"
+              style={{
+                justifyContent: "center",
+                alignItems: "center",
+              }}
             >
-              <MdMoreVert />
-            </Popover>
+              <Popover
+                placement="leftTop"
+                // content={() => content(this.state.props.id)}
+                trigger="click"
+              >
+                <MdMoreVert />
+              </Popover>
+            </div>
           </div>
-        </div>
+        {/* ) : null} */}
         <Collapse bordered={false}>
           <Panel header="Reply" key="1">
             {text}
@@ -125,11 +113,9 @@ const Editor = ({ onChange, onSubmit, submitting, value }) => (
 class ForumComment extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props.thread);
+
     this.state = {
-      comments: this.props.thread.comment,
-      likeCount: this.props.thread.like_count,
-      threadId: this.props.thread.id,
+      comments: this.props.comments,
       submitting: false,
       value: "",
       content: "",
@@ -151,7 +137,7 @@ class ForumComment extends React.Component {
 
     axios
       .post(
-        `https://automoto.techbyheart.in/api/v1/forum/comment/${this.props.thread.id}/`,
+        `https://automoto.techbyheart.in/api/v1/forum/comment/${this.props.thresdId}/`,
         {
           content: this.state.value,
         }
@@ -194,17 +180,11 @@ class ForumComment extends React.Component {
   };
 
   render() {
-    const { comments, submitting, value, likeCount, threadId } = this.state;
+    const { comments, submitting, value } = this.state;
 
     return (
       <div className="commenting-forum">
-        {comments.length > 0 && (
-          <CommentList
-            comments={comments}
-            likeCount={likeCount}
-            threadId={threadId}
-          />
-        )}
+        {comments.length > 0 && <CommentList comments={comments} />}
         {this.props.isAuthenticated ? (
           <Comment
             avatar={

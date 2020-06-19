@@ -2,31 +2,33 @@ import React, { Component } from "react";
 import OtpInput from "react-otp-input";
 import { connect } from "react-redux";
 import { verifyOtp } from "./actions/authActions";
+import { Link } from "react-router-dom";
+import { WindowsFilled } from "@ant-design/icons";
 
 class otpVerify extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      otp: ""
+      otp: "",
     };
   }
 
   static getDerivedStateFromProps(nextProps) {
     if (nextProps.isAuthenticated) {
       nextProps.history.push("/account");
-    } else if (nextProps.userData === null) {
-      nextProps.history.push("/signin/");
     }
   }
 
-  onOtpChange = otp => {
+  onOtpChange = (otp) => {
     this.setState({
-      otp: otp
+      otp: otp,
     });
   };
-
-  handleFormSubmit = event => {
+  handleClick = (event) => {
+    this.props.history.push("/signin");
+  };
+  handleFormSubmit = (event) => {
     event.preventDefault();
     const { otp } = this.state;
     this.props.verifyOtp(otp);
@@ -68,17 +70,18 @@ class otpVerify extends Component {
             <button className="signin-btn" type="submit">
               VERIFY OTP
             </button>
-            {/* <Link to="/signin">
+            <Link to="/signin">
               <button
+                onClick={this.handleClick}
                 style={{
                   border: "none",
-                  background: "transparent",
-                  color: "rgba(255, 255, 255, 0.87)"
+                  color: "rgba(255, 255, 255, 0.87)",
+                  background:"transparent"
                 }}
               >
                 RESEND OTP
               </button>
-            </Link> */}
+            </Link>
           </div>
         </form>
       </div>
@@ -86,18 +89,18 @@ class otpVerify extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     isAuthenticated: state.auth.isAuthenticated,
-    userData: state.auth.userData
+    userData: state.auth.userData,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    verifyOtp: otp => {
+    verifyOtp: (otp) => {
       dispatch(verifyOtp(otp));
-    }
+    },
   };
 };
 

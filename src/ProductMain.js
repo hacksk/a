@@ -28,7 +28,6 @@ class ProductMain extends Component {
       <div
         className="service-expanded"
         style={{
-          position: "relative",
           minHeight: "75vh",
           paddingBottom: "10vh",
         }}

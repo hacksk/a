@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { sendOtp } from "../actions/authActions";
 import { Link } from "react-router-dom";
+import { Select } from "antd";
 
 class SignIn extends Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class SignIn extends Component {
   }
 
   handleChange = (event) => {
+
     this.setState({
       [event.target.name]: event.target.value,
     });
@@ -61,7 +63,7 @@ class SignIn extends Component {
             placeholder="Mobile Number(+91)"
             onChange={this.handleChange}
             required
-          />
+          ></input>
 
           <div className="login-btns">
             <button className="signin-btn" type="submit">

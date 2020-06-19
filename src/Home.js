@@ -14,6 +14,7 @@ import { Tabs } from "antd";
 import ForumTrending from "./Forum/ForumTrendingThread";
 import Banner from "./Forum/Banner";
 import axios from "axios";
+import Moment from "react-moment"
 
 const { TabPane } = Tabs;
 
@@ -25,6 +26,8 @@ export default class Home extends Component {
     this.state = {
       persons: [],
       subthread: [],
+      services: [],
+      products: [],
     };
   }
   componentDidMount() {
@@ -35,6 +38,14 @@ export default class Home extends Component {
         const subthread = res.data.data.slice(1, 4);
         this.setState({ persons, subthread });
       });
+    axios.get(`https://automoto.techbyheart.in/api/v1/service`).then((res) => {
+      const services = res.data;
+      this.setState({ services });
+    });
+    axios.get(`https://automoto.techbyheart.in/api/v1/product`).then((res) => {
+      const products = res.data;
+      this.setState({ products });
+    });
     window.scrollTo(0, 0);
   }
   render() {
@@ -54,13 +65,13 @@ export default class Home extends Component {
             </div>
           </div>
           <div className="news">
-            {/* <Carousel infiniteLoop="true" autoPlay="true">
+            <Carousel infiniteLoop="true" autoPlay="true">
               {this.state.persons.map((person) => (
                 <Link to={`/forum/thread/${person.id}`}>
                   <Banner thread={person} />
                 </Link>
               ))}
-            </Carousel> */}
+            </Carousel>
           </div>
           <div className="home-thread">
             <h6>THREADS</h6>
@@ -196,101 +207,37 @@ export default class Home extends Component {
             <h5>RECOMMENDED SERVICES</h5>
 
             <div className="home-content">
-              <Link to="/services">
-                <div className="home-content-part1">
-                  <img
-                    alt=""
-                    className="hvr-float-shadow"
-                    src={require("./Services/Steam/images/serviceicons/service(1).png")}
-                  ></img>
-                  <img
-                    alt=""
-                    className="hvr-float-shadow"
-                    src={require("./Services/Steam/images/serviceicons/service(2).png")}
-                  ></img>
-                  <img
-                    alt=""
-                    className="hvr-float-shadow"
-                    src={require("./Services/Steam/images/serviceicons/service(4).png")}
-                  ></img>
-                  <img
-                    alt=""
-                    className="hvr-float-shadow"
-                    src={require("./Services/Steam/images/serviceicons/service(20).png")}
-                  ></img>
-                  <img
-                    alt=""
-                    className="hvr-float-shadow"
-                    src={require("./Services/Steam/images/serviceicons/service(22).png")}
-                  ></img>
-                  <img
-                    alt=""
-                    className="hvr-float-shadow"
-                    src={require("./Services/Steam/images/serviceicons/service(35).png")}
-                  ></img>
-                  <img
-                    alt=""
-                    className="hvr-float-shadow"
-                    src={require("./Services/Steam/images/serviceicons/service(40).png")}
-                  ></img>
-                  <img
-                    alt=""
-                    className="hvr-float-shadow"
-                    src={require("./Services/Steam/images/serviceicons/service(42).png")}
-                  ></img>
-                </div>
+              <div className="home-content-part1">
+                {this.state.services.map((service) => (
+                  <Link to={`/services/${service.id}`}>
+                    <img
+                      alt=""
+                      className="hvr-float-shadow"
+                      src={service.images[0].image}
+                    ></img>
+                  </Link>
+                ))}
+              </div>
 
-                <button
-                  style={{ border: "none", background: "transparent" }}
-                  href="#explore"
-                  className="explore-link "
-                >
-                  EXPLORE
-                  <FaLongArrowAltRight />
-                </button>
-              </Link>
+              <button
+                style={{ border: "none", background: "transparent" }}
+                href="#explore"
+                className="explore-link "
+              >
+                EXPLORE
+                <FaLongArrowAltRight />
+              </button>
               <h5>RECOMMENDED ACCESSORIES</h5>
               <div className="home-content-part1">
-                <img
-                  alt=""
-                  className="hvr-float-shadow"
-                  src={require("./assets/products/products (1).png")}
-                ></img>
-                <img
-                  alt=""
-                  className="hvr-float-shadow"
-                  src={require("./assets/products/products (2).png")}
-                ></img>
-                <img
-                  alt=""
-                  className="hvr-float-shadow"
-                  src={require("./assets/products/products (3).png")}
-                ></img>
-                <img
-                  alt=""
-                  className="hvr-float-shadow"
-                  src={require("./assets/products/products (4).png")}
-                ></img>
-                <img
-                  alt=""
-                  className="hvr-float-shadow"
-                  src={require("./assets/products/products (5).png")}
-                ></img>
-                <img
-                  alt=""
-                  className="hvr-float-shadow"
-                  src={require("./assets/products/products (6).png")}
-                ></img>
-                <img
-                  alt=""
-                  className="hvr-float-shadow"
-                  src={require("./assets/products/products (7).png")}
-                ></img>
-                <img
-                  alt=""
-                  className="hvr-float-shadow"
-                  src={require("./assets/products/products (8).png")}
-                ></img>
+                {this.state.products.map((product) => (
+                  <Link to={`/products/${product.id}`}>
+                    <img
+                      alt=""
+                      className="hvr-float-shadow"
+                      src={product.image[0].image}
+                    ></img>
+                  </Link>
+                ))}
               </div>
               <Link to="/products">
                 <button
@@ -335,7 +282,7 @@ export default class Home extends Component {
                       threadprof="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
                       trendinghead={person.title}
                       trendingcontent={person.content}
-                      timethread={person.thread_date}
+                      timethread={<Moment fromNow>{person.date}</Moment>}
                     />
                   </Link>
                 ))}

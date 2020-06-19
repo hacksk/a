@@ -4,7 +4,7 @@ import {
   MdLocationOn,
   MdShoppingCart,
   MdAccountCircle,
-  MdForum
+  MdForum,
 } from "react-icons/md";
 import { AiTwotoneHome } from "react-icons/ai";
 import { IoMdSearch } from "react-icons/io";
@@ -19,6 +19,7 @@ const text1 = <span>Search</span>;
 const text2 = <span>Location</span>;
 const text3 = <span>Cart</span>;
 const text4 = <span>Forum</span>;
+const text5 = <span>Account</span>
 
 // const buttonWidth = 70;
 
@@ -68,7 +69,7 @@ class NavbarNew extends Component {
             <li>
               <Tooltip placement="top" title={text3}>
                 <Button>
-                  <MdShoppingCart />{" "}
+                  <MdShoppingCart />
                 </Button>
               </Tooltip>
             </li>
@@ -77,7 +78,7 @@ class NavbarNew extends Component {
             <li>
               <Tooltip placement="top" title={text4}>
                 <Button>
-                  <MdForum />{" "}
+                  <MdForum />
                 </Button>
               </Tooltip>
             </li>
@@ -86,9 +87,11 @@ class NavbarNew extends Component {
           {this.props.isAuthenticated ? (
             <Link to="/account">
               <li>
-                <Button>
-                  <MdAccountCircle />
-                </Button>
+                <Tooltip placement="top" title={text5}>
+                  <Button>
+                    <MdAccountCircle />
+                  </Button>
+                </Tooltip>
               </li>
             </Link>
           ) : (
@@ -114,16 +117,16 @@ class NavbarNew extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    isAuthenticated: state.auth.isAuthenticated
+    isAuthenticated: state.auth.isAuthenticated,
   };
 };
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     signOut: () => {
       dispatch(signOut());
-    }
+    },
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(NavbarNew);

@@ -1,24 +1,25 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { FaRupeeSign } from "react-icons/fa";
+import { Alert } from 'antd';
 import {
   removeItem,
   addQuantity,
   subtractQuantity,
-  loadAddedItems
+  loadAddedItems,
 } from "../../../actions/cartActions";
 import Recipe from "./Recipe";
 class Cart extends Component {
   //to remove the item completely
-  handleRemove = id => {
+  handleRemove = (id) => {
     this.props.removeItem(id);
   };
   //to add the quantity
-  handleAddQuantity = id => {
+  handleAddQuantity = (id) => {
     this.props.addQuantity(id);
   };
   //to substruct from the quantity
-  handleSubtractQuantity = id => {
+  handleSubtractQuantity = (id) => {
     this.props.subtractQuantity(id);
   };
 
@@ -35,7 +36,7 @@ class Cart extends Component {
   render() {
     let addedItems =
       this.props.addedItems != null ? (
-        this.props.addedItems.map(item => {
+        this.props.addedItems.map((item) => {
           // console.log(item);
           return (
             <li className="collection-item avatar" key={item.id}>
@@ -63,7 +64,7 @@ class Cart extends Component {
                   className="waves-effect waves-light btn pink remove"
                   style={{
                     background:
-                      "linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), linear-gradient(98.86deg, #F05C2D 8.02%, #FCAA2E 96.06%)"
+                      "linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), linear-gradient(98.86deg, #F05C2D 8.02%, #FCAA2E 96.06%)",
                   }}
                   onClick={() => {
                     this.handleRemove(item.id);
@@ -89,32 +90,44 @@ class Cart extends Component {
             {addedItems}
           </ul>
         </div>
-        <Recipe />
+        {this.props.isAuthenticated ? (
+          <Recipe />
+        ) : (
+          <div>
+            <Alert
+              message="Warning"
+              description="This is a warning notice about copywriting."
+              type="warning"
+              showIcon
+              closable
+            />
+          </div>
+        )}
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     addedItems: state.cart.addedItems,
-    isAuthenticated: state.auth.isAuthenticated
+    isAuthenticated: state.auth.isAuthenticated,
   };
 };
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     loadAddedItems: () => {
       dispatch(loadAddedItems());
     },
-    removeItem: id => {
+    removeItem: (id) => {
       dispatch(removeItem(id));
     },
-    addQuantity: id => {
+    addQuantity: (id) => {
       dispatch(addQuantity(id));
     },
-    subtractQuantity: id => {
+    subtractQuantity: (id) => {
       dispatch(subtractQuantity(id));
-    }
+    },
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);

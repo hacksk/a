@@ -6,6 +6,21 @@
   font-family: Metro;
   src: url("assets/Fonts/METRO-DF.woff") format("woff");
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+::-webkit-datetime-edit-year-field:not([aria-valuenow]),
+::-webkit-datetime-edit-month-field:not([aria-valuenow]),
+::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
+    color: transparent;
+}
 /* html {
   overflow: auto;
 } */
@@ -341,7 +356,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   margin-top: 12px;
 }
 .accesories-main img {
-  width: 32vw;
+  width: 25vw;
 }
 .accesories-moto {
   height: 100vh !important;
@@ -1173,7 +1188,13 @@ body {
   color: #999;
   font-size: 32px;
 }
-
+.ant-upload-list-picture-card-container{
+  position: absolute!important;
+}
+.ant-upload.ant-upload-select-picture-card {
+  position: absolute;
+  top: 30em;
+}
 .ant-upload-select-picture-card .ant-upload-text {
   margin-top: 8px;
   color: #666;
