@@ -295,14 +295,7 @@ export default class Home extends Component {
           <div className="footer-primary">
             <div className="footer-sub">
               <ul>
-                <li>
-                  <a
-                    href="#qiucklinks"
-                    style={{ textDecoration: "underline", color: "white" }}
-                  >
-                    QUICK LINKS
-                  </a>
-                </li>
+                <h6 style={{color:"white"}}>QUICK LINKS</h6>
                 <li>HOME</li>
                 <li>ACCESSORIES</li>
                 <li>SERVICES</li>
