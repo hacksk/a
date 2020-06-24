@@ -23,7 +23,6 @@ export const sendOtp = (phone) => (dispatch) => {
         payload: err.response.data,
       })
     );
-  message.info("Make sure you have added +91");
 };
 
 // OTP - Verify OTP

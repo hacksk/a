@@ -3,6 +3,7 @@ import Accountupload from "./PicturesWall";
 import { connect } from "react-redux";
 import axios from "axios";
 import AccountCustomer from "./AccountCustomer";
+import { Spin, Space} from "antd";
 
 class AccountGeneral extends Component {
   state = {
@@ -41,29 +42,7 @@ class AccountGeneral extends Component {
                 <tr>{this.state.person.phone}</tr>
               <tr>{this.state.person.age}</tr>
               </td>
-              <td>
-                <tr>
-                  <a href="#accnt" className="edit-accnt">
-                    Edit
-                  </a>
-                </tr>
-                <tr>
-                  <a href="#accnt" className="edit-accnt">
-                    Edit
-                  </a>
-                </tr>
-                <tr>
-                  <a href="#accnt" className="edit-accnt">
-                    Edit
-                  </a>
-                </tr>
-                {/* <br/> */}
-                <tr>
-                  <a href="#accnt" className="edit-accnt">
-                    Edit
-                  </a>
-                </tr>
-              </td>
+              
             </table>
             <div className="accnt-upload">
               <Accountupload thread={this.state.person} />
@@ -143,19 +122,24 @@ class AccountGeneral extends Component {
               <td>
                 <tr>English(United States)</tr>
               </td>
-              <td>
-                <tr>
-                  <a href="#accnt" className="edit-accnt">
-                    Edit
-                  </a>
-                </tr>
-              </td>
+              
             </table>
           </div>
         </div>
       </div>
     ) : (
-      <div>Loadin...</div>
+      <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        paddingTop: "10vh",
+      }}
+    >
+      <Space size="middle">
+        <Spin size="large" />
+      </Space>
+    </div>
     );
   }
 }
