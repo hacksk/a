@@ -26,7 +26,7 @@ class otpVerify extends Component {
     });
   };
   handleClick = (event) => {
-    this.props.history.push("/signin");
+    window.location.replace("/signin");
   };
   handleFormSubmit = (event) => {
     event.preventDefault();
@@ -76,7 +76,7 @@ class otpVerify extends Component {
                 style={{
                   border: "none",
                   color: "rgba(255, 255, 255, 0.87)",
-                  background:"transparent"
+                  background: "transparent",
                 }}
               >
                 RESEND OTP

@@ -119,6 +119,9 @@ export const addToCart = (id) => (dispatch) => {
           },
         ],
       })
+      .catch((error) => {
+        console.log("erroradd", error);
+      })
       .then((res) => {
         dispatch({
           type: ADD_TO_CART,

@@ -171,23 +171,10 @@ class SignupForm extends Component {
                   placeholder="Full Name"
                 />
                 <input
-                  name="address_line1"
-                  type="text"
-                  onChange={this.handleChange}
-                  placeholder="Address"
-                />
-
-                <input
-                  name="address_line2"
-                  type="text"
-                  onChange={this.handleChange}
-                  placeholder="Address line two"
-                />
-                <input
                   name="age"
                   type="number"
                   onChange={this.handleChange}
-                  placeholder="Age  "
+                  placeholder="Age"
                 />
                 <button
                   className="signin-btn"

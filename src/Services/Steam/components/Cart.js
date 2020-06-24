@@ -96,7 +96,7 @@ class Cart extends Component {
           <div>
             <Alert
               message="Warning"
-              description="This is a warning notice about copywriting."
+              description="Please Sign in to Checkout"
               type="warning"
               showIcon
               closable

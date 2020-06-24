@@ -17,11 +17,10 @@ class SignIn extends Component {
   static getDerivedStateFromProps(nextProps) {
     if (nextProps.userData != null && nextProps.userData.phone) {
       nextProps.history.push("/signin/verify");
-    }
+    } 
   }
 
   handleChange = (event) => {
-
     this.setState({
       [event.target.name]: event.target.value,
     });
@@ -62,6 +61,7 @@ class SignIn extends Component {
             value={this.state.phone}
             placeholder="Mobile Number(+91)"
             onChange={this.handleChange}
+            defaultValue="+91"
             required
           ></input>
 

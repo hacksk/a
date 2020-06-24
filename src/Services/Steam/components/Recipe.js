@@ -70,6 +70,7 @@ class Recipe extends Component {
           >
             CHECKOUT
           </button>
+          
         </Link>
       </div>
     );

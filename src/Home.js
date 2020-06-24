@@ -14,7 +14,7 @@ import { Tabs } from "antd";
 import ForumTrending from "./Forum/ForumTrendingThread";
 import Banner from "./Forum/Banner";
 import axios from "axios";
-import Moment from "react-moment"
+import Moment from "react-moment";
 
 const { TabPane } = Tabs;
 
@@ -273,7 +273,16 @@ export default class Home extends Component {
           >
             <Tabs defaultActiveKey="2" onChange={callback}>
               <TabPane tab="LATEST" key="1">
-                Content of Tab Pane 1
+                {this.state.subthread.map((person) => (
+                  <Link to={`/forum/thread/${person.id}`}>
+                    <ForumTrending
+                      threadprof="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+                      trendinghead={person.title}
+                      trendingcontent={person.content}
+                      timethread={<Moment fromNow>{person.date}</Moment>}
+                    />
+                  </Link>
+                ))}
               </TabPane>
               <TabPane tab="TRENDING" key="2">
                 {this.state.persons.map((person) => (
@@ -295,7 +304,7 @@ export default class Home extends Component {
           <div className="footer-primary">
             <div className="footer-sub">
               <ul>
-                <h6 style={{color:"white"}}>QUICK LINKS</h6>
+                <h6 style={{ color: "white" }}>QUICK LINKS</h6>
                 <li>HOME</li>
                 <li>ACCESSORIES</li>
                 <li>SERVICES</li>
