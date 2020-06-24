@@ -17,7 +17,7 @@ class SignIn extends Component {
   static getDerivedStateFromProps(nextProps) {
     if (nextProps.userData != null && nextProps.userData.phone) {
       nextProps.history.push("/signin/verify");
-    } 
+    }
   }
 
   handleChange = (event) => {
@@ -29,7 +29,7 @@ class SignIn extends Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
     const { phone } = this.state;
-    this.props.sendOtp({ phone });
+    this.props.sendOtp({ phone: `+91${phone}` });
   };
 
   render() {

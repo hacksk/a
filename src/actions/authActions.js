@@ -23,7 +23,7 @@ export const sendOtp = (phone) => (dispatch) => {
         payload: err.response.data,
       })
     );
-    message.info('Make sure you have added +91');
+  message.info("Make sure you have added +91");
 };
 
 // OTP - Verify OTP
@@ -54,7 +54,6 @@ export const verifyOtp = (otp) => (dispatch, getState) => {
         payload: err.response.data,
       })
     );
-
 };
 
 // Set logged in user

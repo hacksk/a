@@ -11,8 +11,8 @@ import { FaRupeeSign } from "react-icons/fa";
 
 class AccesoriesExpanded extends Component {
   state = {
-    currentItem: [],
-    services:[]
+    currentItem: null,
+    services: [],
   };
   componentDidMount() {
     axios.get(`https://automoto.techbyheart.in/api/v1/service/`).then((res) => {
@@ -22,9 +22,7 @@ class AccesoriesExpanded extends Component {
       );
       this.setState({ currentItem });
       console.log(currentItem);
-      console.log("imagecheck",currentItem.images[0].image)
-     
-
+      console.log("imagecheck", currentItem.images[0].image);
     });
   }
   handleClick = (id) => {
@@ -32,7 +30,7 @@ class AccesoriesExpanded extends Component {
     this.props.addToCart(id);
   };
   render() {
-    return (
+    return this.state.currentItem ? (
       <div
         className="accessories-moto"
         style={{
@@ -50,7 +48,10 @@ class AccesoriesExpanded extends Component {
             >
               <div className="height-define">
                 <div className="accesories-main">
-                  {/* <img alt="" src={this.state.currentItem.images[0].image}></img> */}
+                  <img
+                    alt=""
+                    src={this.state.currentItem.images[0].image}
+                  ></img>
                   <div className="accesories-carousel"></div>
                   <div className="accesories-detail"></div>
                 </div>
@@ -102,6 +103,8 @@ class AccesoriesExpanded extends Component {
           </Tab>
         </Tabs>
       </div>
+    ) : (
+      <div>Loading...</div>
     );
   }
 }
