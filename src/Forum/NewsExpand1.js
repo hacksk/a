@@ -6,6 +6,7 @@ import ReactPlayer from "react-player";
 import { MdMoreVert } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
+import { connect } from "react-redux";
 
 const URL = "https://automoto.techbyheart.in/api/v1/forum";
 const content = (id) => (
@@ -37,8 +38,7 @@ const content = (id) => (
     </Link>
   </div>
 );
-
-export default class NewsExpanded extends Component {
+class NewsExpanded extends Component {
   state = {
     thread: null,
     count: 0,
@@ -64,23 +64,25 @@ export default class NewsExpanded extends Component {
               className="threadexpand-content"
               style={{ position: "relative" }}
             >
-              <div className="forum-more-container">
-                <div
-                  className="forum-more"
-                  style={{
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Popover
-                    placement="bottomRight"
-                    content={() => content(this.state.thread.id)}
-                    trigger="click"
+              {this.props.isAuthenticated ? (
+                <div className="forum-more-container">
+                  <div
+                    className="forum-more"
+                    style={{
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
                   >
-                    <MdMoreVert />
-                  </Popover>
+                    <Popover
+                      placement="bottomRight"
+                      content={() => content(this.state.thread.id)}
+                      trigger="click"
+                    >
+                      <MdMoreVert />
+                    </Popover>
+                  </div>
                 </div>
-              </div>
+              ) : null}
               <div className="thread-profile-header">
                 <div style={{ display: "flex", flexDirection: "row" }}>
                   <img
@@ -134,3 +136,10 @@ export default class NewsExpanded extends Component {
       );
   }
 }
+const mapStateToProps = (state) => {
+  return {
+    isAuthenticated: state.auth.isAuthenticated,
+  };
+};
+
+export default connect(mapStateToProps)(NewsExpanded);

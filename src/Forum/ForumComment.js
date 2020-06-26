@@ -8,6 +8,7 @@ import {
   Popover,
   Collapse,
   Alert,
+  message,
 } from "antd";
 import React from "react";
 import axios from "axios";
@@ -57,19 +58,20 @@ const CommentList = ({ comments, likeCount, isLiked, threadId }) => (
     header={
       <div className="forum-like-n-reply">
         <span>
-          <MdComment style={{fontSize:"15px",marginRight:"2vh"}} />
+          <MdComment style={{ fontSize: "15px", marginRight: "2vh" }} />
           {`${comments.length} ${comments.length > 1 ? "replies" : "reply"}`}
         </span>
 
-        <button className="forum-likebtn">
-          <AiOutlineLike
-            className="like-button-forum"
-            onClick={(e) => {
-              e.preventDefault();
-              // isLiked?unlike():likeCount();
-            }}
-            style={{ color: "black" }}
-          />
+        <button
+          className="forum-likebtn"
+          onClick={(e) => {
+            e.preventDefault();
+            // isLiked?unlike():likeCount();
+          }}
+          style={{ color: "black" }}
+        >
+          <AiOutlineLike className="like-button-forum" />
+
           {likeCount}
         </button>
       </div>
@@ -90,13 +92,13 @@ const CommentList = ({ comments, likeCount, isLiked, threadId }) => (
               alignItems: "center",
             }}
           >
-            <Popover
-              placement="leftTop"
-              content={() => content(threadId)}
-              trigger="click"
-            >
-              <MdMoreVert />
-            </Popover>
+              <Popover
+                placement="leftTop"
+                content={() => content(threadId)}
+                trigger="click"
+              >
+                <MdMoreVert />
+              </Popover>
           </div>
         </div>
         {/* <Collapse bordered={false}>
@@ -130,7 +132,7 @@ const Editor = ({ onChange, onSubmit, submitting, value }) => (
 class ForumComment extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props.thread);
+
     this.state = {
       comments: this.props.thread.comment,
       time: this.props.date,
@@ -180,7 +182,7 @@ class ForumComment extends React.Component {
         });
       })
       .catch((error) => {
-        window.location.replace("/signin");
+        message.info("Please fill the comment Box");
       })
       .finally(() => {
         this.setState({
@@ -229,13 +231,15 @@ class ForumComment extends React.Component {
             }
           />
         ) : (
-          <Alert
-            message="Warning"
-            description="You need to sign in to comment."
-            type="warning"
-            showIcon
-            closable
-          />
+          <div>
+            <Alert
+              message="Warning"
+              description="Please Sign in to Comment"
+              type="warning"
+              showIcon
+              closable
+            />
+          </div>
         )}
       </div>
     );

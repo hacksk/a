@@ -8,7 +8,6 @@ import axios from "axios";
 import Moment from "react-moment";
 import { connect } from "react-redux";
 
-
 const { TabPane } = Tabs;
 
 function callback(key) {
@@ -26,6 +25,7 @@ class SubForumList extends Component {
 
   componentDidMount() {
     const threadId = this.props.match.params.list;
+    this.setState({ threadId });
 
     axios
       .get(
@@ -33,7 +33,7 @@ class SubForumList extends Component {
       )
       .then((res) => {
         const persons = res.data.data;
-        const subthread = res.data.data.slice(3, 6);
+        const subthread = res.data.data.slice(0, 3);
         this.setState({ persons, subthread });
       });
     axios
@@ -43,7 +43,6 @@ class SubForumList extends Component {
         this.setState({ sub_forums });
         console.log(sub_forums);
       });
-    window.scrollTo(0, 0);
   }
   render() {
     return (
@@ -56,19 +55,20 @@ class SubForumList extends Component {
               paddingBottom: "0",
               display: "flex",
               justifyContent: "flex-end",
-              paddingRight: "5em",
               paddingTop: "0",
+              paddingRight:"0"
+
             }}
           >
             {" "}
             {this.props.isAuthenticated ? (
-              <Link to={`/forum/forumlist/${this.state.id}`}>
+              <Link to={`/forum/forumlist/subforum/${this.state.threadId}`}>
                 <button className="forum-service-now">CREATE THREAD</button>
               </Link>
             ) : (
               <Link to="/signin">
-              <button className="forum-service-now">CREATE THREAD</button>
-            </Link>
+                <button className="forum-service-now">CREATE THREAD</button>
+              </Link>
             )}
           </div>
           <div

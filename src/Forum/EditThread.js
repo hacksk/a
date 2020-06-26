@@ -173,7 +173,7 @@ export default class EditThread extends Component {
               </div>
             </div>
             <button type="submit" className="create-forum-button">
-              EDIT THREAD
+              UPDATE THREAD
             </button>
           </div>
         </form>

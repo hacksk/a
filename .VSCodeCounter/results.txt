@@ -1,0 +1,236 @@
+Date : 2020-06-26 10:53:58
+Directory : c:\Users\vishn\Desktop\testlocal\automoto-react\customer
+Total : 187 files,  29957 codes, 529 comments, 922 blanks, all 31408 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          5 |     17,305 |          0 |          5 |     17,310 |
+| JavaScript |         72 |      5,191 |        412 |        459 |      6,062 |
+| CSS        |          8 |      3,965 |        113 |        235 |      4,313 |
+| XML        |         97 |      2,931 |          0 |         88 |      3,019 |
+| HTML       |          3 |        551 |          4 |        133 |        688 |
+| Ini        |          2 |         14 |          0 |          2 |         16 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                              | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                 |        187 |     29,957 |        529 |        922 |     31,408 |
+| public                                                                                                            |          3 |         78 |          4 |          8 |         90 |
+| src                                                                                                               |        182 |     12,661 |        525 |        912 |     14,098 |
+| src\Account                                                                                                       |          7 |        404 |         95 |         42 |        541 |
+| src\Auth                                                                                                          |          1 |         88 |          0 |         10 |         98 |
+| src\Forum                                                                                                         |         16 |      1,708 |         89 |        115 |      1,912 |
+| src\Payment                                                                                                       |          1 |         65 |          2 |          3 |         70 |
+| src\Services                                                                                                      |          9 |        486 |         29 |         56 |        571 |
+| src\Services\Steam                                                                                                |          9 |        486 |         29 |         56 |        571 |
+| src\Services\Steam\components                                                                                     |          8 |        470 |         29 |         53 |        552 |
+| src\actions                                                                                                       |          5 |        206 |         45 |         29 |        280 |
+| src\actions\utils                                                                                                 |          1 |          9 |          2 |          3 |         14 |
+| src\assets                                                                                                        |         80 |      3,360 |         23 |        295 |      3,678 |
+| src\assets\Fonts                                                                                                  |          6 |        941 |         23 |        222 |      1,186 |
+| src\assets\Fonts\specimen_files                                                                                   |          2 |        415 |         21 |         90 |        526 |
+| src\assets\serviceicons                                                                                           |         65 |      2,093 |          0 |         65 |      2,158 |
+| src\reducers                                                                                                      |          4 |        142 |          8 |         19 |        169 |
+| src\validation                                                                                                    |          1 |          6 |          0 |          2 |          8 |
+| src\vector-icons                                                                                                  |         23 |        510 |          0 |         15 |        525 |
+| src\vector-icons\material icons                                                                                   |          8 |          8 |          0 |          0 |          8 |
+| src\vector-icons\steam service cards                                                                              |         14 |        497 |          0 |         14 |        511 |
++-------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                          | language   | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\package-lock.json                                        | JSON       |     17,126 |          0 |          1 |     17,127 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\package.json                                             | JSON       |         92 |          0 |          1 |         93 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\public\index.html                                        | HTML       |         39 |          4 |          6 |         49 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\public\manifest.json                                     | JSON       |         25 |          0 |          1 |         26 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\public\moto365logo.svg                                   | XML        |         14 |          0 |          1 |         15 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\.picasa.ini                                          | Ini        |          2 |          0 |          1 |          3 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\AccCarousel.js                                       | JavaScript |         26 |          0 |          5 |         31 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\AccMain.js                                           | JavaScript |         67 |          1 |         13 |         81 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Accesories.js                                        | JavaScript |         32 |          0 |          3 |         35 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\AccesoriesExpanded.js                                | JavaScript |        123 |          0 |          6 |        129 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Account\AccountCustomer.js                           | JavaScript |        185 |         32 |         15 |        232 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Account\AccountGeneral.js                            | JavaScript |         91 |         56 |          8 |        155 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Account\AccountHelp.js                               | JavaScript |         13 |          0 |          4 |         17 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Account\AccountMain.js                               | JavaScript |         36 |          1 |          6 |         43 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Account\AccountReward.js                             | JavaScript |         14 |          0 |          3 |         17 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Account\AccountSecurity.js                           | JavaScript |         32 |          6 |          3 |         41 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Account\PicturesWall.js                              | JavaScript |         33 |          0 |          3 |         36 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\App.css                                              | CSS        |      3,244 |         88 |        116 |      3,448 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\App.js                                               | JavaScript |         94 |          0 |          4 |         98 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\App.test.js                                          | JavaScript |          8 |          0 |          2 |         10 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Auth\SignIn.js                                       | JavaScript |         88 |          0 |         10 |         98 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\BottomNavbar.js                                      | JavaScript |        104 |          0 |          2 |        106 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Demo.js                                              | JavaScript |         36 |          0 |          3 |         39 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Employee.css                                         | CSS        |        124 |          1 |          6 |        131 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\FeedBack.js                                          | JavaScript |         55 |          0 |          7 |         62 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Footer.js                                            | JavaScript |         50 |          0 |          2 |         52 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Form.js                                              | JavaScript |         35 |          1 |          7 |         43 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\Avatar.js                                      | JavaScript |         50 |          0 |          5 |         55 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\Banner.js                                      | JavaScript |         20 |          0 |          2 |         22 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\EditThread.js                                  | JavaScript |        186 |          0 |         13 |        199 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumComment.js                                | JavaScript |        240 |          8 |         14 |        262 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumContentOne.js                             | JavaScript |        121 |          1 |          7 |        129 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumContentTwo.js                             | JavaScript |         16 |          0 |          2 |         18 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumCreate.js                                 | JavaScript |        194 |          0 |         13 |        207 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumHome.js                                   | JavaScript |        176 |         71 |         10 |        257 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumList.js                                   | JavaScript |         55 |          1 |          3 |         59 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumTrendingThread.js                         | JavaScript |         34 |          0 |          3 |         37 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\NewsExpand1.js                                 | JavaScript |        140 |          2 |          4 |        146 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ReplyComment.js                                | JavaScript |        125 |          4 |         14 |        143 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\SubForumList.js                                | JavaScript |        129 |          1 |          8 |        138 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ThreadExpand.js                                | JavaScript |         83 |          0 |          2 |         85 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ThreadLink.js                                  | JavaScript |         51 |          0 |          7 |         58 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ThreadList.js                                  | JavaScript |         88 |          1 |          8 |         97 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\HeaderCustomer.js                                    | JavaScript |         19 |          0 |          2 |         21 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Home.js                                              | JavaScript |        259 |         74 |         10 |        343 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Inventory.js                                         | JavaScript |         69 |          0 |          5 |         74 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Location.js                                          | JavaScript |        108 |          4 |          8 |        120 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\LocationDist.js                                      | JavaScript |         15 |          1 |          4 |         20 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Navbar.js                                            | JavaScript |         49 |          0 |          6 |         55 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\NavbarNew.js                                         | JavaScript |        116 |         10 |          7 |        133 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Payment\Payment.js                                   | JavaScript |         65 |          2 |          3 |         70 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\ProductExpanded.js                                   | JavaScript |        128 |          2 |          7 |        137 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\ProductMain.js                                       | JavaScript |         86 |          1 |          8 |         95 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\SteamComponent.js                     | JavaScript |         16 |          0 |          3 |         19 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\Cart.js                    | JavaScript |        128 |         10 |          7 |        145 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\Home.js                    | JavaScript |         59 |          3 |          7 |         69 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\Navbar.js                  | JavaScript |         17 |          0 |          4 |         21 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\ProductHome.js             | JavaScript |         59 |          3 |          7 |         69 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\Recipe.js                  | JavaScript |         80 |          8 |         11 |         99 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\SteamCart.js               | JavaScript |         12 |          0 |          2 |         14 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\StripeBtn.js               | JavaScript |         39 |          2 |          6 |         47 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\spec.js                    | JavaScript |         76 |          3 |          9 |         88 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\SignupForm.js                                        | JavaScript |        187 |          4 |         14 |        205 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\SignupTest.js                                        | JavaScript |         95 |          1 |         15 |        111 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Status.js                                            | JavaScript |         27 |          8 |          6 |         41 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Store.css                                            | CSS        |         79 |          1 |         13 |         93 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\StripeBtn.js                                         | JavaScript |         46 |          0 |          4 |         50 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Test.js                                              | JavaScript |         26 |          0 |          4 |         30 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\actions\authActions.js                               | JavaScript |         55 |         10 |         12 |         77 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\actions\cartActions.js                               | JavaScript |        140 |         33 |         12 |        185 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\actions\commonActionType.js                          | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\actions\urlConfig.js                                 | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\actions\utils\setAuthToken.js                        | JavaScript |          9 |          2 |          3 |         14 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\.picasa.ini                                   | Ini        |         12 |          0 |          1 |         13 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Fonts\index.html                              | HTML       |         34 |          0 |          5 |         39 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Fonts\praktika-light-demo.html                | HTML       |        478 |          0 |        122 |        600 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Fonts\specimen_files\grid_12-825-55-15.css    | CSS        |         95 |         10 |         24 |        129 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Fonts\specimen_files\specimen_stylesheet.css  | CSS        |        320 |         11 |         66 |        397 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Fonts\style.css                               | CSS        |          7 |          1 |          1 |          9 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Fonts\stylesheet.css                          | CSS        |          7 |          1 |          4 |         12 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Group 239connected.svg                        | XML        |         23 |          0 |          1 |         24 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Group 240connected.svg                        | XML        |         26 |          0 |          1 |         27 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Group 243connected.svg                        | XML        |         21 |          0 |          1 |         22 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Group 244connected.svg                        | XML        |         94 |          0 |          1 |         95 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\amlogo.svg                                    | XML        |         14 |          0 |          1 |         15 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\automotologo.svg                              | XML        |        121 |          0 |          1 |        122 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\moto365logo.svg                               | XML        |         14 |          0 |          1 |         15 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\COPYRIGHT automotoservice.svg    | XML        |          3 |          0 |          1 |          4 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 107connected.svg           | XML        |         19 |          0 |          1 |         20 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 108connected.svg           | XML        |         19 |          0 |          1 |         20 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 109connected.svg           | XML        |         19 |          0 |          1 |         20 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 110connected.svg           | XML        |         19 |          0 |          1 |         20 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 120PERFORMANCE.svg         | XML        |         17 |          0 |          1 |         18 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 121.svg                    | XML        |         41 |          0 |          1 |         42 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 121PERFORMANCE.svg         | XML        |         16 |          0 |          1 |         17 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 123PERFORMANCE.svg         | XML        |         38 |          0 |          1 |         39 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 124PERFORMANCE.svg         | XML        |         24 |          0 |          1 |         25 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 125PERFORMANCE.svg         | XML        |         35 |          0 |          1 |         36 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 126PERFORMANCE.svg         | XML        |         40 |          0 |          1 |         41 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 127PERFORMANCE.svg         | XML        |         31 |          0 |          1 |         32 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 128PERFORMANCE.svg         | XML        |        106 |          0 |          1 |        107 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 198inventory.svg           | XML        |         15 |          0 |          1 |         16 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 199inventory.svg           | XML        |         11 |          0 |          1 |         12 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 19inventory.svg            | XML        |         15 |          0 |          1 |         16 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 219PERFORMANCE.svg         | XML        |         24 |          0 |          1 |         25 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 220PERFORMANCE.svg         | XML        |         32 |          0 |          1 |         33 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 221PERFORMANCE.svg         | XML        |         27 |          0 |          1 |         28 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 222PERFORMANCE.svg         | XML        |         42 |          0 |          1 |         43 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 223PERFORMANCE.svg         | XML        |         30 |          0 |          1 |         31 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 251inventory.svg           | XML        |         25 |          0 |          1 |         26 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 252inventory.svg           | XML        |         15 |          0 |          1 |         16 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 253inventory.svg           | XML        |         15 |          0 |          1 |         16 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecuadblue.svg                    | XML        |         25 |          0 |          1 |         26 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecuantilag.svg                   | XML        |         41 |          0 |          1 |         42 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecudpf.svg                       | XML        |         36 |          0 |          1 |         37 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecudsg.svg                       | XML        |         24 |          0 |          1 |         25 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecueco.svg                       | XML        |         32 |          0 |          1 |         33 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecuegr.svg                       | XML        |         30 |          0 |          1 |         31 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecuexhaust.svg                   | XML        |         37 |          0 |          1 |         38 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecuintake.svg                    | XML        |        118 |          0 |          1 |        119 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\eculaunch.svg                    | XML        |         32 |          0 |          1 |         33 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecuobd.svg                       | XML        |         27 |          0 |          1 |         28 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecuperform.svg                   | XML        |         35 |          0 |          1 |         36 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecuspeed.svg                     | XML        |         42 |          0 |          1 |         43 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecustage.svg                     | XML        |         41 |          0 |          1 |         42 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerbattery.svg                 | XML        |         23 |          0 |          1 |         24 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerbrakes.svg                  | XML        |         22 |          0 |          1 |         23 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerclimate.svg                 | XML        |         32 |          0 |          1 |         33 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerelectric.svg                | XML        |         54 |          0 |          1 |         55 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerinsurance.svg               | XML        |         35 |          0 |          1 |         36 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerlub.svg                     | XML        |         23 |          0 |          1 |         24 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offermechanic.svg                | XML        |         32 |          0 |          1 |         33 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerpolution.svg                | XML        |         34 |          0 |          1 |         35 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerpowersteer.svg              | XML        |         29 |          0 |          1 |         30 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerrepellent.svg               | XML        |         25 |          0 |          1 |         26 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offertire.svg                    | XML        |         97 |          0 |          1 |         98 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steam360.svg                     | XML        |         49 |          0 |          1 |         50 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steambeltkleen.svg               | XML        |         24 |          0 |          1 |         25 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steambrakes.svg                  | XML        |         24 |          0 |          1 |         25 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steamdesalt.svg                  | XML        |         31 |          0 |          1 |         32 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steamenginebay.svg               | XML        |         37 |          0 |          1 |         38 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steamexterior.svg                | XML        |         39 |          0 |          1 |         40 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steamlight.svg                   | XML        |         23 |          0 |          1 |         24 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steamlogo.svg                    | XML        |         23 |          0 |          1 |         24 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steammat.svg                     | XML        |         60 |          0 |          1 |         61 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steammoto.svg                    | XML        |         26 |          0 |          1 |         27 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steampresale.svg                 | XML        |         37 |          0 |          1 |         38 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steamradiator.svg                | XML        |         40 |          0 |          1 |         41 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steamroofkleen.svg               | XML        |         25 |          0 |          1 |         26 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steamwheel.svg                   | XML        |         24 |          0 |          1 |         25 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\sweet 16.svg                     | XML        |         23 |          0 |          1 |         24 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\xpress car service.svg           | XML        |          4 |          0 |          1 |          5 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\timer-24px.svg                                | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\data.json                                            | JSON       |         58 |          0 |          1 |         59 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\index.css                                            | CSS        |         89 |          0 |          5 |         94 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\index.js                                             | JavaScript |         34 |          6 |          6 |         46 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\login.json                                           | JSON       |          4 |          0 |          1 |          5 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\otpVerify.js                                         | JavaScript |         98 |          0 |         10 |        108 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\reducers\authReducer.js                              | JavaScript |         23 |          1 |          5 |         29 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\reducers\cartReducer.js                              | JavaScript |        100 |          7 |          9 |        116 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\reducers\errorReducer.js                             | JavaScript |         10 |          0 |          3 |         13 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\reducers\index.js                                    | JavaScript |          9 |          0 |          2 |         11 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\serviceWorker.js                                     | JavaScript |         94 |         31 |         13 |        138 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\validation\isEmpty.js                                | JavaScript |          6 |          0 |          2 |          8 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\main-page-lines.svg                     | XML        |          5 |          0 |          1 |          6 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\material icons\build-24px(1).svg        | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\material icons\filter_list-24px (1).svg | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\material icons\home-24px(2).svg         | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\material icons\logout.svg               | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\material icons\map-24px.svg             | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\material icons\menu-24px.svg            | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\material icons\search-24px (1).svg      | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\material icons\shopping_cart-24px.svg   | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 65steam.svg   | XML        |         32 |          0 |          1 |         33 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 82steam.svg   | XML        |         30 |          0 |          1 |         31 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 84steam.svg   | XML        |         24 |          0 |          1 |         25 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 85steam.svg   | XML        |         23 |          0 |          1 |         24 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 86steam.svg   | XML        |         90 |          0 |          1 |         91 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 87steam.svg   | XML        |         36 |          0 |          1 |         37 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 88steam.svg   | XML        |         24 |          0 |          1 |         25 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 89steam.svg   | XML        |         23 |          0 |          1 |         24 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 90steam.svg   | XML        |         49 |          0 |          1 |         50 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 91steam.svg   | XML        |         59 |          0 |          1 |         60 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 92steam.svg   | XML        |         37 |          0 |          1 |         38 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 93steam.svg   | XML        |         22 |          0 |          1 |         23 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 94steam.svg   | XML        |         23 |          0 |          1 |         24 |
+| c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 95steam.svg   | XML        |         25 |          0 |          1 |         26 |
+| Total                                                                                                             |            |     29,957 |        529 |        922 |     31,408 |
++-------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

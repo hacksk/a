@@ -3,7 +3,6 @@ import Demo from "./ForumComment";
 
 export default class ThreadExpand extends Component {
   componentDidMount() {
-    window.scrollTo(0, 0);
   }
   render() {
     return (

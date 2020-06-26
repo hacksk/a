@@ -46,7 +46,6 @@ export default class Home extends Component {
       const products = res.data;
       this.setState({ products });
     });
-    window.scrollTo(0, 0);
   }
   render() {
     return (
@@ -218,15 +217,16 @@ export default class Home extends Component {
                   </Link>
                 ))}
               </div>
-
-              <button
-                style={{ border: "none", background: "transparent" }}
-                href="#explore"
-                className="explore-link "
-              >
-                EXPLORE
-                <FaLongArrowAltRight />
-              </button>
+              <Link to="/services">
+                <button
+                  style={{ border: "none", background: "transparent" }}
+                  href="#explore"
+                  className="explore-link "
+                >
+                  EXPLORE
+                  <FaLongArrowAltRight />
+                </button>
+              </Link>
               <h5>RECOMMENDED ACCESSORIES</h5>
               <div className="home-content-part1">
                 {this.state.products.map((product) => (
@@ -305,10 +305,18 @@ export default class Home extends Component {
             <div className="footer-sub">
               <ul>
                 <h6 style={{ color: "white" }}>QUICK LINKS</h6>
-                <li>HOME</li>
-                <li>ACCESSORIES</li>
-                <li>SERVICES</li>
-                <li>MAP</li>
+                <Link to="/">
+                  <li>HOME</li>
+                </Link>
+                <Link to="/products">
+                  <li>ACCESSORIES</li>
+                </Link>
+                <Link to="/services">
+                  <li>SERVICES</li>
+                </Link>
+                <Link to="/map">
+                  <li>MAP</li>
+                </Link>
               </ul>
             </div>
             <div className="footer-logo">

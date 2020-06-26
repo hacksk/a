@@ -28,10 +28,8 @@ export default class ThreadList extends Component {
       .then((res) => {
         const persons = res.data.data;
         const subthread = res.data.data.slice(3, 6);
-        this.setState({ persons });
-        this.setState({ subthread });
+        this.setState({ persons,subthread });
       });
-    window.scrollTo(0, 0);
   }
   render() {
     return (

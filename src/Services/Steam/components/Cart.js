@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { FaRupeeSign } from "react-icons/fa";
-import { Alert } from 'antd';
+import { Alert } from "antd";
+import axios from "axios"
 import {
   removeItem,
   addQuantity,
@@ -11,9 +12,9 @@ import {
 import Recipe from "./Recipe";
 class Cart extends Component {
   //to remove the item completely
-  handleRemove = (id) => {
-    this.props.removeItem(id);
-  };
+  // handleRemove = (id) => {
+  //   this.props.removeItem(id);
+  // };
   //to add the quantity
   handleAddQuantity = (id) => {
     this.props.addQuantity(id);
@@ -66,11 +67,21 @@ class Cart extends Component {
                     background:
                       "linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), linear-gradient(98.86deg, #F05C2D 8.02%, #FCAA2E 96.06%)",
                   }}
-                  onClick={() => {
-                    this.handleRemove(item.id);
+                  onClick={(e) => {
+                    axios
+                      .delete("https://automoto.techbyheart.in/api/v1/cart/delete_item/",
+                      {
+                        service:`${item.id}`
+                        
+                      }
+                      )
+                      .then((res) => {
+                        console.log(res.data);
+                      })
+                      .catch((e) => console.log(e));
                   }}
                 >
-                  Remove
+                   Remove
                 </button>
               </div>
             </li>

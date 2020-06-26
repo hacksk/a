@@ -445,9 +445,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 .nav-tabs .nav-link.active {
   color: white !important;
-  background-color: black !important;
+  background-color:transparent !important;
   border: none;
-  border-bottom: 1px solid white;
+  border-bottom: 3px solid #fc5c2d!important;
   font-size: 1.1em;
 }
 .nav-tabs .nav-link {
@@ -601,16 +601,22 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 @media screen and (max-width: 786px) {
   .height-define {
-    display: flex;
-    justify-content: center;
+    display: inline;
   }
   .leaflet-left {
     left: unset;
   }
   .accesories-main {
-    flex-direction: column;
+    display: flex!important;
     align-content: center;
-    align-items: center;
+    align-items: center!important;
+    justify-content: center!important;
+    width: 100%!important;
+  }
+  .accesories-main img{
+    margin-top:5vh;
+    width: 68vw!important;
+    margin-bottom: 5vh;
   }
   .accesories-carousel {
     width: 100vw;
@@ -733,9 +739,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   font-size: 30px;
   cursor: pointer !important;
 }
-.like-button-forum svg:hover {
-  cursor: pointer;
-}
+
 .signup-upload {
   border-radius: 160px;
   background-color: #c4c4c4;
@@ -2309,6 +2313,18 @@ body {
 .active svg {
   color: rgba(240, 92, 45, 0.87) !important;
 }
+.rs .active svg{
+  color:white!important;
+}
+.accessories-moto .nav-tabs{
+  border-bottom:1px solid rgba(255, 255, 255, 0.38);
+  margin-right: 25vh;
+  margin-left: 25vh;
+}
+.accessories-moto .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  font-size: 20px;
+  font-weight: 500;
+}
 .headerstore {
   position: absolute;
   z-index: 500 !important;
@@ -2337,12 +2353,36 @@ body {
   .headerstore-content img {
     width: 20vw !important;
   }
+  .accessories-moto .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    font-size: 15px;
+    font-weight: 500;
+  }
   .headerstore-content {
     padding: 0 0 0 0;
   }
   .footer {
     padding-bottom: 6em;
   }
+  .accessories-moto .nav-tabs{
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .accessories-moto .nav-tabs .nav-item {
+    font-size: 20px;
+  }
+  .accessories-moto .nav-tabs .nav-link:hover{
+    border: none;
+  }
+  .acc-main{
+    min-height: 40vh;
+    padding: 2em;
+    margin-bottom: 3em;
+  }
+
+  
+}
+.accessories-moto{
+  position: relative;
 }
 
 /* STYLES FOR NEW NAVBAR */
@@ -2362,6 +2402,15 @@ body {
   background-size: 87vw auto;
   position: relative;
   display: inline-block;
+}
+.ant-tag-has-color, .ant-tag-has-color a, .ant-tag-has-color a:hover, .ant-tag-has-color .anticon-close, .ant-tag-has-color .anticon-close:hover{
+  color:black!important;
+}
+.ant-select-show-search.ant-select-multiple .ant-select-selector{
+  background: rgba(255, 255, 255, 0.08);
+}
+.forum-create-tag .ant-select{
+  width:50%!important;
 }
 .home-content-part1-1 {
   padding-top: 7em;
@@ -2442,7 +2491,7 @@ body {
     height: auto;
   }
   .acc-main {
-    width: 40% !important;
+    width: 100% !important;
   }
   .bottommenu {
     display: flex;
@@ -2517,7 +2566,6 @@ body {
   color: #fc5c2d !important;
 }
 .like-button-forum {
-  color: rgba(255, 255, 255, 0.38) !important;
   font-size: 20px !important;
 }
 .like-button-forum:focus {
@@ -2633,7 +2681,7 @@ button.StripeCheckout {
     width: 19vh !important;
   }
   .price {
-    padding-bottom: 2vh;
+    margin-bottom: 6vh;
   }
   .addtocart {
     font-size: 15px !important;

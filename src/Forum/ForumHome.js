@@ -34,7 +34,6 @@ export default class ForumHome extends Component {
         this.setState({ persons });
         this.setState({ subthread });
       });
-    window.scrollTo(0, 0);
   }
   render() {
     return (
@@ -47,7 +46,7 @@ export default class ForumHome extends Component {
               paddingBottom: "0",
               display: "flex",
               justifyContent: "flex-end",
-              paddingRight: "5em",
+              paddingRight:"0"
             }}
           >
             <Link to="/forum/forumlist">
@@ -157,8 +156,7 @@ export default class ForumHome extends Component {
           <div
             className="forumcontentone"
             style={{
-              paddingTop: "4em",
-              paddingBottom: "4em",
+              padding: "4em",
               position: "relative",
               borderTop: "2px solid rgba(255, 255, 255, 0.08)",
             }}
@@ -183,6 +181,8 @@ export default class ForumHome extends Component {
             className="forum-threads"
             style={{
               paddingTop: "0",
+              paddingLeft: "6em",
+              paddingRight: "6em",
               borderTop: "2px solid rgba(255, 255, 255, 0.08)",
             }}
           >

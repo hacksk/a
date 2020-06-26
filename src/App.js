@@ -32,6 +32,7 @@ import ProductExpanded from "./ProductExpanded";
 import EditThread from "./Forum/EditThread";
 import Avatar from "./Forum/Avatar";
 import SubforumList from "./Forum/SubForumList"
+import Test from "./Test"
 
 function App() {
   return (
@@ -77,7 +78,7 @@ function App() {
           <Route exact path="/signin/verify" component={otp} />
           <Route
             exact
-            path="/forum/forumlist/:create"
+            path="/forum/forumlist/subforum/:create"
             component={Forumcreate}
           />
           <Route exact path="/signup" component={Signup} />
@@ -86,6 +87,7 @@ function App() {
           <Route exact path="/forum/content/:edit" component={EditThread} />
           <Route exact path="/antdcheck" component={Avatar} />
           <Route exact path="/forum/subforum/:list" component={SubforumList}/>
+          <Route exact path="/test" component={Test}/>
         </Switch>
         <BottomNavbar />
       </BrowserRouter>

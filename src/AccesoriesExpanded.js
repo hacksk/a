@@ -26,8 +26,18 @@ class AccesoriesExpanded extends Component {
     });
   }
   handleClick = (id) => {
+    axios
+      .post(`https://automoto.techbyheart.in/api/v1/cart/add_to_cart/`, {
+        service: [
+          {
+            service: id,
+          },
+        ],
+      })
+      .catch((error) => {
+        console.log("cartadd", error);
+      });
     message.info("Added To The Cart");
-    this.props.addToCart(id);
   };
   render() {
     return this.state.currentItem ? (
@@ -35,8 +45,7 @@ class AccesoriesExpanded extends Component {
         className="accessories-moto"
         style={{
           paddingTop: "14vh",
-          background:
-            "linear-gradient(144.37deg, rgba(240, 92, 45, 0.08) 0%, rgba(255, 255, 255, 0) 60.15%), #121212",
+          background: "#121212",
         }}
       >
         {/* <Navbar /> */}
@@ -52,8 +61,6 @@ class AccesoriesExpanded extends Component {
                     alt=""
                     src={this.state.currentItem.images[0].image}
                   ></img>
-                  <div className="accesories-carousel"></div>
-                  <div className="accesories-detail"></div>
                 </div>
                 <div className="acc-main" style={{ width: "30%" }}>
                   <p
@@ -77,7 +84,7 @@ class AccesoriesExpanded extends Component {
               <div className="price">
                 <div className="rs">
                   <h3>
-                    <FaRupeeSign />
+                    <FaRupeeSign style={{ color: "white!important" }} />
                     {this.state.currentItem.price}
                   </h3>
                   <h5 className="cost">incl.20% tax</h5>
@@ -101,6 +108,9 @@ class AccesoriesExpanded extends Component {
               </div>
             </div>
           </Tab>
+          <Tab eventKey="home1" title="SPECIFICATION">
+            <div style={{ height: "80vh", background: "#121212" }}>specs</div>
+          </Tab>
         </Tabs>
       </div>
     ) : (
@@ -114,12 +124,5 @@ const mapStateToProps = (state) => {
     items: state.cart.items,
   };
 };
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addToCart: (id) => {
-      dispatch(addToCart(id));
-    },
-  };
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(AccesoriesExpanded);
+export default connect(mapStateToProps)(AccesoriesExpanded);

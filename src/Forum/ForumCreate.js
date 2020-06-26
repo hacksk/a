@@ -1,6 +1,31 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Button, notification } from 'antd';
+import { message, Select, Tag } from "antd";
+
+const options = [
+  { value: "gold" },
+  { value: "lime" },
+  { value: "green" },
+  { value: "cyan" },
+  { value: "red" },
+  { value: "blue" },
+
+];
+
+function tagRender(props) {
+  const { label, value, closable, onClose } = props;
+
+  return (
+    <Tag
+      color={value}
+      closable={closable}
+      onClose={onClose}
+      style={{ marginRight: 3 }}
+    >
+      {label}
+    </Tag>
+  );
+}
 
 export default class ForumCreate extends Component {
   constructor(props) {
@@ -11,10 +36,26 @@ export default class ForumCreate extends Component {
       content: "",
       header_image: "",
       video_url: "",
+      tags: [],
+      options: [],
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+  }
+  componentDidMount() {
+    axios
+      .get(`https://automoto.techbyheart.in/api/v1/forum/tags/`)
+      .then((res) => {
+        const tags = res.data.data;
+        console.log(tags, "tag");
+        this.setState({ tags });
+        let name = tags.map(function (item) {
+          return item["name"];
+        });
+        this.setState({ name });
+        console.log(name);
+      });
   }
 
   handleChange(event) {
@@ -47,7 +88,7 @@ export default class ForumCreate extends Component {
         this.props.history.push("/forum");
       })
       .catch((error) => {
-        window.location.replace("/signin");
+        message.info("Please fill the comment Box");
       });
   };
   render() {
@@ -62,7 +103,7 @@ export default class ForumCreate extends Component {
             }}
           >
             <p>Give a short thread title</p>
-
+            {/* <p>{this.state.name}</p> */}
             <div
               className="thread-create-field"
               style={{
@@ -153,6 +194,16 @@ export default class ForumCreate extends Component {
                   onChange={this.handleChange}
                 ></textarea>
               </div>
+              {/* <p>Add a tag</p>
+              <div className="forum-create-tag">
+                <Select
+                  mode="multiple"
+                  tagRender={tagRender}
+                  defaultValue={["gold", "cyan"]}
+                  style={{ color: "black", width: "100%" }}
+                  options={options}
+                />
+              </div> */}
             </div>
             <button type="submit" className="create-forum-button">
               CREATE THREAD

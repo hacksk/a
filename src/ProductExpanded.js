@@ -12,12 +12,12 @@ import { FaRupeeSign } from "react-icons/fa";
 class AccesoriesExpanded extends Component {
   state = {
     currentItem: null,
-    services: [],
+    products: [],
   };
   componentDidMount() {
     axios.get(`https://automoto.techbyheart.in/api/v1/product/`).then((res) => {
-      const services = res.data;
-      const currentItem = services.find(
+      const products = res.data;
+      const currentItem = products.find(
         (x) => x.id == this.props.match.params.product
       );
       this.setState({ currentItem });
@@ -26,8 +26,20 @@ class AccesoriesExpanded extends Component {
     });
   }
   handleClick = (id) => {
+    axios
+      .post(`https://automoto.techbyheart.in/api/v1/cart/add_to_cart/`, {
+        product: [
+          {
+            product: id,
+            quantity: "2",
+          },
+        ],
+      })
+      .catch((error) => {
+        console.log("cartadd", error);
+      });
     message.info("Added To The Cart");
-    this.props.addToCart(id);
+    // this.props.addToCart(id);
   };
   render() {
     return this.state.currentItem ? (
@@ -35,8 +47,7 @@ class AccesoriesExpanded extends Component {
         className="accessories-moto"
         style={{
           paddingTop: "14vh",
-          background:
-            "linear-gradient(144.37deg, rgba(240, 92, 45, 0.08) 0%, rgba(255, 255, 255, 0) 60.15%), #121212",
+          background: "#121212",
         }}
       >
         {/* <Navbar /> */}
@@ -48,12 +59,8 @@ class AccesoriesExpanded extends Component {
             >
               <div className="height-define">
                 <div className="accesories-main">
-                  <img
-                    alt=""
-                    src={this.state.currentItem.image[0].image}
-                  ></img>
-                  <div className="accesories-carousel"></div>
-                  <div className="accesories-detail"></div>
+                  <img alt="" src={this.state.currentItem.image[0].image}></img>
+                 
                 </div>
                 <div className="acc-main" style={{ width: "30%" }}>
                   <p
@@ -109,6 +116,9 @@ class AccesoriesExpanded extends Component {
               </div>
             </div>
           </Tab>
+          <Tab eventKey="home1" title="SPECIFICATION">
+            <div style={{height:"80vh",background:"#121212"}}>specs</div>
+          </Tab>
         </Tabs>
       </div>
     ) : (
@@ -122,12 +132,5 @@ const mapStateToProps = (state) => {
     items: state.cart.items,
   };
 };
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addToCart: (id) => {
-      dispatch(addToCart(id));
-    },
-  };
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(AccesoriesExpanded);
+export default connect(mapStateToProps)(AccesoriesExpanded);
