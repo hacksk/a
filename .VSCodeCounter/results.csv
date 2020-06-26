@@ -32,18 +32,18 @@
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumComment.js", "JavaScript", 0, 0, 0, 240, 0, 0, 8, 14, 262
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumContentOne.js", "JavaScript", 0, 0, 0, 121, 0, 0, 1, 7, 129
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumContentTwo.js", "JavaScript", 0, 0, 0, 16, 0, 0, 0, 2, 18
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumCreate.js", "JavaScript", 0, 0, 0, 194, 0, 0, 0, 13, 207
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumCreate.js", "JavaScript", 0, 0, 0, 195, 0, 0, 8, 14, 217
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumHome.js", "JavaScript", 0, 0, 0, 176, 0, 0, 71, 10, 257
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumList.js", "JavaScript", 0, 0, 0, 55, 0, 0, 1, 3, 59
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumTrendingThread.js", "JavaScript", 0, 0, 0, 34, 0, 0, 0, 3, 37
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\NewsExpand1.js", "JavaScript", 0, 0, 0, 140, 0, 0, 2, 4, 146
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ReplyComment.js", "JavaScript", 0, 0, 0, 125, 0, 0, 4, 14, 143
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\SubForumList.js", "JavaScript", 0, 0, 0, 129, 0, 0, 1, 8, 138
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ThreadExpand.js", "JavaScript", 0, 0, 0, 83, 0, 0, 0, 2, 85
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\SubForumList.js", "JavaScript", 0, 0, 0, 129, 0, 0, 1, 9, 139
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ThreadExpand.js", "JavaScript", 0, 0, 0, 82, 0, 0, 0, 2, 84
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ThreadLink.js", "JavaScript", 0, 0, 0, 51, 0, 0, 0, 7, 58
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ThreadList.js", "JavaScript", 0, 0, 0, 88, 0, 0, 1, 8, 97
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\HeaderCustomer.js", "JavaScript", 0, 0, 0, 19, 0, 0, 0, 2, 21
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Home.js", "JavaScript", 0, 0, 0, 259, 0, 0, 74, 10, 343
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Home.js", "JavaScript", 0, 0, 0, 256, 0, 0, 74, 10, 340
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Inventory.js", "JavaScript", 0, 0, 0, 69, 0, 0, 0, 5, 74
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Location.js", "JavaScript", 0, 0, 0, 108, 0, 0, 4, 8, 120
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\LocationDist.js", "JavaScript", 0, 0, 0, 15, 0, 0, 1, 4, 20
@@ -52,7 +52,7 @@
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Payment\Payment.js", "JavaScript", 0, 0, 0, 65, 0, 0, 2, 3, 70
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\ProductExpanded.js", "JavaScript", 0, 0, 0, 128, 0, 0, 2, 7, 137
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\ProductMain.js", "JavaScript", 0, 0, 0, 86, 0, 0, 1, 8, 95
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\SteamComponent.js", "JavaScript", 0, 0, 0, 16, 0, 0, 0, 3, 19
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\SteamComponent.js", "JavaScript", 0, 0, 0, 13, 0, 0, 0, 4, 17
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\Cart.js", "JavaScript", 0, 0, 0, 128, 0, 0, 10, 7, 145
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\Home.js", "JavaScript", 0, 0, 0, 59, 0, 0, 3, 7, 69
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\Navbar.js", "JavaScript", 0, 0, 0, 17, 0, 0, 0, 4, 21
@@ -186,4 +186,4 @@
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 93steam.svg", "XML", 0, 0, 0, 0, 22, 0, 0, 1, 23
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 94steam.svg", "XML", 0, 0, 0, 0, 23, 0, 0, 1, 24
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 95steam.svg", "XML", 0, 0, 0, 0, 25, 0, 0, 1, 26
-"Total", "-", 17305, 551, 14, 5191, 2931, 3965, 529, 922, 31408
+"Total", "-", 17305, 551, 14, 5185, 2931, 3965, 537, 925, 31413

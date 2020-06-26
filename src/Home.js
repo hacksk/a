@@ -51,26 +51,15 @@ export default class Home extends Component {
     return (
       <div className="home">
         <div className="content-home">
-          <div className="header-wrap">
-            <div className="header">
-              <Breadcrumb>
-                <Breadcrumb.Item active>Home</Breadcrumb.Item>
-              </Breadcrumb>
-              <img
-                alt=""
-                className="header-logo"
-                src={require("./assets/moto365logo.svg")}
-              ></img>
-            </div>
-          </div>
+         
           <div className="news">
-            {/* <Carousel infiniteLoop="true" autoPlay="true">
+            <Carousel infiniteLoop="true" autoPlay="true">
               {this.state.persons.map((person) => (
                 <Link to={`/forum/thread/${person.id}`}>
                   <Banner thread={person} />
                 </Link>
               ))}
-            </Carousel> */}
+            </Carousel>
           </div>
           <div className="home-thread">
             <h6>THREADS</h6>

@@ -1,10 +1,10 @@
 # Details
 
-Date : 2020-06-26 10:53:58
+Date : 2020-06-26 17:05:51
 
 Directory c:\Users\vishn\Desktop\testlocal\automoto-react\customer
 
-Total : 187 files,  29957 codes, 529 comments, 922 blanks, all 31408 lines
+Total : 187 files,  29951 codes, 537 comments, 925 blanks, all 31413 lines
 
 [summary](results.md)
 
@@ -44,18 +44,18 @@ Total : 187 files,  29957 codes, 529 comments, 922 blanks, all 31408 lines
 | [src/Forum/ForumComment.js](/src/Forum/ForumComment.js) | JavaScript | 240 | 8 | 14 | 262 |
 | [src/Forum/ForumContentOne.js](/src/Forum/ForumContentOne.js) | JavaScript | 121 | 1 | 7 | 129 |
 | [src/Forum/ForumContentTwo.js](/src/Forum/ForumContentTwo.js) | JavaScript | 16 | 0 | 2 | 18 |
-| [src/Forum/ForumCreate.js](/src/Forum/ForumCreate.js) | JavaScript | 194 | 0 | 13 | 207 |
+| [src/Forum/ForumCreate.js](/src/Forum/ForumCreate.js) | JavaScript | 195 | 8 | 14 | 217 |
 | [src/Forum/ForumHome.js](/src/Forum/ForumHome.js) | JavaScript | 176 | 71 | 10 | 257 |
 | [src/Forum/ForumList.js](/src/Forum/ForumList.js) | JavaScript | 55 | 1 | 3 | 59 |
 | [src/Forum/ForumTrendingThread.js](/src/Forum/ForumTrendingThread.js) | JavaScript | 34 | 0 | 3 | 37 |
 | [src/Forum/NewsExpand1.js](/src/Forum/NewsExpand1.js) | JavaScript | 140 | 2 | 4 | 146 |
 | [src/Forum/ReplyComment.js](/src/Forum/ReplyComment.js) | JavaScript | 125 | 4 | 14 | 143 |
-| [src/Forum/SubForumList.js](/src/Forum/SubForumList.js) | JavaScript | 129 | 1 | 8 | 138 |
-| [src/Forum/ThreadExpand.js](/src/Forum/ThreadExpand.js) | JavaScript | 83 | 0 | 2 | 85 |
+| [src/Forum/SubForumList.js](/src/Forum/SubForumList.js) | JavaScript | 129 | 1 | 9 | 139 |
+| [src/Forum/ThreadExpand.js](/src/Forum/ThreadExpand.js) | JavaScript | 82 | 0 | 2 | 84 |
 | [src/Forum/ThreadLink.js](/src/Forum/ThreadLink.js) | JavaScript | 51 | 0 | 7 | 58 |
 | [src/Forum/ThreadList.js](/src/Forum/ThreadList.js) | JavaScript | 88 | 1 | 8 | 97 |
 | [src/HeaderCustomer.js](/src/HeaderCustomer.js) | JavaScript | 19 | 0 | 2 | 21 |
-| [src/Home.js](/src/Home.js) | JavaScript | 259 | 74 | 10 | 343 |
+| [src/Home.js](/src/Home.js) | JavaScript | 256 | 74 | 10 | 340 |
 | [src/Inventory.js](/src/Inventory.js) | JavaScript | 69 | 0 | 5 | 74 |
 | [src/Location.js](/src/Location.js) | JavaScript | 108 | 4 | 8 | 120 |
 | [src/LocationDist.js](/src/LocationDist.js) | JavaScript | 15 | 1 | 4 | 20 |
@@ -64,7 +64,7 @@ Total : 187 files,  29957 codes, 529 comments, 922 blanks, all 31408 lines
 | [src/Payment/Payment.js](/src/Payment/Payment.js) | JavaScript | 65 | 2 | 3 | 70 |
 | [src/ProductExpanded.js](/src/ProductExpanded.js) | JavaScript | 128 | 2 | 7 | 137 |
 | [src/ProductMain.js](/src/ProductMain.js) | JavaScript | 86 | 1 | 8 | 95 |
-| [src/Services/Steam/SteamComponent.js](/src/Services/Steam/SteamComponent.js) | JavaScript | 16 | 0 | 3 | 19 |
+| [src/Services/Steam/SteamComponent.js](/src/Services/Steam/SteamComponent.js) | JavaScript | 13 | 0 | 4 | 17 |
 | [src/Services/Steam/components/Cart.js](/src/Services/Steam/components/Cart.js) | JavaScript | 128 | 10 | 7 | 145 |
 | [src/Services/Steam/components/Home.js](/src/Services/Steam/components/Home.js) | JavaScript | 59 | 3 | 7 | 69 |
 | [src/Services/Steam/components/Navbar.js](/src/Services/Steam/components/Navbar.js) | JavaScript | 17 | 0 | 4 | 21 |

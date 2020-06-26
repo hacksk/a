@@ -1447,7 +1447,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 8em;
-  padding-top: 52px;
+  padding-top: 102px;
   padding-bottom: 0;
   position: relative;
 }
@@ -2955,13 +2955,13 @@ a:not([href]):not([tabindex]) {
   border-radius: 8px;
   height: 45vh;
 } 
-.html5-video-player:not(.ytp-transparent), .html5-video-player.unstarted-mode, .html5-video-player.ad-showing, .html5-video-player.ended-mode, .html5-video-player.ytp-fullscreen{
-  background-color: red!important;
-}
+
 .forum-video {
   height: auto !important;
   object-fit: cover !important;
+  width: auto;
 }
+
 .ant-popover-title {
   border-bottom: unset !important;
 }
@@ -2992,6 +2992,10 @@ a:not([href]):not([tabindex]) {
     flex-direction: column;
     align-items: center;
   }
+  .forum-home-thread-square img {
+    width:24em!important;
+    max-width: 25em!important;
+  }
   .home-thread {
     margin-bottom: 0 !important;
     margin-left: 1em !important;
@@ -3013,7 +3017,7 @@ a:not([href]):not([tabindex]) {
     padding-top: 0 !important;
   }
   .forum-home-thread-square {
-    width: 44vh;
+    width: 24em;
     margin-top: 1em;
     min-height: unset;
   }
