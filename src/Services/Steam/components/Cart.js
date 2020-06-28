@@ -26,6 +26,7 @@ class Cart extends Component {
 
   componentDidMount() {
     this.props.loadAddedItems();
+    console.log(loadAddedItems)
   }
 
   static getDerivedStateFromProps(nextProps) {
@@ -71,8 +72,7 @@ class Cart extends Component {
                     axios
                       .delete("https://automoto.techbyheart.in/api/v1/cart/delete_item/",
                       {
-                        service:`${item.id}`
-                        
+                        service:`${item.id}`,
                       }
                       )
                       .then((res) => {

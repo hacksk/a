@@ -2955,7 +2955,11 @@ a:not([href]):not([tabindex]) {
   border-radius: 8px;
   height: 45vh;
 } 
-
+.uploaded-image-forum{
+  width: 20em!important;
+  border-radius: 8px;
+  margin-bottom: 4vh;
+}
 .forum-video {
   height: auto !important;
   object-fit: cover !important;

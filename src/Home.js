@@ -51,7 +51,6 @@ export default class Home extends Component {
     return (
       <div className="home">
         <div className="content-home">
-         
           <div className="news">
             <Carousel infiniteLoop="true" autoPlay="true">
               {this.state.persons.map((person) => (
@@ -155,7 +154,6 @@ export default class Home extends Component {
               </div> */}
             </div>
           </div>
-
           <div className="home-content-wrap">
             <h5>FEATURED SERVICES</h5>
             <div className="head-icons">

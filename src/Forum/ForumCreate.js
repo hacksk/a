@@ -9,7 +9,6 @@ const options = [
   { value: "cyan" },
   { value: "red" },
   { value: "blue" },
-
 ];
 
 function tagRender(props) {
@@ -38,10 +37,13 @@ export default class ForumCreate extends Component {
       video_url: "",
       tags: [],
       options: [],
+      file: null,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.onChange = this.onChange.bind(this);
+    this.resetFile = this.resetFile.bind(this);
   }
   componentDidMount() {
     axios
@@ -54,7 +56,7 @@ export default class ForumCreate extends Component {
           return item["name"];
         });
         this.setState({ name });
-        console.log(name);
+        console.log(this.state.name);
       });
   }
 
@@ -91,6 +93,16 @@ export default class ForumCreate extends Component {
         message.info("Please fill the comment Box");
       });
   };
+  onChange(event) {
+    this.setState({
+      file: URL.createObjectURL(event.target.files[0]),
+      header_image: event.target.files[0],
+    });
+  }
+  resetFile(event) {
+    event.preventDefault();
+    this.setState({ file: null });
+  }
   render() {
     return (
       <div className="thread-create" style={{ padding: "8em", height: "auto" }}>
@@ -131,23 +143,26 @@ export default class ForumCreate extends Component {
                 className="thread-create-imagefield"
                 style={{
                   display: "flex",
-                  flexDirection: "row",
+                  flexDirection: "column",
                   justifyContent: "Space-between",
                   width: "40%",
                   marginTop: "3em",
                 }}
               >
                 {" "}
-                <p>Upload header image*</p>
+                <p>Upload header image</p>
+                <img className="uploaded-image-forum" src={this.state.file} />
                 <input
                   className="thread-create-upload"
                   type="file"
                   name="header_image"
-                  on
-                  onChange={(e) => {
-                    this.setState({ header_image: e.target.files[0] });
-                  }}
+                  onChange={this.onChange}
                 />
+                {/* {this.state.file && (
+                  <div style={{ textAlign: "center" }}>
+                    <button onClick={this.resetFile}>Remove File</button>
+                  </div>
+                )} */}
               </div>
             </div>
             <div>
@@ -194,14 +209,14 @@ export default class ForumCreate extends Component {
                   onChange={this.handleChange}
                 ></textarea>
               </div>
-              {/* <p>Add a tag</p>
-              <div className="forum-create-tag">
+              <p>Add a tag</p>
+              {/* <div className="forum-create-tag">
                 <Select
                   mode="multiple"
                   tagRender={tagRender}
                   defaultValue={["gold", "cyan"]}
                   style={{ color: "black", width: "100%" }}
-                  options={options}
+                  options={this.state.value.name}
                 />
               </div> */}
             </div>

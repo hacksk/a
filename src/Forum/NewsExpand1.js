@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Spin, Space, Popover } from "antd";
+import { Spin, Space, Popover,message } from "antd";
 import ForumComment from "./ForumComment";
 import ReactPlayer from "react-player";
 import { MdMoreVert } from "react-icons/md";
@@ -20,7 +20,9 @@ const content = (id) => (
             console.log(res.data);
             console.log(id);
           })
-          .catch((e) => console.log(e));
+          .catch((error) => {
+            message.info("You are not authorized to delete this comment");
+          });
       }}
     >
       Delete
@@ -53,6 +55,7 @@ class NewsExpanded extends Component {
           (x) => x.id == this.props.match.params.content
         );
         this.setState({ thread });
+        console.log(thread)
       });
   }
   render() {

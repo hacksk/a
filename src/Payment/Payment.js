@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Tabs} from "antd";
+import { Tabs } from "antd";
 import Stripe from "../StripeBtn";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const { TabPane } = Tabs;
 // const { Option } = Select;
@@ -12,7 +13,15 @@ const { TabPane } = Tabs;
 function callback(key) {
   // console.log(key);
 }
+
 export default class Payment extends Component {
+  handleSubmit = (event) => {
+    axios
+      .post(`https://automoto.techbyheart.in/api/v1/order/place_orders/`)
+      .then((res) => {
+        console.log(res);
+      });
+  };
   render() {
     return (
       <div style={{ maxHeight: "auto" }}>
@@ -28,7 +37,7 @@ export default class Payment extends Component {
               <TabPane tab="CREDIT/DEBIT CARD" key="1">
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <img
-                  alt=""
+                    alt=""
                     style={{ width: "30em" }}
                     src="https://cdn.hsbc.co.in/content/dam/hsbc/in/images/hsbc-premier-mastercard.png/_jcr_content/renditions/cq5dam.web.1280.1280.png"
                   ></img>
@@ -39,15 +48,15 @@ export default class Payment extends Component {
                     style={{
                       display: "flex",
                       justifyContent: "center",
-                      paddingTop: "2em"
+                      paddingTop: "2em",
                     }}
                   >
-                    <Link to="/payment/feedback">
-                      <button className="continue">
-                        Continue
-                        <FaArrowRight />
-                      </button>
-                    </Link>
+                    {/* <Link to="/payment/feedback"> */}
+                    <button onClick={this.handleSubmit} className="continue">
+                      Continue
+                      <FaArrowRight />
+                    </button>
+                    {/* </Link> */}
                   </div>
                 </div>
               </TabPane>
