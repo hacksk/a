@@ -22,7 +22,7 @@ class BottomNavbar extends Component {
               </button>
             </li>
           </Link>
-          <Link to="/services">
+          <Link to="/search">
             <li>
               <button
                 style={{ border: "none", background: "transparent" }}

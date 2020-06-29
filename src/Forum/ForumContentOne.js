@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { MdMoreVert } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { Popover, Button, notification } from "antd";
+import { Popover, notification } from "antd";
 import axios from "axios";
 import { connect } from "react-redux";
 

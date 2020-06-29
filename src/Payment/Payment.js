@@ -4,7 +4,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Tabs } from "antd";
 import Stripe from "../StripeBtn";
 import { FaArrowRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import axios from "axios";
 
 const { TabPane } = Tabs;

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { AiOutlineLike } from "react-icons/ai";
-import { MdInsertComment } from "react-icons/md";
+
 
 export default class ForumTrendingThread extends Component {
   render() {

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { sendOtp } from "../actions/authActions";
 import { Link } from "react-router-dom";
-import { Select } from "antd";
 
 class SignIn extends Component {
   constructor(props) {

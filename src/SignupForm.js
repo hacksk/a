@@ -5,9 +5,9 @@ import "react-alice-carousel/lib/alice-carousel.css";
 // import Accountupload from "./Account/PicturesWall";
 import { API_URL } from "./actions/urlConfig";
 import { notification } from "antd";
-import { DatePicker } from "antd";
+// import { DatePicker } from "antd";
 
-const { RangePicker } = DatePicker;
+// const { RangePicker } = DatePicker;
 
 class SignupForm extends Component {
   constructor(props) {

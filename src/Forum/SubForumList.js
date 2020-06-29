@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Forumcontentone from "./ForumContentOne";
 import Forumcontenttwo from "./ForumContentTwo";
 import { Tabs } from "antd";
 import ForumTrending from "./ForumTrendingThread";

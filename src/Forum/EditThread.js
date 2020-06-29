@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Spin, Space, Popover } from "antd";
+import { Spin, Space } from "antd";
 
 export default class EditThread extends Component {
   constructor(props) {
@@ -129,11 +129,11 @@ export default class EditThread extends Component {
                   }}
                 >
                   <p>Change header image*</p>
-                  <img
+                  <img alt=""
                     className="uploaded-image-forum"
                     src={this.state.thread.header_image}
                   ></img>
-                  <img className="uploaded-image-forum" src={this.state.file} />
+                  <img alt="" className="uploaded-image-forum" src={this.state.file} />
 
                   <input
                     className="thread-create-upload"

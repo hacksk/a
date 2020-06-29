@@ -7,7 +7,6 @@ import {
   MdForum,
 } from "react-icons/md";
 import { AiTwotoneHome } from "react-icons/ai";
-import { IoMdSearch } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { Tooltip, Button } from "antd";
 import { FiLogOut } from "react-icons/fi";
@@ -43,15 +42,6 @@ class NavbarNew extends Component {
               <Tooltip placement="top" title={text}>
                 <Button>
                   <AiTwotoneHome />
-                </Button>
-              </Tooltip>
-            </li>
-          </Link>
-          <Link to="/services">
-            <li>
-              <Tooltip placement="top" title={text1}>
-                <Button>
-                  <IoMdSearch />
                 </Button>
               </Tooltip>
             </li>

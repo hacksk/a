@@ -3,7 +3,7 @@ import OtpInput from "react-otp-input";
 import { connect } from "react-redux";
 import { verifyOtp } from "./actions/authActions";
 import { Link } from "react-router-dom";
-import { WindowsFilled } from "@ant-design/icons";
+// import { WindowsFilled } from "@ant-design/icons";
 
 class otpVerify extends Component {
   constructor(props) {

@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { message, Select, Tag } from "antd";
+import { message, Tag } from "antd";
 
-const options = [
-  { value: "gold" },
-  { value: "lime" },
-  { value: "green" },
-  { value: "cyan" },
-  { value: "red" },
-  { value: "blue" },
-];
+// const options = [
+//   { value: "gold" },
+//   { value: "lime" },
+//   { value: "green" },
+//   { value: "cyan" },
+//   { value: "red" },
+//   { value: "blue" },
+// ];
 
 function tagRender(props) {
   const { label, value, closable, onClose } = props;
@@ -151,7 +151,7 @@ export default class ForumCreate extends Component {
               >
                 {" "}
                 <p>Upload header image</p>
-                <img className="uploaded-image-forum" src={this.state.file} />
+                <img alt="" className="uploaded-image-forum" src={this.state.file} />
                 <input
                   className="thread-create-upload"
                   type="file"

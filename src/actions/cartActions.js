@@ -1,7 +1,6 @@
 import axios from "axios";
 import { API_URL } from "./urlConfig";
 import { SET_ERRORS } from "./commonActionType";
-import React from 'react'
 export const LOAD_ALL_ITEMS = "LOAD_ALL_ITEMS";
 export const LOAD_ADDED_ITEMS = "LOAD_ADDED_ITEMS";
 export const ADD_TO_CART = "ADD_TO_CART";

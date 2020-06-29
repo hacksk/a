@@ -33,6 +33,7 @@ import EditThread from "./Forum/EditThread";
 import Avatar from "./Forum/Avatar";
 import SubforumList from "./Forum/SubForumList"
 import Test from "./Test"
+import MobileSearch from "./Components/MobSearch"
 
 function App() {
   return (
@@ -88,6 +89,7 @@ function App() {
           <Route exact path="/antdcheck" component={Avatar} />
           <Route exact path="/forum/subforum/:list" component={SubforumList}/>
           <Route exact path="/test" component={Test}/>
+          <Route exact path="/search" component={MobileSearch}/>
         </Switch>
         <BottomNavbar />
       </BrowserRouter>

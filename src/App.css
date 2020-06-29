@@ -445,9 +445,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 .nav-tabs .nav-link.active {
   color: white !important;
-  background-color:transparent !important;
+  background-color: transparent !important;
   border: none;
-  border-bottom: 3px solid #fc5c2d!important;
+  border-bottom: 3px solid #fc5c2d !important;
   font-size: 1.1em;
 }
 .nav-tabs .nav-link {
@@ -607,15 +607,15 @@ Note: Beware of modifying this element as it can break the animations - you shou
     left: unset;
   }
   .accesories-main {
-    display: flex!important;
+    display: flex !important;
     align-content: center;
-    align-items: center!important;
-    justify-content: center!important;
-    width: 100%!important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
   }
-  .accesories-main img{
-    margin-top:5vh;
-    width: 68vw!important;
+  .accesories-main img {
+    margin-top: 5vh;
+    width: 68vw !important;
     margin-bottom: 5vh;
   }
   .accesories-carousel {
@@ -697,12 +697,58 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .forms-signup input {
   border: none;
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.08) !important;
   height: 3em;
   width: 25em;
   padding-left: 1.5em;
   margin-top: 1em;
   color: white;
+}
+.search-bar-content {
+  border-radius: 8px 8px 8px 8px !important;
+}
+.search-bar-wrap {
+  padding: 8em;
+  padding-bottom: 0;
+}
+.search-bar {
+  border: none;
+  border-radius: 8px 0 0 8px;
+  background-color: rgba(255, 255, 255, 0.08);
+  height: 3em;
+  width: 69vw;
+  padding-left: 1.5em;
+  color: white;
+}
+.search-content-direction{
+  display: flex;
+  flex-direction: row;
+}
+.search-image-button {
+  width: 16em;
+  margin: 2em;
+  border: 1px solid white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.search-image{
+  width: 15em;
+}
+
+.search-image-button:active{
+  border: 1px solid #F05C2D;
+
+}
+
+.search-button {
+  height: 3em;
+  width: 3em;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+.search-button svg {
+  color: rgba(255, 255, 255, 0.38) !important;
 }
 .alice-carousel__next-btn-item {
   color: #fc5c2e !important;
@@ -971,6 +1017,31 @@ Note: Beware of modifying this element as it can break the animations - you shou
   }
   .ant-rate {
     font-size: 40px !important;
+  }
+  .search-bar-wrap{
+    padding:1em;
+    padding-top: 0;
+    display: none;
+  }
+  .search-bar{
+    width: 81vw;
+  }
+  .search-image-button {
+    width: 14vh;
+    border:none
+  }
+  .search-image{
+    width: 13vh;
+    border:1px solid white;
+    border-radius: 8px;
+  }
+  .search-content-direction{
+    display: flex;
+    flex-direction: row!important;
+    flex-wrap: wrap;
+  }
+  .search-mobile{
+    padding:8em 1em 1em 1em!important;
   }
 }
 
@@ -1447,7 +1518,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 8em;
-  padding-top: 102px;
+  padding-top: 68px;
   padding-bottom: 0;
   position: relative;
 }
@@ -2313,15 +2384,16 @@ body {
 .active svg {
   color: rgba(240, 92, 45, 0.87) !important;
 }
-.rs .active svg{
-  color:white!important;
+.rs .active svg {
+  color: white !important;
 }
-.accessories-moto .nav-tabs{
-  border-bottom:1px solid rgba(255, 255, 255, 0.38);
+.accessories-moto .nav-tabs {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.38);
   margin-right: 25vh;
   margin-left: 25vh;
 }
-.accessories-moto .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+.accessories-moto .nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
   font-size: 20px;
   font-weight: 500;
 }
@@ -2353,7 +2425,8 @@ body {
   .headerstore-content img {
     width: 20vw !important;
   }
-  .accessories-moto .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  .accessories-moto .nav-tabs .nav-item.show .nav-link,
+  .nav-tabs .nav-link.active {
     font-size: 15px;
     font-weight: 500;
   }
@@ -2363,25 +2436,23 @@ body {
   .footer {
     padding-bottom: 6em;
   }
-  .accessories-moto .nav-tabs{
+  .accessories-moto .nav-tabs {
     margin-left: 0;
     margin-right: 0;
   }
   .accessories-moto .nav-tabs .nav-item {
     font-size: 20px;
   }
-  .accessories-moto .nav-tabs .nav-link:hover{
+  .accessories-moto .nav-tabs .nav-link:hover {
     border: none;
   }
-  .acc-main{
+  .acc-main {
     min-height: 40vh;
     padding: 2em;
     margin-bottom: 3em;
   }
-
-  
 }
-.accessories-moto{
+.accessories-moto {
   position: relative;
 }
 
@@ -2403,14 +2474,18 @@ body {
   position: relative;
   display: inline-block;
 }
-.ant-tag-has-color, .ant-tag-has-color a, .ant-tag-has-color a:hover, .ant-tag-has-color .anticon-close, .ant-tag-has-color .anticon-close:hover{
-  color:black!important;
+.ant-tag-has-color,
+.ant-tag-has-color a,
+.ant-tag-has-color a:hover,
+.ant-tag-has-color .anticon-close,
+.ant-tag-has-color .anticon-close:hover {
+  color: black !important;
 }
-.ant-select-show-search.ant-select-multiple .ant-select-selector{
+.ant-select-show-search.ant-select-multiple .ant-select-selector {
   background: rgba(255, 255, 255, 0.08);
 }
-.forum-create-tag .ant-select{
-  width:50%!important;
+.forum-create-tag .ant-select {
+  width: 50% !important;
 }
 .home-content-part1-1 {
   padding-top: 7em;
@@ -2954,9 +3029,9 @@ a:not([href]):not([tabindex]) {
 .forum-video iframe {
   border-radius: 8px;
   height: 45vh;
-} 
-.uploaded-image-forum{
-  width: 20em!important;
+}
+.uploaded-image-forum {
+  width: 20em !important;
   border-radius: 8px;
   margin-bottom: 4vh;
 }
@@ -2997,8 +3072,8 @@ a:not([href]):not([tabindex]) {
     align-items: center;
   }
   .forum-home-thread-square img {
-    width:24em!important;
-    max-width: 25em!important;
+    width: 24em !important;
+    max-width: 25em !important;
   }
   .home-thread {
     margin-bottom: 0 !important;

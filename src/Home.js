@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
-import Breadcrumb from "react-bootstrap/Breadcrumb";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { MdCopyright } from "react-icons/md";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -15,6 +14,7 @@ import ForumTrending from "./Forum/ForumTrendingThread";
 import Banner from "./Forum/Banner";
 import axios from "axios";
 import Moment from "react-moment";
+import SearchBar from "./Components/SearchBar";
 
 const { TabPane } = Tabs;
 
@@ -51,6 +51,9 @@ export default class Home extends Component {
     return (
       <div className="home">
         <div className="content-home">
+          <div className="search-bar-wrap">
+            <SearchBar />
+          </div>
           <div className="news">
             <Carousel infiniteLoop="true" autoPlay="true">
               {this.state.persons.map((person) => (

@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import Forumcontentone from "./ForumContentOne";
 import Forumcontenttwo from "./ForumContentTwo";
 import { Tabs } from "antd";
 import ForumTrending from "./ForumTrendingThread";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Moment from "react-moment"
+import Moment from "react-moment";
 
 const { TabPane } = Tabs;
 
@@ -28,14 +27,13 @@ export default class ThreadList extends Component {
       .then((res) => {
         const persons = res.data.data;
         const subthread = res.data.data.slice(3, 6);
-        this.setState({ persons,subthread });
+        this.setState({ persons, subthread });
       });
   }
   render() {
     return (
       <div className="threadlist" style={{ padding: "8em" }}>
         <div className="thread-forum-list">
-         
           <div
             className="threadlist-head"
             style={{

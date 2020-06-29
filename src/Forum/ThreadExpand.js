@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Demo from "./ForumComment";
 
 export default class ThreadExpand extends Component {
   componentDidMount() {

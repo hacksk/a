@@ -108,7 +108,6 @@ class NewsExpanded extends Component {
               <ReactPlayer
                 className="forum-video"
                 controls={true}
-                playing={true}
                 pip={true}
                 url={this.state.thread.video_url}
               />
