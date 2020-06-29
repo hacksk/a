@@ -18,7 +18,7 @@ class Home extends Component {
     let items = this.props.items;
     let itemList = [];
     if (items != null)
-      itemList = items.map(item => {
+      itemList = items.map((item) => {
         return (
           <Link to={`/services/${item.id}`}>
             <div className="card" key={item.id}>
@@ -40,9 +40,19 @@ class Home extends Component {
       });
 
     return itemList.length === 0 ? (
-      <Space size="middle">
-        <Spin size="large" />
-      </Space>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          paddingTop: "10vh",
+          height: "100vh",
+        }}
+      >
+        <Space size="middle">
+          <Spin size="large" />
+        </Space>
+      </div>
     ) : (
       <div className="container">
         <div style={{ paddingBottom: "7em" }} className="box">
@@ -52,16 +62,16 @@ class Home extends Component {
     );
   }
 }
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    items: state.cart.items
+    items: state.cart.items,
   };
 };
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     loadAllItems: () => {
       dispatch(loadAllItems());
-    }
+    },
   };
 };
 

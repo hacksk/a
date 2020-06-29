@@ -207,17 +207,18 @@ export default class EditThread extends Component {
     } else
       return (
         <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            paddingTop: "10vh",
-          }}
-        >
-          <Space size="middle">
-            <Spin size="large" />
-          </Space>
-        </div>
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          paddingTop: "10vh",
+          height:"100vh"
+        }}
+      >
+        <Space size="middle">
+          <Spin size="large" />
+        </Space>
+      </div>
       );
   }
 }

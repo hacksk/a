@@ -40,9 +40,19 @@ class ProductHome extends Component {
       });
 
     return itemList.length === 0 ? (
-      <Space size="middle">
-        <Spin size="large" />
-      </Space>
+      <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            paddingTop: "10vh",
+            height:"100vh"
+          }}
+        >
+          <Space size="middle">
+            <Spin size="large" />
+          </Space>
+        </div>
     ) : (
       <div className="container">
         <div style={{ paddingBottom: "7em" }} className="box">

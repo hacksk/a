@@ -129,17 +129,18 @@ class AccountGeneral extends Component {
       </div>
     ) : (
       <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        paddingTop: "10vh",
-      }}
-    >
-      <Space size="middle">
-        <Spin size="large" />
-      </Space>
-    </div>
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            paddingTop: "10vh",
+            height:"100vh"
+          }}
+        >
+          <Space size="middle">
+            <Spin size="large" />
+          </Space>
+        </div>
     );
   }
 }

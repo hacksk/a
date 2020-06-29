@@ -129,6 +129,7 @@ class NewsExpanded extends Component {
             alignItems: "center",
             justifyContent: "center",
             paddingTop: "10vh",
+            height:"100vh"
           }}
         >
           <Space size="middle">
