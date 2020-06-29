@@ -47,7 +47,7 @@ class SearchBar extends React.Component {
           onSubmit={this.handleSubmit}
           style={{ display: "flex", flexDirection: "row" }}
         >
-          <label style={{ marginBottom: "0", borderRadius: "8px" }}>
+          <label style={{ marginBottom: "0", borderRadius: "8px",width:"100%" }}>
             <input
               type="text"
               value={this.state.value}
