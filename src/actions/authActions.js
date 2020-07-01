@@ -5,7 +5,6 @@ import setAuthToken from "./utils/setAuthToken";
 
 export const SEND_OTP_SET_NUMBER = "SEND_OTP_SET_NUMBER";
 export const SET_USERDATA = "SET_USERDATA";
-
 // OTP - Send OTP
 export const sendOtp = (phone) => (dispatch) => {
   axios

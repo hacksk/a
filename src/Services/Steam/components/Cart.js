@@ -62,7 +62,7 @@ class Cart extends Component {
                                             <Link to="/cart"><i className="material-icons" onClick={()=>{this.handleAddQuantity(item.id)}}>arrow_drop_up</i></Link>
                                             <Link to="/cart"><i className="material-icons" onClick={()=>{this.handleSubtractQuantity(item.id)}}>arrow_drop_down</i></Link>
                                         </div> */}
-                <button
+                {/* <button
                   className="waves-effect waves-light btn pink remove"
                   style={{
                     background:
@@ -82,7 +82,7 @@ class Cart extends Component {
                   }}
                 >
                    Remove
-                </button>
+                </button> */}
               </div>
             </li>
           );

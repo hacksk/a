@@ -179,9 +179,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
   .subforum-list {
     padding-left: 0 !important;
   }
-  .subforum-list li {
-    padding: 2vh 0 0 0 !important;
-  }
 }
 /* STYLES FOR NAVIGATION */
 
@@ -631,6 +628,11 @@ Note: Beware of modifying this element as it can break the animations - you shou
   .sos {
     display: none;
   }
+  .cart-price {
+    bottom: 50px;
+    width: 100%;
+    padding: 0.5em;
+  }
   .leaflet-top {
     top: 8em;
   }
@@ -720,24 +722,24 @@ Note: Beware of modifying this element as it can break the animations - you shou
   padding-left: 1.5em;
   color: white;
 }
-.search-content-direction{
+.search-content-direction {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .search-image-button {
-  width: 16em;
+  width: 26vh;
   margin: 2em;
   border: 1px solid white;
   border-radius: 8px;
   cursor: pointer;
 }
-.search-image{
-  width: 15em;
+.search-image {
+  width: 24vh;
 }
 
-.search-image-button:active{
-  border: 1px solid #F05C2D;
-
+.search-image-button:active {
+  border: 1px solid #f05c2d;
 }
 
 .search-button {
@@ -1018,30 +1020,30 @@ Note: Beware of modifying this element as it can break the animations - you shou
   .ant-rate {
     font-size: 40px !important;
   }
-  .search-bar-wrap{
-    padding:1em;
+  .search-bar-wrap {
+    padding: 1em;
     padding-top: 0;
     display: none;
   }
-  .search-bar{
+  .search-bar {
     width: 81vw;
   }
   .search-image-button {
     width: 14vh;
-    border:none
+    border: none;
   }
-  .search-image{
+  .search-image {
     width: 13vh;
-    border:1px solid white;
+    border: 1px solid white;
     border-radius: 8px;
   }
-  .search-content-direction{
+  .search-content-direction {
     display: flex;
-    flex-direction: row!important;
+    flex-direction: row !important;
     flex-wrap: wrap;
   }
-  .search-mobile{
-    padding:8em 1em 1em 1em!important;
+  .search-mobile {
+    padding: 8em 1em 1em 1em !important;
   }
 }
 
@@ -1191,6 +1193,13 @@ body {
 .ant-popover-message-title {
   font-size: 15px;
 }
+.ant-message-notice-content {
+  background: black !important;
+  color: white !important;
+}
+.ant-message {
+  border-radius: 8px !important;
+}
 
 @media screen and (max-width: 786px) {
   .status-bar {
@@ -1236,11 +1245,19 @@ body {
 .prof-detail {
   width: 90%;
 }
-.prof-detail h5 {
-  background-color: rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.38);
+.prof-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   padding: 0.5em;
+  background-color: rgba(255, 255, 255, 0.08);
+  width: 100%;
+}
+.prof-detail h5 {
+  color: rgba(255, 255, 255, 0.38);
   padding-left: 2em;
+  margin-bottom: 0 !important;
 }
 .table {
   display: flex;
@@ -2441,7 +2458,13 @@ body {
     margin-right: 0;
   }
   .accessories-moto .nav-tabs .nav-item {
-    font-size: 20px;
+    font-size: 14px;
+  }
+  .acc-main h2 {
+    font-size: 24px;
+  }
+  .acc-main p {
+    font-size: 12px;
   }
   .accessories-moto .nav-tabs .nav-link:hover {
     border: none;
@@ -2528,7 +2551,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 8vh;
+  height: 9vh;
   display: none;
   z-index: 1000;
 }
@@ -3017,7 +3040,7 @@ a:not([href]):not([tabindex]) {
 
 .ant-popover-inner {
   width: 15vh;
-  height: 8vh;
+  height: 4em;
   background: #383838 !important;
   color: white !important;
   box-shadow: 0px 9px 46px rgba(0, 0, 0, 0.12),
@@ -3026,6 +3049,10 @@ a:not([href]):not([tabindex]) {
 .ant-popover-inner-content {
   height: 6vh;
 }
+.ant-popover-inner-content button:hover {
+  border-radius: 8px !important;
+}
+
 .forum-video iframe {
   border-radius: 8px;
   height: 45vh;
@@ -3085,13 +3112,12 @@ a:not([href]):not([tabindex]) {
   .forum-threadtwo {
     padding-top: 0 !important;
     margin: 2vh !important;
-    margin-left: 2vh;
-  }
-  .forum-threadtwo {
     flex-direction: column !important;
     padding: 1em 1em !important;
     margin-left: 0 !important;
+    margin-right: 0 !important;
   }
+
   .forum-home-link-forum {
     padding-top: 0 !important;
   }
@@ -3527,4 +3553,56 @@ a:not([href]):not([tabindex]) {
 }
 .carousel.carousel-slider {
   border-radius: 8px;
+}
+
+.forum-create-tag{
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 40%;
+  border-radius: 8px;
+}
+.react-tags {
+  display: flex;
+  margin-bottom: 2em;
+}
+.react-tags__selected button {
+  color: white !important;
+  background-color: #333333;
+  border: none;
+  width: auto;
+  height: 4vh;
+  margin-left: 5px;
+  font-size: 15px;
+
+}
+.react-tags__search-input {
+  width: 111px !important;
+  text-align: center;
+  color: white !important;
+  border: none;
+  height: 4vh;
+  background-color: #333333!important;
+  margin-left: 1em;
+  font-size: 15px;
+}
+.react-tags__search{
+  background-color: #333333!important;
+}
+
+.react-tags__suggestions {
+  background-color: #333333 !important;
+  background: #333333 !important;
+  visibility: visible!important;
+  display: block;
+  color:white;
+  margin-top: 1em;
+  width: auto;
+  text-align: center;
+}
+.react-tags__suggestions ul {
+  list-style-type: none;
+  text-align: center;
+  padding-right: 1em;
 }

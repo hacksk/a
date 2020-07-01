@@ -10,6 +10,7 @@ class SearchBar extends React.Component {
       value: "",
       products: [],
       services: [],
+      result: "",
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -23,6 +24,9 @@ class SearchBar extends React.Component {
       .then((res) => {
         const products = res.data;
         this.setState({ products });
+        if (this.state.products == null) {
+          this.setState({ result: "No results found" });
+        }
       });
     axios
       .get(
@@ -31,11 +35,12 @@ class SearchBar extends React.Component {
       .then((res) => {
         const services = res.data;
         this.setState({ services });
+        if (this.state.services == null) {
+          this.setState({ result: "No results found" });
+        }
       });
     this.setState({ value: event.target.value });
   }
-
-
 
   render() {
     return (
@@ -47,7 +52,9 @@ class SearchBar extends React.Component {
           onSubmit={this.handleSubmit}
           style={{ display: "flex", flexDirection: "row" }}
         >
-          <label style={{ marginBottom: "0", borderRadius: "8px",width:"100%" }}>
+          <label
+            style={{ marginBottom: "0", borderRadius: "8px", width: "100%" }}
+          >
             <input
               type="text"
               value={this.state.value}

@@ -26,7 +26,7 @@ export default class PicturesWall extends Component {
       <div>
         <Upload {...props}>
           <Button>
-            <UploadOutlined />Upload
+            <UploadOutlined />Change
           </Button>
         </Upload>
       </div>

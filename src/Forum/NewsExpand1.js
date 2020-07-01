@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Spin, Space, Popover,message } from "antd";
+import { Spin, Space, Popover, message } from "antd";
 import ForumComment from "./ForumComment";
 import ReactPlayer from "react-player";
 import { MdMoreVert } from "react-icons/md";
@@ -43,6 +43,7 @@ const content = (id) => (
 class NewsExpanded extends Component {
   state = {
     thread: null,
+    tags: [],
     count: 0,
   };
 
@@ -55,7 +56,10 @@ class NewsExpanded extends Component {
           (x) => x.id == this.props.match.params.content
         );
         this.setState({ thread });
-        console.log(thread)
+        console.log(thread);
+        // const tags = this.state.thread.tag;
+        // console.log(tags);
+        // this.setState({ tags });
       });
   }
   render() {
@@ -99,6 +103,11 @@ class NewsExpanded extends Component {
                 </p>
               </div>
               <h5>{this.state.thread.title}</h5>
+              <div>
+                {this.state.tags.map((tag) => (
+                  <p>{tag.name}</p>
+                ))}
+              </div>
               <img
                 className="thread-expanded-image"
                 alt=""
@@ -129,7 +138,7 @@ class NewsExpanded extends Component {
             alignItems: "center",
             justifyContent: "center",
             paddingTop: "10vh",
-            height:"100vh"
+            height: "100vh",
           }}
         >
           <Space size="middle">

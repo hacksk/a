@@ -1,14 +1,11 @@
 import React from "react";
-import { Drawer, Form, Button, Col, Input, Select, DatePicker } from "antd";
+import { Drawer, Form, Button, Col, Input, Select } from "antd";
 import axios from "axios";
 import { PlusOutlined } from "@ant-design/icons";
-import { API_URL } from "../actions/urlConfig";
+import { API_URL } from "../../actions/urlConfig";
 import { message } from "antd";
 
-const { Option } = Select;
-
-function onChange(date, dateString, value) {
-  console.log(date, dateString);
+function onChange(value) {
   console.log(`selected ${value}`);
 }
 
@@ -24,14 +21,27 @@ function onSearch(val) {
   console.log("search:", val);
 }
 
-class AccountCustomer extends React.Component {
+class PersonalDetails extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      engine_no: "",
-      model_year: "",
-      chassis_no: "",
+      email: "",
+      first_name: "",
+      last_name: "",
+      username: "",
+      phone: "",
+      address_line1: "",
+      address_line2: "",
+      state: "",
+      district: "",
+      city: "",
+      pin_code: "",
+      name: "",
+      age: "",
+      gender: "",
+      phone: "",
+      dob: "",
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -46,21 +56,57 @@ class AccountCustomer extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const { model_year, chassis_no, engine_no } = this.state;
+    const {
+      email,
+      first_name,
+      last_name,
+      username,
+      phone,
+      address_line1,
+      address_line2,
+      state,
+      district,
+      city,
+      pin_code,
+      name,
+      age,
+      gender,
+      dob,
+    } = this.state;
     axios
-      .post(`${API_URL}/customervehicle/`, {
-        model_year: model_year,
-        chassis_no: chassis_no,
-        engine_no: engine_no,
+      .patch(`${API_URL}/customer/1/`, {
+        user_data: {
+          email: "ab@gmail.com",
+          first_name: "amu",
+          last_name: "fp",
+          username: "lkjj",
+          phone: phone,
+        },
+        address: {
+          address_line1: "rrrr",
+          address_line2: "lllnnngl",
+          state: "kerala",
+          district: "kozhikode",
+          city: "kozhikode",
+          pin_code: "678964",
+        },
+        name: name,
+        age: age,
+        gender: "Male",
+        phone: phone,
+        dob: dob,
       })
       .then((res) => {
-        // console.log("sign up res", res);
-        // console.log(res.data);
+        console.log("sign up res", res);
+        this.setState({
+          visible: false,
+        });
+        // this.props.history.push("/account");
       })
       .catch((error) => {
-        // console.log("registration error", error.response.data);
+        console.log("registration error", error.response.data);
+        message.info("Please Click Continue to Sign In");
       });
-    message.info("Please Click Continue to Sign In");
   }
   state = { visible: false };
 
@@ -83,7 +129,7 @@ class AccountCustomer extends React.Component {
           <PlusOutlined /> Edit
         </Button>
         <Drawer
-          title="Add Vehicle Details"
+          title="Edit Customer Details"
           width={720}
           onClose={this.onClose}
           visible={this.state.visible}
@@ -97,7 +143,7 @@ class AccountCustomer extends React.Component {
               <Button onClick={this.onClose} style={{ marginRight: 8 }}>
                 Cancel
               </Button>
-              <Button onClick={this.onClose} type="primary">
+              <Button onClick={this.handleSubmit} type="submit">
                 Submit
               </Button>
             </div>
@@ -105,83 +151,58 @@ class AccountCustomer extends React.Component {
         >
           <Form layout="vertical" hideRequiredMark>
             <Col gutter={16}>
-              <Form.Item
-                name="Car model"
-                label="Select the car model"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please enter the Chassis Number",
-                  },
-                ]}
-              >
-                <Select
-                  showSearch
-                  style={{ width: 200 }}
-                  placeholder="Select a car"
-                  optionFilterProp="children"
-                  onChange={onChange}
-                  onFocus={onFocus}
-                  onBlur={onBlur}
-                  onSearch={onSearch}
-                  filterOption={(input, option) =>
-                    option.children
-                      .toLowerCase()
-                      .indexOf(input.toLowerCase()) >= 0
-                  }
-                >
-                  <Option value="jack">BMW</Option>
-                  <Option value="lucy">AUDI</Option>
-                  <Option value="tom">VOLVO</Option>
-                </Select>
-              </Form.Item>
-              {/* <Col span={12}>
-                <Form.Item
-                  name="url"
-                  label="Url"
-                  rules={[{ required: true, message: "Please enter url" }]}
-                >
-                  <Input
-                    style={{ width: "100%" }}
-                    addonBefore="http://"
-                    addonAfter=".com"
-                    placeholder="Please enter url"
-                  />
-                </Form.Item>
-              </Col> */}
-            </Col>
-            <Col gutter={16}>
               <Col span={12}>
                 <Form.Item
-                  name="chassis_no"
-                  label="Chassis Number"
+                  name="name"
+                  label="Name"
                   rules={[
                     {
                       required: true,
-                      message: "Please enter the Chassis Number",
+                      message: "Please enter the Name",
                     },
                   ]}
                 >
                   <Input
-                    name="chassis_no"
-                    placeholder="Please enter Chassis Number"
+                    name="name"
+                    onChange={this.handleChange}
+                    placeholder="Please enter Name"
                   />
                 </Form.Item>
               </Col>
               <Col span={12}>
                 <Form.Item
-                  name="engine_no"
-                  label="Engine Number"
+                  name="phone"
+                  label="Phone Number"
                   rules={[
                     {
                       required: true,
-                      message: "Please enter the Engine Number",
+                      message: "Please enter the Phone Number",
                     },
                   ]}
                 >
                   <Input
-                    name="engine_no"
-                    placeholder="Please enter Engine Number"
+                    name="phone"
+                    onChange={this.handleChange}
+                    placeholder="Please enter Phone Number"
+                  />
+                </Form.Item>
+              </Col>
+              <Col>
+                <Form.Item
+                  name="dob"
+                  label="Date Of Birth"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please enter Date of Birth",
+                    },
+                  ]}
+                >
+                  <Input
+                    name="dob"
+                    type="date"
+                    onChange={this.handleChange}
+                    placeholder="Please enter Date of birth"
                   />
                 </Form.Item>
               </Col>
@@ -189,13 +210,15 @@ class AccountCustomer extends React.Component {
             <Col gutter={16}>
               <Col span={12}>
                 <Form.Item
-                  name="model_year"
-                  label="Model year"
-                  rules={[
-                    { required: true, message: "Please enter  Model year" },
-                  ]}
+                  name="age"
+                  label="Age"
+                  rules={[{ required: true, message: "Please enter Age" }]}
                 >
-                  <Input placeholder="Please enter Model year" />
+                  <Input
+                    name="age"
+                    onChange={this.handleChange}
+                    placeholder="Please enter Age"
+                  />
                 </Form.Item>
               </Col>
             </Col>
@@ -225,4 +248,4 @@ class AccountCustomer extends React.Component {
   }
 }
 
-export default AccountCustomer;
+export default PersonalDetails;

@@ -80,6 +80,9 @@ class ForumContentOne extends Component {
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
+              overflow:"hidden",
+              textOverflow:"ellipsis",
+              whiteSpace:"wrap"
             }}
           >
             <h5 style={{ color: "white" }}>{this.props.thread.title}</h5>
@@ -87,8 +90,7 @@ class ForumContentOne extends Component {
               style={{
                 color: "white",
                 fontFamily: "Montserrat",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
+                width:"40vw"
               }}
             >
               {this.props.thread.content}

@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { message, Tag } from "antd";
+import { message, Tag, Select } from "antd";
+import TagsForum from "./TagsForum";
 
-// const options = [
-//   { value: "gold" },
-//   { value: "lime" },
-//   { value: "green" },
-//   { value: "cyan" },
-//   { value: "red" },
-//   { value: "blue" },
-// ];
+const { Option } = Select;
+const children = [];
+for (let i = 10; i < 36; i++) {
+  children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
+}
+
+function handleChange(value) {
+  console.log(`selected ${value}`);
+}
 
 function tagRender(props) {
   const { label, value, closable, onClose } = props;
@@ -38,6 +40,7 @@ export default class ForumCreate extends Component {
       tags: [],
       options: [],
       file: null,
+      name: [],
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -49,10 +52,10 @@ export default class ForumCreate extends Component {
     axios
       .get(`https://automoto.techbyheart.in/api/v1/forum/tags/`)
       .then((res) => {
-        const tags = res.data.data;
-        console.log(tags, "tag");
-        this.setState({ tags });
-        let name = tags.map(function (item) {
+        const options = res.data.data;
+        console.log(options, "tag");
+        this.setState({ options });
+        let name = options.map(function (item) {
           return item["name"];
         });
         this.setState({ name });
@@ -90,6 +93,7 @@ export default class ForumCreate extends Component {
         this.props.history.push("/forum");
       })
       .catch((error) => {
+        console.log(error);
         message.info("Please fill the comment Box");
       });
   };
@@ -151,7 +155,11 @@ export default class ForumCreate extends Component {
               >
                 {" "}
                 <p>Upload header image</p>
-                <img alt="" className="uploaded-image-forum" src={this.state.file} />
+                <img
+                  alt=""
+                  className="uploaded-image-forum"
+                  src={this.state.file}
+                />
                 <input
                   className="thread-create-upload"
                   type="file"
@@ -210,15 +218,37 @@ export default class ForumCreate extends Component {
                 ></textarea>
               </div>
               <p>Add a tag</p>
-              {/* <div className="forum-create-tag">
-                <Select
-                  mode="multiple"
-                  tagRender={tagRender}
-                  defaultValue={["gold", "cyan"]}
-                  style={{ color: "black", width: "100%" }}
-                  options={this.state.value.name}
-                />
-              </div> */}
+              <div className="forum-create-tag">
+                <div
+                  style={{
+                    height: "5vh",
+                    width: "100%",
+                    marginBottom: "2em",
+                    background: "rgba(255, 255, 255, 0.08)",
+                  }}
+                >
+                  <p
+                    style={{
+                      color: " rgba(255, 255, 255, 0.16)",
+                      textAlign: "left",
+                      paddingTop:"0.5em",
+                      paddingLeft:"1em"
+                    }}
+                  >
+                    Search Tags
+                  </p>
+                </div>
+
+                {/* <Select
+                  mode="tags"
+                  style={{ width: "100%" }}
+                  placeholder="Tags Mode"
+                  onChange={handleChange}
+                >
+                  {children}
+                </Select> */}
+                {/* <TagsForum /> */}
+              </div>
             </div>
             <button type="submit" className="create-forum-button">
               CREATE THREAD

@@ -5,6 +5,7 @@ import { Tabs } from "antd";
 import Stripe from "../StripeBtn";
 import { FaArrowRight } from "react-icons/fa";
 import axios from "axios";
+import {Link} from "react-router-dom"
 
 const { TabPane } = Tabs;
 // const { Option } = Select;
@@ -50,12 +51,12 @@ export default class Payment extends Component {
                       paddingTop: "2em",
                     }}
                   >
-                    {/* <Link to="/payment/feedback"> */}
-                    <button onClick={this.handleSubmit} className="continue">
+                    <Link to="/payment/feedback">
+                    <button  className="continue">
                       Continue
                       <FaArrowRight />
                     </button>
-                    {/* </Link> */}
+                    </Link>
                   </div>
                 </div>
               </TabPane>

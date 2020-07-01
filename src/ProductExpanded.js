@@ -11,18 +11,18 @@ import { FaRupeeSign } from "react-icons/fa";
 
 class AccesoriesExpanded extends Component {
   state = {
-    currentItem: null,
+    currentProduct: null,
     products: [],
   };
   componentDidMount() {
     axios.get(`https://automoto.techbyheart.in/api/v1/product/`).then((res) => {
       const products = res.data;
-      const currentItem = products.find(
+      const currentProduct = products.find(
         (x) => x.id == this.props.match.params.product
       );
-      this.setState({ currentItem });
-      console.log(currentItem);
-      // console.log("imagecheck", currentItem.images[0].image);
+      this.setState({ currentProduct });
+      console.log(currentProduct);
+      // console.log("imagecheck", currentProduct.images[0].image);
     });
   }
   handleClick = (id) => {
@@ -31,9 +31,9 @@ class AccesoriesExpanded extends Component {
         product: [
           {
             product: id,
-            quantity: "2",
-          },
-        ],
+            quantity: "2"
+          }
+        ]
       })
       .catch((error) => {
         console.log("cartadd", error);
@@ -42,7 +42,7 @@ class AccesoriesExpanded extends Component {
     // this.props.addToCart(id);
   };
   render() {
-    return this.state.currentItem ? (
+    return this.state.currentProduct ? (
       <div
         className="accessories-moto"
         style={{
@@ -59,7 +59,7 @@ class AccesoriesExpanded extends Component {
             >
               <div className="height-define">
                 <div className="accesories-main">
-                  <img alt="" src={this.state.currentItem.image[0].image}></img>
+                  <img alt="" src={this.state.currentProduct.image[0].image}></img>
                  
                 </div>
                 <div className="acc-main" style={{ width: "30%" }}>
@@ -73,7 +73,7 @@ class AccesoriesExpanded extends Component {
                     MOTO 365
                   </p>
                   <h2 style={{ color: "white" }}>
-                    {this.state.currentItem.product}
+                    {this.state.currentProduct.product}
                   </h2>
                   <p style={{ color: "white" }}>
                     Common mounting locations include the main crank pulley, the
@@ -93,7 +93,7 @@ class AccesoriesExpanded extends Component {
                 <div className="rs">
                   <h3>
                     <FaRupeeSign />
-                    {this.state.currentItem.price}
+                    {this.state.currentProduct.price}
                   </h3>
                   <h5 className="cost">incl.20% tax</h5>
                 </div>
@@ -101,7 +101,7 @@ class AccesoriesExpanded extends Component {
                 <button
                   className="addtocart"
                   onClick={() => {
-                    this.handleClick(this.state.currentItem.id);
+                    this.handleClick(this.state.currentProduct.id);
                   }}
                   style={{
                     color: "white",

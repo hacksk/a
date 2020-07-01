@@ -39,11 +39,11 @@ export default class Home extends Component {
         this.setState({ persons, subthread });
       });
     axios.get(`https://automoto.techbyheart.in/api/v1/service`).then((res) => {
-      const services = res.data;
+      const services = res.data.slice(0,8);
       this.setState({ services });
     });
     axios.get(`https://automoto.techbyheart.in/api/v1/product`).then((res) => {
-      const products = res.data;
+      const products = res.data.slice(0,8);
       this.setState({ products });
     });
   }

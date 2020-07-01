@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Spin, Space } from "antd";
+import { Spin, Space, Popover, message } from "antd";
 
 export default class EditThread extends Component {
   constructor(props) {
@@ -18,7 +18,6 @@ export default class EditThread extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.onChange = this.onChange.bind(this);
-    this.resetFile = this.resetFile.bind(this);
   }
 
   handleChange(event) {
@@ -52,7 +51,7 @@ export default class EditThread extends Component {
         this.props.history.push("/forum");
       })
       .catch((error) => {
-        console.log(error);
+        message.info("Added To The Cart");
       });
   };
   componentDidMount() {
@@ -69,14 +68,14 @@ export default class EditThread extends Component {
   }
   onChange(event) {
     this.setState({
-      // file: URL.createObjectURL(event.target.files[0]),
+      file: URL.createObjectURL(event.target.files[0]),
       header_image: event.target.files[0],
     });
+    if (this.state.file != null) {
+      this.setState({ header_image: null });
+    }
   }
-  resetFile(event) {
-    event.preventDefault();
-    this.setState({ file: null });
-  }
+
   render() {
     if (this.state.thread != null) {
       return (
@@ -129,17 +128,21 @@ export default class EditThread extends Component {
                   }}
                 >
                   <p>Change header image*</p>
-                  <img alt=""
+                  <img
+                    alt=""
                     className="uploaded-image-forum"
                     src={this.state.thread.header_image}
                   ></img>
-                  <img alt="" className="uploaded-image-forum" src={this.state.file} />
+                  <img
+                    alt=""
+                    className="uploaded-image-forum"
+                    src={this.state.file}
+                  />
 
                   <input
                     className="thread-create-upload"
                     type="file"
                     name="header_image"
-                    on
                     onChange={this.onChange}
                   />
                 </div>
@@ -198,7 +201,7 @@ export default class EditThread extends Component {
                 </div>
               </div>
               <button type="submit" className="create-forum-button">
-                UPDATE THREAD
+                EDIT THREAD
               </button>
             </div>
           </form>
@@ -207,18 +210,17 @@ export default class EditThread extends Component {
     } else
       return (
         <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          paddingTop: "10vh",
-          height:"100vh"
-        }}
-      >
-        <Space size="middle">
-          <Spin size="large" />
-        </Space>
-      </div>
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            paddingTop: "10vh",
+          }}
+        >
+          <Space size="middle">
+            <Spin size="large" />
+          </Space>
+        </div>
       );
   }
 }
