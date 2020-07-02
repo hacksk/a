@@ -19,6 +19,7 @@ const text2 = <span>Location</span>;
 const text3 = <span>Cart</span>;
 const text4 = <span>Forum</span>;
 const text5 = <span>Account</span>;
+const text6 = <span>Sign Out</span>;
 
 // const buttonWidth = 70;
 
@@ -93,18 +94,22 @@ class NavbarNew extends Component {
           ) : (
             <Link to="/signin">
               <li>
-                <Button>
-                  <MdAccountCircle />
-                </Button>
+                <Tooltip placement="top" title={text5}>
+                  <Button>
+                    <MdAccountCircle />
+                  </Button>
+                </Tooltip>
               </li>
             </Link>
           )}
 
           {this.props.isAuthenticated ? (
             <li>
-              <Button onClick={this.props.signOut}>
-                <FiLogOut />
-              </Button>
+              <Tooltip placement="top" title={text6}>
+                <Button onClick={this.props.signOut}>
+                  <FiLogOut />
+                </Button>
+              </Tooltip>
             </li>
           ) : null}
         </ul>

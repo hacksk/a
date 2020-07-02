@@ -48,6 +48,11 @@ const content = (id) => (
     </Link>
   </div>
 );
+
+function unlike() {
+  this.setState({ liked: false });
+};
+
 // const { Panel } = Collapse;
 const { TextArea } = Input;
 // const text = <ReplyComment />;
@@ -65,7 +70,7 @@ const CommentList = ({ comments, likeCount, isLiked, threadId }) => (
           className="forum-likebtn"
           onClick={(e) => {
             e.preventDefault();
-            // isLiked?unlike():likeCount();
+            // isLiked ? unlike() : likeCount();
           }}
           style={{ color: "black" }}
         >
@@ -91,13 +96,13 @@ const CommentList = ({ comments, likeCount, isLiked, threadId }) => (
               alignItems: "center",
             }}
           >
-              <Popover
-                placement="leftTop"
-                content={() => content(threadId)}
-                trigger="click"
-              >
-                <MdMoreVert />
-              </Popover>
+            <Popover
+              placement="leftTop"
+              content={() => content(threadId)}
+              trigger="click"
+            >
+              <MdMoreVert />
+            </Popover>
           </div>
         </div>
         {/* <Collapse bordered={false}>
@@ -137,9 +142,11 @@ class ForumComment extends React.Component {
       time: this.props.date,
       likeCount: this.props.thread.like_count,
       threadId: this.props.thread.id,
+      userimage: this.props.userimage,
       submitting: false,
       value: "",
       content: "",
+      liked: false,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -174,6 +181,7 @@ class ForumComment extends React.Component {
               username: comment.username,
               content: comment.content,
               time: comment.date,
+              userimage: comment.userimage,
               avatar:
                 "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
             },
@@ -212,6 +220,8 @@ class ForumComment extends React.Component {
             threadId={threadId}
           />
         )}
+        
+        
         {this.props.isAuthenticated ? (
           <Comment
             avatar={

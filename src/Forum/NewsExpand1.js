@@ -45,25 +45,33 @@ class NewsExpanded extends Component {
     thread: null,
     tags: [],
     count: 0,
+    image: "",
   };
 
   componentDidMount() {
+    const threadId = this.props.match.params.content;
+
     axios
-      .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
+      .get(
+        `https://automoto.techbyheart.in/api/v1/forum/thread-single/${threadId}`
+      )
       .then((res) => {
         const threads = res.data.data;
-        const thread = threads.find(
-          (x) => x.id == this.props.match.params.content
-        );
-        this.setState({ thread });
-        console.log(thread);
+        this.setState({ threads });
+        console.log("expanded",threads)
+        this.setState((state) => {
+          return {
+            image:
+              "https://automoto.techbyheart.in" + this.state.threads.userimage,
+          };
+        });
         // const tags = this.state.thread.tag;
         // console.log(tags);
         // this.setState({ tags });
       });
   }
   render() {
-    if (this.state.thread != null) {
+    if (this.state.threads != null) {
       return (
         <div className="threadexpand">
           <div className="threadexpand-wrap">
@@ -82,7 +90,7 @@ class NewsExpanded extends Component {
                   >
                     <Popover
                       placement="bottomRight"
-                      content={() => content(this.state.thread.id)}
+                      content={() => content(this.state.threads.id)}
                       trigger="click"
                     >
                       <MdMoreVert />
@@ -92,17 +100,14 @@ class NewsExpanded extends Component {
               ) : null}
               <div className="thread-profile-header">
                 <div style={{ display: "flex", flexDirection: "row" }}>
-                  <img
-                    alt=""
-                    src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                  ></img>
-                  <p>{this.state.thread.username}</p>
+                  <img alt="" src={this.state.image}></img>
+                  <p>{this.state.threads.username}</p>
                 </div>
                 <p style={{ color: "rgba(255, 255, 255, 0.38)" }}>
-                  {<Moment fromNow>{this.state.thread.date}</Moment>}
+                  {<Moment fromNow>{this.state.threads.date}</Moment>}
                 </p>
               </div>
-              <h5>{this.state.thread.title}</h5>
+              <h5>{this.state.threads.title}</h5>
               <div>
                 {this.state.tags.map((tag) => (
                   <p>{tag.name}</p>
@@ -111,14 +116,14 @@ class NewsExpanded extends Component {
               <img
                 className="thread-expanded-image"
                 alt=""
-                src={this.state.thread.header_image}
+                src={this.state.threads.header_image}
               ></img>
-              <p>{this.state.thread.content}</p>
+              <p>{this.state.threads.content}</p>
               <ReactPlayer
                 className="forum-video"
                 controls={true}
                 pip={true}
-                url={this.state.thread.video_url}
+                url={this.state.threads.video_url}
               />
               {/* <button className="like-button-forum">
               <AiOutlineLike />
@@ -126,7 +131,7 @@ class NewsExpanded extends Component {
               {/* <button style={{color:"black"}} onClick={this.incrementLike}>Likes:{this.state.count}</button> */}
               <br />
             </div>
-            <ForumComment thread={this.state.thread} />
+            <ForumComment thread={this.state.threads} />
           </div>
         </div>
       );

@@ -20,6 +20,7 @@ export default class ForumHome extends Component {
     this.state = {
       persons: [],
       subthread: [],
+      image:[]
     };
   }
 
@@ -32,6 +33,13 @@ export default class ForumHome extends Component {
         // console.log(persons);
         // console.log("sliced", persons);
         this.setState({ persons });
+        console.log(persons)
+        this.setState((state) => {
+          return {
+            image:
+              "https://automoto.techbyheart.in" + this.state.persons[0].userimage,
+          };
+        });
         this.setState({ subthread });
       });
   }
@@ -203,7 +211,7 @@ export default class ForumHome extends Component {
                 {this.state.persons.map((person) => (
                   <Link to={`/forum/thread/${person.id}`}>
                     <ForumTrending
-                      threadprof="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+                      threadprof={this.state.image}
                       trendinghead={person.title}
                       trendingcontent={person.content}
                       timethread={<Moment fromNow>{person.date}</Moment>}

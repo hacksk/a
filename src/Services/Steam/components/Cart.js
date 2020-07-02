@@ -97,7 +97,7 @@ class Cart extends Component {
       >
         <div className="cart">
           <h5>You have selected:</h5>
-          <ul style={{ paddingLeft: "1em" }} className="collection">
+          <ul style={{ paddingLeft: "1em",paddingRight:"1em" }} className="collection">
             {addedItems}
           </ul>
         </div>

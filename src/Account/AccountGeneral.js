@@ -5,6 +5,8 @@ import axios from "axios";
 import AccountCustomer from "./AccountCustomer";
 import { Spin, Space } from "antd";
 import PersonalDetails from "./EditAccount/PersonalDetails";
+import { FiLogOut } from "react-icons/fi";
+import { signOut } from "../actions/authActions";
 
 class AccountGeneral extends Component {
   state = {
@@ -60,11 +62,7 @@ class AccountGeneral extends Component {
               </div>
             </ul>
             <div className="accnt-upload">
-              <img
-                alt=""
-                style={{ width: "40vh", borderRadius: "8px", marginTop: "1em" }}
-                src={this.state.person.photo.image}
-              ></img>
+              <img alt="" src={this.state.person.photo.image}></img>
               <Accountupload thread={this.state.person} />
             </div>
           </div>
@@ -85,6 +83,16 @@ class AccountGeneral extends Component {
             </ul>
           </div>
         </div> */}
+        <div className="mobile-signout">
+          <h6>Sign Out</h6>
+          {this.props.isAuthenticated ? (
+            <li>
+              <button onClick={this.props.signOut}>
+                <FiLogOut />
+              </button>
+            </li>
+          ) : null}
+        </div>
       </div>
     ) : (
       <div
@@ -110,5 +118,11 @@ const mapStateToProps = (state) => {
     userData: state.auth.userData,
   };
 };
-
-export default connect(mapStateToProps, {})(AccountGeneral);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => {
+      dispatch(signOut());
+    },
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(AccountGeneral);
