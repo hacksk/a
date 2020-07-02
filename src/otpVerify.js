@@ -16,7 +16,7 @@ class otpVerify extends Component {
 
   static getDerivedStateFromProps(nextProps) {
     if (nextProps.isAuthenticated) {
-      nextProps.history.push("/account");
+      nextProps.history.push("/");
     }
   }
 

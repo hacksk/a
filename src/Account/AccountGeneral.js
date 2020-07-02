@@ -84,9 +84,9 @@ class AccountGeneral extends Component {
           </div>
         </div> */}
         <div className="mobile-signout">
-          <h6>Sign Out</h6>
           {this.props.isAuthenticated ? (
             <li>
+              <h6>Sign Out</h6>
               <button onClick={this.props.signOut}>
                 <FiLogOut />
               </button>
