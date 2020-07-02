@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import ReactTags from "react-tag-autocomplete";
 import axios from "axios";
 

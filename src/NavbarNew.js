@@ -11,14 +11,14 @@ import { Link } from "react-router-dom";
 import { Tooltip, Button } from "antd";
 import { FiLogOut } from "react-icons/fi";
 import { signOut } from "./actions/authActions";
+import Ripples from "react-ripples";
 
 // const settings = <span>Settings</span>;
 const text = <span>Home</span>;
-const text1 = <span>Search</span>;
 const text2 = <span>Location</span>;
 const text3 = <span>Cart</span>;
 const text4 = <span>Forum</span>;
-const text5 = <span>Account</span>
+const text5 = <span>Account</span>;
 
 // const buttonWidth = 70;
 
@@ -40,27 +40,33 @@ class NavbarNew extends Component {
           <Link to="/">
             <li>
               <Tooltip placement="top" title={text}>
-                <Button>
-                  <AiTwotoneHome />
-                </Button>
+                <Ripples>
+                  <Button>
+                    <AiTwotoneHome />
+                  </Button>
+                </Ripples>
               </Tooltip>
             </li>
           </Link>
           <Link to="./map">
             <li>
               <Tooltip placement="top" title={text2}>
-                <Button>
-                  <MdLocationOn />
-                </Button>
+                <Ripples>
+                  <Button>
+                    <MdLocationOn />
+                  </Button>
+                </Ripples>
               </Tooltip>
             </li>
           </Link>
           <Link to="/steamcart">
             <li>
               <Tooltip placement="top" title={text3}>
-                <Button>
-                  <MdShoppingCart />
-                </Button>
+                <Ripples>
+                  <Button>
+                    <MdShoppingCart />
+                  </Button>
+                </Ripples>
               </Tooltip>
             </li>
           </Link>

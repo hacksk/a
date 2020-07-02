@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import axios from "axios";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -76,7 +76,7 @@ class SearchBar extends React.Component {
                 style={{ background: "transparent" }}
               >
                 <Link to={`/products/${product.id}`}>
-                  <img
+                  <img alt=""
                     className="search-image"
                     src={product.image[0].image}
                   ></img>
@@ -94,7 +94,7 @@ class SearchBar extends React.Component {
                 style={{ background: "transparent" }}
               >
                 <Link to={`/services/${service.id}`}>
-                  <img
+                  <img alt=""
                     className="search-image"
                     src={service.images[0].image}
                   ></img>

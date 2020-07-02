@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { FaRupeeSign } from "react-icons/fa";
 import { Alert } from "antd";
-import axios from "axios"
+// import axios from "axios"
 import {
   removeItem,
   addQuantity,

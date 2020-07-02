@@ -6,13 +6,12 @@ import {
   List,
   Input,
   Popover,
-  Collapse,
   Alert,
   message,
 } from "antd";
 import React from "react";
 import axios from "axios";
-import ReplyComment from "./ReplyComment";
+// import ReplyComment from "./ReplyComment";
 import { MdMoreVert, MdComment } from "react-icons/md";
 import { AiOutlineLike } from "react-icons/ai";
 import { Link } from "react-router-dom";
@@ -49,9 +48,9 @@ const content = (id) => (
     </Link>
   </div>
 );
-const { Panel } = Collapse;
+// const { Panel } = Collapse;
 const { TextArea } = Input;
-const text = <ReplyComment />;
+// const text = <ReplyComment />;
 const CommentList = ({ comments, likeCount, isLiked, threadId }) => (
   <List
     dataSource={comments}
@@ -152,7 +151,7 @@ class ForumComment extends React.Component {
   }
 
   handleSubmit = () => {
-    const { content } = this.state;
+    // const { content } = this.state;
     this.setState({
       submitting: true,
     });

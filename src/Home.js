@@ -16,6 +16,8 @@ import axios from "axios";
 import Moment from "react-moment";
 import SearchBar from "./Components/SearchBar";
 
+
+
 const { TabPane } = Tabs;
 
 function callback(key) {}
@@ -198,7 +200,7 @@ export default class Home extends Component {
             <div className="home-content">
               <div className="home-content-part1">
                 {this.state.services.map((service) => (
-                  <Link to={`/services/${service.id}`}>
+                  <Link key={service.id} to={`/services/${service.id}`}>
                     <img
                       alt=""
                       className="hvr-float-shadow"
@@ -220,7 +222,7 @@ export default class Home extends Component {
               <h5>RECOMMENDED ACCESSORIES</h5>
               <div className="home-content-part1">
                 {this.state.products.map((product) => (
-                  <Link to={`/products/${product.id}`}>
+                  <Link key={product.id} to={`/products/${product.id}`}>
                     <img
                       alt=""
                       className="hvr-float-shadow"

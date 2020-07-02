@@ -3,9 +3,9 @@ import L from "leaflet";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import carImg from "./assets/Car-icon.png";
 import Navbarnew from "./NavbarNew";
-import { Modal } from "antd";
+// import { Modal } from "antd";
 
-const { confirm } = Modal;
+// const { confirm } = Modal;
 
 
 

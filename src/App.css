@@ -1432,6 +1432,7 @@ body {
     padding-bottom: 2em;
     display: flex;
     justify-content: center;
+    flex-direction: column;
   }
   .ant-tabs-nav .ant-tabs-tab {
     font-size: 13px;
@@ -2149,6 +2150,7 @@ body {
   }
   .head-icons {
     margin-bottom: 1vh;
+    padding-top: 44px!important;
   }
   .footer-secondary {
     padding-bottom: 4em;
@@ -3555,7 +3557,7 @@ a:not([href]):not([tabindex]) {
   border-radius: 8px;
 }
 
-.forum-create-tag{
+.forum-create-tag {
   background: rgba(255, 255, 255, 0.08);
   display: flex;
   flex-direction: column;
@@ -3575,7 +3577,6 @@ a:not([href]):not([tabindex]) {
   height: 4vh;
   margin-left: 5px;
   font-size: 15px;
-
 }
 .react-tags__search-input {
   width: 111px !important;
@@ -3583,20 +3584,20 @@ a:not([href]):not([tabindex]) {
   color: white !important;
   border: none;
   height: 4vh;
-  background-color: #333333!important;
+  background-color: #333333 !important;
   margin-left: 1em;
   font-size: 15px;
 }
-.react-tags__search{
-  background-color: #333333!important;
+.react-tags__search {
+  background-color: #333333 !important;
 }
 
 .react-tags__suggestions {
   background-color: #333333 !important;
   background: #333333 !important;
-  visibility: visible!important;
+  visibility: visible !important;
   display: block;
-  color:white;
+  color: white;
   margin-top: 1em;
   width: auto;
   text-align: center;

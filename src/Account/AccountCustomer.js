@@ -1,5 +1,5 @@
 import React from "react";
-import { Drawer, Form, Button, Col, Input, Select, DatePicker } from "antd";
+import { Drawer, Form, Button, Col, Input, Select } from "antd";
 import axios from "axios";
 import { PlusOutlined } from "@ant-design/icons";
 import { API_URL } from "../actions/urlConfig";

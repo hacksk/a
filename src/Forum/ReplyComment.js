@@ -59,7 +59,7 @@ class ReplyComment extends React.Component {
   }
 
   handleSubmit = () => {
-    const { content } = this.state;
+    // const { content } = this.state;
     this.setState({
       submitting: true
     });

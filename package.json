@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.0.2",
-    "@material-ui/core": "^4.10.2",
+    "@material-ui/core": "^4.11.0",
     "@stripe/react-stripe-js": "^1.0.3",
     "@stripe/stripe-js": "^1.0.2",
     "@testing-library/jest-dom": "^4.2.4",
@@ -43,6 +43,7 @@
     "react-player": "^2.3.0",
     "react-redux": "^7.2.0",
     "react-responsive-carousel": "^3.1.51",
+    "react-ripples": "^2.2.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-router-hash-link": "^1.2.2",

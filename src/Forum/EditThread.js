@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Spin, Space, Popover, message } from "antd";
+import { Spin, Space, message } from "antd";
 
 export default class EditThread extends Component {
   constructor(props) {

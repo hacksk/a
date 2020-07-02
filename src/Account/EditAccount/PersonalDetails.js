@@ -1,25 +1,25 @@
 import React from "react";
-import { Drawer, Form, Button, Col, Input, Select } from "antd";
+import { Drawer, Form, Button, Col, Input } from "antd";
 import axios from "axios";
 import { PlusOutlined } from "@ant-design/icons";
 import { API_URL } from "../../actions/urlConfig";
 import { message } from "antd";
 
-function onChange(value) {
-  console.log(`selected ${value}`);
-}
+// function onChange(value) {
+//   console.log(`selected ${value}`);
+// }
 
-function onBlur() {
-  console.log("blur");
-}
+// function onBlur() {
+//   console.log("blur");
+// }
 
-function onFocus() {
-  console.log("focus");
-}
+// function onFocus() {
+//   console.log("focus");
+// }
 
-function onSearch(val) {
-  console.log("search:", val);
-}
+// function onSearch(val) {
+//   console.log("search:", val);
+// }
 
 class PersonalDetails extends React.Component {
   constructor(props) {
@@ -40,7 +40,6 @@ class PersonalDetails extends React.Component {
       name: "",
       age: "",
       gender: "",
-      phone: "",
       dob: "",
     };
 
@@ -56,23 +55,7 @@ class PersonalDetails extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const {
-      email,
-      first_name,
-      last_name,
-      username,
-      phone,
-      address_line1,
-      address_line2,
-      state,
-      district,
-      city,
-      pin_code,
-      name,
-      age,
-      gender,
-      dob,
-    } = this.state;
+    const { phone, name, age, gender, dob } = this.state;
     axios
       .patch(`${API_URL}/customer/1/`, {
         user_data: {
