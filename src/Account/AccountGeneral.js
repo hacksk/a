@@ -31,7 +31,7 @@ class AccountGeneral extends Component {
         <div className="prof-detail">
           <div className="prof-head">
             <h5>Profile Details</h5>
-            <PersonalDetails />
+            {/* <PersonalDetails /> */}
           </div>
           <div className="table">
             <ul
@@ -70,7 +70,7 @@ class AccountGeneral extends Component {
         <div className="prof-detail">
           <div className="prof-head">
             <h5>Vehicle Details</h5>
-            <AccountCustomer />
+            {/* <AccountCustomer /> */}
           </div>
         </div>
         {/* <div className="prof-detail">

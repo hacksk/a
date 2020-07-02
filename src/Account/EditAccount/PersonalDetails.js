@@ -169,7 +169,7 @@ class PersonalDetails extends React.Component {
                   />
                 </Form.Item>
               </Col>
-              <Col>
+              {/* <Col>
                 <Form.Item
                   name="dob"
                   label="Date Of Birth"
@@ -187,7 +187,7 @@ class PersonalDetails extends React.Component {
                     placeholder="Please enter Date of birth"
                   />
                 </Form.Item>
-              </Col>
+              </Col> */}
             </Col>
             <Col gutter={16}>
               <Col span={12}>
