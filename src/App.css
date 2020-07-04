@@ -3271,7 +3271,7 @@ a:not([href]):not([tabindex]) {
   padding-left: 2em;
 }
 .ant-list-items .ant-comment {
-  padding-left: 2em !important;
+  padding-left: 0 !important;
 }
 .commenting-forum .ant-comment {
   width: 70% !important;
@@ -3339,6 +3339,9 @@ a:not([href]):not([tabindex]) {
   .ant-list-split .ant-list-header {
     padding-left: 3vh;
     padding-right: 2vh;
+  }
+  .ant-list-items .ant-comment {
+    padding-left: 1em !important;
   }
   .thread-create-field {
     display: flex !important;
