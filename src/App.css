@@ -1007,7 +1007,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   height: 3em;
   width: 3.4em;
 }
-@media screen and (max-width: 786px) {
+@media screen and (max-width: 786px) and (orientation:portrait) {
   .footer-logo {
     width: 50vw !important;
   }
@@ -1041,6 +1041,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
     display: flex;
     flex-direction: row !important;
     flex-wrap: wrap;
+    justify-content: center;
   }
   .search-mobile {
     padding: 8em 1em 1em 1em !important;

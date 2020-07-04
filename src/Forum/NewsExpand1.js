@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Spin, Space, Popover, message } from "antd";
+import { Popover, message } from "antd";
 import ForumComment from "./ForumComment";
 import ReactPlayer from "react-player";
 import { MdMoreVert } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
 import { connect } from "react-redux";
+import { SemipolarLoading } from "react-loadingg";
 
 const URL = "https://automoto.techbyheart.in/api/v1/forum";
 const content = (id) => (
@@ -58,7 +59,7 @@ class NewsExpanded extends Component {
       .then((res) => {
         const threads = res.data.data;
         this.setState({ threads });
-        console.log("expanded",threads)
+        console.log("expanded", threads);
         this.setState((state) => {
           return {
             image:
@@ -146,9 +147,7 @@ class NewsExpanded extends Component {
             height: "100vh",
           }}
         >
-          <Space size="middle">
-            <Spin size="large" />
-          </Space>
+          <SemipolarLoading color="#F05C2D" />
         </div>
       );
   }

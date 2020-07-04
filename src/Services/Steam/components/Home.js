@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { loadAllItems } from "../../../actions/cartActions";
 import "../../../index.css";
-import { Spin, Space } from "antd";
+import { SemipolarLoading } from "react-loadingg";
 
 class Home extends Component {
   // constructor(props) {
@@ -49,9 +49,7 @@ class Home extends Component {
           height: "100vh",
         }}
       >
-        <Space size="middle">
-          <Spin size="large" />
-        </Space>
+        <SemipolarLoading color="#F05C2D" />
       </div>
     ) : (
       <div className="container">

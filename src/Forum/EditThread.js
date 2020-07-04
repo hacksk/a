@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Spin, Space, message } from "antd";
+import {  message } from "antd";
+import { SemipolarLoading } from "react-loadingg";
 
 export default class EditThread extends Component {
   constructor(props) {
@@ -217,9 +218,7 @@ export default class EditThread extends Component {
             paddingTop: "10vh",
           }}
         >
-          <Space size="middle">
-            <Spin size="large" />
-          </Space>
+        <SemipolarLoading color="#F05C2D" />
         </div>
       );
   }

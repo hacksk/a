@@ -3,10 +3,10 @@ import Accountupload from "./PicturesWall";
 import { connect } from "react-redux";
 import axios from "axios";
 import AccountCustomer from "./AccountCustomer";
-import { Spin, Space } from "antd";
 import PersonalDetails from "./EditAccount/PersonalDetails";
 import { FiLogOut } from "react-icons/fi";
 import { signOut } from "../actions/authActions";
+import { SemipolarLoading } from "react-loadingg";
 
 class AccountGeneral extends Component {
   state = {
@@ -100,13 +100,10 @@ class AccountGeneral extends Component {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          paddingTop: "10vh",
           height: "100vh",
         }}
       >
-        <Space size="middle">
-          <Spin size="large" />
-        </Space>
+        <SemipolarLoading color="#F05C2D" />
       </div>
     );
   }

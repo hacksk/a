@@ -8,6 +8,7 @@ import { connect } from "react-redux";
 import axios from "axios";
 import { message } from "antd";
 import { FaRupeeSign } from "react-icons/fa";
+import { SemipolarLoading } from "react-loadingg";
 
 class AccesoriesExpanded extends Component {
   state = {
@@ -31,9 +32,9 @@ class AccesoriesExpanded extends Component {
         product: [
           {
             product: id,
-            quantity: "2"
-          }
-        ]
+            quantity: "2",
+          },
+        ],
       })
       .catch((error) => {
         console.log("cartadd", error);
@@ -59,8 +60,10 @@ class AccesoriesExpanded extends Component {
             >
               <div className="height-define">
                 <div className="accesories-main">
-                  <img alt="" src={this.state.currentProduct.image[0].image}></img>
-                 
+                  <img
+                    alt=""
+                    src={this.state.currentProduct.image[0].image}
+                  ></img>
                 </div>
                 <div className="acc-main" style={{ width: "30%" }}>
                   <p
@@ -117,12 +120,22 @@ class AccesoriesExpanded extends Component {
             </div>
           </Tab>
           <Tab eventKey="home1" title="SPECIFICATION">
-            <div style={{height:"80vh",background:"#121212"}}>specs</div>
+            <div style={{ height: "80vh", background: "#121212" }}>specs</div>
           </Tab>
         </Tabs>
       </div>
     ) : (
-      <div>Loading...</div>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          paddingTop: "10vh",
+          height: "100vh",
+        }}
+      >
+        <SemipolarLoading color="#F05C2D" />
+      </div>
     );
   }
 }

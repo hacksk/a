@@ -8,6 +8,8 @@ import { connect } from "react-redux";
 import axios from "axios";
 import { message } from "antd";
 import { FaRupeeSign } from "react-icons/fa";
+import { SemipolarLoading } from "react-loadingg";
+
 
 class AccesoriesExpanded extends Component {
   state = {
@@ -114,7 +116,18 @@ class AccesoriesExpanded extends Component {
         </Tabs>
       </div>
     ) : (
-      <div>Loading...</div>
+      <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        paddingTop: "10vh",
+        height: "100vh",
+      }}
+    >
+    <SemipolarLoading color="#F05C2D" />
+
+    </div>
     );
   }
 }
