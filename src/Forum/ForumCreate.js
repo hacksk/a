@@ -231,22 +231,22 @@ export default class ForumCreate extends Component {
                     style={{
                       color: " rgba(255, 255, 255, 0.16)",
                       textAlign: "left",
-                      paddingTop:"0.5em",
-                      paddingLeft:"1em"
+                      paddingTop: "0.5em",
+                      paddingLeft: "1em",
                     }}
                   >
                     Search Tags
                   </p>
                 </div>
 
-                {/* <Select
+                <Select
                   mode="tags"
                   style={{ width: "100%" }}
                   placeholder="Tags Mode"
-                  onChange={handleChange}
+                  // onChange={handleChange}
                 >
                   {children}
-                </Select> */}
+                </Select>
                 <TagsForum />
               </div>
             </div>

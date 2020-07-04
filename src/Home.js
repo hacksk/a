@@ -16,8 +16,6 @@ import axios from "axios";
 import Moment from "react-moment";
 import SearchBar from "./Components/SearchBar";
 
-
-
 const { TabPane } = Tabs;
 
 function callback(key) {}
@@ -41,11 +39,11 @@ export default class Home extends Component {
         this.setState({ persons, subthread });
       });
     axios.get(`https://automoto.techbyheart.in/api/v1/service`).then((res) => {
-      const services = res.data.slice(0,8);
+      const services = res.data.slice(0, 8);
       this.setState({ services });
     });
     axios.get(`https://automoto.techbyheart.in/api/v1/product`).then((res) => {
-      const products = res.data.slice(0,8);
+      const products = res.data.slice(0, 8);
       this.setState({ products });
     });
   }
@@ -57,13 +55,13 @@ export default class Home extends Component {
             <SearchBar />
           </div>
           <div className="news">
-            <Carousel infiniteLoop="true" autoPlay="true">
+            {/* <Carousel infiniteLoop="true" autoPlay="true">
               {this.state.persons.map((person) => (
                 <Link to={`/forum/thread/${person.id}`}>
                   <Banner thread={person} />
                 </Link>
               ))}
-            </Carousel>
+            </Carousel> */}
           </div>
           <div className="home-thread">
             <h6>THREADS</h6>

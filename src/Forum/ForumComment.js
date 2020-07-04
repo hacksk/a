@@ -19,6 +19,7 @@ import { signOut } from "../actions/authActions";
 import { connect } from "react-redux";
 
 const URL = "https://automoto.techbyheart.in/api/v1/forum";
+
 const content = (id) => (
   <div>
     <button
@@ -49,14 +50,16 @@ const content = (id) => (
   </div>
 );
 
-function unlike() {
-  this.setState({ liked: false });
-};
-
 // const { Panel } = Collapse;
 const { TextArea } = Input;
 // const text = <ReplyComment />;
-const CommentList = ({ comments, likeCount, isLiked, threadId }) => (
+const CommentList = ({
+  comments,
+  likeCount,
+  toggleLikeFunction,
+  isLiked,
+  threadId,
+}) => (
   <List
     dataSource={comments}
     header={
@@ -67,10 +70,10 @@ const CommentList = ({ comments, likeCount, isLiked, threadId }) => (
         </span>
 
         <button
-          className="forum-likebtn"
+          className={isLiked ? "forum-likebtn liked" : "forum-likebtn"}
           onClick={(e) => {
             e.preventDefault();
-            // isLiked ? unlike() : likeCount();
+            toggleLikeFunction();
           }}
           style={{ color: "black" }}
         >
@@ -86,7 +89,7 @@ const CommentList = ({ comments, likeCount, isLiked, threadId }) => (
         content={props.content}
         author={props.username}
         datetime={props.date}
-        avatar={props.avatar}
+        avatar={`https://automoto.techbyheart.in/${props.userimage}`}
       >
         <div style={{ position: "absolute", right: "0", top: "0" }}>
           <div
@@ -157,6 +160,15 @@ class ForumComment extends React.Component {
     });
   }
 
+  toggleLike = () => {
+    axios
+      .post(
+        `https://automoto.techbyheart.in/api/v1/forum/like-thread/${this.props.thread.id}/`
+      )
+      .then((res) => console.log(res))
+      .catch((e) => console.log(e));
+  };
+
   handleSubmit = () => {
     // const { content } = this.state;
     this.setState({
@@ -209,7 +221,14 @@ class ForumComment extends React.Component {
   };
 
   render() {
-    const { comments, submitting, value, likeCount, threadId } = this.state;
+    const {
+      comments,
+      submitting,
+      value,
+      likeCount,
+      threadId,
+      liked,
+    } = this.state;
 
     return (
       <div className="commenting-forum">
@@ -218,10 +237,11 @@ class ForumComment extends React.Component {
             comments={comments}
             likeCount={likeCount}
             threadId={threadId}
+            isLiked={liked ? true : false}
+            toggleLikeFunction={this.toggleLike}
           />
         )}
-        
-        
+
         {this.props.isAuthenticated ? (
           <Comment
             avatar={

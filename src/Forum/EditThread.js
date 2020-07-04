@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import {  message } from "antd";
+import { message } from "antd";
 import { SemipolarLoading } from "react-loadingg";
 
 export default class EditThread extends Component {
@@ -72,9 +72,6 @@ export default class EditThread extends Component {
       file: URL.createObjectURL(event.target.files[0]),
       header_image: event.target.files[0],
     });
-    if (this.state.file != null) {
-      this.setState({ header_image: null });
-    }
   }
 
   render() {
@@ -132,14 +129,12 @@ export default class EditThread extends Component {
                   <img
                     alt=""
                     className="uploaded-image-forum"
-                    src={this.state.thread.header_image}
+                    src={
+                      this.state.file
+                        ? this.state.file
+                        : this.state.thread.header_image
+                    }
                   ></img>
-                  <img
-                    alt=""
-                    className="uploaded-image-forum"
-                    src={this.state.file}
-                  />
-
                   <input
                     className="thread-create-upload"
                     type="file"
@@ -218,7 +213,7 @@ export default class EditThread extends Component {
             paddingTop: "10vh",
           }}
         >
-        <SemipolarLoading color="#F05C2D" />
+          <SemipolarLoading color="#F05C2D" />
         </div>
       );
   }
