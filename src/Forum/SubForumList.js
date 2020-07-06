@@ -40,7 +40,7 @@ class SubForumList extends Component {
       .then((res) => {
         const sub_forums = res.data.data;
         this.setState({ sub_forums });
-        console.log(sub_forums);
+        // console.log(sub_forums);
       });
   }
   render() {
@@ -55,8 +55,7 @@ class SubForumList extends Component {
               display: "flex",
               justifyContent: "flex-end",
               paddingTop: "0",
-              paddingRight:"0"
-
+              paddingRight: "0",
             }}
           >
             {" "}
@@ -113,7 +112,7 @@ class SubForumList extends Component {
                 {this.state.persons.map((person) => (
                   <Link to={`/forum/thread/${person.id}`}>
                     <ForumTrending
-                      threadprof="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+                      threadprof={`https://automoto.techbyheart.in/${person.userimage}`}
                       trendinghead={person.title}
                       trendingcontent={person.content}
                       timethread={<Moment fromNow>{person.date}</Moment>}

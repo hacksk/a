@@ -79,14 +79,14 @@ class PersonalDetails extends React.Component {
         dob: dob,
       })
       .then((res) => {
-        console.log("sign up res", res);
+        // console.log("sign up res", res);
         this.setState({
           visible: false,
         });
         // this.props.history.push("/account");
       })
       .catch((error) => {
-        console.log("registration error", error.response.data);
+        // console.log("registration error", error.response.data);
         message.info("Please Click Continue to Sign In");
       });
   }

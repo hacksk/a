@@ -30,7 +30,7 @@ export default class EditThread extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const threadId = this.props.match.params.edit;
-    console.log(threadId);
+    // console.log(threadId);
 
     const formData = new FormData();
     formData.append("title", this.state.title);
@@ -64,7 +64,7 @@ export default class EditThread extends Component {
           (x) => x.id == this.props.match.params.edit
         );
         this.setState({ thread });
-        console.log(thread);
+        // console.log(thread);
       });
   }
   onChange(event) {

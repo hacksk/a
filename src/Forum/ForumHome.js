@@ -12,7 +12,7 @@ import { SemipolarLoading } from "react-loadingg";
 const { TabPane } = Tabs;
 
 function callback(key) {
-  console.log(key);
+  // console.log(key);
 }
 
 export default class ForumHome extends Component {
@@ -34,7 +34,7 @@ export default class ForumHome extends Component {
         // console.log(persons);
         // console.log("sliced", persons);
         this.setState({ persons, subthread });
-        console.log(persons);
+        // console.log(persons);
       });
   }
   render() {

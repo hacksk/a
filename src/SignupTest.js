@@ -55,14 +55,11 @@ class SignupForm extends Component {
         { withCredentials: true }
       )
       .then(response => {
-        console.log('sign up res', response);
         if (response.status === '200') {
           this.props.handleSuccessfulAuth(response.data);
-          console.log("response check", response.status)
         }
       })
       .catch(error => {
-        console.log('registration error', error);
       });
     event.preventDefault();
   }

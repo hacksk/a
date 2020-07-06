@@ -19,7 +19,7 @@ export default class Payment extends Component {
     axios
       .post(`https://automoto.techbyheart.in/api/v1/order/place_orders/`)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
       });
   };
   render() {

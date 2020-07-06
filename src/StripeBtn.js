@@ -14,11 +14,9 @@ const stripeBtn = () => {
     axios
       .post("http://localhost:8000/payment", body)
       .then(response => {
-        console.log(response);
         alert("Payment Success");
       })
       .catch(error => {
-        console.log("Payment Error: ", error);
         alert("Payment Succesful");
       });
   };

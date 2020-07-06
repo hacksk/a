@@ -5,6 +5,7 @@ import ForumTrending from "./ForumTrendingThread";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Moment from "react-moment";
+import { SemipolarLoading } from "react-loadingg";
 
 const { TabPane } = Tabs;
 
@@ -31,6 +32,7 @@ export default class ThreadList extends Component {
       });
   }
   render() {
+    if (this.state.persons != null) {
     return (
       <div className="threadlist" style={{ padding: "8em" }}>
         <div className="thread-forum-list">
@@ -90,5 +92,19 @@ export default class ThreadList extends Component {
         </div>
       </div>
     );
+  } else
+  return (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        paddingTop: "10vh",
+        height: "100vh",
+      }}
+    >
+      <SemipolarLoading color="#F05C2D" />
+    </div>
+  );
   }
 }

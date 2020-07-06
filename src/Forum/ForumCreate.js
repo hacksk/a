@@ -3,15 +3,12 @@ import axios from "axios";
 import { message, Tag, Select } from "antd";
 import TagsForum from "./TagsForum";
 
-const { Option } = Select;
-const children = [];
-for (let i = 10; i < 36; i++) {
-  children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
-}
-
-// function handleChange(value) {
-//   console.log(`selected ${value}`);
-// }
+const options = [
+  { value: "gold" },
+  { value: "lime" },
+  { value: "green" },
+  { value: "cyan" },
+];
 
 function tagRender(props) {
   const { label, value, closable, onClose } = props;
@@ -48,18 +45,19 @@ export default class ForumCreate extends Component {
     this.onChange = this.onChange.bind(this);
     this.resetFile = this.resetFile.bind(this);
   }
+  
   componentDidMount() {
     axios
       .get(`https://automoto.techbyheart.in/api/v1/forum/tags/`)
       .then((res) => {
         const options = res.data.data;
-        console.log(options, "tag");
+        // console.log(options, "tag");
         this.setState({ options });
         let name = options.map(function (item) {
           return item["name"];
         });
         this.setState({ name });
-        console.log(this.state.name);
+        // console.log(this.state.name);
       });
   }
 
@@ -93,7 +91,7 @@ export default class ForumCreate extends Component {
         this.props.history.push("/forum");
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
         message.info("Please fill the comment Box");
       });
   };
@@ -217,7 +215,7 @@ export default class ForumCreate extends Component {
                   onChange={this.handleChange}
                 ></textarea>
               </div>
-              <p>Add a tag</p>
+              {/* <p>Add a tag</p>
               <div className="forum-create-tag">
                 <div
                   style={{
@@ -240,15 +238,13 @@ export default class ForumCreate extends Component {
                 </div>
 
                 <Select
-                  mode="tags"
+                  mode="multiple"
+                  tagRender={tagRender}
+                  defaultValue={["gold", "cyan"]}
                   style={{ width: "100%" }}
-                  placeholder="Tags Mode"
-                  // onChange={handleChange}
-                >
-                  {children}
-                </Select>
-                <TagsForum />
-              </div>
+                  options={options}
+                />
+              </div> */}
             </div>
             <button type="submit" className="create-forum-button">
               CREATE THREAD

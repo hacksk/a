@@ -23,8 +23,7 @@ class AccesoriesExpanded extends Component {
         (x) => x.id == this.props.match.params.detail
       );
       this.setState({ currentItem });
-      console.log(currentItem);
-      console.log("imagecheck", currentItem.images[0].image);
+
     });
   }
   handleClick = (id) => {
@@ -37,7 +36,6 @@ class AccesoriesExpanded extends Component {
         ],
       })
       .catch((error) => {
-        console.log("cartadd", error);
       });
     message.info("Added To The Cart");
   };
