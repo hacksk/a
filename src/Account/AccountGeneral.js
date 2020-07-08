@@ -20,7 +20,7 @@ class AccountGeneral extends Component {
       .get(`https://automoto.techbyheart.in/api/v1/customer/`)
       .then((res) => {
         const persons = res.data;
-        // console.log("data", persons);
+        console.log("data", persons);
         const person = persons.find((x) => x.user.id == this.props.userData.id);
         this.setState({ person });
       });
@@ -31,7 +31,7 @@ class AccountGeneral extends Component {
         <div className="prof-detail">
           <div className="prof-head">
             <h5>Profile Details</h5>
-            {/* <PersonalDetails /> */}
+            <PersonalDetails details={this.state.person} />
           </div>
           <div className="table">
             <ul

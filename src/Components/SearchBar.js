@@ -24,6 +24,9 @@ class SearchBar extends React.Component {
       .then((res) => {
         const products = res.data;
         this.setState({ products });
+        if (this.state.products == null) {
+          this.setState({ result: "No results found" });
+        }
       });
     axios
       .get(
@@ -31,7 +34,10 @@ class SearchBar extends React.Component {
       )
       .then((res) => {
         const services = res.data;
-        this.setState({ services });   
+        this.setState({ services });
+        if (this.state.services == null) {
+          this.setState({ result: "No results found" });
+        }
       });
     this.setState({ value: event.target.value });
   }

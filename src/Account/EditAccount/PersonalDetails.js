@@ -2,23 +2,12 @@ import React from "react";
 import { Drawer, Form, Button, Col, Input,message } from "antd";
 import axios from "axios";
 import { PlusOutlined } from "@ant-design/icons";
-import { API_URL } from "../../actions/urlConfig";
+// import { API_URL } from "../../../actions/urlConfig";
+// import { signOut } from "../../actions/authActions";
+import { connect } from "react-redux";
 
-// function onChange(value) {
-//   console.log(`selected ${value}`);
-// }
 
-// function onBlur() {
-//   console.log("blur");
-// }
 
-// function onFocus() {
-//   console.log("focus");
-// }
-
-// function onSearch(val) {
-//   console.log("search:", val);
-// }
 
 class PersonalDetails extends React.Component {
   constructor(props) {
@@ -54,9 +43,9 @@ class PersonalDetails extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const { phone, name, age, gender, dob } = this.state;
+    const { phone, name, age } = this.state;
     axios
-      .patch(`${API_URL}/customer/1/`, {
+      .patch(`https://automoto.techbyheart.in/api/v1/customer/${this.props.details.id}/`, {
         user_data: {
           email: "ab@gmail.com",
           first_name: "amu",
@@ -76,17 +65,16 @@ class PersonalDetails extends React.Component {
         age: age,
         gender: "Male",
         phone: phone,
-        dob: dob,
       })
       .then((res) => {
-        // console.log("sign up res", res);
+        console.log("sign up res", res);
         this.setState({
           visible: false,
         });
         // this.props.history.push("/account");
       })
       .catch((error) => {
-        // console.log("registration error", error.response.data);
+        console.log("registration error", error.response.data);
         message.info("Please Click Continue to Sign In");
       });
   }
@@ -230,4 +218,11 @@ class PersonalDetails extends React.Component {
   }
 }
 
-export default PersonalDetails;
+const mapStateToProps = (state) => {
+  return {
+    isAuthenticated: state.auth.isAuthenticated,
+    userData: state.auth.userData,
+  };
+};
+
+export default connect(mapStateToProps)(PersonalDetails);

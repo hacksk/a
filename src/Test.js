@@ -4,7 +4,7 @@ import { Select } from "antd";
 const { Option } = Select;
 
 function handleChange(value) {
-  // console.log(`selected ${value}`);
+  console.log(`selected ${value}`);
   if(value=="lucy"){
     window.alert("hello")
   }

@@ -8,20 +8,20 @@ import { message } from "antd";
 const { Option } = Select;
 
 function onChange(date, dateString, value) {
-  // console.log(date, dateString);
-  // console.log(`selected ${value}`);
+  console.log(date, dateString);
+  console.log(`selected ${value}`);
 }
 
 function onBlur() {
-  // console.log("blur");
+  console.log("blur");
 }
 
 function onFocus() {
-  // console.log("focus");
+  console.log("focus");
 }
 
 function onSearch(val) {
-  // console.log("search:", val);
+  console.log("search:", val);
 }
 
 class AccountCustomer extends React.Component {

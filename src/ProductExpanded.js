@@ -22,6 +22,7 @@ class AccesoriesExpanded extends Component {
         (x) => x.id == this.props.match.params.product
       );
       this.setState({ currentProduct });
+      console.log(currentProduct);
       // console.log("imagecheck", currentProduct.images[0].image);
     });
   }
@@ -36,6 +37,7 @@ class AccesoriesExpanded extends Component {
         ],
       })
       .catch((error) => {
+        console.log("cartadd", error);
       });
     message.info("Added To The Cart");
     // this.props.addToCart(id);

@@ -18,8 +18,8 @@ const content = (id) => (
         axios
           .post(`${URL}/destroy/${id}/`)
           .then((res) => {
-            // console.log(res.data);
-            // console.log(id);
+            console.log(res.data);
+            console.log(id);
           })
           .catch((error) => {
             message.info("You are not authorized to delete this comment");
@@ -32,7 +32,7 @@ const content = (id) => (
       <button
         onClick={(e) => {
           e.stopPropagation();
-          // console.log("edit");
+          console.log("edit");
           // Do the edit operation
         }}
       >
@@ -59,7 +59,7 @@ class NewsExpanded extends Component {
       .then((res) => {
         const threads = res.data.data;
         this.setState({ threads });
-        // console.log("expanded", threads);
+        console.log("expanded", threads);
         this.setState((state) => {
           return {
             image:

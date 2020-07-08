@@ -2675,22 +2675,23 @@ body {
 }
 .forum-likebtn {
   background: transparent;
-  color: rgba(255, 255, 255, 0.38) !important;
+  color: rgba(255, 255, 255, 0.38) ;
   border: none;
   font-weight: 600;
 }
 .forum-like-n-reply {
   font-weight: 600;
 }
-.forum-likebtn.liked {
+.forum-likebtn-liked {
   color: #fc5c2d !important;
+  background: transparent;
+  border: none;
+  font-weight: 600;
 }
 .like-button-forum {
   font-size: 20px !important;
 }
-.like-button-forum:focus {
-  color: #fc5c2d !important;
-}
+
 
 .ant-list-split .ant-list-header {
   background: rgba(255, 255, 255, 0.08);

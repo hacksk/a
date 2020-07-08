@@ -8,17 +8,15 @@ import {
   Popover,
   Alert,
   message,
-  Collapse,
 } from "antd";
 import React from "react";
 import axios from "axios";
 // import ReplyComment from "./ReplyComment";
 import { MdMoreVert, MdComment } from "react-icons/md";
-import { AiOutlineLike } from "react-icons/ai";
+import { AiFillLike } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { signOut } from "../actions/authActions";
 import { connect } from "react-redux";
-import ReplyComment from "./ReplyComment";
 
 const URL = "https://automoto.techbyheart.in/api/v1/forum";
 
@@ -30,22 +28,31 @@ const content = (id) => (
         axios
           .delete(`${URL}/delete/${id}/`)
           .then((res) => {
-            // console.log(res.data);
-            // console.log(id);
+            console.log(res.data);
+            console.log(id);
           })
-          // .catch((e) => console.log(e));
+          .catch((e) => console.log(e));
       }}
     >
       Delete
     </button>
-    <Link to={`/forum/content/${id}`}></Link>
-    <button>Reply</button>
+    <Link to={`/forum/content/${id}`}>
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          console.log("edit");
+          // Do the edit operation
+        }}
+      >
+        Edit
+      </button>
+    </Link>
   </div>
 );
 
-const { Panel } = Collapse;
+// const { Panel } = Collapse;
 const { TextArea } = Input;
-const text = <ReplyComment />;
+// const text = <ReplyComment />;
 const CommentList = ({
   comments,
   likeCount,
@@ -63,14 +70,15 @@ const CommentList = ({
         </span>
 
         <button
-          className={isLiked ? "forum-likebtn liked" : "forum-likebtn"}
+          className={isLiked ? "forum-likebtn-liked" : "forum-likebtn "}
           onClick={(e) => {
             e.preventDefault();
             toggleLikeFunction();
+            console.log(e);
           }}
-          style={{ color: "black" }}
         >
-          <AiOutlineLike className="like-button-forum" />
+          {isLiked? "liked":"notliked"}
+          <AiFillLike className="like-button-forum" />
 
           {likeCount}
         </button>
@@ -158,8 +166,10 @@ class ForumComment extends React.Component {
       .post(
         `https://automoto.techbyheart.in/api/v1/forum/like-thread/${this.props.thread.id}/`
       )
-      // .then((res) => console.log(res))
-      // .catch((e) => console.log(e));
+      .then((res) => console.log(res))
+      .catch((e) => console.log(e));
+    let likeCountnew = this.props.thread.like_count + 1;
+    this.setState({ likeCount: likeCountnew });
   };
 
   handleSubmit = () => {
@@ -252,10 +262,7 @@ class ForumComment extends React.Component {
                 value={value}
               />
             }
-            
-          >
-            {" "}
-          </Comment>
+          />
         ) : (
           <div>
             <Alert

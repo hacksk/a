@@ -109,7 +109,7 @@ export const loadProductToCart = () => (dispatch) => {
 
 //add cart action
 export const addToCart = (id) => (dispatch) => {
-  // console.log("add to cart", id);
+  console.log("add to cart", id);
   try {
     return axios
       .post(`${API_URL}/cart/add_to_cart/`, {
@@ -120,7 +120,7 @@ export const addToCart = (id) => (dispatch) => {
         ],
       })
       .catch((error) => {
-      // console.log("cartadd",error)
+      console.log("cartadd",error)
       })
       .then((res) => {
         dispatch({

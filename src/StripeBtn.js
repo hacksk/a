@@ -2,6 +2,7 @@ import React from "react";
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 import { connect } from "react-redux";
+import {message} from "antd";
 
 const stripeBtn = () => {
   const publishableKey = "pk_test_UAHsd0FgK8CJC6PXgoZ6cIeO00y9JJDBn5";
@@ -12,12 +13,14 @@ const stripeBtn = () => {
       token: token
     };
     axios
-      .post("http://localhost:8000/payment", body)
+      .post("https://automoto.techbyheart.in/api/v1/order/place_orders/")
       .then(response => {
-        alert("Payment Success");
+        console.log(response);
+        message.success("Payment Success");
       })
       .catch(error => {
-        alert("Payment Succesful");
+        console.log("Payment Error: ", error);
+        message.error("Payment failed");
       });
   };
   return (

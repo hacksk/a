@@ -15,7 +15,7 @@ const content = (id) => (
         axios
           .post(`${URL}/delete-thread/${id}/`)
           .then((res) => {
-            // console.log(res.data);
+            console.log(res.data);
           })
           .catch((error) => {
             notification.open({
@@ -23,7 +23,7 @@ const content = (id) => (
               description:
                 'You are not authorized perform this action.',
               onClick: () => {
-                // console.log('Notification Clicked!');
+                console.log('Notification Clicked!');
               },  
             });
           });
@@ -35,7 +35,7 @@ const content = (id) => (
       <button
         onClick={(e) => {
           e.stopPropagation();
-          // console.log("edit");
+          console.log("edit");
           // Do the edit operation
         }}
       >

@@ -25,6 +25,7 @@ const store = createStore(
 
 if (localStorage.automotoUserData) {
   let userData = JSON.parse(localStorage.automotoUserData);
+  // console.log(userData);
   // Set auth token header auth
   setAuthToken(userData.access);
   // Set user and isAuthenticated

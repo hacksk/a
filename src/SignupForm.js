@@ -98,6 +98,7 @@ class SignupForm extends Component {
           message: "Sign Up Error",
           description: "There was an error in Signing up, Please Try again",
           onClick: () => {
+            console.log("Notification Clicked!");
           },
         });
       });
