@@ -77,7 +77,6 @@ const CommentList = ({
             console.log(e);
           }}
         >
-          {isLiked? "liked":"notliked"}
           <AiFillLike className="like-button-forum" />
 
           {likeCount}
@@ -91,8 +90,10 @@ const CommentList = ({
         author={props.username}
         datetime={props.date}
         avatar={`https://automoto.techbyheart.in/${props.userimage}`}
+        like={props.like_count}
       >
-        <div style={{ position: "absolute", right: "0", top: "0" }}>
+       
+        {/* <div style={{ position: "absolute", right: "0", top: "0" }}>
           <div
             className="forum-more"
             style={{
@@ -108,7 +109,7 @@ const CommentList = ({
               <MdMoreVert />
             </Popover>
           </div>
-        </div>
+        </div> */}
         {/* <Collapse bordered={false}>
           <Panel header="Reply" key="1">
             {text}
@@ -151,6 +152,7 @@ class ForumComment extends React.Component {
       value: "",
       content: "",
       liked: false,
+      increment: true,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -166,10 +168,21 @@ class ForumComment extends React.Component {
       .post(
         `https://automoto.techbyheart.in/api/v1/forum/like-thread/${this.props.thread.id}/`
       )
-      .then((res) => console.log(res))
+      .then((res) => {
+        this.setState({
+          liked: !this.state.liked,
+          increment: !this.state.increment,
+        });
+        console.log(res, "liked");
+      })
       .catch((e) => console.log(e));
-    let likeCountnew = this.props.thread.like_count + 1;
-    this.setState({ likeCount: likeCountnew });
+    if (this.state.increment == true) {
+      let likeCountnew = this.props.thread.like_count + 1;
+      this.setState({ likeCount: likeCountnew });
+    } else {
+      let likeCountnew = this.props.thread.like_count;
+      this.setState({ likeCount: likeCountnew });
+    }
   };
 
   handleSubmit = () => {
@@ -196,6 +209,7 @@ class ForumComment extends React.Component {
               username: comment.username,
               content: comment.content,
               time: comment.date,
+              like:comment.like_count,
               userimage: comment.userimage,
               avatar:
                 "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",

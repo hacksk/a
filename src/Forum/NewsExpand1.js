@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import Moment from "react-moment";
 import { connect } from "react-redux";
 import { SemipolarLoading } from "react-loadingg";
+import TestComment from "./TestComment";
 
 const URL = "https://automoto.techbyheart.in/api/v1/forum";
 const content = (id) => (
@@ -126,13 +127,17 @@ class NewsExpanded extends Component {
                 pip={true}
                 url={this.state.threads.video_url}
               />
-              {/* <button className="like-button-forum">
-              <AiOutlineLike />
-            </button> */}
-              {/* <button style={{color:"black"}} onClick={this.incrementLike}>Likes:{this.state.count}</button> */}
+
               <br />
             </div>
-            <ForumComment thread={this.state.threads} />
+            {/* <TestComment
+              thread={this.state.threads.comment}
+              mainthread={this.state.threads}
+            /> */}
+            <ForumComment
+              thread={this.state.threads}
+              comment={this.state.threads.comment}
+            />
           </div>
         </div>
       );
