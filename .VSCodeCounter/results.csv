@@ -1,189 +1,195 @@
-"filename", "language", "JSON", "HTML", "Ini", "JavaScript", "XML", "CSS", "comment", "blank", "total"
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\package-lock.json", "JSON", 17126, 0, 0, 0, 0, 0, 0, 1, 17127
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\package.json", "JSON", 92, 0, 0, 0, 0, 0, 0, 1, 93
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\public\index.html", "HTML", 0, 39, 0, 0, 0, 0, 4, 6, 49
+"filename", "language", "JSON", "Ini", "JavaScript", "CSS", "HTML", "XML", "comment", "blank", "total"
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\package-lock.json", "JSON", 17223, 0, 0, 0, 0, 0, 0, 1, 17224
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\package.json", "JSON", 95, 0, 0, 0, 0, 0, 0, 1, 96
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\public\index.html", "HTML", 0, 0, 0, 0, 39, 0, 4, 6, 49
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\public\manifest.json", "JSON", 25, 0, 0, 0, 0, 0, 0, 1, 26
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\public\moto365logo.svg", "XML", 0, 0, 0, 0, 14, 0, 0, 1, 15
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\.picasa.ini", "Ini", 0, 0, 2, 0, 0, 0, 0, 1, 3
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\AccCarousel.js", "JavaScript", 0, 0, 0, 26, 0, 0, 0, 5, 31
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\AccMain.js", "JavaScript", 0, 0, 0, 67, 0, 0, 1, 13, 81
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Accesories.js", "JavaScript", 0, 0, 0, 32, 0, 0, 0, 3, 35
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\AccesoriesExpanded.js", "JavaScript", 0, 0, 0, 123, 0, 0, 0, 6, 129
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Account\AccountCustomer.js", "JavaScript", 0, 0, 0, 185, 0, 0, 32, 15, 232
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Account\AccountGeneral.js", "JavaScript", 0, 0, 0, 91, 0, 0, 56, 8, 155
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Account\AccountHelp.js", "JavaScript", 0, 0, 0, 13, 0, 0, 0, 4, 17
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Account\AccountMain.js", "JavaScript", 0, 0, 0, 36, 0, 0, 1, 6, 43
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Account\AccountReward.js", "JavaScript", 0, 0, 0, 14, 0, 0, 0, 3, 17
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Account\AccountSecurity.js", "JavaScript", 0, 0, 0, 32, 0, 0, 6, 3, 41
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Account\PicturesWall.js", "JavaScript", 0, 0, 0, 33, 0, 0, 0, 3, 36
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\App.css", "CSS", 0, 0, 0, 0, 0, 3244, 88, 116, 3448
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\App.js", "JavaScript", 0, 0, 0, 94, 0, 0, 0, 4, 98
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\App.test.js", "JavaScript", 0, 0, 0, 8, 0, 0, 0, 2, 10
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Auth\SignIn.js", "JavaScript", 0, 0, 0, 88, 0, 0, 0, 10, 98
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\BottomNavbar.js", "JavaScript", 0, 0, 0, 104, 0, 0, 0, 2, 106
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Demo.js", "JavaScript", 0, 0, 0, 36, 0, 0, 0, 3, 39
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Employee.css", "CSS", 0, 0, 0, 0, 0, 124, 1, 6, 131
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\FeedBack.js", "JavaScript", 0, 0, 0, 55, 0, 0, 0, 7, 62
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Footer.js", "JavaScript", 0, 0, 0, 50, 0, 0, 0, 2, 52
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Form.js", "JavaScript", 0, 0, 0, 35, 0, 0, 1, 7, 43
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\Avatar.js", "JavaScript", 0, 0, 0, 50, 0, 0, 0, 5, 55
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\Banner.js", "JavaScript", 0, 0, 0, 20, 0, 0, 0, 2, 22
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\EditThread.js", "JavaScript", 0, 0, 0, 186, 0, 0, 0, 13, 199
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumComment.js", "JavaScript", 0, 0, 0, 240, 0, 0, 8, 14, 262
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumContentOne.js", "JavaScript", 0, 0, 0, 121, 0, 0, 1, 7, 129
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumContentTwo.js", "JavaScript", 0, 0, 0, 16, 0, 0, 0, 2, 18
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumCreate.js", "JavaScript", 0, 0, 0, 195, 0, 0, 8, 14, 217
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumHome.js", "JavaScript", 0, 0, 0, 176, 0, 0, 71, 10, 257
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumList.js", "JavaScript", 0, 0, 0, 55, 0, 0, 1, 3, 59
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumTrendingThread.js", "JavaScript", 0, 0, 0, 34, 0, 0, 0, 3, 37
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\NewsExpand1.js", "JavaScript", 0, 0, 0, 140, 0, 0, 2, 4, 146
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ReplyComment.js", "JavaScript", 0, 0, 0, 125, 0, 0, 4, 14, 143
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\SubForumList.js", "JavaScript", 0, 0, 0, 129, 0, 0, 1, 9, 139
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ThreadExpand.js", "JavaScript", 0, 0, 0, 82, 0, 0, 0, 2, 84
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ThreadLink.js", "JavaScript", 0, 0, 0, 51, 0, 0, 0, 7, 58
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ThreadList.js", "JavaScript", 0, 0, 0, 88, 0, 0, 1, 8, 97
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\HeaderCustomer.js", "JavaScript", 0, 0, 0, 19, 0, 0, 0, 2, 21
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Home.js", "JavaScript", 0, 0, 0, 256, 0, 0, 74, 10, 340
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Inventory.js", "JavaScript", 0, 0, 0, 69, 0, 0, 0, 5, 74
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Location.js", "JavaScript", 0, 0, 0, 108, 0, 0, 4, 8, 120
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\LocationDist.js", "JavaScript", 0, 0, 0, 15, 0, 0, 1, 4, 20
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Navbar.js", "JavaScript", 0, 0, 0, 49, 0, 0, 0, 6, 55
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\NavbarNew.js", "JavaScript", 0, 0, 0, 116, 0, 0, 10, 7, 133
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Payment\Payment.js", "JavaScript", 0, 0, 0, 65, 0, 0, 2, 3, 70
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\ProductExpanded.js", "JavaScript", 0, 0, 0, 128, 0, 0, 2, 7, 137
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\ProductMain.js", "JavaScript", 0, 0, 0, 86, 0, 0, 1, 8, 95
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\SteamComponent.js", "JavaScript", 0, 0, 0, 13, 0, 0, 0, 4, 17
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\Cart.js", "JavaScript", 0, 0, 0, 128, 0, 0, 10, 7, 145
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\Home.js", "JavaScript", 0, 0, 0, 59, 0, 0, 3, 7, 69
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\Navbar.js", "JavaScript", 0, 0, 0, 17, 0, 0, 0, 4, 21
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\ProductHome.js", "JavaScript", 0, 0, 0, 59, 0, 0, 3, 7, 69
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\Recipe.js", "JavaScript", 0, 0, 0, 80, 0, 0, 8, 11, 99
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\SteamCart.js", "JavaScript", 0, 0, 0, 12, 0, 0, 0, 2, 14
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\StripeBtn.js", "JavaScript", 0, 0, 0, 39, 0, 0, 2, 6, 47
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\spec.js", "JavaScript", 0, 0, 0, 76, 0, 0, 3, 9, 88
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\SignupForm.js", "JavaScript", 0, 0, 0, 187, 0, 0, 4, 14, 205
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\SignupTest.js", "JavaScript", 0, 0, 0, 95, 0, 0, 1, 15, 111
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Status.js", "JavaScript", 0, 0, 0, 27, 0, 0, 8, 6, 41
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Store.css", "CSS", 0, 0, 0, 0, 0, 79, 1, 13, 93
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\StripeBtn.js", "JavaScript", 0, 0, 0, 46, 0, 0, 0, 4, 50
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Test.js", "JavaScript", 0, 0, 0, 26, 0, 0, 0, 4, 30
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\actions\authActions.js", "JavaScript", 0, 0, 0, 55, 0, 0, 10, 12, 77
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\actions\cartActions.js", "JavaScript", 0, 0, 0, 140, 0, 0, 33, 12, 185
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\actions\commonActionType.js", "JavaScript", 0, 0, 0, 1, 0, 0, 0, 1, 2
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\actions\urlConfig.js", "JavaScript", 0, 0, 0, 1, 0, 0, 0, 1, 2
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\actions\utils\setAuthToken.js", "JavaScript", 0, 0, 0, 9, 0, 0, 2, 3, 14
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\.picasa.ini", "Ini", 0, 0, 12, 0, 0, 0, 0, 1, 13
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Fonts\index.html", "HTML", 0, 34, 0, 0, 0, 0, 0, 5, 39
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Fonts\praktika-light-demo.html", "HTML", 0, 478, 0, 0, 0, 0, 0, 122, 600
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Fonts\specimen_files\grid_12-825-55-15.css", "CSS", 0, 0, 0, 0, 0, 95, 10, 24, 129
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Fonts\specimen_files\specimen_stylesheet.css", "CSS", 0, 0, 0, 0, 0, 320, 11, 66, 397
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Fonts\style.css", "CSS", 0, 0, 0, 0, 0, 7, 1, 1, 9
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Fonts\stylesheet.css", "CSS", 0, 0, 0, 0, 0, 7, 1, 4, 12
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Group 239connected.svg", "XML", 0, 0, 0, 0, 23, 0, 0, 1, 24
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Group 240connected.svg", "XML", 0, 0, 0, 0, 26, 0, 0, 1, 27
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Group 243connected.svg", "XML", 0, 0, 0, 0, 21, 0, 0, 1, 22
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Group 244connected.svg", "XML", 0, 0, 0, 0, 94, 0, 0, 1, 95
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\amlogo.svg", "XML", 0, 0, 0, 0, 14, 0, 0, 1, 15
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\automotologo.svg", "XML", 0, 0, 0, 0, 121, 0, 0, 1, 122
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\moto365logo.svg", "XML", 0, 0, 0, 0, 14, 0, 0, 1, 15
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\COPYRIGHT automotoservice.svg", "XML", 0, 0, 0, 0, 3, 0, 0, 1, 4
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 107connected.svg", "XML", 0, 0, 0, 0, 19, 0, 0, 1, 20
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 108connected.svg", "XML", 0, 0, 0, 0, 19, 0, 0, 1, 20
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 109connected.svg", "XML", 0, 0, 0, 0, 19, 0, 0, 1, 20
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 110connected.svg", "XML", 0, 0, 0, 0, 19, 0, 0, 1, 20
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 120PERFORMANCE.svg", "XML", 0, 0, 0, 0, 17, 0, 0, 1, 18
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 121.svg", "XML", 0, 0, 0, 0, 41, 0, 0, 1, 42
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 121PERFORMANCE.svg", "XML", 0, 0, 0, 0, 16, 0, 0, 1, 17
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 123PERFORMANCE.svg", "XML", 0, 0, 0, 0, 38, 0, 0, 1, 39
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 124PERFORMANCE.svg", "XML", 0, 0, 0, 0, 24, 0, 0, 1, 25
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 125PERFORMANCE.svg", "XML", 0, 0, 0, 0, 35, 0, 0, 1, 36
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 126PERFORMANCE.svg", "XML", 0, 0, 0, 0, 40, 0, 0, 1, 41
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 127PERFORMANCE.svg", "XML", 0, 0, 0, 0, 31, 0, 0, 1, 32
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 128PERFORMANCE.svg", "XML", 0, 0, 0, 0, 106, 0, 0, 1, 107
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 198inventory.svg", "XML", 0, 0, 0, 0, 15, 0, 0, 1, 16
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 199inventory.svg", "XML", 0, 0, 0, 0, 11, 0, 0, 1, 12
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 19inventory.svg", "XML", 0, 0, 0, 0, 15, 0, 0, 1, 16
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 219PERFORMANCE.svg", "XML", 0, 0, 0, 0, 24, 0, 0, 1, 25
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 220PERFORMANCE.svg", "XML", 0, 0, 0, 0, 32, 0, 0, 1, 33
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 221PERFORMANCE.svg", "XML", 0, 0, 0, 0, 27, 0, 0, 1, 28
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 222PERFORMANCE.svg", "XML", 0, 0, 0, 0, 42, 0, 0, 1, 43
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 223PERFORMANCE.svg", "XML", 0, 0, 0, 0, 30, 0, 0, 1, 31
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 251inventory.svg", "XML", 0, 0, 0, 0, 25, 0, 0, 1, 26
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 252inventory.svg", "XML", 0, 0, 0, 0, 15, 0, 0, 1, 16
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 253inventory.svg", "XML", 0, 0, 0, 0, 15, 0, 0, 1, 16
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecuadblue.svg", "XML", 0, 0, 0, 0, 25, 0, 0, 1, 26
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecuantilag.svg", "XML", 0, 0, 0, 0, 41, 0, 0, 1, 42
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecudpf.svg", "XML", 0, 0, 0, 0, 36, 0, 0, 1, 37
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecudsg.svg", "XML", 0, 0, 0, 0, 24, 0, 0, 1, 25
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecueco.svg", "XML", 0, 0, 0, 0, 32, 0, 0, 1, 33
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecuegr.svg", "XML", 0, 0, 0, 0, 30, 0, 0, 1, 31
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecuexhaust.svg", "XML", 0, 0, 0, 0, 37, 0, 0, 1, 38
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecuintake.svg", "XML", 0, 0, 0, 0, 118, 0, 0, 1, 119
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\eculaunch.svg", "XML", 0, 0, 0, 0, 32, 0, 0, 1, 33
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecuobd.svg", "XML", 0, 0, 0, 0, 27, 0, 0, 1, 28
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecuperform.svg", "XML", 0, 0, 0, 0, 35, 0, 0, 1, 36
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecuspeed.svg", "XML", 0, 0, 0, 0, 42, 0, 0, 1, 43
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecustage.svg", "XML", 0, 0, 0, 0, 41, 0, 0, 1, 42
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerbattery.svg", "XML", 0, 0, 0, 0, 23, 0, 0, 1, 24
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerbrakes.svg", "XML", 0, 0, 0, 0, 22, 0, 0, 1, 23
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerclimate.svg", "XML", 0, 0, 0, 0, 32, 0, 0, 1, 33
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerelectric.svg", "XML", 0, 0, 0, 0, 54, 0, 0, 1, 55
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerinsurance.svg", "XML", 0, 0, 0, 0, 35, 0, 0, 1, 36
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerlub.svg", "XML", 0, 0, 0, 0, 23, 0, 0, 1, 24
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offermechanic.svg", "XML", 0, 0, 0, 0, 32, 0, 0, 1, 33
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerpolution.svg", "XML", 0, 0, 0, 0, 34, 0, 0, 1, 35
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerpowersteer.svg", "XML", 0, 0, 0, 0, 29, 0, 0, 1, 30
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerrepellent.svg", "XML", 0, 0, 0, 0, 25, 0, 0, 1, 26
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offertire.svg", "XML", 0, 0, 0, 0, 97, 0, 0, 1, 98
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steam360.svg", "XML", 0, 0, 0, 0, 49, 0, 0, 1, 50
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steambeltkleen.svg", "XML", 0, 0, 0, 0, 24, 0, 0, 1, 25
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steambrakes.svg", "XML", 0, 0, 0, 0, 24, 0, 0, 1, 25
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steamdesalt.svg", "XML", 0, 0, 0, 0, 31, 0, 0, 1, 32
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steamenginebay.svg", "XML", 0, 0, 0, 0, 37, 0, 0, 1, 38
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steamexterior.svg", "XML", 0, 0, 0, 0, 39, 0, 0, 1, 40
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steamlight.svg", "XML", 0, 0, 0, 0, 23, 0, 0, 1, 24
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steamlogo.svg", "XML", 0, 0, 0, 0, 23, 0, 0, 1, 24
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steammat.svg", "XML", 0, 0, 0, 0, 60, 0, 0, 1, 61
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steammoto.svg", "XML", 0, 0, 0, 0, 26, 0, 0, 1, 27
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steampresale.svg", "XML", 0, 0, 0, 0, 37, 0, 0, 1, 38
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steamradiator.svg", "XML", 0, 0, 0, 0, 40, 0, 0, 1, 41
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steamroofkleen.svg", "XML", 0, 0, 0, 0, 25, 0, 0, 1, 26
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steamwheel.svg", "XML", 0, 0, 0, 0, 24, 0, 0, 1, 25
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\sweet 16.svg", "XML", 0, 0, 0, 0, 23, 0, 0, 1, 24
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\xpress car service.svg", "XML", 0, 0, 0, 0, 4, 0, 0, 1, 5
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\timer-24px.svg", "XML", 0, 0, 0, 0, 1, 0, 0, 0, 1
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\public\moto365logo.svg", "XML", 0, 0, 0, 0, 0, 14, 0, 1, 15
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\.picasa.ini", "Ini", 0, 2, 0, 0, 0, 0, 0, 1, 3
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\AccCarousel.js", "JavaScript", 0, 0, 26, 0, 0, 0, 0, 5, 31
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\AccMain.js", "JavaScript", 0, 0, 67, 0, 0, 0, 1, 13, 81
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Accesories.js", "JavaScript", 0, 0, 32, 0, 0, 0, 0, 3, 35
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\AccesoriesExpanded.js", "JavaScript", 0, 0, 132, 0, 0, 0, 2, 8, 142
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Account\AccountCustomer.js", "JavaScript", 0, 0, 182, 0, 0, 0, 32, 15, 229
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Account\AccountGeneral.js", "JavaScript", 0, 0, 113, 0, 0, 0, 8, 5, 126
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Account\AccountHelp.js", "JavaScript", 0, 0, 13, 0, 0, 0, 0, 4, 17
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Account\AccountMain.js", "JavaScript", 0, 0, 36, 0, 0, 0, 1, 6, 43
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Account\AccountReward.js", "JavaScript", 0, 0, 14, 0, 0, 0, 0, 3, 17
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Account\AccountSecurity.js", "JavaScript", 0, 0, 32, 0, 0, 0, 6, 3, 41
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Account\EditAccount\PersonalDetails.js", "JavaScript", 0, 0, 178, 0, 0, 0, 37, 14, 229
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Account\PicturesWall.js", "JavaScript", 0, 0, 33, 0, 0, 0, 0, 3, 36
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\App.css", "CSS", 0, 0, 0, 3453, 0, 0, 88, 122, 3663
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\App.js", "JavaScript", 0, 0, 96, 0, 0, 0, 0, 4, 100
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\App.test.js", "JavaScript", 0, 0, 8, 0, 0, 0, 0, 2, 10
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Auth\SignIn.js", "JavaScript", 0, 0, 87, 0, 0, 0, 0, 10, 97
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\BottomNavbar.js", "JavaScript", 0, 0, 104, 0, 0, 0, 0, 9, 113
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Components\MobSearch.js", "JavaScript", 0, 0, 11, 0, 0, 0, 0, 2, 13
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Components\SearchBar.js", "JavaScript", 0, 0, 106, 0, 0, 0, 0, 5, 111
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Demo.js", "JavaScript", 0, 0, 36, 0, 0, 0, 0, 3, 39
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Employee.css", "CSS", 0, 0, 0, 124, 0, 0, 1, 6, 131
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\FeedBack.js", "JavaScript", 0, 0, 55, 0, 0, 0, 0, 7, 62
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Footer.js", "JavaScript", 0, 0, 50, 0, 0, 0, 0, 2, 52
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Form.js", "JavaScript", 0, 0, 35, 0, 0, 0, 1, 7, 43
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\Avatar.js", "JavaScript", 0, 0, 50, 0, 0, 0, 0, 5, 55
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\Banner.js", "JavaScript", 0, 0, 20, 0, 0, 0, 0, 2, 22
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\EditThread.js", "JavaScript", 0, 0, 210, 0, 0, 0, 0, 11, 221
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumComment.js", "JavaScript", 0, 0, 264, 0, 0, 0, 26, 19, 309
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumContentOne.js", "JavaScript", 0, 0, 123, 0, 0, 0, 1, 7, 131
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumContentTwo.js", "JavaScript", 0, 0, 16, 0, 0, 0, 0, 2, 18
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumCreate.js", "JavaScript", 0, 0, 240, 0, 0, 0, 7, 15, 262
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumHome.js", "JavaScript", 0, 0, 193, 0, 0, 0, 71, 10, 274
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumList.js", "JavaScript", 0, 0, 58, 0, 0, 0, 1, 3, 62
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ForumTrendingThread.js", "JavaScript", 0, 0, 32, 0, 0, 0, 0, 4, 36
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\NewsExpand1.js", "JavaScript", 0, 0, 155, 0, 0, 0, 6, 6, 167
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ReplyComment.js", "JavaScript", 0, 0, 124, 0, 0, 0, 5, 14, 143
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\SubForumList.js", "JavaScript", 0, 0, 128, 0, 0, 0, 1, 9, 138
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\TagsForum.js", "JavaScript", 0, 0, 44, 0, 0, 0, 0, 7, 51
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\TestComment.js", "JavaScript", 0, 0, 146, 0, 0, 0, 4, 6, 156
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\TestCommentContent.js", "JavaScript", 0, 0, 28, 0, 0, 0, 0, 2, 30
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ThreadExpand.js", "JavaScript", 0, 0, 81, 0, 0, 0, 0, 2, 83
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ThreadLink.js", "JavaScript", 0, 0, 51, 0, 0, 0, 0, 7, 58
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Forum\ThreadList.js", "JavaScript", 0, 0, 87, 0, 0, 0, 1, 7, 95
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\HeaderCustomer.js", "JavaScript", 0, 0, 19, 0, 0, 0, 0, 2, 21
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Home.js", "JavaScript", 0, 0, 264, 0, 0, 0, 69, 8, 341
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Inventory.js", "JavaScript", 0, 0, 69, 0, 0, 0, 0, 5, 74
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Location.js", "JavaScript", 0, 0, 91, 0, 0, 0, 4, 10, 105
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\LocationDist.js", "JavaScript", 0, 0, 15, 0, 0, 0, 1, 4, 20
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Navbar.js", "JavaScript", 0, 0, 49, 0, 0, 0, 0, 6, 55
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\NavbarNew.js", "JavaScript", 0, 0, 117, 0, 0, 0, 10, 7, 134
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Payment\Payment.js", "JavaScript", 0, 0, 73, 0, 0, 0, 2, 4, 79
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\ProductExpanded.js", "JavaScript", 0, 0, 140, 0, 0, 0, 4, 6, 150
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\ProductMain.js", "JavaScript", 0, 0, 86, 0, 0, 0, 1, 8, 95
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\SteamComponent.js", "JavaScript", 0, 0, 13, 0, 0, 0, 0, 4, 17
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\Cart.js", "JavaScript", 0, 0, 109, 0, 0, 0, 30, 6, 145
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\Home.js", "JavaScript", 0, 0, 67, 0, 0, 0, 3, 7, 77
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\Navbar.js", "JavaScript", 0, 0, 17, 0, 0, 0, 0, 4, 21
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\ProductHome.js", "JavaScript", 0, 0, 67, 0, 0, 0, 3, 8, 78
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\Recipe.js", "JavaScript", 0, 0, 80, 0, 0, 0, 8, 11, 99
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\SteamCart.js", "JavaScript", 0, 0, 12, 0, 0, 0, 0, 2, 14
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\StripeBtn.js", "JavaScript", 0, 0, 39, 0, 0, 0, 2, 6, 47
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Services\Steam\components\spec.js", "JavaScript", 0, 0, 76, 0, 0, 0, 3, 9, 88
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\SignupForm.js", "JavaScript", 0, 0, 185, 0, 0, 0, 6, 14, 205
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\SignupTest.js", "JavaScript", 0, 0, 95, 0, 0, 0, 1, 15, 111
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Status.js", "JavaScript", 0, 0, 27, 0, 0, 0, 8, 6, 41
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Store.css", "CSS", 0, 0, 0, 79, 0, 0, 1, 13, 93
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\StripeBtn.js", "JavaScript", 0, 0, 47, 0, 0, 0, 0, 4, 51
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\Test.js", "JavaScript", 0, 0, 26, 0, 0, 0, 0, 4, 30
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\actions\authActions.js", "JavaScript", 0, 0, 54, 0, 0, 0, 10, 13, 77
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\actions\cartActions.js", "JavaScript", 0, 0, 139, 0, 0, 0, 33, 12, 184
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\actions\commonActionType.js", "JavaScript", 0, 0, 1, 0, 0, 0, 0, 1, 2
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\actions\urlConfig.js", "JavaScript", 0, 0, 1, 0, 0, 0, 0, 1, 2
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\actions\utils\setAuthToken.js", "JavaScript", 0, 0, 9, 0, 0, 0, 2, 3, 14
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\.picasa.ini", "Ini", 0, 12, 0, 0, 0, 0, 0, 1, 13
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Fonts\index.html", "HTML", 0, 0, 0, 0, 34, 0, 0, 5, 39
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Fonts\praktika-light-demo.html", "HTML", 0, 0, 0, 0, 478, 0, 0, 122, 600
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Fonts\specimen_files\grid_12-825-55-15.css", "CSS", 0, 0, 0, 95, 0, 0, 10, 24, 129
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Fonts\specimen_files\specimen_stylesheet.css", "CSS", 0, 0, 0, 320, 0, 0, 11, 66, 397
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Fonts\style.css", "CSS", 0, 0, 0, 7, 0, 0, 1, 1, 9
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Fonts\stylesheet.css", "CSS", 0, 0, 0, 7, 0, 0, 1, 4, 12
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Group 239connected.svg", "XML", 0, 0, 0, 0, 0, 23, 0, 1, 24
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Group 240connected.svg", "XML", 0, 0, 0, 0, 0, 26, 0, 1, 27
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Group 243connected.svg", "XML", 0, 0, 0, 0, 0, 21, 0, 1, 22
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\Group 244connected.svg", "XML", 0, 0, 0, 0, 0, 94, 0, 1, 95
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\amlogo.svg", "XML", 0, 0, 0, 0, 0, 14, 0, 1, 15
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\automotologo.svg", "XML", 0, 0, 0, 0, 0, 121, 0, 1, 122
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\moto365logo.svg", "XML", 0, 0, 0, 0, 0, 14, 0, 1, 15
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\COPYRIGHT automotoservice.svg", "XML", 0, 0, 0, 0, 0, 3, 0, 1, 4
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 107connected.svg", "XML", 0, 0, 0, 0, 0, 19, 0, 1, 20
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 108connected.svg", "XML", 0, 0, 0, 0, 0, 19, 0, 1, 20
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 109connected.svg", "XML", 0, 0, 0, 0, 0, 19, 0, 1, 20
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 110connected.svg", "XML", 0, 0, 0, 0, 0, 19, 0, 1, 20
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 120PERFORMANCE.svg", "XML", 0, 0, 0, 0, 0, 17, 0, 1, 18
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 121.svg", "XML", 0, 0, 0, 0, 0, 41, 0, 1, 42
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 121PERFORMANCE.svg", "XML", 0, 0, 0, 0, 0, 16, 0, 1, 17
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 123PERFORMANCE.svg", "XML", 0, 0, 0, 0, 0, 38, 0, 1, 39
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 124PERFORMANCE.svg", "XML", 0, 0, 0, 0, 0, 24, 0, 1, 25
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 125PERFORMANCE.svg", "XML", 0, 0, 0, 0, 0, 35, 0, 1, 36
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 126PERFORMANCE.svg", "XML", 0, 0, 0, 0, 0, 40, 0, 1, 41
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 127PERFORMANCE.svg", "XML", 0, 0, 0, 0, 0, 31, 0, 1, 32
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 128PERFORMANCE.svg", "XML", 0, 0, 0, 0, 0, 106, 0, 1, 107
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 198inventory.svg", "XML", 0, 0, 0, 0, 0, 15, 0, 1, 16
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 199inventory.svg", "XML", 0, 0, 0, 0, 0, 11, 0, 1, 12
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 19inventory.svg", "XML", 0, 0, 0, 0, 0, 15, 0, 1, 16
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 219PERFORMANCE.svg", "XML", 0, 0, 0, 0, 0, 24, 0, 1, 25
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 220PERFORMANCE.svg", "XML", 0, 0, 0, 0, 0, 32, 0, 1, 33
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 221PERFORMANCE.svg", "XML", 0, 0, 0, 0, 0, 27, 0, 1, 28
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 222PERFORMANCE.svg", "XML", 0, 0, 0, 0, 0, 42, 0, 1, 43
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 223PERFORMANCE.svg", "XML", 0, 0, 0, 0, 0, 30, 0, 1, 31
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 251inventory.svg", "XML", 0, 0, 0, 0, 0, 25, 0, 1, 26
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 252inventory.svg", "XML", 0, 0, 0, 0, 0, 15, 0, 1, 16
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\Group 253inventory.svg", "XML", 0, 0, 0, 0, 0, 15, 0, 1, 16
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecuadblue.svg", "XML", 0, 0, 0, 0, 0, 25, 0, 1, 26
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecuantilag.svg", "XML", 0, 0, 0, 0, 0, 41, 0, 1, 42
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecudpf.svg", "XML", 0, 0, 0, 0, 0, 36, 0, 1, 37
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecudsg.svg", "XML", 0, 0, 0, 0, 0, 24, 0, 1, 25
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecueco.svg", "XML", 0, 0, 0, 0, 0, 32, 0, 1, 33
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecuegr.svg", "XML", 0, 0, 0, 0, 0, 30, 0, 1, 31
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecuexhaust.svg", "XML", 0, 0, 0, 0, 0, 37, 0, 1, 38
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecuintake.svg", "XML", 0, 0, 0, 0, 0, 118, 0, 1, 119
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\eculaunch.svg", "XML", 0, 0, 0, 0, 0, 32, 0, 1, 33
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecuobd.svg", "XML", 0, 0, 0, 0, 0, 27, 0, 1, 28
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecuperform.svg", "XML", 0, 0, 0, 0, 0, 35, 0, 1, 36
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecuspeed.svg", "XML", 0, 0, 0, 0, 0, 42, 0, 1, 43
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\ecustage.svg", "XML", 0, 0, 0, 0, 0, 41, 0, 1, 42
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerbattery.svg", "XML", 0, 0, 0, 0, 0, 23, 0, 1, 24
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerbrakes.svg", "XML", 0, 0, 0, 0, 0, 22, 0, 1, 23
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerclimate.svg", "XML", 0, 0, 0, 0, 0, 32, 0, 1, 33
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerelectric.svg", "XML", 0, 0, 0, 0, 0, 54, 0, 1, 55
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerinsurance.svg", "XML", 0, 0, 0, 0, 0, 35, 0, 1, 36
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerlub.svg", "XML", 0, 0, 0, 0, 0, 23, 0, 1, 24
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offermechanic.svg", "XML", 0, 0, 0, 0, 0, 32, 0, 1, 33
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerpolution.svg", "XML", 0, 0, 0, 0, 0, 34, 0, 1, 35
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerpowersteer.svg", "XML", 0, 0, 0, 0, 0, 29, 0, 1, 30
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offerrepellent.svg", "XML", 0, 0, 0, 0, 0, 25, 0, 1, 26
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\offertire.svg", "XML", 0, 0, 0, 0, 0, 97, 0, 1, 98
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steam360.svg", "XML", 0, 0, 0, 0, 0, 49, 0, 1, 50
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steambeltkleen.svg", "XML", 0, 0, 0, 0, 0, 24, 0, 1, 25
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steambrakes.svg", "XML", 0, 0, 0, 0, 0, 24, 0, 1, 25
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steamdesalt.svg", "XML", 0, 0, 0, 0, 0, 31, 0, 1, 32
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steamenginebay.svg", "XML", 0, 0, 0, 0, 0, 37, 0, 1, 38
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steamexterior.svg", "XML", 0, 0, 0, 0, 0, 39, 0, 1, 40
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steamlight.svg", "XML", 0, 0, 0, 0, 0, 23, 0, 1, 24
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steamlogo.svg", "XML", 0, 0, 0, 0, 0, 23, 0, 1, 24
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steammat.svg", "XML", 0, 0, 0, 0, 0, 60, 0, 1, 61
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steammoto.svg", "XML", 0, 0, 0, 0, 0, 26, 0, 1, 27
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steampresale.svg", "XML", 0, 0, 0, 0, 0, 37, 0, 1, 38
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steamradiator.svg", "XML", 0, 0, 0, 0, 0, 40, 0, 1, 41
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steamroofkleen.svg", "XML", 0, 0, 0, 0, 0, 25, 0, 1, 26
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\steamwheel.svg", "XML", 0, 0, 0, 0, 0, 24, 0, 1, 25
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\sweet 16.svg", "XML", 0, 0, 0, 0, 0, 23, 0, 1, 24
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\serviceicons\xpress car service.svg", "XML", 0, 0, 0, 0, 0, 4, 0, 1, 5
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\assets\timer-24px.svg", "XML", 0, 0, 0, 0, 0, 1, 0, 0, 1
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\data.json", "JSON", 58, 0, 0, 0, 0, 0, 0, 1, 59
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\index.css", "CSS", 0, 0, 0, 0, 0, 89, 0, 5, 94
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\index.js", "JavaScript", 0, 0, 0, 34, 0, 0, 6, 6, 46
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\index.css", "CSS", 0, 0, 0, 89, 0, 0, 0, 5, 94
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\index.js", "JavaScript", 0, 0, 34, 0, 0, 0, 6, 6, 46
 "c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\login.json", "JSON", 4, 0, 0, 0, 0, 0, 0, 1, 5
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\otpVerify.js", "JavaScript", 0, 0, 0, 98, 0, 0, 0, 10, 108
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\reducers\authReducer.js", "JavaScript", 0, 0, 0, 23, 0, 0, 1, 5, 29
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\reducers\cartReducer.js", "JavaScript", 0, 0, 0, 100, 0, 0, 7, 9, 116
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\reducers\errorReducer.js", "JavaScript", 0, 0, 0, 10, 0, 0, 0, 3, 13
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\reducers\index.js", "JavaScript", 0, 0, 0, 9, 0, 0, 0, 2, 11
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\serviceWorker.js", "JavaScript", 0, 0, 0, 94, 0, 0, 31, 13, 138
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\validation\isEmpty.js", "JavaScript", 0, 0, 0, 6, 0, 0, 0, 2, 8
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\main-page-lines.svg", "XML", 0, 0, 0, 0, 5, 0, 0, 1, 6
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\material icons\build-24px(1).svg", "XML", 0, 0, 0, 0, 1, 0, 0, 0, 1
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\material icons\filter_list-24px (1).svg", "XML", 0, 0, 0, 0, 1, 0, 0, 0, 1
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\material icons\home-24px(2).svg", "XML", 0, 0, 0, 0, 1, 0, 0, 0, 1
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\material icons\logout.svg", "XML", 0, 0, 0, 0, 1, 0, 0, 0, 1
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\material icons\map-24px.svg", "XML", 0, 0, 0, 0, 1, 0, 0, 0, 1
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\material icons\menu-24px.svg", "XML", 0, 0, 0, 0, 1, 0, 0, 0, 1
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\material icons\search-24px (1).svg", "XML", 0, 0, 0, 0, 1, 0, 0, 0, 1
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\material icons\shopping_cart-24px.svg", "XML", 0, 0, 0, 0, 1, 0, 0, 0, 1
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 65steam.svg", "XML", 0, 0, 0, 0, 32, 0, 0, 1, 33
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 82steam.svg", "XML", 0, 0, 0, 0, 30, 0, 0, 1, 31
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 84steam.svg", "XML", 0, 0, 0, 0, 24, 0, 0, 1, 25
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 85steam.svg", "XML", 0, 0, 0, 0, 23, 0, 0, 1, 24
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 86steam.svg", "XML", 0, 0, 0, 0, 90, 0, 0, 1, 91
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 87steam.svg", "XML", 0, 0, 0, 0, 36, 0, 0, 1, 37
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 88steam.svg", "XML", 0, 0, 0, 0, 24, 0, 0, 1, 25
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 89steam.svg", "XML", 0, 0, 0, 0, 23, 0, 0, 1, 24
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 90steam.svg", "XML", 0, 0, 0, 0, 49, 0, 0, 1, 50
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 91steam.svg", "XML", 0, 0, 0, 0, 59, 0, 0, 1, 60
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 92steam.svg", "XML", 0, 0, 0, 0, 37, 0, 0, 1, 38
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 93steam.svg", "XML", 0, 0, 0, 0, 22, 0, 0, 1, 23
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 94steam.svg", "XML", 0, 0, 0, 0, 23, 0, 0, 1, 24
-"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 95steam.svg", "XML", 0, 0, 0, 0, 25, 0, 0, 1, 26
-"Total", "-", 17305, 551, 14, 5185, 2931, 3965, 537, 925, 31413
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\otpVerify.js", "JavaScript", 0, 0, 97, 0, 0, 0, 1, 10, 108
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\reducers\authReducer.js", "JavaScript", 0, 0, 23, 0, 0, 0, 1, 5, 29
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\reducers\cartReducer.js", "JavaScript", 0, 0, 100, 0, 0, 0, 7, 9, 116
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\reducers\errorReducer.js", "JavaScript", 0, 0, 10, 0, 0, 0, 0, 3, 13
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\reducers\index.js", "JavaScript", 0, 0, 9, 0, 0, 0, 0, 2, 11
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\serviceWorker.js", "JavaScript", 0, 0, 94, 0, 0, 0, 31, 13, 138
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\validation\isEmpty.js", "JavaScript", 0, 0, 6, 0, 0, 0, 0, 2, 8
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\main-page-lines.svg", "XML", 0, 0, 0, 0, 0, 5, 0, 1, 6
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\material icons\build-24px(1).svg", "XML", 0, 0, 0, 0, 0, 1, 0, 0, 1
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\material icons\filter_list-24px (1).svg", "XML", 0, 0, 0, 0, 0, 1, 0, 0, 1
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\material icons\home-24px(2).svg", "XML", 0, 0, 0, 0, 0, 1, 0, 0, 1
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\material icons\logout.svg", "XML", 0, 0, 0, 0, 0, 1, 0, 0, 1
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\material icons\map-24px.svg", "XML", 0, 0, 0, 0, 0, 1, 0, 0, 1
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\material icons\menu-24px.svg", "XML", 0, 0, 0, 0, 0, 1, 0, 0, 1
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\material icons\search-24px (1).svg", "XML", 0, 0, 0, 0, 0, 1, 0, 0, 1
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\material icons\shopping_cart-24px.svg", "XML", 0, 0, 0, 0, 0, 1, 0, 0, 1
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 65steam.svg", "XML", 0, 0, 0, 0, 0, 32, 0, 1, 33
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 82steam.svg", "XML", 0, 0, 0, 0, 0, 30, 0, 1, 31
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 84steam.svg", "XML", 0, 0, 0, 0, 0, 24, 0, 1, 25
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 85steam.svg", "XML", 0, 0, 0, 0, 0, 23, 0, 1, 24
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 86steam.svg", "XML", 0, 0, 0, 0, 0, 90, 0, 1, 91
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 87steam.svg", "XML", 0, 0, 0, 0, 0, 36, 0, 1, 37
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 88steam.svg", "XML", 0, 0, 0, 0, 0, 24, 0, 1, 25
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 89steam.svg", "XML", 0, 0, 0, 0, 0, 23, 0, 1, 24
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 90steam.svg", "XML", 0, 0, 0, 0, 0, 49, 0, 1, 50
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 91steam.svg", "XML", 0, 0, 0, 0, 0, 59, 0, 1, 60
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 92steam.svg", "XML", 0, 0, 0, 0, 0, 37, 0, 1, 38
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 93steam.svg", "XML", 0, 0, 0, 0, 0, 22, 0, 1, 23
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 94steam.svg", "XML", 0, 0, 0, 0, 0, 23, 0, 1, 24
+"c:\Users\vishn\Desktop\testlocal\automoto-react\customer\src\vector-icons\steam service cards\Group 95steam.svg", "XML", 0, 0, 0, 0, 0, 25, 0, 1, 26
+"Total", "-", 17405, 14, 5856, 4174, 551, 2931, 574, 980, 32485

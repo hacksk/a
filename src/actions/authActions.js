@@ -31,7 +31,6 @@ export const verifyOtp = (otp) => (dispatch, getState) => {
     username: prevState.auth.userData.phone,
     password: otp,
   };
-
   axios
     .post(`${API_URL}/user/get_access_token/`, payload)
     .then((res) => {

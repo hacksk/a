@@ -1,19 +1,19 @@
 # Summary
 
-Date : 2020-06-26 17:05:51
+Date : 2020-07-08 16:22:28
 
 Directory c:\Users\vishn\Desktop\testlocal\automoto-react\customer
 
-Total : 187 files,  29951 codes, 537 comments, 925 blanks, all 31413 lines
+Total : 193 files,  30931 codes, 574 comments, 980 blanks, all 32485 lines
 
 [details](details.md)
 
 ## Languages
 | language | files | code | comment | blank | total |
 | :--- | ---: | ---: | ---: | ---: | ---: |
-| JSON | 5 | 17,305 | 0 | 5 | 17,310 |
-| JavaScript | 72 | 5,185 | 420 | 462 | 6,067 |
-| CSS | 8 | 3,965 | 113 | 235 | 4,313 |
+| JSON | 5 | 17,405 | 0 | 5 | 17,410 |
+| JavaScript | 78 | 5,856 | 457 | 511 | 6,824 |
+| CSS | 8 | 4,174 | 113 | 241 | 4,528 |
 | XML | 97 | 2,931 | 0 | 88 | 3,019 |
 | HTML | 3 | 551 | 4 | 133 | 688 |
 | Ini | 2 | 14 | 0 | 2 | 16 |
@@ -21,17 +21,19 @@ Total : 187 files,  29951 codes, 537 comments, 925 blanks, all 31413 lines
 ## Directories
 | path | files | code | comment | blank | total |
 | :--- | ---: | ---: | ---: | ---: | ---: |
-| . | 187 | 29,951 | 537 | 925 | 31,413 |
+| . | 193 | 30,931 | 574 | 980 | 32,485 |
 | public | 3 | 78 | 4 | 8 | 90 |
-| src | 182 | 12,655 | 533 | 915 | 14,103 |
-| src\Account | 7 | 404 | 95 | 42 | 541 |
-| src\Auth | 1 | 88 | 0 | 10 | 98 |
-| src\Forum | 16 | 1,708 | 97 | 117 | 1,922 |
-| src\Payment | 1 | 65 | 2 | 3 | 70 |
-| src\Services | 9 | 483 | 29 | 57 | 569 |
-| src\Services\Steam | 9 | 483 | 29 | 57 | 569 |
-| src\Services\Steam\components | 8 | 470 | 29 | 53 | 552 |
-| src\actions | 5 | 206 | 45 | 29 | 280 |
+| src | 188 | 13,535 | 570 | 970 | 15,075 |
+| src\Account | 8 | 601 | 84 | 53 | 738 |
+| src\Account\EditAccount | 1 | 178 | 37 | 14 | 229 |
+| src\Auth | 1 | 87 | 0 | 10 | 97 |
+| src\Components | 2 | 117 | 0 | 7 | 124 |
+| src\Forum | 19 | 2,050 | 123 | 138 | 2,311 |
+| src\Payment | 1 | 73 | 2 | 4 | 79 |
+| src\Services | 9 | 480 | 49 | 57 | 586 |
+| src\Services\Steam | 9 | 480 | 49 | 57 | 586 |
+| src\Services\Steam\components | 8 | 467 | 49 | 53 | 569 |
+| src\actions | 5 | 204 | 45 | 30 | 279 |
 | src\actions\utils | 1 | 9 | 2 | 3 | 14 |
 | src\assets | 80 | 3,360 | 23 | 295 | 3,678 |
 | src\assets\Fonts | 6 | 941 | 23 | 222 | 1,186 |

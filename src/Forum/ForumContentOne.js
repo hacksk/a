@@ -105,7 +105,7 @@ class ForumContentOne extends Component {
             alignItems: "center",
           }}
         >
-           {this.props.isAuthenticated ? (
+           {this.props.isAuthenticated ?  (
           <Popover
             placement="bottomRight"
             content={() => content(this.props.thread.id)}

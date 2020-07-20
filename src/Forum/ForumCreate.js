@@ -45,7 +45,7 @@ export default class ForumCreate extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.onChange = this.onChange.bind(this);
+      this.onChange = this.onChange.bind(this);
     this.resetFile = this.resetFile.bind(this);
   }
   componentDidMount() {
