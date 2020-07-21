@@ -11,7 +11,7 @@ class BottomNavbar extends Component {
   render() {
     return (
       <div className="bottommenu">
-        <ul>
+        <ul style={{display:"flex",flexDirection:"row",justifyContent:"space-evenly",width:"100%"}}>
           <NavLink activeClassName="active" to="/">
             <li>
               <button style={{ border: "none", background: "transparent" }}>

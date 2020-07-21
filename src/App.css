@@ -2584,9 +2584,7 @@ body {
 .bottommenu li {
   float: left;
 }
-.active{
-  background-color:red!important
-}
+
 
 .bottommenu li button {
   display: block;
@@ -2751,6 +2749,7 @@ button.StripeCheckout {
 .forum-home-thread img {
   height: 22vh;
   width: 30vh !important;
+  object-fit: cover;
 }
 .forum-home-thread {
   width: 100% !important;
@@ -2970,6 +2969,7 @@ a:not([href]):not([tabindex]) {
 .forum-home-thread img {
   width: 15em;
   border-radius: 8px;
+  object-fit: cover;
 }
 .forum-home-thread {
   margin-top: 0 !important;
