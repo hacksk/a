@@ -51,6 +51,8 @@ class NewsExpanded extends Component {
     trending: [],
   };
 
+
+
   componentDidMount() {
     const threadId = this.props.match.params.content;
 
@@ -71,7 +73,7 @@ class NewsExpanded extends Component {
         axios
           .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
           .then((res) => {
-            const trending = res.data.data.slice(0, 8);
+            const trending = res.data.data;
             this.setState({ trending });
             console.log(trending);
           });
@@ -176,6 +178,7 @@ class NewsExpanded extends Component {
                 <Trending
                   trendingimg={trend.header_image}
                   trendinghead={trend.title}
+                  trendingcontent={trend.content}
                 />
               </Link>
             ))}

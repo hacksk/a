@@ -8,6 +8,7 @@ export default class TrendingCard extends Component {
         <div className="trending-card-sub">
           <h5>REVIEW</h5>
           <h4>{this.props.trendinghead}</h4>
+          <h4>{this.props.trendingcontent}</h4>
         </div>
       </div>
     );
