@@ -28,6 +28,7 @@ export default class Home extends Component {
       subthread: [],
       services: [],
       products: [],
+      images:[],
     };
   }
   componentDidMount() {
@@ -46,6 +47,7 @@ export default class Home extends Component {
       const products = res.data.slice(0, 8);
       this.setState({ products });
     });
+
   }
   render() {
     return (
@@ -55,7 +57,7 @@ export default class Home extends Component {
             <SearchBar />
           </div>
           <div className="news">
-            <Carousel infiniteLoop="true" autoPlay="true">
+            <Carousel showThumbs="false" infiniteLoop="true" autoPlay="true">
               {this.state.persons.map((person) => (
                 <Link to={`/forum/thread/${person.id}`}>
                   <Banner thread={person} />
@@ -278,7 +280,7 @@ export default class Home extends Component {
                 {this.state.persons.map((person) => (
                   <Link to={`/forum/thread/${person.id}`}>
                     <ForumTrending
-                      threadprof="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+                      threadprof={`https://automoto.techbyheart.in/${person.userimage}`}
                       trendinghead={person.title}
                       trendingcontent={person.content}
                       timethread={<Moment fromNow>{person.date}</Moment>}

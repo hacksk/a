@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Accountupload from "./PicturesWall";
 import { connect } from "react-redux";
 import axios from "axios";
-import AccountCustomer from "./AccountCustomer";
 import PersonalDetails from "./EditAccount/PersonalDetails";
 import { FiLogOut } from "react-icons/fi";
 import { signOut } from "../actions/authActions";
@@ -21,7 +20,7 @@ class AccountGeneral extends Component {
       .then((res) => {
         const persons = res.data;
         console.log("data", persons);
-        const person = persons.find((x) => x.user.id == this.props.userData.id);
+        const person = persons.find((x) => x.user.id === this.props.userData.id);
         this.setState({ person });
       });
   }

@@ -1,32 +1,15 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { message, Tag, Select } from "antd";
-import TagsForum from "./TagsForum";
+import { message, Select } from "antd";
 
 const { Option } = Select;
-const children = [];
-for (let i = 10; i < 36; i++) {
-  children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
-}
+
 
 // function handleChange(value) {
 //   console.log(`selected ${value}`);
 // }
 
-function tagRender(props) {
-  const { label, value, closable, onClose } = props;
 
-  return (
-    <Tag
-      color={value}
-      closable={closable}
-      onClose={onClose}
-      style={{ marginRight: 3 }}
-    >
-      {label}
-    </Tag>
-  );
-}
 
 export default class ForumCreate extends Component {
   constructor(props) {
@@ -41,11 +24,12 @@ export default class ForumCreate extends Component {
       options: [],
       file: null,
       name: [],
+      children: [],
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-      this.onChange = this.onChange.bind(this);
+    this.onChange = this.onChange.bind(this);
     this.resetFile = this.resetFile.bind(this);
   }
   componentDidMount() {
@@ -59,7 +43,8 @@ export default class ForumCreate extends Component {
           return item["name"];
         });
         this.setState({ name });
-        console.log(this.state.name);
+        this.state.children.push(<Option key={this.state.name}>{this.state.name}</Option>);
+        console.log(this.state.children,"children")
       });
   }
 
@@ -245,9 +230,9 @@ export default class ForumCreate extends Component {
                   placeholder="Tags Mode"
                   // onChange={handleChange}
                 >
-                  {children}
+                  {this.state.children}
                 </Select>
-                <TagsForum />
+                {/* <TagsForum /> */}
               </div>
             </div>
             <button type="submit" className="create-forum-button">

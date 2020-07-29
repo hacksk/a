@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Popover, message } from "antd";
 import ForumComment from "./ForumComment";
+import Trending from "./Card/TrendingCard";
 import ReactPlayer from "react-player";
 import { MdMoreVert } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
 import { connect } from "react-redux";
 import { SemipolarLoading } from "react-loadingg";
-import TestComment from "./TestComment";
 
 const URL = "https://automoto.techbyheart.in/api/v1/forum";
 const content = (id) => (
@@ -48,6 +48,7 @@ class NewsExpanded extends Component {
     tags: [],
     count: 0,
     image: "",
+    trending: [],
   };
 
   componentDidMount() {
@@ -67,6 +68,13 @@ class NewsExpanded extends Component {
               "https://automoto.techbyheart.in" + this.state.threads.userimage,
           };
         });
+        axios
+          .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
+          .then((res) => {
+            const trending = res.data.data.slice(0, 8);
+            this.setState({ trending });
+            console.log(trending);
+          });
         // const tags = this.state.thread.tag;
         // console.log(tags);
         // this.setState({ tags });
@@ -76,40 +84,62 @@ class NewsExpanded extends Component {
     if (this.state.threads != null) {
       return (
         <div className="threadexpand">
+          <div className="thread-share">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
           <div className="threadexpand-wrap">
             <div
               className="threadexpand-content"
               style={{ position: "relative" }}
             >
-              {this.props.isAuthenticated ? (
-                <div className="forum-more-container">
-                  <div
-                    className="forum-more"
-                    style={{
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Popover
-                      placement="bottomRight"
-                      content={() => content(this.state.threads.id)}
-                      trigger="click"
-                    >
-                      <MdMoreVert />
-                    </Popover>
-                  </div>
+              <div className="thread-header-space">
+                <div>
+                  <h6>REVIEW</h6>
+                  <h5>{this.state.threads.title}</h5>
                 </div>
-              ) : null}
+                {this.props.isAuthenticated ? (
+                  <div className="forum-more-container">
+                    <div
+                      className="forum-more"
+                      style={{
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <Popover
+                        placement="bottomRight"
+                        content={() => content(this.state.threads.id)}
+                        trigger="click"
+                      >
+                        <MdMoreVert />
+                      </Popover>
+                    </div>
+                  </div>
+                ) : null}
+              </div>
               <div className="thread-profile-header">
-                <div style={{ display: "flex", flexDirection: "row" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                  }}
+                >
                   <img alt="" src={this.state.image}></img>
                   <p>{this.state.threads.username}</p>
                 </div>
-                <p style={{ color: "rgba(255, 255, 255, 0.38)" }}>
-                  {<Moment fromNow>{this.state.threads.date}</Moment>}
-                </p>
+                <div className="thread-expand-time-n-more">
+                  <p
+                    style={{
+                      color: "rgba(255, 255, 255, 0.38)",
+                    }}
+                  >
+                    {<Moment fromNow>{this.state.threads.date}</Moment>}
+                  </p>
+                </div>
               </div>
-              <h5>{this.state.threads.title}</h5>
               <div>
                 {this.state.tags.map((tag) => (
                   <p>{tag.name}</p>
@@ -138,6 +168,17 @@ class NewsExpanded extends Component {
               thread={this.state.threads}
               comment={this.state.threads.comment}
             />
+          </div>
+          <div className="thread-expanded-trending">
+            <h4>Trending</h4>
+            {this.state.trending.map((trend) => (
+              <Link to={`/forum/thread/${trend.id}`}>
+                <Trending
+                  trendingimg={trend.header_image}
+                  trendinghead={trend.title}
+                />
+              </Link>
+            ))}
           </div>
         </div>
       );

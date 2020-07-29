@@ -61,7 +61,7 @@ export default class EditThread extends Component {
       .then((res) => {
         const threads = res.data.data;
         const thread = threads.find(
-          (x) => x.id == this.props.match.params.edit
+          (x) => x.id === this.props.match.params.edit
         );
         this.setState({ thread });
         console.log(thread);

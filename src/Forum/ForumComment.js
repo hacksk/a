@@ -5,14 +5,13 @@ import {
   Button,
   List,
   Input,
-  Popover,
   Alert,
   message,
 } from "antd";
 import React from "react";
 import axios from "axios";
 // import ReplyComment from "./ReplyComment";
-import { MdMoreVert, MdComment } from "react-icons/md";
+import {  MdComment } from "react-icons/md";
 import { AiFillLike } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { signOut } from "../actions/authActions";
@@ -176,7 +175,7 @@ class ForumComment extends React.Component {
         console.log(res, "liked");
       })
       .catch((e) => console.log(e));
-    if (this.state.increment == true) {
+    if (this.state.increment === true) {
       let likeCountnew = this.props.thread.like_count + 1;
       this.setState({ likeCount: likeCountnew });
     } else {

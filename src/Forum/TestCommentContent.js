@@ -12,7 +12,7 @@ export default class TestCommentContent extends Component {
           paddingTop:"1em"
         }}
       >
-        <img
+        <img alt=""
           style={{ width: "2em", borderRadius: "50%", height: "2em" }}
           src={this.props.userimage}
         ></img>

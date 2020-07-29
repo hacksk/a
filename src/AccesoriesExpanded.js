@@ -20,11 +20,11 @@ class AccesoriesExpanded extends Component {
     axios.get(`https://automoto.techbyheart.in/api/v1/service/`).then((res) => {
       const services = res.data;
       const currentItem = services.find(
-        (x) => x.id == this.props.match.params.detail
+        (x) => x.id === this.props.match.params.detail
       );
       this.setState({ currentItem });
       console.log(currentItem);
-      console.log("imagecheck", currentItem.images[0].image);
+      // console.log("imagecheck", currentItem.images[0].image);
     });
   }
   handleClick = (id) => {

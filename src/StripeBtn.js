@@ -8,10 +8,10 @@ const stripeBtn = () => {
   const publishableKey = "pk_test_UAHsd0FgK8CJC6PXgoZ6cIeO00y9JJDBn5";
 
   const onToken = token => {
-    const body = {
-      amount: "",
-      token: token
-    };
+    // const body = {
+    //   amount: "",
+    //   token: token
+    // };
     axios
       .post("https://automoto.techbyheart.in/api/v1/order/place_orders/")
       .then(response => {

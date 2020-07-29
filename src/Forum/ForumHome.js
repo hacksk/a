@@ -28,7 +28,6 @@ export default class ForumHome extends Component {
     axios
       .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
       .then((res) => {
-        const content = res.data.data;
         const persons = res.data.data.slice(0, 3);
         const subthread = res.data.data.slice(3, 6);
         // console.log(persons);

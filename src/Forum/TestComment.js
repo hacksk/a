@@ -18,7 +18,6 @@ export default class TestComment extends Component {
       content: "",
       liked: false,
       thread: "",
-      content: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);

@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { MdAccountCircle, MdForum } from "react-icons/md";
-import { AiTwotoneHome, AiOutlineShoppingCart } from "react-icons/ai";
-import { IoMdSearch } from "react-icons/io";
 import { NavLink } from "react-router-dom";
-import { GoLocation } from "react-icons/go";
 import { signOut } from "./actions/authActions";
 
 class BottomNavbar extends Component {
@@ -15,7 +11,7 @@ class BottomNavbar extends Component {
           <NavLink activeClassName="active" to="/">
             <li>
               <button style={{ border: "none", background: "transparent" }}>
-                <img
+                <img alt=""
                   src={require("./vector-icons/bottomnavbar/Home.svg")}
                 ></img>
               </button>
@@ -27,7 +23,7 @@ class BottomNavbar extends Component {
                 style={{ border: "none", background: "transparent" }}
                 href="#news"
               >
-                <img
+                <img alt=""
                   src={require("./vector-icons/bottomnavbar/Search.svg")}
                 ></img>
               </button>
@@ -39,7 +35,7 @@ class BottomNavbar extends Component {
                 style={{ border: "none", background: "transparent" }}
                 href="#map"
               >
-                <img
+                <img alt=""
                   src={require("./vector-icons/bottomnavbar/Location.svg")}
                 ></img>
               </button>
@@ -51,7 +47,7 @@ class BottomNavbar extends Component {
                 style={{ border: "none", background: "transparent" }}
                 href="#cart"
               >
-                <img
+                <img alt=""
                   src={require("./vector-icons/bottomnavbar/Cart.svg")}
                 ></img>
               </button>
@@ -63,7 +59,7 @@ class BottomNavbar extends Component {
                 style={{ border: "none", background: "transparent" }}
                 href="#icon"
               >
-                <img
+                <img alt=""
                   src={require("./vector-icons/bottomnavbar/Forum.svg")}
                 ></img>
               </button>
@@ -76,7 +72,7 @@ class BottomNavbar extends Component {
                   style={{ border: "none", background: "transparent" }}
                   href="#icon"
                 >
-                  <img
+                  <img alt=""
                     src={require("./vector-icons/bottomnavbar/Account.svg")}
                   ></img>{" "}
                 </button>
@@ -89,7 +85,7 @@ class BottomNavbar extends Component {
                   style={{ border: "none", background: "transparent" }}
                   href="#icon"
                 >
-                  <img
+                  <img alt=""
                     src={require("./vector-icons/bottomnavbar/Account.svg")}
                   ></img>{" "}
                 </button>

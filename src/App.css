@@ -2585,7 +2585,6 @@ body {
   float: left;
 }
 
-
 .bottommenu li button {
   display: block;
   color: white;
@@ -2593,12 +2592,10 @@ body {
   padding: 14px 14px;
   text-decoration: none;
 }
-.bottommenu li button img{
-  width: 24px!important;
-  height: 24px!important;
+.bottommenu li button img {
+  width: 24px !important;
+  height: 24px !important;
 }
-
-
 
 .bottommenu li button:hover {
   background-color: #111;
@@ -2675,10 +2672,11 @@ body {
   width: 4vh !important;
   height: 4vh !important;
   overflow: hidden;
+  object-fit: cover;
 }
 .forum-likebtn {
   background: transparent;
-  color: rgba(255, 255, 255, 0.38) ;
+  color: rgba(255, 255, 255, 0.38);
   border: none;
   font-weight: 600;
 }
@@ -2694,7 +2692,6 @@ body {
 .like-button-forum {
   font-size: 20px !important;
 }
-
 
 .ant-list-split .ant-list-header {
   background: rgba(255, 255, 255, 0.08);
@@ -2768,8 +2765,23 @@ button.StripeCheckout {
 }
 .forum-more-container {
   position: absolute;
-  top: 0;
   right: 0;
+}
+.threadexpand-content h6 {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: #fc5c2e;
+}
+.threadexpand-content h5 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: justify;
 }
 @media screen and (max-width: 786px) {
   .ant-space-align-center {
@@ -3022,6 +3034,7 @@ a:not([href]):not([tabindex]) {
   width: 6vh;
   height: 6vh;
   border-radius: 50%;
+  object-fit: cover;
   border: 1px solid #fc5c2d;
 }
 .clubhomemain {
@@ -3240,6 +3253,64 @@ a:not([href]):not([tabindex]) {
 .threadexpand {
   padding: 7em;
   background: #141414;
+  display: flex;
+  flex-direction: row;
+}
+.thread-share {
+  margin-top: 15vh;
+  width: 15.74vh;
+  height: 27vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.thread-share div {
+  height: 4vh;
+  width: 4vh;
+  border: 1px solid #fc734b;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.thread-expanded-trending {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8vh;
+  margin-top: 8vh;
+}
+.thread-expanded-trending h4 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: white;
+}
+.trending-card {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  margin-top: 4vh;
+}
+
+.trending-card img {
+  width: 15vh;
+  height: 15vh;
+  object-fit: cover;
+}
+.trending-card h5 {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 12px;
+  color: #fc5c2d;
+}
+.trending-card-sub {
+  margin-left: 2.6vh;
+}
+.trending-card-sub h4 {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
 }
 @media (min-width: 1200px) {
   .container,
@@ -3402,15 +3473,21 @@ a:not([href]):not([tabindex]) {
   font-family: Montserrat;
   justify-content: space-between;
 }
+.thread-expand-time-n-more {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 .threadexpand-wrap {
   width: 70%;
-  background-color: rgba(255, 255, 255, 0.04);
   border-radius: 8px;
 }
 .threadexpand-content p {
   font-size: 13px;
   font-weight: 600;
   padding-top: 1em;
+  text-align: justify;
 }
 .threadexpand-content h5 {
   font-size: 21px;
@@ -3463,12 +3540,20 @@ a:not([href]):not([tabindex]) {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   padding-bottom: 2em;
+  margin-top: 6vh;
+}
+.thread-header-space{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .thread-profile-header img {
-  width: 3em;
-  height: 3em;
+  width: 4vh;
+  height: 4vh;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .thread-profile-header p {

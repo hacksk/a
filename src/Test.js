@@ -5,7 +5,7 @@ const { Option } = Select;
 
 function handleChange(value) {
   console.log(`selected ${value}`);
-  if(value=="lucy"){
+  if(value==="lucy"){
     window.alert("hello")
   }
 }
