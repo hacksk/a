@@ -3106,7 +3106,7 @@ a:not([href]):not([tabindex]) {
 .forum-video {
   height: auto !important;
   object-fit: cover !important;
-  width: auto;
+  width: 83vh !important;
 }
 
 .ant-popover-title {
@@ -3186,11 +3186,23 @@ a:not([href]):not([tabindex]) {
   .forum-head-image {
     width: 100% !important;
   }
-  @media screen and (max-width: 786px) {
-    .forum-head-image img {
-      width: 87vw !important;
-    }
+
+  .forum-head-image img {
+    width: 87vw !important;
   }
+  .thread-share {
+    display: none !important;
+  }
+  .threadexpand {
+    flex-direction: column !important;
+  }
+  .thread-expanded-trending {
+    padding: 2vh !important;
+    margin-bottom: 3vh;
+    margin-left: 0 !important;
+    width: unset !important;
+  }
+
   .forum-home-firstpart {
     flex-direction: column !important;
     padding: 0 !important;
@@ -3217,7 +3229,10 @@ a:not([href]):not([tabindex]) {
     padding: 2vh !important;
   }
   .thread-expanded-image {
-    width: 24em !important;
+    width: 42vh !important;
+  }
+  .threadexpand-content h5 {
+    text-align: unset;
   }
   .ant-btn > .anticon + span,
   .ant-btn > span + .anticon,
@@ -3258,6 +3273,9 @@ a:not([href]):not([tabindex]) {
   flex-direction: row;
   justify-content: space-between;
 }
+.thread-expanded-image {
+  margin-bottom: 4vh;
+}
 .thread-share {
   margin-top: 15vh;
   width: 15.74vh;
@@ -3267,6 +3285,7 @@ a:not([href]):not([tabindex]) {
   justify-content: space-between;
   align-items: center;
 }
+
 .thread-share div {
   height: 4vh;
   width: 4vh;
@@ -3293,9 +3312,8 @@ a:not([href]):not([tabindex]) {
   display: flex;
   flex-direction: row;
   cursor: pointer;
-  margin-top: 4vh!important;
+  margin-top: 4vh !important;
   height: 15vh;
-  width: 327px;
 }
 
 .trending-card img {
@@ -3305,25 +3323,33 @@ a:not([href]):not([tabindex]) {
 }
 .trending-card h5 {
   font-weight: 600;
-  font-size: 10px;
+  font-size: 1.73vh;
   line-height: 12px;
-  color: #fc5c2d;
 }
 .trending-card-sub {
   margin-left: 2.6vh;
+  white-space: wrap;
+  width: auto;
   overflow: hidden;
-  width: 100%;
+  text-overflow: ellipsis;
+}
+.trending-card-sub h5 {
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 15px;
+  color: white;
+  white-space: nowrap;
+  width: 170px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .trending-card-sub h4 {
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
   width: 100%;
-  display: inline-block;
-  white-space: wrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
+
 @media (min-width: 1200px) {
   .container,
   .container-lg,
@@ -3508,7 +3534,7 @@ a:not([href]):not([tabindex]) {
   font-weight: 600;
 }
 .threadexpand-content img {
-  width: 25em;
+  width: 83vh;
   border-radius: 8px;
 }
 /* .ant-comment-actions > li > span,

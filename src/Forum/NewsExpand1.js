@@ -51,8 +51,6 @@ class NewsExpanded extends Component {
     trending: [],
   };
 
-
-
   componentDidMount() {
     const threadId = this.props.match.params.content;
 
@@ -70,16 +68,17 @@ class NewsExpanded extends Component {
               "https://automoto.techbyheart.in" + this.state.threads.userimage,
           };
         });
-        axios
-          .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
-          .then((res) => {
-            const trending = res.data.data;
-            this.setState({ trending });
-            console.log(trending);
-          });
         // const tags = this.state.thread.tag;
         // console.log(tags);
         // this.setState({ tags });
+      });
+
+    axios
+      .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
+      .then((res) => {
+        const trending = res.data.data;
+        this.setState({ trending });
+        console.log(trending);
       });
   }
   render() {
@@ -147,12 +146,13 @@ class NewsExpanded extends Component {
                   <p>{tag.name}</p>
                 ))}
               </div>
+
+              <p>{this.state.threads.content}</p>
               <img
                 className="thread-expanded-image"
                 alt=""
                 src={this.state.threads.header_image}
               ></img>
-              <p>{this.state.threads.content}</p>
               <ReactPlayer
                 className="forum-video"
                 controls={true}
@@ -182,6 +182,7 @@ class NewsExpanded extends Component {
                 />
               </Link>
             ))}
+            <div className="b">Hello wsdjfnslkdjorld!</div>
           </div>
         </div>
       );

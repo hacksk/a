@@ -140,7 +140,6 @@ export default class ForumHome extends Component {
             >
               {this.state.subthread.map((person) => (
                 <Link to={`/forum/thread/${person.id}`}>
-                  {" "}
                   <Forumcontenttwo thread={person} />
                 </Link>
               ))}
