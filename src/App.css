@@ -1152,7 +1152,7 @@ body {
 }
 .ant-popover-inner-content {
   color: white !important;
-  height: 40vh;
+  height: auto;
   padding: 1vh 0 0 0 !important;
 }
 .ant-popover-inner-content button {
@@ -1218,7 +1218,7 @@ body {
     width: 20vw;
   }
   .ant-popover-inner-content {
-    height: 20vw;
+    height: auto;
   }
 }
 /* STYLES FOR STATUSBAR */
@@ -2788,11 +2788,11 @@ button.StripeCheckout {
     margin-top: 10vh;
   }
   .forum-more-container {
-    top: 10vh;
+    top: 15vh;
     right: 0vh;
   }
   .ant-popover-inner {
-    height: 9vh !important;
+    height: auto !important;
   }
   .ant-picker-panel-container {
     margin-left: 2vh !important;
@@ -2916,7 +2916,7 @@ button.StripeCheckout {
   justify-content: center;
   align-items: center;
   font-size: 30px;
-  color: #7d7d7d;
+  color: rgba(255, 255, 255, 0.87);
   cursor: pointer;
   height: 40px;
   width: 40px;
@@ -3158,6 +3158,12 @@ a:not([href]):not([tabindex]) {
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
+  .expand-mobile-share-btn{
+    display: inline-block!important;
+  }
+  .ant-modal-close-x{
+    display: none!important;
+  }
 
   .forum-home-link-forum {
     padding-top: 0 !important;
@@ -3279,11 +3285,18 @@ a:not([href]):not([tabindex]) {
 .thread-share {
   margin-top: 15vh;
   width: 15.74vh;
-  height: 27vh;
+  height: 40vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  border-right: 1px solid rgba(238, 238, 238, 0.08);
+}
+.thread-modal,
+.ant-modal-footer,
+.ant-modal-close-x,
+.expand-mobile-share-btn {
+  display: none ;
 }
 
 .thread-share div {
@@ -3343,6 +3356,12 @@ a:not([href]):not([tabindex]) {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+/* .react-share__ShareButton{
+  width: 20vh!important;
+  height: 20vh!important;
+
+} */
+
 .trending-card-sub h4 {
   font-weight: bold;
   font-size: 12px;
@@ -3388,9 +3407,7 @@ a:not([href]):not([tabindex]) {
 .ant-list-items .ant-comment {
   padding-left: 0 !important;
 }
-.commenting-forum .ant-comment {
-  width: 70% !important;
-}
+
 .item-desc {
   display: flex;
   flex-direction: row;
@@ -3523,7 +3540,7 @@ a:not([href]):not([tabindex]) {
 }
 .threadexpand-content p {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: normal;
   padding-top: 1em;
   text-align: justify;
 }

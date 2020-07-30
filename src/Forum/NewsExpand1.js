@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Popover, message } from "antd";
+import { Popover, message, Modal, Button } from "antd";
 import ForumComment from "./ForumComment";
 import Trending from "./Card/TrendingCard";
 import ReactPlayer from "react-player";
@@ -9,39 +9,23 @@ import { Link } from "react-router-dom";
 import Moment from "react-moment";
 import { connect } from "react-redux";
 import { SemipolarLoading } from "react-loadingg";
+import {
+  EmailShareButton,
+  FacebookShareButton,
+  LinkedinShareButton,
+  TelegramShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+  EmailIcon,
+  FacebookIcon,
+  LinkedinIcon,
+  TelegramIcon,
+  TwitterIcon,
+  WhatsappIcon,
+} from "react-share";
 
 const URL = "https://automoto.techbyheart.in/api/v1/forum";
-const content = (id) => (
-  <div>
-    <button
-      onClick={(e) => {
-        e.stopPropagation();
-        axios
-          .post(`${URL}/destroy/${id}/`)
-          .then((res) => {
-            console.log(res.data);
-            console.log(id);
-          })
-          .catch((error) => {
-            message.info("You are not authorized to delete this comment");
-          });
-      }}
-    >
-      Delete
-    </button>
-    <Link to={`/forum/content/${id}`}>
-      <button
-        onClick={(e) => {
-          e.stopPropagation();
-          console.log("edit");
-          // Do the edit operation
-        }}
-      >
-        Edit
-      </button>
-    </Link>
-  </div>
-);
+
 class NewsExpanded extends Component {
   state = {
     thread: null,
@@ -49,6 +33,25 @@ class NewsExpanded extends Component {
     count: 0,
     image: "",
     trending: [],
+    visible: false,
+    visiblepop: false,
+  };
+  showModal = () => {
+    this.setState({
+      visible: true,
+      visiblepop: false,
+    });
+  };
+
+  handleCancel = (e) => {
+    console.log(e);
+    this.setState({
+      visible: false,
+    });
+  };
+
+  handleVisbile = (visiblepop) => {
+    this.setState({ visiblepop: true });
   };
 
   componentDidMount() {
@@ -80,15 +83,75 @@ class NewsExpanded extends Component {
         this.setState({ trending });
         console.log(trending);
       });
+    console.log(window.location.href, "location");
   }
   render() {
     if (this.state.threads != null) {
       return (
         <div className="threadexpand">
           <div className="thread-share">
-            <div></div>
-            <div></div>
-            <div></div>
+            <FacebookShareButton
+              url={window.location.href}
+              quote={this.state.threads.title}
+            >
+              <FacebookIcon
+                size="50px"
+                bgStyle={{ fill: "transparent" }}
+                iconFillColor="rgba(255, 255, 255, 0.6)"
+              />
+            </FacebookShareButton>
+            <WhatsappShareButton
+              url={window.location.href}
+              title={this.state.threads.title}
+            >
+              <WhatsappIcon
+                size="40px"
+                bgStyle={{ fill: "transparent" }}
+                iconFillColor="rgba(255, 255, 255, 0.6)"
+              />
+            </WhatsappShareButton>
+            <LinkedinShareButton
+              url={window.location.href}
+              title={this.state.threads.title}
+              summary={this.state.threads.content}
+            >
+              <LinkedinIcon
+                size="50px"
+                bgStyle={{ fill: "transparent" }}
+                iconFillColor="rgba(255, 255, 255, 0.6)"
+              />
+            </LinkedinShareButton>
+            <TwitterShareButton
+              url={window.location.href}
+              title={this.state.threads.title}
+            >
+              <TwitterIcon
+                size="50px"
+                bgStyle={{ fill: "transparent" }}
+                iconFillColor="rgba(255, 255, 255, 0.6)"
+              />
+            </TwitterShareButton>
+            <TelegramShareButton
+              url={window.location.href}
+              title={this.state.threads.title}
+            >
+              <TelegramIcon
+                size="40px"
+                bgStyle={{ fill: "transparent" }}
+                iconFillColor="rgba(255, 255, 255, 0.6)"
+              />
+            </TelegramShareButton>
+            <EmailShareButton
+              url={window.location.href}
+              subject={this.state.threads.title}
+              body={this.state.threads.content}
+            >
+              <EmailIcon
+                size="50px"
+                bgStyle={{ fill: "transparent" }}
+                iconFillColor="rgba(255, 255, 255, 0.6)"
+              />
+            </EmailShareButton>
           </div>
           <div className="threadexpand-wrap">
             <div
@@ -111,8 +174,46 @@ class NewsExpanded extends Component {
                     >
                       <Popover
                         placement="bottomRight"
-                        content={() => content(this.state.threads.id)}
+                        // content={() => content(this.state.threads.id)}
+                        content={
+                          <div>
+                            <button
+                              onClick={(e) => {
+                                axios
+                                  .post(
+                                    `${URL}/destroy/${this.state.threads.id}/`
+                                  )
+                                  .then((res) => {
+                                    console.log(res.data);
+                                    console.log(this.state.threads.id);
+                                  })
+                                  .catch((error) => {
+                                    message.info(
+                                      "You are not authorized to delete this comment"
+                                    );
+                                  });
+                              }}
+                            >
+                              Delete
+                            </button>
+                            <Link
+                              to={`/forum/content/${this.state.threads.id}`}
+                            >
+                              <button
+                                onClick={(e) => {
+                                  console.log("edit");
+                                  // Do the edit operation
+                                }}
+                              >
+                                Edit
+                              </button>
+                            </Link>
+                            <button className="expand-mobile-share-btn" onClick={this.showModal}>Share</button>
+                          </div>
+                        }
                         trigger="click"
+                        visible={this.state.visiblepop}
+                        onVisibleChange={this.handleVisbile}
                       >
                         <MdMoreVert />
                       </Popover>
@@ -182,7 +283,85 @@ class NewsExpanded extends Component {
                 />
               </Link>
             ))}
-            <div className="b">Hello wsdjfnslkdjorld!</div>
+          </div>
+          <div className="thread-modal">
+            <Modal
+              title=""
+              visible={this.state.visible}
+              onOk={this.handleOk}
+              onCancel={this.handleCancel}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                }}
+              >
+                <FacebookShareButton
+                  url={window.location.href}
+                  quote={this.state.threads.title}
+                >
+                  <FacebookIcon
+                    size="50px"
+                    bgStyle={{ fill: "transparent" }}
+                    iconFillColor="rgba(255, 255, 255, 0.6)"
+                  />
+                </FacebookShareButton>
+                <WhatsappShareButton
+                  url={window.location.href}
+                  title={this.state.threads.title}
+                >
+                  <WhatsappIcon
+                    size="40px"
+                    bgStyle={{ fill: "transparent" }}
+                    iconFillColor="rgba(255, 255, 255, 0.6)"
+                  />
+                </WhatsappShareButton>
+                <LinkedinShareButton
+                  url={window.location.href}
+                  title={this.state.threads.title}
+                  summary={this.state.threads.content}
+                >
+                  <LinkedinIcon
+                    size="50px"
+                    bgStyle={{ fill: "transparent" }}
+                    iconFillColor="rgba(255, 255, 255, 0.6)"
+                  />
+                </LinkedinShareButton>
+                <TwitterShareButton
+                  url={window.location.href}
+                  title={this.state.threads.title}
+                >
+                  <TwitterIcon
+                    size="50px"
+                    bgStyle={{ fill: "transparent" }}
+                    iconFillColor="rgba(255, 255, 255, 0.6)"
+                  />
+                </TwitterShareButton>
+                <TelegramShareButton
+                  url={window.location.href}
+                  title={this.state.threads.title}
+                >
+                  <TelegramIcon
+                    size="40px"
+                    bgStyle={{ fill: "transparent" }}
+                    iconFillColor="rgba(255, 255, 255, 0.6)"
+                  />
+                </TelegramShareButton>
+                <EmailShareButton
+                  url={window.location.href}
+                  subject={this.state.threads.title}
+                  body={this.state.threads.content}
+                >
+                  <EmailIcon
+                    size="50px"
+                    bgStyle={{ fill: "transparent" }}
+                    iconFillColor="rgba(255, 255, 255, 0.6)"
+                  />
+                </EmailShareButton>
+              </div>
+            </Modal>
           </div>
         </div>
       );
