@@ -1152,7 +1152,7 @@ body {
 }
 .ant-popover-inner-content {
   color: white !important;
-  height: auto;
+  height: auto!important;
   padding: 1vh 0 0 0 !important;
 }
 .ant-popover-inner-content button {
@@ -3081,7 +3081,7 @@ a:not([href]):not([tabindex]) {
 
 .ant-popover-inner {
   width: 15vh;
-  height: 4em;
+  height: auto!important;
   background: #383838 !important;
   color: white !important;
   box-shadow: 0px 9px 46px rgba(0, 0, 0, 0.12),
