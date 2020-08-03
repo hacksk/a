@@ -9,6 +9,8 @@ import { Link } from "react-router-dom";
 import Moment from "react-moment";
 import { connect } from "react-redux";
 import { SemipolarLoading } from "react-loadingg";
+import ImageScroller from "react-image-scroller";
+
 import {
   EmailShareButton,
   FacebookShareButton,
@@ -33,6 +35,7 @@ class NewsExpanded extends Component {
     count: 0,
     image: "",
     trending: [],
+    images: [],
     visible: false,
     visiblepop: false,
   };
@@ -63,7 +66,10 @@ class NewsExpanded extends Component {
       )
       .then((res) => {
         const threads = res.data.data;
-        this.setState({ threads });
+        const images = res.data.data.images;
+        const urls = res.data.data.images_url;
+        console.log(images, "images");
+        this.setState({ threads, images, urls });
         console.log("expanded", threads);
         this.setState((state) => {
           return {
@@ -158,6 +164,13 @@ class NewsExpanded extends Component {
               className="threadexpand-content"
               style={{ position: "relative" }}
             >
+              {this.state.urls.map((url) => (
+                <img
+                  className="thread-expanded-image"
+                  alt=""
+                  src={url.url}
+                ></img>
+              ))}
               <div className="thread-header-space">
                 <div>
                   <h6>REVIEW</h6>
@@ -208,7 +221,12 @@ class NewsExpanded extends Component {
                                 Edit
                               </button>
                             </Link>
-                            <button className="expand-mobile-share-btn" onClick={this.showModal}>Share</button>
+                            <button
+                              className="expand-mobile-share-btn"
+                              onClick={this.showModal}
+                            >
+                              Share
+                            </button>
                           </div>
                         }
                         trigger="click"
@@ -249,19 +267,24 @@ class NewsExpanded extends Component {
               </div>
 
               <p>{this.state.threads.content}</p>
-              <img
-                className="thread-expanded-image"
-                alt=""
-                src={this.state.threads.header_image}
-              ></img>
+
               <ReactPlayer
                 className="forum-video"
                 controls={true}
                 pip={true}
                 url={this.state.threads.video_url}
               />
-
-              <br />
+              {this.state.images!= null ? (
+                <ImageScroller style={{ marginTop: "50px" }}>
+                  {this.state.images.map((person) => (
+                    <img
+                      className="thread-expand-gallery"
+                      alt={person.id}
+                      src={person.image}
+                    ></img>
+                  ))}
+                </ImageScroller>
+              ) : <h1>hello there</h1>}
             </div>
             {/* <TestComment
               thread={this.state.threads.comment}
@@ -276,11 +299,7 @@ class NewsExpanded extends Component {
             <h4>Trending</h4>
             {this.state.trending.map((trend) => (
               <Link to={`/forum/thread/${trend.id}`}>
-                <Trending
-                  trendingimg={trend.header_image}
-                  trendinghead={trend.title}
-                  trendingcontent={trend.content}
-                />
+                <Trending thread={trend} />
               </Link>
             ))}
           </div>

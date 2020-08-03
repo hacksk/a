@@ -7,7 +7,7 @@ import {
   MdForum,
 } from "react-icons/md";
 import { AiTwotoneHome } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Tooltip, Button } from "antd";
 import { FiLogOut } from "react-icons/fi";
 import { signOut } from "./actions/authActions";
@@ -38,18 +38,19 @@ class NavbarNew extends Component {
               </Tooltip>
             </button>
           </li> */}
-          <Link to="/">
+          <NavLink activeClassName="navbar-active-now" to="/">
             <li>
               <Tooltip placement="top" title={text}>
                 <Ripples>
-                  <Button>
+                  <Button>  
                     <AiTwotoneHome />
                   </Button>
                 </Ripples>
               </Tooltip>
             </li>
-          </Link>
-          <Link to="./map">
+          </NavLink>
+
+          <NavLink activeClassName="navbar-active-now" to="./map">
             <li>
               <Tooltip placement="top" title={text2}>
                 <Ripples>
@@ -59,8 +60,8 @@ class NavbarNew extends Component {
                 </Ripples>
               </Tooltip>
             </li>
-          </Link>
-          <Link to="/steamcart">
+          </NavLink>
+          <NavLink activeClassName="navbar-active-now" to="/steamcart">
             <li>
               <Tooltip placement="top" title={text3}>
                 <Ripples>
@@ -70,8 +71,8 @@ class NavbarNew extends Component {
                 </Ripples>
               </Tooltip>
             </li>
-          </Link>
-          <Link to="/forum">
+          </NavLink>
+          <NavLink activeClassName="navbar-active-now" to="/forum">
             <li>
               <Tooltip placement="top" title={text4}>
                 <Button>
@@ -79,10 +80,10 @@ class NavbarNew extends Component {
                 </Button>
               </Tooltip>
             </li>
-          </Link>
+          </NavLink>
 
           {this.props.isAuthenticated ? (
-            <Link to="/account">
+            <NavLink activeClassName="navbar-active-now" to="/account">
               <li>
                 <Tooltip placement="top" title={text5}>
                   <Button>
@@ -90,9 +91,9 @@ class NavbarNew extends Component {
                   </Button>
                 </Tooltip>
               </li>
-            </Link>
+            </NavLink>
           ) : (
-            <Link to="/signin">
+            <NavLink activeClassName="navbar-active-now" to="/signin">
               <li>
                 <Tooltip placement="top" title={text5}>
                   <Button>
@@ -100,7 +101,7 @@ class NavbarNew extends Component {
                   </Button>
                 </Tooltip>
               </li>
-            </Link>
+            </NavLink>
           )}
 
           {this.props.isAuthenticated ? (

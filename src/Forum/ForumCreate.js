@@ -1,15 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { message, Select } from "antd";
+import MultiImage from "./Card/Upload/MultiImage";
 
 const { Option } = Select;
-
 
 // function handleChange(value) {
 //   console.log(`selected ${value}`);
 // }
-
-
 
 export default class ForumCreate extends Component {
   constructor(props) {
@@ -19,6 +17,8 @@ export default class ForumCreate extends Component {
       title: "",
       content: "",
       header_image: "",
+      url:"",
+      image: [],
       video_url: "",
       tags: [],
       options: [],
@@ -43,8 +43,10 @@ export default class ForumCreate extends Component {
           return item["name"];
         });
         this.setState({ name });
-        this.state.children.push(<Option key={this.state.name}>{this.state.name}</Option>);
-        console.log(this.state.children,"children")
+        this.state.children.push(
+          <Option key={this.state.name}>{this.state.name}</Option>
+        );
+        console.log(this.state.children, "children");
       });
   }
 
@@ -62,6 +64,7 @@ export default class ForumCreate extends Component {
     formData.append("title", this.state.title);
     formData.append("content", this.state.content);
     formData.append("video_url", this.state.video_url);
+    formData.append("url", this.state.url);
 
     formData.append(
       "header_image",
@@ -145,12 +148,32 @@ export default class ForumCreate extends Component {
                   className="uploaded-image-forum"
                   src={this.state.file}
                 />
+                <label style={{ fontSize: "11px" }}>Image URL</label>
                 <input
-                  className="thread-create-upload"
-                  type="file"
-                  name="header_image"
-                  onChange={this.onChange}
-                />
+                  className="thread-create-title"
+                  type="text"
+                  style={{
+                    backgroundColor: "rgba(255, 255, 255, 0.08)",
+                    color: "white",
+                    border: "none",
+                    padding: "1em",
+                    borderRadius: "8px",
+                    width: "40em",
+                  }}
+                  onChange={this.handleChange}
+                  name="url"
+                ></input>
+                <h4
+                  style={{
+                    color: "white",
+                    textAlign: "center",
+                    margin: "24px 0 24px 0",
+                  }}
+                >
+                  OR
+                </h4>
+                <MultiImage handleSubmit={this.handleSubmit} />
+                {/* <input type="url" name=""></input> */}
                 {/* {this.state.file && (
                   <div style={{ textAlign: "center" }}>
                     <button onClick={this.resetFile}>Remove File</button>
@@ -202,7 +225,7 @@ export default class ForumCreate extends Component {
                   onChange={this.handleChange}
                 ></textarea>
               </div>
-              <p>Add a tag</p>
+              {/* <p>Add a tag</p>
               <div className="forum-create-tag">
                 <div
                   style={{
@@ -233,7 +256,7 @@ export default class ForumCreate extends Component {
                   {this.state.children}
                 </Select>
                 {/* <TagsForum /> */}
-              </div>
+              {/* </div> */} 
             </div>
             <button type="submit" className="create-forum-button">
               CREATE THREAD

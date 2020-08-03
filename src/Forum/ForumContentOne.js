@@ -73,7 +73,9 @@ class ForumContentOne extends Component {
         className="forum-home-thread"
       >
         <div className="forum-home-thread">
-          <img alt="" src={this.props.thread.header_image}></img>
+          {this.props.thread.images_url.map((image)=>(
+            <img alt={image.id} src={image.url}></img>
+          ))}
           <div
             style={{
               paddingLeft: "2em",

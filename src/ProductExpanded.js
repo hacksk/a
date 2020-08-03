@@ -18,6 +18,7 @@ class AccesoriesExpanded extends Component {
   componentDidMount() {
     axios.get(`https://automoto.techbyheart.in/api/v1/product/`).then((res) => {
       const products = res.data;
+      console.log(products)
       const currentProduct = products.find(
         (x) => x.id === this.props.match.params.product
       );

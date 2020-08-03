@@ -21,6 +21,8 @@ export default class ForumHome extends Component {
     this.state = {
       persons: [],
       subthread: [],
+      urls:[],
+      url:""
     };
   }
 
@@ -28,11 +30,12 @@ export default class ForumHome extends Component {
     axios
       .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
       .then((res) => {
+        const urls = res.data.data.images_url;
         const persons = res.data.data.slice(0, 3);
         const subthread = res.data.data.slice(3, 6);
         // console.log(persons);
         // console.log("sliced", persons);
-        this.setState({ persons, subthread });
+        this.setState({ persons, subthread, urls });
         console.log(persons);
       });
   }
@@ -164,7 +167,7 @@ export default class ForumHome extends Component {
             >
               {this.state.persons.map((person) => (
                 <Link to={`/forum/thread/${person.id}`}>
-                  <Forumcontentone thread={person} />
+                  <Forumcontentone thread={person} urls={person} />
                 </Link>
               ))}
               <Link to="/forum/forumthreadlist">

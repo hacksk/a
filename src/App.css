@@ -244,8 +244,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   border: none !important;
   color: #fc5c2e !important;
 }
-.ant-btn-primary:hover,
-.ant-btn:hover {
+.ant-btn-primary:hover{
   background-image: linear-gradient(
     102.99deg,
     #fc5c2e 0%,
@@ -378,12 +377,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .ant-btn {
   height: 3em !important;
 }
-.ant-btn:hover {
-  background: rgba(255, 255, 255, 0.08) !important ;
-}
-.ant-btn svg:hover {
-  color: rgba(240, 92, 45, 0.87) !important;
-}
+
 .card-content {
   display: none;
 }
@@ -2358,7 +2352,6 @@ body {
 
 .newnav {
   position: absolute;
-  width: 9%;
   background: linear-gradient(
     0deg,
     rgba(255, 255, 255, 0.08),
@@ -2376,8 +2369,8 @@ body {
 .newnav ul {
   list-style-type: none;
   margin: 0;
+  width: 86px;
   padding: 0;
-  width: 4%;
   background: linear-gradient(0deg, rgb(34, 34, 34), rgb(36, 36, 36));
   position: fixed;
   height: 100%;
@@ -2385,21 +2378,10 @@ body {
   text-align: center;
 }
 
-.newnav li a {
-  display: block;
-  color: rgba(240, 92, 45, 0.87);
-  padding: 8px 16px;
-  text-decoration: none;
-}
-.newnav li a:hover {
-  background-color: rgba(80, 80, 80, 0.411);
-}
 
-.newnav li a.active {
-  background-color: rgba(80, 80, 80, 0.411);
-  color: rgba(240, 92, 45, 0.87);
-  width: 100% !important;
-}
+
+
+
 
 .newnav ul {
   display: flex;
@@ -2407,12 +2389,33 @@ body {
   align-items: center;
   justify-content: space-evenly;
 }
-.newnav ul li svg {
-  /* color:rgba(240, 92, 45, 0.87); */
-  font-size: 20px;
-  color: white;
+.newnav ul a {
+  width: 100%;
+  height: 56px;
 }
-.newnav ul li .svg :hover {
+.newnav ul li{
+  width: 100%!important;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.newnav ul li:hover{
+  background: rgba(255, 255, 255, 0.08);
+}
+.newnav ul li svg {
+  font-size: 20px;
+}
+.navbar-active-now {
+  background: rgba(255, 255, 255, 0.08);
+  color:#fc5c2d;
+  width: 86px;
+  height: 56px;
+}
+.navbar-active-now svg{
+  color:#fc5c2d!important
+}
+.navbar-active-now:hover {
   color: rgb(179, 176, 176);
   cursor: pointer;
 }
@@ -3019,7 +3022,6 @@ a:not([href]):not([tabindex]) {
   padding: 1em;
 }
 .forum-thread-create .ant-btn,
-.ant-btn:active,
 .ant-btn:focus {
   background: linear-gradient(108.01deg, #f05c2d 0%, #fcaa2e 120.94%);
   color: black !important;
@@ -3280,6 +3282,7 @@ a:not([href]):not([tabindex]) {
   justify-content: space-between;
 }
 .thread-expanded-image {
+  width: 100%;
   margin-bottom: 4vh;
 }
 .thread-share {
@@ -3444,6 +3447,13 @@ a:not([href]):not([tabindex]) {
   color: white !important;
 }
 @media screen and (max-width: 786px) {
+  .thread-expand-gallery{
+    height: 230px!important;
+    margin-right: 10px!important;
+  }
+  .css-f12czy {
+    height: 20em!important;
+  }
   .thread-create {
     padding: 2vh !important;
     padding-bottom: 10vh !important;
@@ -3519,6 +3529,12 @@ a:not([href]):not([tabindex]) {
     justify-content: center;
   }
 }
+.thread-expand-gallery{
+  width: 618px!important;
+  height: 286px!important;
+  margin-right: 15px;
+  object-fit: cover!important;
+}
 .threadexpand-content {
   display: flex;
   flex-direction: column;
@@ -3551,7 +3567,9 @@ a:not([href]):not([tabindex]) {
   font-weight: 600;
 }
 .threadexpand-content img {
-  width: 83vh;
+  width: 100%;
+  height: 286px;
+  object-fit: cover;
   border-radius: 8px;
 }
 /* .ant-comment-actions > li > span,
