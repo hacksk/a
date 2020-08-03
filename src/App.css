@@ -3021,8 +3021,7 @@ a:not([href]):not([tabindex]) {
   cursor: pointer;
   padding: 1em;
 }
-.forum-thread-create .ant-btn,
-.ant-btn:focus {
+.forum-thread-create .ant-btn {
   background: linear-gradient(108.01deg, #f05c2d 0%, #fcaa2e 120.94%);
   color: black !important;
   border-radius: 8px !important;

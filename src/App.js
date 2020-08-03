@@ -34,6 +34,7 @@ import Avatar from "./Forum/Avatar";
 import SubforumList from "./Forum/SubForumList"
 import Test from "./Test"
 import MobileSearch from "./Components/MobSearch"
+import TrendingExp from "./Forum/Card/TrendingExp"
 
 function App() {
   return (
@@ -74,6 +75,7 @@ function App() {
             path="/forum/thread/:content"
             component={NewsExpanded1}
           />
+          <Route exact path="/forum/thread/trendin/:content" component={TrendingExp}/>
           <Route exact path="/products" component={ProductHome} />
           <Route exact path="/products/:product" component={ProductExpanded} />
           <Route exact path="/signin/verify" component={otp} />

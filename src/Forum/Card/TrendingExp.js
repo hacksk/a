@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Popover, message, Modal, Button } from "antd";
-import ForumComment from "./ForumComment";
-import Trending from "./Card/TrendingCard";
+import ForumComment from "../ForumComment";
+import Trending from "./TrendingCard";
 import ReactPlayer from "react-player";
 import { MdMoreVert } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -298,7 +298,7 @@ class NewsExpanded extends Component {
           <div className="thread-expanded-trending">
             <h4>Trending</h4>
             {this.state.trending.map((trend) => (
-              <Link to={`/forum/thread/trendin/${trend.id}`}>
+              <Link to={`/forum/thread/${trend.id}`}>
                 <Trending thread={trend} />
               </Link>
             ))}

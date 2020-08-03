@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Tabs from 'react-bootstrap/Tabs';
-import Tab from 'react-bootstrap/Tab';
-import AccMain from './AccMain';
-import Breadcrumb from 'react-bootstrap/Breadcrumb';
+import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Tabs from "react-bootstrap/Tabs";
+import Tab from "react-bootstrap/Tab";
+import AccMain from "./AccMain";
+import Breadcrumb from "react-bootstrap/Breadcrumb";
 
 class Accesories extends Component {
   render() {
     return (
-      <div className="accessories-moto" style={{minHeight:"100vh"}}>
+      <div className="accessories-moto" style={{ minHeight: "100vh" }}>
         {/* <Navbar /> */}
         <Breadcrumb separator=">">
           <Breadcrumb.Item>Home</Breadcrumb.Item>
