@@ -66,11 +66,11 @@ export default class ForumCreate extends Component {
     formData.append("video_url", this.state.video_url);
     formData.append("url", this.state.url);
 
-    formData.append(
-      "header_image",
-      this.state.header_image,
-      this.state.header_image.name
-    );
+    // formData.append(
+    //   "header_image",
+    //   this.state.header_image,
+    //   this.state.header_image.name
+    // );
 
     axios
       .post(
@@ -172,7 +172,7 @@ export default class ForumCreate extends Component {
                 >
                   OR
                 </h4>
-                <MultiImage handleSubmit={this.handleSubmit} />
+                {/* <MultiImage handleSubmit={this.handleSubmit} /> */}
                 {/* <input type="url" name=""></input> */}
                 {/* {this.state.file && (
                   <div style={{ textAlign: "center" }}>

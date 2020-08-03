@@ -332,7 +332,7 @@ export default class Home extends Component {
                 overflow: "visible",
               }}
             >
-              POWERED BY TECHBYHEART
+              SITE BY TECHBYHEART
             </a>
           </div>
         </div>

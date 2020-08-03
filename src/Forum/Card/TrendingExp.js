@@ -274,7 +274,7 @@ class NewsExpanded extends Component {
                 pip={true}
                 url={this.state.threads.video_url}
               />
-              {this.state.images!= null ? (
+               {this.state.images == null ? null : (
                 <ImageScroller style={{ marginTop: "50px" }}>
                   {this.state.images.map((person) => (
                     <img
@@ -284,7 +284,7 @@ class NewsExpanded extends Component {
                     ></img>
                   ))}
                 </ImageScroller>
-              ) : <h1>hello there</h1>}
+              )}
             </div>
             {/* <TestComment
               thread={this.state.threads.comment}

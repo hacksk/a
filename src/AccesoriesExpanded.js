@@ -25,7 +25,6 @@ class AccesoriesExpanded extends Component {
       );
       this.setState({ currentItem });
       console.log(currentItem);
-      // console.log("imagecheck", currentItem.images[0].image);
     });
   }
   handleClick = (id) => {

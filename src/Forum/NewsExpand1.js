@@ -199,6 +199,9 @@ class NewsExpanded extends Component {
                                   .then((res) => {
                                     console.log(res.data);
                                     console.log(this.state.threads.id);
+                                    message.success(
+                                      "Thread deleted successfully"
+                                    );
                                   })
                                   .catch((error) => {
                                     message.info(
@@ -274,7 +277,7 @@ class NewsExpanded extends Component {
                 pip={true}
                 url={this.state.threads.video_url}
               />
-              {this.state.images!= null ? (
+              {this.state.images != null ? null : (
                 <ImageScroller style={{ marginTop: "50px" }}>
                   {this.state.images.map((person) => (
                     <img
@@ -284,7 +287,7 @@ class NewsExpanded extends Component {
                     ></img>
                   ))}
                 </ImageScroller>
-              ) : <h1>hello there</h1>}
+              )}
             </div>
             {/* <TestComment
               thread={this.state.threads.comment}
@@ -396,6 +399,11 @@ class NewsExpanded extends Component {
           }}
         >
           <SemipolarLoading color="#F05C2D" />
+          {this.props.isAuthenticated ? null : (
+            <p style={{ color: "white", marginTop: "2vh" }}>
+              Please Sign In to view the threads
+            </p>
+          )}
         </div>
       );
   }

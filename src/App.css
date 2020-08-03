@@ -1667,6 +1667,7 @@ body {
 .home-icons img {
   width: 10em !important;
 }
+
 .content-home {
   height: auto;
   padding-bottom: 30em;
@@ -1681,9 +1682,8 @@ body {
     rgba(240, 92, 45, 0.08),
     rgba(240, 92, 45, 0.08)
   );
-
+  height:260px;
   /* Set a specific height */
-  min-height: 350px;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
