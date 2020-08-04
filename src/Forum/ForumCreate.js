@@ -17,7 +17,7 @@ export default class ForumCreate extends Component {
       title: "",
       content: "",
       header_image: "",
-      url: "",
+      images_url:[],
       image: [],
       video_url: "",
       tags: [],
@@ -78,7 +78,8 @@ export default class ForumCreate extends Component {
         formData
       )
       .then((res) => {
-        this.props.history.push("/forum");
+        console.log(res, "result");
+        // this.props.history.push("/forum");
       })
       .catch((error) => {
         console.log(error);

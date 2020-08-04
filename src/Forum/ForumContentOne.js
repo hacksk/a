@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { MdMoreVert } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { Popover, notification } from "antd";
+import { Popover, notification, message } from "antd";
 import axios from "axios";
 import { connect } from "react-redux";
 
@@ -16,6 +16,8 @@ const content = (id) => (
           .post(`${URL}/delete-thread/${id}/`)
           .then((res) => {
             console.log(res.data);
+            message.success("Thread deleted successfully");
+            window.location.reload();
           })
           .catch((error) => {
             notification.open({

@@ -20,7 +20,7 @@ class AccesoriesExpanded extends Component {
       const products = res.data;
       console.log(products)
       const currentProduct = products.find(
-        (x) => x.id === this.props.match.params.product
+        (x) => x.id == this.props.match.params.product
       );
       this.setState({ currentProduct });
       console.log(currentProduct);

@@ -199,6 +199,8 @@ class NewsExpanded extends Component {
                                   .then((res) => {
                                     console.log(res.data);
                                     console.log(this.state.threads.id);
+                                    message.info("Thread deleted succefully");
+                                    this.props.history.push("/forum");
                                   })
                                   .catch((error) => {
                                     message.info(
@@ -274,7 +276,7 @@ class NewsExpanded extends Component {
                 pip={true}
                 url={this.state.threads.video_url}
               />
-               {this.state.images == null ? null : (
+              {this.state.images == null ? null : (
                 <ImageScroller style={{ marginTop: "50px" }}>
                   {this.state.images.map((person) => (
                     <img

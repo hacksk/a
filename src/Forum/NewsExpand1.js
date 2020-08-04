@@ -202,6 +202,7 @@ class NewsExpanded extends Component {
                                     message.success(
                                       "Thread deleted successfully"
                                     );
+                                    this.props.history.push("/forum")
                                   })
                                   .catch((error) => {
                                     message.info(
