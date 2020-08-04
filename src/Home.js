@@ -56,7 +56,7 @@ export default class Home extends Component {
           <div className="search-bar-wrap">
             <SearchBar />
           </div>
-          {/* <div className="news">
+          <div className="news">
             <Carousel showThumbs="false" infiniteLoop="true" autoPlay="true">
               {this.state.persons.map((person) => (
                 <Link to={`/forum/thread/${person.id}`}>
@@ -64,7 +64,7 @@ export default class Home extends Component {
                 </Link>
               ))}
             </Carousel>
-          </div> */}
+          </div>
           <div className="home-thread">
             <h6>THREADS</h6>
             <Link to="/forum">
