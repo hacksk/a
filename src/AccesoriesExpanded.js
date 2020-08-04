@@ -10,7 +10,6 @@ import { message } from "antd";
 import { FaRupeeSign } from "react-icons/fa";
 import { SemipolarLoading } from "react-loadingg";
 
-
 class AccesoriesExpanded extends Component {
   state = {
     currentItem: null,
@@ -19,9 +18,9 @@ class AccesoriesExpanded extends Component {
   componentDidMount() {
     axios.get(`https://automoto.techbyheart.in/api/v1/service/`).then((res) => {
       const services = res.data;
-      console.log(services,"service")
+      console.log(services, "service");
       const currentItem = services.find(
-        (x) => x.id === this.props.match.params.detail
+        (x) => x.id == this.props.match.params.detail
       );
       this.setState({ currentItem });
       console.log(currentItem);
@@ -117,17 +116,16 @@ class AccesoriesExpanded extends Component {
       </div>
     ) : (
       <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        paddingTop: "10vh",
-        height: "100vh",
-      }}
-    >
-    <SemipolarLoading color="#F05C2D" />
-
-    </div>
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          paddingTop: "10vh",
+          height: "100vh",
+        }}
+      >
+        <SemipolarLoading color="#F05C2D" />
+      </div>
     );
   }
 }

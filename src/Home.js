@@ -28,7 +28,7 @@ export default class Home extends Component {
       subthread: [],
       services: [],
       products: [],
-      images:[],
+      images: [],
     };
   }
   componentDidMount() {
@@ -36,7 +36,7 @@ export default class Home extends Component {
       .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
       .then((res) => {
         const persons = res.data.data.slice(0, 3);
-        console.log(persons,"persons")
+        console.log(persons, "persons");
         const subthread = res.data.data.slice(1, 4);
         this.setState({ persons, subthread });
       });
@@ -48,7 +48,6 @@ export default class Home extends Component {
       const products = res.data.slice(0, 8);
       this.setState({ products });
     });
-
   }
   render() {
     return (
@@ -57,7 +56,7 @@ export default class Home extends Component {
           <div className="search-bar-wrap">
             <SearchBar />
           </div>
-          <div className="news">
+          {/* <div className="news">
             <Carousel showThumbs="false" infiniteLoop="true" autoPlay="true">
               {this.state.persons.map((person) => (
                 <Link to={`/forum/thread/${person.id}`}>
@@ -65,7 +64,7 @@ export default class Home extends Component {
                 </Link>
               ))}
             </Carousel>
-          </div>
+          </div> */}
           <div className="home-thread">
             <h6>THREADS</h6>
             <Link to="/forum">

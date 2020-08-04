@@ -17,7 +17,7 @@ export default class ForumCreate extends Component {
       title: "",
       content: "",
       header_image: "",
-      url:"",
+      url: "",
       image: [],
       video_url: "",
       tags: [],
@@ -172,7 +172,7 @@ export default class ForumCreate extends Component {
                 >
                   OR
                 </h4>
-                {/* <MultiImage handleSubmit={this.handleSubmit} /> */}
+                {/* <MultiImage setImages={setImages} /> */}
                 {/* <input type="url" name=""></input> */}
                 {/* {this.state.file && (
                   <div style={{ textAlign: "center" }}>
@@ -256,7 +256,7 @@ export default class ForumCreate extends Component {
                   {this.state.children}
                 </Select>
                 {/* <TagsForum /> */}
-              {/* </div> */} 
+              {/* </div> */}
             </div>
             <button type="submit" className="create-forum-button">
               CREATE THREAD
