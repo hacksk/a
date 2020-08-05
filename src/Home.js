@@ -310,11 +310,15 @@ export default class Home extends Component {
               {/* <button style={{height:"10vh"}}>New thread </button> */}
               <h4>Trending</h4>
               {this.state.trending.map((trend) => (
-                <Trending thread={trend} />
+                <Link to={`/forum/thread/${trend.id}`}>
+                  <Trending thread={trend} />
+                </Link>
               ))}
               <h4 style={{ marginTop: "8vh" }}>Latest</h4>
               {this.state.trending.map((trend) => (
-                <Trending thread={trend} />
+                <Link to={`/forum/thread/${trend.id}`}>
+                  <Trending thread={trend} />
+                </Link>
               ))}
             </div>
           </div>

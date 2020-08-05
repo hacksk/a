@@ -7,6 +7,7 @@ export default class TrendingCard extends Component {
         {this.props.thread.images_url.map((image)=>(
           <img alt={image.id} src={image.url}></img>
         ))}
+        {/* <img src={this.props.head}></img> */}
         <div className="trending-card-sub">
           <h5 style={{color:"#fc5c2d",fontWeight:"bold"}}>REVIEW</h5>
           <h4>{this.props.thread.title}</h4>

@@ -372,7 +372,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 .card {
   background-color: transparent !important ;
-  width: 14vw !important;
+  width: 10vw !important;
 }
 .ant-btn {
   height: 3em !important;
@@ -1561,8 +1561,8 @@ body {
   flex-direction: column;
   position: relative;
   background-color: #121212;
-  padding-left: 20vh;
-  padding-right: 55vh;
+  padding-left: 16vh;
+  padding-right: 54vh;
   overflow: hidden;
 }
 .header {
@@ -1626,12 +1626,12 @@ body {
   /* padding: 0 5em 0 5em; */
   margin-bottom: 8.99vh;
   padding-top: 24px;
-  padding-left: 10vh;
+  padding-left: 15vh;
   padding-right: 15vh;
 }
 
 .head-icons img {
-  width: 25.8vh !important;
+  width: 27vh !important;
   padding-left: 3vh;
   padding-right: 3vh;
 }
@@ -1677,7 +1677,7 @@ body {
   height: 150vh;
 }
 .home-content h5 {
-  padding-top: 11.07vh;
+  padding-top: 21.07vh;
 }
 .home-content-part1,
 .home-content-part2 {
@@ -1714,8 +1714,8 @@ body {
   padding-top: 4vh;
   padding-left: 2.5vh;
   padding-right: 2.5vh;
-  width: 26vh;
-  height: 26vh;
+  width: 27vh;
+  height: 27vh;
   cursor: pointer;
 }
 
@@ -2307,7 +2307,10 @@ body {
     justify-content: space-around !important;
   }
   .head-icons img {
-    width: 12em !important;
+    width: 22vh !important;
+  }
+  .home-content-wrap h5{
+    padding-left: 1.5em!important;
   }
   .home-content-part1,
   .home-content-part2 {
@@ -2392,7 +2395,7 @@ body {
 .newnav ul {
   list-style-type: none;
   margin: 0;
-  width: 14vh;
+  width: 10vh;
   padding: 0;
   background: linear-gradient(0deg, rgb(34, 34, 34), rgb(36, 36, 36));
   position: fixed;
@@ -3284,6 +3287,9 @@ a:not([href]):not([tabindex]) {
     margin-bottom: 3vh;
     margin-left: 0 !important;
     width: unset !important;
+    height: unset!important;
+    overflow: unset!important;
+    background-color: #121212
   }
 
   .forum-home-firstpart {
@@ -3390,7 +3396,7 @@ a:not([href]):not([tabindex]) {
   position: fixed;
   width: 46vh;
   height: 90vh;
-  right: 4vh;
+  right: 0;
   display: flex;
   flex-direction: column;
   margin-left: 8vh;
@@ -3583,8 +3589,8 @@ a:not([href]):not([tabindex]) {
   }
   .home-content-part1 img,
   .home-content-part2 img {
-    width: 20vh !important;
-    height: 20vh !important;
+    width: 23vh !important;
+    height: 23vh !important;
   }
   .css-f12czy {
     height: 20em !important;
@@ -3663,6 +3669,9 @@ a:not([href]):not([tabindex]) {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+  .home-forum-threads{
+    margin-top: 0!important;
   }
 }
 .thread-expand-gallery {
@@ -3966,7 +3975,7 @@ a:not([href]):not([tabindex]) {
   flex-direction: row;
 }
 .home-forum-threads {
-  margin-top: 10vh;
+  margin-top: 7vh;
 }
 .home-forum-threads button{
   border:1px solid #fc5c2d;

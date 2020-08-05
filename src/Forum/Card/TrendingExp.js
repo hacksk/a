@@ -36,6 +36,7 @@ class NewsExpanded extends Component {
     image: "",
     trending: [],
     images: [],
+    head:[],
     visible: false,
     visiblepop: false,
   };
@@ -68,8 +69,9 @@ class NewsExpanded extends Component {
         const threads = res.data.data;
         const images = res.data.data.images;
         const urls = res.data.data.images_url;
+        const head= res.data.data.header_image_url;
         console.log(images, "images");
-        this.setState({ threads, images, urls });
+        this.setState({ threads, images, urls,head });
         console.log("expanded", threads);
         this.setState((state) => {
           return {
@@ -164,13 +166,11 @@ class NewsExpanded extends Component {
               className="threadexpand-content"
               style={{ position: "relative" }}
             >
-              {this.state.urls.map((url) => (
                 <img
                   className="thread-expanded-image"
                   alt=""
-                  src={url.url}
+                  src={this.state.head.url}
                 ></img>
-              ))}
               <div className="thread-header-space">
                 <div>
                   <h6>REVIEW</h6>

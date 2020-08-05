@@ -36,6 +36,7 @@ class NewsExpanded extends Component {
     image: "",
     trending: [],
     images: [],
+    head:[],
     visible: false,
     visiblepop: false,
   };
@@ -68,8 +69,10 @@ class NewsExpanded extends Component {
         const threads = res.data.data;
         const images = res.data.data.images;
         const urls = res.data.data.images_url;
-        console.log(images, "images");
-        this.setState({ threads, images, urls });
+        const head= res.data.data.header_image_url;
+        console.log(head,"itmightbe");       
+         console.log(images, "images");
+        this.setState({ threads, images, urls,head });
         console.log("expanded", threads);
         this.setState((state) => {
           return {
@@ -87,7 +90,7 @@ class NewsExpanded extends Component {
       .then((res) => {
         const trending = res.data.data;
         this.setState({ trending });
-        console.log(trending);
+        console.log(trending,"trends");
       });
     console.log(window.location.href, "location");
   }
@@ -164,13 +167,11 @@ class NewsExpanded extends Component {
               className="threadexpand-content"
               style={{ position: "relative" }}
             >
-              {this.state.urls.map((url) => (
-                <img
-                  className="thread-expanded-image"
-                  alt=""
-                  src={url.url}
-                ></img>
-              ))}
+              <img
+                className="thread-expanded-image"
+                alt=""
+                src={this.state.head.url}
+              ></img>
               <div className="thread-header-space">
                 <div>
                   <h6>REVIEW</h6>
@@ -253,6 +254,7 @@ class NewsExpanded extends Component {
                 >
                   <img alt="" src={this.state.image}></img>
                   <p>{this.state.threads.username}</p>
+
                 </div>
                 <div className="thread-expand-time-n-more">
                   <p
@@ -278,6 +280,7 @@ class NewsExpanded extends Component {
                 pip={true}
                 url={this.state.threads.video_url}
               />
+
               {this.state.images == null ? null : (
                 <ImageScroller style={{ marginTop: "50px" }}>
                   {this.state.images.map((person) => (
@@ -303,7 +306,7 @@ class NewsExpanded extends Component {
             <h4>Trending</h4>
             {this.state.trending.map((trend) => (
               <Link to={`/forum/thread/trendin/${trend.id}`}>
-                <Trending thread={trend} />
+                <Trending  thread={trend} />
               </Link>
             ))}
           </div>

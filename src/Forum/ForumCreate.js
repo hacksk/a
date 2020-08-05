@@ -17,8 +17,8 @@ export default class ForumCreate extends Component {
       title: "",
       content: "",
       header_image: "",
-      images_url:[],
-      url:"",
+      images_url: [],
+      url: "",
       image: [],
       video_url: "",
       tags: [],
@@ -62,29 +62,36 @@ export default class ForumCreate extends Component {
     const threadId = this.props.match.params.create;
 
     const formData = new FormData();
-    formData.append("title", this.state.title);
-    formData.append("content", this.state.content);
-    formData.append("video_url", this.state.video_url);
+    // formData.append("title", this.state.title);
+    // formData.append("content", this.state.content);
+    // formData.append("video_url", this.state.video_url);
     formData.append("url", this.state.url);
-
-    // formData.append(
-    //   "header_image",
-    //   this.state.header_image,
-    //   this.state.header_image.name
-    // );
+    // formData.append("image", this.state.image);
 
     axios
-      .post(
-        `https://automoto.techbyheart.in/api/v1/forum/thread/create/${threadId}/`,
-        formData
-      )
+      .post(`https://automoto.techbyheart.in/api/v1/forum/image-url/`, formData)
       .then((res) => {
-        console.log(res, "result");
-        // this.props.history.push("/forum");
-      })
-      .catch((error) => {
-        console.log(error);
-        message.info("Please fill the comment Box");
+        console.log(res.data.data.id);
+
+        const newformData = new FormData();
+        newformData.append("title", this.state.title);
+        newformData.append("content", this.state.content);
+        newformData.append("video_url", this.state.video_url);
+        newformData.append("header_image_url", res.data.data.id);
+
+        axios
+          .post(
+            `https://automoto.techbyheart.in/api/v1/forum/thread/create/${threadId}/`,
+            newformData
+          )
+          .then((res) => {
+            console.log(res, "result");
+            // this.props.history.push("/forum");
+          })
+          .catch((error) => {
+            console.log(error);
+            message.info("Please fill the comment Box");
+          });
       });
   };
   onChange(event) {
@@ -174,8 +181,13 @@ export default class ForumCreate extends Component {
                 >
                   OR
                 </h4>
+                {/* <input
+                  className="thread-create-upload"
+                  type="file"
+                  name="image"
+                  onChange={this.onChange}
+                /> */}
                 {/* <MultiImage setImages={setImages} /> */}
-                {/* <input type="url" name=""></input> */}
                 {/* {this.state.file && (
                   <div style={{ textAlign: "center" }}>
                     <button onClick={this.resetFile}>Remove File</button>
