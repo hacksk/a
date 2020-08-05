@@ -5,9 +5,9 @@ import { Tabs } from "antd";
 import ForumTrending from "./ForumTrendingThread";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { MdCopyright } from "react-icons/md";
 import Moment from "react-moment";
 import { SemipolarLoading } from "react-loadingg";
+import Footer from "../Footer";
 
 const { TabPane } = Tabs;
 
@@ -21,8 +21,8 @@ export default class ForumHome extends Component {
     this.state = {
       persons: [],
       subthread: [],
-      urls:[],
-      url:""
+      urls: [],
+      url: "",
     };
   }
 
@@ -43,7 +43,7 @@ export default class ForumHome extends Component {
     if (this.state.persons != null) {
       return (
         <div style={{ position: "relative" }}>
-          <div className="forum-home" style={{ paddingBottom: "60vh" }}>
+          <div className="forum-home" style={{ paddingBottom: "25vh" }}>
             <div
               className="forum-home-link-forum"
               style={{
@@ -218,42 +218,7 @@ export default class ForumHome extends Component {
               </Tabs>
             </div>
           </div>
-          <div className="footer" style={{ position: "absolute", bottom: "0" }}>
-            <div className="footer-primary">
-              <div className="footer-sub">
-                <ul>
-                  <h6 style={{ color: "white" }}>QUICK LINKS</h6>
-
-                  <li>HOME</li>
-                  <li>ACCESSORIES</li>
-                  <li>SERVICES</li>
-                  <li>MAP</li>
-                </ul>
-              </div>
-              <div className="footer-logo">
-                <img alt="" src={require("../assets/automotologo.svg")} />
-                <img alt="" src={require("../assets/moto365logo.svg")} />
-                <img alt="" src={require("../assets/amlogo.svg")} />
-              </div>
-            </div>
-            <div className="footer-secondary">
-              <p style={{ color: "rgba(255, 255, 255, 0.87)" }}>
-                <MdCopyright /> 2020 AUTOMOTO. ALL RIGHT RECEIVED
-              </p>
-              <br />
-              <a
-                href="https://www.techbyheart.in/"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  color: "rgba(255, 255, 255, 0.87)",
-                  overflow: "visible",
-                }}
-              >
-                POWERED BY TECHBYHEART
-              </a>
-            </div>
-          </div>
+          <Footer />
         </div>
       );
     } else

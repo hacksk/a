@@ -31,10 +31,10 @@ import ThreadList from "./Forum/ThreadList";
 import ProductExpanded from "./ProductExpanded";
 import EditThread from "./Forum/EditThread";
 import Avatar from "./Forum/Avatar";
-import SubforumList from "./Forum/SubForumList"
-import Test from "./Test"
-import MobileSearch from "./Components/MobSearch"
-import TrendingExp from "./Forum/Card/TrendingExp"
+import SubforumList from "./Forum/SubForumList";
+import Test from "./Test";
+import MobileSearch from "./Components/MobSearch";
+import TrendingExp from "./Forum/Card/TrendingExp";
 
 function App() {
   return (
@@ -75,7 +75,11 @@ function App() {
             path="/forum/thread/:content"
             component={NewsExpanded1}
           />
-          <Route exact path="/forum/thread/trendin/:content" component={TrendingExp}/>
+          <Route
+            exact
+            path="/forum/thread/trendin/:content"
+            component={TrendingExp}
+          />
           <Route exact path="/products" component={ProductHome} />
           <Route exact path="/products/:product" component={ProductExpanded} />
           <Route exact path="/signin/verify" component={otp} />
@@ -89,9 +93,9 @@ function App() {
           <Route exact path="/forum/forumthreadlist" component={ThreadList} />
           <Route exact path="/forum/content/:edit" component={EditThread} />
           <Route exact path="/antdcheck" component={Avatar} />
-          <Route exact path="/forum/subforum/:list" component={SubforumList}/>
-          <Route exact path="/test" component={Test}/>
-          <Route exact path="/search" component={MobileSearch}/>
+          <Route exact path="/forum/subforum/:list" component={SubforumList} />
+          <Route exact path="/test" component={Test} />
+          <Route exact path="/search" component={MobileSearch} />
         </Switch>
         <BottomNavbar />
       </BrowserRouter>

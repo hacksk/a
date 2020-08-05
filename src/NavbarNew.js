@@ -8,7 +8,7 @@ import {
 } from "react-icons/md";
 import { AiTwotoneHome } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
-import { Tooltip, Button } from "antd";
+import { Tooltip, Button, Popover } from "antd";
 import { FiLogOut } from "react-icons/fi";
 import { signOut } from "./actions/authActions";
 import Ripples from "react-ripples";
@@ -24,6 +24,14 @@ const text6 = <span>Sign Out</span>;
 // const buttonWidth = 70;
 
 class NavbarNew extends Component {
+  state = {
+    visiblepop: true,
+  };
+
+  handleVisbile = (visiblepop) => {
+    this.setState({ visiblepop: false });
+  };
+
   render() {
     return (
       <div className="newnav" style={{ zIndex: "1000" }}>
@@ -42,7 +50,7 @@ class NavbarNew extends Component {
             <li>
               <Tooltip placement="top" title={text}>
                 <Ripples>
-                  <Button>  
+                  <Button>
                     <AiTwotoneHome />
                   </Button>
                 </Ripples>
@@ -72,15 +80,45 @@ class NavbarNew extends Component {
               </Tooltip>
             </li>
           </NavLink>
-          <NavLink activeClassName="navbar-active-now" to="/forum">
-            <li>
+
+          <Popover
+            key=""
+            content={
+              <div
+                onClick={this.handleVisbile}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  height: "132px",
+                  width: "130px",
+                }}
+              >
+                <NavLink to="/forum">
+                  <div className="forum-navbar-btn">
+                    <img alt="create" src={require("./vector-icons/create.svg")}></img>
+                    <p>create thread</p>
+                  </div>
+                </NavLink>
+                <NavLink to="/forum">
+                  <div className="forum-navbar-btntwo">
+                    <img alt="view" src={require("./vector-icons/browse.svg")}></img>
+                    <p>Browse Forum</p>
+                  </div>
+                </NavLink>
+              </div>
+            }
+            title={<div></div>}
+            trigger="click"
+            placement="rightTop"
+          >
+            <li className="navbar-popover-btn">
               <Tooltip placement="top" title={text4}>
                 <Button>
                   <MdForum />
                 </Button>
               </Tooltip>
             </li>
-          </NavLink>
+          </Popover>
 
           {this.props.isAuthenticated ? (
             <NavLink activeClassName="navbar-active-now" to="/account">

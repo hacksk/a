@@ -96,9 +96,6 @@ class SubForumList extends Component {
               </Link>
             ))}
 
-            <a href="#seeall" className="seeall-forum">
-              SEE ALL
-            </a>
           </div>
 
           <div

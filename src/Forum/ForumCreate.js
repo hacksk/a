@@ -18,6 +18,7 @@ export default class ForumCreate extends Component {
       content: "",
       header_image: "",
       images_url:[],
+      url:"",
       image: [],
       video_url: "",
       tags: [],
