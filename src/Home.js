@@ -30,13 +30,14 @@ export default class Home extends Component {
       products: [],
       images: [],
       trending: [],
+      latest:[]
     };
   }
   componentDidMount() {
     axios
       .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
       .then((res) => {
-        const persons = res.data.data.slice(0, 3);
+        const persons = res.data.data.slice(3, 6);
         console.log(persons, "persons");
         const subthread = res.data.data.slice(1, 4);
         this.setState({ persons, subthread });
@@ -52,8 +53,9 @@ export default class Home extends Component {
     axios
       .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
       .then((res) => {
-        const trending = res.data.data;
-        this.setState({ trending });
+        const trending = res.data.data.slice(1,5);
+        const latest= res.data.data.slice(0,4)
+        this.setState({ trending,latest });
       });
   }
   render() {
@@ -315,7 +317,7 @@ export default class Home extends Component {
                 </Link>
               ))}
               <h4 style={{ marginTop: "8vh" }}>Latest</h4>
-              {this.state.trending.map((trend) => (
+              {this.state.latest.map((trend) => (
                 <Link to={`/forum/thread/${trend.id}`}>
                   <Trending thread={trend} />
                 </Link>

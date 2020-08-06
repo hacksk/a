@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { message, Select } from "antd";
 import MultiImage from "./Card/Upload/MultiImage";
+import TagsForum from "./TagsForum";
 
 const { Option } = Select;
 
@@ -223,7 +224,6 @@ export default class ForumCreate extends Component {
                   name="header_image"
                   onChange={this.onChange}
                 />
-                {/* <MultiImage setImages={setImages} /> */}
                 {/* {this.state.file && (
                   <div style={{ textAlign: "center" }}>
                     <button onClick={this.resetFile}>Remove File</button>
@@ -274,6 +274,10 @@ export default class ForumCreate extends Component {
                   cols="50"
                   onChange={this.handleChange}
                 ></textarea>
+                <label style={{ fontSize: "11px", marginTop: "5vh" }}>
+                  Thread Images
+                </label>
+                <MultiImage />
               </div>
               <p>Add a tag</p>
               <div className="forum-create-tag">
@@ -297,15 +301,15 @@ export default class ForumCreate extends Component {
                   </p>
                 </div>
 
-                <Select
+                {/* <Select
                   mode="tags"
                   style={{ width: "100%" }}
                   placeholder="Tags Mode"
                   // onChange={handleChange}
                 >
                   {this.state.children}
-                </Select>
-                {/* <TagsForum /> */}
+                </Select> */}
+                <TagsForum />
               </div>
             </div>
             <button type="submit" className="create-forum-button">

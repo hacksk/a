@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { message, Select } from "antd";
-// import MultiImage from "./Card/Upload/MultiImage";
+import MultiImage from "./MultiImage";
+import TagsForum from "../../TagsForum";
 
 const { Option } = Select;
 
@@ -28,8 +29,6 @@ export default class CreateThread extends Component {
       children: [],
       url_image: "",
       posting: false,
-      forums: [],
-      subforum: [],
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -52,19 +51,6 @@ export default class CreateThread extends Component {
           <Option key={this.state.name}>{this.state.name}</Option>
         );
         console.log(this.state.children, "children");
-      });
-    axios
-      .get(`https://automoto.techbyheart.in/api/v1/forum/master-forum/list/`)
-      .then((res) => {
-        const forums = res.data.data;
-        console.log(forums);
-        this.setState({ forums });
-      });
-    axios
-      .get(`https://automoto.techbyheart.in/api/v1/forum/list/`)
-      .then((res) => {
-        const subforums = res.data.data;
-        console.log(subforums, "subforum");
       });
   }
 
@@ -98,7 +84,7 @@ export default class CreateThread extends Component {
           newformData.append("header_image", res.data.data.id);
           axios
             .post(
-              `https://automoto.techbyheart.in/api/v1/forum/thread/create/${threadId}/`,
+              `https://automoto.techbyheart.in/api/v1/forum/thread/create/0a0bd306-dfdf-4d7d-b4a8-c1fa16282e5c/`,
               newformData
             )
             .then((res) => {
@@ -130,7 +116,8 @@ export default class CreateThread extends Component {
               newformData
             )
             .then((res) => {
-              this.props.history.push("/forum");
+              console.log(res, "result");
+              this.props.history.push(`/forum/thread/${res.data.data.id}`);
             })
             .catch((error) => {
               message.info("Please fill the comment Box");
@@ -149,11 +136,6 @@ export default class CreateThread extends Component {
     event.preventDefault();
     this.setState({ file: null });
   }
-
-  //Select functions
-  handleChange = (value) => {
-    console.log(`selected ${value}`);
-  };
   render() {
     return (
       <div className="thread-create" style={{ padding: "8em", height: "auto" }}>
@@ -190,7 +172,6 @@ export default class CreateThread extends Component {
                 name="title"
                 type="text"
               ></input>
-
               <div
                 className="thread-create-imagefield"
                 style={{
@@ -201,29 +182,18 @@ export default class CreateThread extends Component {
                   marginTop: "3em",
                 }}
               >
-                <Select
-                  defaultValue="Select forum"
-                  style={{ width: 120 }}
-                  onChange={this.handleChange}
-                >
-                  {this.state.forums.map((forum) => (
-                    <Option value={forum.id}>{forum.name}</Option>
-                  ))}
-                </Select>
-
-                <p style={{ marginTop: "5vh" }}>Upload header image</p>
-                <div style={{ display: "flex", flexDirection: "row" }}>
-                  <img
-                    alt=""
-                    className="uploaded-image-forum"
-                    src={this.state.file}
-                  />
-                  <img
-                    alt=""
-                    className="uploaded-image-forum"
-                    src={this.state.url_image}
-                  />
-                </div>
+                {" "}
+                <p>Upload header image</p>
+                <img
+                  alt=""
+                  className="uploaded-image-forum"
+                  src={this.state.file}
+                />
+                <img
+                  alt=""
+                  className="uploaded-image-forum"
+                  src={this.state.url_image}
+                />
                 <label style={{ fontSize: "11px" }}>Image URL</label>
                 <input
                   className="thread-create-title"
@@ -255,7 +225,6 @@ export default class CreateThread extends Component {
                   name="header_image"
                   onChange={this.onChange}
                 />
-                {/* <MultiImage setImages={setImages} /> */}
                 {/* {this.state.file && (
                   <div style={{ textAlign: "center" }}>
                     <button onClick={this.resetFile}>Remove File</button>
@@ -306,6 +275,10 @@ export default class CreateThread extends Component {
                   cols="50"
                   onChange={this.handleChange}
                 ></textarea>
+                <label style={{ fontSize: "11px", marginTop: "5vh" }}>
+                  Thread Images
+                </label>
+                <MultiImage />
               </div>
               <p>Add a tag</p>
               <div className="forum-create-tag">
@@ -329,15 +302,15 @@ export default class CreateThread extends Component {
                   </p>
                 </div>
 
-                <Select
+                {/* <Select
                   mode="tags"
                   style={{ width: "100%" }}
                   placeholder="Tags Mode"
                   // onChange={handleChange}
                 >
                   {this.state.children}
-                </Select>
-                {/* <TagsForum /> */}
+                </Select> */}
+                <TagsForum />
               </div>
             </div>
             <button type="submit" className="create-forum-button">

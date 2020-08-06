@@ -54,9 +54,9 @@ export default class ForumHome extends Component {
                 paddingRight: "0",
               }}
             >
-              <Link to="/forum/forumlist">
+              {/* <Link to="/forum/forumlist">
                 <button className="forum-service-now">FORUM LIST</button>
-              </Link>
+              </Link> */}
             </div>
 
             {/* <div

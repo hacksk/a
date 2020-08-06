@@ -42,6 +42,7 @@ class NewsExpanded extends Component {
     visiblepop: false,
     item: [],
     pic: [],
+    latest:[]
   };
   showModal = () => {
     this.setState({
@@ -91,13 +92,8 @@ class NewsExpanded extends Component {
     axios
       .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
       .then((res) => {
-        const trending = res.data.data;
+        const trending = res.data.data.slice(1,5);
         this.setState({ trending });
-        let pic = trending.map(function (item) {
-          return item["pic"];
-        });
-        this.setState({ pic });
-        console.log(pic, "lookwho");
         console.log(trending, "trends");
       });
   }
