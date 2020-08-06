@@ -4,9 +4,16 @@ export default class Banner extends Component {
   render() {
     return (
       <div className="home-banner">
-        {this.props.thread.images_url.map((person) => (
-          <img alt={person.id} className="banner-image" src={person.url}></img>
-        ))}
+        <img
+          alt="text"
+          className="banner-image"
+          src={
+            this.props.thread.header_image_url
+              ? this.props.thread.header_image_url.url
+              : this.props.thread.header_image.image
+          }
+        />
+
         <div
           className="testcar"
           style={{

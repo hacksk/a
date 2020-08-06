@@ -230,6 +230,7 @@ export default class CreateThread extends Component {
                   name="header_image"
                   onChange={this.onChange}
                 />
+                *Max file size 2MB
                 {/* {this.state.file && (
                   <div style={{ textAlign: "center" }}>
                     <button onClick={this.resetFile}>Remove File</button>
@@ -280,9 +281,9 @@ export default class CreateThread extends Component {
                   cols="50"
                   onChange={this.handleChange}
                 ></textarea>
-                <label style={{ fontSize: "11px", marginTop: "5vh" }}>
+                {/* <label style={{ fontSize: "11px", marginTop: "5vh" }}>
                   Thread Images
-                </label>
+                </label> */}
                 {/* <MultiImage />
                 <label style={{ fontSize: "11px" }}>Image from local</label>
                 <input
