@@ -32,7 +32,7 @@ export default class ForumHome extends Component {
       .then((res) => {
         const urls = res.data.data.images_url;
         const persons = res.data.data.slice(0, 3);
-        const subthread = res.data.data.slice(3, 6);
+        const subthread = res.data.data.slice(2, 5);
         // console.log(persons);
         // console.log("sliced", persons);
         this.setState({ persons, subthread, urls });
