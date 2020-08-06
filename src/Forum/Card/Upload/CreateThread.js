@@ -19,6 +19,7 @@ export default class CreateThread extends Component {
       content: "",
       header_image: "",
       images_url: [],
+      image_url:[],
       url: "",
       image: "",
       video_url: "",
@@ -26,6 +27,7 @@ export default class CreateThread extends Component {
       options: [],
       file: null,
       name: [],
+      images:[],
       children: [],
       url_image: "",
       posting: false,
@@ -88,7 +90,7 @@ export default class CreateThread extends Component {
               newformData
             )
             .then((res) => {
-              this.props.history.push("/forum");
+              this.props.history.push(`/forum/thread/${res.data.data.id}`);
             })
             .catch((error) => {
               message.info("Please fill the comment Box");
@@ -97,6 +99,9 @@ export default class CreateThread extends Component {
     } else if (this.state.posting == false) {
       const urlformData = new FormData();
       urlformData.append("url", this.state.url);
+      urlformData.append("images", this.state.imagesbottom);
+
+
 
       axios
         .post(
@@ -278,7 +283,14 @@ export default class CreateThread extends Component {
                 <label style={{ fontSize: "11px", marginTop: "5vh" }}>
                   Thread Images
                 </label>
-                <MultiImage />
+                {/* <MultiImage />
+                <label style={{ fontSize: "11px" }}>Image from local</label>
+                <input
+                  className="thread-create-upload"
+                  type="file"
+                  name="header_image"
+                  onChange={this.onChange}
+                />
               </div>
               <p>Add a tag</p>
               <div className="forum-create-tag">
@@ -299,8 +311,8 @@ export default class CreateThread extends Component {
                     }}
                   >
                     Search Tags
-                  </p>
-                </div>
+                  </p> */}
+                {/* </div> */}
 
                 {/* <Select
                   mode="tags"
@@ -310,7 +322,7 @@ export default class CreateThread extends Component {
                 >
                   {this.state.children}
                 </Select> */}
-                <TagsForum />
+                {/* <TagsForum /> */}
               </div>
             </div>
             <button type="submit" className="create-forum-button">

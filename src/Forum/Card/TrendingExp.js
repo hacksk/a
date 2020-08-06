@@ -87,12 +87,10 @@ class NewsExpanded extends Component {
     axios
       .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
       .then((res) => {
-        const trending = res.data.data.slice(1,5);
-        const latest =res.data.data.slice(1,4);
+        const trending = res.data.data.slice(1,8);
         this.setState({ trending });
-        console.log(trending, "ohtheone");
+        console.log(trending, "trending");
       });
-    console.log(window.location.href, "location");
   }
   render() {
     if (this.state.threads != null) {

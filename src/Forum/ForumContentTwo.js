@@ -4,9 +4,15 @@ export default class ForumContentTwo extends Component {
   render() {
     return (
       <div className="forum-home-thread-square">
-        {this.props.thread.images_url.map((image) => (
-          <img alt={image.id} src={image.url}></img>
-        ))}
+        <img
+          alt="text"
+          src={
+            this.props.thread.header_image_url
+              ? this.props.thread.header_image_url.url
+              : this.props.thread.header_image.image
+          }
+        />
+
         <div
           className="forum-home-thread-square-textbox"
           style={{ padding: "1em" }}

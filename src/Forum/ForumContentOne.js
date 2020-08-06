@@ -5,7 +5,6 @@ import { Popover, notification, message } from "antd";
 import axios from "axios";
 import { connect } from "react-redux";
 
-
 const URL = "https://automoto.techbyheart.in/api/v1/forum";
 const content = (id) => (
   <div>
@@ -20,13 +19,13 @@ const content = (id) => (
             window.location.reload();
           })
           .catch((error) => {
+            console.log(error);
             notification.open({
-              message: 'Warning',
-              description:
-                'You are not authorized perform this action.',
+              message: "Warning",
+              description: "You are not authorized perform this action.",
               onClick: () => {
-                console.log('Notification Clicked!');
-              },  
+                console.log("Notification Clicked!");
+              },
             });
           });
       }}
@@ -47,7 +46,6 @@ const content = (id) => (
   </div>
 );
 
-
 class ForumContentOne extends Component {
   constructor(props) {
     super(props);
@@ -56,7 +54,7 @@ class ForumContentOne extends Component {
       isHovering: false,
     };
   }
- 
+
   handleMouseHover() {
     this.setState(this.toggleHoverState);
   }
@@ -75,18 +73,24 @@ class ForumContentOne extends Component {
         className="forum-home-thread"
       >
         <div className="forum-home-thread">
-          {this.props.thread.images_url.map((image)=>(
-            <img alt={image.id} src={image.url}></img>
-          ))}
+          <img
+            alt="text"
+            src={
+              this.props.thread.header_image_url
+                ? this.props.thread.header_image_url.url
+                : this.props.thread.header_image.image
+            }
+          />
+
           <div
             style={{
               paddingLeft: "2em",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              overflow:"hidden",
-              textOverflow:"ellipsis",
-              whiteSpace:"wrap"
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              whiteSpace: "wrap",
             }}
           >
             <h5 style={{ color: "white" }}>{this.props.thread.title}</h5>
@@ -94,7 +98,7 @@ class ForumContentOne extends Component {
               style={{
                 color: "white",
                 fontFamily: "Montserrat",
-                width:"40vw"
+                width: "40vw",
               }}
             >
               {this.props.thread.content}
@@ -102,25 +106,23 @@ class ForumContentOne extends Component {
           </div>
         </div>
         {this.state.isHovering && (
-        <div
-          className="forum-more"
-          style={{
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-           {this.props.isAuthenticated ?  (
-          <Popover
-            placement="bottomRight"
-            content={() => content(this.props.thread.id)}
-            trigger="click"
+          <div
+            className="forum-more"
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+            }}
           >
-            <MdMoreVert />
-          </Popover>
-          ) : (
-           null
-          )}
-        </div>
+            {this.props.isAuthenticated ? (
+              <Popover
+                placement="bottomRight"
+                content={() => content(this.props.thread.id)}
+                trigger="click"
+              >
+                <MdMoreVert />
+              </Popover>
+            ) : null}
+          </div>
         )}
       </div>
     );

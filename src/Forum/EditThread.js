@@ -10,7 +10,7 @@ export default class EditThread extends Component {
     this.state = {
       title: "",
       content: "",
-      header_image: "",
+      image: "",
       video_url: "",
       thread: null,
       file: null,
@@ -32,36 +32,48 @@ export default class EditThread extends Component {
     const threadId = this.props.match.params.edit;
     console.log(threadId);
 
-    const formData = new FormData();
-    formData.append("title", this.state.title);
-    formData.append("content", this.state.content);
-    formData.append("video_url", this.state.video_url);
-
-    formData.append(
-      "header_image",
-      this.state.header_image,
-      this.state.header_image.name
-    );
+    const imageformData = new FormData();
+    imageformData.append("image", this.state.header_image);
 
     axios
-      .patch(
-        `https://automoto.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
-        formData
+      .post(
+        `https://automoto.techbyheart.in/api/v1/forum/image/`,
+        imageformData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
       )
       .then((res) => {
-        this.props.history.push("/forum");
-      })
-      .catch((error) => {
-        message.info("Added To The Cart");
+        const formData = new FormData();
+        formData.append("title", this.state.title);
+        formData.append("content", this.state.content);
+        formData.append("video_url", this.state.video_url);
+        formData.append("header_image", res.data.data.id);
+
+        axios
+          .patch(
+            `https://automoto.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
+            formData
+          )
+          .then((res) => {
+            console.log(res, "result");
+            this.props.history.push("/forum");
+          })
+          .catch((error) => {
+            console.log(error, "error");
+            message.info("Oops something went wrong, try later");
+          });
       });
   };
   componentDidMount() {
     axios
-      .get(`https://automoto.techbyheart.in/api/v1/forum/thread-list/`)
+      .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
       .then((res) => {
         const threads = res.data.data;
         const thread = threads.find(
-          (x) => x.id === this.props.match.params.edit
+          (x) => x.id == this.props.match.params.edit
         );
         this.setState({ thread });
         console.log(thread);
@@ -138,7 +150,7 @@ export default class EditThread extends Component {
                   <input
                     className="thread-create-upload"
                     type="file"
-                    name="header_image"
+                    name="image"
                     onChange={this.onChange}
                   />
                 </div>
