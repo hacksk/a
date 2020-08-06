@@ -35,10 +35,13 @@ class NewsExpanded extends Component {
     count: 0,
     image: "",
     trending: [],
+    trending_image: [],
     images: [],
-    head:[],
+    head: [],
     visible: false,
     visiblepop: false,
+    item: [],
+    pic: [],
   };
   showModal = () => {
     this.setState({
@@ -68,11 +71,11 @@ class NewsExpanded extends Component {
       .then((res) => {
         const threads = res.data.data;
         const images = res.data.data.images;
-        const urls = res.data.data.images_url;
-        const head= res.data.data.header_image_url;
-        console.log(head,"itmightbe");       
-         console.log(images, "images");
-        this.setState({ threads, images, urls,head });
+        const urls = res.data.data.header_image;
+        const head = res.data.data.header_image_url;
+        console.log(head, "itmightbe");
+        console.log(images, "images");
+        this.setState({ threads, images, urls, head });
         console.log("expanded", threads);
         this.setState((state) => {
           return {
@@ -80,9 +83,9 @@ class NewsExpanded extends Component {
               "https://automoto.techbyheart.in" + this.state.threads.userimage,
           };
         });
-        // const tags = this.state.thread.tag;
-        // console.log(tags);
-        // this.setState({ tags });
+        const tags = res.data.data.tag;
+        console.log(tags, "tags");
+        this.setState({ tags });
       });
 
     axios
@@ -90,9 +93,13 @@ class NewsExpanded extends Component {
       .then((res) => {
         const trending = res.data.data;
         this.setState({ trending });
-        console.log(trending,"trends");
+        let pic = trending.map(function (item) {
+          return item["pic"];
+        });
+        this.setState({ pic });
+        console.log(pic, "lookwho");
+        console.log(trending, "trends");
       });
-    console.log(window.location.href, "location");
   }
   render() {
     if (this.state.threads != null) {
@@ -167,16 +174,25 @@ class NewsExpanded extends Component {
               className="threadexpand-content"
               style={{ position: "relative" }}
             >
-              <img
-                className="thread-expanded-image"
-                alt=""
-                src={this.state.head.url}
-              ></img>
+              {this.state.head != null ? (
+                <img
+                  className="thread-expanded-image"
+                  alt=""
+                  src={this.state.head.url}
+                ></img>
+              ) : (
+                <img
+                  className="thread-expanded-image"
+                  alt=""
+                  src={this.state.urls.image}
+                ></img>
+              )}
               <div className="thread-header-space">
                 <div>
                   <h6>REVIEW</h6>
                   <h5>{this.state.threads.title}</h5>
                 </div>
+                
                 {this.props.isAuthenticated ? (
                   <div className="forum-more-container">
                     <div
@@ -244,6 +260,13 @@ class NewsExpanded extends Component {
                   </div>
                 ) : null}
               </div>
+              <div style={{ display: "flex", flexDirection: "row" }}>
+                  {this.state.tags.map((tag) => (
+                    <p style={{ color: "#F05C2D", paddingLeft: "5px",cursor:"pointer" }}>
+                      #{tag.name}
+                    </p>
+                  ))}
+                </div>
               <div className="thread-profile-header">
                 <div
                   style={{
@@ -254,7 +277,6 @@ class NewsExpanded extends Component {
                 >
                   <img alt="" src={this.state.image}></img>
                   <p>{this.state.threads.username}</p>
-
                 </div>
                 <div className="thread-expand-time-n-more">
                   <p
@@ -265,11 +287,6 @@ class NewsExpanded extends Component {
                     {<Moment fromNow>{this.state.threads.date}</Moment>}
                   </p>
                 </div>
-              </div>
-              <div>
-                {this.state.tags.map((tag) => (
-                  <p>{tag.name}</p>
-                ))}
               </div>
 
               <p>{this.state.threads.content}</p>
@@ -306,7 +323,7 @@ class NewsExpanded extends Component {
             <h4>Trending</h4>
             {this.state.trending.map((trend) => (
               <Link to={`/forum/thread/trendin/${trend.id}`}>
-                <Trending  thread={trend} />
+                <Trending thread={trend} />
               </Link>
             ))}
           </div>

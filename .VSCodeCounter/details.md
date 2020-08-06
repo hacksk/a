@@ -1,18 +1,18 @@
 # Details
 
-Date : 2020-07-08 16:22:28
+Date : 2020-08-06 09:58:22
 
 Directory c:\Users\vishn\Desktop\testlocal\automoto-react\customer
 
-Total : 193 files,  30931 codes, 574 comments, 980 blanks, all 32485 lines
+Total : 204 files,  32198 codes, 627 comments, 1021 blanks, all 33846 lines
 
 [summary](results.md)
 
 ## Files
 | filename | language | code | comment | blank | total |
 | :--- | :--- | ---: | ---: | ---: | ---: |
-| [package-lock.json](/package-lock.json) | JSON | 17,223 | 0 | 1 | 17,224 |
-| [package.json](/package.json) | JSON | 95 | 0 | 1 | 96 |
+| [package-lock.json](/package-lock.json) | JSON | 17,447 | 0 | 1 | 17,448 |
+| [package.json](/package.json) | JSON | 98 | 0 | 1 | 99 |
 | [public/index.html](/public/index.html) | HTML | 39 | 4 | 6 | 49 |
 | [public/manifest.json](/public/manifest.json) | JSON | 25 | 0 | 1 | 26 |
 | [public/moto365logo.svg](/public/moto365logo.svg) | XML | 14 | 0 | 1 | 15 |
@@ -20,55 +20,58 @@ Total : 193 files,  30931 codes, 574 comments, 980 blanks, all 32485 lines
 | [src/AccCarousel.js](/src/AccCarousel.js) | JavaScript | 26 | 0 | 5 | 31 |
 | [src/AccMain.js](/src/AccMain.js) | JavaScript | 67 | 1 | 13 | 81 |
 | [src/Accesories.js](/src/Accesories.js) | JavaScript | 32 | 0 | 3 | 35 |
-| [src/AccesoriesExpanded.js](/src/AccesoriesExpanded.js) | JavaScript | 132 | 2 | 8 | 142 |
+| [src/AccesoriesExpanded.js](/src/AccesoriesExpanded.js) | JavaScript | 132 | 2 | 6 | 140 |
 | [src/Account/AccountCustomer.js](/src/Account/AccountCustomer.js) | JavaScript | 182 | 32 | 15 | 229 |
-| [src/Account/AccountGeneral.js](/src/Account/AccountGeneral.js) | JavaScript | 113 | 8 | 5 | 126 |
+| [src/Account/AccountGeneral.js](/src/Account/AccountGeneral.js) | JavaScript | 112 | 8 | 5 | 125 |
 | [src/Account/AccountHelp.js](/src/Account/AccountHelp.js) | JavaScript | 13 | 0 | 4 | 17 |
 | [src/Account/AccountMain.js](/src/Account/AccountMain.js) | JavaScript | 36 | 1 | 6 | 43 |
 | [src/Account/AccountReward.js](/src/Account/AccountReward.js) | JavaScript | 14 | 0 | 3 | 17 |
 | [src/Account/AccountSecurity.js](/src/Account/AccountSecurity.js) | JavaScript | 32 | 6 | 3 | 41 |
 | [src/Account/EditAccount/PersonalDetails.js](/src/Account/EditAccount/PersonalDetails.js) | JavaScript | 178 | 37 | 14 | 229 |
 | [src/Account/PicturesWall.js](/src/Account/PicturesWall.js) | JavaScript | 33 | 0 | 3 | 36 |
-| [src/App.css](/src/App.css) | CSS | 3,453 | 88 | 122 | 3,663 |
-| [src/App.js](/src/App.js) | JavaScript | 96 | 0 | 4 | 100 |
+| [src/App.css](/src/App.css) | CSS | 3,761 | 92 | 137 | 3,990 |
+| [src/App.js](/src/App.js) | JavaScript | 102 | 0 | 4 | 106 |
 | [src/App.test.js](/src/App.test.js) | JavaScript | 8 | 0 | 2 | 10 |
 | [src/Auth/SignIn.js](/src/Auth/SignIn.js) | JavaScript | 87 | 0 | 10 | 97 |
-| [src/BottomNavbar.js](/src/BottomNavbar.js) | JavaScript | 104 | 0 | 9 | 113 |
+| [src/BottomNavbar.js](/src/BottomNavbar.js) | JavaScript | 111 | 0 | 2 | 113 |
 | [src/Components/MobSearch.js](/src/Components/MobSearch.js) | JavaScript | 11 | 0 | 2 | 13 |
 | [src/Components/SearchBar.js](/src/Components/SearchBar.js) | JavaScript | 106 | 0 | 5 | 111 |
 | [src/Demo.js](/src/Demo.js) | JavaScript | 36 | 0 | 3 | 39 |
 | [src/Employee.css](/src/Employee.css) | CSS | 124 | 1 | 6 | 131 |
 | [src/FeedBack.js](/src/FeedBack.js) | JavaScript | 55 | 0 | 7 | 62 |
-| [src/Footer.js](/src/Footer.js) | JavaScript | 50 | 0 | 2 | 52 |
+| [src/Footer.js](/src/Footer.js) | JavaScript | 41 | 0 | 2 | 43 |
 | [src/Form.js](/src/Form.js) | JavaScript | 35 | 1 | 7 | 43 |
 | [src/Forum/Avatar.js](/src/Forum/Avatar.js) | JavaScript | 50 | 0 | 5 | 55 |
-| [src/Forum/Banner.js](/src/Forum/Banner.js) | JavaScript | 20 | 0 | 2 | 22 |
+| [src/Forum/Banner.js](/src/Forum/Banner.js) | JavaScript | 39 | 0 | 2 | 41 |
+| [src/Forum/Card/TrendingCard.js](/src/Forum/Card/TrendingCard.js) | JavaScript | 18 | 0 | 2 | 20 |
+| [src/Forum/Card/TrendingExp.js](/src/Forum/Card/TrendingExp.js) | JavaScript | 397 | 7 | 13 | 417 |
+| [src/Forum/Card/Upload/MultiImage.js](/src/Forum/Card/Upload/MultiImage.js) | JavaScript | 19 | 0 | 5 | 24 |
 | [src/Forum/EditThread.js](/src/Forum/EditThread.js) | JavaScript | 210 | 0 | 11 | 221 |
-| [src/Forum/ForumComment.js](/src/Forum/ForumComment.js) | JavaScript | 264 | 26 | 19 | 309 |
-| [src/Forum/ForumContentOne.js](/src/Forum/ForumContentOne.js) | JavaScript | 123 | 1 | 7 | 131 |
-| [src/Forum/ForumContentTwo.js](/src/Forum/ForumContentTwo.js) | JavaScript | 16 | 0 | 2 | 18 |
-| [src/Forum/ForumCreate.js](/src/Forum/ForumCreate.js) | JavaScript | 240 | 7 | 15 | 262 |
-| [src/Forum/ForumHome.js](/src/Forum/ForumHome.js) | JavaScript | 193 | 71 | 10 | 274 |
+| [src/Forum/ForumComment.js](/src/Forum/ForumComment.js) | JavaScript | 263 | 26 | 19 | 308 |
+| [src/Forum/ForumContentOne.js](/src/Forum/ForumContentOne.js) | JavaScript | 127 | 1 | 7 | 135 |
+| [src/Forum/ForumContentTwo.js](/src/Forum/ForumContentTwo.js) | JavaScript | 21 | 0 | 2 | 23 |
+| [src/Forum/ForumCreate.js](/src/Forum/ForumCreate.js) | JavaScript | 230 | 44 | 13 | 287 |
+| [src/Forum/ForumHome.js](/src/Forum/ForumHome.js) | JavaScript | 160 | 71 | 9 | 240 |
 | [src/Forum/ForumList.js](/src/Forum/ForumList.js) | JavaScript | 58 | 1 | 3 | 62 |
 | [src/Forum/ForumTrendingThread.js](/src/Forum/ForumTrendingThread.js) | JavaScript | 32 | 0 | 4 | 36 |
-| [src/Forum/NewsExpand1.js](/src/Forum/NewsExpand1.js) | JavaScript | 155 | 6 | 6 | 167 |
+| [src/Forum/NewsExpand1.js](/src/Forum/NewsExpand1.js) | JavaScript | 409 | 7 | 14 | 430 |
 | [src/Forum/ReplyComment.js](/src/Forum/ReplyComment.js) | JavaScript | 124 | 5 | 14 | 143 |
-| [src/Forum/SubForumList.js](/src/Forum/SubForumList.js) | JavaScript | 128 | 1 | 9 | 138 |
+| [src/Forum/SubForumList.js](/src/Forum/SubForumList.js) | JavaScript | 125 | 1 | 9 | 135 |
 | [src/Forum/TagsForum.js](/src/Forum/TagsForum.js) | JavaScript | 44 | 0 | 7 | 51 |
-| [src/Forum/TestComment.js](/src/Forum/TestComment.js) | JavaScript | 146 | 4 | 6 | 156 |
+| [src/Forum/TestComment.js](/src/Forum/TestComment.js) | JavaScript | 145 | 4 | 6 | 155 |
 | [src/Forum/TestCommentContent.js](/src/Forum/TestCommentContent.js) | JavaScript | 28 | 0 | 2 | 30 |
 | [src/Forum/ThreadExpand.js](/src/Forum/ThreadExpand.js) | JavaScript | 81 | 0 | 2 | 83 |
 | [src/Forum/ThreadLink.js](/src/Forum/ThreadLink.js) | JavaScript | 51 | 0 | 7 | 58 |
 | [src/Forum/ThreadList.js](/src/Forum/ThreadList.js) | JavaScript | 87 | 1 | 7 | 95 |
 | [src/HeaderCustomer.js](/src/HeaderCustomer.js) | JavaScript | 19 | 0 | 2 | 21 |
-| [src/Home.js](/src/Home.js) | JavaScript | 264 | 69 | 8 | 341 |
+| [src/Home.js](/src/Home.js) | JavaScript | 255 | 69 | 7 | 331 |
 | [src/Inventory.js](/src/Inventory.js) | JavaScript | 69 | 0 | 5 | 74 |
 | [src/Location.js](/src/Location.js) | JavaScript | 91 | 4 | 10 | 105 |
 | [src/LocationDist.js](/src/LocationDist.js) | JavaScript | 15 | 1 | 4 | 20 |
 | [src/Navbar.js](/src/Navbar.js) | JavaScript | 49 | 0 | 6 | 55 |
-| [src/NavbarNew.js](/src/NavbarNew.js) | JavaScript | 117 | 10 | 7 | 134 |
+| [src/NavbarNew.js](/src/NavbarNew.js) | JavaScript | 152 | 10 | 11 | 173 |
 | [src/Payment/Payment.js](/src/Payment/Payment.js) | JavaScript | 73 | 2 | 4 | 79 |
-| [src/ProductExpanded.js](/src/ProductExpanded.js) | JavaScript | 140 | 4 | 6 | 150 |
+| [src/ProductExpanded.js](/src/ProductExpanded.js) | JavaScript | 141 | 4 | 6 | 151 |
 | [src/ProductMain.js](/src/ProductMain.js) | JavaScript | 86 | 1 | 8 | 95 |
 | [src/Services/Steam/SteamComponent.js](/src/Services/Steam/SteamComponent.js) | JavaScript | 13 | 0 | 4 | 17 |
 | [src/Services/Steam/components/Cart.js](/src/Services/Steam/components/Cart.js) | JavaScript | 109 | 30 | 6 | 145 |
@@ -83,9 +86,9 @@ Total : 193 files,  30931 codes, 574 comments, 980 blanks, all 32485 lines
 | [src/SignupTest.js](/src/SignupTest.js) | JavaScript | 95 | 1 | 15 | 111 |
 | [src/Status.js](/src/Status.js) | JavaScript | 27 | 8 | 6 | 41 |
 | [src/Store.css](/src/Store.css) | CSS | 79 | 1 | 13 | 93 |
-| [src/StripeBtn.js](/src/StripeBtn.js) | JavaScript | 47 | 0 | 4 | 51 |
+| [src/StripeBtn.js](/src/StripeBtn.js) | JavaScript | 43 | 4 | 4 | 51 |
 | [src/Test.js](/src/Test.js) | JavaScript | 26 | 0 | 4 | 30 |
-| [src/actions/authActions.js](/src/actions/authActions.js) | JavaScript | 54 | 10 | 13 | 77 |
+| [src/actions/authActions.js](/src/actions/authActions.js) | JavaScript | 54 | 10 | 12 | 76 |
 | [src/actions/cartActions.js](/src/actions/cartActions.js) | JavaScript | 139 | 33 | 12 | 184 |
 | [src/actions/commonActionType.js](/src/actions/commonActionType.js) | JavaScript | 1 | 0 | 1 | 2 |
 | [src/actions/urlConfig.js](/src/actions/urlConfig.js) | JavaScript | 1 | 0 | 1 | 2 |
@@ -181,6 +184,14 @@ Total : 193 files,  30931 codes, 574 comments, 980 blanks, all 32485 lines
 | [src/reducers/index.js](/src/reducers/index.js) | JavaScript | 9 | 0 | 2 | 11 |
 | [src/serviceWorker.js](/src/serviceWorker.js) | JavaScript | 94 | 31 | 13 | 138 |
 | [src/validation/isEmpty.js](/src/validation/isEmpty.js) | JavaScript | 6 | 0 | 2 | 8 |
+| [src/vector-icons/bottomnavbar/Account.svg](/src/vector-icons/bottomnavbar/Account.svg) | XML | 3 | 0 | 1 | 4 |
+| [src/vector-icons/bottomnavbar/Cart.svg](/src/vector-icons/bottomnavbar/Cart.svg) | XML | 3 | 0 | 1 | 4 |
+| [src/vector-icons/bottomnavbar/Forum.svg](/src/vector-icons/bottomnavbar/Forum.svg) | XML | 3 | 0 | 1 | 4 |
+| [src/vector-icons/bottomnavbar/Home.svg](/src/vector-icons/bottomnavbar/Home.svg) | XML | 10 | 0 | 1 | 11 |
+| [src/vector-icons/bottomnavbar/Location.svg](/src/vector-icons/bottomnavbar/Location.svg) | XML | 10 | 0 | 1 | 11 |
+| [src/vector-icons/bottomnavbar/Search.svg](/src/vector-icons/bottomnavbar/Search.svg) | XML | 3 | 0 | 1 | 4 |
+| [src/vector-icons/browse.svg](/src/vector-icons/browse.svg) | XML | 3 | 0 | 1 | 4 |
+| [src/vector-icons/create.svg](/src/vector-icons/create.svg) | XML | 3 | 0 | 1 | 4 |
 | [src/vector-icons/main-page-lines.svg](/src/vector-icons/main-page-lines.svg) | XML | 5 | 0 | 1 | 6 |
 | [src/vector-icons/material icons/build-24px(1).svg](/src/vector-icons/material icons/build-24px(1).svg) | XML | 1 | 0 | 0 | 1 |
 | [src/vector-icons/material icons/filter_list-24px (1).svg](/src/vector-icons/material icons/filter_list-24px (1).svg) | XML | 1 | 0 | 0 | 1 |

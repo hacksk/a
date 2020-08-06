@@ -93,7 +93,7 @@ class NavbarNew extends Component {
                   width: "130px",
                 }}
               >
-                <NavLink to="/forum">
+                <NavLink to="/forum/create">
                   <div className="forum-navbar-btn">
                     <img alt="create" src={require("./vector-icons/create.svg")}></img>
                     <p>create thread</p>
@@ -108,7 +108,7 @@ class NavbarNew extends Component {
               </div>
             }
             title={<div></div>}
-            trigger="click"
+            trigger="hover"
             placement="rightTop"
           >
             <li className="navbar-popover-btn">

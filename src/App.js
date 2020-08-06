@@ -35,6 +35,7 @@ import SubforumList from "./Forum/SubForumList";
 import Test from "./Test";
 import MobileSearch from "./Components/MobSearch";
 import TrendingExp from "./Forum/Card/TrendingExp";
+import CreateThread from "./Forum/Card/Upload/CreateThread";
 
 function App() {
   return (
@@ -88,6 +89,7 @@ function App() {
             path="/forum/forumlist/subforum/:create"
             component={Forumcreate}
           />
+          <Route exact path="/forum/create" component={CreateThread}/>
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/forum/forumlist" component={ForumList} />
           <Route exact path="/forum/forumthreadlist" component={ThreadList} />

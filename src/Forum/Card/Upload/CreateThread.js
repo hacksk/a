@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { message, Select } from "antd";
-import MultiImage from "./Card/Upload/MultiImage";
+// import MultiImage from "./Card/Upload/MultiImage";
 
 const { Option } = Select;
 
@@ -9,7 +9,7 @@ const { Option } = Select;
 //   console.log(`selected ${value}`);
 // }
 
-export default class ForumCreate extends Component {
+export default class CreateThread extends Component {
   constructor(props) {
     super(props);
 
@@ -28,6 +28,8 @@ export default class ForumCreate extends Component {
       children: [],
       url_image: "",
       posting: false,
+      forums: [],
+      subforum: [],
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -50,6 +52,19 @@ export default class ForumCreate extends Component {
           <Option key={this.state.name}>{this.state.name}</Option>
         );
         console.log(this.state.children, "children");
+      });
+    axios
+      .get(`https://automoto.techbyheart.in/api/v1/forum/master-forum/list/`)
+      .then((res) => {
+        const forums = res.data.data;
+        console.log(forums);
+        this.setState({ forums });
+      });
+    axios
+      .get(`https://automoto.techbyheart.in/api/v1/forum/list/`)
+      .then((res) => {
+        const subforums = res.data.data;
+        console.log(subforums, "subforum");
       });
   }
 
@@ -111,7 +126,7 @@ export default class ForumCreate extends Component {
 
           axios
             .post(
-              `https://automoto.techbyheart.in/api/v1/forum/thread/create/${threadId}/`,
+              `https://automoto.techbyheart.in/api/v1/forum/thread/create/0a0bd306-dfdf-4d7d-b4a8-c1fa16282e5c/`,
               newformData
             )
             .then((res) => {
@@ -134,6 +149,11 @@ export default class ForumCreate extends Component {
     event.preventDefault();
     this.setState({ file: null });
   }
+
+  //Select functions
+  handleChange = (value) => {
+    console.log(`selected ${value}`);
+  };
   render() {
     return (
       <div className="thread-create" style={{ padding: "8em", height: "auto" }}>
@@ -170,6 +190,7 @@ export default class ForumCreate extends Component {
                 name="title"
                 type="text"
               ></input>
+
               <div
                 className="thread-create-imagefield"
                 style={{
@@ -180,18 +201,29 @@ export default class ForumCreate extends Component {
                   marginTop: "3em",
                 }}
               >
-                {" "}
-                <p>Upload header image</p>
-                <img
-                  alt=""
-                  className="uploaded-image-forum"
-                  src={this.state.file}
-                />
-                <img
-                  alt=""
-                  className="uploaded-image-forum"
-                  src={this.state.url_image}
-                />
+                <Select
+                  defaultValue="Select forum"
+                  style={{ width: 120 }}
+                  onChange={this.handleChange}
+                >
+                  {this.state.forums.map((forum) => (
+                    <Option value={forum.id}>{forum.name}</Option>
+                  ))}
+                </Select>
+
+                <p style={{ marginTop: "5vh" }}>Upload header image</p>
+                <div style={{ display: "flex", flexDirection: "row" }}>
+                  <img
+                    alt=""
+                    className="uploaded-image-forum"
+                    src={this.state.file}
+                  />
+                  <img
+                    alt=""
+                    className="uploaded-image-forum"
+                    src={this.state.url_image}
+                  />
+                </div>
                 <label style={{ fontSize: "11px" }}>Image URL</label>
                 <input
                   className="thread-create-title"
