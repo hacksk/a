@@ -33,50 +33,72 @@ export default class EditThread extends Component {
     console.log(threadId);
 
     const imageformData = new FormData();
-    imageformData.append("image", this.state.header_image);
+    if (this.state.header_image != null) {
+      imageformData.append("image", this.state.header_image);
+      axios
+        .post(
+          `https://automoto.techbyheart.in/api/v1/forum/image/`,
+          imageformData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        )
+        .then((res) => {
+          console.log(res, "lastresult");
+          const formData = new FormData();
+          formData.append("title", this.state.title);
+          formData.append("content", this.state.content);
+          formData.append("video_url", this.state.video_url);
+          formData.append("header_image", res.data.data.id);
 
-    axios
-      .post(
-        `https://automoto.techbyheart.in/api/v1/forum/image/`,
-        imageformData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      )
-      .then((res) => {
-        const formData = new FormData();
-        formData.append("title", this.state.title);
-        formData.append("content", this.state.content);
-        formData.append("video_url", this.state.video_url);
-        formData.append("header_image", res.data.data.id);
+          axios
+            .patch(
+              `https://automoto.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
+              formData
+            )
+            .then((res) => {
+              console.log(res, "finalresult");
+              this.props.history.push(`/forum/thread/${res.data.data.id}`);
+            })
+            .catch((error) => {
+              console.log(error, "error");
+              message.info("Oops something went wrong, try later");
+            });
+        });
+    } else {
+      const formData = new FormData();
+      formData.append("title", this.state.title);
+      formData.append("content", this.state.content);
+      formData.append("video_url", this.state.video_url);
 
-        axios
-          .patch(
-            `https://automoto.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
-            formData
-          )
-          .then((res) => {
-            console.log(res, "result");
-            this.props.history.push("/forum");
-          })
-          .catch((error) => {
-            console.log(error, "error");
-            message.info("Oops something went wrong, try later");
-          });
-      });
+      axios
+        .patch(
+          `https://automoto.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
+          formData
+        )
+        .then((res) => {
+          console.log(res, "finalresult");
+          this.props.history.push(`/forum/thread/${res.data.data.id}`);
+        })
+        .catch((error) => {
+          console.log(error, "error");
+          message.info("Oops something went wrong, try later");
+        });
+    }
   };
   componentDidMount() {
+    const threadId = this.props.match.params.edit;
+
     axios
-      .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
+      .get(
+        `https://automoto.techbyheart.in/api/v1/forum/thread-single/${threadId}`
+      )
       .then((res) => {
-        const threads = res.data.data;
-        const thread = threads.find(
-          (x) => x.id == this.props.match.params.edit
-        );
+        const thread = res.data.data;
         this.setState({ thread });
-        console.log(thread);
+        console.log(thread, "threads");
       });
   }
   onChange(event) {
@@ -138,6 +160,10 @@ export default class EditThread extends Component {
                   }}
                 >
                   <p>Change header image*</p>
+                  {/* <img
+                    className="uploaded-image-forum"
+                    src={this.state.thread.header_image.image}
+                  ></img> */}
                   <img
                     alt=""
                     className="uploaded-image-forum"
@@ -147,10 +173,11 @@ export default class EditThread extends Component {
                         : this.state.thread.header_image
                     }
                   ></img>
+
                   <input
                     className="thread-create-upload"
                     type="file"
-                    name="image"
+                    name="header_image"
                     onChange={this.onChange}
                   />
                 </div>

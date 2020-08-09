@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { message, Select } from "antd";
-import MultiImage from "./MultiImage";
 import TagsForum from "../../TagsForum";
+import LoadingOverlay from "react-loading-overlay";
+import { SemipolarLoading } from "react-loadingg";
+
 
 const { Option } = Select;
 
@@ -11,6 +13,9 @@ const { Option } = Select;
 // }
 
 export default class CreateThread extends Component {
+  fileObj = [];
+  fileArray = [];
+
   constructor(props) {
     super(props);
 
@@ -19,7 +24,7 @@ export default class CreateThread extends Component {
       content: "",
       header_image: "",
       images_url: [],
-      image_url:[],
+      image_url: [],
       url: "",
       image: "",
       video_url: "",
@@ -27,23 +32,25 @@ export default class CreateThread extends Component {
       options: [],
       file: null,
       name: [],
-      images:[],
+      images: "",
       children: [],
       url_image: "",
       posting: false,
+      file: [null],
+      loader:false,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.onChange = this.onChange.bind(this);
     this.resetFile = this.resetFile.bind(this);
+    this.uploadMultipleFiles = this.uploadMultipleFiles.bind(this);
   }
   componentDidMount() {
     axios
       .get(`https://automoto.techbyheart.in/api/v1/forum/tags/`)
       .then((res) => {
         const options = res.data.data;
-        console.log(options, "tag");
         this.setState({ options });
         let name = options.map(function (item) {
           return item["name"];
@@ -52,7 +59,6 @@ export default class CreateThread extends Component {
         this.state.children.push(
           <Option key={this.state.name}>{this.state.name}</Option>
         );
-        console.log(this.state.children, "children");
       });
   }
 
@@ -65,43 +71,76 @@ export default class CreateThread extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+
     const threadId = this.props.match.params.create;
 
     const formData = new FormData();
     formData.append("image", this.state.header_image);
 
+    //for uploading file image
+
     if (this.state.posting == true) {
       axios
-        .post(`https://automoto.techbyheart.in/api/v1/forum/image/`, formData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        })
+        .post(
+          `https://automoto.techbyheart.in/api/v1/forum/image/`,
+          formData,
+
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        )
         .then((res) => {
           console.log(res);
-          const newformData = new FormData();
-          newformData.append("title", this.state.title);
-          newformData.append("content", this.state.content);
-          newformData.append("video_url", this.state.video_url);
-          newformData.append("header_image", res.data.data.id);
+          const headerimage = res.data.data.id;
+          const array = this.fileObj[0];
+
+          const multiformData = new FormData();
+          for (var i = 0; i < array.length; i++) {
+            multiformData.append("image", array[i]);
+          }
           axios
             .post(
-              `https://automoto.techbyheart.in/api/v1/forum/thread/create/0a0bd306-dfdf-4d7d-b4a8-c1fa16282e5c/`,
-              newformData
+              `https://automoto.techbyheart.in/api/v1/forum/image/`,
+              multiformData,
+
+              {
+                headers: {
+                  "Content-Type": "multipart/form-data",
+                },
+              }
             )
             .then((res) => {
-              this.props.history.push(`/forum/thread/${res.data.data.id}`);
-            })
-            .catch((error) => {
-              message.info("Please fill the comment Box");
+              const newformData = new FormData();
+              newformData.append("title", this.state.title);
+              newformData.append("content", this.state.content);
+              newformData.append("video_url", this.state.video_url);
+              newformData.append("header_image", headerimage);
+              newformData.append("images", res.data.data.id);
+
+              this.setState({loader:true})
+
+              axios
+                .post(
+                  `https://automoto.techbyheart.in/api/v1/forum/thread/create/0a0bd306-dfdf-4d7d-b4a8-c1fa16282e5c/`,
+                  newformData
+                )
+                .then((res) => {
+                  this.setState({loader:true})
+
+                  this.props.history.push(`/forum/thread/${res.data.data.id}`);
+                })
+                .catch((error) => {
+                  message.warning("Oops, Please try again later");
+                });
             });
         });
-    } else if (this.state.posting == false) {
+    } else {
+      //for uploading url image
+
       const urlformData = new FormData();
-      urlformData.append("url", this.state.url);
-      urlformData.append("images", this.state.imagesbottom);
-
-
+      urlformData.append("url", this.state.url); //posting url image to get id
 
       axios
         .post(
@@ -109,23 +148,49 @@ export default class CreateThread extends Component {
           urlformData
         )
         .then((res) => {
-          const newformData = new FormData();
-          newformData.append("title", this.state.title);
-          newformData.append("content", this.state.content);
-          newformData.append("video_url", this.state.video_url);
-          newformData.append("header_image_url", res.data.data.id);
+          this.setState({loader:true})
 
+          const urldata = res.data.data.id;
+          const array = this.fileObj[0];
+
+          const multiformData = new FormData();
+          for (var i = 0; i < array.length; i++) {
+            multiformData.append("image", array[i]);
+          }
           axios
             .post(
-              `https://automoto.techbyheart.in/api/v1/forum/thread/create/0a0bd306-dfdf-4d7d-b4a8-c1fa16282e5c/`,
-              newformData
+              `https://automoto.techbyheart.in/api/v1/forum/image/`,
+              multiformData,
+
+              {
+                headers: {
+                  "Content-Type": "multipart/form-data",
+                },
+              }
             )
             .then((res) => {
-              console.log(res, "result");
-              this.props.history.push(`/forum/thread/${res.data.data.id}`);
-            })
-            .catch((error) => {
-              message.info("Please fill the comment Box");
+              this.setState({loader:true})
+
+              const newformData = new FormData();
+              newformData.append("title", this.state.title);
+              newformData.append("content", this.state.content);
+              newformData.append("video_url", this.state.video_url);
+              newformData.append("header_image_url", urldata);
+              newformData.append("images", res.data.data.id);
+              axios
+                .post(
+                  `https://automoto.techbyheart.in/api/v1/forum/thread/create/0a0bd306-dfdf-4d7d-b4a8-c1fa16282e5c/`,
+                  newformData
+                )
+                .then((res) => {
+                  this.setState({loader:true})
+
+                  console.log(res, "result");
+                  this.props.history.push(`/forum/thread/${res.data.data.id}`);
+                })
+                .catch((error) => {
+                  message.warning("Oops, Please try again later");
+                });
             });
         });
     }
@@ -136,14 +201,35 @@ export default class CreateThread extends Component {
       header_image: event.target.files[0],
       posting: true,
     });
+    if (event.target.files[0].size / 1024 > 2048) {
+      message.info("Please choose file size less than 2MB");
+    }
+    console.log(event.target.files[0].size / 1024, "filesize");
   }
   resetFile(event) {
     event.preventDefault();
     this.setState({ file: null });
   }
+
+  //Mutliple file upload and preview
+
+  uploadMultipleFiles(e) {
+    this.fileObj.push(e.target.files);
+    for (let i = 0; i < this.fileObj[0].length; i++) {
+      this.fileArray.push(URL.createObjectURL(this.fileObj[0][i]));
+    }
+  }
+
   render() {
     return (
       <div className="thread-create" style={{ padding: "8em", height: "auto" }}>
+        <LoadingOverlay
+          active={this.state.loader}
+          spinner={<SemipolarLoading color="#F05C2D" />}
+          text="Creating your thread..."
+        >
+          <p>Some content or children or something.</p>
+        </LoadingOverlay>
         <form onSubmit={this.handleSubmit}>
           <div
             style={{
@@ -230,7 +316,6 @@ export default class CreateThread extends Component {
                   name="header_image"
                   onChange={this.onChange}
                 />
-                *Max file size 2MB
                 {/* {this.state.file && (
                   <div style={{ textAlign: "center" }}>
                     <button onClick={this.resetFile}>Remove File</button>
@@ -281,6 +366,38 @@ export default class CreateThread extends Component {
                   cols="50"
                   onChange={this.handleChange}
                 ></textarea>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    marginTop: "50px",
+                  }}
+                >
+                  Add another image
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      justifyContent: "space-evenly",
+                      flexWrap: "wrap",
+                      marginTop: "12px",
+                    }}
+                  >
+                    {(this.fileArray || []).map((url) => (
+                      <img
+                        className="uploaded-image-forum-multi"
+                        src={url}
+                        alt="..."
+                      />
+                    ))}
+                  </div>
+                  <input
+                    id="file-input"
+                    type="file"
+                    onChange={this.uploadMultipleFiles}
+                    multiple
+                  ></input>
+                </div>
                 {/* <label style={{ fontSize: "11px", marginTop: "5vh" }}>
                   Thread Images
                 </label> */}
@@ -314,7 +431,6 @@ export default class CreateThread extends Component {
                     Search Tags
                   </p> */}
                 {/* </div> */}
-
                 {/* <Select
                   mode="tags"
                   style={{ width: "100%" }}

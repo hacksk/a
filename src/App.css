@@ -1552,6 +1552,12 @@ body {
 .ant-picker-panel-container .ant-picker-panel {
   width: 90% !important;
 }
+.css-df17o1{
+  position: fixed!important;
+}
+.css-42igfv {
+  padding-top: 14vh!important;
+}
 .home {
   width: 100%;
   height: auto;
@@ -1563,6 +1569,7 @@ body {
   background-color: #121212;
   padding-left: 16vh;
   padding-right: 54vh;
+  padding-bottom: 10vh;
   overflow: hidden;
 }
 .header {
@@ -3196,6 +3203,11 @@ a:not([href]):not([tabindex]) {
 }
 .uploaded-image-forum {
   width: 20em !important;
+  border-radius: 8px;
+  margin-bottom: 4vh;
+}
+.uploaded-image-forum-multi{
+  width: 15em !important;
   border-radius: 8px;
   margin-bottom: 4vh;
 }

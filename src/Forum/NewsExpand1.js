@@ -42,7 +42,7 @@ class NewsExpanded extends Component {
     visiblepop: false,
     item: [],
     pic: [],
-    latest:[]
+    latest: [],
   };
   showModal = () => {
     this.setState({
@@ -92,7 +92,7 @@ class NewsExpanded extends Component {
     axios
       .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
       .then((res) => {
-        const trending = res.data.data.slice(0,8);
+        const trending = res.data.data.slice(0, 8);
         this.setState({ trending });
         console.log(trending, "trends");
       });
@@ -188,7 +188,7 @@ class NewsExpanded extends Component {
                   <h6>REVIEW</h6>
                   <h5>{this.state.threads.title}</h5>
                 </div>
-                
+
                 {this.props.isAuthenticated ? (
                   <div className="forum-more-container">
                     <div
@@ -257,12 +257,18 @@ class NewsExpanded extends Component {
                 ) : null}
               </div>
               <div style={{ display: "flex", flexDirection: "row" }}>
-                  {this.state.tags.map((tag) => (
-                    <p style={{ color: "#F05C2D", paddingLeft: "5px",cursor:"pointer" }}>
-                      #{tag.name}
-                    </p>
-                  ))}
-                </div>
+                {this.state.tags.map((tag) => (
+                  <p
+                    style={{
+                      color: "#F05C2D",
+                      paddingLeft: "5px",
+                      cursor: "pointer",
+                    }}
+                  >
+                    #{tag.name}
+                  </p>
+                ))}
+              </div>
               <div className="thread-profile-header">
                 <div
                   style={{

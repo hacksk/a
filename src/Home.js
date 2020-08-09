@@ -37,7 +37,7 @@ export default class Home extends Component {
     axios
       .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
       .then((res) => {
-        const persons = res.data.data.slice(3, 6);
+        const persons = res.data.data.slice(0, 3);
         console.log(persons, "persons");
         const subthread = res.data.data.slice(1, 4);
         this.setState({ persons, subthread });
