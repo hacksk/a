@@ -1011,14 +1011,14 @@ Note: Beware of modifying this element as it can break the animations - you shou
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 25.1vh !important;
-  background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.08),
-      rgba(255, 255, 255, 0.08)
-    ),
-    #121212;
+  height: 20vh !important;
   padding: 0 20vh 0 20vh;
+  z-index: 1000;
+}
+.footer-bg {
+  width: 100%;
+  background-color: #252525 !important;
+  background-image: url("./vector-icons/newhexagon.svg");
   z-index: 1000;
 }
 .footer-primar-quick {
@@ -1052,11 +1052,11 @@ Note: Beware of modifying this element as it can break the animations - you shou
   color: rgba(255, 255, 255, 0.6);
   font-style: normal;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 1.6vh;
   line-height: 16px;
 }
 .footer-secondary {
-  height: 6vh;
+  height: 4vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1072,7 +1072,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   text-align: center;
   font-style: normal;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 1.6vh;
   line-height: 16px;
   color: rgba(255, 255, 255, 0.6);
 }
@@ -1085,7 +1085,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
     text-align: center;
   }
   .footer-primary {
-    padding:4vh;
+    padding: 4vh;
     flex-direction: column;
     justify-content: space-between;
   }
@@ -1553,11 +1553,11 @@ body {
 .ant-picker-panel-container .ant-picker-panel {
   width: 90% !important;
 }
-.css-df17o1{
-  position: fixed!important;
+.css-df17o1 {
+  position: fixed !important;
 }
 .css-42igfv {
-  padding-top: 14vh!important;
+  padding-top: 14vh !important;
 }
 .home {
   width: 100%;
@@ -2222,11 +2222,11 @@ body {
   .home-thread a {
     margin-right: 2vh;
   }
-  .signin-logos-line{
-    justify-content: center!important;
+  .signin-logos-line {
+    justify-content: center !important;
   }
-  .signin-logo-head{
-    height: 14vh!important;
+  .signin-logo-head {
+    height: 14vh !important;
   }
   .header-wrap {
     display: flex;
@@ -2392,7 +2392,7 @@ body {
   }
 }
 
-.signin-logo-head{
+.signin-logo-head {
   height: 15vh;
 }
 
@@ -2411,19 +2411,20 @@ body {
 .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
   width: 40em !important;
 }
-.ant-select-single:not(.ant-select-customize-input) .ant-select-selector{
-  background-color: rgba(255, 255, 255, 0.08)!important;
-  border:none!important;
-  height:6vh!important
+.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border: none !important;
+  height: 6vh !important;
 }
-.ant-select-single.ant-select-show-arrow .ant-select-selection-search{
-  color:white!important;
+.ant-select-single.ant-select-show-arrow .ant-select-selection-search {
+  color: white !important;
 }
-.ant-select-single.ant-select-show-arrow .ant-select-selection-item, .ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder {
-  color:white!important;
+.ant-select-single.ant-select-show-arrow .ant-select-selection-item,
+.ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder {
+  color: white !important;
 }
-.ant-select{
-  width: 40em!important;
+.ant-select {
+  width: 40em !important;
 }
 
 .navmenu svg {
@@ -2555,13 +2556,15 @@ body {
   z-index: 500 !important;
   height: 10vh;
   width: 100%;
-  background: linear-gradient(
-      0deg,
-      rgba(240, 92, 45, 0.08),
-      rgba(240, 92, 45, 0.08)
-    ),
-    #121212;
+  background-position: center;
+  background-size: cover;
 }
+.headerstore-bg {
+  width: 100%;
+  background-color: #1b1b1b !important;
+  background-image: url("./vector-icons/newhexagon.svg");
+}
+
 .headerstore-content {
   display: flex;
   flex-direction: row;
@@ -2571,7 +2574,7 @@ body {
   padding: 0 3em 0 3em;
 }
 .headerstore-content img {
-  width: 6vw;
+  width: 5vw;
   height: 10vh;
 }
 @media screen and (max-width: 786px) {
@@ -3219,7 +3222,7 @@ a:not([href]):not([tabindex]) {
   border-radius: 8px;
   margin-bottom: 4vh;
 }
-.uploaded-image-forum-multi{
+.uploaded-image-forum-multi {
   width: 15em !important;
   border-radius: 8px;
   margin-bottom: 4vh;

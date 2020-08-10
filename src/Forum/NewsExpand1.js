@@ -43,6 +43,7 @@ class NewsExpanded extends Component {
     item: [],
     pic: [],
     latest: [],
+    vis:"none"
   };
   showModal = () => {
     this.setState({
@@ -72,6 +73,9 @@ class NewsExpanded extends Component {
       .then((res) => {
         const threads = res.data.data;
         const images = res.data.data.images;
+        if(images.length!=0){
+          this.setState({vis:"block"})
+        }
         const urls = res.data.data.header_image;
         const head = res.data.data.header_image_url;
         console.log(head, "itmightbe");
@@ -300,8 +304,8 @@ class NewsExpanded extends Component {
                 url={this.state.threads.video_url}
               />
 
-              {this.state.images == null ? null : (
-                <ImageScroller style={{ marginTop: "50px" }}>
+              <div>
+                <ImageScroller style={{ display: this.state.vis }}>
                   {this.state.images.map((person) => (
                     <img
                       className="thread-expand-gallery"
@@ -310,7 +314,7 @@ class NewsExpanded extends Component {
                     ></img>
                   ))}
                 </ImageScroller>
-              )}
+              </div>
             </div>
             {/* <TestComment
               thread={this.state.threads.comment}

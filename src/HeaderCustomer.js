@@ -6,13 +6,13 @@ export default class HeaderCustomer extends Component {
   render() {
     return (
       <div className="headerstore">
-        <div className="headerstore-content">
-          <Breadcrumb separator=">">
-            <Breadcrumb.Item></Breadcrumb.Item>
-          </Breadcrumb>
-          <Link to="/">
-            <img alt="logo" src={require("./assets/moto365logo.svg")}></img>
-          </Link>
+        <div className="headerstore-bg">
+          <div className="headerstore-content">
+            <img style={{marginLeft:"12vh",width:"7vw"}} alt="logo" src={require("./assets/automotologo.svg")}></img>
+            <Link to="/">
+              <img alt="logo" src={require("./assets/moto365logo.svg")}></img>
+            </Link>
+          </div>
         </div>
       </div>
     );
