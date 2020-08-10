@@ -36,8 +36,8 @@ class SignIn extends Component {
       <div className="signin">
         <div className="signin-logos">
           <img
+            className="signin-logo-head"
             alt=""
-            style={{ height: "15vh" }}
             src={require("../assets/automotologo.svg")}
           ></img>
           <div className="signin-logos-line">

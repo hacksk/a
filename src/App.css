@@ -1034,6 +1034,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   font-size: 12px;
 }
 .footer-primar-quick-content {
+  margin-top: 15px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -1084,9 +1085,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
     text-align: center;
   }
   .footer-primary {
-    padding: 0 2vh 0 2vh;
+    padding:4vh;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
   }
   .footer-primar-quick {
     width: 100%;
@@ -2216,6 +2217,16 @@ body {
   }
   .headerstore-content img {
     width: 20em;
+    margin-right: 2vh;
+  }
+  .home-thread a {
+    margin-right: 2vh;
+  }
+  .signin-logos-line{
+    justify-content: center!important;
+  }
+  .signin-logo-head{
+    height: 14vh!important;
   }
   .header-wrap {
     display: flex;
@@ -2379,6 +2390,10 @@ body {
     padding: 0;
     padding-bottom: 3em;
   }
+}
+
+.signin-logo-head{
+  height: 15vh;
 }
 
 /* STYLES FOR NEW NAVBAR AND HEADER */
@@ -3080,9 +3095,7 @@ a:not([href]):not([tabindex]) {
   font-family: Montserrat;
   font-weight: bold;
 }
-.create-forum-button:hover {
-  color: white;
-}
+
 .forum-home-thread img {
   width: 15em;
   border-radius: 8px;
@@ -3857,6 +3870,17 @@ a:not([href]):not([tabindex]) {
   font-weight: bold;
   font-size: 16px;
   line-height: 16px;
+}
+.create-forum-button:hover {
+  box-shadow: 0px 15px 25px -5px black;
+  -webkit-transform: scale(1.03);
+  transform: scale(1.03);
+  color: black !important;
+}
+.create-forum-button:active {
+  box-shadow: 0px 4px 8px black;
+  -webkit-transform: scale(0.98);
+  transform: scale(0.98);
 }
 
 /* ////////////////////////////////////CLUB HOME FORUM//////////////////////////////////////// */

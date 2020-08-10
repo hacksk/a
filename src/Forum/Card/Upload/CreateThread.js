@@ -5,7 +5,6 @@ import TagsForum from "../../TagsForum";
 import LoadingOverlay from "react-loading-overlay";
 import { SemipolarLoading } from "react-loadingg";
 
-
 const { Option } = Select;
 
 // function handleChange(value) {
@@ -37,7 +36,7 @@ export default class CreateThread extends Component {
       url_image: "",
       posting: false,
       file: [null],
-      loader:false,
+      loader: false,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -92,6 +91,7 @@ export default class CreateThread extends Component {
           }
         )
         .then((res) => {
+          this.setState({ loader: true });
           console.log(res);
           const headerimage = res.data.data.id;
           const array = this.fileObj[0];
@@ -119,7 +119,7 @@ export default class CreateThread extends Component {
               newformData.append("header_image", headerimage);
               newformData.append("images", res.data.data.id);
 
-              this.setState({loader:true})
+              this.setState({ loader: true });
 
               axios
                 .post(
@@ -127,7 +127,7 @@ export default class CreateThread extends Component {
                   newformData
                 )
                 .then((res) => {
-                  this.setState({loader:true})
+                  this.setState({ loader: true });
 
                   this.props.history.push(`/forum/thread/${res.data.data.id}`);
                 })
@@ -148,7 +148,7 @@ export default class CreateThread extends Component {
           urlformData
         )
         .then((res) => {
-          this.setState({loader:true})
+          this.setState({ loader: true });
 
           const urldata = res.data.data.id;
           const array = this.fileObj[0];
@@ -169,7 +169,7 @@ export default class CreateThread extends Component {
               }
             )
             .then((res) => {
-              this.setState({loader:true})
+              this.setState({ loader: true });
 
               const newformData = new FormData();
               newformData.append("title", this.state.title);
@@ -183,7 +183,7 @@ export default class CreateThread extends Component {
                   newformData
                 )
                 .then((res) => {
-                  this.setState({loader:true})
+                  this.setState({ loader: true });
 
                   console.log(res, "result");
                   this.props.history.push(`/forum/thread/${res.data.data.id}`);

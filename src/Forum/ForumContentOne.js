@@ -12,7 +12,7 @@ const content = (id) => (
       onClick={(e) => {
         e.stopPropagation();
         axios
-          .post(`${URL}/delete-thread/${id}/`)
+          .post(`${URL}/destroy/${id}/`)
           .then((res) => {
             console.log(res.data);
             message.success("Thread deleted successfully");
