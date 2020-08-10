@@ -3,6 +3,7 @@ import "./App.css";
 import "./Store.css";
 import "./Employee.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { connect } from "react-redux";
 import Location from "./Location.js";
 import Accesories from "./Accesories";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -104,4 +105,10 @@ function App() {
     </div>
   );
 }
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    isAuthenticated: state.auth.isAuthenticated,
+  };
+};
+
+export default connect(mapStateToProps)(App);

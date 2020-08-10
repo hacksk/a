@@ -1,11 +1,24 @@
 import React, { Component } from "react";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
-export default class HeaderCustomer extends Component {
+class HeaderCustomer extends Component {
+  state = {
+    dis: "block",
+  };
+  componentDidMount = () => {
+    const pathname = this.props.location.pathname;
+    console.log(pathname, "location");
+  };
   render() {
     return (
-      <div className="headerstore">
+      <div
+        className="headerstore"
+        style={
+          this.props.location.pathname == "/signin" ? { display: "none" } : {}
+        }
+      >
         <div className="headerstore-bg">
           <div className="headerstore-content">
             <Link to="/">
@@ -14,7 +27,7 @@ export default class HeaderCustomer extends Component {
                 alt="logo"
                 src={require("./assets/automotologo.svg")}
               ></img>
-            </Link> 
+            </Link>
             <Link to="/">
               <img alt="logo" src={require("./assets/moto365logo.svg")}></img>
             </Link>
@@ -24,3 +37,4 @@ export default class HeaderCustomer extends Component {
     );
   }
 }
+export default withRouter(HeaderCustomer);

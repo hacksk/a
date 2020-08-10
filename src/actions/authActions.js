@@ -1,7 +1,11 @@
+import React from 'react'
 import axios from "axios";
 import { SET_ERRORS } from "./commonActionType";
 import { API_URL } from "./urlConfig";
 import setAuthToken from "./utils/setAuthToken";
+import { message } from "antd";
+import  { Redirect } from 'react-router-dom'
+
 
 export const SEND_OTP_SET_NUMBER = "SEND_OTP_SET_NUMBER";
 export const SET_USERDATA = "SET_USERDATA";
@@ -44,13 +48,14 @@ export const verifyOtp = (otp) => (dispatch, getState) => {
       // Set user
       dispatch(setCurrentUser(res.data.user));
     })
-    .catch((err) =>
-      dispatch({
-        type: SET_ERRORS,
-        payload: err.response.data,
-      }),
-      );
-
+    .catch(
+      (err) =>
+      
+        dispatch({
+          type: SET_ERRORS,
+          payload: err.response.data,
+        }),
+    );
 };
 
 // Set logged in user
@@ -65,7 +70,6 @@ export const setCurrentUser = (userData) => {
 export const signOut = () => (dispatch) => {
   // Clear localStorage
   localStorage.clear();
-
 
   // Remove token from axios
   setAuthToken();
