@@ -1726,8 +1726,8 @@ body {
   padding-top: 4vh;
   padding-left: 2.5vh;
   padding-right: 2.5vh;
-  width: 27vh;
-  height: 27vh;
+  width: 25vh;
+  height: 25vh;
   cursor: pointer;
 }
 
@@ -3664,8 +3664,8 @@ a:not([href]):not([tabindex]) {
   }
   .home-content-part1 img,
   .home-content-part2 img {
-    width: 23vh !important;
-    height: 23vh !important;
+    width: 22vh !important;
+    height: 22vh !important;
   }
   .css-f12czy {
     height: 20em !important;
