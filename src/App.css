@@ -1685,10 +1685,11 @@ body {
   background-position: fixed;
   position: relative;
   padding: 10vh;
+  padding-top: 36vh;
   height: 150vh;
 }
 .home-content h5 {
-  padding-top: 21.07vh;
+  padding-top: 32.07vh;
 }
 .home-content-part1,
 .home-content-part2 {
@@ -1700,7 +1701,7 @@ body {
   background-position: center;
 }
 .home-content-part2 {
-  padding-top: 8vh;
+  padding-top: 15vh;
 }
 
 .home-accessories {
