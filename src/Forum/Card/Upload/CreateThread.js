@@ -69,6 +69,8 @@ export default class CreateThread extends Component {
   }
 
   handleSubmit = (event) => {
+    this.setState({ loader: true });
+
     event.preventDefault();
 
     const threadId = this.props.match.params.create;
