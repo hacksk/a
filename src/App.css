@@ -1492,6 +1492,9 @@ body {
   .ant-tabs-top {
     padding: 0 !important;
   }
+  .footer-primary{
+    height: 24vh!important;
+  }
   .explore-link {
     right: 1.1em !important;
   }
@@ -2215,6 +2218,10 @@ body {
     padding-right: 1em;
     display: none;
   }
+  .headerstore-firstlogo{
+    margin-left:4vh!important;
+    width:7vw!important;
+  }
   .headerstore-content img {
     width: 20em;
     margin-right: 2vh;
@@ -2394,6 +2401,10 @@ body {
 
 .signin-logo-head {
   height: 15vh;
+}
+.headerstore-firstlogo{
+  margin-left:12vh;
+  width:7vw!important;
 }
 
 /* STYLES FOR NEW NAVBAR AND HEADER */
