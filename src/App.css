@@ -162,6 +162,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
     padding-left: unset !important;
     padding-right: unset !important;
     padding-top: 15vh;
+    padding-bottom: 0!important;
   }
   .head-icons {
     justify-content: center !important;
@@ -1572,7 +1573,6 @@ body {
   position: relative;
   background-color: #121212;
   padding-left: 16vh;
-  padding-right: 54vh;
   padding-bottom: 10vh;
   overflow: hidden;
 }
@@ -2145,6 +2145,13 @@ body {
   position: absolute;
   text-align: left !important;
 }
+.testcar{
+  width: 55vw!important;
+}
+.testcar h3{
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 .carousel-head {
   position: absolute;
@@ -2206,6 +2213,9 @@ body {
 @media screen and (max-width: 786px) {
   .trending-thread-content {
     width: 30vh !important;
+  }
+  .testcar{
+    width: 80vw!important;
   }
   .head-icons {
     margin-bottom: 1vh;
@@ -2919,6 +2929,7 @@ button.StripeCheckout {
   }
   .forum-threads {
     padding: 0 !important;
+    padding-bottom: 0!important;
   }
   .ant-space-align-center {
     margin-top: 10vh;
@@ -3424,7 +3435,7 @@ a:not([href]):not([tabindex]) {
 }
 .thread-share {
   position: fixed;
-  margin-top: 15vh;
+  margin-top: 10vh;
   width: 15.74vh;
   height: 40vh;
   display: flex;
@@ -3449,7 +3460,9 @@ a:not([href]):not([tabindex]) {
 }
 .thread-expanded-trending {
   overflow: scroll;
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 8vh;
   width: 46vh;
   height: 90vh;
   right: 0;
@@ -3627,6 +3640,12 @@ a:not([href]):not([tabindex]) {
 .ant-form-item .ant-form-item-label > label {
   color: white !important;
 }
+.thread-create-textfield textarea{
+  border-radius: 8px;
+}
+.thread-create{
+  background: #121212;
+}
 @media screen and (max-width: 786px) {
   .thread-expand-gallery {
     height: 230px !important;
@@ -3740,7 +3759,6 @@ a:not([href]):not([tabindex]) {
   flex-direction: column;
   color: white;
   padding: 2em;
-  margin-top: 11vh;
   font-family: Montserrat;
   justify-content: space-between;
 }
@@ -4042,6 +4060,8 @@ a:not([href]):not([tabindex]) {
 }
 .home-forum-threads {
   margin-top: 7vh;
+  background-color: #121212;
+
 }
 .home-forum-threads button {
   border: 1px solid #fc5c2d;

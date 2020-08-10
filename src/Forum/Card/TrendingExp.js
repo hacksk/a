@@ -40,7 +40,7 @@ class NewsExpanded extends Component {
     head: [],
     visible: false,
     visiblepop: false,
-    latest:[]
+    latest: [],
   };
   showModal = () => {
     this.setState({
@@ -87,7 +87,7 @@ class NewsExpanded extends Component {
     axios
       .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
       .then((res) => {
-        const trending = res.data.data.slice(1,8);
+        const trending = res.data.data.slice(1, 8);
         this.setState({ trending });
         console.log(trending, "trending");
       });
@@ -250,12 +250,18 @@ class NewsExpanded extends Component {
                 ) : null}
               </div>
               <div style={{ display: "flex", flexDirection: "row" }}>
-                  {this.state.tags.map((tag) => (
-                    <p style={{ color: "#F05C2D", paddingLeft: "5px",cursor:"pointer" }}>
-                      #{tag.name}
-                    </p>
-                  ))}
-                </div>
+                {this.state.tags.map((tag) => (
+                  <p
+                    style={{
+                      color: "#F05C2D",
+                      paddingLeft: "5px",
+                      cursor: "pointer",
+                    }}
+                  >
+                    #{tag.name}
+                  </p>
+                ))}
+              </div>
               <div className="thread-profile-header">
                 <div
                   style={{
@@ -312,13 +318,15 @@ class NewsExpanded extends Component {
               comment={this.state.threads.comment}
             />
           </div>
-          <div className="thread-expanded-trending">
-            <h4>Trending</h4>=
-            {this.state.trending.map((trend) => (
-              <Link to={`/forum/thread/${trend.id}`}>
-                <Trending thread={trend} />
-              </Link>
-            ))}
+          <div style={{ marginTop: "-5vh" }}>
+            <div className="thread-expanded-trending">
+              <h4>Trending</h4>=
+              {this.state.trending.map((trend) => (
+                <Link to={`/forum/thread/${trend.id}`}>
+                  <Trending thread={trend} />
+                </Link>
+              ))}
+            </div>
           </div>
           <div className="thread-modal">
             <Modal

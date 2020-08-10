@@ -15,6 +15,7 @@ import Moment from "react-moment";
 import SearchBar from "./Components/SearchBar";
 import Footer from "./Footer";
 import Trending from "./Forum/Card/TrendingCard";
+import { when } from "jquery";
 
 const { TabPane } = Tabs;
 
@@ -30,9 +31,10 @@ export default class Home extends Component {
       products: [],
       images: [],
       trending: [],
-      latest:[]
+      latest: [],
     };
   }
+
   componentDidMount() {
     axios
       .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
@@ -53,11 +55,12 @@ export default class Home extends Component {
     axios
       .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
       .then((res) => {
-        const trending = res.data.data.slice(1,5);
-        const latest= res.data.data.slice(0,4)
-        this.setState({ trending,latest });
+        const trending = res.data.data.slice(1, 5);
+        const latest = res.data.data.slice(0, 4);
+        this.setState({ trending, latest });
       });
   }
+
   render() {
     return (
       <div>

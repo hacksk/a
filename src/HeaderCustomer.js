@@ -8,7 +8,13 @@ export default class HeaderCustomer extends Component {
       <div className="headerstore">
         <div className="headerstore-bg">
           <div className="headerstore-content">
-            <img className="headerstore-firstlogo" alt="logo" src={require("./assets/automotologo.svg")}></img>
+            <Link to="/">
+              <img
+                className="headerstore-firstlogo"
+                alt="logo"
+                src={require("./assets/automotologo.svg")}
+              ></img>
+            </Link> 
             <Link to="/">
               <img alt="logo" src={require("./assets/moto365logo.svg")}></img>
             </Link>

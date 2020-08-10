@@ -104,7 +104,6 @@ export default class CreateThread extends Component {
             .post(
               `https://automoto.techbyheart.in/api/v1/forum/image/`,
               multiformData,
-
               {
                 headers: {
                   "Content-Type": "multipart/form-data",
@@ -228,67 +227,26 @@ export default class CreateThread extends Component {
           spinner={<SemipolarLoading color="#F05C2D" />}
           text="Creating your thread..."
         >
-          <p>Some content or children or something.</p>
-        </LoadingOverlay>
-        <form onSubmit={this.handleSubmit}>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              color: "rgba(255, 255, 255, 0.87)",
-            }}
-          >
-            <p>Give a short thread title</p>
-            {/* <p>{this.state.name}</p> */}
+          <form onSubmit={this.handleSubmit}>
             <div
-              className="thread-create-field"
               style={{
-                borderBottom: "1px solid rgba(255, 255, 255, 0.08",
-                paddingBottom: "3em",
-                paddingTop: "3em",
+                display: "flex",
+                flexDirection: "column",
+                color: "rgba(255, 255, 255, 0.87)",
               }}
             >
-              <input
-                className="thread-create-title"
-                style={{
-                  backgroundColor: "rgba(255, 255, 255, 0.08)",
-                  color: "white",
-                  border: "none",
-                  padding: "1em",
-                  borderRadius: "8px",
-                  width: "40em",
-                }}
-                placeholder="Add title"
-                onChange={this.handleChange}
-                name="title"
-                type="text"
-              ></input>
+              <p>Give a short thread title</p>
+              {/* <p>{this.state.name}</p> */}
               <div
-                className="thread-create-imagefield"
+                className="thread-create-field"
                 style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "Space-between",
-                  width: "40%",
-                  marginTop: "3em",
+                  borderBottom: "1px solid rgba(255, 255, 255, 0.08",
+                  paddingBottom: "3em",
+                  paddingTop: "3em",
                 }}
               >
-                {" "}
-                <p>Upload header image</p>
-                <img
-                  alt=""
-                  className="uploaded-image-forum"
-                  src={this.state.file}
-                />
-                <img
-                  alt=""
-                  className="uploaded-image-forum"
-                  src={this.state.url_image}
-                />
-                <label style={{ fontSize: "11px" }}>Image URL</label>
                 <input
                   className="thread-create-title"
-                  type="text"
                   style={{
                     backgroundColor: "rgba(255, 255, 255, 0.08)",
                     color: "white",
@@ -297,111 +255,153 @@ export default class CreateThread extends Component {
                     borderRadius: "8px",
                     width: "40em",
                   }}
+                  placeholder="Add title"
                   onChange={this.handleChange}
-                  name="url"
+                  name="title"
+                  type="text"
                 ></input>
-                <h6
+                <div
+                  className="thread-create-imagefield"
                   style={{
-                    color: "white",
-                    textAlign: "center",
-                    margin: "24px 0 24px 0",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "Space-between",
+                    width: "40%",
+                    marginTop: "3em",
                   }}
                 >
-                  OR
-                </h6>
-                <label style={{ fontSize: "11px" }}>Image from local</label>
-                <input
-                  className="thread-create-upload"
-                  type="file"
-                  name="header_image"
-                  onChange={this.onChange}
-                />
-                {/* {this.state.file && (
+                  {" "}
+                  <p>Upload header image</p>
+                  <img
+                    alt=""
+                    className="uploaded-image-forum"
+                    src={this.state.file}
+                  />
+                  <img
+                    alt=""
+                    className="uploaded-image-forum"
+                    src={this.state.url_image}
+                  />
+                  <label style={{ fontSize: "11px" }}>Image URL</label>
+                  <input
+                    className="thread-create-title"
+                    type="text"
+                    style={{
+                      backgroundColor: "rgba(255, 255, 255, 0.08)",
+                      color: "white",
+                      border: "none",
+                      padding: "1em",
+                      borderRadius: "8px",
+                      width: "40em",
+                    }}
+                    onChange={this.handleChange}
+                    name="url"
+                  ></input>
+                  <h6
+                    style={{
+                      color: "white",
+                      textAlign: "center",
+                      margin: "24px 0 24px 0",
+                    }}
+                  >
+                    OR
+                  </h6>
+                  <label style={{ fontSize: "11px" }}>Image from local</label>
+                  <input
+                    className="thread-create-upload"
+                    type="file"
+                    name="header_image"
+                    onChange={this.onChange}
+                  />
+                  {/* {this.state.file && (
                   <div style={{ textAlign: "center" }}>
                     <button onClick={this.resetFile}>Remove File</button>
                   </div>
                 )} */}
+                </div>
               </div>
-            </div>
-            <div>
-              <p>Share Video URL</p>
-              <input
-                name="video_url"
-                type="link"
-                style={{
-                  backgroundColor: "rgba(255, 255, 255, 0.08)",
-                  color: "white",
-                  border: "none",
-                  padding: "1em",
-                  borderRadius: "8px",
-                  width: "24em",
-                }}
-                placeholder="Video Link"
-                onChange={this.handleChange}
-              ></input>
-            </div>
-            <div
-              style={{
-                borderBottom: "1px solid rgba(255, 255, 255, 0.08",
-                paddingBottom: "3em",
-                paddingTop: "3em",
-              }}
-            >
-              <p>Write something</p>
-
-              <div className="thread-create-textfield" style={{ width: "45%" }}>
-                <textarea
-                  type="text"
-                  className="thread-create-content"
+              <div>
+                <p>Share Video URL</p>
+                <input
+                  name="video_url"
+                  type="link"
                   style={{
+                    backgroundColor: "rgba(255, 255, 255, 0.08)",
                     color: "white",
-                    background: "rgba(255, 255, 255, 0.08)",
-                    height: "30vh",
-                    width: "100%",
                     border: "none",
-                    padding: "2em",
+                    padding: "1em",
+                    borderRadius: "8px",
+                    width: "24em",
                   }}
-                  name="content"
-                  rows="4"
-                  cols="50"
+                  placeholder="Video Link"
                   onChange={this.handleChange}
-                ></textarea>
+                ></input>
+              </div>
+              <div
+                style={{
+                  borderBottom: "1px solid rgba(255, 255, 255, 0.08",
+                  paddingBottom: "3em",
+                  paddingTop: "3em",
+                }}
+              >
+                <p>Write something</p>
+
                 <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    marginTop: "50px",
-                  }}
+                  className="thread-create-textfield"
+                  style={{ width: "45%" }}
                 >
-                  Add another image
+                  <textarea
+                    type="text"
+                    className="thread-create-content"
+                    style={{
+                      color: "white",
+                      background: "rgba(255, 255, 255, 0.08)",
+                      height: "30vh",
+                      width: "100%",
+                      border: "none",
+                      padding: "2em",
+                    }}
+                    name="content"
+                    rows="4"
+                    cols="50"
+                    onChange={this.handleChange}
+                  ></textarea>
                   <div
                     style={{
                       display: "flex",
-                      flexDirection: "row",
-                      justifyContent: "space-evenly",
-                      flexWrap: "wrap",
-                      marginTop: "12px",
+                      flexDirection: "column",
+                      marginTop: "50px",
                     }}
                   >
-                    {(this.fileArray || []).map((url) => (
-                      <img
-                        className="uploaded-image-forum-multi"
-                        src={url}
-                        alt="..."
-                      />
-                    ))}
+                    Add another image
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "space-evenly",
+                        flexWrap: "wrap",
+                        marginTop: "12px",
+                      }}
+                    >
+                      {(this.fileArray || []).map((url) => (
+                        <img
+                          className="uploaded-image-forum-multi"
+                          src={url}
+                          alt="..."
+                        />
+                      ))}
+                    </div>
+                    <input
+                      id="file-input"
+                      type="file"
+                      onChange={this.uploadMultipleFiles}
+                      multiple
+                    ></input>
                   </div>
-                  <input
-                    id="file-input"
-                    type="file"
-                    onChange={this.uploadMultipleFiles}
-                    multiple
-                  ></input>
-                </div>
-                {/* <label style={{ fontSize: "11px", marginTop: "5vh" }}>
+                  {/* <label style={{ fontSize: "11px", marginTop: "5vh" }}>
                   Thread Images
                 </label> */}
-                {/* <MultiImage />
+                  {/* <MultiImage />
                 <label style={{ fontSize: "11px" }}>Image from local</label>
                 <input
                   className="thread-create-upload"
@@ -430,8 +430,8 @@ export default class CreateThread extends Component {
                   >
                     Search Tags
                   </p> */}
-                {/* </div> */}
-                {/* <Select
+                  {/* </div> */}
+                  {/* <Select
                   mode="tags"
                   style={{ width: "100%" }}
                   placeholder="Tags Mode"
@@ -439,14 +439,15 @@ export default class CreateThread extends Component {
                 >
                   {this.state.children}
                 </Select> */}
-                {/* <TagsForum /> */}
+                  {/* <TagsForum /> */}
+                </div>
               </div>
+              <button type="submit" className="create-forum-button">
+                CREATE THREAD
+              </button>
             </div>
-            <button type="submit" className="create-forum-button">
-              CREATE THREAD
-            </button>
-          </div>
-        </form>
+          </form>
+        </LoadingOverlay>
       </div>
     );
   }

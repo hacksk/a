@@ -43,7 +43,7 @@ class NewsExpanded extends Component {
     item: [],
     pic: [],
     latest: [],
-    vis:"none"
+    vis: "none",
   };
   showModal = () => {
     this.setState({
@@ -73,8 +73,8 @@ class NewsExpanded extends Component {
       .then((res) => {
         const threads = res.data.data;
         const images = res.data.data.images;
-        if(images.length!=0){
-          this.setState({vis:"block"})
+        if (images.length != 0) {
+          this.setState({ vis: "block" });
         }
         const urls = res.data.data.header_image;
         const head = res.data.data.header_image_url;
@@ -325,13 +325,15 @@ class NewsExpanded extends Component {
               comment={this.state.threads.comment}
             />
           </div>
-          <div className="thread-expanded-trending">
-            <h4>Trending</h4>
-            {this.state.trending.map((trend) => (
-              <Link to={`/forum/thread/trendin/${trend.id}`}>
-                <Trending thread={trend} />
-              </Link>
-            ))}
+          <div style={{marginTop:"-5vh"}}>
+            <div className="thread-expanded-trending">
+              <h4>Trending</h4>
+              {this.state.trending.map((trend) => (
+                <Link to={`/forum/thread/trendin/${trend.id}`}>
+                  <Trending thread={trend} />
+                </Link>
+              ))}
+            </div>
           </div>
           <div className="thread-modal">
             <Modal
