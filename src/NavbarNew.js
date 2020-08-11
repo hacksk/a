@@ -93,15 +93,23 @@ class NavbarNew extends Component {
                   width: "130px",
                 }}
               >
-                <NavLink to="/forum/create">
+                <NavLink
+                  to={this.props.isAuthenticated ? "/forum/create" : "/signin"}
+                >
                   <div className="forum-navbar-btn">
-                    <img alt="create" src={require("./vector-icons/create.svg")}></img>
+                    <img
+                      alt="create"
+                      src={require("./vector-icons/create.svg")}
+                    ></img>
                     <p>create thread</p>
                   </div>
                 </NavLink>
                 <NavLink to="/forum">
                   <div className="forum-navbar-btntwo">
-                    <img alt="view" src={require("./vector-icons/browse.svg")}></img>
+                    <img
+                      alt="view"
+                      src={require("./vector-icons/browse.svg")}
+                    ></img>
                     <p>Browse Forum</p>
                   </div>
                 </NavLink>
