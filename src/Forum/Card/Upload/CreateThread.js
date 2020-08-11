@@ -182,44 +182,46 @@ export default class CreateThread extends Component {
             const multiformData = new FormData();
             for (var i = 0; i < array.length; i++) {
               multiformData.append("image", array[i]);
+
+              axios
+                .post(
+                  `https://automoto.techbyheart.in/api/v1/forum/image/`,
+                  multiformData,
+
+                  {
+                    headers: {
+                      "Content-Type": "multipart/form-data",
+                    },
+                  }
+                )
+                .then((res) => {
+                  console.log(res)
+                  this.setState({ loader: true });
+
+                  const newformData = new FormData();
+                  newformData.append("title", this.state.title);
+                  newformData.append("content", this.state.content);
+                  newformData.append("video_url", this.state.video_url);
+                  newformData.append("header_image_url", urldata);
+                  newformData.append("images", res.data.data.id);
+                  axios
+                    .post(
+                      `https://automoto.techbyheart.in/api/v1/forum/thread/create/0a0bd306-dfdf-4d7d-b4a8-c1fa16282e5c/`,
+                      newformData
+                    )
+                    .then((res) => {
+                      this.setState({ loader: true });
+
+                      console.log(res, "result");
+                      this.props.history.push(
+                        `/forum/thread/${res.data.data.id}`
+                      );
+                    })
+                    .catch((error) => {
+                      message.warning("Oops, Please try again later");
+                    });
+                });
             }
-            axios
-              .post(
-                `https://automoto.techbyheart.in/api/v1/forum/image/`,
-                multiformData,
-
-                {
-                  headers: {
-                    "Content-Type": "multipart/form-data",
-                  },
-                }
-              )
-              .then((res) => {
-                this.setState({ loader: true });
-
-                const newformData = new FormData();
-                newformData.append("title", this.state.title);
-                newformData.append("content", this.state.content);
-                newformData.append("video_url", this.state.video_url);
-                newformData.append("header_image_url", urldata);
-                newformData.append("images", res.data.data.id);
-                axios
-                  .post(
-                    `https://automoto.techbyheart.in/api/v1/forum/thread/create/0a0bd306-dfdf-4d7d-b4a8-c1fa16282e5c/`,
-                    newformData
-                  )
-                  .then((res) => {
-                    this.setState({ loader: true });
-
-                    console.log(res, "result");
-                    this.props.history.push(
-                      `/forum/thread/${res.data.data.id}`
-                    );
-                  })
-                  .catch((error) => {
-                    message.warning("Oops, Please try again later");
-                  });
-              });
           } else {
             const newformData = new FormData();
             newformData.append("title", this.state.title);
@@ -363,6 +365,7 @@ export default class CreateThread extends Component {
                     name="header_image"
                     onChange={this.onChange}
                   />
+                  <p style={{fontSize:"10px"}}>Jpg and Jpeg</p>
                   {/* {this.state.file && (
                   <div style={{ textAlign: "center" }}>
                     <button onClick={this.resetFile}>Remove File</button>
