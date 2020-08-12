@@ -1072,6 +1072,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
   font-size: 1.6vh;
   line-height: 16px;
   color: rgba(255, 255, 255, 0.6);
+  margin-top: 0;
+  margin-bottom: 0;
 }
 @media screen and (max-width: 786px) and (orientation: portrait) {
   .footer-secondary {
@@ -2267,8 +2269,12 @@ body {
     left: 100px;
   }
   .carousel .slide .testcar {
-    bottom: -4px !important;
+    bottom: 16px !important;
   }
+  .carousel .control-dots {
+    margin: 0 32px !important;
+  }
+
   .testcar h3 {
     font-size: 17px;
     font-weight: bold;
@@ -3587,6 +3593,13 @@ a:not([href]):not([tabindex]) {
   position: relative !important;
   display: inline-block !important;
 }
+.carousel .control-dots .dot.selected,
+.carousel .control-dots .dot:hover {
+  background: #fc5c2d;
+}
+.carousel .control-dots .dot {
+  opacity: 1 !important;
+}
 .home-banner-image-cover:after {
   content: "";
   position: absolute;
@@ -4187,4 +4200,12 @@ th {
 .thread-header-container button {
   background: transparent;
   color: white;
+}
+@media screen and (max-width: 786px) {
+  .carousel .control-dots .dot {
+    opacity: 0.3 !important;
+  }
+  .carousel .control-dots .dot.selected, .carousel .control-dots .dot:hover{
+    opacity: 1!important;
+  }
 }

@@ -21,7 +21,7 @@ const { TabPane } = Tabs;
 
 function callback(key) {}
 
-export default class Home extends Component {
+export default class HomeNav extends Component {
   constructor() {
     super();
     this.state = {
@@ -295,7 +295,7 @@ export default class Home extends Component {
                     ))}
                   </TabPane>
                   <TabPane tab="TRENDING" key="2">
-                    {this.state.persons.map((person) => (
+                    {this.state.subthread.map((person) => (
                       <Link to={`/forum/thread/${person.id}`}>
                         <ForumTrending
                           threadprof={`https://automoto.techbyheart.in/${person.userimage}`}
