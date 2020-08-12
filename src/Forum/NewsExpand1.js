@@ -10,6 +10,8 @@ import Moment from "react-moment";
 import { connect } from "react-redux";
 import { SemipolarLoading } from "react-loadingg";
 import ImageScroller from "react-image-scroller";
+import HelmetMetaData from "./Card/HelmetMetaData";
+
 
 import {
   EmailShareButton,
@@ -102,13 +104,16 @@ class NewsExpanded extends Component {
       });
   }
   render() {
+    const {classes} = this.props;
     if (this.state.threads != null) {
       return (
         <div className="threadexpand">
           <div className="thread-share">
+          <HelmetMetaData></HelmetMetaData> 
             <FacebookShareButton
-              url={window.location.href}
+              url="https://beta.techbyheart.in/forum/thread/aa75d6f4-ff98-422f-929a-e7a9f7be4b61"
               quote={this.state.threads.title}
+              hashtag={this.state.threads.title}
             >
               <FacebookIcon
                 size="50px"
@@ -119,6 +124,7 @@ class NewsExpanded extends Component {
             <WhatsappShareButton
               url={window.location.href}
               title={this.state.threads.title}
+              separator="::"
             >
               <WhatsappIcon
                 size="40px"

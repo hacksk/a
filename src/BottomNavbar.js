@@ -8,7 +8,7 @@ class BottomNavbar extends Component {
     return (
       <div className="bottommenu">
         <ul style={{display:"flex",flexDirection:"row",justifyContent:"space-evenly",width:"100%"}}>
-          <NavLink activeClassName="active" to="/">
+          <NavLink activeClassName="active" to="/home">
             <li>
               <button style={{ border: "none", background: "transparent" }}>
                 <img alt=""

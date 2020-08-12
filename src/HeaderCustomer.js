@@ -21,15 +21,15 @@ class HeaderCustomer extends Component {
       >
         <div className="headerstore-bg">
           <div className="headerstore-content">
-            <Link to="/">
+            <Link to="/home">
               <img
                 className="headerstore-firstlogo"
                 alt="logo"
                 src={require("./assets/automotologo.svg")}
               ></img>
             </Link>
-            <Link to="/">
-              <img alt="logo" src={require("./assets/moto365logo.svg")}></img>
+            <Link to="/home">
+              <img className="headerstore-secondlogo" alt="logo" src={require("./assets/moto365logo.svg")}></img>
             </Link>
           </div>
         </div>

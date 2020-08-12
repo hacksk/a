@@ -37,6 +37,7 @@ import Test from "./Test";
 import MobileSearch from "./Components/MobSearch";
 import TrendingExp from "./Forum/Card/TrendingExp";
 import CreateThread from "./Forum/Card/Upload/CreateThread";
+import RichText from "./Forum/Card/Upload/CreateThreadRichText";
 
 function App() {
   return (
@@ -67,7 +68,7 @@ function App() {
           <Route exact path="/account" component={Account} />
           <Route exact path="/services" component={SteamComponent} />
           <Route path="/steamcart" component={SteamCart} />
-          <Route exact path="/" component={Home} />
+          <Route exact path="/home" component={Home} />
           <Route exact path="/inventory" component={Inventory} />
           <Route exact path="/bill/payment" component={Payment} />
           <Route exact path="/forum" component={ForumHome} />
@@ -90,7 +91,7 @@ function App() {
             path="/forum/forumlist/subforum/:create"
             component={Forumcreate}
           />
-          <Route exact path="/forum/create" component={CreateThread}/>
+          <Route exact path="/forum/create" component={CreateThread} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/forum/forumlist" component={ForumList} />
           <Route exact path="/forum/forumthreadlist" component={ThreadList} />
@@ -99,6 +100,7 @@ function App() {
           <Route exact path="/forum/subforum/:list" component={SubforumList} />
           <Route exact path="/test" component={Test} />
           <Route exact path="/search" component={MobileSearch} />
+          <Route exact path="/forum/create/new" component={RichText} />
         </Switch>
         <BottomNavbar />
       </BrowserRouter>

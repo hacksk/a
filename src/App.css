@@ -162,7 +162,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
     padding-left: unset !important;
     padding-right: unset !important;
     padding-top: 15vh;
-    padding-bottom: 0!important;
+    padding-bottom: 0 !important;
   }
   .head-icons {
     justify-content: center !important;
@@ -1005,7 +1005,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
   display: flex;
   flex-direction: column;
   width: 100%;
-  z-index: 1001;
 }
 .footer-primary {
   width: 100%;
@@ -1014,13 +1013,11 @@ Note: Beware of modifying this element as it can break the animations - you shou
   justify-content: space-between;
   height: 20vh !important;
   padding: 0 20vh 0 20vh;
-  z-index: 1000;
 }
 .footer-bg {
   width: 100%;
   background-color: #252525 !important;
   background-image: url("./vector-icons/newhexagon.svg");
-  z-index: 1000;
 }
 .footer-primar-quick {
   width: 30%;
@@ -1067,7 +1064,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
       rgba(255, 255, 255, 0.04)
     ),
     #121212;
-  z-index: 1000;
 }
 .footer-secondary p {
   text-align: center;
@@ -1493,8 +1489,8 @@ body {
   .ant-tabs-top {
     padding: 0 !important;
   }
-  .footer-primary{
-    height: 24vh!important;
+  .footer-primary {
+    height: 24vh !important;
   }
   .explore-link {
     right: 1.1em !important;
@@ -2146,10 +2142,10 @@ body {
   position: absolute;
   text-align: left !important;
 }
-.testcar{
-  width: 55vw!important;
+.testcar {
+  width: 55vw !important;
 }
-.testcar h3{
+.testcar h3 {
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -2215,8 +2211,8 @@ body {
   .trending-thread-content {
     width: 30vh !important;
   }
-  .testcar{
-    width: 80vw!important;
+  .testcar {
+    width: 80vw !important;
   }
   .head-icons {
     margin-bottom: 1vh;
@@ -2229,11 +2225,11 @@ body {
     padding-right: 1em;
     display: none;
   }
-  .headerstore-firstlogo{
-    margin-left:4vh!important;
-    width:7vw!important;
+  .headerstore-firstlogo {
+    margin-left: 4vh !important;
+    width: 7vw !important;
   }
-  .headerstore-content img {
+  .headerstore-secondlogo {
     width: 20em;
     margin-right: 2vh;
   }
@@ -2413,9 +2409,9 @@ body {
 .signin-logo-head {
   height: 15vh;
 }
-.headerstore-firstlogo{
-  margin-left:12vh;
-  width:7vw!important;
+.headerstore-firstlogo {
+  margin-left: 12vh;
+  width: 8.4vw !important;
 }
 
 /* STYLES FOR NEW NAVBAR AND HEADER */
@@ -2428,7 +2424,6 @@ body {
     rgba(255, 255, 255, 0.08)
   );
   text-align: center;
-  z-index: 1100 !important;
 }
 .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
   width: 40em !important;
@@ -2930,7 +2925,7 @@ button.StripeCheckout {
   }
   .forum-threads {
     padding: 0 !important;
-    padding-bottom: 0!important;
+    padding-bottom: 0 !important;
   }
   .ant-space-align-center {
     margin-top: 10vh;
@@ -3588,6 +3583,58 @@ a:not([href]):not([tabindex]) {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.home-banner-image-cover {
+  position: relative !important;
+  display: inline-block !important;
+}
+.home-banner-image-cover:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background: -moz-linear-gradient(
+    top,
+    rgba(0, 47, 75, 0.5) 0%,
+    rgba(220, 66, 37, 0.5) 100%
+  ); /* FF3.6+ */
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(240, 92, 45, 0.25) 100%
+    ),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)); /* Chrome,Safari4+ */
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(240, 92, 45, 0.25) 100%
+    ),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)); /* Chrome10+,Safari5.1+ */
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(240, 92, 45, 0.25) 100%
+    ),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)); /* Opera 11.10+ */
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(240, 92, 45, 0.25) 100%
+    ),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)); /* IE10+ */
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(240, 92, 45, 0.25) 100%
+    ),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)); /* W3C */
+}
+.home-banner-image-cover img {
+  height: 100%;
+  border-radius: 8px !important;
+}
 
 /* .ant-comment-content-author{
   display: flex!important;
@@ -3641,10 +3688,10 @@ a:not([href]):not([tabindex]) {
 .ant-form-item .ant-form-item-label > label {
   color: white !important;
 }
-.thread-create-textfield textarea{
+.thread-create-textfield textarea {
   border-radius: 8px;
 }
-.thread-create{
+.thread-create {
   background: #121212;
 }
 @media screen and (max-width: 786px) {
@@ -4062,7 +4109,6 @@ a:not([href]):not([tabindex]) {
 .home-forum-threads {
   margin-top: 7vh;
   background-color: #121212;
-
 }
 .home-forum-threads button {
   border: 1px solid #fc5c2d;
@@ -4073,4 +4119,72 @@ a:not([href]):not([tabindex]) {
 .forum-threads {
   padding: 0 !important;
   padding-bottom: 15vh;
+}
+.rich-text-manage p,
+li,
+ul,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+td,
+tr,
+th {
+  color: white !important;
+}
+.ck.ck-editor__editable_inline > :last-child {
+  color: black;
+}
+.ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
+  background: black;
+  border-color: white !important;
+}
+.ck-rounded-corners .ck.ck-editor__main > .ck-editor__editable,
+.ck.ck-editor__main > .ck-editor__editable.ck-rounded-corners {
+  background: black;
+}
+.ck-rounded-corners .ck.ck-editor__top .ck-sticky-panel .ck-toolbar,
+.ck.ck-editor__top .ck-sticky-panel .ck-toolbar.ck-rounded-corners {
+  background: black;
+}
+.ck.ck-toolbar {
+  border: 1px solid white !important;
+}
+.ck.ck-toolbar > .ck-toolbar__items > *,
+.ck.ck-toolbar > .ck.ck-toolbar__grouped-dropdown {
+  color: white;
+}
+[dir="ltr"]
+  .ck.ck-dropdown
+  .ck-button.ck-dropdown__button:not(.ck-button_with-text) {
+  color: white;
+}
+.thread-title {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px 4px 0px 0px;
+  border: none;
+  border-bottom: 1px solid #fc5c2e;
+  width: 686px;
+  height: 48px;
+  padding: 2em;
+  box-sizing: border-box;
+}
+.thread-create-rich h3 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 16px;
+}
+.thread-title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.thread-header-container button {
+  background: transparent;
+  color: white;
 }

@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { message, Select } from "antd";
+import {MdFileUpload}  from "react-icons/md";
 import TagsForum from "../../TagsForum";
 import LoadingOverlay from "react-loading-overlay";
 import { SemipolarLoading } from "react-loadingg";
+import CKEditor from "@ckeditor/ckeditor5-react";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import ReactHtmlParser from "react-html-parser";
 
 const { Option } = Select;
 
@@ -37,6 +41,7 @@ export default class CreateThread extends Component {
       posting: false,
       file: [null],
       loader: false,
+      text: "",
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -93,7 +98,7 @@ export default class CreateThread extends Component {
           }
         )
         .then((res) => {
-          console.log(res,"resultmain")
+          console.log(res, "resultmain");
 
           this.setState({ loader: true });
           console.log(res);
@@ -115,7 +120,7 @@ export default class CreateThread extends Component {
                 }
               )
               .then((res) => {
-                console.log(res,"resultfirst")
+                console.log(res, "resultfirst");
                 const newformData = new FormData();
                 newformData.append("title", this.state.title);
                 newformData.append("content", this.state.content);
@@ -131,7 +136,7 @@ export default class CreateThread extends Component {
                     newformData
                   )
                   .then((res) => {
-                    console.log(res,"resultsecond")
+                    console.log(res, "resultsecond");
                     this.setState({ loader: true });
 
                     this.props.history.push(
@@ -139,7 +144,7 @@ export default class CreateThread extends Component {
                     );
                   })
                   .catch((error) => {
-                    console.log(error,"oopserrorwithmulti")
+                    console.log(error, "oopserrorwithmulti");
                     message.warning("Oops, Please try again later");
                   });
               });
@@ -163,15 +168,14 @@ export default class CreateThread extends Component {
                 this.props.history.push(`/forum/thread/${res.data.data.id}`);
               })
               .catch((error) => {
-                console.log(error,"oopserror")
+                console.log(error, "oopserror");
                 message.warning("Oops, Please try again later");
               });
           }
-        }
-        )
-        .catch((er)=>{
-          console.log(er,"firsterror")
         })
+        .catch((er) => {
+          console.log(er, "firsterror");
+        });
     } else {
       //for uploading url image
 
@@ -205,7 +209,7 @@ export default class CreateThread extends Component {
                   }
                 )
                 .then((res) => {
-                  console.log(res)
+                  console.log(res);
                   this.setState({ loader: true });
 
                   const newformData = new FormData();
@@ -281,233 +285,35 @@ export default class CreateThread extends Component {
     }
   }
 
+  handleChange = (e, editor) => {
+    const data = editor.getData();
+    this.setState({ text: data });
+    console.log(data,"richtexteditor")
+  };
+
   render() {
     return (
-      <div className="thread-create" style={{ padding: "8em", height: "auto" }}>
+      <div
+        className="thread-create-rich"
+        style={{ padding: "8em", height: "100vh" }}
+      >
         <LoadingOverlay
           active={this.state.loader}
           spinner={<SemipolarLoading color="#F05C2D" />}
           text="Creating your thread..."
         >
+          <h3>Create thread</h3>
+          <div className="thread-title-container">
+            <input placeholder="Thread title" className="thread-title"></input>
+            <div className="thread-header-container">
+              <p>Upload header image</p>
+              <button><MdFileUpload/>Upload</button>
+            </div>
+          </div>
           <form onSubmit={this.handleSubmit}>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                color: "rgba(255, 255, 255, 0.87)",
-              }}
-            >
-              <p>Give a short thread title</p>
-              {/* <p>{this.state.name}</p> */}
-              <div
-                className="thread-create-field"
-                style={{
-                  borderBottom: "1px solid rgba(255, 255, 255, 0.08",
-                  paddingBottom: "3em",
-                  paddingTop: "3em",
-                }}
-              >
-                <input
-                  className="thread-create-title"
-                  style={{
-                    backgroundColor: "rgba(255, 255, 255, 0.08)",
-                    color: "white",
-                    border: "none",
-                    padding: "1em",
-                    borderRadius: "8px",
-                    width: "40em",
-                  }}
-                  placeholder="Add title"
-                  onChange={this.handleChange}
-                  name="title"
-                  type="text"
-                ></input>
-                <div
-                  className="thread-create-imagefield"
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "Space-between",
-                    width: "40%",
-                    marginTop: "3em",
-                  }}
-                >
-                  {" "}
-                  <p>Upload header image</p>
-                  <img
-                    alt=""
-                    className="uploaded-image-forum"
-                    src={this.state.file}
-                  />
-                  <img
-                    alt=""
-                    className="uploaded-image-forum"
-                    src={this.state.url_image}
-                  />
-                  <label style={{ fontSize: "11px" }}>Image URL</label>
-                  <input
-                    className="thread-create-title"
-                    type="text"
-                    style={{
-                      backgroundColor: "rgba(255, 255, 255, 0.08)",
-                      color: "white",
-                      border: "none",
-                      padding: "1em",
-                      borderRadius: "8px",
-                      width: "40em",
-                    }}
-                    onChange={this.handleChange}
-                    name="url"
-                  ></input>
-                  <h6
-                    style={{
-                      color: "white",
-                      textAlign: "center",
-                      margin: "24px 0 24px 0",
-                    }}
-                  >
-                    OR
-                  </h6>
-                  <label style={{ fontSize: "11px" }}>Image from local</label>
-                  <input
-                    className="thread-create-upload"
-                    type="file"
-                    name="header_image"
-                    onChange={this.onChange}
-                  />
-                  <p style={{fontSize:"10px"}}>Jpg and Jpeg</p>
-                  {/* {this.state.file && (
-                  <div style={{ textAlign: "center" }}>
-                    <button onClick={this.resetFile}>Remove File</button>
-                  </div>
-                )} */}
-                </div>
-              </div>
-              <div>
-                <p>Share Video URL</p>
-                <input
-                  name="video_url"
-                  type="link"
-                  style={{
-                    backgroundColor: "rgba(255, 255, 255, 0.08)",
-                    color: "white",
-                    border: "none",
-                    padding: "1em",
-                    borderRadius: "8px",
-                    width: "24em",
-                  }}
-                  placeholder="Video Link"
-                  onChange={this.handleChange}
-                ></input>
-              </div>
-              <div
-                style={{
-                  borderBottom: "1px solid rgba(255, 255, 255, 0.08",
-                  paddingBottom: "3em",
-                  paddingTop: "3em",
-                }}
-              >
-                <p>Write something</p>
-
-                <div
-                  className="thread-create-textfield"
-                  style={{ width: "45%" }}
-                >
-                  <textarea
-                    type="text"
-                    className="thread-create-content"
-                    style={{
-                      color: "white",
-                      background: "rgba(255, 255, 255, 0.08)",
-                      height: "30vh",
-                      width: "100%",
-                      border: "none",
-                      padding: "2em",
-                    }}
-                    name="content"
-                    rows="4"
-                    cols="50"
-                    onChange={this.handleChange}
-                  ></textarea>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      marginTop: "50px",
-                    }}
-                  >
-                    Add another image
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "row",
-                        justifyContent: "space-evenly",
-                        flexWrap: "wrap",
-                        marginTop: "12px",
-                      }}
-                    >
-                      {(this.fileArray || []).map((url) => (
-                        <img
-                          className="uploaded-image-forum-multi"
-                          src={url}
-                          alt="..."
-                        />
-                      ))}
-                    </div>
-                    <input
-                      id="file-input"
-                      type="file"
-                      onChange={this.uploadMultipleFiles}
-                      multiple
-                    ></input>
-                  </div>
-                  {/* <label style={{ fontSize: "11px", marginTop: "5vh" }}>
-                  Thread Images
-                </label> */}
-                  {/* <MultiImage />
-                <label style={{ fontSize: "11px" }}>Image from local</label>
-                <input
-                  className="thread-create-upload"
-                  type="file"
-                  name="header_image"
-                  onChange={this.onChange}
-                />
-              </div>
-              <p>Add a tag</p>
-              <div className="forum-create-tag">
-                <div
-                  style={{
-                    height: "5vh",
-                    width: "100%",
-                    marginBottom: "2em",
-                    background: "rgba(255, 255, 255, 0.08)",
-                  }}
-                >
-                  <p
-                    style={{
-                      color: " rgba(255, 255, 255, 0.16)",
-                      textAlign: "left",
-                      paddingTop: "0.5em",
-                      paddingLeft: "1em",
-                    }}
-                  >
-                    Search Tags
-                  </p> */}
-                  {/* </div> */}
-                  {/* <Select
-                  mode="tags"
-                  style={{ width: "100%" }}
-                  placeholder="Tags Mode"
-                  // onChange={handleChange}
-                >
-                  {this.state.children}
-                </Select> */}
-                  {/* <TagsForum /> */}
-                </div>
-              </div>
-              <button type="submit" className="create-forum-button">
-                CREATE THREAD
-              </button>
+            <div className="rich-text-manage">
+              <CKEditor editor={ClassicEditor} onChange={this.handleChange} />
+              {ReactHtmlParser(this.state.text)}
             </div>
           </form>
         </LoadingOverlay>

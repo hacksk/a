@@ -57,8 +57,8 @@ class SearchBar extends React.Component {
           >
             <input
               type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
+              // value={this.state.value}
+              // onChange={this.handleChange}
               className="search-bar"
               placeholder="Search"
             />

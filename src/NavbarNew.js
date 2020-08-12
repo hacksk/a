@@ -46,118 +46,127 @@ class NavbarNew extends Component {
               </Tooltip>
             </button>
           </li> */}
-          <NavLink activeClassName="navbar-active-now" to="/">
-            <li>
-              <Tooltip placement="top" title={text}>
+          <NavLink activeClassName="navbar-active-now" to="/home">
+            <Tooltip placement="top" title={text}>
+              <li>
                 <Ripples>
                   <Button>
                     <AiTwotoneHome />
                   </Button>
                 </Ripples>
-              </Tooltip>
-            </li>
+              </li>
+            </Tooltip>
           </NavLink>
 
-          <NavLink activeClassName="navbar-active-now" to="./map">
-            <li>
-              <Tooltip placement="top" title={text2}>
+          <NavLink activeClassName="navbar-active-now" to="/map">
+            <Tooltip placement="top" title={text2}>
+              <li>
                 <Ripples>
                   <Button>
                     <MdLocationOn />
                   </Button>
                 </Ripples>
-              </Tooltip>
-            </li>
+              </li>
+            </Tooltip>
           </NavLink>
           <NavLink activeClassName="navbar-active-now" to="/steamcart">
-            <li>
-              <Tooltip placement="top" title={text3}>
+            <Tooltip placement="top" title={text3}>
+              <li>
                 <Ripples>
                   <Button>
                     <MdShoppingCart />
                   </Button>
                 </Ripples>
-              </Tooltip>
-            </li>
+              </li>
+            </Tooltip>
           </NavLink>
-
-          <Popover
-            key=""
-            content={
-              <div
-                onClick={this.handleVisbile}
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  height: "132px",
-                  width: "130px",
-                }}
-              >
-                <NavLink
-                  to={this.props.isAuthenticated ? "/forum/create" : "/signin"}
-                >
-                  <div className="forum-navbar-btn">
-                    <img
-                      alt="create"
-                      src={require("./vector-icons/create.svg")}
-                    ></img>
-                    <p>create thread</p>
-                  </div>
-                </NavLink>
-                <NavLink to="/forum">
-                  <div className="forum-navbar-btntwo">
-                    <img
-                      alt="view"
-                      src={require("./vector-icons/browse.svg")}
-                    ></img>
-                    <p>Browse Forum</p>
-                  </div>
-                </NavLink>
-              </div>
-            }
-            title={<div></div>}
-            trigger="hover"
-            placement="rightTop"
-          >
-            <li className="navbar-popover-btn">
-              <Tooltip placement="top" title={text4}>
-                <Button>
-                  <MdForum />
-                </Button>
-              </Tooltip>
-            </li>
-          </Popover>
-
           {this.props.isAuthenticated ? (
-            <NavLink activeClassName="navbar-active-now" to="/account">
-              <li>
-                <Tooltip placement="top" title={text5}>
+            <Popover
+              key=""
+              content={
+                <div
+                  onClick={this.handleVisbile}
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    height: "132px",
+                    width: "130px",
+                  }}
+                >
+                  <NavLink to="/forum/create">
+                    <div className="forum-navbar-btn">
+                      <img
+                        alt="create"
+                        src={require("./vector-icons/create.svg")}
+                      ></img>
+                      <p>create thread</p>
+                    </div>
+                  </NavLink>
+                  <NavLink to="/forum">
+                    <div className="forum-navbar-btntwo">
+                      <img
+                        alt="view"
+                        src={require("./vector-icons/browse.svg")}
+                      ></img>
+                      <p>Browse Forum</p>
+                    </div>
+                  </NavLink>
+                </div>
+              }
+              title={<div></div>}
+              trigger="hover"
+              placement="rightTop"
+            >
+              <Tooltip placement="top" title={text4}>
+                <li className="navbar-popover-btn">
                   <Button>
-                    <MdAccountCircle />
+                    <MdForum />
                   </Button>
-                </Tooltip>
-              </li>
-            </NavLink>
+                </li>
+              </Tooltip>
+            </Popover>
           ) : (
-            <NavLink activeClassName="navbar-active-now" to="/signin">
-              <li>
-                <Tooltip placement="top" title={text5}>
+            <NavLink activeClassName="navbar-active-now" to="/forum">
+              <Tooltip placement="top" title={text4}>
+                <li className="navbar-popover-btn">
                   <Button>
-                    <MdAccountCircle />
+                    <MdForum />
                   </Button>
-                </Tooltip>
-              </li>
+                </li>
+              </Tooltip>
             </NavLink>
           )}
 
           {this.props.isAuthenticated ? (
-            <li>
-              <Tooltip placement="top" title={text6}>
+            <NavLink activeClassName="navbar-active-now" to="/account">
+              <Tooltip placement="top" title={text5}>
+                <li>
+                  <Button>
+                    <MdAccountCircle />
+                  </Button>
+                </li>
+              </Tooltip>
+            </NavLink>
+          ) : (
+            <NavLink activeClassName="navbar-active-now" to="/signin">
+              <Tooltip placement="top" title={text5}>
+                <li>
+                  <Button>
+                    <MdAccountCircle />
+                  </Button>
+                </li>
+              </Tooltip>
+            </NavLink>
+          )}
+
+          {this.props.isAuthenticated ? (
+            <Tooltip placement="top" title={text6}>
+              <li>
                 <Button onClick={this.props.signOut}>
                   <FiLogOut />
                 </Button>
-              </Tooltip>
-            </li>
+              </li>
+            </Tooltip>
           ) : null}
         </ul>
       </div>

@@ -180,85 +180,85 @@ export default class Home extends Component {
               <div className="home-content-wrap">
                 <h5>FEATURED SERVICES</h5>
                 <div className="head-icons">
-                  <Link to="/services">
-                    <figure>
-                      <img
-                        alt=""
-                        src={require("./vector-icons/featured-services/steam.png")}
-                      ></img>
-                    </figure>
-                  </Link>{" "}
-                  <Link to="/services">
-                    <figure>
-                      <img
-                        alt=""
-                        src={require("./vector-icons/featured-services/ecuremapp.png")}
-                      ></img>
-                    </figure>
-                  </Link>
-                  <Link to="/services">
-                    <figure>
-                      <img
-                        alt=""
-                        src={require("./vector-icons/featured-services/connected.png")}
-                      ></img>
-                    </figure>
-                  </Link>
-                  <Link to="/services">
-                    <figure>
-                      <img
-                        alt=""
-                        src={require("./vector-icons/featured-services/ceramic.png")}
-                      ></img>
-                    </figure>
-                  </Link>
+                  {/* <Link to="/services"> */}
+                  <figure>
+                    <img
+                      alt=""
+                      src={require("./vector-icons/featured-services/steam.png")}
+                    ></img>
+                  </figure>
+                  {/* </Link>{" "} */}
+                  {/* <Link to="/services"> */}
+                  <figure>
+                    <img
+                      alt=""
+                      src={require("./vector-icons/featured-services/ecuremapp.png")}
+                    ></img>
+                  </figure>
+                  {/* </Link> */}
+                  {/* <Link to="/services"> */}
+                  <figure>
+                    <img
+                      alt=""
+                      src={require("./vector-icons/featured-services/connected.png")}
+                    ></img>
+                  </figure>
+                  {/* </Link> */}
+                  {/* <Link to="/services"> */}
+                  <figure>
+                    <img
+                      alt=""
+                      src={require("./vector-icons/featured-services/ceramic.png")}
+                    ></img>
+                  </figure>
+                  {/* </Link> */}
                 </div>
                 <h5>RECOMMENDED SERVICES</h5>
 
                 <div className="home-content">
                   <div className="home-content-part1">
                     {this.state.services.map((service) => (
-                      <Link key={service.id} to={`/services/${service.id}`}>
-                        <img
-                          alt=""
-                          className="hvr-float-shadow"
-                          src={service.images[0].image}
-                        ></img>
-                      </Link>
+                      // <Link key={service.id} to={`/services/${service.id}`}>
+                      <img
+                        alt=""
+                        className="hvr-float-shadow"
+                        src={service.images[0].image}
+                      ></img>
+                      /* </Link> */
                     ))}
                   </div>
-                  <Link to="/services">
-                    <button
-                      style={{ border: "none", background: "transparent" }}
-                      href="#explore"
-                      className="explore-link "
-                    >
-                      EXPLORE
-                      <FaLongArrowAltRight />
-                    </button>
-                  </Link>
+                  {/* <Link to="/services"> */}
+                  <button
+                    style={{ border: "none", background: "transparent" }}
+                    href="#explore"
+                    className="explore-link "
+                  >
+                    EXPLORE
+                    <FaLongArrowAltRight />
+                  </button>
+                  {/* </Link> */}
                   <h5 className="recom-acc">RECOMMENDED ACCESSORIES</h5>
                   <div className="home-content-part2">
                     {this.state.products.map((product) => (
-                      <Link key={product.id} to={`/products/${product.id}`}>
-                        <img
-                          alt=""
-                          className="hvr-float-shadow"
-                          src={product.image[0].image}
-                        ></img>
-                      </Link>
+                      // <Link key={product.id} to={`/products/${product.id}`}>
+                      <img
+                        alt=""
+                        className="hvr-float-shadow"
+                        src={product.image[0].image}
+                      ></img>
+                      // </Link>
                     ))}
                   </div>
-                  <Link to="/products">
-                    <button
-                      style={{ border: "none", backgroundColor: "transparent" }}
-                      href="#explore"
-                      className="explore-link "
-                    >
-                      EXPLORE
-                      <FaLongArrowAltRight />
-                    </button>
-                  </Link>
+                  {/* <Link to="/products"> */}
+                  <button
+                    style={{ border: "none", backgroundColor: "transparent" }}
+                    href="#explore"
+                    className="explore-link "
+                  >
+                    EXPLORE
+                    <FaLongArrowAltRight />
+                  </button>
+                  {/* </Link> */}
                 </div>
               </div>
 

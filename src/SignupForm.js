@@ -65,20 +65,20 @@ class SignupForm extends Component {
         user_data: {
           email: email,
           first_name: first_name,
-          last_name: last_name,
+          last_name: "last_name",
           username: username,
           phone: phone,
           is_active: "True",
-          date_joined: date_joined,
+          date_joined: "2020-09-18",
         },
         address: {
-          address_line1: address_line1,
-          address_line2: address_line2,
+          address_line1: "address_line1",
+          address_line2: "address_line2",
           address_line3: "ggg",
-          state: state,
-          district: district,
-          city: city,
-          pin_code: pincode,
+          state: "kerala",
+          district: "kochi",
+          city: "kaloor",
+          pin_code: "695600",
         },
         photo: 1,
         name: name,
@@ -87,13 +87,18 @@ class SignupForm extends Component {
         phone: phone,
         latitude: 23.0625,
         longitude: -98.677068,
-        vehicle: 1,
+        vehicle: [1, 2],
         dob: dob,
+        is_club_admin: "True",
+        is_forum_admin: "False",
+        class_type: "NORMAL",
       })
       .then((res) => {
+        console.log(res)
         this.props.history.push("/signin");
       })
-      .catch(() => {
+      .catch((er) => {
+        console.log(er,"ERRORR")
         notification.open({
           message: "Sign Up Error",
           description: "There was an error in Signing up, Please Try again",
