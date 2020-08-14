@@ -28,13 +28,13 @@ class HeaderCustomer extends Component {
                 src={require("./assets/moto365logo.svg")}
               ></img>
             </Link>
-            <Link to="/home">
+            <a target="_blank" href="http://www.auto-moto.in/">
               <img
                 className="headerstore-secondlogo"
                 alt="logo"
                 src={require("./assets/automotologo.svg")}
               ></img>
-            </Link>
+            </a>
           </div>
         </div>
       </div>

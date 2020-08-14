@@ -21,7 +21,7 @@ const { TabPane } = Tabs;
 
 function callback(key) {}
 
-export default class HomeNav extends Component {
+export default class Home extends Component {
   constructor() {
     super();
     this.state = {
@@ -290,18 +290,28 @@ export default class HomeNav extends Component {
                           trendinghead={person.title}
                           trendingcontent={person.content}
                           timethread={<Moment fromNow>{person.date}</Moment>}
+                          trendingheaderimg={
+                            person.header_image_url
+                              ? person.header_image_url.url
+                              : person.header_image.image
+                          }
                         />
                       </Link>
                     ))}
                   </TabPane>
                   <TabPane tab="TRENDING" key="2">
-                    {this.state.subthread.map((person) => (
+                    {this.state.persons.map((person) => (
                       <Link to={`/forum/thread/${person.id}`}>
                         <ForumTrending
                           threadprof={`https://automoto.techbyheart.in/${person.userimage}`}
                           trendinghead={person.title}
                           trendingcontent={person.content}
                           timethread={<Moment fromNow>{person.date}</Moment>}
+                          trendingheaderimg={
+                            person.header_image_url
+                              ? person.header_image_url.url
+                              : person.header_image.image
+                          }
                         />
                       </Link>
                     ))}

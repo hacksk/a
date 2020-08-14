@@ -2629,7 +2629,7 @@ headerstore-secondlogo {
 }
 .trending-image-home {
   width: 20vh;
-  border-radius: none !important;
+  border-radius: 8px ;
   object-fit: cover;
 }
 @media screen and (max-width: 786px) {
