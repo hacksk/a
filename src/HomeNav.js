@@ -79,6 +79,7 @@ export default class Home extends Component {
                   {this.state.persons.map((person) => (
                     <Link to={`/forum/thread/${person.id}`}>
                       <Banner thread={person} />
+                      <div style={{height:"20vh",width:"100%",background:"linear-gradient(0deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)), #121212"}}></div>
                     </Link>
                   ))}
                 </Carousel>
@@ -325,13 +326,13 @@ export default class Home extends Component {
               {/* <button style={{height:"10vh"}}>New thread </button> */}
               <h4>Trending</h4>
               {this.state.trending.map((trend) => (
-                <Link to={`/forum/thread/${trend.id}`}>
+                <Link to={`/forum/thread/trendin/${trend.id}`}>
                   <Trending thread={trend} />
                 </Link>
               ))}
               <h4 style={{ marginTop: "8vh" }}>Latest</h4>
-              {this.state.latest.map((trend) => (
-                <Link to={`/forum/thread/${trend.id}`}>
+              {this.state.trending.map((trend) => (
+                <Link to={`/forum/thread/trendin/${trend.id}`}>
                   <Trending thread={trend} />
                 </Link>
               ))}

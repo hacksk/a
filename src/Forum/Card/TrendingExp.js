@@ -10,6 +10,8 @@ import Moment from "react-moment";
 import { connect } from "react-redux";
 import { SemipolarLoading } from "react-loadingg";
 import ImageScroller from "react-image-scroller";
+import ReactHtmlParser from "react-html-parser";
+
 
 import {
   EmailShareButton,
@@ -289,7 +291,7 @@ class NewsExpanded extends Component {
                 ))}
               </div>
 
-              <p>{this.state.threads.content}</p>
+              <div>{ReactHtmlParser(this.state.threads.content)}</div>
 
               <ReactPlayer
                 className="forum-video"

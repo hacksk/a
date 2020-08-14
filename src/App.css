@@ -1736,6 +1736,7 @@ body {
   }
   .home-content {
     padding-top: 11vh;
+    height: unset;
   }
   .home-content h5 {
     padding-top: 8vh;
@@ -3640,7 +3641,7 @@ a:not([href]):not([tabindex]) {
 }
 .home-banner-image-cover img {
   height: 100%;
-  border-radius: 8px !important;
+  border-radius: 8px 8px 0 0 !important;
   object-fit: cover;
 }
 

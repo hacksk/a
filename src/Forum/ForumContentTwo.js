@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactHtmlParser from "react-html-parser";
 
 export default class ForumContentTwo extends Component {
   render() {
@@ -19,7 +20,7 @@ export default class ForumContentTwo extends Component {
         >
           <h6 style={{ color: "white" }}>{this.props.thread.title}</h6>
           <p style={{ color: " rgba(255, 255, 255, 0.6)" }}>
-            {this.props.thread.content}
+            {ReactHtmlParser(this.props.thread.content)}
           </p>
         </div>
       </div>

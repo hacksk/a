@@ -79,6 +79,7 @@ export default class Home extends Component {
                   {this.state.persons.map((person) => (
                     <Link to={`/forum/thread/${person.id}`}>
                       <Banner thread={person} />
+                      <div style={{height:"20vh",width:"100%",background:"linear-gradient(0deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)), #121212"}}></div>
                     </Link>
                   ))}
                 </Carousel>

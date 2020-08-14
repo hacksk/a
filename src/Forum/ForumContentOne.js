@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Popover, notification, message } from "antd";
 import axios from "axios";
 import { connect } from "react-redux";
+import ReactHtmlParser from "react-html-parser";
 
 const URL = "https://automoto.techbyheart.in/api/v1/forum";
 const content = (id) => (
@@ -101,7 +102,7 @@ class ForumContentOne extends Component {
                 width: "40vw",
               }}
             >
-              {this.props.thread.content}
+              {ReactHtmlParser(this.props.thread.content)}
             </p>
           </div>
         </div>
