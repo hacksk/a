@@ -1017,7 +1017,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .footer-bg {
   width: 100%;
   background-color: #252525 !important;
-  background-image: url("./vector-icons/newhexagon.svg");
+  background-image: url("./vector-icons/footerhex.png");
+  background-size: cover;
 }
 .footer-primar-quick {
   width: 30%;
@@ -1661,7 +1662,6 @@ body {
 }
 
 .home-content-wrap {
-  margin-bottom: 8.99vh;
   margin-top: 0;
 }
 .home-content-wrap h5 {
@@ -1677,17 +1677,17 @@ body {
 }
 .home-content {
   width: 100% !important;
-  background-image: url("./vector-icons/main-page-lines.svg");
+  background-image: url("./vector-icons/bglines.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: fixed;
   position: relative;
   padding: 10vh;
-  padding-top: 36vh;
+  padding-top: 17vh;
   height: 150vh;
 }
 .home-content h5 {
-  padding-top: 32.07vh;
+  padding-top: 14.07vh;
 }
 .home-content-part1,
 .home-content-part2 {
@@ -1727,6 +1727,25 @@ body {
   width: 25vh;
   height: 25vh;
   cursor: pointer;
+}
+@media screen and (min-width: 1980px) {
+  .home-content-part1 img,
+  .home-content-part2 img {
+    width: 20vh;
+    height: 20vh;
+  }
+  .home-content {
+    padding-top: 11vh;
+  }
+  .home-content h5 {
+    padding-top: 8vh;
+  }
+  .head-icons img {
+    width: 21vh !important;
+  }
+  .home-content-part2 {
+    padding-top: 10vh;
+  }
 }
 
 .home-content-wrap h5 {
@@ -2201,7 +2220,6 @@ body {
   max-width: 90vh;
 }
 .trending-thread p {
-  height: 9vh;
   line-height: 20px;
   width: 90%;
 }
@@ -2417,7 +2435,7 @@ body {
 }
 .headerstore-firstlogo {
   margin-left: 12vh;
-  width: 8.4vw !important;
+  width: 6vw !important;
 }
 
 /* STYLES FOR NEW NAVBAR AND HEADER */
@@ -2574,6 +2592,9 @@ body {
   font-size: 20px;
   font-weight: 500;
 }
+headerstore-secondlogo {
+  width: 14vh !important;
+}
 .headerstore {
   position: fixed;
   z-index: 500 !important;
@@ -2585,7 +2606,6 @@ body {
 .headerstore-bg {
   width: 100%;
   background-color: #1b1b1b !important;
-  background-image: url("./vector-icons/newhexagon.svg");
 }
 
 .headerstore-content {
@@ -2597,8 +2617,20 @@ body {
   padding: 0 3em 0 3em;
 }
 .headerstore-content img {
-  width: 5vw;
+  width: 9vw;
   height: 10vh;
+}
+.trending-home-profile {
+  width: 6vh;
+  height: 6vh;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #fc5c2d;
+}
+.trending-image-home {
+  width: 20vh;
+  border-radius: none !important;
+  object-fit: cover;
 }
 @media screen and (max-width: 786px) {
   .headerstore-content img {
@@ -2821,6 +2853,9 @@ body {
   color: rgba(255, 255, 255, 0.38);
   border: none;
   font-weight: 600;
+}
+.ant-list-empty-text {
+  display: none;
 }
 .forum-like-n-reply {
   font-weight: 600;
@@ -3173,13 +3208,7 @@ a:not([href]):not([tabindex]) {
   background-color: #1b1b1b;
   border-radius: 8px;
 }
-.trending-thread img {
-  width: 6vh;
-  height: 6vh;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 1px solid #fc5c2d;
-}
+
 .clubhomemain {
   position: relative;
 }
@@ -3591,7 +3620,6 @@ a:not([href]):not([tabindex]) {
 }
 .home-banner-image-cover {
   position: relative !important;
-  display: inline-block !important;
 }
 .carousel .control-dots .dot.selected,
 .carousel .control-dots .dot:hover {
@@ -3608,45 +3636,12 @@ a:not([href]):not([tabindex]) {
   width: 100%;
   height: 100%;
   display: inline-block;
-  background: -moz-linear-gradient(
-    top,
-    rgba(0, 47, 75, 0.5) 0%,
-    rgba(220, 66, 37, 0.5) 100%
-  ); /* FF3.6+ */
-  background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(240, 92, 45, 0.25) 100%
-    ),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)); /* Chrome,Safari4+ */
-  background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(240, 92, 45, 0.25) 100%
-    ),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)); /* Chrome10+,Safari5.1+ */
-  background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(240, 92, 45, 0.25) 100%
-    ),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)); /* Opera 11.10+ */
-  background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(240, 92, 45, 0.25) 100%
-    ),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)); /* IE10+ */
-  background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(240, 92, 45, 0.25) 100%
-    ),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)); /* W3C */
+  object-fit: cover;
 }
 .home-banner-image-cover img {
   height: 100%;
   border-radius: 8px !important;
+  object-fit: cover;
 }
 
 /* .ant-comment-content-author{
@@ -3964,6 +3959,34 @@ a:not([href]):not([tabindex]) {
   font-size: 16px;
   line-height: 16px;
 }
+.create-forum-button-cancel {
+  background: transparent;
+  border: none;
+  width: 13em;
+  color: #fc5c2d;
+  height: 3em;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 16px;
+}
+.alt-img-btn {
+  background: linear-gradient(108.01deg, #f05c2d 0%, #fcaa2e 120.94%);
+  border-radius: 8px;
+  border: none;
+  width: 13em;
+  color: black;
+  height: 3em;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 16px;
+  cursor: pointer;
+  text-align: center;
+  padding: 0.8em;
+}
 .create-forum-button:hover {
   box-shadow: 0px 15px 25px -5px black;
   -webkit-transform: scale(1.03);
@@ -4134,37 +4157,43 @@ a:not([href]):not([tabindex]) {
   padding-bottom: 15vh;
 }
 .rich-text-manage p,
-li,
-ul,
-a,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-td,
-tr,
-th {
+.rich-text-manage li,
+.rich-text-manage ul,
+.rich-text-manage a,
+.rich-text-manage h1,
+.rich-text-manage h2,
+.rich-text-manage h3,
+.rich-text-manage h4,
+.rich-text-manage h5,
+.rich-text-manage h6,
+.rich-text-manage td,
+.rich-text-manage tr,
+.rich-text-manage th {
   color: white !important;
 }
 .ck.ck-editor__editable_inline > :last-child {
   color: black;
 }
 .ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
-  background: black;
-  border-color: white !important;
+  background: #121212;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  border-width: 2px;
+}
+.ck.ck-dropdown.ck-heading-dropdown .ck-dropdown__button .ck-button__label {
+  color: white;
 }
 .ck-rounded-corners .ck.ck-editor__main > .ck-editor__editable,
 .ck.ck-editor__main > .ck-editor__editable.ck-rounded-corners {
-  background: black;
+  background: #121212;
 }
+
 .ck-rounded-corners .ck.ck-editor__top .ck-sticky-panel .ck-toolbar,
 .ck.ck-editor__top .ck-sticky-panel .ck-toolbar.ck-rounded-corners {
-  background: black;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border: none;
 }
 .ck.ck-toolbar {
-  border: 1px solid white !important;
+  border: 2px solid rgba(255, 255, 255, 0.08) !important;
 }
 .ck.ck-toolbar > .ck-toolbar__items > *,
 .ck.ck-toolbar > .ck.ck-toolbar__grouped-dropdown {
@@ -4180,10 +4209,41 @@ th {
   border-radius: 4px 4px 0px 0px;
   border: none;
   border-bottom: 1px solid #fc5c2e;
-  width: 686px;
+  width: 1018px;
   height: 48px;
   padding: 2em;
   box-sizing: border-box;
+  color: white;
+}
+.forum-n-sub select {
+  background: rgba(255, 255, 255, 0.08);
+  width: 451px;
+  height: 48px;
+  color: white;
+  box-sizing: border-box;
+  padding-left: 2em;
+  border: none;
+  border-bottom: 1px solid #fc5c2e;
+}
+.forum-n-sub select option {
+  color: black;
+}
+.thread-title-sml {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px 4px 0px 0px;
+  border: none;
+  border-bottom: 1px solid #fc5c2e;
+  height: 48px;
+  width: 494px;
+  padding: 2em;
+  box-sizing: border-box;
+  color: white;
+}
+.ck.ck-editor {
+  width: 1018px !important;
+}
+.thread-create-rich {
+  background-color: #121212;
 }
 .thread-create-rich h3 {
   font-style: normal;
@@ -4191,21 +4251,36 @@ th {
   font-size: 24px;
   line-height: 16px;
 }
-.thread-title-container {
+.forum-n-sub {
+  width: 1018px !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.thread-title-container2 {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 .thread-header-container button {
   background: transparent;
   color: white;
 }
+.ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
+  height: 50vh;
+}
+.ck-rounded-corners .ck.ck-editor__main > .ck-editor__editable,
+.ck.ck-editor__main > .ck-editor__editable.ck-rounded-corners {
+  height: 50vh;
+}
 @media screen and (max-width: 786px) {
   .carousel .control-dots .dot {
     opacity: 0.3 !important;
   }
-  .carousel .control-dots .dot.selected, .carousel .control-dots .dot:hover{
-    opacity: 1!important;
+  .carousel .control-dots .dot.selected,
+  .carousel .control-dots .dot:hover {
+    opacity: 1 !important;
   }
 }

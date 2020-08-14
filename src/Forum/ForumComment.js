@@ -150,7 +150,7 @@ class ForumComment extends React.Component {
       submitting: false,
       value: "",
       content: "",
-      liked: false,
+      liked: this.props.thread.liked,
       increment: true,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -172,10 +172,10 @@ class ForumComment extends React.Component {
           liked: !this.state.liked,
           increment: !this.state.increment,
         });
-        console.log(res, "liked");
+        console.log(res, "liked");  
       })
       .catch((e) => console.log(e));
-    if (this.state.increment === true) {
+    if (this.state.liked === false) {
       let likeCountnew = this.props.thread.like_count + 1;
       this.setState({ likeCount: likeCountnew });
     } else {
@@ -248,7 +248,7 @@ class ForumComment extends React.Component {
 
     return (
       <div className="commenting-forum">
-        {comments.length > 0 && (
+        {comments.length >= 0 && (
           <CommentList
             comments={comments}
             likeCount={likeCount}

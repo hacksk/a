@@ -25,11 +25,15 @@ class HeaderCustomer extends Component {
               <img
                 className="headerstore-firstlogo"
                 alt="logo"
-                src={require("./assets/automotologo.svg")}
+                src={require("./assets/moto365logo.svg")}
               ></img>
             </Link>
             <Link to="/home">
-              <img className="headerstore-secondlogo" alt="logo" src={require("./assets/moto365logo.svg")}></img>
+              <img
+                className="headerstore-secondlogo"
+                alt="logo"
+                src={require("./assets/automotologo.svg")}
+              ></img>
             </Link>
           </div>
         </div>

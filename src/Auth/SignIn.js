@@ -60,7 +60,6 @@ class SignIn extends Component {
             value={this.state.phone}
             placeholder="Mobile Number(+91)"
             onChange={this.handleChange}
-            defaultValue="+91"
             required
           ></input>
 

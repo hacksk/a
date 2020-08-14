@@ -5,21 +5,18 @@ export default function HelmetMetaData(props) {
   let location = useLocation();
   let currentUrl = "http://www.camperstribe.com" + location.pathname;
   let quote = props.quote !== undefined ? props.quote : "";
-  let title =
-    props.title !== undefined
-      ? props.title
-      : "CampersTribe - World is yours to explore";
+  let title = props.share.title !== undefined ? props.share.title : "Auto Moto";
   let image =
-    props.image !== undefined
-      ? props.image
-      : "https://storage.googleapis.com/cmperstribe_storage_usha/Banner/IMG_3640.JPG";
+    props.share.header_image !== undefined
+      ? props.share.header_image
+      : props.share.header_image_url;
   let description =
-    props.description !== undefined
-      ? props.description
+    props.share.content !== undefined
+      ? props.share.content
       : "CampersTribe lets you experience the camping culture. We discover the hidden gems in the nearby to help you connect with nature & yourself by learning in the woods, on the riverbank under the open sky." +
         "Trust us, its million dollars experience to ride away from city life, pitch a tent, do campfire and endless talk!" +
         "So, join us on this voyage, and explore the beauty and miracle of being yourself!";
-  let hashtag = props.hashtag !== undefined ? props.hashtag : "#camperstribe";
+  let hashtag = props.hashtag !== undefined ? props.hashtag : "#automoto";
   return (
     <Helmet>
       <title>{title}</title>

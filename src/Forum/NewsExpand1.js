@@ -11,7 +11,7 @@ import { connect } from "react-redux";
 import { SemipolarLoading } from "react-loadingg";
 import ImageScroller from "react-image-scroller";
 import HelmetMetaData from "./Card/HelmetMetaData";
-
+import ReactHtmlParser from "react-html-parser";
 
 import {
   EmailShareButton,
@@ -46,6 +46,7 @@ class NewsExpanded extends Component {
     pic: [],
     latest: [],
     vis: "none",
+    newcontent: "",
   };
   showModal = () => {
     this.setState({
@@ -104,12 +105,16 @@ class NewsExpanded extends Component {
       });
   }
   render() {
-    const {classes} = this.props;
+    const { classes } = this.props;
     if (this.state.threads != null) {
       return (
         <div className="threadexpand">
           <div className="thread-share">
-          <HelmetMetaData></HelmetMetaData> 
+            <HelmetMetaData
+              title={this.state.threads.title}
+              description={this.state.threads.content}
+              share={this.state.threads}
+            />
             <FacebookShareButton
               url="https://beta.techbyheart.in/forum/thread/aa75d6f4-ff98-422f-929a-e7a9f7be4b61"
               quote={this.state.threads.title}
@@ -301,7 +306,7 @@ class NewsExpanded extends Component {
                 </div>
               </div>
 
-              <p>{this.state.threads.content}</p>
+              <div>{ReactHtmlParser(this.state.threads.content)}</div>
 
               <ReactPlayer
                 className="forum-video"
@@ -331,7 +336,7 @@ class NewsExpanded extends Component {
               comment={this.state.threads.comment}
             />
           </div>
-          <div style={{marginTop:"-5vh"}}>
+          <div style={{ marginTop: "-5vh" }}>
             <div className="thread-expanded-trending">
               <h4>Trending</h4>
               {this.state.trending.map((trend) => (
