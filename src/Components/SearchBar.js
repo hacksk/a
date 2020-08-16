@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { Button, notification } from "antd";
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -13,33 +14,42 @@ class SearchBar extends React.Component {
       result: "",
     };
 
-    this.handleChange = this.handleChange.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(event) {
-    axios
-      .get(
-        `http://103.194.69.70:8080/api/v1/product/?search=${event.target.value}`
-      )
-      .then((res) => {
-        const products = res.data;
-        this.setState({ products });
-        if (this.state.products == null) {
-          this.setState({ result: "No results found" });
-        }
-      });
-    axios
-      .get(
-        `http://103.194.69.70:8080/api/v1/service/?search=${event.target.value}`
-      )
-      .then((res) => {
-        const services = res.data;
-        this.setState({ services });
-        if (this.state.services == null) {
-          this.setState({ result: "No results found" });
-        }
-      });
-    this.setState({ value: event.target.value });
+  handleSubmit(event) {
+    notification.open({
+      message: "Notification Title",
+      description:
+        "This is the content of the notification. This is the content of the notification. This is the content of the notification.",
+      onClick: () => {
+        console.log("Notification Clicked!");
+      },
+    });
+
+    // axios
+    //   .get(
+    //     `http://103.194.69.70:8080/api/v1/product/?search=${event.target.value}`
+    //   )
+    //   .then((res) => {
+    //     const products = res.data;
+    //     this.setState({ products });
+    //     if (this.state.products == null) {
+    //       this.setState({ result: "No results found" });
+    //     }
+    //   });
+    // axios
+    //   .get(
+    //     `http://103.194.69.70:8080/api/v1/service/?search=${event.target.value}`
+    //   )
+    //   .then((res) => {
+    //     const services = res.data;
+    //     this.setState({ services });
+    //     if (this.state.services == null) {
+    //       this.setState({ result: "No results found" });
+    //     }
+    //   });
+    // this.setState({ value: event.target.value });
   }
 
   render() {
@@ -76,7 +86,8 @@ class SearchBar extends React.Component {
                 style={{ background: "transparent" }}
               >
                 <Link to={`/products/${product.id}`}>
-                  <img alt=""
+                  <img
+                    alt=""
                     className="search-image"
                     src={product.image[0].image}
                   ></img>
@@ -94,7 +105,8 @@ class SearchBar extends React.Component {
                 style={{ background: "transparent" }}
               >
                 <Link to={`/services/${service.id}`}>
-                  <img alt=""
+                  <img
+                    alt=""
                     className="search-image"
                     src={service.images[0].image}
                   ></img>

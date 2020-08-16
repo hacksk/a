@@ -1016,9 +1016,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 .footer-bg {
   width: 100%;
-  background-color: #252525 !important;
+  background-color: #362a27!important;
   background-image: url("./vector-icons/footerhex.png");
-  background-size: cover;
+  background-size: contain;
+  
 }
 .footer-primar-quick {
   width: 30%;
@@ -3670,6 +3671,9 @@ a:not([href]):not([tabindex]) {
     max-width: 80vw !important;
     height: auto !important;
   }
+}
+.testcar p{
+  height: 2vh!important;
 }
 .banner-image {
   height: auto;

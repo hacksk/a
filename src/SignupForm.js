@@ -39,6 +39,8 @@ class SignupForm extends Component {
     this.setState({
       [event.target.name]: event.target.value,
     });
+    console.log(event.target.name, "name");
+    console.log(event.target.value, "value");
   }
 
   handleSubmit(event) {
@@ -61,44 +63,44 @@ class SignupForm extends Component {
       district,
     } = this.state;
     axios
-      .post(`${API_URL}/customer/`, {
+      .post(`http://103.194.69.70:8080/api/v1/customer/`, {
         user_data: {
           email: email,
           first_name: first_name,
-          last_name: "last_name",
+          last_name: "er",
           username: username,
-          phone: phone,
+          phone: `+${phone}`,
           is_active: "True",
           date_joined: "2020-09-18",
         },
         address: {
-          address_line1: "address_line1",
-          address_line2: "address_line2",
+          address_line1: "rrrr",
+          address_line2: "lllnnngl",
           address_line3: "ggg",
           state: "kerala",
-          district: "kochi",
-          city: "kaloor",
-          pin_code: "695600",
+          district: "kozhikode",
+          city: "kozhikode",
+          pin_code: "678964",
         },
         photo: 1,
         name: name,
         age: age,
         gender: "male",
-        phone: phone,
+        phone: `+${phone}`,
         latitude: 23.0625,
         longitude: -98.677068,
-        vehicle: [1, 2],
+        vehicle: [1],
         dob: dob,
         is_club_admin: "True",
         is_forum_admin: "False",
         class_type: "NORMAL",
       })
       .then((res) => {
-        console.log(res)
+        console.log(res);
         this.props.history.push("/signin");
       })
       .catch((er) => {
-        console.log(er,"ERRORR")
+        console.log(er, "ERRORR");
         notification.open({
           message: "Sign Up Error",
           description: "There was an error in Signing up, Please Try again",
