@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactHtmlParser from "react-html-parser";
 
 export default class ForumTrendingThread extends Component {
   render() {
@@ -24,7 +25,7 @@ export default class ForumTrendingThread extends Component {
           >
             <h6 style={{ color: "white" }}>{this.props.trendinghead}</h6>
             <p className="forum-trending-content">
-              {this.props.trendingcontent}
+              {ReactHtmlParser(this.props.trendingcontent)}
             </p>
           </div>
         </div>

@@ -17,7 +17,7 @@ function callback(key) {
 export default class Payment extends Component {
   handleSubmit = (event) => {
     axios
-      .post(`https://automoto.techbyheart.in/api/v1/order/place_orders/`)
+      .post(`http://103.194.69.70:8080/api/v1/order/place_orders/`)
       .then((res) => {
         console.log(res);
       });

@@ -1,1 +1,1 @@
-export const API_URL = "https://automoto.techbyheart.in/api/v1";
+export const API_URL = "http://103.194.69.70:8080/api/v1";

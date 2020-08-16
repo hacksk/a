@@ -28,7 +28,7 @@ export default class ForumHome extends Component {
 
   componentDidMount() {
     axios
-      .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
+      .get(`http://103.194.69.70:8080/api/v1/forum/latest-threads/`)
       .then((res) => {
         const urls = res.data.data.images_url;
         const persons = res.data.data.slice(0, 3);
@@ -195,7 +195,7 @@ export default class ForumHome extends Component {
                   {this.state.subthread.map((person) => (
                     <Link to={`/forum/thread/${person.id}`}>
                       <ForumTrending
-                        threadprof="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+                        threadprof={`http://103.194.69.70:8080${person.userimage}`}
                         trendinghead={person.title}
                         trendingcontent={person.content}
                         timethread={<Moment fromNow>{person.date}</Moment>}
@@ -212,7 +212,7 @@ export default class ForumHome extends Component {
                   {this.state.persons.map((person) => (
                     <Link to={`/forum/thread/${person.id}`}>
                       <ForumTrending
-                        threadprof={`https://automoto.techbyheart.in/${person.userimage}`}
+                        threadprof={`http://103.194.69.70:8080${person.userimage}`}
                         trendinghead={person.title}
                         trendingcontent={person.content}
                         timethread={<Moment fromNow>{person.date}</Moment>}

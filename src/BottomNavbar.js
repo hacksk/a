@@ -2,16 +2,32 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { signOut } from "./actions/authActions";
+import { Button, Popover } from "antd";
+
+const content = (
+  <div>
+    <p>Content</p>
+    <p>Content</p>
+  </div>
+);
 
 class BottomNavbar extends Component {
   render() {
     return (
       <div className="bottommenu">
-        <ul style={{display:"flex",flexDirection:"row",justifyContent:"space-evenly",width:"100%"}}>
+        <ul
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-evenly",
+            width: "100%",
+          }}
+        >
           <NavLink activeClassName="active" to="/home">
             <li>
               <button style={{ border: "none", background: "transparent" }}>
-                <img alt=""
+                <img
+                  alt=""
                   src={require("./vector-icons/bottomnavbar/Home.svg")}
                 ></img>
               </button>
@@ -23,7 +39,8 @@ class BottomNavbar extends Component {
                 style={{ border: "none", background: "transparent" }}
                 href="#news"
               >
-                <img alt=""
+                <img
+                  alt=""
                   src={require("./vector-icons/bottomnavbar/Search.svg")}
                 ></img>
               </button>
@@ -35,7 +52,8 @@ class BottomNavbar extends Component {
                 style={{ border: "none", background: "transparent" }}
                 href="#map"
               >
-                <img alt=""
+                <img
+                  alt=""
                   src={require("./vector-icons/bottomnavbar/Location.svg")}
                 ></img>
               </button>
@@ -47,7 +65,8 @@ class BottomNavbar extends Component {
                 style={{ border: "none", background: "transparent" }}
                 href="#cart"
               >
-                <img alt=""
+                <img
+                  alt=""
                   src={require("./vector-icons/bottomnavbar/Cart.svg")}
                 ></img>
               </button>
@@ -59,9 +78,12 @@ class BottomNavbar extends Component {
                 style={{ border: "none", background: "transparent" }}
                 href="#icon"
               >
-                <img alt=""
-                  src={require("./vector-icons/bottomnavbar/Forum.svg")}
-                ></img>
+                <Popover trigger="click" content={content} title="Title">
+                  <img
+                    alt=""
+                    src={require("./vector-icons/bottomnavbar/Forum.svg")}
+                  ></img>
+                </Popover>
               </button>
             </li>
           </NavLink>
@@ -72,7 +94,8 @@ class BottomNavbar extends Component {
                   style={{ border: "none", background: "transparent" }}
                   href="#icon"
                 >
-                  <img alt=""
+                  <img
+                    alt=""
                     src={require("./vector-icons/bottomnavbar/Account.svg")}
                   ></img>{" "}
                 </button>
@@ -85,7 +108,8 @@ class BottomNavbar extends Component {
                   style={{ border: "none", background: "transparent" }}
                   href="#icon"
                 >
-                  <img alt=""
+                  <img
+                    alt=""
                     src={require("./vector-icons/bottomnavbar/Account.svg")}
                   ></img>{" "}
                 </button>

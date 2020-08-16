@@ -16,7 +16,7 @@ class AccountGeneral extends Component {
 
   componentDidMount() {
     axios
-      .get(`https://automoto.techbyheart.in/api/v1/customer/`)
+      .get(`http://103.194.69.70:8080/api/v1/customer/`)
       .then((res) => {
         const persons = res.data;
         console.log("data", persons);

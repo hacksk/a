@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactHtmlParser from "react-html-parser";
 
 export default class Banner extends Component {
   render() {
@@ -26,7 +27,7 @@ export default class Banner extends Component {
           }}
         >
           <p style={{ color: "rgba(240, 92, 45, 0.08)" }}>NEWS</p>
-          <h3 style={{ color: "white",zIndex:"1000" }}>
+          <h3 style={{ color: "white", zIndex: "1000" }}>
             {this.props.thread.title}
             <br />
           </h3>
@@ -35,12 +36,13 @@ export default class Banner extends Component {
               color: "white",
               fontSize: "13px",
               whiteSpace: "nowrap",
-              width: "100vh",
+              width: "120vh",
               textOverflow: "ellipsis",
               overflow: "hidden",
+              height:"6vh",
             }}
           >
-            {this.props.thread.content}
+            {ReactHtmlParser(this.props.thread.content)}
           </p>
         </div>
       </div>

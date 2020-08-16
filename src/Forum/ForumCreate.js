@@ -38,7 +38,7 @@ export default class ForumCreate extends Component {
   }
   componentDidMount() {
     axios
-      .get(`https://automoto.techbyheart.in/api/v1/forum/tags/`)
+      .get(`http://103.194.69.70:8080/api/v1/forum/tags/`)
       .then((res) => {
         const options = res.data.data;
         console.log(options, "tag");
@@ -70,7 +70,7 @@ export default class ForumCreate extends Component {
 
     if (this.state.posting == true) {
       axios
-        .post(`https://automoto.techbyheart.in/api/v1/forum/image/`, formData, {
+        .post(`http://103.194.69.70:8080/api/v1/forum/image/`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -84,7 +84,7 @@ export default class ForumCreate extends Component {
           newformData.append("header_image", res.data.data.id);
           axios
             .post(
-              `https://automoto.techbyheart.in/api/v1/forum/thread/create/${threadId}/`,
+              `http://103.194.69.70:8080/api/v1/forum/thread/create/${threadId}/`,
               newformData
             )
             .then((res) => {
@@ -100,7 +100,7 @@ export default class ForumCreate extends Component {
 
       axios
         .post(
-          `https://automoto.techbyheart.in/api/v1/forum/image-url/`,
+          `http://103.194.69.70:8080/api/v1/forum/image-url/`,
           urlformData
         )
         .then((res) => {
@@ -112,7 +112,7 @@ export default class ForumCreate extends Component {
 
           axios
             .post(
-              `https://automoto.techbyheart.in/api/v1/forum/thread/create/${threadId}/`,
+              `http://103.194.69.70:8080/api/v1/forum/thread/create/${threadId}/`,
               newformData
             )
             .then((res) => {

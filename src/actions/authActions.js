@@ -19,11 +19,11 @@ export const sendOtp = (phone) => (dispatch) => {
         payload: phone,
       });
     })
-    .catch((err) =>
-      dispatch({
-        type: SET_ERRORS,
-        payload: err.response.data,
-      })
+      .catch((err) =>
+        dispatch({
+          type: SET_ERRORS,
+          payload: err.response.data,
+        })
     );
 };
 

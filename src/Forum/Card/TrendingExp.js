@@ -12,7 +12,6 @@ import { SemipolarLoading } from "react-loadingg";
 import ImageScroller from "react-image-scroller";
 import ReactHtmlParser from "react-html-parser";
 
-
 import {
   EmailShareButton,
   FacebookShareButton,
@@ -28,7 +27,7 @@ import {
   WhatsappIcon,
 } from "react-share";
 
-const URL = "https://automoto.techbyheart.in/api/v1/forum";
+const URL = "http://103.194.69.70:8080/api/v1/forum";
 
 class NewsExpanded extends Component {
   state = {
@@ -66,9 +65,7 @@ class NewsExpanded extends Component {
     const threadId = this.props.match.params.content;
 
     axios
-      .get(
-        `https://automoto.techbyheart.in/api/v1/forum/thread-single/${threadId}`
-      )
+      .get(`http://103.194.69.70:8080/api/v1/forum/thread-single/${threadId}`)
       .then((res) => {
         const threads = res.data.data;
         const images = res.data.data.images;
@@ -78,7 +75,7 @@ class NewsExpanded extends Component {
         this.setState((state) => {
           return {
             image:
-              "https://automoto.techbyheart.in" + this.state.threads.userimage,
+              "http://103.194.69.70:8080/admin" + this.state.threads.userimage,
           };
         });
         const tags = res.data.data.tag;
@@ -87,7 +84,7 @@ class NewsExpanded extends Component {
       });
 
     axios
-      .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
+      .get(`http://103.194.69.70:8080/api/v1/forum/latest-threads/`)
       .then((res) => {
         const trending = res.data.data.slice(1, 8);
         this.setState({ trending });
@@ -272,7 +269,10 @@ class NewsExpanded extends Component {
                     alignItems: "center",
                   }}
                 >
-                  <img alt="" src={this.state.image}></img>
+                  <img
+                    alt=""
+                    src={`http://103.194.69.70:8080${this.state.threads.userimage}`}
+                  ></img>
                   <p>{this.state.threads.username}</p>
                 </div>
                 <div className="thread-expand-time-n-more">

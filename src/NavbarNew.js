@@ -93,7 +93,7 @@ class NavbarNew extends Component {
                     width: "130px",
                   }}
                 >
-                  <NavLink to="/forum/create">
+                  <NavLink to="/forum/create/new">
                     <div className="forum-navbar-btn">
                       <img
                         alt="create"

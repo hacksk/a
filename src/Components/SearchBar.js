@@ -19,7 +19,7 @@ class SearchBar extends React.Component {
   handleChange(event) {
     axios
       .get(
-        `https://automoto.techbyheart.in/api/v1/product/?search=${event.target.value}`
+        `http://103.194.69.70:8080/api/v1/product/?search=${event.target.value}`
       )
       .then((res) => {
         const products = res.data;
@@ -30,7 +30,7 @@ class SearchBar extends React.Component {
       });
     axios
       .get(
-        `https://automoto.techbyheart.in/api/v1/service/?search=${event.target.value}`
+        `http://103.194.69.70:8080/api/v1/service/?search=${event.target.value}`
       )
       .then((res) => {
         const services = res.data;

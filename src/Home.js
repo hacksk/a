@@ -15,6 +15,7 @@ import Moment from "react-moment";
 import SearchBar from "./Components/SearchBar";
 import Footer from "./Footer";
 import Trending from "./Forum/Card/TrendingCard";
+import { Tooltip } from "antd";
 import { when } from "jquery";
 
 const { TabPane } = Tabs;
@@ -37,23 +38,23 @@ export default class Home extends Component {
 
   componentDidMount() {
     axios
-      .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
+      .get(`http://103.194.69.70:8080/api/v1/forum/latest-threads/`)
       .then((res) => {
         const persons = res.data.data.slice(0, 6);
         console.log(persons, "persons");
         const subthread = res.data.data.slice(1, 4);
         this.setState({ persons, subthread });
       });
-    axios.get(`https://automoto.techbyheart.in/api/v1/service`).then((res) => {
+    axios.get(`http://103.194.69.70:8080/api/v1/service`).then((res) => {
       const services = res.data.slice(0, 4);
       this.setState({ services });
     });
-    axios.get(`https://automoto.techbyheart.in/api/v1/product`).then((res) => {
+    axios.get(`http://103.194.69.70:8080/api/v1/product`).then((res) => {
       const products = res.data.slice(0, 4);
       this.setState({ products });
     });
     axios
-      .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
+      .get(`http://103.194.69.70:8080/api/v1/forum/latest-threads/`)
       .then((res) => {
         const trending = res.data.data.slice(1, 5);
         const latest = res.data.data.slice(0, 4);
@@ -68,7 +69,9 @@ export default class Home extends Component {
           <div className="home">
             <div className="content-home">
               <div className="search-bar-wrap">
-                <SearchBar />
+                <Tooltip placement="top" title="prompt text">
+                  <SearchBar />
+                </Tooltip>
               </div>
               <div className="news">
                 <Carousel
@@ -79,7 +82,7 @@ export default class Home extends Component {
                   {this.state.persons.map((person) => (
                     <Link to={`/forum/thread/${person.id}`}>
                       <Banner thread={person} />
-                      <div style={{height:"20vh",width:"100%",background:"linear-gradient(0deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)), #121212"}}></div>
+                      <div className="home-banner-text"></div>
                     </Link>
                   ))}
                 </Carousel>
@@ -287,7 +290,7 @@ export default class Home extends Component {
                     {this.state.subthread.map((person) => (
                       <Link to={`/forum/thread/${person.id}`}>
                         <ForumTrending
-                          threadprof={`https://automoto.techbyheart.in/${person.userimage}`}
+                          threadprof={`http://103.194.69.70:8080${person.userimage}`}
                           trendinghead={person.title}
                           trendingcontent={person.content}
                           timethread={<Moment fromNow>{person.date}</Moment>}
@@ -304,7 +307,7 @@ export default class Home extends Component {
                     {this.state.persons.map((person) => (
                       <Link to={`/forum/thread/${person.id}`}>
                         <ForumTrending
-                          threadprof={`https://automoto.techbyheart.in/${person.userimage}`}
+                          threadprof={`http://103.194.69.70:8080${person.userimage}`}
                           trendinghead={person.title}
                           trendingcontent={person.content}
                           timethread={<Moment fromNow>{person.date}</Moment>}

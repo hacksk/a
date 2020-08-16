@@ -8,7 +8,7 @@ import { SemipolarLoading } from "react-loadingg";
 import CKEditor from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import ReactHtmlParser from "react-html-parser";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const { Option } = Select;
 
@@ -52,19 +52,17 @@ export default class CreateThread extends Component {
     this.uploadMultipleFiles = this.uploadMultipleFiles.bind(this);
   }
   componentDidMount() {
-    axios
-      .get(`https://automoto.techbyheart.in/api/v1/forum/tags/`)
-      .then((res) => {
-        const options = res.data.data;
-        this.setState({ options });
-        let name = options.map(function (item) {
-          return item["name"];
-        });
-        this.setState({ name });
-        this.state.children.push(
-          <Option key={this.state.name}>{this.state.name}</Option>
-        );
+    axios.get(`http://103.194.69.70:8080/api/v1/forum/tags/`).then((res) => {
+      const options = res.data.data;
+      this.setState({ options });
+      let name = options.map(function (item) {
+        return item["name"];
       });
+      this.setState({ name });
+      this.state.children.push(
+        <Option key={this.state.name}>{this.state.name}</Option>
+      );
+    });
   }
 
   handleChange(event) {
@@ -89,7 +87,7 @@ export default class CreateThread extends Component {
     if (this.state.posting == true) {
       axios
         .post(
-          `https://automoto.techbyheart.in/api/v1/forum/image/`,
+          `http://103.194.69.70:8080/api/v1/forum/image/`,
           formData,
 
           {
@@ -113,7 +111,7 @@ export default class CreateThread extends Component {
             }
             axios
               .post(
-                `https://automoto.techbyheart.in/api/v1/forum/image/`,
+                `http://103.194.69.70:8080/api/v1/forum/image/`,
                 multiformData,
                 {
                   headers: {
@@ -134,7 +132,7 @@ export default class CreateThread extends Component {
 
                 axios
                   .post(
-                    `https://automoto.techbyheart.in/api/v1/forum/thread/create/0a0bd306-dfdf-4d7d-b4a8-c1fa16282e5c/`,
+                    `http://103.194.69.70:8080/api/v1/forum/thread/create/5775bbe0-8214-4250-a524-5cf51e6a3880/`,
                     newformData
                   )
                   .then((res) => {
@@ -161,7 +159,7 @@ export default class CreateThread extends Component {
 
             axios
               .post(
-                `https://automoto.techbyheart.in/api/v1/forum/thread/create/0a0bd306-dfdf-4d7d-b4a8-c1fa16282e5c/`,
+                `http://103.194.69.70:8080/api/v1/forum/thread/create/5775bbe0-8214-4250-a524-5cf51e6a3880/`,
                 newformData
               )
               .then((res) => {
@@ -185,10 +183,7 @@ export default class CreateThread extends Component {
       urlformData.append("url", this.state.url); //posting url image to get id
 
       axios
-        .post(
-          `https://automoto.techbyheart.in/api/v1/forum/image-url/`,
-          urlformData
-        )
+        .post(`http://103.194.69.70:8080/api/v1/forum/image-url/`, urlformData)
         .then((res) => {
           this.setState({ loader: true });
 
@@ -201,7 +196,7 @@ export default class CreateThread extends Component {
 
               axios
                 .post(
-                  `https://automoto.techbyheart.in/api/v1/forum/image/`,
+                  `http://103.194.69.70:8080/api/v1/forum/image/`,
                   multiformData,
 
                   {
@@ -222,13 +217,13 @@ export default class CreateThread extends Component {
                   newformData.append("images", res.data.data.id);
                   axios
                     .post(
-                      `https://automoto.techbyheart.in/api/v1/forum/thread/create/0a0bd306-dfdf-4d7d-b4a8-c1fa16282e5c/`,
+                      `http://103.194.69.70:8080/api/v1/forum/thread/create/5775bbe0-8214-4250-a524-5cf51e6a3880/`,
                       newformData
                     )
                     .then((res) => {
                       this.setState({ loader: true });
 
-                      console.log(res, "result");
+                      console.log(res, "result1");
                       this.props.history.push(
                         `/forum/thread/${res.data.data.id}`
                       );
@@ -246,13 +241,13 @@ export default class CreateThread extends Component {
             newformData.append("header_image_url", urldata);
             axios
               .post(
-                `https://automoto.techbyheart.in/api/v1/forum/thread/create/0a0bd306-dfdf-4d7d-b4a8-c1fa16282e5c/`,
+                `http://103.194.69.70:8080/api/v1/forum/thread/create/5775bbe0-8214-4250-a524-5cf51e6a3880/`,
                 newformData
               )
               .then((res) => {
                 this.setState({ loader: true });
 
-                console.log(res, "result");
+                console.log(res, "result2");
                 this.props.history.push(`/forum/thread/${res.data.data.id}`);
               })
               .catch((error) => {
@@ -329,7 +324,7 @@ export default class CreateThread extends Component {
               }}
             >
               {" "}
-              <div style={{ display: "flex", flexDirection: "row" }}>
+              <div className="thread-create-imagefield-firstdive" >
                 <img
                   alt=""
                   className="uploaded-image-forum"
@@ -341,14 +336,7 @@ export default class CreateThread extends Component {
                   src={this.state.url_image}
                 />
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
-              >
+              <div className="rich-editor-header-image">
                 <input
                   placeholder="Image URL"
                   className="thread-title-sml"

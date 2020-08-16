@@ -37,7 +37,7 @@ export default class EditThread extends Component {
       imageformData.append("image", this.state.header_image);
       axios
         .post(
-          `https://automoto.techbyheart.in/api/v1/forum/image/`,
+          `http://103.194.69.70:8080/api/v1/forum/image/`,
           imageformData,
           {
             headers: {
@@ -55,7 +55,7 @@ export default class EditThread extends Component {
 
           axios
             .patch(
-              `https://automoto.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
+              `http://103.194.69.70:8080/api/v1/forum/update-thread/${threadId}/`,
               formData
             )
             .then((res) => {
@@ -75,7 +75,7 @@ export default class EditThread extends Component {
 
       axios
         .patch(
-          `https://automoto.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
+          `http://103.194.69.70:8080/api/v1/forum/update-thread/${threadId}/`,
           formData
         )
         .then((res) => {
@@ -93,7 +93,7 @@ export default class EditThread extends Component {
 
     axios
       .get(
-        `https://automoto.techbyheart.in/api/v1/forum/thread-single/${threadId}`
+        `http://103.194.69.70:8080/api/v1/forum/thread-single/${threadId}`
       )
       .then((res) => {
         const thread = res.data.data;

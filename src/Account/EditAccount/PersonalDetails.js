@@ -45,7 +45,7 @@ class PersonalDetails extends React.Component {
     event.preventDefault();
     const { phone, name, age } = this.state;
     axios
-      .patch(`https://automoto.techbyheart.in/api/v1/customer/${this.props.details.id}/`, {
+      .patch(`http://103.194.69.70:8080/api/v1/customer/${this.props.details.id}/`, {
         user_data: {
           email: "ab@gmail.com",
           first_name: "amu",

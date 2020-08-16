@@ -28,7 +28,7 @@ class SubForumList extends Component {
 
     axios
       .get(
-        `https://automoto.techbyheart.in/api/v1/forum/subforum-thread-list/${threadId}`
+        `http://103.194.69.70:8080/api/v1/forum/subforum-thread-list/${threadId}`
       )
       .then((res) => {
         const persons = res.data.data;
@@ -36,7 +36,7 @@ class SubForumList extends Component {
         this.setState({ persons, subthread });
       });
     axios
-      .get(`https://automoto.techbyheart.in/api/v1/forum/list/`)
+      .get(`http://103.194.69.70:8080/api/v1/forum/list/`)
       .then((res) => {
         const sub_forums = res.data.data;
         this.setState({ sub_forums });
