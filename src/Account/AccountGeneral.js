@@ -62,7 +62,7 @@ class AccountGeneral extends Component {
             </ul>
             <div className="accnt-upload">
               <img alt="" src={this.state.person.photo.image}></img>
-              <Accountupload thread={this.state.person} />
+              {/* <Accountupload thread={this.state.person} /> */}
             </div>
           </div>
         </div>

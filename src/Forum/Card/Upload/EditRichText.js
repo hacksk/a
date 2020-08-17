@@ -145,8 +145,13 @@ export default class EditRichText extends Component {
               .then((res) => {
                 console.log(res, "resultfirst");
                 const newformData = new FormData();
-                console.log(this.state.threads.title,"title seoc")
-                newformData.append("title", this.state.title);
+                console.log(this.state.threads.title, "title seoc");
+                newformData.append(
+                  "title",
+                  this.state.title === ""
+                    ? this.state.threads.title
+                    : this.state.title
+                );
                 newformData.append("content", this.state.text);
                 newformData.append("video_url", this.state.video_url);
                 newformData.append("header_image", headerimage);
@@ -174,7 +179,12 @@ export default class EditRichText extends Component {
               });
           } else {
             const newformData = new FormData();
-            newformData.append("title", this.state.title);
+            newformData.append(
+              "title",
+              this.state.title === ""
+                ? this.state.threads.title
+                : this.state.title
+            );
             newformData.append("content", this.state.text);
             newformData.append("video_url", this.state.video_url);
             newformData.append("header_image", headerimage);
@@ -237,7 +247,12 @@ export default class EditRichText extends Component {
                   this.setState({ loader: true });
 
                   const newformData = new FormData();
-                  newformData.append("title", this.state.title);
+                  newformData.append(
+                    "title",
+                    this.state.title === ""
+                      ? this.state.threads.title
+                      : this.state.title
+                  );
                   newformData.append("content", this.state.text);
                   newformData.append("video_url", this.state.video_url);
                   newformData.append("header_image_url", urldata);
@@ -262,7 +277,13 @@ export default class EditRichText extends Component {
             }
           } else {
             const newformData = new FormData();
-            newformData.append("title", this.state.title);
+            newformData.append(
+              "title",
+              this.state.title === ""
+                ? this.state.threads.title
+                : this.state.title
+            );
+
             newformData.append("content", this.state.text);
             newformData.append("video_url", this.state.video_url);
             newformData.append("header_image_url", urldata);
@@ -421,7 +442,6 @@ export default class EditRichText extends Component {
                     type="text"
                     defaultValue={this.state.threads.title}
                     required
-
                   ></input>
                   {/* <h1>{this.state.threads.title}</h1> */}
                   {/* <div className="forum-n-sub">

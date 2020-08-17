@@ -47,20 +47,20 @@ class PersonalDetails extends React.Component {
     axios
       .patch(`https://beta1.techbyheart.in/api/v1/customer/${this.props.details.id}/`, {
         user_data: {
-          email: "ab@gmail.com",
-          first_name: "amu",
-          last_name: "fp",
-          username: "lkjj",
-          phone: phone,
+          // email: "ab@gmail.com",
+          // first_name: "amu",
+          // last_name: "fp",
+          // username: "lkjj",
+          phone: `+${phone}`,
         },
-        address: {
-          address_line1: "rrrr",
-          address_line2: "lllnnngl",
-          state: "kerala",
-          district: "kozhikode",
-          city: "kozhikode",
-          pin_code: "678964",
-        },
+        // address: {
+        //   address_line1: "rrrr",
+        //   address_line2: "lllnnngl",
+        //   state: "kerala",
+        //   district: "kozhikode",
+        //   city: "kozhikode",
+        //   pin_code: "678964",
+        // },
         name: name,
         age: age,
         gender: "Male",
@@ -71,6 +71,8 @@ class PersonalDetails extends React.Component {
         this.setState({
           visible: false,
         });
+        window.location.reload();
+
         // this.props.history.push("/account");
       })
       .catch((error) => {

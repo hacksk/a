@@ -1016,10 +1016,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 .footer-bg {
   width: 100%;
-  background-color: #362a27!important;
+  background-color: #362a27 !important;
   background-image: url("./vector-icons/footerhex.png");
   background-size: contain;
-  
 }
 .footer-primar-quick {
   width: 30%;
@@ -2239,34 +2238,36 @@ body {
   width: 100%;
   height: 4vh;
 }
-.forum-trending-content p a strong{
+.forum-trending-content p a strong {
   color: #fc5c2d;
 }
-.forum-trending-content h2 strong{
+.forum-trending-content h2 strong {
   color: white;
   font-size: 13px;
-  
 }
-.bottom-nav-forum-pop{
+.bottom-nav-forum-pop {
   display: flex;
   flex-direction: row;
 }
-.forum-navbar-btn-bottom{
+.forum-navbar-btn-bottom {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
-.forum-navbar-btn-bottom p{
+.forum-navbar-btn-bottom p {
   font-size: 10px;
   text-align: center;
   color: #fc5c2d;
 }
-.ant-popover-placement-top, .ant-popover-placement-topLeft, .ant-popover-placement-topRight{
-  position: fixed!important;
-  top: 82vh!important;
+.ant-popover-placement-top,
+.ant-popover-placement-topLeft,
+.ant-popover-placement-topRight {
+  position: fixed !important;
+  top: unset !important;
+  bottom: 7vh !important;
 }
-.forum-home-thread-square-textbox p p a strong{
+.forum-home-thread-square-textbox p p a strong {
   color: #fc5c2d;
 }
 .forum-timing {
@@ -2274,7 +2275,7 @@ body {
 }
 
 @media screen and (max-width: 786px) {
-  .carousel .slider-wrapper{
+  .carousel .slider-wrapper {
     height: 40vh;
   }
   .carousel .slide .testcar {
@@ -2338,7 +2339,7 @@ body {
     bottom: 70px;
     left: 100px;
   }
-  
+
   .carousel .control-dots {
     margin: 0 32px !important;
   }
@@ -2533,6 +2534,21 @@ body {
   height: 100%;
   overflow: auto;
   text-align: center;
+  padding-top: 3vh;
+}
+.trending-card-sub h5 p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 80%;
+  white-space: wrap !important;
+}
+.ck.ck-dropdown .ck-dropdown__panel.ck-dropdown__panel_nw,
+.ck.ck-dropdown .ck-dropdown__panel.ck-dropdown__panel_sw {
+  background: black;
+  right: -50px !important;
+}
+[dir=ltr] .ck.ck-dropdown .ck-button.ck-dropdown__button:not(.ck-button_with-text){
+  display: none;
 }
 
 .newnav ul {
@@ -3008,11 +3024,11 @@ button.StripeCheckout {
   font-size: 14px !important;
   color: white;
 }
-.forum-home-thread p h2 strong{
+.forum-home-thread p h2 strong {
   color: white;
   font-size: 14px;
 }
-.forum-home-thread p p a strong{
+.forum-home-thread p p a strong {
   color: #fc5c2d;
 }
 .carousel p {
@@ -3363,6 +3379,17 @@ a:not([href]):not([tabindex]) {
   margin-bottom: 4vh;
   margin-left: 2vh;
 }
+.edit-mail-sbmt {
+  border: none;
+  height: 5vh;
+  width: 10vh;
+  color: white !important;
+  background-color: #333333;
+  padding-left: 1em;
+}
+.edit-mail-sbmt:active {
+  background-color: #241814;
+}
 .uploaded-image-forum-multi {
   width: 15em !important;
   border-radius: 8px;
@@ -3682,7 +3709,14 @@ a:not([href]):not([tabindex]) {
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
-  width: 100%;
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.trending-card-sub h5 h2 strong {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 90%;
 }
 
 @media (min-width: 1200px) {
@@ -3695,8 +3729,8 @@ a:not([href]):not([tabindex]) {
     height: auto !important;
   }
 }
-.testcar p{
-  height: 2vh!important;
+.testcar p {
+  height: 2vh !important;
 }
 .banner-image {
   height: auto;
@@ -4372,13 +4406,13 @@ a:not([href]):not([tabindex]) {
   justify-content: space-between;
   align-items: center;
 }
-.thread-create-imagefield-firstdiv{
-  display: flex; 
+.thread-create-imagefield-firstdiv {
+  display: flex;
   flex-direction: row;
 }
 @media screen and (max-width: 786px) {
-  .thread-title-container2{
-    height: auto!important;
+  .thread-title-container2 {
+    height: auto !important;
   }
   .rich-editor-header-image {
     flex-direction: column;
@@ -4396,27 +4430,27 @@ a:not([href]):not([tabindex]) {
   .thread-title {
     width: 40vh;
   }
-  .thread-title-sml{
+  .thread-title-sml {
     width: 23vh;
   }
-  .forum-n-sub{
-    width: 40vh!important;
+  .forum-n-sub {
+    width: 40vh !important;
   }
   .forum-n-sub select {
     width: 24vh;
   }
-  .thread-create-imagefield-firstdiv{
+  .thread-create-imagefield-firstdiv {
     width: 40vh;
   }
-  .thread-create-imagefield{
-    width: 40vh!important;
+  .thread-create-imagefield {
+    width: 40vh !important;
   }
-  .thread-create-rich{
-    padding: unset!important;
-    padding-top: 8em!important;
-    padding-bottom: 8em!important;
+  .thread-create-rich {
+    padding: unset !important;
+    padding-top: 8em !important;
+    padding-bottom: 8em !important;
   }
-  .thread-title-container2{
-    height: 90vh!important;
+  .thread-title-container2 {
+    height: 90vh !important;
   }
 }

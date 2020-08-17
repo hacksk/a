@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { message, Select } from "antd";
+import { message, Select,notification } from "antd";
 import { MdFileUpload } from "react-icons/md";
 import TagsForum from "../../TagsForum";
 import LoadingOverlay from "react-loading-overlay";
@@ -45,6 +45,7 @@ export default class CreateThread extends Component {
       file: [null],
       loader: false,
       text: "",
+      validation: true,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -75,132 +76,55 @@ export default class CreateThread extends Component {
   }
 
   handleSubmit = (event) => {
-    this.setState({ loader: true });
+    if (this.state.title === "") {
+      notification.open({
+        message: "Error in creating thread",
+        description: "Please fill in all the fields",
+        onClick: () => {
+          console.log("Notification Clicked!");
+        },
+      });
+    } else {
+      this.setState({ loader: true });
 
-    event.preventDefault();
+      event.preventDefault();
 
-    const threadId = this.props.match.params.create;
+      const threadId = this.props.match.params.create;
 
-    const formData = new FormData();
-    formData.append("image", this.state.header_image);
+      const formData = new FormData();
+      formData.append("image", this.state.header_image);
 
-    //for uploading file image
+      //for uploading file image
 
-    if (this.state.posting == true) {
-      axios
-        .post(
-          `https://beta1.techbyheart.in/api/v1/forum/image/`,
-          formData,
+      if (this.state.posting == true) {
+        axios
+          .post(
+            `https://beta1.techbyheart.in/api/v1/forum/image/`,
+            formData,
 
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
-        )
-        .then((res) => {
-          console.log(res, "resultmain");
-
-          this.setState({ loader: true });
-          console.log(res);
-          const headerimage = res.data.data.id;
-          const array = this.fileObj[0];
-
-          if (array != null) {
-            const multiformData = new FormData();
-            for (var i = 0; i < array.length; i++) {
-              multiformData.append("image", array[i]);
+            {
+              headers: {
+                "Content-Type": "multipart/form-data",
+              },
             }
-            axios
-              .post(
-                `https://beta1.techbyheart.in/api/v1/forum/image/`,
-                multiformData,
-                {
-                  headers: {
-                    "Content-Type": "multipart/form-data",
-                  },
-                }
-              )
-              .then((res) => {
-                console.log(res, "resultfirst");
-                const newformData = new FormData();
-                newformData.append("title", this.state.title);
-                newformData.append("content", this.state.text);
-                newformData.append("video_url", this.state.video_url);
-                newformData.append("header_image", headerimage);
-                newformData.append("images", res.data.data.id);
-
-                this.setState({ loader: true });
-
-                axios
-                  .post(
-                    `https://beta1.techbyheart.in/api/v1/forum/thread/create/5775bbe0-8214-4250-a524-5cf51e6a3880/`,
-                    newformData
-                  )
-                  .then((res) => {
-                    console.log(res, "resultsecond");
-                    this.setState({ loader: true });
-
-                    this.props.history.push(
-                      `/forum/thread/${res.data.data.id}`
-                    );
-                  })
-                  .catch((error) => {
-                    console.log(error, "oopserrorwithmulti");
-                    message.warning("Oops, Please try again later");
-                  });
-              });
-          } else {
-            const newformData = new FormData();
-            newformData.append("title", this.state.title);
-            newformData.append("content", this.state.text);
-            newformData.append("video_url", this.state.video_url);
-            newformData.append("header_image", headerimage);
+          )
+          .then((res) => {
+            console.log(res, "resultmain");
 
             this.setState({ loader: true });
+            console.log(res);
+            const headerimage = res.data.data.id;
+            const array = this.fileObj[0];
 
-            axios
-              .post(
-                `https://beta1.techbyheart.in/api/v1/forum/thread/create/5775bbe0-8214-4250-a524-5cf51e6a3880/`,
-                newformData
-              )
-              .then((res) => {
-                this.setState({ loader: true });
-
-                this.props.history.push(`/forum/thread/${res.data.data.id}`);
-              })
-              .catch((error) => {
-                console.log(error, "oopserror");
-                message.warning("Oops, Please try again later");
-              });
-          }
-        })
-        .catch((er) => {
-          console.log(er, "firsterror");
-        });
-    } else {
-      //for uploading url image
-
-      const urlformData = new FormData();
-      urlformData.append("url", this.state.url); //posting url image to get id
-
-      axios
-        .post(`https://beta1.techbyheart.in/api/v1/forum/image-url/`, urlformData)
-        .then((res) => {
-          this.setState({ loader: true });
-
-          const urldata = res.data.data.id;
-          const array = this.fileObj[0];
-          if (array != null) {
-            const multiformData = new FormData();
-            for (var i = 0; i < array.length; i++) {
-              multiformData.append("image", array[i]);
-
+            if (array != null) {
+              const multiformData = new FormData();
+              for (var i = 0; i < array.length; i++) {
+                multiformData.append("image", array[i]);
+              }
               axios
                 .post(
                   `https://beta1.techbyheart.in/api/v1/forum/image/`,
                   multiformData,
-
                   {
                     headers: {
                       "Content-Type": "multipart/form-data",
@@ -208,55 +132,145 @@ export default class CreateThread extends Component {
                   }
                 )
                 .then((res) => {
-                  console.log(res);
-                  this.setState({ loader: true });
-
+                  console.log(res, "resultfirst");
                   const newformData = new FormData();
                   newformData.append("title", this.state.title);
                   newformData.append("content", this.state.text);
                   newformData.append("video_url", this.state.video_url);
-                  newformData.append("header_image_url", urldata);
+                  newformData.append("header_image", headerimage);
                   newformData.append("images", res.data.data.id);
+
+                  this.setState({ loader: true });
+
                   axios
                     .post(
                       `https://beta1.techbyheart.in/api/v1/forum/thread/create/5775bbe0-8214-4250-a524-5cf51e6a3880/`,
                       newformData
                     )
                     .then((res) => {
+                      console.log(res, "resultsecond");
                       this.setState({ loader: true });
 
-                      console.log(res, "result1");
                       this.props.history.push(
                         `/forum/thread/${res.data.data.id}`
                       );
                     })
                     .catch((error) => {
+                      console.log(error, "oopserrorwithmulti");
                       message.warning("Oops, Please try again later");
                     });
                 });
-            }
-          } else {
-            const newformData = new FormData();
-            newformData.append("title", this.state.title);
-            newformData.append("content", this.state.text);
-            newformData.append("video_url", this.state.video_url);
-            newformData.append("header_image_url", urldata);
-            axios
-              .post(
-                `https://beta1.techbyheart.in/api/v1/forum/thread/create/5775bbe0-8214-4250-a524-5cf51e6a3880/`,
-                newformData
-              )
-              .then((res) => {
-                this.setState({ loader: true });
+            } else {
+              const newformData = new FormData();
+              newformData.append("title", this.state.title);
+              newformData.append("content", this.state.text);
+              newformData.append("video_url", this.state.video_url);
+              newformData.append("header_image", headerimage);
 
-                console.log(res, "result2");
-                this.props.history.push(`/forum/thread/${res.data.data.id}`);
-              })
-              .catch((error) => {
-                message.warning("Oops, Please try again later");
-              });
-          }
-        });
+              this.setState({ loader: true });
+
+              axios
+                .post(
+                  `https://beta1.techbyheart.in/api/v1/forum/thread/create/5775bbe0-8214-4250-a524-5cf51e6a3880/`,
+                  newformData
+                )
+                .then((res) => {
+                  this.setState({ loader: true });
+
+                  this.props.history.push(`/forum/thread/${res.data.data.id}`);
+                })
+                .catch((error) => {
+                  console.log(error, "oopserror");
+                  message.warning("Oops, Please try again later");
+                });
+            }
+          })
+          .catch((er) => {
+            console.log(er, "firsterror");
+          });
+      } else {
+        //for uploading url image
+
+        const urlformData = new FormData();
+        urlformData.append("url", this.state.url); //posting url image to get id
+
+        axios
+          .post(
+            `https://beta1.techbyheart.in/api/v1/forum/image-url/`,
+            urlformData
+          )
+          .then((res) => {
+            this.setState({ loader: true });
+
+            const urldata = res.data.data.id;
+            const array = this.fileObj[0];
+            if (array != null) {
+              const multiformData = new FormData();
+              for (var i = 0; i < array.length; i++) {
+                multiformData.append("image", array[i]);
+
+                axios
+                  .post(
+                    `https://beta1.techbyheart.in/api/v1/forum/image/`,
+                    multiformData,
+
+                    {
+                      headers: {
+                        "Content-Type": "multipart/form-data",
+                      },
+                    }
+                  )
+                  .then((res) => {
+                    console.log(res);
+                    this.setState({ loader: true });
+
+                    const newformData = new FormData();
+                    newformData.append("title", this.state.title);
+                    newformData.append("content", this.state.text);
+                    newformData.append("video_url", this.state.video_url);
+                    newformData.append("header_image_url", urldata);
+                    newformData.append("images", res.data.data.id);
+                    axios
+                      .post(
+                        `https://beta1.techbyheart.in/api/v1/forum/thread/create/5775bbe0-8214-4250-a524-5cf51e6a3880/`,
+                        newformData
+                      )
+                      .then((res) => {
+                        this.setState({ loader: true });
+
+                        console.log(res, "result1");
+                        this.props.history.push(
+                          `/forum/thread/${res.data.data.id}`
+                        );
+                      })
+                      .catch((error) => {
+                        message.warning("Oops, Please try again later");
+                      });
+                  });
+              }
+            } else {
+              const newformData = new FormData();
+              newformData.append("title", this.state.title);
+              newformData.append("content", this.state.text);
+              newformData.append("video_url", this.state.video_url);
+              newformData.append("header_image_url", urldata);
+              axios
+                .post(
+                  `https://beta1.techbyheart.in/api/v1/forum/thread/create/5775bbe0-8214-4250-a524-5cf51e6a3880/`,
+                  newformData
+                )
+                .then((res) => {
+                  this.setState({ loader: true });
+
+                  console.log(res, "result2");
+                  this.props.history.push(`/forum/thread/${res.data.data.id}`);
+                })
+                .catch((error) => {
+                  message.warning("Oops, Please try again later");
+                });
+            }
+          });
+      }
     }
   };
   onChange(event) {
@@ -326,7 +340,7 @@ export default class CreateThread extends Component {
               }}
             >
               {" "}
-              <div className="thread-create-imagefield-firstdive" >
+              <div className="thread-create-imagefield-firstdive">
                 <img
                   alt=""
                   className="uploaded-image-forum"
@@ -365,12 +379,13 @@ export default class CreateThread extends Component {
                     type="file"
                     name="header_image"
                     onChange={this.onChange}
+                    required
                   />
                 </label>
               </div>
             </div>
           </div>
-          <form onSubmit={this.handleSubmit}>
+          <form>
             <div className="rich-text-manage">
               {/* <p>{this.state.name}</p> */}
               <div>
@@ -381,6 +396,7 @@ export default class CreateThread extends Component {
                     onChange={this.handleChange}
                     name="title"
                     type="text"
+                    required
                   ></input>
                   {/* <div className="forum-n-sub">
                     <select onChange={this.handleChange}>
@@ -475,7 +491,7 @@ export default class CreateThread extends Component {
               </Link>
               <button
                 type="submit"
-                onClick={this.handleSubmit}
+                onClick={this.state.title == null ? null : this.handleSubmit}
                 className="create-forum-button"
               >
                 CREATE THREAD
