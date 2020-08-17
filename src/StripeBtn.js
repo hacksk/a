@@ -13,7 +13,7 @@ const stripeBtn = () => {
     //   token: token
     // };
     axios
-      .post("http://103.194.69.70:8080/api/v1/order/place_orders/")
+      .post("https://beta1.techbyheart.in/api/v1/order/place_orders/")
       .then(response => {
         console.log(response);
         message.success("Payment Success");

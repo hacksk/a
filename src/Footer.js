@@ -34,7 +34,7 @@ export default class Footer extends Component {
         </div>
         <div className="footer-secondary">
           <p>
-            <MdCopyright /> 2020 AUTOMOTO VERSION 1.03. ALL RIGHTS RECIEVED |
+            <MdCopyright /> 2020 AUTOMOTO VERSION 1.4. ALL RIGHTS RECIEVED |
             POWERED BY TECHBYHEART
           </p>
         </div>

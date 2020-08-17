@@ -12,6 +12,7 @@ import { SemipolarLoading } from "react-loadingg";
 import ImageScroller from "react-image-scroller";
 import HelmetMetaData from "./Card/HelmetMetaData";
 import ReactHtmlParser from "react-html-parser";
+import { Helmet } from "react-helmet";
 
 import {
   EmailShareButton,
@@ -28,7 +29,7 @@ import {
   WhatsappIcon,
 } from "react-share";
 
-const URL = "http://103.194.69.70:8080/api/v1/forum";
+const URL = "https://beta1.techbyheart.in/api/v1/forum";
 
 class NewsExpanded extends Component {
   state = {
@@ -40,6 +41,7 @@ class NewsExpanded extends Component {
     trending_image: [],
     images: [],
     head: [],
+    urls:[],
     visible: false,
     visiblepop: false,
     item: [],
@@ -70,15 +72,11 @@ class NewsExpanded extends Component {
     const threadId = this.props.match.params.content;
 
     axios
-      .get(
-        `http://103.194.69.70:8080/api/v1/forum/thread-single/${threadId}`
-      )
+      .get(`https://beta1.techbyheart.in/api/v1/forum/thread-single/${threadId}`)
       .then((res) => {
         const threads = res.data.data;
+        console.log(threads);
         const images = res.data.data.images;
-        if (images.length != 0) {
-          this.setState({ vis: "block" });
-        }
         const urls = res.data.data.header_image;
         const head = res.data.data.header_image_url;
         console.log(head, "itmightbe");
@@ -88,7 +86,7 @@ class NewsExpanded extends Component {
         this.setState((state) => {
           return {
             image:
-              "http://103.194.69.70:8080/admin/" + this.state.threads.userimage,
+              "https://beta1.techbyheart.in/admin/" + this.state.threads.userimage,
           };
         });
         const tags = res.data.data.tag;
@@ -97,7 +95,7 @@ class NewsExpanded extends Component {
       });
 
     axios
-      .get(`http://103.194.69.70:8080/api/v1/forum/latest-threads/`)
+      .get(`https://beta1.techbyheart.in/api/v1/forum/latest-threads/`)
       .then((res) => {
         const trending = res.data.data.slice(0, 8);
         this.setState({ trending });
@@ -110,13 +108,65 @@ class NewsExpanded extends Component {
       return (
         <div className="threadexpand">
           <div className="thread-share">
-            <HelmetMetaData
+            {/* <HelmetMetaData
               title={this.state.threads.title}
               description={this.state.threads.content}
               share={this.state.threads}
-            />
+            /> */}
+            <Helmet>
+              <title>{this.state.threads.title}</title>
+              <meta charset="utf-8" />
+              <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+              <meta name="csrf_token" content="" />
+              <meta property="type" content="article" />
+              <meta property="url" content={window.location.href} />
+              <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1, shrink-to-fit=no"
+              />
+              <meta name="msapplication-TileColor" content="#ffffff" />
+              <meta
+                name="msapplication-TileImage"
+                content="/ms-icon-144x144.png"
+              />
+              <meta name="theme-color" content="#ffffff" />
+              <meta name="_token" content="" />
+              <meta name="robots" content="noodp" />
+              <meta property="title" content={this.state.threads.title} />
+              <meta property="quote" content={this.state.threads.title} />
+              <meta name="description" content={this.state.threads.content} />
+              <meta
+                property="image"
+                content={
+                  this.state.head != null
+                    ? this.state.head.url
+                    : this.state.urls.image
+                }
+              />
+              <meta property="og:locale" content="en_US" />
+              <meta property="og:type" content="website" />
+              <meta property="og:title" content={this.state.threads.title} />
+              <meta property="og:quote" content={this.state.threads.title} />
+              {/* <meta property="og:hashtag" content={hashtag} /> */}
+              <meta
+                property="og:image"
+                content={
+                  this.state.head != null
+                    ? this.state.head.url
+                    : this.state.urls.image
+                }
+              />
+              <meta content="image/*" property="og:image:type" />
+              <meta property="og:url" content={window.location.href} />
+              <meta property="og:site_name" content="Automoto" />
+              <meta
+                property="og:description"
+                content={this.state.threads.content}
+              />{" "}
+            </Helmet>
+
             <FacebookShareButton
-              url="https://beta.techbyheart.in/forum/thread/aa75d6f4-ff98-422f-929a-e7a9f7be4b61"
+              url={window.location.href}
               quote={this.state.threads.title}
               hashtag={this.state.threads.title}
             >
@@ -129,6 +179,11 @@ class NewsExpanded extends Component {
             <WhatsappShareButton
               url={window.location.href}
               title={this.state.threads.title}
+              image={
+                this.state.head != null
+                  ? this.state.head.url
+                  : this.state.urls.image
+              }
               separator="::"
             >
               <WhatsappIcon
@@ -241,9 +296,7 @@ class NewsExpanded extends Component {
                             >
                               Delete
                             </button>
-                            <Link
-                              to={`/forum/content/${this.state.threads.id}`}
-                            >
+                            <Link to={`/forum/edit/${this.state.threads.id}`}>
                               <button
                                 onClick={(e) => {
                                   console.log("edit");
@@ -292,7 +345,10 @@ class NewsExpanded extends Component {
                     alignItems: "center",
                   }}
                 >
-                  <img alt="" src={`http://103.194.69.70:8080${this.state.threads.userimage}`}></img>
+                  <img
+                    alt=""
+                    src={`https://beta1.techbyheart.in${this.state.threads.userimage}`}
+                  ></img>
                   <p>{this.state.threads.username}</p>
                 </div>
                 <div className="thread-expand-time-n-more">
@@ -314,18 +370,19 @@ class NewsExpanded extends Component {
                 pip={true}
                 url={this.state.threads.video_url}
               />
-
-              <div>
-                <ImageScroller style={{ display: this.state.vis }}>
-                  {this.state.images.map((person) => (
-                    <img
-                      className="thread-expand-gallery"
-                      alt={person.id}
-                      src={person.image}
-                    ></img>
-                  ))}
-                </ImageScroller>
-              </div>
+              {this.state.images != null ? (
+                <div>
+                  <ImageScroller>
+                    {this.state.images.map((person) => (
+                      <img
+                        className="thread-expand-gallery"
+                        alt={person.id}
+                        src={person.image}
+                      ></img>
+                    ))}
+                  </ImageScroller>
+                </div>
+              ) : null}
             </div>
             {/* <TestComment
               thread={this.state.threads.comment}

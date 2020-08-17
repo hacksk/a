@@ -38,7 +38,7 @@ export default class ForumCreate extends Component {
   }
   componentDidMount() {
     axios
-      .get(`http://103.194.69.70:8080/api/v1/forum/tags/`)
+      .get(`https://beta1.techbyheart.in/api/v1/forum/tags/`)
       .then((res) => {
         const options = res.data.data;
         console.log(options, "tag");
@@ -70,7 +70,7 @@ export default class ForumCreate extends Component {
 
     if (this.state.posting == true) {
       axios
-        .post(`http://103.194.69.70:8080/api/v1/forum/image/`, formData, {
+        .post(`https://beta1.techbyheart.in/api/v1/forum/image/`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -84,7 +84,7 @@ export default class ForumCreate extends Component {
           newformData.append("header_image", res.data.data.id);
           axios
             .post(
-              `http://103.194.69.70:8080/api/v1/forum/thread/create/${threadId}/`,
+              `https://beta1.techbyheart.in/api/v1/forum/thread/create/${threadId}/`,
               newformData
             )
             .then((res) => {
@@ -100,7 +100,7 @@ export default class ForumCreate extends Component {
 
       axios
         .post(
-          `http://103.194.69.70:8080/api/v1/forum/image-url/`,
+          `https://beta1.techbyheart.in/api/v1/forum/image-url/`,
           urlformData
         )
         .then((res) => {
@@ -112,7 +112,7 @@ export default class ForumCreate extends Component {
 
           axios
             .post(
-              `http://103.194.69.70:8080/api/v1/forum/thread/create/${threadId}/`,
+              `https://beta1.techbyheart.in/api/v1/forum/thread/create/${threadId}/`,
               newformData
             )
             .then((res) => {

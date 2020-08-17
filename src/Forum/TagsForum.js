@@ -15,7 +15,7 @@ class TagForum extends React.Component {
   }
   componentDidMount() {
     axios
-      .get(`http://103.194.69.70:8080/api/v1/forum/tags/`)
+      .get(`https://beta1.techbyheart.in/api/v1/forum/tags/`)
       .then((res) => {
         const suggestions = res.data.data;
         this.setState({ suggestions });

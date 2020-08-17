@@ -2247,6 +2247,28 @@ body {
   font-size: 13px;
   
 }
+.bottom-nav-forum-pop{
+  display: flex;
+  flex-direction: row;
+}
+.forum-navbar-btn-bottom{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.forum-navbar-btn-bottom p{
+  font-size: 10px;
+  text-align: center;
+  color: #fc5c2d;
+}
+.ant-popover-placement-top, .ant-popover-placement-topLeft, .ant-popover-placement-topRight{
+  position: fixed!important;
+  top: 82vh!important;
+}
+.forum-home-thread-square-textbox p p a strong{
+  color: #fc5c2d;
+}
 .forum-timing {
   text-align: right;
 }
@@ -3339,6 +3361,7 @@ a:not([href]):not([tabindex]) {
   width: 20em !important;
   border-radius: 8px;
   margin-bottom: 4vh;
+  margin-left: 2vh;
 }
 .uploaded-image-forum-multi {
   width: 15em !important;
@@ -3678,7 +3701,7 @@ a:not([href]):not([tabindex]) {
 .banner-image {
   height: auto;
   width: 100%;
-  max-height: 50vh;
+  max-height: 40vh;
   object-fit: cover;
 }
 .home-banner {
@@ -4368,25 +4391,25 @@ a:not([href]):not([tabindex]) {
     opacity: 1 !important;
   }
   .ck.ck-editor {
-    width: 50vh !important;
+    width: 40vh !important;
   }
   .thread-title {
-    width: 50vh;
+    width: 40vh;
   }
   .thread-title-sml{
     width: 23vh;
   }
   .forum-n-sub{
-    width: 50vh!important;
+    width: 40vh!important;
   }
   .forum-n-sub select {
     width: 24vh;
   }
   .thread-create-imagefield-firstdiv{
-    width: 50vh;
+    width: 40vh;
   }
   .thread-create-imagefield{
-    width: 50vh!important;
+    width: 40vh!important;
   }
   .thread-create-rich{
     padding: unset!important;
@@ -4394,6 +4417,6 @@ a:not([href]):not([tabindex]) {
     padding-bottom: 8em!important;
   }
   .thread-title-container2{
-    height: 100vh!important;
+    height: 90vh!important;
   }
 }

@@ -70,7 +70,7 @@ class Cart extends Component {
                   }}
                   onClick={(e) => {
                     axios
-                      .delete("http://103.194.69.70:8080/api/v1/cart/delete_item/",
+                      .delete("https://beta1.techbyheart.in/api/v1/cart/delete_item/",
                       {
                         service:`${item.id}`,
                       }

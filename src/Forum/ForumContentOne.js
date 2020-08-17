@@ -6,7 +6,7 @@ import axios from "axios";
 import { connect } from "react-redux";
 import ReactHtmlParser from "react-html-parser";
 
-const URL = "http://103.194.69.70:8080/api/v1/forum";
+const URL = "https://beta1.techbyheart.in/api/v1/forum";
 const content = (id) => (
   <div>
     <button

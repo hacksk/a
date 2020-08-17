@@ -19,6 +19,7 @@
     "babel-eslint": "^10.1.0",
     "bootstrap": "^4.5.0",
     "browser-image-compression": "^1.0.12",
+    "ckeditor4-react": "^1.1.1",
     "classnames": "^2.2.6",
     "create-react-class": "^15.6.3",
     "formik": "^2.1.4",

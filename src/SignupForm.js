@@ -63,7 +63,7 @@ class SignupForm extends Component {
       district,
     } = this.state;
     axios
-      .post(`http://103.194.69.70:8080/api/v1/customer/`, {
+      .post(`https://beta1.techbyheart.in/api/v1/customer/`, {
         user_data: {
           email: email,
           first_name: first_name,

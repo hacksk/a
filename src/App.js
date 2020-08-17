@@ -38,6 +38,7 @@ import MobileSearch from "./Components/MobSearch";
 import TrendingExp from "./Forum/Card/TrendingExp";
 import CreateThread from "./Forum/Card/Upload/CreateThread";
 import RichText from "./Forum/Card/Upload/CreateThreadRichText";
+import EditForum from "./Forum/Card/Upload/EditRichText";
 import HomeNav from "./HomeNav";
 
 function App() {
@@ -103,6 +104,7 @@ function App() {
           <Route exact path="/test" component={Test} />
           <Route exact path="/search" component={MobileSearch} />
           <Route exact path="/forum/create/new" component={RichText} />
+          <Route exact path="/forum/edit/:new" component={EditForum}/>
         </Switch>
         <BottomNavbar />
       </BrowserRouter>

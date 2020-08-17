@@ -8,8 +8,6 @@ import { SemipolarLoading } from "react-loadingg";
 import CKEditor from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import ReactHtmlParser from "react-html-parser";
-// import CKEditor from 'ckeditor4-react';
-
 import { Link } from "react-router-dom";
 
 const { Option } = Select;
@@ -18,7 +16,7 @@ const { Option } = Select;
 //   console.log(`selected ${value}`);
 // }
 
-export default class CreateThread extends Component {
+export default class EditRichText extends Component {
   fileObj = [];
   fileArray = [];
 
@@ -45,6 +43,11 @@ export default class CreateThread extends Component {
       file: [null],
       loader: false,
       text: "",
+      threads: [],
+      images: [],
+      urls: [],
+      head: [],
+      image: "",
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -54,6 +57,24 @@ export default class CreateThread extends Component {
     this.uploadMultipleFiles = this.uploadMultipleFiles.bind(this);
   }
   componentDidMount() {
+    const threadId = this.props.match.params.new;
+
+    axios
+      .get(
+        `https://beta1.techbyheart.in/api/v1/forum/thread-single/${threadId}`
+      )
+      .then((res) => {
+        const threads = res.data.data;
+        console.log(threads.title, "threads");
+        const images = res.data.data.images;
+        const urls = res.data.data.header_image;
+        const head = res.data.data.header_image_url;
+        console.log(head, "itmightbe");
+        console.log(images, "images");
+        this.setState({ threads, images, urls, head });
+        console.log("expanded", threads);
+      });
+
     axios.get(`https://beta1.techbyheart.in/api/v1/forum/tags/`).then((res) => {
       const options = res.data.data;
       this.setState({ options });
@@ -79,7 +100,7 @@ export default class CreateThread extends Component {
 
     event.preventDefault();
 
-    const threadId = this.props.match.params.create;
+    const threadId = this.props.match.params.new;
 
     const formData = new FormData();
     formData.append("image", this.state.header_image);
@@ -124,6 +145,7 @@ export default class CreateThread extends Component {
               .then((res) => {
                 console.log(res, "resultfirst");
                 const newformData = new FormData();
+                console.log(this.state.threads.title,"title seoc")
                 newformData.append("title", this.state.title);
                 newformData.append("content", this.state.text);
                 newformData.append("video_url", this.state.video_url);
@@ -133,8 +155,8 @@ export default class CreateThread extends Component {
                 this.setState({ loader: true });
 
                 axios
-                  .post(
-                    `https://beta1.techbyheart.in/api/v1/forum/thread/create/5775bbe0-8214-4250-a524-5cf51e6a3880/`,
+                  .patch(
+                    `https://beta1.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
                     newformData
                   )
                   .then((res) => {
@@ -160,8 +182,8 @@ export default class CreateThread extends Component {
             this.setState({ loader: true });
 
             axios
-              .post(
-                `https://beta1.techbyheart.in/api/v1/forum/thread/create/5775bbe0-8214-4250-a524-5cf51e6a3880/`,
+              .patch(
+                `https://beta1.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
                 newformData
               )
               .then((res) => {
@@ -185,7 +207,10 @@ export default class CreateThread extends Component {
       urlformData.append("url", this.state.url); //posting url image to get id
 
       axios
-        .post(`https://beta1.techbyheart.in/api/v1/forum/image-url/`, urlformData)
+        .post(
+          `https://beta1.techbyheart.in/api/v1/forum/image-url/`,
+          urlformData
+        )
         .then((res) => {
           this.setState({ loader: true });
 
@@ -218,8 +243,8 @@ export default class CreateThread extends Component {
                   newformData.append("header_image_url", urldata);
                   newformData.append("images", res.data.data.id);
                   axios
-                    .post(
-                      `https://beta1.techbyheart.in/api/v1/forum/thread/create/5775bbe0-8214-4250-a524-5cf51e6a3880/`,
+                    .patch(
+                      `https://beta1.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
                       newformData
                     )
                     .then((res) => {
@@ -242,8 +267,8 @@ export default class CreateThread extends Component {
             newformData.append("video_url", this.state.video_url);
             newformData.append("header_image_url", urldata);
             axios
-              .post(
-                `https://beta1.techbyheart.in/api/v1/forum/thread/create/5775bbe0-8214-4250-a524-5cf51e6a3880/`,
+              .patch(
+                `https://beta1.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
                 newformData
               )
               .then((res) => {
@@ -326,7 +351,20 @@ export default class CreateThread extends Component {
               }}
             >
               {" "}
-              <div className="thread-create-imagefield-firstdive" >
+              <div className="thread-create-imagefield-firstdive">
+                {this.state.head != null ? (
+                  <img
+                    className="uploaded-image-forum"
+                    alt=""
+                    src={this.state.head.url}
+                  ></img>
+                ) : (
+                  <img
+                    className="uploaded-image-forum"
+                    alt=""
+                    src={this.state.urls.image}
+                  ></img>
+                )}
                 <img
                   alt=""
                   className="uploaded-image-forum"
@@ -381,7 +419,11 @@ export default class CreateThread extends Component {
                     onChange={this.handleChange}
                     name="title"
                     type="text"
+                    defaultValue={this.state.threads.title}
+                    required
+
                   ></input>
+                  {/* <h1>{this.state.threads.title}</h1> */}
                   {/* <div className="forum-n-sub">
                     <select onChange={this.handleChange}>
                       <option value="0">Select Forum</option>
@@ -401,6 +443,7 @@ export default class CreateThread extends Component {
                     onChange={this.handleChange}
                     name="video_url"
                     type="link"
+                    defaultValue={this.state.threads.video_url}
                   ></input>
                   <div
                     style={{
@@ -411,6 +454,7 @@ export default class CreateThread extends Component {
                     }}
                   >
                     <CKEditor
+                      data={this.state.threads.content}
                       editor={ClassicEditor}
                       onChange={this.handleCKChange}
                       onInit={(editor) => {}}
@@ -478,7 +522,7 @@ export default class CreateThread extends Component {
                 onClick={this.handleSubmit}
                 className="create-forum-button"
               >
-                CREATE THREAD
+                UPDATE THREAD
               </button>
             </div>
           </form>

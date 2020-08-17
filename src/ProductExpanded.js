@@ -16,7 +16,7 @@ class AccesoriesExpanded extends Component {
     products: [],
   };
   componentDidMount() {
-    axios.get(`http://103.194.69.70:8080/api/v1/product/`).then((res) => {
+    axios.get(`https://beta1.techbyheart.in/api/v1/product/`).then((res) => {
       const products = res.data;
       console.log(products)
       const currentProduct = products.find(
@@ -29,7 +29,7 @@ class AccesoriesExpanded extends Component {
   }
   handleClick = (id) => {
     axios
-      .post(`http://103.194.69.70:8080/api/v1/cart/add_to_cart/`, {
+      .post(`https://beta1.techbyheart.in/api/v1/cart/add_to_cart/`, {
         product: [
           {
             product: id,

@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 import { signOut } from "../actions/authActions";
 import { connect } from "react-redux";
 
-const URL = "http://103.194.69.70:8080/api/v1/forum";
+const URL = "https://beta1.techbyheart.in/api/v1/forum";
 
 const content = (id) => (
   <div>
@@ -88,7 +88,7 @@ const CommentList = ({
         content={props.content}
         author={props.username}
         datetime={props.date}
-        avatar={`http://103.194.69.70:8080${props.userimage}`}
+        avatar={`https://beta1.techbyheart.in${props.userimage}`}
         like={props.like_count}
       >
        
@@ -165,7 +165,7 @@ class ForumComment extends React.Component {
   toggleLike = () => {
     axios
       .post(
-        `http://103.194.69.70:8080/api/v1/forum/like-thread/${this.props.thread.id}/`
+        `https://beta1.techbyheart.in/api/v1/forum/like-thread/${this.props.thread.id}/`
       )
       .then((res) => {
         this.setState({
@@ -192,7 +192,7 @@ class ForumComment extends React.Component {
 
     axios
       .post(
-        `http://103.194.69.70:8080/api/v1/forum/comment/${this.props.thread.id}/`,
+        `https://beta1.techbyheart.in/api/v1/forum/comment/${this.props.thread.id}/`,
         {
           content: this.state.value,
         }

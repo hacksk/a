@@ -75,10 +75,36 @@ class BottomNavbar extends Component {
           <NavLink activeClassName="active" to="/forum">
             <li>
               <button
+                className="bottom-nav-forum"
                 style={{ border: "none", background: "transparent" }}
                 href="#icon"
               >
-                <Popover trigger="click" content={content} title="Title">
+                <Popover
+                  trigger="click"
+                  content={
+                    <div className="bottom-nav-forum-pop">
+                      <NavLink to="/forum/create/new">
+                        <div className="forum-navbar-btn-bottom">
+                          <img
+                            alt="create"
+                            src={require("./vector-icons/create.svg")}
+                          ></img>
+                          <p>create thread</p>
+                        </div>
+                      </NavLink>
+                      <NavLink to="/forum">
+                        <div className="forum-navbar-btn-bottom">
+                          <img
+                            alt="view"
+                            src={require("./vector-icons/browse.svg")}
+                          ></img>
+                          <p>Browse Forum</p>
+                        </div>
+                      </NavLink>
+                    </div>
+                  }
+                  title="Title"
+                >
                   <img
                     alt=""
                     src={require("./vector-icons/bottomnavbar/Forum.svg")}

@@ -13,7 +13,7 @@ class AccMain extends Component {
 
   componentDidMount() {
     axios
-      .get(`http://103.194.69.70:8080/api/v1/customer/`)
+      .get(`https://beta1.techbyheart.in/api/v1/customer/`)
       .then(res => {
         const persons = res.data;
         this.setState({ persons });
