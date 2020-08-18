@@ -2295,7 +2295,11 @@ body {
     bottom: unset !important;
   }
   .trending-thread-content {
-    width: 30vh !important;
+    width: 27vh !important;
+    padding-right: 2vh;
+  }
+  .trending-thread-content h6{
+    white-space: normal;
   }
   .testcar {
     width: 80vw !important;
@@ -2716,6 +2720,9 @@ headerstore-secondlogo {
 @media screen and (max-width: 786px) {
   .headerstore-content img {
     width: 20vw !important;
+  }
+  .trending-image-home{
+    width: 11vh;
   }
   .accessories-moto .nav-tabs .nav-item.show .nav-link,
   .nav-tabs .nav-link.active {
@@ -3575,8 +3582,15 @@ a:not([href]):not([tabindex]) {
     padding: 1em !important;
     margin-bottom: 8.99vh !important;
   }
+  .trending-thread{
+    height: 20vh;
+  }
   .trending-thread p {
     font-size: 10px !important;
+    height: unset!important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
   }
   .trending-thread h6 {
     font-size: 15px !important;

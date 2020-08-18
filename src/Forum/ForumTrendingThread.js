@@ -30,17 +30,17 @@ export default class ForumTrendingThread extends Component {
           </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
+          <img
+            className="trending-image-home"
+            alt="header"
+            src={this.props.trendingheaderimg}
+          />
           <p
             className="forum-timing"
             style={{ color: "rgba(255, 255, 255, 0.38)" }}
           >
             {this.props.timethread}
           </p>
-          <img
-            className="trending-image-home"
-            alt="header"
-            src={this.props.trendingheaderimg}
-          />
         </div>
       </div>
     );
