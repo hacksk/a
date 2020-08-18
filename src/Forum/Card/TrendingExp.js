@@ -41,6 +41,7 @@ class NewsExpanded extends Component {
     trending_image: [],
     images: [],
     head: [],
+    urls: [],
     visible: false,
     visiblepop: false,
     item: [],
@@ -69,9 +70,12 @@ class NewsExpanded extends Component {
 
   componentDidMount() {
     const threadId = this.props.match.params.content;
+    console.log(this.props.userData, "userdata");
 
     axios
-      .get(`https://beta1.techbyheart.in/api/v1/forum/thread-single/${threadId}`)
+      .get(
+        `https://beta1.techbyheart.in/api/v1/forum/thread-single/${threadId}`
+      )
       .then((res) => {
         const threads = res.data.data;
         console.log(threads);
@@ -85,7 +89,8 @@ class NewsExpanded extends Component {
         this.setState((state) => {
           return {
             image:
-              "https://beta1.techbyheart.in/admin/" + this.state.threads.userimage,
+              "https://beta1.techbyheart.in/admin/" +
+              this.state.threads.userimage,
           };
         });
         const tags = res.data.data.tag;
@@ -295,15 +300,19 @@ class NewsExpanded extends Component {
                             >
                               Delete
                             </button>
+
                             <Link to={`/forum/edit/${this.state.threads.id}`}>
-                              <button
-                                onClick={(e) => {
-                                  console.log("edit");
-                                  // Do the edit operation
-                                }}
-                              >
-                                Edit
-                              </button>
+                              {this.props.userData.username ==
+                              this.state.threads.username ? (
+                                <button
+                                  onClick={(e) => {
+                                    console.log("edit");
+                                    // Do the edit operation
+                                  }}
+                                >
+                                  Edit
+                                </button>
+                              ) : null}
                             </Link>
                             <button
                               className="expand-mobile-share-btn"
@@ -507,6 +516,7 @@ class NewsExpanded extends Component {
 const mapStateToProps = (state) => {
   return {
     isAuthenticated: state.auth.isAuthenticated,
+    userData: state.auth.userData,
   };
 };
 

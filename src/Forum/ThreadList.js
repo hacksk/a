@@ -81,6 +81,11 @@ export default class ThreadList extends Component {
                       trendinghead={person.title}
                       trendingcontent={person.content}
                       timethread={<Moment fromNow>{person.date}</Moment>}
+                      trendingheaderimg={
+                        person.header_image_url
+                          ? person.header_image_url.url
+                          : person.header_image.image
+                      }
                     />
                   </Link>
                 ))}

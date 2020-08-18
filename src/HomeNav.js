@@ -15,6 +15,7 @@ import Moment from "react-moment";
 import SearchBar from "./Components/SearchBar";
 import Footer from "./Footer";
 import Trending from "./Forum/Card/TrendingCard";
+import { Tooltip } from "antd";
 import { when } from "jquery";
 
 const { TabPane } = Tabs;
@@ -68,7 +69,9 @@ export default class Home extends Component {
           <div className="home">
             <div className="content-home">
               <div className="search-bar-wrap">
-                <SearchBar />
+                <Tooltip placement="top" title="prompt text">
+                  <SearchBar />
+                </Tooltip>
               </div>
               <div className="news">
                 <Carousel
@@ -79,7 +82,7 @@ export default class Home extends Component {
                   {this.state.persons.map((person) => (
                     <Link to={`/forum/thread/${person.id}`}>
                       <Banner thread={person} />
-                      <div className="home-banner-text" ></div>
+                      <div className="home-banner-text"></div>
                     </Link>
                   ))}
                 </Carousel>
@@ -283,7 +286,7 @@ export default class Home extends Component {
                 style={{ padding: "10em", paddingTop: "0" }}
               >
                 <Tabs defaultActiveKey="2" onChange={callback}>
-                  <TabPane tab="LATEST" key="1">
+                  <TabPane tab="CUSTOMER" key="1">
                     {this.state.subthread.map((person) => (
                       <Link to={`/forum/thread/${person.id}`}>
                         <ForumTrending
@@ -300,7 +303,7 @@ export default class Home extends Component {
                       </Link>
                     ))}
                   </TabPane>
-                  <TabPane tab="TRENDING" key="2">
+                  <TabPane tab="AUTOMOTO" key="2">
                     {this.state.persons.map((person) => (
                       <Link to={`/forum/thread/${person.id}`}>
                         <ForumTrending

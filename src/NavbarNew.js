@@ -97,7 +97,7 @@ class NavbarNew extends Component {
                     <div className="forum-navbar-btn">
                       <img
                         alt="create"
-                        src={require("./vector-icons/create.svg")}
+                        src={require("./vector-icons/create.png")}
                       ></img>
                       <p>create thread</p>
                     </div>
@@ -106,7 +106,7 @@ class NavbarNew extends Component {
                     <div className="forum-navbar-btntwo">
                       <img
                         alt="view"
-                        src={require("./vector-icons/browse.svg")}
+                        src={require("./vector-icons/browse.png")}
                       ></img>
                       <p>Browse Forum</p>
                     </div>

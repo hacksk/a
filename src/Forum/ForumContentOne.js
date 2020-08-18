@@ -114,14 +114,16 @@ class ForumContentOne extends Component {
               alignItems: "center",
             }}
           >
-            {this.props.isAuthenticated ? (
-              <Popover
-                placement="bottomRight"
-                content={() => content(this.props.thread.id)}
-                trigger="click"
-              >
-                <MdMoreVert />
-              </Popover>
+            {this.props.userData.username == this.props.thread.username ? (
+              this.props.isAuthenticated ? (
+                <Popover
+                  placement="bottomRight"
+                  content={() => content(this.props.thread.id)}
+                  trigger="click"
+                >
+                  <MdMoreVert />
+                </Popover>
+              ) : null
             ) : null}
           </div>
         )}
@@ -132,6 +134,7 @@ class ForumContentOne extends Component {
 const mapStateToProps = (state) => {
   return {
     isAuthenticated: state.auth.isAuthenticated,
+    userData: state.auth.userData,
   };
 };
 export default connect(mapStateToProps)(ForumContentOne);

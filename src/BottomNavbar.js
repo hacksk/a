@@ -33,7 +33,7 @@ class BottomNavbar extends Component {
               </button>
             </li>
           </NavLink>
-          <NavLink activeClassName="active" to="/search">
+          {/* <NavLink activeClassName="active" to="/search">
             <li>
               <button
                 style={{ border: "none", background: "transparent" }}
@@ -45,7 +45,7 @@ class BottomNavbar extends Component {
                 ></img>
               </button>
             </li>
-          </NavLink>
+          </NavLink> */}
           <NavLink activeClassName="active" to="/map">
             <li>
               <button
@@ -72,47 +72,63 @@ class BottomNavbar extends Component {
               </button>
             </li>
           </NavLink>
-          <NavLink activeClassName="active" to="/forum">
-            <li>
-              <button
-                className="bottom-nav-forum"
-                style={{ border: "none", background: "transparent" }}
-                href="#icon"
-              >
-                <Popover
-                  trigger="click"
-                  content={
-                    <div className="bottom-nav-forum-pop">
-                      <NavLink to="/forum/create/new">
-                        <div className="forum-navbar-btn-bottom">
-                          <img
-                            alt="create"
-                            src={require("./vector-icons/create.svg")}
-                          ></img>
-                          <p>create thread</p>
-                        </div>
-                      </NavLink>
-                      <NavLink to="/forum">
-                        <div className="forum-navbar-btn-bottom">
-                          <img
-                            alt="view"
-                            src={require("./vector-icons/browse.svg")}
-                          ></img>
-                          <p>Browse Forum</p>
-                        </div>
-                      </NavLink>
-                    </div>
-                  }
-                  title="Title"
+          {this.props.isAuthenticated ? (
+            <NavLink activeClassName="active" to="/forum">
+              <li>
+                <button
+                  className="bottom-nav-forum"
+                  style={{ border: "none", background: "transparent" }}
+                  href="#icon"
+                >
+                  <Popover
+                    trigger="click"
+                    content={
+                      <div className="bottom-nav-forum-pop">
+                        <NavLink to="/forum/create/new">
+                          <div className="forum-navbar-btn-bottom">
+                            <img
+                              alt="create"
+                              src={require("./vector-icons/create.png")}
+                            ></img>
+                            <p>create thread</p>
+                          </div>
+                        </NavLink>
+                        <NavLink to="/forum">
+                          <div className="forum-navbar-btn-bottom">
+                            <img
+                              alt="view"
+                              src={require("./vector-icons/browse.png")}
+                            ></img>
+                            <p>Browse Forum</p>
+                          </div>
+                        </NavLink>
+                      </div>
+                    }
+                    title="Title"
+                  >
+                    <img
+                      alt=""
+                      src={require("./vector-icons/bottomnavbar/Forum.svg")}
+                    ></img>
+                  </Popover>
+                </button>
+              </li>
+            </NavLink>
+          ) : (
+            <NavLink activeClassName="active" to="/forum">
+              <li>
+                <button
+                  style={{ border: "none", background: "transparent" }}
+                  href="#cart"
                 >
                   <img
                     alt=""
                     src={require("./vector-icons/bottomnavbar/Forum.svg")}
                   ></img>
-                </Popover>
-              </button>
-            </li>
-          </NavLink>
+                </button>
+              </li>
+            </NavLink>
+          )}
           {this.props.isAuthenticated ? (
             <NavLink activeClassName="active" to="/account">
               <li>

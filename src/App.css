@@ -694,7 +694,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .forms-signup input {
   border: none;
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.08) !important;
+  background-color: rgba(255, 255, 255, 0.08);
   height: 3em;
   width: 25em;
   padding-left: 1.5em;
@@ -1548,6 +1548,18 @@ body {
     padding: 0 !important;
     padding-top: 3em !important;
   }
+  .carousel img {
+    height: 26vh !important;
+    object-fit: cover;
+  }
+  .forum-home-thread-square-textbox p {
+    line-height: 1 !important;
+    margin-bottom: 10px !important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+  }
 }
 /* STYLES FOR ACCOUNT */
 
@@ -1747,6 +1759,7 @@ body {
     width: 20vh;
     height: 20vh;
   }
+
   .home-content {
     padding-top: 11vh;
     height: unset;
@@ -2258,7 +2271,7 @@ body {
 .forum-navbar-btn-bottom p {
   font-size: 10px;
   text-align: center;
-  color: #fc5c2d;
+  color: white;
 }
 .ant-popover-placement-top,
 .ant-popover-placement-topLeft,
@@ -2547,7 +2560,9 @@ body {
   background: black;
   right: -50px !important;
 }
-[dir=ltr] .ck.ck-dropdown .ck-button.ck-dropdown__button:not(.ck-button_with-text){
+[dir="ltr"]
+  .ck.ck-dropdown
+  .ck-button.ck-dropdown__button:not(.ck-button_with-text) {
   display: none;
 }
 
@@ -3044,7 +3059,7 @@ button.StripeCheckout {
 }
 .trending-card-sub h5 h2 strong {
   color: white;
-  font-size: 12px;
+  font-size: 10px;
   margin-bottom: 0;
 }
 .trending-card-sub h5 a strong {
@@ -3439,7 +3454,16 @@ a:not([href]):not([tabindex]) {
     margin-bottom: 0 !important;
     margin-left: 1em !important;
     margin-right: 0 !important;
-    margin-top: 0 !important;
+    margin-top: 2vh !important;
+  }
+  .trending-card-sub h5 h2 strong {
+    font-size: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+  }
+  .trending-card-sub h5 h2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
   }
 
   .forum-threadtwo {

@@ -57,7 +57,7 @@ class AccountSecurity extends Component {
   render() {
     return (
       <div className="accnt-scrty">
-        <h6>Email Change</h6>
+        <h6>Email</h6>
         {/*
         <input placeholder="current password"></input>
         <input type="password" placeholder="new password"></input>
@@ -84,7 +84,7 @@ class AccountSecurity extends Component {
               onChange={this.handleChange}
             ></input>
 
-            <button
+            {/* <button
               onClick={this.onButtonClick}
               className="edit-accnt"
               style={{
@@ -95,10 +95,10 @@ class AccountSecurity extends Component {
               }}
             >
               Edit
-            </button>
-            <button type="submit" className="edit-mail-sbmt">
+            </button> */}
+            {/* <button type="submit" className="edit-mail-sbmt">
               Submit
-            </button>
+            </button> */}
           </form>
         </div>
       </div>

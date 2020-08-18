@@ -433,7 +433,7 @@ export default class CreateThread extends Component {
                       config={{
                         ckfinder: {
                           uploadUrl:
-                            "https://example.com/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images&responseType=json",
+                            "https://automoto.techbyheart.in/ckeditor",
                         },
                       }}
                     />
