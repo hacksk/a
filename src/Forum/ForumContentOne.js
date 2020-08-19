@@ -114,8 +114,8 @@ class ForumContentOne extends Component {
               alignItems: "center",
             }}
           >
-            {this.props.userData.username == this.props.thread.username ? (
-              this.props.isAuthenticated ? (
+            {this.props.isAuthenticated ? (
+              this.props.userData.username == this.props.thread.username ? (
                 <Popover
                   placement="bottomRight"
                   content={() => content(this.props.thread.id)}

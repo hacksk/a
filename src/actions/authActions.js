@@ -3,7 +3,7 @@ import axios from "axios";
 import { SET_ERRORS } from "./commonActionType";
 import { API_URL } from "./urlConfig";
 import setAuthToken from "./utils/setAuthToken";
-import { message } from "antd";
+import { message,notification } from "antd";
 import  { Redirect } from 'react-router-dom'
 
 
@@ -47,6 +47,15 @@ export const verifyOtp = (otp) => (dispatch, getState) => {
 
       // Set user
       dispatch(setCurrentUser(res.data.user));
+    })
+    .catch((error)=>{
+      notification.open({
+        message: "OTP timed out",
+        description: "Please try again",
+        onClick: () => {
+          console.log("Notification Clicked!");
+        },
+      });
     })
     .catch(
       (err) =>

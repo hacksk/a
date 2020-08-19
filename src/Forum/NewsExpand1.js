@@ -124,6 +124,7 @@ class NewsExpanded extends Component {
               <meta name="csrf_token" content="" />
               <meta property="type" content="article" />
               <meta property="url" content={window.location.href} />
+              <link rel="apple-touch-icon" href={`https://beta1.techbyheart.in${this.state.threads.userimage}`} />
               <meta
                 name="viewport"
                 content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -330,7 +331,35 @@ class NewsExpanded extends Component {
                       </Popover>
                     </div>
                   </div>
-                ) : null}
+                ) : (
+                  <div
+                    className="forum-more"
+                    style={{
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Popover
+                      placement="bottomRight"
+                      // content={() => content(this.state.threads.id)}
+                      content={
+                        <div>
+                          <button
+                            className="expand-mobile-share-btn"
+                            onClick={this.showModal}
+                          >
+                            Share
+                          </button>
+                        </div>
+                      }
+                      trigger="click"
+                      visible={this.state.visiblepop}
+                      onVisibleChange={this.handleVisbile}
+                    >
+                      <MdMoreVert />
+                    </Popover>
+                  </div>
+                )}
               </div>
               <div style={{ display: "flex", flexDirection: "row" }}>
                 {this.state.tags.map((tag) => (
@@ -504,11 +533,6 @@ class NewsExpanded extends Component {
           }}
         >
           <SemipolarLoading color="#F05C2D" />
-          {this.props.isAuthenticated ? null : (
-            <p style={{ color: "white", marginTop: "2vh" }}>
-              Please Sign In to view the threads
-            </p>
-          )}
         </div>
       );
   }
