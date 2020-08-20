@@ -174,6 +174,9 @@ class NewsExpanded extends Component {
                 property="og:description"
                 content={this.state.threads.content}
               />{" "}
+              <script>
+                console.log("hello REACT")
+              </script>
             </Helmet>
 
             <FacebookShareButton

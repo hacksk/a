@@ -8,6 +8,8 @@ import { SemipolarLoading } from "react-loadingg";
 import CKEditor from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import ReactHtmlParser from "react-html-parser";
+// import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter';
+
 // import CKEditor from 'ckeditor4-react';
 
 import { Link } from "react-router-dom";
@@ -434,21 +436,9 @@ export default class CreateThread extends Component {
                       onInit={(editor) => {}}
                       config={{
                         ckfinder: {
-                          uploadUrl:
-                            "/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json",
+                          uploadUrl: "/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json",
                         },
-                        toolbar: [
-                          "ckfinder",
-                          "imageUpload",
-                          "|",
-                          "heading",
-                          "|",
-                          "bold",
-                          "italic",
-                          "|",
-                          "undo",
-                          "redo",
-                        ],
+                        // plugins: [ Base64UploadAdapter]
                       }}
                     />
                   </div>
