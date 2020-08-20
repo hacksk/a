@@ -2184,7 +2184,7 @@ body {
   margin-left: 2em;
 }
 .carousel .slide .testcar {
-  bottom: 30px !important;
+  bottom: 11px !important;
   left: 10px;
   color: white;
   position: absolute;
@@ -3768,7 +3768,7 @@ a:not([href]):not([tabindex]) {
   }
 }
 .testcar p {
-  height: 2vh !important;
+  height: auto !important;
 }
 .banner-image {
   height: auto;
