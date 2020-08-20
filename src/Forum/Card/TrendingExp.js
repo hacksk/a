@@ -118,13 +118,18 @@ class NewsExpanded extends Component {
               share={this.state.threads}
             /> */}
             <Helmet>
+              <meta charset="utf-8" />
+              <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1"
+              />
+              <meta name="theme-color" content="#000000" />
               <title>{this.state.threads.title}</title>
               <meta charset="utf-8" />
               <meta http-equiv="X-UA-Compatible" content="IE=edge" />
               <meta name="csrf_token" content="" />
               <meta property="type" content="article" />
               <meta property="url" content={window.location.href} />
-              <link rel="apple-touch-icon" href={`https://beta1.techbyheart.in${this.state.threads.userimage}`} />
               <meta
                 name="viewport"
                 content="width=device-width, initial-scale=1, shrink-to-fit=no"
