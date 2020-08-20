@@ -434,8 +434,21 @@ export default class CreateThread extends Component {
                       onInit={(editor) => {}}
                       config={{
                         ckfinder: {
-                          uploadUrl: "https://automoto.techbyheart.in/ckeditor",
+                          uploadUrl:
+                            "/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json",
                         },
+                        toolbar: [
+                          "ckfinder",
+                          "imageUpload",
+                          "|",
+                          "heading",
+                          "|",
+                          "bold",
+                          "italic",
+                          "|",
+                          "undo",
+                          "redo",
+                        ],
                       }}
                     />
                   </div>

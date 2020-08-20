@@ -3768,7 +3768,7 @@ a:not([href]):not([tabindex]) {
   }
 }
 .testcar p {
-  height: auto !important;
+  height: 3vh !important;
 }
 .banner-image {
   height: auto;

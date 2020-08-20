@@ -118,6 +118,7 @@ class NewsExpanded extends Component {
               share={this.state.threads}
             /> */}
             <Helmet>
+              <title>Automoto</title>
               <meta charset="utf-8" />
               <meta
                 name="viewport"
