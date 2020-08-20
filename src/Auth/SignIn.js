@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { sendOtp } from "../actions/authActions";
 import { Link } from "react-router-dom";
+import axios from "axios"
 
 class SignIn extends Component {
   constructor(props) {
@@ -11,6 +12,12 @@ class SignIn extends Component {
       loginErrors: "",
       phone: "",
     };
+  }
+  componentDidMount(){
+      axios.get(`https://beta1.techbyheart.in/api/v1/customer`)
+      .then((res)=>{
+        console.log(res.data,"customerdata")
+      })
   }
 
   static getDerivedStateFromProps(nextProps) {

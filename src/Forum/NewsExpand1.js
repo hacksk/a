@@ -13,6 +13,7 @@ import ImageScroller from "react-image-scroller";
 import HelmetMetaData from "./Card/HelmetMetaData";
 import ReactHtmlParser from "react-html-parser";
 import { Helmet } from "react-helmet";
+import MetaTags from "react-meta-tags";
 
 import {
   EmailShareButton,
@@ -117,7 +118,7 @@ class NewsExpanded extends Component {
               description={this.state.threads.content}
               share={this.state.threads}
             /> */}
-            <Helmet>
+            {/* <Helmet>
               <title>{this.state.threads.title}</title>
               <meta charset="utf-8" />
               <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -151,7 +152,6 @@ class NewsExpanded extends Component {
               <meta property="og:type" content="website" />
               <meta property="og:title" content="workit" />
               <meta property="og:quote" content="workitquote" />
-              {/* <meta property="og:hashtag" content={hashtag} /> */}
               <meta
                 property="og:image"
                 content="https://images.pexels.com/photos/1061139/pexels-photo-1061139.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
@@ -163,7 +163,16 @@ class NewsExpanded extends Component {
                 property="og:description"
                 content={this.state.threads.content}
               />{" "}
-            </Helmet>
+            </Helmet> */}
+            <MetaTags>
+              <title>Page 1</title>
+              <meta name="description" content="Last Try123" />
+              <meta property="og:title" content="MyApp" />
+              <meta
+                property="og:image"
+                content="https://images.pexels.com/photos/139392/checkmate-chess-resignation-conflict-139392.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              />
+            </MetaTags>
 
             <FacebookShareButton
               url={window.location.href}
