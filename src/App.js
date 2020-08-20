@@ -40,6 +40,7 @@ import CreateThread from "./Forum/Card/Upload/CreateThread";
 import RichText from "./Forum/Card/Upload/CreateThreadRichText";
 import EditForum from "./Forum/Card/Upload/EditRichText";
 import HomeNav from "./HomeNav";
+import QuillEditor from "./Forum/Card/quillEditor"
 
 function App() {
   return (
@@ -105,6 +106,7 @@ function App() {
           <Route exact path="/search" component={MobileSearch} />
           <Route exact path="/forum/create/new" component={RichText} />
           <Route exact path="/forum/edit/:new" component={EditForum}/>
+          <Route exact path="/forum/try" component={QuillEditor}/>
         </Switch>
         <BottomNavbar />
       </BrowserRouter>

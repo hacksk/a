@@ -2298,7 +2298,7 @@ body {
     width: 27vh !important;
     padding-right: 2vh;
   }
-  .trending-thread-content h6{
+  .trending-thread-content h6 {
     white-space: normal;
   }
   .testcar {
@@ -2721,7 +2721,7 @@ headerstore-secondlogo {
   .headerstore-content img {
     width: 20vw !important;
   }
-  .trending-image-home{
+  .trending-image-home {
     width: 11vh;
   }
   .accessories-moto .nav-tabs .nav-item.show .nav-link,
@@ -3582,12 +3582,12 @@ a:not([href]):not([tabindex]) {
     padding: 1em !important;
     margin-bottom: 8.99vh !important;
   }
-  .trending-thread{
+  .trending-thread {
     height: 20vh;
   }
   .trending-thread p {
     font-size: 10px !important;
-    height: unset!important;
+    height: unset !important;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: normal;
@@ -4421,7 +4421,7 @@ a:not([href]):not([tabindex]) {
   justify-content: space-between;
 }
 .thread-title-container2 {
-  height: 100vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -4491,4 +4491,24 @@ a:not([href]):not([tabindex]) {
   .thread-title-container2 {
     height: 90vh !important;
   }
+}
+.ImageSpan__root___RoAqL {
+  background-size: contain !important;
+  width: 30vh !important;
+  height: 20vh !important;
+}
+.RichTextEditor__root___2QXK- {
+  height: 45vh;
+  width: 1008px;
+}
+.RichTextEditor__editor___1QqIU {
+  height: 100% !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+.RichTextEditor__root___2QXK- {
+  background: rgba(255, 255, 255,0.01) !important;
+  border: none !important;
+}
+.Dropdown__root___3ALmx select,.public-DraftStyleDefault-ltr {
+  color: white!important;
 }

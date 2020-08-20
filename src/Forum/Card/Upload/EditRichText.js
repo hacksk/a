@@ -335,7 +335,6 @@ export default class EditRichText extends Component {
               newformData.append("header_image", headerimage);
               newformData.append("header_image_url", "");
 
-
               this.setState({ loader: true });
 
               axios
@@ -637,40 +636,6 @@ export default class EditRichText extends Component {
                         },
                       }}
                     />
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                    }}
-                  >
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "row",
-                        justifyContent: "space-evenly",
-                        flexWrap: "wrap",
-                        marginTop: "12px",
-                      }}
-                    >
-                      {(this.fileArray || []).map((url) => (
-                        <img
-                          className="uploaded-image-forum-multi"
-                          src={url}
-                          alt="..."
-                        />
-                      ))}
-                    </div>
-                    <label className="alt-img-btn">
-                      Thread Image
-                      <input
-                        style={{ display: "none" }}
-                        id="file-input"
-                        type="file"
-                        onChange={this.uploadMultipleFiles}
-                        multiple
-                      ></input>
-                    </label>
                   </div>
                 </div>
               </div>

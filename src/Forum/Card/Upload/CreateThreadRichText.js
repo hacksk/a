@@ -8,6 +8,9 @@ import { SemipolarLoading } from "react-loadingg";
 import CKEditor from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import ReactHtmlParser from "react-html-parser";
+import RichTextEditor from "react-rte";
+import PropTypes from "prop-types";
+
 // import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter';
 
 // import CKEditor from 'ckeditor4-react';
@@ -21,6 +24,9 @@ const { Option } = Select;
 // }
 
 export default class CreateThread extends Component {
+  static propTypes = {
+    onChange: PropTypes.func,
+  };
   fileObj = [];
   fileArray = [];
 
@@ -48,6 +54,8 @@ export default class CreateThread extends Component {
       loader: false,
       text: "",
       validation: true,
+      richtext: "",
+      value: RichTextEditor.createEmptyValue(),
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -137,7 +145,10 @@ export default class CreateThread extends Component {
                   console.log(res, "multi-in-header");
                   const newformData = new FormData();
                   newformData.append("title", this.state.title);
-                  newformData.append("content", this.state.text);
+                  newformData.append(
+                    "content",
+                    this.state.value.toString("html")
+                  );
                   newformData.append("video_url", this.state.video_url);
                   newformData.append("header_image", headerimage);
                   newformData.append("images", res.data.data.id);
@@ -165,7 +176,7 @@ export default class CreateThread extends Component {
             } else {
               const newformData = new FormData();
               newformData.append("title", this.state.title);
-              newformData.append("content", this.state.text);
+              newformData.append("content", this.state.value.toString("html"));
               newformData.append("video_url", this.state.video_url);
               newformData.append("header_image", headerimage);
 
@@ -230,7 +241,10 @@ export default class CreateThread extends Component {
 
                     const newformData = new FormData();
                     newformData.append("title", this.state.title);
-                    newformData.append("content", this.state.text);
+                    newformData.append(
+                      "content",
+                      this.state.value.toString("html")
+                    );
                     newformData.append("video_url", this.state.video_url);
                     newformData.append("header_image_url", urldata);
                     newformData.append("images", res.data.data.id);
@@ -255,7 +269,7 @@ export default class CreateThread extends Component {
             } else {
               const newformData = new FormData();
               newformData.append("title", this.state.title);
-              newformData.append("content", this.state.text);
+              newformData.append("content", this.state.value.toString("html"));
               newformData.append("video_url", this.state.video_url);
               newformData.append("header_image_url", urldata);
               axios
@@ -303,10 +317,21 @@ export default class CreateThread extends Component {
     this.setState({ fileArray: this.fileObj });
   }
 
-  handleCKChange = (e, editor) => {
-    const data = editor.getData();
-    this.setState({ text: data });
-    console.log(this.state.text, "richtexteditor");
+  // handleCKChange = (e, editor) => {
+  //   const data = editor.getData();
+  //   this.setState({ text: data });
+  //   console.log(this.state.value.toString("html"), "richtexteditor");
+  // };
+  onRichChange = (value) => {
+    this.setState({ value });
+
+    if (this.props.onChange) {
+      // Send the changes up to the parent component as an HTML string.
+      // This is here to demonstrate using `.toString()` but in a real app it
+      // would be better to avoid generating a string on each change.
+      this.props.onChange(value.toString("html"));
+      const { editorState } = this.props;
+    }
   };
 
   render() {
@@ -422,6 +447,7 @@ export default class CreateThread extends Component {
                     name="video_url"
                     type="link"
                   ></input>
+                  {/* {ReactHtmlParser(this.state.value.toString("html"))} */}
                   <div
                     style={{
                       display: "flex",
@@ -430,16 +456,21 @@ export default class CreateThread extends Component {
                       alignItems: "center",
                     }}
                   >
-                    <CKEditor
+                    {/* <CKEditor
                       editor={ClassicEditor}
                       onChange={this.handleCKChange}
                       onInit={(editor) => {}}
                       config={{
                         ckfinder: {
-                          uploadUrl: "/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json",
+                          uploadUrl:
+                            "/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json",
                         },
                         // plugins: [ Base64UploadAdapter]
                       }}
+                    /> */}
+                    <RichTextEditor
+                      value={this.state.value}
+                      onChange={this.onRichChange}
                     />
                   </div>
                   {/* <div
