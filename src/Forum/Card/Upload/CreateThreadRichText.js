@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { message, Select,notification } from "antd";
+import { message, Select, notification } from "antd";
 import { MdFileUpload } from "react-icons/md";
 import TagsForum from "../../TagsForum";
 import LoadingOverlay from "react-loading-overlay";
@@ -132,7 +132,7 @@ export default class CreateThread extends Component {
                   }
                 )
                 .then((res) => {
-                  console.log(res, "resultfirst");
+                  console.log(res, "multi-in-header");
                   const newformData = new FormData();
                   newformData.append("title", this.state.title);
                   newformData.append("content", this.state.text);
@@ -175,6 +175,7 @@ export default class CreateThread extends Component {
                   newformData
                 )
                 .then((res) => {
+                  console.log(res);
                   this.setState({ loader: true });
 
                   this.props.history.push(`/forum/thread/${res.data.data.id}`);
@@ -200,6 +201,7 @@ export default class CreateThread extends Component {
             urlformData
           )
           .then((res) => {
+            console.log(res);
             this.setState({ loader: true });
 
             const urldata = res.data.data.id;
@@ -221,7 +223,7 @@ export default class CreateThread extends Component {
                     }
                   )
                   .then((res) => {
-                    console.log(res);
+                    console.log(res, "multi-in-url");
                     this.setState({ loader: true });
 
                     const newformData = new FormData();
@@ -432,13 +434,12 @@ export default class CreateThread extends Component {
                       onInit={(editor) => {}}
                       config={{
                         ckfinder: {
-                          uploadUrl:
-                            "https://automoto.techbyheart.in/ckeditor",
+                          uploadUrl: "https://automoto.techbyheart.in/ckeditor",
                         },
                       }}
                     />
                   </div>
-                  <div
+                  {/* <div
                     style={{
                       display: "flex",
                       flexDirection: "column",
@@ -471,7 +472,7 @@ export default class CreateThread extends Component {
                         multiple
                       ></input>
                     </label>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
