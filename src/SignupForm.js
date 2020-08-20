@@ -24,7 +24,6 @@ class SignupForm extends Component {
       age: "",
       address_line1: "",
       address_line2: "",
-      dob: "",
       state: "",
       district: "",
       city: "",
@@ -56,7 +55,6 @@ class SignupForm extends Component {
       age,
       address_line1,
       address_line2,
-      dob,
       state,
       city,
       pincode,
@@ -90,7 +88,6 @@ class SignupForm extends Component {
         latitude: 23.0625,
         longitude: -98.677068,
         vehicle: [1],
-        dob: dob,
         is_club_admin: "True",
         is_forum_admin: "False",
         class_type: "NORMAL",
@@ -136,12 +133,7 @@ class SignupForm extends Component {
                   onChange={this.handleChange}
                   placeholder="Name"
                 />
-                <input
-                  name="dob"
-                  type="date"
-                  onChange={this.handleChange}
-                  placeholder="Date Of Birth (2020-10-18)"
-                />
+              
 
                 <input
                   name="email"

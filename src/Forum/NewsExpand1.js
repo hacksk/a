@@ -124,7 +124,10 @@ class NewsExpanded extends Component {
               <meta name="csrf_token" content="" />
               <meta property="type" content="article" />
               <meta property="url" content={window.location.href} />
-              <link rel="apple-touch-icon" href={`https://beta1.techbyheart.in${this.state.threads.userimage}`} />
+              <link
+                rel="apple-touch-icon"
+                href={`https://beta1.techbyheart.in${this.state.threads.userimage}`}
+              />
               <meta
                 name="viewport"
                 content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -142,24 +145,16 @@ class NewsExpanded extends Component {
               <meta name="description" content={this.state.threads.content} />
               <meta
                 property="image"
-                content={
-                  this.state.head != null
-                    ? this.state.head.url
-                    : this.state.urls.image
-                }
+                content="https://images.pexels.com/photos/1061140/pexels-photo-1061140.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
               />
               <meta property="og:locale" content="en_US" />
               <meta property="og:type" content="website" />
-              <meta property="og:title" content={this.state.threads.title} />
-              <meta property="og:quote" content={this.state.threads.title} />
+              <meta property="og:title" content="workit" />
+              <meta property="og:quote" content="workitquote" />
               {/* <meta property="og:hashtag" content={hashtag} /> */}
               <meta
                 property="og:image"
-                content={
-                  this.state.head != null
-                    ? this.state.head.url
-                    : this.state.urls.image
-                }
+                content="https://images.pexels.com/photos/1061139/pexels-photo-1061139.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
               />
               <meta content="image/*" property="og:image:type" />
               <meta property="og:url" content={window.location.href} />
