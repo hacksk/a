@@ -6,7 +6,7 @@ import axios from "axios";
 import { connect } from "react-redux";
 import ReactHtmlParser from "react-html-parser";
 
-const URL = "https://beta1.techbyheart.in/api/v1/forum";
+const URL = "https://automoto.techbyheart.in/api/v1/forum";
 const content = (id) => (
   <div>
     <button

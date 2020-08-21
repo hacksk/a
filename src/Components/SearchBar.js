@@ -29,7 +29,7 @@ class SearchBar extends React.Component {
 
     // axios
     //   .get(
-    //     `https://beta1.techbyheart.in/api/v1/product/?search=${event.target.value}`
+    //     `https://automoto.techbyheart.in/api/v1/product/?search=${event.target.value}`
     //   )
     //   .then((res) => {
     //     const products = res.data;
@@ -40,7 +40,7 @@ class SearchBar extends React.Component {
     //   });
     // axios
     //   .get(
-    //     `https://beta1.techbyheart.in/api/v1/service/?search=${event.target.value}`
+    //     `https://automoto.techbyheart.in/api/v1/service/?search=${event.target.value}`
     //   )
     //   .then((res) => {
     //     const services = res.data;

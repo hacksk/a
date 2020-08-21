@@ -14,7 +14,7 @@ class SignIn extends Component {
     };
   }
   componentDidMount(){
-      axios.get(`https://beta1.techbyheart.in/api/v1/customer`)
+      axios.get(`https://automoto.techbyheart.in/api/v1/customer`)
       .then((res)=>{
         console.log(res.data,"customerdata")
       })

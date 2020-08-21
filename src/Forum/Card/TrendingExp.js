@@ -29,7 +29,7 @@ import {
   WhatsappIcon,
 } from "react-share";
 
-const URL = "https://beta1.techbyheart.in/api/v1/forum";
+const URL = "https://automoto.techbyheart.in/api/v1/forum";
 
 class NewsExpanded extends Component {
   state = {
@@ -74,7 +74,7 @@ class NewsExpanded extends Component {
 
     axios
       .get(
-        `https://beta1.techbyheart.in/api/v1/forum/thread-single/${threadId}`
+        `https://automoto.techbyheart.in/api/v1/forum/thread-single/${threadId}`
       )
       .then((res) => {
         const threads = res.data.data;
@@ -89,7 +89,7 @@ class NewsExpanded extends Component {
         this.setState((state) => {
           return {
             image:
-              "https://beta1.techbyheart.in/admin/" +
+              "https://automoto.techbyheart.in/admin/" +
               this.state.threads.userimage,
           };
         });
@@ -99,7 +99,7 @@ class NewsExpanded extends Component {
       });
 
     axios
-      .get(`https://beta1.techbyheart.in/api/v1/forum/latest-threads/`)
+      .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
       .then((res) => {
         const trending = res.data.data.slice(0, 8);
         this.setState({ trending });
@@ -390,7 +390,7 @@ class NewsExpanded extends Component {
                 >
                   <img
                     alt=""
-                    src={`https://beta1.techbyheart.in${this.state.threads.userimage}`}
+                    src={`https://automoto.techbyheart.in${this.state.threads.userimage}`}
                   ></img>
                   <p>{this.state.threads.username}</p>
                 </div>

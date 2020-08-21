@@ -45,7 +45,7 @@ class PersonalDetails extends React.Component {
     event.preventDefault();
     const { phone, name, age } = this.state;
     axios
-      .patch(`https://beta1.techbyheart.in/api/v1/customer/${this.props.details.id}/`, {
+      .patch(`https://automoto.techbyheart.in/api/v1/customer/${this.props.details.id}/`, {
         user_data: {
           // email: "ab@gmail.com",
           // first_name: "amu",
@@ -77,7 +77,7 @@ class PersonalDetails extends React.Component {
       })
       .catch((error) => {
         console.log("registration error", error.response.data);
-        message.info("Please Click Continue to Sign In");
+        message.info("Oops, some error occured");
       });
   }
   state = { visible: false };

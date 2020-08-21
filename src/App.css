@@ -4134,25 +4134,25 @@ a:not([href]):not([tabindex]) {
   background: linear-gradient(108.01deg, #f05c2d 0%, #fcaa2e 120.94%);
   border-radius: 8px;
   border: none;
-  width: 13em;
+  width: 24vh;
   color: black;
-  height: 3em;
+  height: 6vh;
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 1.6vh;
   line-height: 16px;
 }
 .create-forum-button-cancel {
   background: transparent;
   border: none;
-  width: 13em;
+  width: 24vh;
   color: #fc5c2d;
-  height: 3em;
+  height: 6vh;
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 1.6vh;
   line-height: 16px;
 }
 .alt-img-btn {
@@ -4393,9 +4393,9 @@ a:not([href]):not([tabindex]) {
   border-radius: 4px 4px 0px 0px;
   border: none;
   border-bottom: 1px solid #fc5c2e;
-  width: 1018px;
-  height: 48px;
-  padding: 2em;
+  width: 130vh;
+  height: 7vh;
+  padding: 4vh;
   box-sizing: border-box;
   color: white;
 }
@@ -4417,8 +4417,8 @@ a:not([href]):not([tabindex]) {
   border-radius: 4px 4px 0px 0px;
   border: none;
   border-bottom: 1px solid #fc5c2e;
-  height: 48px;
-  width: 494px;
+  height:7vh;
+  width: 70vh;
   padding: 2em;
   box-sizing: border-box;
   color: white;
@@ -4568,7 +4568,7 @@ a:not([href]):not([tabindex]) {
 }
 .RichTextEditor__root___2QXK- {
   height: 45vh;
-  width: 1008px;
+  width: 130vh;
 }
 .RichTextEditor__editor___1QqIU {
   height: 100% !important;

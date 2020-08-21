@@ -47,7 +47,7 @@ export default class CreateThread extends Component {
   }
   componentDidMount() {
     axios
-      .get(`https://beta1.techbyheart.in/api/v1/forum/tags/`)
+      .get(`https://automoto.techbyheart.in/api/v1/forum/tags/`)
       .then((res) => {
         const options = res.data.data;
         this.setState({ options });
@@ -83,7 +83,7 @@ export default class CreateThread extends Component {
     if (this.state.posting == true) {
       axios
         .post(
-          `https://beta1.techbyheart.in/api/v1/forum/image/`,
+          `https://automoto.techbyheart.in/api/v1/forum/image/`,
           formData,
 
           {
@@ -106,7 +106,7 @@ export default class CreateThread extends Component {
             }
             axios
               .post(
-                `https://beta1.techbyheart.in/api/v1/forum/image/`,
+                `https://automoto.techbyheart.in/api/v1/forum/image/`,
                 multiformData,
                 {
                   headers: {
@@ -127,7 +127,7 @@ export default class CreateThread extends Component {
 
                 axios
                   .post(
-                    `https://beta1.techbyheart.in/api/v1/forum/thread/create/0a0bd306-dfdf-4d7d-b4a8-c1fa16282e5c/`,
+                    `https://automoto.techbyheart.in/api/v1/forum/thread/create/0a0bd306-dfdf-4d7d-b4a8-c1fa16282e5c/`,
                     newformData
                   )
                   .then((res) => {
@@ -154,7 +154,7 @@ export default class CreateThread extends Component {
 
             axios
               .post(
-                `https://beta1.techbyheart.in/api/v1/forum/thread/create/0a0bd306-dfdf-4d7d-b4a8-c1fa16282e5c/`,
+                `https://automoto.techbyheart.in/api/v1/forum/thread/create/0a0bd306-dfdf-4d7d-b4a8-c1fa16282e5c/`,
                 newformData
               )
               .then((res) => {
@@ -180,7 +180,7 @@ export default class CreateThread extends Component {
 
       axios
         .post(
-          `https://beta1.techbyheart.in/api/v1/forum/image-url/`,
+          `https://automoto.techbyheart.in/api/v1/forum/image-url/`,
           urlformData
         )
         .then((res) => {
@@ -195,7 +195,7 @@ export default class CreateThread extends Component {
 
               axios
                 .post(
-                  `https://beta1.techbyheart.in/api/v1/forum/image/`,
+                  `https://automoto.techbyheart.in/api/v1/forum/image/`,
                   multiformData,
 
                   {
@@ -216,7 +216,7 @@ export default class CreateThread extends Component {
                   newformData.append("images", res.data.data.id);
                   axios
                     .post(
-                      `https://beta1.techbyheart.in/api/v1/forum/thread/create/0a0bd306-dfdf-4d7d-b4a8-c1fa16282e5c/`,
+                      `https://automoto.techbyheart.in/api/v1/forum/thread/create/0a0bd306-dfdf-4d7d-b4a8-c1fa16282e5c/`,
                       newformData
                     )
                     .then((res) => {
@@ -240,7 +240,7 @@ export default class CreateThread extends Component {
             newformData.append("header_image_url", urldata);
             axios
               .post(
-                `https://beta1.techbyheart.in/api/v1/forum/thread/create/0a0bd306-dfdf-4d7d-b4a8-c1fa16282e5c/`,
+                `https://automoto.techbyheart.in/api/v1/forum/thread/create/0a0bd306-dfdf-4d7d-b4a8-c1fa16282e5c/`,
                 newformData
               )
               .then((res) => {

@@ -23,7 +23,7 @@ export default class PicturesWall extends Component {
     formData.append("image", this.state.profile_image);
     axios
       .post(
-        `https://beta1.techbyheart.in/api/v1/document/`,
+        `https://automoto.techbyheart.in/api/v1/document/`,
         formData,
 
         {
@@ -38,7 +38,7 @@ export default class PicturesWall extends Component {
 
         axios
           .patch(
-            `https://beta1.techbyheart.in/api/v1/customer/${this.props.thread.id}/`,
+            `https://automoto.techbyheart.in/api/v1/customer/${this.props.thread.id}/`,
             {
               photo: this.state.imageid,
             }

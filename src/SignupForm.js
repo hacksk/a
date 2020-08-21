@@ -83,7 +83,7 @@ class SignupForm extends Component {
           district,
         } = this.state;
         axios
-          .post(`https://beta1.techbyheart.in/api/v1/customer/`, {
+          .post(`https://automoto.techbyheart.in/api/v1/customer/`, {
             user_data: {
               email: email,
               first_name: first_name,
@@ -137,7 +137,7 @@ class SignupForm extends Component {
 
       axios
         .post(
-          `https://beta1.techbyheart.in/api/v1/document/`,
+          `https://automoto.techbyheart.in/api/v1/document/`,
           formData,
 
           {
@@ -167,7 +167,7 @@ class SignupForm extends Component {
             district,
           } = this.state;
           axios
-            .post(`https://beta1.techbyheart.in/api/v1/customer/`, {
+            .post(`https://automoto.techbyheart.in/api/v1/customer/`, {
               user_data: {
                 email: email,
                 first_name: first_name,

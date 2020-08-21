@@ -61,7 +61,7 @@ export default class EditRichText extends Component {
 
     axios
       .get(
-        `https://beta1.techbyheart.in/api/v1/forum/thread-single/${threadId}`
+        `https://automoto.techbyheart.in/api/v1/forum/thread-single/${threadId}`
       )
       .then((res) => {
         const threads = res.data.data;
@@ -75,7 +75,7 @@ export default class EditRichText extends Component {
         console.log("expanded", threads);
       });
 
-    axios.get(`https://beta1.techbyheart.in/api/v1/forum/tags/`).then((res) => {
+    axios.get(`https://automoto.techbyheart.in/api/v1/forum/tags/`).then((res) => {
       const options = res.data.data;
       this.setState({ options });
       let name = options.map(function (item) {
@@ -110,7 +110,7 @@ export default class EditRichText extends Component {
           multiformData.append("image", array[i]);
           axios
             .post(
-              `https://beta1.techbyheart.in/api/v1/forum/image/`,
+              `https://automoto.techbyheart.in/api/v1/forum/image/`,
               multiformData,
 
               {
@@ -135,7 +135,7 @@ export default class EditRichText extends Component {
               newformData.append("images", res.data.data.id);
               axios
                 .patch(
-                  `https://beta1.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
+                  `https://automoto.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
                   newformData
                 )
                 .then((res) => {
@@ -160,7 +160,7 @@ export default class EditRichText extends Component {
         newformData.append("video_url", this.state.video_url);
         axios
           .patch(
-            `https://beta1.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
+            `https://automoto.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
             newformData
           )
           .then((res) => {
@@ -181,7 +181,7 @@ export default class EditRichText extends Component {
       //       multiformData.append("image", array[i]);
       //       axios
       //         .post(
-      //           `https://beta1.techbyheart.in/api/v1/forum/image/`,
+      //           `https://automoto.techbyheart.in/api/v1/forum/image/`,
       //           multiformData,
 
       //           {
@@ -206,7 +206,7 @@ export default class EditRichText extends Component {
       //           newformData.append("images", res.data.data.id);
       //           axios
       //             .patch(
-      //               `https://beta1.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
+      //               `https://automoto.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
       //               newformData
       //             )
       //             .then((res) => {
@@ -231,7 +231,7 @@ export default class EditRichText extends Component {
       //     newformData.append("video_url", this.state.video_url);
       //     axios
       //       .patch(
-      //         `https://beta1.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
+      //         `https://automoto.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
       //         newformData
       //       )
       //       .then((res) => {
@@ -254,7 +254,7 @@ export default class EditRichText extends Component {
       if (this.state.posting == true) {
         axios
           .post(
-            `https://beta1.techbyheart.in/api/v1/forum/image/`,
+            `https://automoto.techbyheart.in/api/v1/forum/image/`,
             formData,
 
             {
@@ -278,7 +278,7 @@ export default class EditRichText extends Component {
               }
               axios
                 .post(
-                  `https://beta1.techbyheart.in/api/v1/forum/image/`,
+                  `https://automoto.techbyheart.in/api/v1/forum/image/`,
                   multiformData,
                   {
                     headers: {
@@ -306,7 +306,7 @@ export default class EditRichText extends Component {
 
                   axios
                     .patch(
-                      `https://beta1.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
+                      `https://automoto.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
                       newformData
                     )
                     .then((res) => {
@@ -339,7 +339,7 @@ export default class EditRichText extends Component {
 
               axios
                 .patch(
-                  `https://beta1.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
+                  `https://automoto.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
                   newformData
                 )
                 .then((res) => {
@@ -365,7 +365,7 @@ export default class EditRichText extends Component {
 
         axios
           .post(
-            `https://beta1.techbyheart.in/api/v1/forum/image-url/`,
+            `https://automoto.techbyheart.in/api/v1/forum/image-url/`,
             urlformData
           )
           .then((res) => {
@@ -380,7 +380,7 @@ export default class EditRichText extends Component {
 
                 axios
                   .post(
-                    `https://beta1.techbyheart.in/api/v1/forum/image/`,
+                    `https://automoto.techbyheart.in/api/v1/forum/image/`,
                     multiformData,
 
                     {
@@ -407,7 +407,7 @@ export default class EditRichText extends Component {
                     newformData.append("images", res.data.data.id);
                     axios
                       .patch(
-                        `https://beta1.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
+                        `https://automoto.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
                         newformData
                       )
                       .then((res) => {
@@ -439,7 +439,7 @@ export default class EditRichText extends Component {
 
               axios
                 .patch(
-                  `https://beta1.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
+                  `https://automoto.techbyheart.in/api/v1/forum/update-thread/${threadId}/`,
                   newformData
                 )
                 .then((res) => {

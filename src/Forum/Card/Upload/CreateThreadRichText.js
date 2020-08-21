@@ -65,7 +65,7 @@ export default class CreateThread extends Component {
     this.uploadMultipleFiles = this.uploadMultipleFiles.bind(this);
   }
   componentDidMount() {
-    axios.get(`https://beta1.techbyheart.in/api/v1/forum/tags/`).then((res) => {
+    axios.get(`https://automoto.techbyheart.in/api/v1/forum/tags/`).then((res) => {
       const options = res.data.data;
       this.setState({ options });
       let name = options.map(function (item) {
@@ -109,7 +109,7 @@ export default class CreateThread extends Component {
       if (this.state.posting == true) {
         axios
           .post(
-            `https://beta1.techbyheart.in/api/v1/forum/image/`,
+            `https://automoto.techbyheart.in/api/v1/forum/image/`,
             formData,
 
             {
@@ -133,7 +133,7 @@ export default class CreateThread extends Component {
               }
               axios
                 .post(
-                  `https://beta1.techbyheart.in/api/v1/forum/image/`,
+                  `https://automoto.techbyheart.in/api/v1/forum/image/`,
                   multiformData,
                   {
                     headers: {
@@ -157,7 +157,7 @@ export default class CreateThread extends Component {
 
                   axios
                     .post(
-                      `https://beta1.techbyheart.in/api/v1/forum/thread/create/5775bbe0-8214-4250-a524-5cf51e6a3880/`,
+                      `https://automoto.techbyheart.in/api/v1/forum/thread/create/0a0bd306-dfdf-4d7d-b4a8-c1fa16282e5c/`,
                       newformData
                     )
                     .then((res) => {
@@ -184,7 +184,7 @@ export default class CreateThread extends Component {
 
               axios
                 .post(
-                  `https://beta1.techbyheart.in/api/v1/forum/thread/create/5775bbe0-8214-4250-a524-5cf51e6a3880/`,
+                  `https://automoto.techbyheart.in/api/v1/forum/thread/create/0a0bd306-dfdf-4d7d-b4a8-c1fa16282e5c/`,
                   newformData
                 )
                 .then((res) => {
@@ -210,7 +210,7 @@ export default class CreateThread extends Component {
 
         axios
           .post(
-            `https://beta1.techbyheart.in/api/v1/forum/image-url/`,
+            `https://automoto.techbyheart.in/api/v1/forum/image-url/`,
             urlformData
           )
           .then((res) => {
@@ -226,7 +226,7 @@ export default class CreateThread extends Component {
 
                 axios
                   .post(
-                    `https://beta1.techbyheart.in/api/v1/forum/image/`,
+                    `https://automoto.techbyheart.in/api/v1/forum/image/`,
                     multiformData,
 
                     {
@@ -250,7 +250,7 @@ export default class CreateThread extends Component {
                     newformData.append("images", res.data.data.id);
                     axios
                       .post(
-                        `https://beta1.techbyheart.in/api/v1/forum/thread/create/5775bbe0-8214-4250-a524-5cf51e6a3880/`,
+                        `https://automoto.techbyheart.in/api/v1/forum/thread/create/0a0bd306-dfdf-4d7d-b4a8-c1fa16282e5c/`,
                         newformData
                       )
                       .then((res) => {
@@ -274,7 +274,7 @@ export default class CreateThread extends Component {
               newformData.append("header_image_url", urldata);
               axios
                 .post(
-                  `https://beta1.techbyheart.in/api/v1/forum/thread/create/5775bbe0-8214-4250-a524-5cf51e6a3880/`,
+                  `https://automoto.techbyheart.in/api/v1/forum/thread/create/0a0bd306-dfdf-4d7d-b4a8-c1fa16282e5c/`,
                   newformData
                 )
                 .then((res) => {
@@ -358,8 +358,8 @@ export default class CreateThread extends Component {
               className="thread-create-imagefield"
               style={{
                 marginTop: "3em",
-                width: "1015px",
-                height: "398px",
+                width: "130.60vh",
+                height: "70vh",
                 border: "1px dashed white",
                 marginBottom: "50px",
                 padding: "5vh",

@@ -25,7 +25,7 @@ export default class TestComment extends Component {
   toggleLike = () => {
     axios
       .post(
-        `https://beta1.techbyheart.in/api/v1/forum/like-thread/${this.props.mainthread.id}/`
+        `https://automoto.techbyheart.in/api/v1/forum/like-thread/${this.props.mainthread.id}/`
       )
       .then((res) => console.log(res))
       .catch((e) => console.log(e));
@@ -45,7 +45,7 @@ export default class TestComment extends Component {
 
     axios
       .post(
-        `https://beta1.techbyheart.in/api/v1/forum/comment/${this.props.thread.id}/`,
+        `https://automoto.techbyheart.in/api/v1/forum/comment/${this.props.thread.id}/`,
         {
           content: this.state.value,
         }
@@ -106,7 +106,7 @@ export default class TestComment extends Component {
         <div style={{ padding: "4em" }}>
           {this.props.thread.map((threads) => (
             <TestCommentContent
-              userimage={`https://beta1.techbyheart.in${threads.userimage}`}
+              userimage={`https://automoto.techbyheart.in${threads.userimage}`}
               username={threads.username}
               time={threads.date}
               content={threads.content}

@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 import { signOut } from "../actions/authActions";
 import { connect } from "react-redux";
 
-const URL = "https://beta1.techbyheart.in/api/v1/forum";
+const URL = "https://automoto.techbyheart.in/api/v1/forum";
 
 const content = (id) => (
   <div>
@@ -88,7 +88,7 @@ const CommentList = ({
         content={props.content}
         author={props.username}
         datetime={props.date}
-        avatar={`https://beta1.techbyheart.in${props.userimage}`}
+        avatar={`https://automoto.techbyheart.in${props.userimage}`}
         like={props.like_count}
       >
        
@@ -165,7 +165,7 @@ class ForumComment extends React.Component {
   toggleLike = () => {
     axios
       .post(
-        `https://beta1.techbyheart.in/api/v1/forum/like-thread/${this.props.thread.id}/`
+        `https://automoto.techbyheart.in/api/v1/forum/like-thread/${this.props.thread.id}/`
       )
       .then((res) => {
         this.setState({
@@ -173,15 +173,16 @@ class ForumComment extends React.Component {
           increment: !this.state.increment,
         });
         console.log(res, "liked");  
+        if (this.state.liked !== false) {
+          let likeCountnew = this.props.thread.like_count + 1;
+          this.setState({ likeCount: likeCountnew });
+        } else {
+          let likeCountnew = this.props.thread.like_count;
+          this.setState({ likeCount: likeCountnew });
+        }
       })
       .catch((e) => console.log(e));
-    if (this.state.liked === false) {
-      let likeCountnew = this.props.thread.like_count + 1;
-      this.setState({ likeCount: likeCountnew });
-    } else {
-      let likeCountnew = this.props.thread.like_count;
-      this.setState({ likeCount: likeCountnew });
-    }
+  
   };
 
   handleSubmit = () => {
@@ -192,7 +193,7 @@ class ForumComment extends React.Component {
 
     axios
       .post(
-        `https://beta1.techbyheart.in/api/v1/forum/comment/${this.props.thread.id}/`,
+        `https://automoto.techbyheart.in/api/v1/forum/comment/${this.props.thread.id}/`,
         {
           content: this.state.value,
         }

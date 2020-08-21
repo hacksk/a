@@ -66,7 +66,7 @@ class ReplyComment extends React.Component {
 
     axios
       .post(
-        `https://beta1.techbyheart.in/api/v1/forum/reply/${this.props.thresdId}/`,
+        `https://automoto.techbyheart.in/api/v1/forum/reply/${this.props.thresdId}/`,
         {
           content: this.state.value
         }

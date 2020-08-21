@@ -17,7 +17,7 @@ class AccountSecurity extends Component {
   }
 
   componentDidMount() {
-    axios.get(`https://beta1.techbyheart.in/api/v1/customer/`).then((res) => {
+    axios.get(`https://automoto.techbyheart.in/api/v1/customer/`).then((res) => {
       const persons = res.data;
       const person = persons.find((x) => x.user.id === this.props.userData.id);
       this.setState({ person });
@@ -45,7 +45,7 @@ class AccountSecurity extends Component {
     const { email } = this.state;
     axios
       .patch(
-        `https://beta1.techbyheart.in/api/v1/customer/${this.state.person.id}/`,
+        `https://automoto.techbyheart.in/api/v1/customer/${this.state.person.id}/`,
         {
           first_name: "hello@gmail.com",
         }

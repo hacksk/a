@@ -38,23 +38,23 @@ export default class Home extends Component {
 
   componentDidMount() {
     axios
-      .get(`https://beta1.techbyheart.in/api/v1/forum/latest-threads/`)
+      .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
       .then((res) => {
         const persons = res.data.data.slice(0, 6);
         console.log(persons, "persons");
         const subthread = res.data.data.slice(1, 4);
         this.setState({ persons, subthread });
       });
-    axios.get(`https://beta1.techbyheart.in/api/v1/service`).then((res) => {
+    axios.get(`https://automoto.techbyheart.in/api/v1/service`).then((res) => {
       const services = res.data.slice(0, 4);
       this.setState({ services });
     });
-    axios.get(`https://beta1.techbyheart.in/api/v1/product`).then((res) => {
+    axios.get(`https://automoto.techbyheart.in/api/v1/product`).then((res) => {
       const products = res.data.slice(0, 4);
       this.setState({ products });
     });
     axios
-      .get(`https://beta1.techbyheart.in/api/v1/forum/latest-threads/`)
+      .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)
       .then((res) => {
         const trending = res.data.data.slice(1, 5);
         const latest = res.data.data.slice(0, 4);
@@ -290,7 +290,7 @@ export default class Home extends Component {
                     {this.state.subthread.map((person) => (
                       <Link to={`/forum/thread/${person.id}`}>
                         <ForumTrending
-                          threadprof={`https://beta1.techbyheart.in${person.userimage}`}
+                          threadprof={`https://automoto.techbyheart.in${person.userimage}`}
                           trendinghead={person.title}
                           trendingcontent={person.content}
                           timethread={<Moment fromNow>{person.date}</Moment>}
@@ -307,7 +307,7 @@ export default class Home extends Component {
                     {this.state.persons.map((person) => (
                       <Link to={`/forum/thread/${person.id}`}>
                         <ForumTrending
-                          threadprof={`https://beta1.techbyheart.in${person.userimage}`}
+                          threadprof={`https://automoto.techbyheart.in${person.userimage}`}
                           trendinghead={person.title}
                           trendingcontent={person.content}
                           timethread={<Moment fromNow>{person.date}</Moment>}

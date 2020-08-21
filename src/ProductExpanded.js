@@ -16,7 +16,7 @@ class AccesoriesExpanded extends Component {
     products: [],
   };
   componentDidMount() {
-    axios.get(`https://beta1.techbyheart.in/api/v1/product/`).then((res) => {
+    axios.get(`https://automoto.techbyheart.in/api/v1/product/`).then((res) => {
       const products = res.data;
       console.log(products)
       const currentProduct = products.find(
@@ -29,7 +29,7 @@ class AccesoriesExpanded extends Component {
   }
   handleClick = (id) => {
     axios
-      .post(`https://beta1.techbyheart.in/api/v1/cart/add_to_cart/`, {
+      .post(`https://automoto.techbyheart.in/api/v1/cart/add_to_cart/`, {
         product: [
           {
             product: id,

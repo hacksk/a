@@ -16,7 +16,7 @@ class AccesoriesExpanded extends Component {
     services: [],
   };
   componentDidMount() {
-    axios.get(`https://beta1.techbyheart.in/api/v1/service/`).then((res) => {
+    axios.get(`https://automoto.techbyheart.in/api/v1/service/`).then((res) => {
       const services = res.data;
       console.log(services, "service");
       const currentItem = services.find(
@@ -28,7 +28,7 @@ class AccesoriesExpanded extends Component {
   }
   handleClick = (id) => {
     axios
-      .post(`https://beta1.techbyheart.in/api/v1/cart/add_to_cart/`, {
+      .post(`https://automoto.techbyheart.in/api/v1/cart/add_to_cart/`, {
         service: [
           {
             service: id,
