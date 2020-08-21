@@ -19,6 +19,7 @@ import { Tooltip } from "antd";
 import { when } from "jquery";
 
 const { TabPane } = Tabs;
+const text = <span>Coming Soon</span>;
 
 function callback(key) {}
 
@@ -223,11 +224,13 @@ export default class Home extends Component {
                   <div className="home-content-part1">
                     {this.state.services.map((service) => (
                       // <Link key={service.id} to={`/services/${service.id}`}>
-                      <img
-                        alt=""
-                        className="hvr-float-shadow"
-                        src={service.images[0].image}
-                      ></img>
+                      <Tooltip placement="top" title={text}>
+                        <img
+                          alt=""
+                          className="hvr-float-shadow"
+                          src={service.images[0].image}
+                        ></img>
+                      </Tooltip>
                       /* </Link> */
                     ))}
                   </div>
@@ -245,11 +248,13 @@ export default class Home extends Component {
                   <div className="home-content-part2">
                     {this.state.products.map((product) => (
                       // <Link key={product.id} to={`/products/${product.id}`}>
-                      <img
-                        alt=""
-                        className="hvr-float-shadow"
-                        src={product.image[0].image}
-                      ></img>
+                      <Tooltip placement="top" title={text}>
+                        <img
+                          alt=""
+                          className="hvr-float-shadow"
+                          src={product.image[0].image}
+                        ></img>
+                      </Tooltip>
                       // </Link>
                     ))}
                   </div>
