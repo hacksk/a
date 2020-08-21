@@ -106,6 +106,9 @@ class NewsExpanded extends Component {
         console.log(trending, "trends");
       });
   }
+  handleClick = (event) => {
+    window.location.replace(`/forum/edit/${this.state.threads.id}`);
+  };
   render() {
     const { classes } = this.props;
     if (this.state.threads != null) {
@@ -174,9 +177,7 @@ class NewsExpanded extends Component {
                 property="og:description"
                 content={this.state.threads.content}
               />{" "}
-              <script>
-                console.log("hello REACT")
-              </script>
+              <script>console.log("hello REACT")</script>
             </Helmet>
 
             <FacebookShareButton
@@ -311,7 +312,10 @@ class NewsExpanded extends Component {
                               Delete
                             </button>
 
-                            <Link to={`/forum/edit/${this.state.threads.id}`}>
+                            <Link
+                              onClick={this.handleClick}
+                              to={`/forum/edit/${this.state.threads.id}`}
+                            >
                               {this.props.userData.username ==
                               this.state.threads.username ? (
                                 <button

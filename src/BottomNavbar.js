@@ -12,6 +12,9 @@ const content = (
 );
 
 class BottomNavbar extends Component {
+  handleClick = (event) => {
+    window.location.replace("/forum/create/new");
+  };
   render() {
     return (
       <div className="bottommenu">
@@ -84,7 +87,10 @@ class BottomNavbar extends Component {
                     trigger="click"
                     content={
                       <div className="bottom-nav-forum-pop">
-                        <NavLink to="/forum/create/new">
+                        <NavLink
+                          onClick={this.handleClick}
+                          to="/forum/create/new"
+                        >
                           <div className="forum-navbar-btn-bottom">
                             <img
                               alt="create"
