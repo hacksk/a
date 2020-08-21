@@ -1751,6 +1751,7 @@ body {
     #121212;
 }
 @media screen and (min-width: 1980px) {
+
   .home-banner-text {
     height: 15vh;
   }
@@ -1764,9 +1765,7 @@ body {
     padding-top: 11vh;
     height: unset;
   }
-  .home-content h5 {
-    padding-top: 8vh;
-  }
+
   .head-icons img {
     width: 21vh !important;
   }
@@ -4592,4 +4591,9 @@ a:not([href]):not([tabindex]) {
 .Dropdown__root___3ALmx select option{
   color: black!important;
 
+}
+@media screen and (max-width: 1980px) {
+  .home-content h5{
+    padding-top: 6vh!important;
+  }
 }
