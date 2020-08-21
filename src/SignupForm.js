@@ -5,6 +5,7 @@ import "react-alice-carousel/lib/alice-carousel.css";
 // import Accountupload from "./Account/PicturesWall";
 import { API_URL } from "./actions/urlConfig";
 import { notification, message } from "antd";
+import { MdFileUpload } from "react-icons/md";
 // import { DatePicker } from "antd";
 
 // const { RangePicker } = DatePicker;
@@ -28,10 +29,13 @@ class SignupForm extends Component {
       district: "",
       city: "",
       pincode: "",
+      file: [null],
+      profile_image: "",
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.onChange = this.onChange.bind(this);
   }
 
   handleChange(event) {
@@ -43,6 +47,8 @@ class SignupForm extends Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
+
     if (
       this.state.first_name === "" ||
       this.state.email === "" ||
@@ -59,70 +65,99 @@ class SignupForm extends Component {
         },
       });
     } else {
-      event.preventDefault();
-      const {
-        first_name,
-        last_name,
-        email,
-        username,
-        phone,
-        date_joined,
-        name,
-        age,
-        address_line1,
-        address_line2,
-        state,
-        city,
-        pincode,
-        district,
-      } = this.state;
+      const formData = new FormData();
+      formData.append("image", this.state.profile_image);
+
       axios
-        .post(`https://beta1.techbyheart.in/api/v1/customer/`, {
-          user_data: {
-            email: email,
-            first_name: first_name,
-            last_name: "er",
-            username: username,
-            phone: `+${phone}`,
-            is_active: "True",
-            date_joined: "2020-09-18",
-          },
-          address: {
-            address_line1: "rrrr",
-            address_line2: "lllnnngl",
-            address_line3: "ggg",
-            state: "kerala",
-            district: "kozhikode",
-            city: "kozhikode",
-            pin_code: "678964",
-          },
-          photo: 1,
-          name: name,
-          age: age,
-          gender: "male",
-          phone: `+${phone}`,
-          latitude: 23.0625,
-          longitude: -98.677068,
-          vehicle: [1],
-          is_club_admin: "True",
-          is_forum_admin: "False",
-          class_type: "NORMAL",
-        })
-        .then((res) => {
-          console.log(res);
-          this.props.history.push("/signin");
-        })
-        .catch((er) => {
-          console.log(er, "ERRORR");
-          notification.open({
-            message: "Sign Up Error",
-            description: "Make sure you have added +91",
-            onClick: () => {
-              console.log("Notification Clicked!");
+        .post(
+          `https://beta1.techbyheart.in/api/v1/document/`,
+          formData,
+
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
             },
-          });
+          }
+        )
+        .then((res) => {
+          const imageid = res.data.id;
+          this.setState({ imageid });
+
+          const {
+            first_name,
+            last_name,
+            email,
+            username,
+            phone,
+            date_joined,
+            name,
+            age,
+            address_line1,
+            address_line2,
+            state,
+            city,
+            pincode,
+            district,
+          } = this.state;
+          axios
+            .post(`https://beta1.techbyheart.in/api/v1/customer/`, {
+              user_data: {
+                email: email,
+                first_name: first_name,
+                last_name: "er",
+                username: username,
+                phone: `+${phone}`,
+                is_active: "True",
+                date_joined: "2020-09-18",
+              },
+              address: {
+                address_line1: "rrrr",
+                address_line2: "lllnnngl",
+                address_line3: "ggg",
+                state: "kerala",
+                district: "kozhikode",
+                city: "kozhikode",
+                pin_code: "678964",
+              },
+              photo: imageid,
+              name: name,
+              age: age,
+              gender: "male",
+              phone: `+${phone}`,
+              latitude: 23.0625,
+              longitude: -98.677068,
+              vehicle: [1],
+              is_club_admin: "True",
+              is_forum_admin: "False",
+              class_type: "NORMAL",
+            })
+            .then((res) => {
+              console.log(res);
+              this.props.history.push("/signin");
+            })
+            .catch((er) => {
+              console.log(er.data, "ERRORR");
+              notification.open({
+                message: "Sign Up Error",
+                description: "This Phone number or Username already exists",
+                onClick: () => {
+                  console.log("Notification Clicked!");
+                },
+              });
+            });
         });
     }
+  }
+  onChange(event) {
+    this.setState({
+      file: URL.createObjectURL(event.target.files[0]),
+      profile_image: event.target.files[0],
+      posting: true,
+    });
+    if (event.target.files[0].size / 1024 > 2048) {
+      message.info("Please choose file size less than 2MB");
+    }
+    console.log(event.target.files[0].size / 1024, "filesize");
   }
 
   render() {
@@ -170,7 +205,26 @@ class SignupForm extends Component {
                   placeholder="+91xxxxxxxx"
                 />
               </div>
+              <div className="forms-signup">
+                <h1>PROFILE PHOTO</h1>
 
+                <img
+                  alt=""
+                  className="uploaded-image-forum"
+                  src={this.state.file}
+                />
+                <label className="alt-img-btn">
+                  <MdFileUpload />
+                  Image from local
+                  <input
+                    style={{ display: "none" }}
+                    className="thread-create-upload"
+                    type="file"
+                    name="header_image"
+                    onChange={this.onChange}
+                  />
+                </label>
+              </div>
               {/* <div className="forms-signup" onDragStart={handleOnDragStart}>
                 <h1>UPLOAD PICTURE</h1>
 
