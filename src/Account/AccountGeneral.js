@@ -66,12 +66,12 @@ class AccountGeneral extends Component {
             </div>
           </div>
         </div>
-        <div className="prof-detail">
+        {/* <div className="prof-detail">
           <div className="prof-head">
             <h5>Vehicle Details</h5>
-            {/* <AccountCustomer /> */}
+            <AccountCustomer />
           </div>
-        </div>
+        </div> */}
         {/* <div className="prof-detail">
           <h5>Language Preferance</h5>
           <div className="table">
