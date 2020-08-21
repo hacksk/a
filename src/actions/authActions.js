@@ -50,7 +50,7 @@ export const verifyOtp = (otp) => (dispatch, getState) => {
     })
     .catch((error)=>{
       notification.open({
-        message: "OTP timed out",
+        message: "Invalid OTP",
         description: "Please try again",
         onClick: () => {
           console.log("Notification Clicked!");

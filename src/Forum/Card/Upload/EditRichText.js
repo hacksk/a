@@ -584,7 +584,7 @@ export default class EditRichText extends Component {
             <div className="rich-text-manage">
               {/* <p>{this.state.name}</p> */}
               <div>
-                <div className="thread-title-container2">
+                <div className="thread-title-container3">
                   <input
                     placeholder="Thread title"
                     className="thread-title"

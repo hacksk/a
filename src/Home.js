@@ -68,11 +68,11 @@ export default class Home extends Component {
         <div className="home-wrap">
           <div className="home">
             <div className="content-home">
-              <div className="search-bar-wrap">
+              {/* <div className="search-bar-wrap">
                 <Tooltip placement="top" title="prompt text">
                   <SearchBar />
                 </Tooltip>
-              </div>
+              </div> */}
               <div className="news">
                 <Carousel
                   showThumbs="false"
@@ -334,7 +334,7 @@ export default class Home extends Component {
                 </Link>
               ))}
               <h4 style={{ marginTop: "8vh" }}>Latest</h4>
-              {this.state.trending.map((trend) => (
+              {this.state.latest.map((trend) => (
                 <Link to={`/forum/thread/trendin/${trend.id}`}>
                   <Trending thread={trend} />
                 </Link>

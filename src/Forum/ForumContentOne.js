@@ -84,6 +84,7 @@ class ForumContentOne extends Component {
           />
 
           <div
+           className="forumcontentone-image"
             style={{
               paddingLeft: "2em",
               display: "flex",

@@ -4,7 +4,7 @@ import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 // import Accountupload from "./Account/PicturesWall";
 import { API_URL } from "./actions/urlConfig";
-import { notification } from "antd";
+import { notification, message } from "antd";
 // import { DatePicker } from "antd";
 
 // const { RangePicker } = DatePicker;
@@ -43,69 +43,86 @@ class SignupForm extends Component {
   }
 
   handleSubmit(event) {
-    event.preventDefault();
-    const {
-      first_name,
-      last_name,
-      email,
-      username,
-      phone,
-      date_joined,
-      name,
-      age,
-      address_line1,
-      address_line2,
-      state,
-      city,
-      pincode,
-      district,
-    } = this.state;
-    axios
-      .post(`https://beta1.techbyheart.in/api/v1/customer/`, {
-        user_data: {
-          email: email,
-          first_name: first_name,
-          last_name: "er",
-          username: username,
-          phone: `+${phone}`,
-          is_active: "True",
-          date_joined: "2020-09-18",
+    if (
+      this.state.first_name === "" ||
+      this.state.email === "" ||
+      this.state.phone === "" ||
+      this.state.username === "" ||
+      this.state.name === "" ||
+      this.state.age === ""
+    ) {
+      notification.open({
+        message: "Sign Up Error",
+        description: "Fill in all the fields",
+        onClick: () => {
+          console.log("Notification Clicked!");
         },
-        address: {
-          address_line1: "rrrr",
-          address_line2: "lllnnngl",
-          address_line3: "ggg",
-          state: "kerala",
-          district: "kozhikode",
-          city: "kozhikode",
-          pin_code: "678964",
-        },
-        photo: 1,
-        name: name,
-        age: age,
-        gender: "male",
-        phone: `+${phone}`,
-        latitude: 23.0625,
-        longitude: -98.677068,
-        vehicle: [1],
-        is_club_admin: "True",
-        is_forum_admin: "False",
-        class_type: "NORMAL",
-      })
-      .then((res) => {
-        console.log(res);
-        this.props.history.push("/signin");
-      })
-      .catch((er) => {
-        console.log(er, "ERRORR");
-        notification.open({
-          message: "Sign Up Error",
-          description: "Please Add +91",
-          onClick: () => {
-            console.log("Notification Clicked!");
-          },
-        });
       });
+    } else {
+      event.preventDefault();
+      const {
+        first_name,
+        last_name,
+        email,
+        username,
+        phone,
+        date_joined,
+        name,
+        age,
+        address_line1,
+        address_line2,
+        state,
+        city,
+        pincode,
+        district,
+      } = this.state;
+      axios
+        .post(`https://beta1.techbyheart.in/api/v1/customer/`, {
+          user_data: {
+            email: email,
+            first_name: first_name,
+            last_name: "er",
+            username: username,
+            phone: `+${phone}`,
+            is_active: "True",
+            date_joined: "2020-09-18",
+          },
+          address: {
+            address_line1: "rrrr",
+            address_line2: "lllnnngl",
+            address_line3: "ggg",
+            state: "kerala",
+            district: "kozhikode",
+            city: "kozhikode",
+            pin_code: "678964",
+          },
+          photo: 1,
+          name: name,
+          age: age,
+          gender: "male",
+          phone: `+${phone}`,
+          latitude: 23.0625,
+          longitude: -98.677068,
+          vehicle: [1],
+          is_club_admin: "True",
+          is_forum_admin: "False",
+          class_type: "NORMAL",
+        })
+        .then((res) => {
+          console.log(res);
+          this.props.history.push("/signin");
+        })
+        .catch((er) => {
+          console.log(er, "ERRORR");
+          notification.open({
+            message: "Sign Up Error",
+            description: "Make sure you have added +91",
+            onClick: () => {
+              console.log("Notification Clicked!");
+            },
+          });
+        });
+    }
   }
 
   render() {
@@ -133,7 +150,6 @@ class SignupForm extends Component {
                   onChange={this.handleChange}
                   placeholder="Name"
                 />
-              
 
                 <input
                   name="email"
@@ -169,6 +185,7 @@ class SignupForm extends Component {
                   onChange={this.handleChange}
                   placeholder="Full Name"
                 />
+
                 <input
                   name="age"
                   type="number"

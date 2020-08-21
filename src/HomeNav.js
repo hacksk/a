@@ -68,11 +68,11 @@ export default class Home extends Component {
         <div className="home-wrap">
           <div className="home">
             <div className="content-home">
-              <div className="search-bar-wrap">
+              {/* <div className="search-bar-wrap">
                 <Tooltip placement="top" title="prompt text">
                   <SearchBar />
                 </Tooltip>
-              </div>
+              </div> */}
               <div className="news">
                 <Carousel
                   showThumbs="false"
@@ -286,7 +286,7 @@ export default class Home extends Component {
                 style={{ padding: "10em", paddingTop: "0" }}
               >
                 <Tabs defaultActiveKey="2" onChange={callback}>
-                  <TabPane tab="CUSTOMER" key="1">
+                  <TabPane tab="AUTOMOTO EXCLUSIVE" key="1">
                     {this.state.subthread.map((person) => (
                       <Link to={`/forum/thread/${person.id}`}>
                         <ForumTrending
@@ -303,7 +303,7 @@ export default class Home extends Component {
                       </Link>
                     ))}
                   </TabPane>
-                  <TabPane tab="AUTOMOTO" key="2">
+                  {/* <TabPane tab="AUTOMOTO" key="2">
                     {this.state.persons.map((person) => (
                       <Link to={`/forum/thread/${person.id}`}>
                         <ForumTrending
@@ -319,7 +319,7 @@ export default class Home extends Component {
                         />
                       </Link>
                     ))}
-                  </TabPane>
+                  </TabPane> */}
                 </Tabs>
               </div>
             </div>
@@ -334,7 +334,7 @@ export default class Home extends Component {
                 </Link>
               ))}
               <h4 style={{ marginTop: "8vh" }}>Latest</h4>
-              {this.state.trending.map((trend) => (
+              {this.state.latest.map((trend) => (
                 <Link to={`/forum/thread/trendin/${trend.id}`}>
                   <Trending thread={trend} />
                 </Link>

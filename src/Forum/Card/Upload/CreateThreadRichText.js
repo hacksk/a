@@ -513,6 +513,7 @@ export default class CreateThread extends Component {
               {/* {ReactHtmlParser(this.state.text)} */}
             </div>
             <div
+            className="create-thread-button-wrap"
               style={{
                 display: "flex",
                 flexDirection: "row",
