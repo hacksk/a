@@ -14,6 +14,7 @@ export const sendOtp = (phone) => (dispatch) => {
   axios
     .post(`${API_URL}/user/get_otp/`, phone)
     .then((res) => {
+      console.log(res,"OTPandNumber")
       dispatch({
         type: SEND_OTP_SET_NUMBER,
         payload: phone,

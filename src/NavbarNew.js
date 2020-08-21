@@ -31,6 +31,9 @@ class NavbarNew extends Component {
   handleVisbile = (visiblepop) => {
     this.setState({ visiblepop: false });
   };
+  handleClick = (event) => {
+    window.location.replace("/forum/create/new");
+  };
 
   render() {
     return (
@@ -93,7 +96,7 @@ class NavbarNew extends Component {
                     width: "130px",
                   }}
                 >
-                  <NavLink to="/forum/create/new">
+                  <NavLink onClick={this.handleClick} to="/forum/create/new">
                     <div className="forum-navbar-btn">
                       <img
                         alt="create"

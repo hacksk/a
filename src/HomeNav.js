@@ -37,6 +37,7 @@ export default class Home extends Component {
     };
   }
 
+ 
   componentDidMount() {
     axios
       .get(`https://automoto.techbyheart.in/api/v1/forum/latest-threads/`)

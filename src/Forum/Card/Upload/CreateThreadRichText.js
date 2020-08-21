@@ -65,17 +65,19 @@ export default class CreateThread extends Component {
     this.uploadMultipleFiles = this.uploadMultipleFiles.bind(this);
   }
   componentDidMount() {
-    axios.get(`https://automoto.techbyheart.in/api/v1/forum/tags/`).then((res) => {
-      const options = res.data.data;
-      this.setState({ options });
-      let name = options.map(function (item) {
-        return item["name"];
+    axios
+      .get(`https://automoto.techbyheart.in/api/v1/forum/tags/`)
+      .then((res) => {
+        const options = res.data.data;
+        this.setState({ options });
+        let name = options.map(function (item) {
+          return item["name"];
+        });
+        this.setState({ name });
+        this.state.children.push(
+          <Option key={this.state.name}>{this.state.name}</Option>
+        );
       });
-      this.setState({ name });
-      this.state.children.push(
-        <Option key={this.state.name}>{this.state.name}</Option>
-      );
-    });
   }
 
   handleChange(event) {
@@ -169,9 +171,21 @@ export default class CreateThread extends Component {
                       );
                     })
                     .catch((error) => {
+                      this.setState({ loader: false });
+
                       console.log(error, "oopserrorwithmulti");
                       message.warning("Oops, Please try again later");
                     });
+                })
+                .catch((error) => {
+                  this.setState({ loader: false });
+                  notification.open({
+                    message: "Warning",
+                    description: "You need to add a title image",
+                    onClick: () => {
+                      console.log("Notification Clicked!");
+                    },
+                  });
                 });
             } else {
               const newformData = new FormData();
@@ -194,12 +208,20 @@ export default class CreateThread extends Component {
                   this.props.history.push(`/forum/thread/${res.data.data.id}`);
                 })
                 .catch((error) => {
-                  console.log(error, "oopserror");
+                  this.setState({ loader: false });
                   message.warning("Oops, Please try again later");
                 });
             }
           })
           .catch((er) => {
+            window.location.reload();
+            notification.open({
+              message: "Info",
+              description: "Some error occured",
+              onClick: () => {
+                console.log("Notification Clicked!");
+              },
+            });
             console.log(er, "firsterror");
           });
       } else {
@@ -262,8 +284,13 @@ export default class CreateThread extends Component {
                         );
                       })
                       .catch((error) => {
+                        this.setState({ loader: false });
                         message.warning("Oops, Please try again later");
                       });
+                  })
+                  .catch((er) => {
+                    this.setState({ loader: false });
+                    message.warning("Oops, Please try again later");
                   });
               }
             } else {
@@ -284,9 +311,21 @@ export default class CreateThread extends Component {
                   this.props.history.push(`/forum/thread/${res.data.data.id}`);
                 })
                 .catch((error) => {
+                  this.setState({ loader: false });
                   message.warning("Oops, Please try again later");
                 });
             }
+          })
+          .catch((eror) => {
+            window.location.reload();
+            this.setState({ loader: false });
+            notification.open({
+              message: "Info",
+              description: "Some error occured",
+              onClick: () => {
+                console.log("Notification Clicked!");
+              },
+            });
           });
       }
     }
@@ -513,7 +552,7 @@ export default class CreateThread extends Component {
               {/* {ReactHtmlParser(this.state.text)} */}
             </div>
             <div
-            className="create-thread-button-wrap"
+              className="create-thread-button-wrap"
               style={{
                 display: "flex",
                 flexDirection: "row",
