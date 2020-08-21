@@ -65,155 +65,153 @@ class SignupForm extends Component {
         },
       });
     } else {
-      if(this.state.profile_image===""){
-        const {
-          first_name,
-          last_name,
-          email,
-          username,
-          phone,
-          date_joined,
-          name,
-          age,
-          address_line1,
-          address_line2,
-          state,
-          city,
-          pincode,
-          district,
-        } = this.state;
-        axios
-          .post(`https://automoto.techbyheart.in/api/v1/customer/`, {
-            user_data: {
-              email: email,
-              first_name: first_name,
-              last_name: "er",
-              username: username,
-              phone: `+${phone}`,
-              is_active: "True",
-              date_joined: "2020-09-18",
-            },
-            address: {
-              address_line1: "rrrr",
-              address_line2: "lllnnngl",
-              address_line3: "ggg",
-              state: "kerala",
-              district: "kozhikode",
-              city: "kozhikode",
-              pin_code: "678964",
-            },
-            photo: 1,
-            name: name,
-            age: age,
-            gender: "male",
-            phone: `+${phone}`,
-            latitude: 23.0625,
-            longitude: -98.677068,
-            vehicle: [1],
-            is_club_admin: "True",
-            is_forum_admin: "False",
-            class_type: "NORMAL",
-          })
-          .then((res) => {
-            console.log(res);
-            this.props.history.push("/signin");
-          })
-          .catch((er) => {
-            console.log(er.data, "ERRORR");
-            notification.open({
-              message: "Sign Up Error",
-              description: "This Phone number or Username already exists",
-              onClick: () => {
-                console.log("Notification Clicked!");
-              },
-            });
-          });
-      }
-      else{
-
-      
-      const formData = new FormData();
-      formData.append("image", this.state.profile_image);
-
+      const {
+        first_name,
+        last_name,
+        email,
+        username,
+        phone,
+        date_joined,
+        name,
+        age,
+        address_line1,
+        address_line2,
+        state,
+        city,
+        pincode,
+        district,
+      } = this.state;
       axios
-        .post(
-          `https://automoto.techbyheart.in/api/v1/document/`,
-          formData,
-
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
-        )
+        .post(`https://automoto.techbyheart.in/api/v1/customer/`, {
+          user_data: {
+            email: email,
+            first_name: first_name,
+            last_name: "er",
+            username: username,
+            phone: `+${phone}`,
+            is_active: "True",
+            date_joined: "2020-09-18",
+          },
+          address: {
+            address_line1: "rrrr",
+            address_line2: "lllnnngl",
+            address_line3: "ggg",
+            state: "kerala",
+            district: "kozhikode",
+            city: "kozhikode",
+            pin_code: "678964",
+          },
+          photo: 1,
+          name: name,
+          age: age,
+          gender: "male",
+          phone: `+${phone}`,
+          latitude: 23.0625,
+          longitude: -98.677068,
+          vehicle: [1],
+          is_club_admin: "True",
+          is_forum_admin: "False",
+          class_type: "NORMAL",
+        })
         .then((res) => {
-          const imageid = res.data.id;
-          this.setState({ imageid });
-
-          const {
-            first_name,
-            last_name,
-            email,
-            username,
-            phone,
-            date_joined,
-            name,
-            age,
-            address_line1,
-            address_line2,
-            state,
-            city,
-            pincode,
-            district,
-          } = this.state;
-          axios
-            .post(`https://automoto.techbyheart.in/api/v1/customer/`, {
-              user_data: {
-                email: email,
-                first_name: first_name,
-                last_name: "er",
-                username: username,
-                phone: `+${phone}`,
-                is_active: "True",
-                date_joined: "2020-09-18",
-              },
-              address: {
-                address_line1: "rrrr",
-                address_line2: "lllnnngl",
-                address_line3: "ggg",
-                state: "kerala",
-                district: "kozhikode",
-                city: "kozhikode",
-                pin_code: "678964",
-              },
-              photo: imageid,
-              name: name,
-              age: age,
-              gender: "male",
-              phone: `+${phone}`,
-              latitude: 23.0625,
-              longitude: -98.677068,
-              vehicle: [1],
-              is_club_admin: "True",
-              is_forum_admin: "False",
-              class_type: "NORMAL",
-            })
-            .then((res) => {
-              console.log(res);
-              this.props.history.push("/signin");
-            })
-            .catch((er) => {
-              console.log(er.data, "ERRORR");
-              notification.open({
-                message: "Sign Up Error",
-                description: "This Phone number or Username already exists",
-                onClick: () => {
-                  console.log("Notification Clicked!");
-                },
-              });
-            });
+          console.log(res);
+          this.props.history.push("/signin");
+        })
+        .catch((er) => {
+          console.log(er.data, "ERRORR");
+          notification.open({
+            message: "Sign Up Error",
+            description: "This Phone number or Username already exists",
+            onClick: () => {
+              console.log("Notification Clicked!");
+            },
+          });
         });
-      }
+
+      // else{
+
+      // const formData = new FormData();
+      // formData.append("image", this.state.profile_image);
+
+      // axios
+      //   .post(
+      //     `https://automoto.techbyheart.in/api/v1/document/`,
+      //     formData,
+
+      //     {
+      //       headers: {
+      //         "Content-Type": "multipart/form-data",
+      //       },
+      //     }
+      //   )
+      //   .then((res) => {
+      //     const imageid = res.data.id;
+      //     this.setState({ imageid });
+
+      //     const {
+      //       first_name,
+      //       last_name,
+      //       email,
+      //       username,
+      //       phone,
+      //       date_joined,
+      //       name,
+      //       age,
+      //       address_line1,
+      //       address_line2,
+      //       state,
+      //       city,
+      //       pincode,
+      //       district,
+      //     } = this.state;
+      //     axios
+      //       .post(`https://automoto.techbyheart.in/api/v1/customer/`, {
+      //         user_data: {
+      //           email: email,
+      //           first_name: first_name,
+      //           last_name: "er",
+      //           username: username,
+      //           phone: `+${phone}`,
+      //           is_active: "True",
+      //           date_joined: "2020-09-18",
+      //         },
+      //         address: {
+      //           address_line1: "rrrr",
+      //           address_line2: "lllnnngl",
+      //           address_line3: "ggg",
+      //           state: "kerala",
+      //           district: "kozhikode",
+      //           city: "kozhikode",
+      //           pin_code: "678964",
+      //         },
+      //         photo: imageid,
+      //         name: name,
+      //         age: age,
+      //         gender: "male",
+      //         phone: `+${phone}`,
+      //         latitude: 23.0625,
+      //         longitude: -98.677068,
+      //         vehicle: [1],
+      //         is_club_admin: "True",
+      //         is_forum_admin: "False",
+      //         class_type: "NORMAL",
+      //       })
+      //       .then((res) => {
+      //         console.log(res);
+      //         this.props.history.push("/signin");
+      //       })
+      //       .catch((er) => {
+      //         console.log(er.data, "ERRORR");
+      //         notification.open({
+      //           message: "Sign Up Error",
+      //           description: "This Phone number or Username already exists",
+      //           onClick: () => {
+      //             console.log("Notification Clicked!");
+      //           },
+      //         });
+      //       });
+      //   });
+      // }
     }
   }
   onChange(event) {
@@ -273,7 +271,7 @@ class SignupForm extends Component {
                   placeholder="+91xxxxxxxx"
                 />
               </div>
-              <div className="forms-signup">
+              {/* <div className="forms-signup">
                 <h1>PROFILE PHOTO</h1>
 
                 <img
@@ -292,7 +290,7 @@ class SignupForm extends Component {
                     onChange={this.onChange}
                   />
                 </label>
-              </div>
+              </div> */}
               {/* <div className="forms-signup" onDragStart={handleOnDragStart}>
                 <h1>UPLOAD PICTURE</h1>
 
