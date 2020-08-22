@@ -1240,7 +1240,7 @@ body {
 .ant-popover-inner-content {
   color: white !important;
   height: auto !important;
-  padding: 1vh 0 0 0 !important;
+  padding: 0 0 0 0 !important;
 }
 .ant-popover-inner-content button {
   width: 100% !important;
@@ -1751,7 +1751,6 @@ body {
     #121212;
 }
 @media screen and (min-width: 1980px) {
-
   .home-banner-text {
     height: 15vh;
   }
@@ -3079,6 +3078,9 @@ button.StripeCheckout {
 }
 .carousel p a strong {
   color: #f05c2d;
+}
+.forum-home-thread-square-textbox h6 {
+  white-space:normal;
 }
 .forum-home-thread-square-textbox p h2 strong {
   font-size: 13px;
@@ -4416,7 +4418,7 @@ a:not([href]):not([tabindex]) {
   border-radius: 4px 4px 0px 0px;
   border: none;
   border-bottom: 1px solid #fc5c2e;
-  height:7vh;
+  height: 7vh;
   width: 70vh;
   padding: 2em;
   box-sizing: border-box;
@@ -4549,15 +4551,14 @@ a:not([href]):not([tabindex]) {
   }
   .RichTextEditor__root___2QXK- {
     height: 35vh !important;
-    width: 40vh!important;
+    width: 40vh !important;
   }
   .IconButton__icon___3YgOS {
     background-size: 14px;
   }
-  .InputPopover__root___3Hpj9{
-    left:-103px!important;
-    top: calc(100% + 54px)!important;
-
+  .InputPopover__root___3Hpj9 {
+    left: -103px !important;
+    top: calc(100% + 54px) !important;
   }
 }
 .ImageSpan__root___RoAqL {
@@ -4588,12 +4589,11 @@ a:not([href]):not([tabindex]) {
 .EditorToolbar__root___3_Aqz {
   border-bottom: none !important;
 }
-.Dropdown__root___3ALmx select option{
-  color: black!important;
-
+.Dropdown__root___3ALmx select option {
+  color: black !important;
 }
 @media screen and (max-width: 1980px) {
-  .home-content h5{
-    padding-top: 6vh!important;
+  .home-content h5 {
+    padding-top: 6vh !important;
   }
 }

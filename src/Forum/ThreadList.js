@@ -59,10 +59,6 @@ export default class ThreadList extends Component {
                 <Forumcontenttwo thread={person} />
               </Link>
             ))}
-
-            <a href="#seeall" className="seeall-forum">
-              SEE ALL
-            </a>
           </div>
 
           <div

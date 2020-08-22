@@ -96,7 +96,7 @@ class BottomNavbar extends Component {
                               alt="create"
                               src={require("./vector-icons/create.png")}
                             ></img>
-                            <p>create thread</p>
+                            <p>Create Thread</p>
                           </div>
                         </NavLink>
                         <NavLink to="/forum">
